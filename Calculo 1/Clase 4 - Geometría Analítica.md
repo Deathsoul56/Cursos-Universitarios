@@ -30,7 +30,7 @@ El plano se divide en cuatro **cuadrantes**:
 La distancia $d$ entre dos puntos $P_1 = (x_1, y_1)$ y $P_2 = (x_2, y_2)$ en $\mathbb{R}^2$ es:
 $$d(P_1, P_2) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$
 
-**Demostración:** Se deduce del Teorema de Pitágoras aplicado al triángulo rectángulo formado por los puntos $P_1$, $P_2$ y $(x_2, y_1)$. (en breve se demostrara el teorema de Pitágoras)
+**Demostración:** Se deduce del Teorema de Pitágoras aplicado al triángulo rectángulo formado por los puntos $P_1$, $P_2$ y $(x_2, y_1)$. (El teorema de Pitágoras se demostrará más adelante en la sección 3.1)
 
 **Ejemplo 1.2:**
 Calcule la distancia entre $A = (1, 2)$ y $B = (4, 6)$:
@@ -69,7 +69,7 @@ $$M = \left(\frac{2+8}{2}, \frac{5+1}{2}\right) = (5, 3)$$
 **Postulado 4:** Todos los ángulos rectos son iguales entre sí (miden $90°$ o $\frac{\pi}{2}$ radianes).
 **Postulado 5 (Postulado de las paralelas):** Dada una recta $L$ y un punto $P$ fuera de ella, existe **exactamente una** recta que pasa por $P$ y es paralela a $L$.
 
-La geometría clásica que siguen estos 5 axiomas se llama **geometría euclidiana**. Existen otros tipos de geometrías que siguen los 4 primeros axiomas pero no el quito, estas son conocidas como **geometrías no euclidianas**.
+La geometría clásica que sigue estos 5 axiomas se llama **geometría euclidiana**. Existen otros tipos de geometrías que siguen los 4 primeros axiomas pero no el quinto, estas son conocidas como **geometrías no euclidianas**.
 ### 2.2 El problema del quinto postulado
 
 **Observación histórica:** Durante más de 2000 años, los matemáticos intentaron demostrar que el quinto postulado era consecuencia de los otros cuatro, sin éxito.
@@ -135,9 +135,9 @@ Un **segmento** $\overline{AB}$ es la porción de recta limitada entre dos punto
 Una **semirrecta** es una porción de recta que comienza en un punto (origen) y se extiende indefinidamente en una dirección.
 ![[conceptos_geometricos.png]]
 **Definición 2.6 (Ángulo):**
-Un **ángulo** es la región del plano formada por dos semirrectas (lados) que parten de un punto común (vértice). Es una medida de la apertura que existen entre estas 2 reglas, lo puedo pensar como la magnitud que necesito girar para que una recta se convierta en otra.
-Estos se pueden medir en grados sexagesimal, radianes o gradianes.
-Por lo general los ángulos de denominaran con letras griegas $\alpha, \beta, \gamma$ y para presentar un ángulo como incógnita por lo usual se usa la letra griega theta $\theta$
+Un **ángulo** es la región del plano formada por dos semirrectas (lados) que parten de un punto común (vértice). Es una medida de la apertura que existe entre estas dos rectas, se puede pensar como la magnitud que se necesita girar para que una recta se convierta en otra.
+Estos se pueden medir en grados sexagesimales, radianes o gradianes.
+Por lo general los ángulos se denominan con letras griegas $\alpha, \beta, \gamma$ y para representar un ángulo como incógnita usualmente se usa la letra griega theta $\theta$
 ![[angulo_rotacion.png]]
 
 **Clasificación de ángulos (sexagesimal):**
@@ -165,7 +165,7 @@ $$L_1 \perp L_2 \quad \Leftrightarrow \quad L_1 \cap L_2 = \{P\} \text{ y el án
 
 **Propiedades:**
 1. Si $L_1 \perp L_2$, entonces $L_2 \perp L_1$ (la perpendicularidad es simétrica)
-2. En el plano cartesiano, dos rectas no verticales son perpendiculares si y solo si el producto de sus pendientes es $-1$ (esto se demostrara en próximas clases):
+2. En el plano cartesiano, dos rectas no verticales son perpendiculares si y solo si el producto de sus pendientes es $-1$ (esto se demostrará más adelante en el estudio rotaciones de funciones lineales):
    $$m_1 \cdot m_2 = -1 \quad \Leftrightarrow \quad m_2 = -\frac{1}{m_1}$$
 3. Por un punto dado, existe exactamente una recta perpendicular a una recta dada
 
@@ -182,7 +182,9 @@ Una recta es **tangente** a una curva en un punto $P$ si toca la curva en $P$ pe
 
 ## 3. Polígonos y figuras geométricas
 
-**Definición 3.0 (Polígono):**
+### 3.0 Definición general de polígono
+
+**Definición 3.1 (Polígono):**
 Un **polígono** es una figura geométrica plana y cerrada formada por una secuencia finita de segmentos de recta consecutivos (llamados **lados**) que se unen en puntos (llamados **vértices**), de modo que:
 1. Cada lado intersecta exactamente a otros dos lados (uno en cada extremo)
 2. Los lados no se cruzan entre sí excepto en los vértices
@@ -216,14 +218,14 @@ $$\overline{P_1P_2}, \overline{P_2P_3}, \dots, \overline{P_{n-1}P_n}, \overline{
 | 12 | Dodecágono |
 | $n$ | $n$-gono |
 
-**Definición 3.0.1 (Perímetro):**
+**Definición 3.2 (Perímetro):**
 El **perímetro** de un polígono es la suma de las longitudes de todos sus lados. Se denota comúnmente como $P$ y se mide en **unidades de longitud** (u, cm, m, etc.).
 
 Para un polígono con lados de longitudes $\ell_1, \ell_2, \dots, \ell_n$:
 $$P = \ell_1 + \ell_2 + \dots + \ell_n = \sum_{i=1}^{n} \ell_i$$
 **Ejemplo:** Un triángulo con lados de 3 cm, 4 cm y 5 cm tiene perímetro $P = 3 + 4 + 5 = 12$ cm.
 
-**Definición 3.0.2 (Área):**
+**Definición 3.3 (Área):**
 El **área** de un polígono es la medida de la región del plano que encierra (la superficie interior delimitada por sus lados). Se denota comúnmente como $A$ y se mide en **unidades cuadradas** (u², cm², m², etc.). 
 
 **Observación:** El área cuantifica "cuánto espacio ocupa" el polígono. Para diferentes polígonos existen fórmulas específicas de cálculo:
@@ -254,7 +256,7 @@ $$A = \frac{1}{2} \cdot (6 \text{ cm}) \cdot (4 \text{ cm}) = \frac{1}{2} \cdot 
 Las unidades se combinan correctamente: $\text{cm} \times \text{cm} = \text{cm}^2$
 ### 3.1 Triángulos
 
-**Definición 3.1 (Triángulo):**
+**Definición 3.4 (Triángulo):**
 Un **triángulo** es un polígono de **tres lados**, tres vértices y tres ángulos interiores. Es el polígono con el menor número de lados posible.
 
 **Clasificación por lados:**
@@ -274,10 +276,10 @@ Un **triángulo** es un polígono de **tres lados**, tres vértices y tres ángu
 | **Obtusángulo** | Un ángulo obtuso ($>90°$) |
 
 ![[tipos_triangulos.png]]
-**Proposición 3.1.1 (Perímetro del triángulo):**
+**Proposición 3.5 (Perímetro del triángulo):**
 El perímetro de un triángulo con lados $a$, $b$ y $c$ es:
 $$P = a + b + c$$
-**Proposición 3.1.2 (Área del triángulo - Fórmula clásica):**
+**Proposición 3.6 (Área del triángulo - Fórmula clásica):**
 El área de un triángulo es:
 $$A = \frac{1}{2} \cdot \text{base} \cdot \text{altura} = \frac{b \cdot h}{2}$$
 donde $b$ es la longitud de la base y $h$ es la altura perpendicular desde el vértice opuesto a dicha base.
@@ -303,7 +305,7 @@ El paralelogramo formado tiene:
 Como el triángulo es exactamente **la mitad** del paralelogramo:
 $$A_{\triangle} = \frac{1}{2} A_{\text{paral}} = \frac{1}{2} \cdot b \cdot h = \frac{bh}{2}$$
 
-**Teorema 3.3 (Fórmula de Herón):**
+**Teorema 3.7 (Fórmula de Herón):**
 El área de un triángulo con lados $a$, $b$ y $c$ puede calcularse usando únicamente las longitudes de sus lados mediante:
 $$A = \sqrt{s(s-a)(s-b)(s-c)}$$
 donde $s$ es el **semiperímetro**:
@@ -352,10 +354,10 @@ Semiperímetro: $s = \frac{5+6+7}{2} = 9$
 
 Área:
 $$A = \sqrt{9(9-5)(9-6)(9-7)} = \sqrt{9 \cdot 4 \cdot 3 \cdot 2} = \sqrt{216} = 6\sqrt{6} \approx 14.7 \text{ unidades}^2$$
-**Teorema 3.1 (Suma de ángulos internos):**
+**Teorema 3.8 (Suma de ángulos internos):**
 La suma de los ángulos internos de cualquier triángulo en geometría euclidiana es:
 $$\alpha + \beta + \gamma = 180°$$
-**Teorema 3.2 (Teorema de Pitágoras):**
+**Teorema 3.9 (Teorema de Pitágoras):**
 En un triángulo rectángulo con catetos $a, b$ e hipotenusa $c$:
 $$c^2 = a^2 + b^2$$
 
@@ -392,7 +394,7 @@ El teorema de Pitágoras establece que **el área del cuadrado construido sobre 
 Esta demostración es atribuida a varios matemáticos antiguos, incluyendo variantes chinas y árabes. Existen más de 370 demostraciones diferentes del teorema de Pitágoras registradas en la historia de las matemáticas.
 ### 3.2 Cuadriláteros
 
-**Definición 3.2 (Cuadrilátero):**
+**Definición 3.10 (Cuadrilátero):**
 Un **cuadrilátero** es un polígono de cuatro lados y cuatro vértices.
 
 **Tipos principales:**
@@ -408,13 +410,13 @@ Un **cuadrilátero** es un polígono de cuatro lados y cuatro vértices.
 | **Trapezoide**    | Ningún par de lados paralelos                  |
 ![[cuadrilateros_tipos.png]]
 
-**Proposición 3.2.1 (Suma de ángulos internos):**
+**Proposición 3.11 (Suma de ángulos internos):**
 La suma de los ángulos internos de un cuadrilátero es:
 $$\alpha + \beta + \gamma + \delta = 360°$$
-**Proposición 3.2.2 (Perímetro del cuadrilátero):**
+**Proposición 3.12 (Perímetro del cuadrilátero):**
 El perímetro de un cuadrilátero con lados $a$, $b$, $c$ y $d$ es:
 $$P = a + b + c + d$$
-**Proposición 3.2.3 (Áreas de cuadriláteros específicos):**
+**Proposición 3.13 (Áreas de cuadriláteros específicos):**
 
 Las fórmulas de área varían según el tipo de cuadrilátero. A continuación se presenta una tabla con las fórmulas más importantes:
 
@@ -466,7 +468,7 @@ Un trapecio con bases $B = 10$ cm, $b = 6$ cm y altura $h = 4$ cm tiene:
 
 ### 3.3 Polígonos regulares
 
-**Definición 3.3 (Polígono regular):**
+**Definición 3.14 (Polígono regular):**
 Un **polígono regular** es un polígono con todos sus lados y ángulos iguales.
 
 **Ejemplos:**
@@ -476,18 +478,18 @@ Un **polígono regular** es un polígono con todos sus lados y ángulos iguales.
 - **Octógono regular:** 8 lados
 - **Decágono regular:** 10 lados
 
-**Teorema 3.3 (Suma de ángulos internos):**
+**Teorema 3.15 (Suma de ángulos internos):**
 La suma de los ángulos internos de un polígono de $n$ lados es:
 $$S = (n - 2) \times 180°$$
 
-**Corolario 3.1:** Cada ángulo interno de un polígono regular de $n$ lados mide:
+**Corolario 3.16:** Cada ángulo interno de un polígono regular de $n$ lados mide:
 $$\alpha = \frac{(n-2) \times 180°}{n}$$
 
 **Ejemplo 3.1:**
 Para un hexágono regular ($n = 6$):
 $$\alpha = \frac{(6-2) \times 180°}{6} = \frac{720°}{6} = 120°$$
 
-**Definición 3.3.1 (Apotema):**
+**Definición 3.17 (Apotema):**
 El **apotema** de un polígono regular es el segmento perpendicular desde el centro del polígono hasta el punto medio de cualquiera de sus lados. Se denota comúnmente como $a$.
 
 **Interpretación geométrica:** El apotema representa la distancia más corta desde el centro del polígono hasta cualquiera de sus lados. Es análogo al radio de un círculo inscrito en el polígono.
@@ -496,7 +498,7 @@ El **apotema** de un polígono regular es el segmento perpendicular desde el cen
 Para un polígono regular de $n$ lados con lado $\ell$ y radio circunscrito $R$ (distancia del centro a un vértice), el apotema $a$ se relaciona mediante:
 $$a = R \cos\left(\frac{180°}{n}\right) = R \cos\left(\frac{\pi}{n}\right)$$
 
-**Teorema 3.3.2 (Área de un polígono regular usando apotema):**
+**Teorema 3.18 (Área de un polígono regular usando apotema):**
 El área de un polígono regular de $n$ lados, con longitud de lado $\ell$ y apotema $a$, es:
 $$A = \frac{P \cdot a}{2} = \frac{n \cdot \ell \cdot a}{2}$$
 donde $P = n \cdot \ell$ es el perímetro del polígono.
@@ -528,11 +530,11 @@ Un octógono regular con lado $\ell = 4$ m y apotema $a = 4.83$ m tiene:
 
 ---
 
-**Sección 3.3.3 (Opcional): Convergencia del polígono regular al círculo**
+**Sección 3.3.1 (Opcional): Convergencia del polígono regular al círculo**
 
 Esta sección explora un resultado fascinante que conecta la geometría discreta (polígonos) con la geometría continua (círculos), anticipando conceptos del Cálculo Diferencial e Integral.
 
-**Proposición 3.3.3 (Límite del polígono regular):**
+**Proposición 3.19 (Límite del polígono regular):**
 Sea una sucesión de polígonos regulares inscrito en un círculo de radio $R$ fijo, donde el número de lados $n$ aumenta indefinidamente. Entonces:
 $$\lim_{n \to \infty} P_n = \text{(polígono de } n \text{ lados)} \to \text{círculo de radio } R$$
 
@@ -613,7 +615,7 @@ Este resultado ilustra un principio fundamental del Cálculo: **aproximar curvas
 
 ### 3.4 Vértices, aristas y la fórmula de Euler
 
-**Definición 3.4 (Poliedro):**
+**Definición 3.20 (Poliedro):**
 Un **poliedro** es un sólido tridimensional limitado por caras planas poligonales.
 
 **Elementos de un poliedro:**
@@ -621,7 +623,7 @@ Un **poliedro** es un sólido tridimensional limitado por caras planas poligonal
 - **Aristas (A):** Segmentos donde se encuentran dos caras
 - **Caras (C):** Polígonos que forman las superficies del poliedro
 
-**Teorema 3.4 (Fórmula de Euler para poliedros convexos):**
+**Teorema 3.21 (Fórmula de Euler para poliedros convexos):**
 Para cualquier poliedro convexo:
 $$V - A + C = 2$$
 **Ejemplo 3.2 (Cubo):**
@@ -642,655 +644,438 @@ Verificación: $4 - 6 + 4 = 2$ ✓
 
 ---
 
-## 4. Relaciones y funciones
+## 4. La recta en el plano cartesiano
 
-### 4.1 Producto cartesiano y relaciones
+### 4.1 Ecuación de la recta y pendiente
 
-**Definición 4.1 (Producto cartesiano):**
-Dados dos conjuntos $A$ y $B$, el **producto cartesiano** $A \times B$ es:
-$$A \times B = \{(a, b) : a \in A, \, b \in B\}$$
-**Ejemplo 4.1:**
-Si $A = \{1, 2\}$ y $B = \{x, y, z\}$, entonces:
-$$A \times B = \{(1,x), (1,y), (1,z), (2,x), (2,y), (2,z)\}$$
-**Definición 4.2 (Relación):**
-Una **relación** $R$ de $A$ en $B$ es cualquier subconjunto de $A \times B$:
-$$R \subseteq A \times B$$
-Si $(a, b) \in R$, decimos que "$a$ está relacionado con $b$" y escribimos $aRb$.
+#### 4.1.1 Concepto intuitivo de pendiente
 
-**Ejemplo 4.2:**
-Sea $A = \{1, 2, 3\}$ y $B = \{2, 4, 6, 8\}$. La relación "$x$ divide a $y$" es:
-$$R = \{(1,2), (1,4), (1,6), (1,8), (2,2), (2,4), (2,6), (2,8), (3,6)\}$$
-### 4.2 Definición formal de función
+**Idea intuitiva:**
+La **pendiente** de una recta es una medida de su **inclinación** o **grado de elevación**. Nos indica cuánto se "eleva" o "desciende" la recta por cada unidad que avanzamos horizontalmente.
 
-**Definición 4.3 (Función):**
-Una **función** $f$ de un conjunto $A$ en un conjunto $B$ es una relación que asigna a **cada elemento** de $A$ **exactamente un** elemento de $B$.
-![[diagrama_funcion.png]]
-**Notación:** $f: A \to B$
-- $A$ es el **dominio** de $f$ (conjunto de partida)
-- $B$ es el **codominio** de $f$ (conjunto de llegada)
-- Si $f$ asigna $b$ a $a$, escribimos $f(a) = b$ (se lee "f de a es igual a b")
+**Ejemplo intuitivo:** 
+Si caminamos por una colina con pendiente 2, significa que por cada metro que avanzamos horizontalmente, ascendemos 2 metros verticalmente. Una pendiente de $-\frac{1}{2}$ significa que por cada 2 metros que avanzamos horizontalmente, descendemos 1 metro.
 
-**Condición crucial:** Para cada $a \in A$, existe **uno y solo uno** $b \in B$ tal que $f(a) = b$.
-
-**Ejemplo 4.3 (Es función):**
-$$f: \{1, 2, 3\} \to \{a, b, c\}$$
-$$f(1) = a, \quad f(2) = b, \quad f(3) = a$$
-Esto **es** una función (cada elemento del dominio tiene exactamente una imagen).
-![[ejemplo_funcion_1.png]]
-
-**Ejemplo 4.4 (NO es función):**
-$$R: \{1, 2\} \to \{a, b, c\}$$
-$$R = \{(1, a), (1, b), (2, c)\}$$
-Esto **no es** una función porque $1$ tiene dos imágenes: $a$ y $b$.
-![[relacion_no_funcion_neon.png]]
-### 4.3 Funciones de $\mathbb{R}$ en $\mathbb{R}$
-
-**Notación estándar:** Una función $f: \mathbb{R} \to \mathbb{R}$ se expresa típicamente como:
-$$y = f(x)$$
-donde:
-- $x$ es la **variable independiente**
-- $y$ es la **variable dependiente**
-
-**Definición 4.4 (Imagen y preimagen):**
-- La **imagen** de $f$ es: $\text{Im}(f) = \{y \in \mathbb{R} : \exists x \in \mathbb{R}, \, f(x) = y\}$
-- La **preimagen** de $y$ es: $f^{-1}(\{y\}) = \{x \in \mathbb{R} : f(x) = y\}$
-
-**Observación importante (Imagen vs. Codominio):**
-
-Es crucial distinguir entre **codominio** e **imagen**:
-
-- **Codominio** (o conjunto de llegada): Es el conjunto $B$ en la definición $f: A \to B$. Es el conjunto que especificamos como "destino posible" de la función, **independientemente de si todos sus elementos son realmente alcanzados**.
-
-- **Imagen** (o rango): Es el subconjunto del codominio que **efectivamente** es alcanzado por la función. Es decir, $\text{Im}(f) = \{f(x) : x \in A\}$.
-
-**Relación:** Siempre se cumple que $\text{Im}(f) \subseteq B$ (codominio), pero no necesariamente $\text{Im}(f) = B$.
-
-**Ejemplo ilustrativo:**
-Consideremos $f: \mathbb{R} \to \mathbb{R}$ definida por $f(x) = x^2$.
-
-- **Dominio:** $\mathbb{R}$ (todos los números reales)
-- **Codominio:** $\mathbb{R}$ (especificado en la definición $f: \mathbb{R} \to \mathbb{R}$)
-- **Imagen:** $[0, +\infty) = \{y \in \mathbb{R} : y \geq 0\}$ (solo números no negativos)
-
-Observamos que $\text{Im}(f) = [0, +\infty) \subsetneq \mathbb{R}$ (la imagen es un subconjunto **propio** del codominio). Por ejemplo, $-1$ pertenece al codominio pero **no** a la imagen, ya que no existe $x \in \mathbb{R}$ tal que $x^2 = -1$.
-
-**Terminología:**
-- Si $\text{Im}(f) = B$, decimos que $f$ es **sobreyectiva** (o suryectiva).
-- Si cada elemento del codominio tiene **a lo sumo** una preimagen, $f$ es **inyectiva**.
-- Si $f$ es inyectiva y sobreyectiva, decimos que es **biyectiva**.
-
-### 4.4 Representación de funciones
-
-**a) Tabla de valores:**
-
-| $x$    | $-2$ | $-1$ | $0$ | $1$ | $2$ |
-| ------ | ---- | ---- | --- | --- | --- |
-| $f(x)$ | $4$  | $1$  | $0$ | $1$ | $4$ |
-
-**b) Fórmula algebraica:**
-$$f(x) = x^2$$
-**c) Gráfica:**
-La gráfica de $f$ es el conjunto de puntos $(x, f(x))$ en el plano:
-$$\text{Graf}(f) = \{(x, y) \in \mathbb{R}^2 : y = f(x)\}$$
-**Ejemplo ilustrativo complejo:**
-Consideremos la función polinómica:
-$$f(x) = -0.5x^3 + 2x^2 + x - 2$$
-
-**Cálculo de valores paso a paso:**
-
-- Para $x = 1$:
-$$f(1) = -0.5(1)^3 + 2(1)^2 + (1) - 2$$
-$$f(1) = -0.5(1) + 2(1) + 1 - 2$$
-$$f(1) = -0.5 + 2 + 1 - 2 = 0.5$$
-
-- Para $x = 2$:
-$$f(2) = -0.5(2)^3 + 2(2)^2 + (2) - 2$$
-$$f(2) = -0.5(8) + 2(4) + 0$$
-$$f(2) = -4 + 8 = 4$$
-
-**Tabla de valores extendida:**
-
-| $x$    | $-2$ |  $-1$  | $0$  |   $0.5$   |  $1$  | $2$ |  $3$  | $4$ |
-| ------ | :--: | :----: | :--: | :-------: | :---: | :-: | :---: | :-: |
-| $f(x)$ | $8$  | $-0.5$ | $-2$ | $-1.0625$ | $0.5$ | $4$ | $5.5$ | $2$ |
-![[grafica_funcion_puntos.png]]
-![[grafica_funcion_continua.png]]
-
----
-
-## 5. Función lineal y afín
-
-### 5.1 Definición
-
-**Definición 5.1 (Función lineal):**
-Una **función lineal** tiene la forma:
-$$f(x) = mx$$
-donde $m \in \mathbb{R}$ es una constante llamada **pendiente**.
-
-**Definición 5.2 (Función afín):**
-Una **función afín** tiene la forma:
-$$f(x) = mx + b$$
-donde:
-- $m$ es la **pendiente**
-- $b$ es la **ordenada al origen** (intersección con el eje Y)
-
-**Observación:** La gráfica de una función afín es siempre una **recta**.
-
-### 5.2 Pendiente de una recta
-
-**Definición 5.3 (Pendiente):**
-La **pendiente** $m$ de la recta que pasa por los puntos $(x_1, y_1)$ y $(x_2, y_2)$ es:
+**Definición 4.1 (Pendiente de una recta):**
+Dados dos puntos distintos $P_1 = (x_1, y_1)$ y $P_2 = (x_2, y_2)$ en una recta no vertical, la **pendiente** $m$ de la recta que pasa por estos puntos se define como:
 $$m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{\Delta y}{\Delta x}$$
+donde:
+- $\Delta y = y_2 - y_1$ es el **cambio vertical** (variación en $y$)
+- $\Delta x = x_2 - x_1$ es el **cambio horizontal** (variación en $x$)
 
-**Interpretación:** La pendiente mide la **tasa de cambio** de $y$ respecto a $x$, o "cuánto sube o baja la recta por cada unidad que avanzamos horizontalmente".
+**Observación fundamental:** La pendiente es independiente de los puntos elegidos sobre la recta. Si tomamos otros dos puntos $P_3$ y $P_4$ sobre la misma recta, obtendremos el mismo valor de $m$.
 
-**Clasificación por pendiente:**
+**Interpretación geométrica:**
+La pendiente representa la **razón de cambio** de la coordenada $y$ respecto a la coordenada $x$. Es la **tangente del ángulo** $\theta$ que forma la recta con el eje $x$ positivo:
+$$m = \tan(\theta)$$
 
-| Pendiente       | Descripción | Gráfica |
-| --------------- | ----------- | ------- |
-| $m > 0$         | Creciente   | /       |
-| $m = 0$         | Horizontal  | —       |
-| $m < 0$         | Decreciente | \       |
-| $m$ no definida | Vertical    | \|      |
+**Clasificación de rectas según su pendiente:**
 
-**Ejemplo 5.1:**
-La recta que pasa por $A = (1, 2)$ y $B = (4, 8)$ tiene pendiente:
-$$m = \frac{8 - 2}{4 - 1} = \frac{6}{3} = 2$$
+| Pendiente | Descripción | Comportamiento | Gráfica |
+|-----------|-------------|----------------|---------|
+| $m > 0$ | Pendiente positiva | Recta **creciente** (sube de izq. a der.) | / |
+| $m = 0$ | Pendiente cero | Recta **horizontal** | — |
+| $m < 0$ | Pendiente negativa | Recta **decreciente** (baja de izq. a der.) | \ |
+| $m$ indefinida | División por cero ($\Delta x = 0$) | Recta **vertical** | \| |
 
-### 5.3 Ecuación punto-pendiente
+**Ejemplo 4.1 (Cálculo de pendiente):**
+Encuentre la pendiente de la recta que pasa por $A = (2, 3)$ y $B = (6, 11)$:
 
-**Teorema 5.1 (Forma punto-pendiente):**
+$$m = \frac{11 - 3}{6 - 2} = \frac{8}{4} = 2$$
+
+**Interpretación:** Por cada unidad que avanzamos en $x$, $y$ aumenta en 2 unidades.
+
+**Ejemplo 4.2 (Pendiente negativa):**
+Para $P = (1, 5)$ y $Q = (4, -1)$:
+
+$$m = \frac{-1 - 5}{4 - 1} = \frac{-6}{3} = -2$$
+
+**Interpretación:** Por cada unidad que avanzamos en $x$, $y$ disminuye en 2 unidades.
+
+**Ejemplo 4.3 (Recta horizontal):**
+Para $R = (-2, 4)$ y $S = (3, 4)$:
+
+$$m = \frac{4 - 4}{3 - (-2)} = \frac{0}{5} = 0$$
+
+La recta es horizontal (paralela al eje $x$).
+
+**Ejemplo 4.4 (Recta vertical):**
+Para $M = (2, 1)$ y $N = (2, 5)$:
+
+$$m = \frac{5 - 1}{2 - 2} = \frac{4}{0}$$
+
+La pendiente **no está definida** (recta vertical, paralela al eje $y$).
+
+### 4.2 Ecuaciones de la recta
+
+#### 4.2.1 Forma punto-pendiente
+
+**Teorema 4.1 (Ecuación punto-pendiente):**
 La ecuación de la recta con pendiente $m$ que pasa por el punto $(x_0, y_0)$ es:
 $$y - y_0 = m(x - x_0)$$
-**Ejemplo 5.2:**
-Encuentre la ecuación de la recta con pendiente $m = 3$ que pasa por $(2, 5)$:
+
+**Demostración:**
+Sea $P_0 = (x_0, y_0)$ un punto fijo sobre la recta, y sea $P = (x, y)$ un punto genérico (variable) sobre la misma recta. Por definición de pendiente:
+$$m = \frac{y - y_0}{x - x_0}$$
+Multiplicando ambos lados por $(x - x_0)$:
+$$m(x - x_0) = y - y_0$$
+$$y - y_0 = m(x - x_0)$$
+$\square$
+
+**Ejemplo 4.5:**
+Encuentre la ecuación de la recta con pendiente $m = 3$ que pasa por el punto $(1, 2)$:
 
 $$\begin{align}
-y - 5 &= 3(x - 2) \\
-y - 5 &= 3x - 6 \\
+y - 2 &= 3(x - 1) \\
+y - 2 &= 3x - 3 \\
 y &= 3x - 1
 \end{align}$$
 
-**Forma pendiente-ordenada:** $y = 3x - 1$ (con $b = -1$)
+**Ejemplo 4.6:**
+Encuentre la ecuación de la recta que pasa por los puntos $A = (2, 5)$ y $B = (4, 9)$:
 
-### 5.4 Intersecciones con los ejes
+*Paso 1: Calcular la pendiente*
+$$m = \frac{9 - 5}{4 - 2} = \frac{4}{2} = 2$$
 
-**Definición 5.4 (Intersección con el eje Y):**
-La **ordenada al origen** es el valor de $y$ cuando $x = 0$:
-$$y = f(0) = b$$
-Punto: $(0, b)$
+*Paso 2: Usar punto-pendiente con uno de los puntos (usemos $A$)*
+$$y - 5 = 2(x - 2)$$
+$$y - 5 = 2x - 4$$
+$$y = 2x + 1$$
 
-**Definición 5.5 (Intersección con el eje X):**
-La **abscisa al origen** es el valor de $x$ cuando $y = 0$. Para $f(x) = mx + b$:
-$$mx + b = 0 \quad \Rightarrow \quad x = -\frac{b}{m}$$
-Punto: $\left(-\frac{b}{m}, 0\right)$
+**Verificación:** Podemos verificar que ambos puntos satisfacen la ecuación:
+- Para $A = (2, 5)$: $y = 2(2) + 1 = 5$ ✓
+- Para $B = (4, 9)$: $y = 2(4) + 1 = 9$ ✓
 
-**Ejemplo 5.3:**
-Para $f(x) = 2x - 4$:
-- Intersección con eje Y: $(0, -4)$
-- Intersección con eje X: $2x - 4 = 0 \Rightarrow x = 2$, punto $(2, 0)$
+#### 4.2.2 Forma pendiente-ordenada
 
-### 5.5 Ecuación general de la recta
+**Definición 4.2 (Forma pendiente-ordenada o explícita):**
+La **forma pendiente-ordenada** de la ecuación de una recta es:
+$$y = mx + b$$
+donde:
+- $m$ es la **pendiente**
+- $b$ es la **ordenada al origen** (intersección con el eje $y$)
 
-**Definición 5.6 (Ecuación general de la recta):**
-Una recta en el plano cartesiano puede expresarse mediante la **ecuación lineal general**:
+**Observación:** Esta forma se obtiene directamente de la forma punto-pendiente cuando el punto conocido es $(0, b)$:
+$$y - b = m(x - 0) \quad \Rightarrow \quad y = mx + b$$
+
+**Interpretación geométrica:**
+- El coeficiente $m$ determina la **inclinación** de la recta
+- El término $b$ indica dónde la recta **cruza el eje $y$** (cuando $x = 0$)
+
+**Ejemplo 4.7:**
+La recta $y = 2x + 3$ tiene:
+- Pendiente: $m = 2$
+- Ordenada al origen: $b = 3$ (cruza el eje $y$ en el punto $(0, 3)$)
+
+**Ejemplo 4.8:**
+Encuentre la ecuación de la recta con pendiente $m = -\frac{1}{2}$ que pasa por el punto $(4, 1)$:
+
+*Método 1: Punto-pendiente y luego despejar*
+$$y - 1 = -\frac{1}{2}(x - 4)$$
+$$y - 1 = -\frac{1}{2}x + 2$$
+$$y = -\frac{1}{2}x + 3$$
+
+*Método 2: Sustituir el punto en $y = mx + b$ para hallar $b$*
+$$1 = -\frac{1}{2}(4) + b$$
+$$1 = -2 + b$$
+$$b = 3$$
+
+Por lo tanto: $y = -\frac{1}{2}x + 3$
+
+#### 4.2.3 Forma general de la ecuación de la recta
+
+**Definición 4.3 (Ecuación general de la recta):**
+La **forma general** o **implícita** de la ecuación de una recta en el plano es:
 $$Ax + By + C = 0$$
-donde $A, B, C \in \mathbb{R}$ y $(A, B) \neq (0, 0)$ (al menos uno de los coeficientes $A$ o $B$ debe ser distinto de cero).
+donde $A, B, C \in \mathbb{R}$ y $(A, B) \neq (0, 0)$ (al menos uno de $A$ o $B$ debe ser distinto de cero).
 
-**Relación con la función lineal:**
-
-**Proposición 5.1:**
-Toda ecuación lineal $Ax + By + C = 0$ con $B \neq 0$ puede expresarse como una función afín $y = f(x)$.
+**Proposición 4.1 (Equivalencia entre formas):**
+Toda ecuación lineal en forma general con $B \neq 0$ puede expresarse en forma pendiente-ordenada, y viceversa.
 
 **Demostración:**
-Si $B \neq 0$, despejamos $y$:
+Si $B \neq 0$, despejamos $y$ de la forma general:
 $$Ax + By + C = 0$$
 $$By = -Ax - C$$
 $$y = -\frac{A}{B}x - \frac{C}{B}$$
 
-Identificando con la forma $y = mx + b$:
+Identificando con $y = mx + b$:
 - Pendiente: $m = -\frac{A}{B}$
-- Ordenada al origen: $b = -\frac{C}{B}$
+- Ordenada: $b = -\frac{C}{B}$
 
-Por lo tanto, $f(x) = -\frac{A}{B}x - \frac{C}{B}$. $\square$
+Recíprocamente, dada $y = mx + b$, podemos escribir:
+$$y - mx - b = 0$$
+$$-mx + y - b = 0$$
+
+Multiplicando por $-1$: $mx - y + b = 0$
+
+Identificando: $A = m$, $B = -1$, $C = b$. $\square$
 
 **Casos especiales:**
 
-1. **Recta vertical ($B = 0$):** La ecuación $Ax + C = 0$ representa una recta vertical $x = -\frac{C}{A}$.
-   - **No es función** (falla la prueba de la recta vertical)
-   - Todos los puntos tienen la misma abscisa
+1. **Recta vertical ($B = 0$):** La ecuación $Ax + C = 0$ representa una recta vertical $x = -\frac{C}{A} = k$ (constante).
+   - **No es función** (no pasa la prueba de la recta vertical)
+   - Pendiente indefinida
+   - Todos los puntos tienen la misma abscisa $x = k$
 
-2. **Recta horizontal ($A = 0$):** La ecuación $By + C = 0$ representa una recta horizontal $y = -\frac{C}{B}$.
-   - **Es una función constante** $f(x) = -\frac{C}{B}$
+2. **Recta horizontal ($A = 0$):** La ecuación $By + C = 0$ representa una recta horizontal $y = -\frac{C}{B} = k$ (constante).
+   - **Es una función constante** $f(x) = k$
    - Pendiente $m = 0$
+   - Todos los puntos tienen la misma ordenada $y = k$
 
-**Ejemplo 5.4:**
-Convertir $3x + 2y - 6 = 0$ a forma función:
-$$2y = -3x + 6$$
-$$y = -\frac{3}{2}x + 3$$
-Por lo tanto: $f(x) = -\frac{3}{2}x + 3$ con $m = -\frac{3}{2}$ y $b = 3$.
+**Ejemplo 4.9 (Conversión de forma general a pendiente-ordenada):**
+Convierta $2x + 3y - 6 = 0$ a la forma $y = mx + b$:
 
-**Ejemplo 5.5:**
-La ecuación $x = 5$ (equivalente a $x + 0y - 5 = 0$) representa una recta vertical que **no** es función.
+$$\begin{align}
+2x + 3y - 6 &= 0 \\
+3y &= -2x + 6 \\
+y &= -\frac{2}{3}x + 2
+\end{align}$$
 
-### 5.6 Intersección de dos rectas y sistemas de ecuaciones
+Pendiente: $m = -\frac{2}{3}$, Ordenada: $b = 2$
 
-**Definición 5.7 (Punto de intersección):**
-Dos rectas se **intersectan** en un punto $P$ si $P$ pertenece simultáneamente a ambas rectas.
+**Ejemplo 4.10 (Conversión de pendiente-ordenada a forma general):**
+Exprese $y = \frac{3}{4}x - 5$ en forma general:
 
-**Teorema 5.2 (Intersección de rectas y sistemas lineales):**
+$$\begin{align}
+y &= \frac{3}{4}x - 5 \\
+4y &= 3x - 20 \quad \text{(multiplicar por 4)} \\
+-3x + 4y + 20 &= 0 \\
+3x - 4y - 20 &= 0 \quad \text{(multiplicar por -1)}
+\end{align}$$
+
+Forma general: $3x - 4y - 20 = 0$
+
+### 4.3 Intersecciones con los ejes
+
+**Definición 4.4 (Ordenada al origen):**
+La **ordenada al origen** (o **intersección con el eje $y$**) es el punto donde la recta corta el eje vertical. Se obtiene evaluando $x = 0$:
+$$y = f(0) = m(0) + b = b$$
+**Punto de intersección con eje $y$:** $(0, b)$
+
+**Definición 4.5 (Abscisa al origen):**
+La **abscisa al origen** (o **intersección con el eje $x$**) es el punto donde la recta corta el eje horizontal. Se obtiene resolviendo $y = 0$:
+
+Para la ecuación $y = mx + b$:
+$$0 = mx + b$$
+$$mx = -b$$
+$$x = -\frac{b}{m} \quad \text{(si } m \neq 0\text{)}$$
+
+**Punto de intersección con eje $x$:** $\left(-\frac{b}{m}, 0\right)$
+
+**Observación:** La abscisa al origen también se llama **raíz** o **cero** de la función lineal.
+
+**Ejemplo 4.11:**
+Para la recta $y = 2x - 6$:
+
+*Intersección con eje $y$:* 
+$$x = 0 \Rightarrow y = 2(0) - 6 = -6$$
+Punto: $(0, -6)$
+
+*Intersección con eje $x$:*
+$$y = 0 \Rightarrow 0 = 2x - 6 \Rightarrow x = 3$$
+Punto: $(3, 0)$
+
+**Ejemplo 4.12 (Usando forma general):**
+Para $3x - 2y + 12 = 0$:
+
+*Intersección con eje $y$:* (hacer $x = 0$)
+$$3(0) - 2y + 12 = 0$$
+$$-2y + 12 = 0$$
+$$y = 6$$
+Punto: $(0, 6)$
+
+*Intersección con eje $x$:* (hacer $y = 0$)
+$$3x - 2(0) + 12 = 0$$
+$$3x + 12 = 0$$
+$$x = -4$$
+Punto: $(-4, 0)$
+
+### 4.4 Rectas paralelas y perpendiculares
+
+#### 4.4.1 Rectas paralelas
+
+**Definición 4.6 (Rectas paralelas):**
+Dos rectas son **paralelas** si no se intersectan en ningún punto del plano (mantienen siempre la misma distancia entre sí).
+
+**Teorema 4.2 (Condición de paralelismo):**
+Dos rectas no verticales con pendientes $m_1$ y $m_2$ son **paralelas** si y solo si tienen la **misma pendiente**:
+$$L_1 \parallel L_2 \quad \Leftrightarrow \quad m_1 = m_2$$
+
+**Observación importante:** Las rectas paralelas con la misma pendiente pero diferente ordenada al origen son **rectas paralelas distintas**. Si además tienen la misma ordenada, son la **misma recta**.
+
+**Ejemplo 4.13:**
+Las rectas $y = 3x + 2$ y $y = 3x - 5$ son **paralelas** porque ambas tienen pendiente $m = 3$.
+- Nunca se intersectan
+- Tienen diferente ordenada al origen ($b_1 = 2$ y $b_2 = -5$)
+
+**Ejemplo 4.14:**
+Encuentre la ecuación de la recta que pasa por $(2, 5)$ y es paralela a $y = -\frac{1}{2}x + 3$:
+
+La recta buscada debe tener la misma pendiente: $m = -\frac{1}{2}$
+
+Usando punto-pendiente:
+$$y - 5 = -\frac{1}{2}(x - 2)$$
+$$y - 5 = -\frac{1}{2}x + 1$$
+$$y = -\frac{1}{2}x + 6$$
+
+#### 4.4.2 Rectas perpendiculares
+
+**Definición 4.7 (Rectas perpendiculares):**
+Dos rectas son **perpendiculares** (u **ortogonales**) si se intersectan formando un **ángulo recto** ($90°$ o $\frac{\pi}{2}$ radianes).
+
+**Notación:** $L_1 \perp L_2$ (se lee "$L_1$ perpendicular a $L_2$")
+
+**Teorema 4.3 (Condición de perpendicularidad):**
+Dos rectas no verticales con pendientes $m_1$ y $m_2$ son **perpendiculares** si y solo si el producto de sus pendientes es $-1$:
+$$L_1 \perp L_2 \quad \Leftrightarrow \quad m_1 \cdot m_2 = -1$$
+
+Equivalentemente: $m_2 = -\frac{1}{m_1}$ (las pendientes son **recíprocas opuestas**)
+
+**Demostración (Idea geométrica):**
+Consideremos dos rectas con pendientes $m_1 = \tan(\theta_1)$ y $m_2 = \tan(\theta_2)$, donde $\theta_1$ y $\theta_2$ son los ángulos que forman con el eje $x$ positivo.
+
+Para que sean perpendiculares, el ángulo entre ellas debe ser $90°$, lo que implica:
+$$\theta_2 = \theta_1 + 90°$$
+
+Usando la identidad trigonométrica:
+$$\tan(\theta_1 + 90°) = -\cot(\theta_1) = -\frac{1}{\tan(\theta_1)}$$
+
+Por lo tanto:
+$$m_2 = \tan(\theta_2) = -\frac{1}{\tan(\theta_1)} = -\frac{1}{m_1}$$
+
+Multiplicando ambos lados por $m_1$:
+$$m_1 \cdot m_2 = -1$$
+$\square$
+
+**Ejemplo 4.15:**
+Las rectas $y = 2x + 1$ y $y = -\frac{1}{2}x + 3$ son **perpendiculares** porque:
+$$m_1 \cdot m_2 = 2 \cdot \left(-\frac{1}{2}\right) = -1$$
+
+**Ejemplo 4.16:**
+Encuentre la ecuación de la recta que pasa por $(-1, 4)$ y es perpendicular a $y = 3x - 2$:
+
+La pendiente de la recta dada es $m_1 = 3$. 
+La pendiente de la recta perpendicular es:
+$$m_2 = -\frac{1}{m_1} = -\frac{1}{3}$$
+
+Usando punto-pendiente:
+$$y - 4 = -\frac{1}{3}(x - (-1))$$
+$$y - 4 = -\frac{1}{3}(x + 1)$$
+$$y - 4 = -\frac{1}{3}x - \frac{1}{3}$$
+$$y = -\frac{1}{3}x + \frac{11}{3}$$
+
+**Casos especiales:**
+- Una recta **horizontal** ($m = 0$) es perpendicular a una recta **vertical** (pendiente indefinida)
+- Los ejes coordenados $x$ e $y$ son perpendiculares entre sí
+
+### 4.5 Intersección de dos rectas y sistemas lineales
+
+**Definición 4.8 (Punto de intersección):**
+El **punto de intersección** de dos rectas es el punto que pertenece simultáneamente a ambas rectas.
+
+**Teorema 4.4 (Intersección y sistemas de ecuaciones):**
 El punto de intersección de dos rectas dadas por:
 $$\begin{cases}
-A_1x + B_1y + C_1 = 0 \\
-A_2x + B_2y + C_2 = 0
+L_1: A_1x + B_1y + C_1 = 0 \\
+L_2: A_2x + B_2y + C_2 = 0
 \end{cases}$$
 es la solución del **sistema de ecuaciones lineales** $2 \times 2$.
 
 **Casos posibles:**
 
-1. **Un punto de intersección único (rectas secantes):**
-   Las rectas no son paralelas. El sistema tiene **solución única**.
-   - Condición: $\frac{A_1}{A_2} \neq \frac{B_1}{B_2}$ (pendientes distintas si ambas son no verticales)
+| Caso | Condición | Descripción | Solución |
+|:----:|:----------|:------------|:---------|
+| **1** | $m_1 \neq m_2$ | Rectas **secantes** (se cortan) | **Única** solución |
+| **2** | $m_1 = m_2$, $b_1 \neq b_2$ | Rectas **paralelas** distintas | **Sin** solución |
+| **3** | $m_1 = m_2$, $b_1 = b_2$ | Rectas **coincidentes** (misma recta) | **Infinitas** soluciones |
 
-2. **Ningún punto de intersección (rectas paralelas):**
-   Las rectas son paralelas y distintas. El sistema es **inconsistente** (sin solución).
-   - Condición: $\frac{A_1}{A_2} = \frac{B_1}{B_2} \neq \frac{C_1}{C_2}$
+**Método algebraico (igualación):**
+Para encontrar la intersección de dos rectas en forma $y = m_1x + b_1$ y $y = m_2x + b_2$:
 
-3. **Infinitos puntos de intersección (rectas coincidentes):**
-   Las rectas son la misma. El sistema tiene **infinitas soluciones**.
-   - Condición: $\frac{A_1}{A_2} = \frac{B_1}{B_2} = \frac{C_1}{C_2}$ (ecuaciones proporcionales)
-
-**Método algebraico de solución:**
-
-Para encontrar el punto de intersección de $y = m_1x + b_1$ y $y = m_2x + b_2$ (si $m_1 \neq m_2$):
-
-**Paso 1:** Igualar las funciones:
+*Paso 1:* Igualar las ecuaciones
 $$m_1x + b_1 = m_2x + b_2$$
 
-**Paso 2:** Despejar $x$:
-$$m_1x - m_2x = b_2 - b_1$$
-$$x = \frac{b_2 - b_1}{m_1 - m_2}$$
+*Paso 2:* Despejar $x$
+$$x = \frac{b_2 - b_1}{m_1 - m_2} \quad \text{(si } m_1 \neq m_2\text{)}$$
 
-**Paso 3:** Sustituir en cualquiera de las ecuaciones originales para hallar $y$:
-$$y = m_1x + b_1$$
-**Ejemplo 5.6 (Rectas secantes):**
-Encontrar la intersección de:
-$$\begin{cases}
-y = 2x + 1 \\
-y = -x + 4
-\end{cases}$$
-Igualando:
-$$2x + 1 = -x + 4$$
-$$3x = 3$$
-$$x = 1$$
-Sustituyendo en la primera ecuación:
-$$y = 2(1) + 1 = 3$$
-**Punto de intersección:** $(1, 3)$
+*Paso 3:* Sustituir en cualquiera de las ecuaciones originales para hallar $y$
 
-**Verificación:** 
-- En $y = 2x + 1$: $y = 2(1) + 1 = 3$ ✓
-- En $y = -x + 4$: $y = -(1) + 4 = 3$ ✓
+**Ejemplo 4.17 (Rectas secantes):**
+Encuentre la intersección de $y = 2x + 1$ y $y = -x + 7$:
 
-**Ejemplo 5.7 (Rectas paralelas):**
+*Igualando:*
+$$2x + 1 = -x + 7$$
+$$3x = 6$$
+$$x = 2$$
+
+*Sustituyendo en la primera ecuación:*
+$$y = 2(2) + 1 = 5$$
+
+**Punto de intersección:** $(2, 5)$
+
+**Verificación:**
+- En $y = 2x + 1$: $y = 2(2) + 1 = 5$ ✓
+- En $y = -x + 7$: $y = -(2) + 7 = 5$ ✓
+
+**Ejemplo 4.18 (Rectas paralelas):**
+Analice el sistema:
 $$\begin{cases}
 y = 3x + 2 \\
-y = 3x - 1
+y = 3x - 5
 \end{cases}$$
 
-Ambas tienen pendiente $m = 3$ pero diferente ordenada ($b = 2$ vs $b = -1$).
-Son **paralelas** → No se intersectan → Sistema sin solución.
+Ambas tienen pendiente $m = 3$ pero diferente ordenada ($b_1 = 2 \neq b_2 = -5$).
+Son **paralelas** → **No se intersectan** → Sistema **sin solución**.
 
-**Ejemplo 5.8 (Sistema $2 \times 2$ general):**
-Resolver:
+**Ejemplo 4.19 (Sistema $2 \times 2$ en forma general):**
+Resuelva:
 $$\begin{cases}
-2x + 3y = 12 \\
+2x + 3y = 13 \\
 x - y = 1
 \end{cases}$$
 
-**Método de sustitución:**
+*Método de sustitución:*
 De la segunda ecuación: $x = y + 1$
 
 Sustituyendo en la primera:
-$$2(y + 1) + 3y = 12$$
-$$2y + 2 + 3y = 12$$
-$$5y = 10$$
-$$y = 2$$
+$$2(y + 1) + 3y = 13$$
+$$2y + 2 + 3y = 13$$
+$$5y = 11$$
+$$y = \frac{11}{5}$$
 
-Entonces: $x = 2 + 1 = 3$
+Entonces: $x = \frac{11}{5} + 1 = \frac{16}{5}$$
 
-**Solución:** $(3, 2)$
+**Solución:** $\left(\frac{16}{5}, \frac{11}{5}\right)$
 
-**Interpretación geométrica:** Las rectas $2x + 3y - 12 = 0$ y $x - y - 1 = 0$ se intersectan en el punto $(3, 2)$.
+### 4.6 Distancia de un punto a una recta (Opcional)
 
-**Proposición 5.2 (Condición de perpendicularidad):**
-Dos rectas no verticales con pendientes $m_1$ y $m_2$ son **perpendiculares** si y solo si:
-$$m_1 \cdot m_2 = -1$$
-Equivalentemente: $m_2 = -\frac{1}{m_1}$
+**Teorema 4.5 (Fórmula de la distancia punto-recta):**
+La distancia mínima $d$ desde un punto $P = (x_0, y_0)$ hasta una recta $L: Ax + By + C = 0$ está dada por:
+$$d = \frac{|Ax_0 + By_0 + C|}{\sqrt{A^2 + B^2}}$$
 
-**Ejemplo 5.9:**
-Las rectas $y = 2x + 3$ y $y = -\frac{1}{2}x + 1$ son perpendiculares porque:
-$$m_1 \cdot m_2 = 2 \cdot \left(-\frac{1}{2}\right) = -1$$
+**Interpretación geométrica:** Esta fórmula calcula la longitud del segmento perpendicular desde el punto hasta la recta, que es la **distancia más corta** posible.
 
----
+**Ejemplo 4.20:**
+Calcule la distancia desde el punto $P = (3, 1)$ hasta la recta $L: 4x - 3y - 10 = 0$:
 
-## 6. Raíces de funciones y relación con ecuaciones
+$$d = \frac{|4(3) - 3(1) - 10|}{\sqrt{4^2 + (-3)^2}}$$
+$$d = \frac{|12 - 3 - 10|}{\sqrt{16 + 9}}$$
+$$d = \frac{|-1|}{\sqrt{25}}$$
+$$d = \frac{1}{5}$$
 
-### 6.1 Raíces o ceros de una función
+**Ejemplo 4.21:**
+Encuentre la distancia desde el origen $(0, 0)$ hasta la recta $3x + 4y - 20 = 0$:
 
-**Definición 6.1 (Raíz de una función):**
-Un número $r \in \mathbb{R}$ es una **raíz** o **cero** de $f$ si:
-$$f(r) = 0$$
-
-**Interpretación geométrica:** Las raíces son las **abscisas** de los puntos donde la gráfica de $f$ corta el eje X.
-
-**Ejemplo 6.1:**
-Para $f(x) = x^2 - 5x + 6$:
-$$f(x) = 0 \quad \Rightarrow \quad x^2 - 5x + 6 = 0$$
-Factorizando: $(x - 2)(x - 3) = 0$
-**Raíces:** $x = 2$ y $x = 3$
-
-### 6.2 Relación entre funciones lineales y ecuaciones lineales
-
-**Proposición 6.1:**
-Resolver la ecuación lineal $mx + b = 0$ es equivalente a encontrar la raíz de la función $f(x) = mx + b$.
-
-**Conexión:** 
-- **Ecuación:** $2x - 6 = 0 \quad \Rightarrow \quad x = 3$
-- **Función:** $f(x) = 2x - 6$ tiene raíz en $x = 3$ porque $f(3) = 0$
-- **Gráfica:** La recta $y = 2x - 6$ corta el eje X en $(3, 0)$
-
-### 6.3 Gráfica de una función como conjunto de puntos
-
-**Observación fundamental:**
-Dada una función $y = f(x)$, su gráfica es el conjunto de pares ordenados:
-$$\{(x, y) : y = f(x), \, x \in \text{Dom}(f)\}$$
-**Interpretación:** Si recorremos todos los valores de $x$ en el dominio y calculamos $y = f(x)$, obtenemos una **curva** en el plano.
-
-**Ejemplo 6.2:**
-Para $f(x) = x^2$:
-- Puntos: $(-2, 4)$, $(-1, 1)$, $(0, 0)$, $(1, 1)$, $(2, 4)$, $...$
-- La gráfica forma una **parábola**
-### 6.4 Curvas paramétricas (introducción)
-
-**Definición 6.2 (Curva paramétrica):**
-Una **curva paramétrica** en $\mathbb{R}^2$ se define mediante dos funciones de un parámetro $t$:
-$$\begin{cases}
-x = x(t) \\
-y = y(t)
-\end{cases}$$
-
-donde $t \in I \subseteq \mathbb{R}$ (intervalo de parámetros).
-
-**Interpretación:** A medida que $t$ varía, el punto $(x(t), y(t))$ traza una curva en el plano.
-
-**Ejemplo 6.3 (Círculo unitario):**
-$$\begin{cases}
-x(t) = \cos(t) \\
-y(t) = \sin(t)
-\end{cases} \quad t \in [0, 2\pi]$$
-
-Esto describe un círculo de radio 1 centrado en el origen.
-
-**Nota:** Las curvas paramétricas se estudiarán en profundidad en Cálculo II y Geometría Analítica Avanzada.
+$$d = \frac{|3(0) + 4(0) - 20|}{\sqrt{3^2 + 4^2}}$$
+$$d = \frac{|-20|}{\sqrt{9 + 16}}$$
+$$d = \frac{20}{\sqrt{25}}$$
+$$d = \frac{20}{5} = 4$$
 
 ---
 
-## 7. Función cuadrática
+## 5. Ejercicios propuestos
 
-### 7.1 Definición y forma general
-
-**Definición 7.1 (Función cuadrática):**
-Una **función cuadrática** tiene la forma:
-$$f(x) = ax^2 + bx + c$$
-donde $a, b, c \in \mathbb{R}$ y $a \neq 0$.
-
-**Gráfica:** La gráfica de una función cuadrática es una **parábola**.
-
-### 7.2 Vértice y eje de simetría
-
-**Teorema 7.1 (Coordenadas del vértice):**
-El vértice de la parábola $f(x) = ax^2 + bx + c$ está en el punto:
-$$V = \left(-\frac{b}{2a}, f\left(-\frac{b}{2a}\right)\right)$$
-
-*Esto se demostrara mas adelante en el tema de máximos y mínimos de una función*
-
-**Definición 7.2 (Eje de simetría):**
-La recta vertical $x = -\frac{b}{2a}$ es el **eje de simetría** de la parábola.
-
-**Proposición 7.1 (Concavidad):**
-- Si $a > 0$, la parábola abre **hacia arriba** (∪) y el vértice es un **mínimo**
-- Si $a < 0$, la parábola abre **hacia abajo** (∩) y el vértice es un **máximo**
-
-**Ejemplo 7.1:**
-Para $f(x) = 2x^2 - 8x + 3$:
-- $a = 2 > 0$ → parábola abre hacia arriba
-- Vértice: $x_v = -\frac{-8}{2(2)} = 2$
-- $y_v = f(2) = 2(4) - 8(2) + 3 = 8 - 16 + 3 = -5$
-- **Vértice:** $(2, -5)$
-
-### 7.3 Raíces de la función cuadrática
-
-**Teorema 7.2 (Fórmula general):**
-Las raíces de $ax^2 + bx + c = 0$ son:
-$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
-
-**Definición 7.3 (Discriminante):**
-$$\Delta = b^2 - 4ac$$
-
-**Naturaleza de las raíces:**
-
-| Discriminante | Raíces |
-|---------------|--------|
-| $\Delta > 0$ | Dos raíces reales distintas |
-| $\Delta = 0$ | Una raíz real doble (vértice en eje X) |
-| $\Delta < 0$ | No hay raíces reales (la parábola no corta el eje X) |
-
-**Ejemplo 7.2:**
-Para $f(x) = x^2 - 4x + 4$:
-$$\Delta = (-4)^2 - 4(1)(4) = 16 - 16 = 0$$
-$$x = \frac{4 \pm 0}{2} = 2$$
-**Raíz doble:** $x = 2$
-
-### 7.4 Forma canónica
-
-**Proposición 7.2 (Forma canónica o de vértice):**
-Toda función cuadrática se puede escribir como:
-$$f(x) = a(x - h)^2 + k$$
-donde $(h, k)$ es el vértice.
-
-**Ejemplo 7.3:**
-$$f(x) = 2(x - 3)^2 + 1$$
-tiene vértice en $(3, 1)$ y abre hacia arriba ($a = 2 > 0$).
-
----
-
-## 8. Funciones polinomiales de grado superior
-
-### 8.1 Función cúbica
-
-**Definición 8.1 (Función cúbica):**
-$$f(x) = ax^3 + bx^2 + cx + d, \quad a \neq 0$$
-
-**Características:**
-- Tiene a lo sumo **3 raíces reales**
-- La gráfica tiene forma de "S" o "S invertida"
-- No tiene eje de simetría (pero puede tener punto de inflexión)
-
-**Ejemplo 8.1:**
-$$f(x) = x^3 - 3x$$
-
-```
-       y
-       |
-    2  |       /
-    1  |      /
--------|-----●-----●----> x
-   -2 -1  0  1  2
-   -1  |    /
-   -2  |   /
-```
-
-Raíces: $x^3 - 3x = 0 \Rightarrow x(x^2 - 3) = 0 \Rightarrow x = 0, \pm\sqrt{3}$
-
-### 8.2 Función cuártica (grado 4)
-
-**Definición 8.2 (Función cuártica):**
-$$f(x) = ax^4 + bx^3 + cx^2 + dx + e, \quad a \neq 0$$
-
-**Características:**
-- Tiene a lo sumo **4 raíces reales**
-- Si $a > 0$, ambos extremos tienden a $+\infty$
-- Si $a < 0$, ambos extremos tienden a $-\infty$
-
-**Ejemplo 8.2:**
-$$f(x) = x^4 - 5x^2 + 4 = (x^2 - 1)(x^2 - 4)$$
-**Raíces:** $x = \pm 1, \pm 2$
-
----
-
-## 9. Función raíz cuadrada
-
-### 9.1 Definición y dominio
-
-**Definición 9.1 (Función raíz cuadrada):**
-$$f(x) = \sqrt{x}$$
-
-**Dominio:** $\text{Dom}(f) = [0, +\infty)$ (solo números no negativos)
-**Imagen:** $\text{Im}(f) = [0, +\infty)$
-
-**Propiedades:**
-- $f(0) = 0$
-- Es **creciente** en todo su dominio
-- La gráfica es la mitad superior de una parábola rotada
-
-**Ejemplo 9.1:**
-
-| $x$ | $0$ | $1$ | $4$ | $9$ | $16$ |
-|-----|-----|-----|-----|-----|------|
-| $\sqrt{x}$ | $0$ | $1$ | $2$ | $3$ | $4$ |
-
-### 9.2 Función raíz n-ésima
-
-**Definición 9.2:**
-$$f(x) = \sqrt[n]{x} = x^{1/n}$$
-
-**Dominio:**
-- Si $n$ es **par**: $[0, +\infty)$
-- Si $n$ es **impar**: $(-\infty, +\infty)$
-
-**Ejemplo 9.2:**
-- $\sqrt[3]{-8} = -2$ (raíz cúbica de negativo existe)
-- $\sqrt{-4}$ no está definida en $\mathbb{R}$ (requiere números complejos)
-
----
-
-## 10. Función exponencial
-
-### 10.1 Definición
-
-**Definición 10.1 (Función exponencial):**
-$$f(x) = a^x$$
-donde $a > 0$ y $a \neq 1$ (la **base** $a$ es constante positiva).
-
-**Dominio:** $(-\infty, +\infty)$
-**Imagen:** $(0, +\infty)$ (siempre positiva)
-
-**Propiedades fundamentales:**
-1. $a^0 = 1$ para todo $a > 0$
-2. $a^x \cdot a^y = a^{x+y}$
-3. $\frac{a^x}{a^y} = a^{x-y}$
-4. $(a^x)^y = a^{xy}$
-
-### 10.2 Comportamiento según la base
-
-**Caso 1: Base $a > 1$ (ejemplo: $f(x) = 2^x$)**
-- La función es **creciente**
-- $\lim_{x \to -\infty} a^x = 0$ (asíntota horizontal en $y = 0$)
-- $\lim_{x \to +\infty} a^x = +\infty$ (crece rápidamente)
-
-**Caso 2: Base $0 < a < 1$ (ejemplo: $f(x) = \left(\frac{1}{2}\right)^x$)**
-- La función es **decreciente**
-- $\lim_{x \to -\infty} a^x = +\infty$
-- $\lim_{x \to +\infty} a^x = 0$ (asíntota horizontal en $y = 0$)
-
-**Ejemplo 10.1:**
-Para $f(x) = 2^x$:
-
-| $x$ | $-2$ | $-1$ | $0$ | $1$ | $2$ | $3$ |
-|-----|------|------|-----|-----|-----|-----|
-| $2^x$ | $\frac{1}{4}$ | $\frac{1}{2}$ | $1$ | $2$ | $4$ | $8$ |
-
-
----
-
-## 11. Función logarítmica
-
-### 11.1 Definición
-
-**Definición 11.1 (Logaritmo):**
-El **logaritmo en base $a$** de $x$, denotado $\log_a(x)$, es el exponente al que hay que elevar $a$ para obtener $x$:
-$$y = \log_a(x) \quad \Leftrightarrow \quad a^y = x$$
-
-**Dominio:** $(0, +\infty)$ (solo números positivos)
-**Imagen:** $(-\infty, +\infty)$
-
-**Ejemplo 11.1:**
-- $\log_2(8) = 3$ porque $2^3 = 8$
-- $\log_{10}(100) = 2$ porque $10^2 = 100$
-- $\log_5(1) = 0$ porque $5^0 = 1$
-
-### 11.2 Propiedades fundamentales
-
-**Proposición 11.1 (Propiedades de logaritmos):**
-Para $a, x, y > 0$ con $a \neq 1$:
-
-1. **Logaritmo del producto:** $\log_a(xy) = \log_a(x) + \log_a(y)$
-2. **Logaritmo del cociente:** $\log_a\left(\frac{x}{y}\right) = \log_a(x) - \log_a(y)$
-3. **Logaritmo de una potencia:** $\log_a(x^r) = r \cdot \log_a(x)$
-4. **Identidad fundamental:** $a^{\log_a(x)} = x$
-5. **Cambio de base:** $\log_a(x) = \frac{\log_b(x)}{\log_b(a)}$
-
-**Ejemplo 11.2:**
-$$\log_2(32) = \log_2(2^5) = 5 \cdot \log_2(2) = 5 \cdot 1 = 5$$
-
-### 11.3 Logaritmos especiales
-
-**Definición 11.2 (Logaritmo decimal):**
-$$\log(x) = \log_{10}(x)$$
-(cuando no se escribe la base, generalmente se asume base 10)
-
-**Definición 11.3 (Logaritmo natural):**
-$$\ln(x) = \log_e(x)$$
-donde $e \approx 2.718$ (base natural). Se estudiará en Cálculo.
-
-### 11.4 Relación entre exponencial y logaritmo
-
-**Teorema 11.1:**
-Las funciones $f(x) = a^x$ y $g(x) = \log_a(x)$ son **inversas**:
-$$\log_a(a^x) = x \quad \text{y} \quad a^{\log_a(x)} = x$$
-
-**Interpretación geométrica:** Las gráficas de $y = a^x$ y $y = \log_a(x)$ son **simétricas respecto a la recta $y = x$**.
-
-```
-       y
-       |
-       |     y=2^x
-    4  |       /
-    3  |      /
-    2  |    /•
-    1  |  /  |  y=log₂(x)
--------|•----|-----> x
-       1  2  4
-```
-
-**Ejemplo 11.3:**
-Si $f(x) = 2^x$ pasa por $(3, 8)$, entonces $g(x) = \log_2(x)$ pasa por $(8, 3)$.
-
----
-
-## 12. Ejercicios propuestos
-
-### 12.1 Geometría analítica
+### 5.1 Plano cartesiano y distancias
 
 1. Calcule la distancia entre los puntos $A = (-3, 4)$ y $B = (5, -2)$
 
@@ -1302,56 +1087,37 @@ Si $f(x) = 2^x$ pasa por $(3, 8)$, entonces $g(x) = \log_2(x)$ pasa por $(8, 3)$
 
 5. Encuentre las coordenadas del cuarto vértice $D$ del paralelogramo $ABCD$ si $A = (1, 2)$, $B = (4, 3)$, $C = (5, 6)$
 
-### 12.2 Funciones lineales y afines
+### 5.2 Polígonos y áreas
 
-6. Encuentre la ecuación de la recta que pasa por $(2, 5)$ y $(6, 13)$
+6. Calcule el área de un triángulo con lados $a = 7$, $b = 8$, $c = 9$ usando la fórmula de Herón
 
-7. Determine la ecuación de la recta con pendiente $m = -3$ que pasa por $(-1, 4)$
+7. Un hexágono regular tiene lado $\ell = 5$ cm y apotema $a = 4.33$ cm. Calcule su área
 
-8. Encuentre las intersecciones con los ejes de $f(x) = 3x - 9$
+8. Verifique la fórmula de Euler para un octaedro regular (8 caras, 6 vértices, 12 aristas)
 
-9. Determine si las rectas $y = 2x + 3$ y $y = 2x - 5$ son paralelas, perpendiculares o ninguna
+### 5.3 La recta en el plano
 
-10. Encuentre la ecuación de la recta perpendicular a $y = 4x - 2$ que pasa por el origen
+9. Encuentre la pendiente de la recta que pasa por los puntos $A = (2, 5)$ y $B = (6, 13)$
 
-### 12.3 Funciones cuadráticas
+10. Determine la ecuación de la recta con pendiente $m = -3$ que pasa por el punto $(-1, 4)$
 
-11. Encuentre el vértice y el eje de simetría de $f(x) = x^2 - 6x + 5$
+11. Escriba la ecuación $3x + 2y - 6 = 0$ en la forma $y = mx + b$
 
-12. Determine las raíces de $g(x) = 2x^2 + 5x - 3$
+12. Encuentre las intersecciones con los ejes de la recta $y = 2x - 8$
 
-13. Calcule el discriminante de $h(x) = x^2 + 4x + 10$ e interprete el resultado
+13. Determine si las rectas $y = \frac{1}{2}x + 3$ y $y = \frac{1}{2}x - 5$ son paralelas, perpendiculares o ninguna
 
-14. Escriba $f(x) = 3x^2 - 12x + 7$ en forma canónica
+14. Encuentre la ecuación de la recta perpendicular a $y = 4x - 2$ que pasa por el origen $(0, 0)$
 
-15. Una pelota se lanza verticalmente y su altura viene dada por $h(t) = -5t^2 + 20t + 2$ (metros). ¿Cuál es la altura máxima alcanzada?
+15. Encuentre la ecuación de la recta que pasa por los puntos $P = (1, 3)$ y $Q = (4, 9)$
 
-### 12.4 Otras funciones
+16. Determine el punto de intersección de las rectas $y = 3x + 2$ y $y = -2x + 12$
 
-16. Resuelva: $2^x = 32$
+17. Encuentre la ecuación de la recta paralela a $2x - 3y + 6 = 0$ que pasa por el punto $(3, -1)$
 
-17. Calcule: $\log_3(81)$
-
-18. Simplifique: $\log_5(125) - \log_5(25)$
-
-19. Resuelva: $\log_2(x) = 5$
-
-20. Encuentre el dominio de $f(x) = \sqrt{4 - x}$
-
-### 12.5 Análisis de gráficas
-
-21. Determine cuáles de las siguientes gráficas representan funciones (use el criterio de la recta vertical)
-
-22. Dada la gráfica de una parábola con vértice en $(2, -3)$ que pasa por $(0, 1)$, encuentre su ecuación
-
-23. Dibuje la gráfica de $f(x) = |x - 2|$ (valor absoluto)
-
-24. Grafique $g(x) = \begin{cases} x + 1 & \text{si } x < 0 \\ x^2 & \text{si } x \geq 0 \end{cases}$ (función definida por partes)
-
-25. Determine la imagen de $f(x) = -x^2 + 4$
+18. Calcule la distancia desde el punto $(2, 3)$ hasta la recta $3x - 4y + 5 = 0$
 
 ---
 
-**Fin de la Clase 4**
-
+**Fin de la Clase 4: Geometría Analítica**
 
