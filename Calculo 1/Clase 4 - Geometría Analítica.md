@@ -397,18 +397,58 @@ Esta demostración es atribuida a varios matemáticos antiguos, incluyendo varia
 **Definición 3.10 (Cuadrilátero):**
 Un **cuadrilátero** es un polígono de cuatro lados y cuatro vértices.
 
-**Tipos principales:**
+**Clasificación de cuadriláteros:**
 
-| Figura            | Descripción                                    |
-| ----------------- | ---------------------------------------------- |
-| **Cuadrado**      | Cuatro lados iguales, cuatro ángulos rectos    |
-| **Rectángulo**    | Lados opuestos iguales, cuatro ángulos rectos  |
-| **Rombo**         | Cuatro lados iguales, ángulos opuestos iguales |
-| **Paralelogramo** | Lados opuestos paralelos e iguales             |
-| **Trapecio**      | Exactamente un par de lados paralelos          |
-| **Deltoide**      | Dos pares de lados adyacentes iguales          |
-| **Trapezoide**    | Ningún par de lados paralelos                  |
+Los cuadriláteros se clasifican según la cantidad de pares de lados paralelos que posean:
+
+| Figura          | Lados iguales | Ángulos | Lados paralelos |
+| --------------- | ------------- | ------- | --------------- |
+| **Cuadrado**    | 4 lados iguales | 4 ángulos rectos (90°) | 2 pares de lados paralelos |
+| **Rectángulo**  | Lados opuestos iguales | 4 ángulos rectos (90°) | 2 pares de lados paralelos |
+| **Rombo**       | 4 lados iguales | Ángulos opuestos iguales | 2 pares de lados paralelos |
+| **Romboide**    | Lados opuestos iguales | Ángulos opuestos iguales | 2 pares de lados paralelos |
+| **Trapecio**    | Varía según tipo | Varía según tipo | 1 par de lados paralelos |
+| **Trapezoide**  | Sin condición especial | Sin condición especial | 0 pares de lados paralelos |
+
 ![[cuadrilateros_tipos.png]]
+
+**Familias de cuadriláteros:**
+
+**1. Paralelogramos (2 pares de lados paralelos):**
+
+Los **paralelogramos** son cuadriláteros con **dos pares de lados opuestos paralelos**. Esta familia incluye:
+
+- **Cuadrado:** Paralelogramo con los 4 lados iguales y los 4 ángulos rectos (caso más particular)
+- **Rectángulo:** Paralelogramo con 4 ángulos rectos y lados opuestos iguales
+- **Rombo:** Paralelogramo con los 4 lados iguales pero ángulos no necesariamente rectos
+- **Romboide:** Paralelogramo general con lados opuestos iguales y ángulos opuestos iguales (sin ángulos rectos)
+
+**Propiedades comunes de los paralelogramos:**
+- Lados opuestos paralelos e iguales
+- Ángulos opuestos iguales
+- Diagonales se bisecan mutuamente (se cortan en su punto medio)
+- La suma de ángulos consecutivos es 180°
+
+**2. Trapecios (1 par de lados paralelos):**
+
+Un **trapecio** es un cuadrilátero con **exactamente un par de lados paralelos** (llamados **bases**). Los otros dos lados se llaman **laterales** o **piernas**.
+
+**Tipos de trapecios:**
+
+- **Trapecio rectángulo:** Tiene un ángulo recto (uno de los lados laterales es perpendicular a las bases)
+- **Trapecio isósceles:** Los lados laterales tienen la misma longitud y los ángulos de la base son iguales
+- **Trapecio escaleno:** Todos los lados tienen longitudes diferentes y ningún ángulo es recto
+
+**Observación sobre el deltoide (o cometa):**
+
+El **deltoide** (también llamado **cometa** o **papalote**) es un cuadrilátero especial que **no pertenece** a las familias anteriores:
+
+- **Definición:** Tiene dos pares de lados **consecutivos** (adyacentes) de igual longitud
+- **Propiedades:**
+  - Las diagonales son perpendiculares
+  - Una de las diagonales biseca a la otra
+  - Tiene un eje de simetría
+- **Nota:** El deltoide NO es un paralelogramo (no tiene lados paralelos en general) ni un trapecio
 
 **Proposición 3.11 (Suma de ángulos internos):**
 La suma de los ángulos internos de un cuadrilátero es:
@@ -420,14 +460,14 @@ $$P = a + b + c + d$$
 
 Las fórmulas de área varían según el tipo de cuadrilátero. A continuación se presenta una tabla con las fórmulas más importantes:
 
-| Cuadrilátero | Fórmula del Área | Variables |
-|:-------------|:-----------------|:----------|
-| **Cuadrado** | $A = \ell^2$ | $\ell$ = lado |
-| **Rectángulo** | $A = b \cdot h$ | $b$ = base, $h$ = altura |
-| **Rombo** | $A = \frac{D \cdot d}{2}$ | $D, d$ = diagonales |
-| **Paralelogramo** | $A = b \cdot h$ | $b$ = base, $h$ = altura perpendicular |
-| **Trapecio** | $A = \frac{(B + b) \cdot h}{2}$ | $B, b$ = bases paralelas, $h$ = altura |
-| **Trapezoide** | — | (Requiere triangulación) |
+| Cuadrilátero             | Fórmula del Área                      | Variables                                              |
+| :----------------------- | :------------------------------------ | :----------------------------------------------------- |
+| **Cuadrado**             | $A = \ell^2$                          | $\ell$ = lado                                          |
+| **Rectángulo**           | $A = b \cdot h$                       | $b$ = base, $h$ = altura                               |
+| **Rombo**                | $A = \frac{D \cdot d}{2}$             | $D, d$ = diagonales                                    |
+| **Paralelogramo**        | $A = b \cdot h$                       | $b$ = base, $h$ = altura perpendicular                 |
+| **Trapecio**             | $A = \frac{(B + b) \cdot h}{2}$       | $B, b$ = bases paralelas, $h$ = altura                 |
+| **Trapezoide**           | —                                     | (Requiere triangulación)                               |
 | **Cuadrilátero general** | $A = \frac{1}{2}d_1 d_2 \sin(\theta)$ | $d_1, d_2$ = diagonales, $\theta$ = ángulo entre ellas |
 
 **Demostraciones y comentarios:**
@@ -441,7 +481,7 @@ Las fórmulas de área varían según el tipo de cuadrilátero. A continuación 
 3. **Rombo:** Las diagonales de un rombo son perpendiculares y se bisecan mutuamente. El rombo se puede dividir en 4 triángulos rectángulos iguales. Si las diagonales miden $D$ y $d$:
    $$A = 4 \times \frac{1}{2} \cdot \frac{D}{2} \cdot \frac{d}{2} = \frac{D \cdot d}{2}$$
 
-4. **Paralelogramo:** Similar al rectángulo, pero los ángulos no son necesariamente rectos. La altura $h$ es la distancia perpendicular entre las bases paralelas.
+4. **Paralelogramos (en general):** Similar al rectángulo, pero los ángulos no son necesariamente rectos. La altura $h$ es la distancia perpendicular entre las bases paralelas.
    $$A = b \cdot h$$
 
 5. **Trapecio:** Se puede demostrar sumando dos triángulos o transformándolo en un paralelogramo. Si $B$ es la base mayor, $b$ la base menor y $h$ la altura:
@@ -494,7 +534,7 @@ El **apotema** de un polígono regular es el segmento perpendicular desde el cen
 
 **Interpretación geométrica:** El apotema representa la distancia más corta desde el centro del polígono hasta cualquiera de sus lados. Es análogo al radio de un círculo inscrito en el polígono.
 
-**Relación con el radio circunscrito:**
+**Relación con el radio circunscrito: (opcional)**
 Para un polígono regular de $n$ lados con lado $\ell$ y radio circunscrito $R$ (distancia del centro a un vértice), el apotema $a$ se relaciona mediante:
 $$a = R \cos\left(\frac{180°}{n}\right) = R \cos\left(\frac{\pi}{n}\right)$$
 
@@ -671,12 +711,12 @@ $$m = \tan(\theta)$$
 
 **Clasificación de rectas según su pendiente:**
 
-| Pendiente | Descripción | Comportamiento | Gráfica |
-|-----------|-------------|----------------|---------|
-| $m > 0$ | Pendiente positiva | Recta **creciente** (sube de izq. a der.) | / |
-| $m = 0$ | Pendiente cero | Recta **horizontal** | — |
-| $m < 0$ | Pendiente negativa | Recta **decreciente** (baja de izq. a der.) | \ |
-| $m$ indefinida | División por cero ($\Delta x = 0$) | Recta **vertical** | \| |
+| Pendiente      | Descripción                        | Comportamiento                              | Gráfica |
+| -------------- | ---------------------------------- | ------------------------------------------- | ------- |
+| $m > 0$        | Pendiente positiva                 | Recta **creciente** (sube de izq. a der.)   | /       |
+| $m = 0$        | Pendiente cero                     | Recta **horizontal**                        | —       |
+| $m < 0$        | Pendiente negativa                 | Recta **decreciente** (baja de izq. a der.) | \       |
+| $m$ indefinida | División por cero ($\Delta x = 0$) | Recta **vertical**                          | \|      |
 
 **Ejemplo 4.1 (Cálculo de pendiente):**
 Encuentre la pendiente de la recta que pasa por $A = (2, 3)$ y $B = (6, 11)$:
@@ -711,6 +751,7 @@ La pendiente **no está definida** (recta vertical, paralela al eje $y$).
 #### 4.2.1 Forma punto-pendiente
 
 **Teorema 4.1 (Ecuación punto-pendiente):**
+Este ecuaciones revise su nombre porque podemos definir algebraicamente una recta si conocemos un punto al que le pertenece y la pendiente de dicha recta.
 La ecuación de la recta con pendiente $m$ que pasa por el punto $(x_0, y_0)$ es:
 $$y - y_0 = m(x - x_0)$$
 
@@ -849,7 +890,7 @@ Forma general: $3x - 4y - 20 = 0$
 
 **Definición 4.4 (Ordenada al origen):**
 La **ordenada al origen** (o **intersección con el eje $y$**) es el punto donde la recta corta el eje vertical. Se obtiene evaluando $x = 0$:
-$$y = f(0) = m(0) + b = b$$
+$$y = m \cdot 0 + b = b$$
 **Punto de intersección con eje $y$:** $(0, b)$
 
 **Definición 4.5 (Abscisa al origen):**
@@ -868,7 +909,7 @@ $$x = -\frac{b}{m} \quad \text{(si } m \neq 0\text{)}$$
 Para la recta $y = 2x - 6$:
 
 *Intersección con eje $y$:* 
-$$x = 0 \Rightarrow y = 2(0) - 6 = -6$$
+$$x = 0 \Rightarrow y = 2 \cdot 0 - 6 = -6$$
 Punto: $(0, -6)$
 
 *Intersección con eje $x$:*
@@ -1054,6 +1095,86 @@ La distancia mínima $d$ desde un punto $P = (x_0, y_0)$ hasta una recta $L: Ax 
 $$d = \frac{|Ax_0 + By_0 + C|}{\sqrt{A^2 + B^2}}$$
 
 **Interpretación geométrica:** Esta fórmula calcula la longitud del segmento perpendicular desde el punto hasta la recta, que es la **distancia más corta** posible.
+
+**Demostración:**
+
+La demostración se basa en encontrar el pie de la perpendicular desde el punto $P$ hasta la recta $L$, y luego calcular la distancia entre estos dos puntos.
+
+**Paso 1: Encontrar la recta perpendicular que pasa por $P$.**
+
+Sea $L: Ax + By + C = 0$ la recta dada. Si $B \neq 0$, podemos escribir:
+$$y = -\frac{A}{B}x - \frac{C}{B}$$
+por lo que la pendiente de $L$ es $m_L = -\frac{A}{B}$.
+
+La recta perpendicular $L_\perp$ que pasa por $P = (x_0, y_0)$ tiene pendiente:
+$$m_\perp = -\frac{1}{m_L} = -\frac{1}{-A/B} = \frac{B}{A}$$
+
+La ecuación de $L_\perp$ en forma punto-pendiente es:
+$$y - y_0 = \frac{B}{A}(x - x_0)$$
+
+Multiplicando por $A$:
+$$A(y - y_0) = B(x - x_0)$$
+$$Ay - Ay_0 = Bx - Bx_0$$
+$$Bx - Ay + (Ay_0 - Bx_0) = 0$$
+
+**Paso 2: Encontrar el punto de intersección $Q$ entre $L$ y $L_\perp$.**
+
+Debemos resolver el sistema:
+$$\begin{cases}
+Ax + By + C = 0 & \text{(recta original)} \\
+Bx - Ay + (Ay_0 - Bx_0) = 0 & \text{(perpendicular)}
+\end{cases}$$
+
+Multiplicando la primera ecuación por $A$: $A^2x + ABy + AC = 0$
+
+Multiplicando la segunda ecuación por $B$: $B^2x - ABy + B(Ay_0 - Bx_0) = 0$
+
+Sumando ambas ecuaciones:
+$$A^2x + B^2x + AC + BAy_0 - B^2x_0 = 0$$
+$$(A^2 + B^2)x = B^2x_0 - BAy_0 - AC$$
+$$x = \frac{B^2x_0 - BAy_0 - AC}{A^2 + B^2} = \frac{B(Bx_0 - Ay_0) - AC}{A^2 + B^2}$$
+
+De manera similar (o sustituyendo en una de las ecuaciones), obtenemos:
+$$y = \frac{A^2y_0 - ABx_0 - BC}{A^2 + B^2} = \frac{A(Ay_0 - Bx_0) - BC}{A^2 + B^2}$$
+
+Por lo tanto, el pie de la perpendicular es:
+$$Q = \left(\frac{B(Bx_0 - Ay_0) - AC}{A^2 + B^2}, \frac{A(Ay_0 - Bx_0) - BC}{A^2 + B^2}\right)$$
+
+**Paso 3: Calcular la distancia $d = |PQ|$.**
+
+Usando la fórmula de distancia entre dos puntos:
+$$d = \sqrt{(x - x_0)^2 + (y - y_0)^2}$$
+
+$$d = \sqrt{\left(\frac{B(Bx_0 - Ay_0) - AC}{A^2 + B^2} - x_0\right)^2 + \left(\frac{A(Ay_0 - Bx_0) - BC}{A^2 + B^2} - y_0\right)^2}$$
+
+Simplificando la primera componente:
+$$x - x_0 = \frac{B(Bx_0 - Ay_0) - AC - x_0(A^2 + B^2)}{A^2 + B^2}$$
+$$= \frac{B^2x_0 - BAy_0 - AC - A^2x_0 - B^2x_0}{A^2 + B^2}$$
+$$= \frac{-A^2x_0 - BAy_0 - AC}{A^2 + B^2} = \frac{-A(Ax_0 + By_0 + C)}{A^2 + B^2}$$
+
+Simplificando la segunda componente:
+$$y - y_0 = \frac{A(Ay_0 - Bx_0) - BC - y_0(A^2 + B^2)}{A^2 + B^2}$$
+$$= \frac{A^2y_0 - ABx_0 - BC - A^2y_0 - B^2y_0}{A^2 + B^2}$$
+$$= \frac{-ABx_0 - B^2y_0 - BC}{A^2 + B^2} = \frac{-B(Ax_0 + By_0 + C)}{A^2 + B^2}$$
+
+Por lo tanto:
+$$d = \sqrt{\left(\frac{-A(Ax_0 + By_0 + C)}{A^2 + B^2}\right)^2 + \left(\frac{-B(Ax_0 + By_0 + C)}{A^2 + B^2}\right)^2}$$
+
+$$d = \sqrt{\frac{A^2(Ax_0 + By_0 + C)^2 + B^2(Ax_0 + By_0 + C)^2}{(A^2 + B^2)^2}}$$
+
+$$d = \sqrt{\frac{(A^2 + B^2)(Ax_0 + By_0 + C)^2}{(A^2 + B^2)^2}}$$
+
+$$d = \sqrt{\frac{(Ax_0 + By_0 + C)^2}{A^2 + B^2}}$$
+
+$$d = \frac{|Ax_0 + By_0 + C|}{\sqrt{A^2 + B^2}}$$ $\square$
+
+**Caso especial ($B = 0$):** Si la recta es vertical ($Ax + C = 0$ o $x = -C/A$), la distancia es simplemente:
+$$d = |x_0 - (-C/A)| = |x_0 + C/A| = \frac{|Ax_0 + C|}{|A|} = \frac{|Ax_0 + C|}{\sqrt{A^2}}$$
+que coincide con la fórmula general (tomando $B = 0$).
+
+**Observación:** El numerador $|Ax_0 + By_0 + C|$ representa el valor absoluto de la evaluación de la expresión de la recta en el punto $P$. El denominador $\sqrt{A^2 + B^2}$ es la norma del vector normal a la recta, $\vec{n} = (A, B)$.
+
+---
 
 **Ejemplo 4.20:**
 Calcule la distancia desde el punto $P = (3, 1)$ hasta la recta $L: 4x - 3y - 10 = 0$:
