@@ -58,7 +58,7 @@ Cuando trabajamos con una función $f: A \to B$, surgen dos preguntas naturales:
 2. **Dado un valor de salida, ¿qué valores de entrada lo produjeron?** Esta es la idea de la **preimagen** de ese valor.
 
 **Idea intuitiva de imagen:**
-La **imagen** de una función es el conjunto de todos los valores que la función **efectivamente alcanza** o "produce". Es decir, si aplicamos la función a todos los elementos del dominio, la imagen es la colección de todos los resultados obtenidos.
+La **imagen o rango** de una función es el conjunto de todos los valores que la función **efectivamente alcanza** o "produce". Es decir, si aplicamos la función a todos los elementos del dominio, la imagen es la colección de todos los resultados obtenidos.
 
 **Ejemplo intuitivo 1:** Considera $f: \{1, 2, 3\} \to \{a, b, c, d\}$ definida por:
 $$f(1) = a, \quad f(2) = b, \quad f(3) = b$$
@@ -301,19 +301,28 @@ Al graficar la función, el rango es la **proyección** de la gráfica sobre el 
 **Observación importante:**
 Calcular el rango suele ser **más difícil** que calcular el dominio, especialmente para funciones complejas. En muchos casos, el análisis gráfico combinado con el análisis algebraico es la mejor estrategia.
 
+**Ejemplo 1.16:**
+Para $f(x) = x^2$:
+- Puntos: $(-2, 4)$, $(-1, 1)$, $(0, 0)$, $(1, 1)$, $(2, 4)$, $...$
+- La gráfica forma una **parábola**
+
 ### 1.5 Representación de funciones
 
 **a) Tabla de valores:**
+Una tabla de valores es una tabla donde en una sección pondremos posibles valores de la variable independiente **X** y en otra sección ponemos los correspondientes valores de la variable dependiente **Y**:
 
-| $x$    | $-2$ | $-1$ | $0$ | $1$ | $2$ |
-| ------ | ---- | ---- | --- | --- | --- |
+|  $x$   | $-2$ | $-1$ | $0$ | $1$ | $2$ |
+| :----: | :--: | :--: | :-: | :-: | :-: |
 | $f(x)$ | $4$  | $1$  | $0$ | $1$ | $4$ |
 
 **b) Fórmula algebraica:**
+Una función puede expresarse mediante una fórmula algebraica explícita, por ejemplo:
 $$f(x) = x^2$$
 **c) Gráfica:**
-La gráfica de $f$ es el conjunto de puntos $(x, f(x))$ en el plano:
-$$\text{Graf}(f) = \{(x, y) \in \mathbb{R}^2 : y = f(x)\}$$
+Dada una función $y = f(x)$, su gráfica es el conjunto de pares ordenados $(x, f(x))$ en el plano:
+$$\text{Graf}(f) = \{(x, y) \in \mathbb{R}^2 : y = f(x), \, x \in \text{Dom}(f) \}$$
+**Interpretación:** Si recorremos todos los valores de $x$ en el dominio y calculamos $y = f(x)$, obtenemos una **curva** en el plano.
+
 **Ejemplo ilustrativo complejo:**
 Consideremos la función polinómica:
 $$f(x) = -0.5x^3 + 2x^2 + x - 2$$
@@ -338,6 +347,9 @@ $$f(2) = -4 + 8 = 4$$
 ![[grafica_funcion_puntos.png]]
 ![[grafica_funcion_continua.png]]
 
+Una forma de saber si una curva es o no una función es trazando una **recta vertical**: si la recta vertical interseca la curva en más de 1 punto, entonces la curva **no es una función**. Este criterio se conoce como la **prueba de la recta vertical**.
+![[no_funcion.png]]
+
 ---
 
 ## 2. Monotonía de funciones
@@ -350,7 +362,7 @@ Cuando observamos la gráfica de una función, podemos notar que algunas funcion
 Una función es **creciente** si al movernos hacia la derecha en el eje $x$ (valores mayores de $x$), los valores de la función también aumentan. Es decir, "entre más a la derecha, más arriba".
 
 **Ejemplo visual:** La función $f(x) = 2x$ es creciente: si tomamos $x_1 = 1$ y $x_2 = 3$ (con $1 < 3$), obtenemos $f(1) = 2$ y $f(3) = 6$, donde $2 < 6$. Al aumentar $x$, aumenta $f(x)$.
-
+![[funcion_creciente_monotona.png]]
 **Idea intuitiva de función decreciente:**
 Una función es **decreciente** si al movernos hacia la derecha en el eje $x$, los valores de la función disminuyen. Es decir, "entre más a la derecha, más abajo".
 
@@ -552,205 +564,47 @@ $$m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{\Delta y}{\Delta x}$$
 | $m < 0$         | Decreciente | \       |
 | $m$ no definida | Vertical    | \|      |
 
-**Ejemplo 3.1:**
-La recta que pasa por $A = (1, 2)$ y $B = (4, 8)$ tiene pendiente:
-$$m = \frac{8 - 2}{4 - 1} = \frac{6}{3} = 2$$
+**Observación:** La pendiente conecta directamente con la monotonía (§2): una función afín es estrictamente creciente si $m > 0$ y estrictamente decreciente si $m < 0$. Para la fórmula de pendiente, ejemplos y ecuaciones de la recta, ver **Clase 4 - Geometría Analítica**, secciones 4.2–4.6.
+### 3.3 De la ecuación general a la función lineal
 
-### 3.3 Ecuación punto-pendiente
+Una **recta** en el plano puede describirse de dos formas distintas:
 
-**Teorema 3.1 (Forma punto-pendiente):**
-La ecuación de la recta con pendiente $m$ que pasa por el punto $(x_0, y_0)$ es:
-$$y - y_0 = m(x - x_0)$$
-**Ejemplo 3.2:**
-Encuentre la ecuación de la recta con pendiente $m = 3$ que pasa por $(2, 5)$:
+- **Geométricamente** (Clase 4): mediante su ecuación general $Ax + By + C = 0$
+- **Funcionalmente** (esta clase): mediante $f(x) = mx + b$, donde $y = f(x)$
 
-$$\begin{align}
-y - 5 &= 3(x - 2) \\
-y - 5 &= 3x - 6 \\
-y &= 3x - 1
-\end{align}$$
+El paso de una forma a la otra es sencillo: si $B \neq 0$, basta despejar $y$:
 
-**Forma pendiente-ordenada:** $y = 3x - 1$ (con $b = -1$)
+$$Ax + By + C = 0 \quad \xrightarrow{\text{despejar } y} \quad y=f(x) = -\frac{A}{B}x - \frac{C}{B}$$
 
-### 3.4 Intersecciones con los ejes
+**Ejemplo:**
+La recta $2x - 3y + 6 = 0$ se convierte en función despejando $y$:
+$$-3y = -2x - 6 \implies y = \frac{2}{3}x + 2$$
 
-**Definición 3.4 (Intersección con el eje Y):**
-La **ordenada al origen** es el valor de $y$ cuando $x = 0$:
-$$y = f(0) = b$$
-Punto: $(0, b)$
+Por lo tanto $f(x) = \frac{2}{3}x + 2$, con pendiente $m = \frac{2}{3}$ y ordenada al origen $b = 2$.
 
-**Definición 3.5 (Intersección con el eje X):**
-La **abscisa al origen** es el valor de $x$ cuando $y = 0$. Para $f(x) = mx + b$:
-$$mx + b = 0 \quad \Rightarrow \quad x = -\frac{b}{m}$$
-Punto: $\left(-\frac{b}{m}, 0\right)$
-
-**Ejemplo 3.3:**
-Para $f(x) = 2x - 4$:
-- Intersección con eje Y: $(0, -4)$
-- Intersección con eje X: $2x - 4 = 0 \Rightarrow x = 2$, punto $(2, 0)$
-
-### 3.5 Ecuación general de la recta
-
-**Definición 3.6 (Ecuación general de la recta):**
-Una recta en el plano cartesiano puede expresarse mediante la **ecuación lineal general**:
-$$Ax + By + C = 0$$
-donde $A, B, C \in \mathbb{R}$ y $(A, B) \neq (0, 0)$ (al menos uno de los coeficientes $A$ o $B$ debe ser distinto de cero).
-
-**Relación con la función lineal:**
-
-**Proposición 3.1:**
-Toda ecuación lineal $Ax + By + C = 0$ con $B \neq 0$ puede expresarse como una función afín $y = f(x)$.
-
-**Demostración:**
-Si $B \neq 0$, despejamos $y$:
-$$Ax + By + C = 0$$
-$$By = -Ax - C$$
-$$y = -\frac{A}{B}x - \frac{C}{B}$$
-
-Identificando con la forma $y = mx + b$:
-- Pendiente: $m = -\frac{A}{B}$
-- Ordenada al origen: $b = -\frac{C}{B}$
-
-Por lo tanto, $f(x) = -\frac{A}{B}x - \frac{C}{B}$. $\square$
-
-**Casos especiales:**
-
-1. **Recta vertical ($B = 0$):** La ecuación $Ax + C = 0$ representa una recta vertical $x = -\frac{C}{A}$.
-   - **No es función** (falla la prueba de la recta vertical)
-   - Todos los puntos tienen la misma abscisa
-
-2. **Recta horizontal ($A = 0$):** La ecuación $By + C = 0$ representa una recta horizontal $y = -\frac{C}{B}$.
-   - **Es una función constante** $f(x) = -\frac{C}{B}$
-   - Pendiente $m = 0$
-
-**Ejemplo 3.4:**
-Convertir $3x + 2y - 6 = 0$ a forma función:
-$$2y = -3x + 6$$
-$$y = -\frac{3}{2}x + 3$$
-Por lo tanto: $f(x) = -\frac{3}{2}x + 3$ con $m = -\frac{3}{2}$ y $b = 3$.
-
-**Ejemplo 3.5:**
-La ecuación $x = 5$ (equivalente a $x + 0y - 5 = 0$) representa una recta vertical que **no** es función.
-
-### 3.6 Intersección de dos rectas y sistemas de ecuaciones
-
-**Definición 3.7 (Punto de intersección):**
-Dos rectas se **intersectan** en un punto $P$ si $P$ pertenece simultáneamente a ambas rectas.
-
-**Teorema 3.2 (Intersección de rectas y sistemas lineales):**
-El punto de intersección de dos rectas dadas por:
-$$\begin{cases}
-A_1x + B_1y + C_1 = 0 \\
-A_2x + B_2y + C_2 = 0
-\end{cases}$$
-es la solución del **sistema de ecuaciones lineales** $2 \times 2$.
-
-**Casos posibles:**
-
-1. **Un punto de intersección único (rectas secantes):**
-   Las rectas no son paralelas. El sistema tiene **solución única**.
-   - Condición: $\frac{A_1}{A_2} \neq \frac{B_1}{B_2}$ (pendientes distintas si ambas son no verticales)
-
-2. **Ningún punto de intersección (rectas paralelas):**
-   Las rectas son paralelas y distintas. El sistema es **inconsistente** (sin solución).
-   - Condición: $\frac{A_1}{A_2} = \frac{B_1}{B_2} \neq \frac{C_1}{C_2}$
-
-3. **Infinitos puntos de intersección (rectas coincidentes):**
-   Las rectas son la misma. El sistema tiene **infinitas soluciones**.
-   - Condición: $\frac{A_1}{A_2} = \frac{B_1}{B_2} = \frac{C_1}{C_2}$ (ecuaciones proporcionales)
-
-**Método algebraico de solución:**
-
-Para encontrar el punto de intersección de $y = m_1x + b_1$ y $y = m_2x + b_2$ (si $m_1 \neq m_2$):
-
-**Paso 1:** Igualar las funciones:
-$$m_1x + b_1 = m_2x + b_2$$
-
-**Paso 2:** Despejar $x$:
-$$m_1x - m_2x = b_2 - b_1$$
-$$x = \frac{b_2 - b_1}{m_1 - m_2}$$
-
-**Paso 3:** Sustituir en cualquiera de las ecuaciones originales para hallar $y$:
-$$y = m_1x + b_1$$
-**Ejemplo 3.6 (Rectas secantes):**
-Encontrar la intersección de:
-$$\begin{cases}
-y = 2x + 1 \\
-y = -x + 4
-\end{cases}$$
-Igualando:
-$$2x + 1 = -x + 4$$
-$$3x = 3$$
-$$x = 1$$
-Sustituyendo en la primera ecuación:
-$$y = 2(1) + 1 = 3$$
-**Punto de intersección:** $(1, 3)$
-
-**Verificación:** 
-- En $y = 2x + 1$: $y = 2(1) + 1 = 3$ ✓
-- En $y = -x + 4$: $y = -(1) + 4 = 3$ ✓
-
-**Ejemplo 3.7 (Rectas paralelas):**
-$$\begin{cases}
-y = 3x + 2 \\
-y = 3x - 1
-\end{cases}$$
-
-Ambas tienen pendiente $m = 3$ pero diferente ordenada ($b = 2$ vs $b = -1$).
-Son **paralelas** → No se intersectan → Sistema sin solución.
-
-**Ejemplo 3.8 (Sistema $2 \times 2$ general):**
-Resolver:
-$$\begin{cases}
-2x + 3y = 12 \\
-x - y = 1
-\end{cases}$$
-
-**Método de sustitución:**
-De la segunda ecuación: $x = y + 1$
-
-Sustituyendo en la primera:
-$$2(y + 1) + 3y = 12$$
-$$2y + 2 + 3y = 12$$
-$$5y = 10$$
-$$y = 2$$
-
-Entonces: $x = 2 + 1 = 3$
-
-**Solución:** $(3, 2)$
-
-**Interpretación geométrica:** Las rectas $2x + 3y - 12 = 0$ y $x - y - 1 = 0$ se intersectan en el punto $(3, 2)$.
-
-**Proposición 3.2 (Condición de perpendicularidad):**
-Dos rectas no verticales con pendientes $m_1$ y $m_2$ son **perpendiculares** si y solo si:
-$$m_1 \cdot m_2 = -1$$
-Equivalentemente: $m_2 = -\frac{1}{m_1}$
-
-**Ejemplo 3.9:**
-Las rectas $y = 2x + 3$ y $y = -\frac{1}{2}x + 1$ son perpendiculares porque:
-$$m_1 \cdot m_2 = 2 \cdot \left(-\frac{1}{2}\right) = -1$$
+**Caso excepcional:** Si $B = 0$ la ecuación es de la forma $x = k$ (recta vertical), y **no puede expresarse como función** $y = f(x)$ porque a un mismo valor de $x$ le corresponderían infinitos valores de $y$.
 
 ---
 
 ## 4. Raíces de funciones y relación con ecuaciones
 
-### 3.1 Raíces o ceros de una función
+### 4.1 Raíces o ceros de una función
 
-**Definición 3.1 (Raíz de una función):**
+**Definición 4.1 (Raíz de una función):**
 Un número $r \in \mathbb{R}$ es una **raíz** o **cero** de $f$ si:
 $$f(r) = 0$$
 
 **Interpretación geométrica:** Las raíces son las **abscisas** de los puntos donde la gráfica de $f$ corta el eje X.
 
-**Ejemplo 3.1:**
+**Ejemplo 4.1:**
 Para $f(x) = x^2 - 5x + 6$:
 $$f(x) = 0 \quad \Rightarrow \quad x^2 - 5x + 6 = 0$$
 Factorizando: $(x - 2)(x - 3) = 0$
 **Raíces:** $x = 2$ y $x = 3$
 
-### 3.2 Relación entre funciones lineales y ecuaciones lineales
+### 4.2 Relación entre funciones lineales y ecuaciones lineales
 
-**Proposición 3.1:**
+**Proposición 4.1:**
 Resolver la ecuación lineal $mx + b = 0$ es equivalente a encontrar la raíz de la función $f(x) = mx + b$.
 
 **Conexión:** 
@@ -758,20 +612,9 @@ Resolver la ecuación lineal $mx + b = 0$ es equivalente a encontrar la raíz de
 - **Función:** $f(x) = 2x - 6$ tiene raíz en $x = 3$ porque $f(3) = 0$
 - **Gráfica:** La recta $y = 2x - 6$ corta el eje X en $(3, 0)$
 
-### 4.3 Gráfica de una función como conjunto de puntos
+### 4.3 Curvas paramétricas (introducción)
 
-**Observación fundamental:**
-Dada una función $y = f(x)$, su gráfica es el conjunto de pares ordenados:
-$$\{(x, y) : y = f(x), \, x \in \text{Dom}(f)\}$$
-**Interpretación:** Si recorremos todos los valores de $x$ en el dominio y calculamos $y = f(x)$, obtenemos una **curva** en el plano.
-
-**Ejemplo 4.2:**
-Para $f(x) = x^2$:
-- Puntos: $(-2, 4)$, $(-1, 1)$, $(0, 0)$, $(1, 1)$, $(2, 4)$, $...$
-- La gráfica forma una **parábola**
-### 4.4 Curvas paramétricas (introducción)
-
-**Definición 4.2 (Curva paramétrica):****
+**Definición 4.3 (Curva paramétrica):**
 Una **curva paramétrica** en $\mathbb{R}^2$ se define mediante dos funciones de un parámetro $t$:
 $$\begin{cases}
 x = x(t) \\
@@ -782,7 +625,7 @@ donde $t \in I \subseteq \mathbb{R}$ (intervalo de parámetros).
 
 **Interpretación:** A medida que $t$ varía, el punto $(x(t), y(t))$ traza una curva en el plano.
 
-**Ejemplo 4.3 (Círculo unitario):**
+**Ejemplo 4.2 (Círculo unitario):**
 $$\begin{cases}
 x(t) = \cos(t) \\
 y(t) = \sin(t)
@@ -796,31 +639,31 @@ Esto describe un círculo de radio 1 centrado en el origen.
 
 ## 5. Función cuadrática
 
-### 4.1 Definición y forma general
+### 5.1 Definición y forma general
 
-**Definición 4.1 (Función cuadrática):**
+**Definición 5.1 (Función cuadrática):**
 Una **función cuadrática** tiene la forma:
 $$f(x) = ax^2 + bx + c$$
 donde $a, b, c \in \mathbb{R}$ y $a \neq 0$.
 
 **Gráfica:** La gráfica de una función cuadrática es una **parábola**.
 
-### 4.2 Vértice y eje de simetría
+### 5.2 Vértice y eje de simetría
 
-**Teorema 4.1 (Coordenadas del vértice):**
+**Teorema 5.1 (Coordenadas del vértice):**
 El vértice de la parábola $f(x) = ax^2 + bx + c$ está en el punto:
 $$V = \left(-\frac{b}{2a}, f\left(-\frac{b}{2a}\right)\right)$$
 
 **Nota:** Esta fórmula se demostrará más adelante utilizando técnicas de Cálculo Diferencial en el tema de máximos y mínimos de una función (derivadas).
 
-**Definición 4.2 (Eje de simetría):**
+**Definición 5.2 (Eje de simetría):**
 La recta vertical $x = -\frac{b}{2a}$ es el **eje de simetría** de la parábola.
 
-**Proposición 4.1 (Concavidad):**
+**Proposición 5.1 (Concavidad):**
 - Si $a > 0$, la parábola abre **hacia arriba** (∪) y el vértice es un **mínimo**
 - Si $a < 0$, la parábola abre **hacia abajo** (∩) y el vértice es un **máximo**
 
-**Ejemplo 4.1:**
+**Ejemplo 5.1:**
 Para $f(x) = 2x^2 - 8x + 3$:
 - $a = 2 > 0$ → parábola abre hacia arriba
 - Vértice: $x_v = -\frac{-8}{2(2)} = 2$
@@ -833,7 +676,7 @@ Para $f(x) = 2x^2 - 8x + 3$:
 Las raíces de $ax^2 + bx + c = 0$ son:
 $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
 
-**Definición 5.3 (Discriminante):****
+**Definición 5.3 (Discriminante):**
 $$\Delta = b^2 - 4ac$$
 
 **Naturaleza de las raíces:**
@@ -857,7 +700,7 @@ Toda función cuadrática se puede escribir como:
 $$f(x) = a(x - h)^2 + k$$
 donde $(h, k)$ es el vértice.
 
-**Ejemplo 5.3:****
+**Ejemplo 5.3:**
 $$f(x) = 2(x - 3)^2 + 1$$
 tiene vértice en $(3, 1)$ y abre hacia arriba ($a = 2 > 0$).
 
@@ -867,7 +710,7 @@ tiene vértice en $(3, 1)$ y abre hacia arriba ($a = 2 > 0$).
 
 ### 6.1 Función cúbica
 
-**Definición 6.1 (Función cúbica):****
+**Definición 6.1 (Función cúbica):**
 $$f(x) = ax^3 + bx^2 + cx + d, \quad a \neq 0$$
 
 **Características:**
@@ -901,7 +744,7 @@ $$f(x) = ax^4 + bx^3 + cx^2 + dx + e, \quad a \neq 0$$
 - Si $a > 0$, ambos extremos tienden a $+\infty$
 - Si $a < 0$, ambos extremos tienden a $-\infty$
 
-**Ejemplo 6.2:****
+**Ejemplo 6.2:**
 $$f(x) = x^4 - 5x^2 + 4 = (x^2 - 1)(x^2 - 4)$$
 **Raíces:** $x = \pm 1, \pm 2$
 
@@ -911,7 +754,7 @@ $$f(x) = x^4 - 5x^2 + 4 = (x^2 - 1)(x^2 - 4)$$
 
 ### 7.1 Definición y dominio
 
-**Definición 7.1 (Función raíz cuadrada):****
+**Definición 7.1 (Función raíz cuadrada):**
 $$f(x) = \sqrt{x}$$
 
 **Dominio:** $\text{Dom}(f) = [0, +\infty)$ (solo números no negativos)
@@ -947,7 +790,7 @@ $$f(x) = \sqrt[n]{x} = x^{1/n}$$
 
 ### 8.1 Definición
 
-**Definición 8.1 (Función exponencial):****
+**Definición 8.1 (Función exponencial):**
 $$f(x) = a^x$$
 donde $a > 0$ y $a \neq 1$ (la **base** $a$ es constante positiva).
 
@@ -960,7 +803,7 @@ donde $a > 0$ y $a \neq 1$ (la **base** $a$ es constante positiva).
 3. $\frac{a^x}{a^y} = a^{x-y}$
 4. $(a^x)^y = a^{xy}$
 
-### 7.2 Comportamiento según la base
+### 8.2 Comportamiento según la base
 
 **Caso 1: Base $a > 1$ (ejemplo: $f(x) = 2^x$)**
 - La función es **creciente**
@@ -972,7 +815,7 @@ donde $a > 0$ y $a \neq 1$ (la **base** $a$ es constante positiva).
 - $\lim_{x \to -\infty} a^x = +\infty$
 - $\lim_{x \to +\infty} a^x = 0$ (asíntota horizontal en $y = 0$)
 
-**Ejemplo 7.1:**
+**Ejemplo 8.2:**
 Para $f(x) = 2^x$:
 
 | $x$ | $-2$ | $-1$ | $0$ | $1$ | $2$ | $3$ |
@@ -982,11 +825,11 @@ Para $f(x) = 2^x$:
 
 ---
 
-## 8. Función logarítmica
+## 9. Función logarítmica
 
-### 8.1 Definición
+### 9.1 Definición
 
-**Definición 8.1 (Logaritmo):**
+**Definición 9.1 (Logaritmo):**
 El **logaritmo en base $a$** de $x$, denotado $\log_a(x)$, es el exponente al que hay que elevar $a$ para obtener $x$:
 $$y = \log_a(x) \quad \Leftrightarrow \quad a^y = x$$
 
@@ -998,9 +841,9 @@ $$y = \log_a(x) \quad \Leftrightarrow \quad a^y = x$$
 - $\log_{10}(100) = 2$ porque $10^2 = 100$
 - $\log_5(1) = 0$ porque $5^0 = 1$
 
-### 8.2 Propiedades fundamentales
+### 9.2 Propiedades fundamentales
 
-**Proposición 8.1 (Propiedades de logaritmos):**
+**Proposición 9.1 (Propiedades de logaritmos):**
 Para $a, x, y > 0$ con $a \neq 1$:
 
 1. **Logaritmo del producto:** $\log_a(xy) = \log_a(x) + \log_a(y)$
@@ -1009,22 +852,22 @@ Para $a, x, y > 0$ con $a \neq 1$:
 4. **Identidad fundamental:** $a^{\log_a(x)} = x$
 5. **Cambio de base:** $\log_a(x) = \frac{\log_b(x)}{\log_b(a)}$
 
-**Ejemplo 8.2:**
+**Ejemplo 9.1:**
 $$\log_2(32) = \log_2(2^5) = 5 \cdot \log_2(2) = 5 \cdot 1 = 5$$
 
-### 8.3 Logaritmos especiales
+### 9.3 Logaritmos especiales
 
-**Definición 8.2 (Logaritmo decimal):**
+**Definición 9.2 (Logaritmo decimal):**
 $$\log(x) = \log_{10}(x)$$
 (cuando no se escribe la base, generalmente se asume base 10)
 
-**Definición 8.3 (Logaritmo natural):**
+**Definición 9.3 (Logaritmo natural):**
 $$\ln(x) = \log_e(x)$$
-donde $e \approx 2.718$ (base natural). Se estudiará en Cálculo.
+donde $e \approx 2.718$ (base natural). Este número es muy importante en el Cálculo; conforme avancemos en las clases conoceremos más propiedades sobre él.
 
-### 8.4 Relación entre exponencial y logaritmo
+### 9.4 Relación entre exponencial y logaritmo
 
-**Teorema 8.1:**
+**Teorema 9.1:**
 Las funciones $f(x) = a^x$ y $g(x) = \log_a(x)$ son **inversas**:
 $$\log_a(a^x) = x \quad \text{y} \quad a^{\log_a(x)} = x$$
 
@@ -1042,12 +885,12 @@ $$\log_a(a^x) = x \quad \text{y} \quad a^{\log_a(x)} = x$$
        1  2  4
 ```
 
-**Ejemplo 8.3:**
+**Ejemplo 9.2:**
 Si $f(x) = 2^x$ pasa por $(3, 8)$, entonces $g(x) = \log_2(x)$ pasa por $(8, 3)$.
 
 ---
 
-## 9. Álgebra de funciones
+## 10. Álgebra de funciones
 
 **Concepto intuitivo:**
 
@@ -1060,30 +903,30 @@ Si tenemos dos funciones $f$ y $g$, la función **suma** $(f + g)$ se evalúa to
 - $(f + g)(3) = f(3) + g(3) = 3 + 2 = 5$
 - $(f + g)(x) = x + 2$
 
-### 9.1 Operaciones aritméticas con funciones
+### 10.1 Operaciones aritméticas con funciones
 
-**Definición 9.1 (Suma de funciones):**
+**Definición 10.1 (Suma de funciones):**
 Dadas dos funciones $f: A \to \mathbb{R}$ y $g: B \to \mathbb{R}$, la **suma** de $f$ y $g$ es la función $(f + g)$ definida por:
 $$(f + g)(x) = f(x) + g(x)$$
 
 El dominio de $f + g$ es:
 $$\text{Dom}(f + g) = \text{Dom}(f) \cap \text{Dom}(g)$$
 
-**Definición 9.2 (Resta de funciones):**
+**Definición 10.2 (Resta de funciones):**
 La **resta** de $f$ y $g$ es la función $(f - g)$ definida por:
 $$(f - g)(x) = f(x) - g(x)$$
 
 El dominio de $f - g$ es:
 $$\text{Dom}(f - g) = \text{Dom}(f) \cap \text{Dom}(g)$$
 
-**Definición 9.3 (Producto de funciones):**
+**Definición 10.3 (Producto de funciones):**
 El **producto** de $f$ y $g$ es la función $(f \cdot g)$ definida por:
 $$(f \cdot g)(x) = f(x) \cdot g(x)$$
 
 El dominio de $f \cdot g$ es:
 $$\text{Dom}(f \cdot g) = \text{Dom}(f) \cap \text{Dom}(g)$$
 
-**Definición 9.4 (Cociente de funciones):**
+**Definición 10.4 (Cociente de funciones):**
 El **cociente** de $f$ y $g$ es la función $\left(\frac{f}{g}\right)$ definida por:
 $$\left(\frac{f}{g}\right)(x) = \frac{f(x)}{g(x)}$$
 
@@ -1092,7 +935,7 @@ $$\text{Dom}\left(\frac{f}{g}\right) = \{x \in \text{Dom}(f) \cap \text{Dom}(g) 
 
 **Observación importante:** En el cociente, además de la restricción $g(x) \neq 0$, también debemos respetar las restricciones de dominio de ambas funciones.
 
-**Ejemplo 9.1:**
+**Ejemplo 10.1:**
 Sean $f(x) = x + 3$ y $g(x) = 2x - 1$. Calcular:
 
 a) $(f + g)(x)$:
@@ -1111,7 +954,7 @@ Para el dominio: $2x - 1 \neq 0 \Rightarrow x \neq \frac{1}{2}$
 
 $$\text{Dom}\left(\frac{f}{g}\right) = \mathbb{R} \setminus \left\{\frac{1}{2}\right\}$$
 
-**Ejemplo 9.2:**
+**Ejemplo 10.2:**
 Sean $f(x) = \sqrt{x}$ y $g(x) = \sqrt{4-x}$. Determinar el dominio de $(f + g)$.
 
 - $\text{Dom}(f) = [0, +\infty)$ (necesitamos $x \geq 0$)
@@ -1122,7 +965,7 @@ $$\text{Dom}(f + g) = \text{Dom}(f) \cap \text{Dom}(g) = [0, +\infty) \cap (-\in
 La función suma es:
 $$(f + g)(x) = \sqrt{x} + \sqrt{4-x}, \quad x \in [0, 4]$$
 
-**Ejemplo 9.3:**
+**Ejemplo 10.3:**
 Sean $f(x) = \ln(x)$ y $g(x) = \frac{1}{x-2}$. Determinar el dominio de $(f \cdot g)$.
 
 - $\text{Dom}(f) = (0, +\infty)$ (logaritmo requiere $x > 0$)
@@ -1133,16 +976,16 @@ $$\text{Dom}(f \cdot g) = (0, +\infty) \cap (\mathbb{R} \setminus \{2\}) = (0, 2
 La función producto es:
 $$(f \cdot g)(x) = \ln(x) \cdot \frac{1}{x-2} = \frac{\ln(x)}{x-2}$$
 
-### 9.2 Múltiplo escalar de una función
+### 10.2 Múltiplo escalar de una función
 
-**Definición 9.5 (Múltiplo escalar):**
+**Definición 10.5 (Múltiplo escalar):**
 Sea $f: A \to \mathbb{R}$ una función y $k \in \mathbb{R}$ una constante. El **múltiplo escalar** de $f$ por $k$ es la función $(k \cdot f)$ definida por:
 $$(k \cdot f)(x) = k \cdot f(x)$$
 
 El dominio de $k \cdot f$ es el mismo que el de $f$:
 $$\text{Dom}(k \cdot f) = \text{Dom}(f)$$
 
-**Ejemplo 9.4:**
+**Ejemplo 10.4:**
 Sea $f(x) = x^2 + 1$ y $k = -3$. Entonces:
 $$(k \cdot f)(x) = -3 \cdot (x^2 + 1) = -3x^2 - 3$$
 
@@ -1151,9 +994,9 @@ $$(k \cdot f)(x) = -3 \cdot (x^2 + 1) = -3x^2 - 3$$
 - Si $0 < k < 1$: **compresión vertical** (la gráfica se acerca al eje $x$)
 - Si $k < 0$: **reflexión respecto al eje $x$ y escalamiento**
 
-### 9.3 Propiedades algebraicas
+### 10.3 Propiedades algebraicas
 
-**Proposición 9.1 (Propiedades de las operaciones con funciones):**
+**Proposición 10.1 (Propiedades de las operaciones con funciones):**
 
 Sean $f$, $g$ y $h$ funciones, y $k, c \in \mathbb{R}$ constantes. Entonces:
 
@@ -1174,7 +1017,7 @@ Sean $f$, $g$ y $h$ funciones, y $k, c \in \mathbb{R}$ constantes. Entonces:
 10. $(kc)f = k(cf)$
 11. $1 \cdot f = f$
 
-**Ejemplo 9.5:**
+**Ejemplo 10.5:**
 Verificar la propiedad distributiva para $f(x) = x$, $g(x) = x + 1$ y $h(x) = 2$:
 
 $$f \cdot (g + h) = x \cdot [(x+1) + 2] = x \cdot (x + 3) = x^2 + 3x$$
@@ -1183,9 +1026,9 @@ $$f \cdot g + f \cdot h = x(x+1) + x(2) = x^2 + x + 2x = x^2 + 3x$$
 
 Efectivamente, ambas expresiones son iguales. ✓
 
-### 9.4 Combinaciones de funciones
+### 10.4 Combinaciones de funciones
 
-**Ejemplo 9.6 (Combinación lineal):**
+**Ejemplo 10.6 (Combinación lineal):**
 Una **combinación lineal** de funciones $f_1, f_2, \ldots, f_n$ con coeficientes $c_1, c_2, \ldots, c_n$ es:
 $$h(x) = c_1 f_1(x) + c_2 f_2(x) + \cdots + c_n f_n(x)$$
 
@@ -1194,7 +1037,7 @@ $$h(x) = 2f_1(x) - 3f_2(x) + 5f_3(x) = 2x^2 - 3x + 5$$
 
 Esto muestra que las **funciones polinómicas** son combinaciones lineales de las funciones potencia.
 
-**Ejemplo 9.7 (Operaciones múltiples):**
+**Ejemplo 10.7 (Operaciones múltiples):**
 Sean $f(x) = x^2$, $g(x) = 2x$ y $h(x) = 1$. Calcular:
 $$k(x) = \frac{f(x) + g(x)}{h(x) + g(x)}$$
 
@@ -1205,7 +1048,7 @@ $$k(x) = \frac{x^2 + 2x}{1 + 2x}$$
 
 $$\text{Dom}(k) = \mathbb{R} \setminus \left\{-\frac{1}{2}\right\}$$
 
-**Ejemplo 9.8 (Producto de funciones con dominios restringidos):**
+**Ejemplo 10.8 (Producto de funciones con dominios restringidos):**
 Sean $f(x) = \sqrt{x-1}$ y $g(x) = \sqrt{5-x}$. Determinar $(f \cdot g)(x)$ y su dominio.
 
 - $\text{Dom}(f) = [1, +\infty)$ (necesitamos $x - 1 \geq 0$)
@@ -1227,58 +1070,56 @@ Las operaciones algebraicas con funciones son fundamentales para:
 
 ---
 
-## 10. Ejercicios propuestos
+## 11. Ejercicios propuestos
 
-### 10.1 Funciones lineales y afines
+### 11.1 Funciones lineales y afines
 
-6. Encuentre la ecuación de la recta que pasa por $(2, 5)$ y $(6, 13)$
+1. Encuentre la ecuación de la recta que pasa por $(2, 5)$ y $(6, 13)$
 
-7. Determine la ecuación de la recta con pendiente $m = -3$ que pasa por $(-1, 4)$
+2. Determine la ecuación de la recta con pendiente $m = -3$ que pasa por $(-1, 4)$
 
-8. Encuentre las intersecciones con los ejes de $f(x) = 3x - 9$
+3. Encuentre las intersecciones con los ejes de $f(x) = 3x - 9$
 
-9. Determine si las rectas $y = 2x + 3$ y $y = 2x - 5$ son paralelas, perpendiculares o ninguna
+4. Determine si las rectas $y = 2x + 3$ y $y = 2x - 5$ son paralelas, perpendiculares o ninguna
 
-10. Encuentre la ecuación de la recta perpendicular a $y = 4x - 2$ que pasa por el origen
+5. Encuentre la ecuación de la recta perpendicular a $y = 4x - 2$ que pasa por el origen
 
-### 10.2 Funciones cuadráticas
+### 11.2 Funciones cuadráticas
 
-11. Encuentre el vértice y el eje de simetría de $f(x) = x^2 - 6x + 5$
+6. Encuentre el vértice y el eje de simetría de $f(x) = x^2 - 6x + 5$
 
-12. Determine las raíces de $g(x) = 2x^2 + 5x - 3$
+7. Determine las raíces de $g(x) = 2x^2 + 5x - 3$
 
-13. Calcule el discriminante de $h(x) = x^2 + 4x + 10$ e interprete el resultado
+8. Calcule el discriminante de $h(x) = x^2 + 4x + 10$ e interprete el resultado
 
-14. Escriba $f(x) = 3x^2 - 12x + 7$ en forma canónica
+9. Escriba $f(x) = 3x^2 - 12x + 7$ en forma canónica
 
-15. Una pelota se lanza verticalmente y su altura viene dada por $h(t) = -5t^2 + 20t + 2$ (metros). ¿Cuál es la altura máxima alcanzada?
+10. Una pelota se lanza verticalmente y su altura viene dada por $h(t) = -5t^2 + 20t + 2$ (metros). ¿Cuál es la altura máxima alcanzada?
 
-### 10.3 Otras funciones
+### 11.3 Otras funciones
 
-16. Resuelva: $2^x = 32$
+11. Resuelva: $2^x = 32$
 
-17. Calcule: $\log_3(81)$
+12. Calcule: $\log_3(81)$
 
-18. Simplifique: $\log_5(125) - \log_5(25)$
+13. Simplifique: $\log_5(125) - \log_5(25)$
 
-19. Resuelva: $\log_2(x) = 5$
+14. Resuelva: $\log_2(x) = 5$
 
-20. Encuentre el dominio de $f(x) = \sqrt{4 - x}$
+15. Encuentre el dominio de $f(x) = \sqrt{4 - x}$
 
-### 10.4 Análisis de gráficas
+### 11.4 Análisis de gráficas
 
-21. Determine cuáles de las siguientes gráficas representan funciones (use el criterio de la recta vertical)
+16. Determine cuáles de las siguientes gráficas representan funciones (use el criterio de la recta vertical)
 
-22. Dada la gráfica de una parábola con vértice en $(2, -3)$ que pasa por $(0, 1)$, encuentre su ecuación
+17. Dada la gráfica de una parábola con vértice en $(2, -3)$ que pasa por $(0, 1)$, encuentre su ecuación
 
-23. Dibuje la gráfica de $f(x) = |x - 2|$ (valor absoluto)
+18. Dibuje la gráfica de $f(x) = |x - 2|$ (valor absoluto)
 
-24. Grafique $g(x) = \begin{cases} x + 1 & \text{si } x < 0 \\ x^2 & \text{si } x \geq 0 \end{cases}$ (función definida por partes)
+19. Grafique $g(x) = \begin{cases} x + 1 & \text{si } x < 0 \\ x^2 & \text{si } x \geq 0 \end{cases}$ (función definida por partes)
 
-25. Determine la imagen de $f(x) = -x^2 + 4$
+20. Determine la imagen de $f(x) = -x^2 + 4$
 
 ---
 
 **Fin de la Clase 5: Funciones Parte 1**
-
-

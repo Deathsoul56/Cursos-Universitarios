@@ -235,11 +235,11 @@ El **área** de un polígono es la medida de la región del plano que encierra (
 
 **Análisis dimensional de las fórmulas de área:** El **análisis dimensional** verifica la consistencia de las fórmulas matemáticas examinando las unidades de medida. Para el área, esperamos obtener **unidades cuadradas** ($[\text{longitud}]^2$).
 
-| Figura | Fórmula | Análisis dimensional |
-|:-------|:--------|:---------------------|
-| **Triángulo** | $A = \dfrac{1}{2} \cdot b \cdot h$ | $[A] = \dfrac{[\text{adim}] \cdot [\text{L}] \cdot [\text{L}]}{1} = [\text{L}^2]$ ✓ |
-| **Cuadrado** | $A = \ell^2$ | $[A] = [\text{L}]^2 = [\text{L}^2]$ ✓ |
-| **Rectángulo** | $A = b \cdot h$ | $[A] = [\text{L}] \cdot [\text{L}] = [\text{L}^2]$ ✓ |
+| Figura         | Fórmula                            | Análisis dimensional                                                                |
+| :------------- | :--------------------------------- | :---------------------------------------------------------------------------------- |
+| **Triángulo**  | $A = \dfrac{1}{2} \cdot b \cdot h$ | $[A] = \dfrac{[\text{adim}] \cdot [\text{L}] \cdot [\text{L}]}{1} = [\text{L}^2]$ ✓ |
+| **Cuadrado**   | $A = \ell^2$                       | $[A] = [\text{L}]^2 = [\text{L}^2]$ ✓                                               |
+| **Rectángulo** | $A = b \cdot h$                    | $[A] = [\text{L}] \cdot [\text{L}] = [\text{L}^2]$ ✓                                |
 
 **Notación:**
 - $[\,\cdot\,]$ denota "dimensión de"
@@ -439,6 +439,22 @@ Un **trapecio** es un cuadrilátero con **exactamente un par de lados paralelos*
 - **Trapecio isósceles:** Los lados laterales tienen la misma longitud y los ángulos de la base son iguales
 - **Trapecio escaleno:** Todos los lados tienen longitudes diferentes y ningún ángulo es recto
 
+**3. Trapezoide (sin lados paralelos):**
+
+**Definición 3.10.1 (Trapezoide):**
+Un **trapezoide** es un cuadrilátero que **no tiene ningún par de lados paralelos**.
+
+**Observación:** El trapezoide es la forma más general de cuadrilátero irregular, sin restricciones especiales sobre sus lados o ángulos.
+
+**Propiedades:**
+- No tiene lados paralelos
+- No tiene propiedades de simetría en general
+- Los cuatro lados pueden tener longitudes diferentes
+- Los cuatro ángulos pueden tener medidas diferentes
+
+**Cálculo del área:** Como no tiene estructura especial, el área se calcula dividiéndolo en triángulos mediante una diagonal:
+$$A_{\text{trapezoide}} = A_{\triangle 1} + A_{\triangle 2}$$
+
 **Observación sobre el deltoide (o cometa):**
 
 El **deltoide** (también llamado **cometa** o **papalote**) es un cuadrilátero especial que **no pertenece** a las familias anteriores:
@@ -472,18 +488,20 @@ Las fórmulas de área varían según el tipo de cuadrilátero. A continuación 
 
 **Demostraciones y comentarios:**
 
-1. **Cuadrado:** Pensemos que tenemos un lienzo en blanco donde dibujamos líneas horizontales separadas por 1 $unidad$ y líneas verticales también separadas por 1 $unidad$. Si dibujamos un cuadrado de lado 1 el área que encierra lo vamos a definir como 1 $unidad^2$, ahora si dibujamos un cuadrado de lado igual a $\ell$ nos haremos la pregunta ¿Cuántos cuadrados de 1 $unidad^2$ encierra nuestro nuevo cuadrado?. Si contamos veremos que tendremos $l$ filas con exactamente $l$ columnas de cuadrados unitarios, por lo tanto el área de un cuadrado de lado $l$ estará dada por la expresion:
+1. **Cuadrado:** Pensemos que tenemos un lienzo en blanco donde dibujamos líneas horizontales separadas por 1 $unidad$ y líneas verticales también separadas por 1 $unidad$. Si dibujamos un cuadrado de lado 1 el área que encierra lo vamos a definir como 1 $unidad^2$
+   ![[cuadrado_unitario.png]]Ahora si dibujamos un cuadrado de lado igual a $\ell$ nos haremos la pregunta ¿Cuántos cuadrados de 1 $unidad^2$ encierra nuestro nuevo cuadrado?. Si contamos veremos que tendremos $l$ filas con exactamente $l$ columnas de cuadrados unitarios, por lo tanto el área de un cuadrado de lado $l$ estará dada por la expresion:
    $$A = \ell \times \ell = \ell^2$$
    ![[area_cuadrado.png]]
 
 2. **Rectángulo:** Lo podemos pensar de la misma manera que con el cuadrado, solo que en este caso los lados no miden lo mismo, así que tendremos el producto de base por altura (lados adyacentes perpendiculares).
    $$A = base \times altura$$
-3. **Rombo:** Las diagonales de un rombo son perpendiculares y se bisecan mutuamente. El rombo se puede dividir en 4 triángulos rectángulos iguales. Si las diagonales miden $D$ y $d$:
-   $$A = 4 \times \frac{1}{2} \cdot \frac{D}{2} \cdot \frac{d}{2} = \frac{D \cdot d}{2}$$
 
-4. **Paralelogramos (en general):** Similar al rectángulo, pero los ángulos no son necesariamente rectos. La altura $h$ es la distancia perpendicular entre las bases paralelas.
+3. **Paralelogramos (en general):** Similar al rectángulo, pero los ángulos no son necesariamente rectos. La altura $h$ es la distancia perpendicular entre las bases paralelas.
    $$A = b \cdot h$$
-
+   ![[paralelogramo_area1.png]]   ![[paralelogramo_area2.png]]
+4. **Rombo (Caso particular):** Un rombo lo podemos dividir en 2 triángulos congruentes, las diagonales de un rombo son perpendiculares y se bisecan mutuamente. Si las diagonales miden $D$ y $d$:
+   $$A = \frac{D \cdot d}{2}$$
+   ![[rombo_area1.png]]![[rombo_area2.png]]   
 5. **Trapecio:** Se puede demostrar sumando dos triángulos o transformándolo en un paralelogramo. Si $B$ es la base mayor, $b$ la base menor y $h$ la altura:
    $$A = \frac{(B + b) \cdot h}{2}$$
    
@@ -885,6 +903,42 @@ y &= \frac{3}{4}x - 5 \\
 \end{align}$$
 
 Forma general: $3x - 4y - 20 = 0$
+
+#### 4.2.4 Ecuación de la recta dados dos puntos
+
+**Proposición 4.2 (Ecuación de la recta por dos puntos):**
+Dados dos puntos distintos $P_0 = (x_0, y_0)$ y $P_1 = (x_1, y_1)$ con $x_0 \neq x_1$, la ecuación de la recta que pasa por ambos es:
+$$\frac{y - y_0}{x - x_0} = \frac{y_1 - y_0}{x_1 - x_0}$$
+
+o equivalentemente:
+$$y - y_0 = \frac{y_1 - y_0}{x_1 - x_0}(x - x_0)$$
+
+**Demostración:**
+Un punto genérico $P = (x, y)$ pertenece a la recta que pasa por $P_0$ y $P_1$ si y solo si los tres puntos son colineales. Esto ocurre cuando la pendiente calculada entre $P$ y $P_0$ es igual a la pendiente calculada entre $P_1$ y $P_0$:
+$$m = \frac{y_1 - y_0}{x_1 - x_0}$$
+Aplicando la forma punto-pendiente con punto $P_0 = (x_0, y_0)$:
+$$y - y_0 = m(x - x_0) = \frac{y_1 - y_0}{x_1 - x_0}(x - x_0) \quad \square$$
+
+**Caso especial ($x_0 = x_1$):** Si los dos puntos tienen la misma abscisa, la recta es **vertical** y su ecuación es simplemente $x = x_0$.
+
+**Ejemplo 4.11:**
+Encuentre la ecuación de la recta que pasa por $P_0 = (1, 3)$ y $P_1 = (4, 9)$:
+
+$$m = \frac{9 - 3}{4 - 1} = \frac{6}{3} = 2$$
+$$y - 3 = 2(x - 1)$$
+$$y = 2x + 1$$
+
+**Ejemplo 4.12:**
+Encuentre la ecuación de la recta que pasa por $P_0 = (-2, 5)$ y $P_1 = (3, -5)$:
+
+$$m = \frac{-5 - 5}{3 - (-2)} = \frac{-10}{5} = -2$$
+$$y - 5 = -2(x - (-2))$$
+$$y - 5 = -2(x + 2)$$
+$$y = -2x + 1$$
+
+**Ejemplo 4.13 (Recta vertical):**
+La recta que pasa por $P_0 = (4, 1)$ y $P_1 = (4, 7)$ tiene $x_0 = x_1 = 4$, por lo tanto su ecuación es:
+$$x = 4$$
 
 ### 4.3 Intersecciones con los ejes
 
