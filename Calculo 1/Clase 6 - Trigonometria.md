@@ -10,19 +10,7 @@ Un **triángulo rectángulo** es un triángulo que tiene un ángulo de $\pi/2$ o
 **Elementos principales:**
 - **Hipotenusa:** El lado opuesto al ángulo recto (el lado más largo)
 - **Catetos:** Los dos lados que forman el ángulo recto
-
-```
-        C
-        |\
-        | \
-cateto  |  \  hipotenusa
-    b   |   \   c
-        |    \
-        |_____\
-        A  a  B
-       cateto
-```
-
+![[triangulo_rectangulo.png|638]]
 **Teorema 1.1 (Teorema de Pitágoras):**
 En todo triángulo rectángulo se cumple:
 $$c^2 = a^2 + b^2$$
@@ -47,15 +35,31 @@ Existen tres sistemas principales para medir ángulos:
 
 **Definición 2.2 (Grado sexagesimal):**
 Pensemos en una circunferencia de radio R; vamos a definir de forma arbitraria que dar una vuelta completa equivale a 360°, por lo tanto, un **grado** ($°$) es $\frac{1}{360}$ de una rotación completa.
-
+![[circulo_sexagesimales.jpg]]
 **Subdivisiones:**
 - 1 grado = 60 minutos ($60'$)
 - 1 minuto = 60 segundos ($60''$)
 
-**Ángulos notables en grados:**
-- Ángulo recto: $90°$
-- Ángulo llano: $180°$
-- Ángulo completo: $360°$
+**Ejemplos:**
+- Ángulo recto: $90°00'00''$
+![[angulo_recto.png]]
+- Ángulo agudo: $37°15'48''$
+- Ángulo con minutos y segundos: $18°56'36''$
+- Ángulo obtuso: $123°42'00''$
+- Ángulo completo: $360°00'00''$
+
+**Conversión de decimal a grados-minutos-segundos:**
+
+Un ángulo expresado en grados decimales como $37.2633...°$ se convierte así:
+- La parte entera son los grados: $37°$
+- La parte decimal $\times\, 60$ da los minutos: $0.2633 \times 60 = 15.8' \Rightarrow 15'$
+- La parte decimal de los minutos $\times\, 60$ da los segundos: $0.8 \times 60 = 48'' $
+
+$$37.2633...° = 37°15'48''$$
+
+**Conversión de grados-minutos-segundos a decimal:**
+
+$$18°56'36'' = 18 + \frac{56}{60} + \frac{36}{3600} = 18 + 0.9\overline{3} + 0.01 = 18.9433...°$$
 
 ### 2.3 Radianes
 
@@ -79,7 +83,6 @@ b) Convertir $\frac{2\pi}{3}$ rad a grados:
 $$\frac{2\pi}{3} = \frac{2\pi}{3} \times \frac{180°}{\pi} = 120°$$
 
 **Nota (Constante tau $\tau$):**
-
 Algunos matemáticos proponen usar la constante **tau** ($\tau$) definida como:
 $$\tau = 2\pi \approx 6.283$$
 
@@ -90,48 +93,9 @@ Esta notación tiene ventajas conceptuales:
 
 La relación entre ángulo y longitud de arco se vuelve aún más directa: $s = R \cdot \theta$ donde $\theta$ en un círculo completo es simplemente $\tau$. Aunque $\tau$ no es estándar en la mayoría de textos, es útil conocer esta alternativa.
 
-**Ángulos notables y Tabla de conversión:**
-
-Existe un grupo de ángulos llamados ángulos notables en los cuales se basan algunos de los cálculos de trigonometría, estos ángulos en sexagesimal son 30°, 45°, 60° y 90°. Estos fueron escogidos por argumentos geométricos, un cuadrado es una estructura considerada "perfecta", lados iguales y ángulos iguales, podemos considerar esta estructura un invariante pues puedo convertir cualquier cuadrado en otro simplemente aumentado o dismiyendo sus lados (una transformación suave, este termino cobrara una gran relevancia mas adelante) y sus angulos siempre se conservaran en 90°, si dibujamos una diagonal tendremos un triangulo isósceles, por lo tanto la diagonal bisecta los ángulos lo que nos dará un triangulo 90°,45°,45°, como este procesos de dibujar un cuadrado y su diagonal es fácilmente replicable tomaremos estos 2 ángulos como base para calculo posteriores.
-Ahora si pensamos en un triangulo equilátero todos sus ángulos serán 60° y si dibujamos una altura tendremos un triángulos 90°,60°,30°, de manera análoga tenemos un procesos muy fácil de replicar y que toma como base un polígono regular, esto nos las los otros 2 ángulos 30° y 60°.
-A estos 4 ángulos le sumaremos el caso base ósea el ángulo 0°, con este conjunto nos basaremos para generar el resto de nuestros cálculos al ser ángulos de fácil construcción.
-Estos ángulos en radianes tendrán los siguientes valores
-
-| Grados |    Radianes     | Fracción de $\pi$ | Fracción de $\tau$ |
-| :----: | :-------------: | :---------------: | :----------------: |
-|  $0°$  |       $0$       |        $0$        |        $0$         |
-| $30°$  | $\frac{\pi}{6}$ | $\frac{1}{6}\pi$  | $\frac{1}{12}\tau$ |
-| $45°$  | $\frac{\pi}{4}$ | $\frac{1}{4}\pi$  | $\frac{1}{8}\tau$  |
-| $60°$  | $\frac{\pi}{3}$ | $\frac{1}{3}\pi$  | $\frac{1}{6}\tau$  |
-| $90°$  | $\frac{\pi}{2}$ | $\frac{1}{2}\pi$  | $\frac{1}{4}\tau$  |
-
-Ahora, si llevamos estas ideas al plano $\mathbb{R}^2$, vemos cómo estos ángulos están contenidos en el primer cuadrante. Si quisiéramos extender esto a los demás cuadrantes, podemos hacer reflexiones de estos ángulos: para el segundo cuadrante se hace una reflexión respecto al eje $Y$; para el tercer cuadrante, respecto al origen; y para el cuarto cuadrante, respecto al eje $X$.
-Con esto podemos crear una tabla ampliada con los ángulos notables en todos los cuadrantes:
-
-| Grados |     Radianes      | Fracción de $\pi$ | Fracción de $\tau$  |
-| :----: | :---------------: | :---------------: | :-----------------: |
-|  $0°$  |        $0$        |        $0$        |         $0$         |
-| $30°$  |  $\frac{\pi}{6}$  | $\frac{1}{6}\pi$  | $\frac{1}{12}\tau$  |
-| $45°$  |  $\frac{\pi}{4}$  | $\frac{1}{4}\pi$  |  $\frac{1}{8}\tau$  |
-| $60°$  |  $\frac{\pi}{3}$  | $\frac{1}{3}\pi$  |  $\frac{1}{6}\tau$  |
-| $90°$  |  $\frac{\pi}{2}$  | $\frac{1}{2}\pi$  |  $\frac{1}{4}\tau$  |
-| $120°$ | $\frac{2\pi}{3}$  | $\frac{2}{3}\pi$  |  $\frac{1}{3}\tau$  |
-| $135°$ | $\frac{3\pi}{4}$  | $\frac{3}{4}\pi$  |  $\frac{3}{8}\tau$  |
-| $150°$ | $\frac{5\pi}{6}$  | $\frac{5}{6}\pi$  | $\frac{5}{12}\tau$  |
-| $180°$ |       $\pi$       |       $\pi$       |  $\frac{1}{2}\tau$  |
-| $210°$ | $\frac{7\pi}{6}$  | $\frac{7}{6}\pi$  | $\frac{7}{12}\tau$  |
-| $225°$ | $\frac{5\pi}{4}$  | $\frac{5}{4}\pi$  |  $\frac{5}{8}\tau$  |
-| $240°$ | $\frac{4\pi}{3}$  | $\frac{4}{3}\pi$  |  $\frac{2}{3}\tau$  |
-| $270°$ | $\frac{3\pi}{2}$  | $\frac{3}{2}\pi$  |  $\frac{3}{4}\tau$  |
-| $300°$ | $\frac{5\pi}{3}$  | $\frac{5}{3}\pi$  |  $\frac{5}{6}\tau$  |
-| $315°$ | $\frac{7\pi}{4}$  | $\frac{7}{4}\pi$  |  $\frac{7}{8}\tau$  |
-| $330°$ | $\frac{11\pi}{6}$ | $\frac{11}{6}\pi$ | $\frac{11}{12}\tau$ |
-| $360°$ |      $2\pi$       |      $2\pi$       |       $\tau$        |
-
 **Nota (Motivación de los radianes):**
 
 La principal ventaja de los radianes sobre los grados sexagesimales es que **los radianes permiten expresar simultáneamente medidas angulares y longitudes de arco**.
-
 En un círculo de radio $R$, si un ángulo $\theta$ (medido en radianes) subtiende un arco, entonces la **longitud del arco** $s$ está dada por:
 $$s = R \cdot \theta$$
 
@@ -158,31 +122,57 @@ $$\text{gradianes} = \text{grados} \times \frac{400}{360} = \text{grados} \times
 $$90° = 90 \times \frac{10}{9} = 100^g$$
 
 **Observación:** Los gradianes se utilizan principalmente en topografía, geodesia y navegación. Su ventaja es que el ángulo recto mide exactamente $100^g$. En este curso trabajaremos principalmente con **grados** y **radianes**.
+### 2.5 Ángulos notables y Tabla de conversión:
 
+Existe un grupo de ángulos llamados ángulos notables en los cuales se basan algunos de los cálculos de trigonometría, estos ángulos en sexagesimal son 30°, 45°, 60° y 90°. Estos fueron escogidos por argumentos geométricos, un cuadrado es una estructura considerada "perfecta", lados iguales y ángulos iguales, podemos considerar esta estructura un invariante pues puedo convertir cualquier cuadrado en otro simplemente aumentando o disminuyendo sus lados (una transformación suave, este término cobrará una gran relevancia más adelante) y sus ángulos siempre serán de 90°
+![[cuadrado_angulos.png]]
+Si dibujamos una diagonal tendremos un triángulo isósceles, por lo tanto la diagonal bisecta los ángulos lo que nos dará un triángulo de 90°,45°,45°, como este proceso de dibujar un cuadrado y su diagonal es fácilmente replicable, tomaremos estos 2 ángulos como base para cálculos posteriores.
+![[cuadrado_angulo45.png]]
+Ahora si pensamos en un triángulo equilátero, todos sus ángulos serán 60° y si dibujamos una altura tendremos un triángulo de 90°,60°,30°; de manera análoga, tenemos un proceso muy fácil de replicar que toma como base un polígono regular, esto nos da los otros 2 ángulos: 30° y 60°.
+A estos 4 ángulos le sumaremos el caso base, o sea el ángulo 0°; con este conjunto nos basaremos para generar el resto de nuestros cálculos al ser ángulos de fácil construcción.
+Estos ángulos en radianes tendrán los siguientes valores
+![[triangulo_isoseles_angulos.png]]
 
+| Grados |    Radianes     | Fracción de $\pi$ | Fracción de $\tau$ |
+| :----: | :-------------: | :---------------: | :----------------: |
+|  $0°$  |       $0$       |        $0$        |        $0$         |
+| $30°$  | $\frac{\pi}{6}$ | $\frac{1}{6}\pi$  | $\frac{1}{12}\tau$ |
+| $45°$  | $\frac{\pi}{4}$ | $\frac{1}{4}\pi$  | $\frac{1}{8}\tau$  |
+| $60°$  | $\frac{\pi}{3}$ | $\frac{1}{3}\pi$  | $\frac{1}{6}\tau$  |
+| $90°$  | $\frac{\pi}{2}$ | $\frac{1}{2}\pi$  | $\frac{1}{4}\tau$  |
+
+Ahora, si llevamos estas ideas al plano $\mathbb{R}^2$, vemos cómo estos ángulos están contenidos en el primer cuadrante. Si quisiéramos extender esto a los demás cuadrantes, podemos hacer reflexiones de estos ángulos: para el segundo cuadrante se hace una reflexión respecto al eje $Y$; para el tercer cuadrante, respecto al origen; y para el cuarto cuadrante, respecto al eje $X$.
+Con esto podemos crear una tabla ampliada con los ángulos notables en todos los cuadrantes:
+![[angulos_notable.png]]
+
+| Grados |     Radianes      | Fracción de $\pi$ | Fracción de $\tau$  |
+| :----: | :---------------: | :---------------: | :-----------------: |
+|  $0°$  |        $0$        |        $0$        |         $0$         |
+| $30°$  |  $\frac{\pi}{6}$  | $\frac{1}{6}\pi$  | $\frac{1}{12}\tau$  |
+| $45°$  |  $\frac{\pi}{4}$  | $\frac{1}{4}\pi$  |  $\frac{1}{8}\tau$  |
+| $60°$  |  $\frac{\pi}{3}$  | $\frac{1}{3}\pi$  |  $\frac{1}{6}\tau$  |
+| $90°$  |  $\frac{\pi}{2}$  | $\frac{1}{2}\pi$  |  $\frac{1}{4}\tau$  |
+| $120°$ | $\frac{2\pi}{3}$  | $\frac{2}{3}\pi$  |  $\frac{1}{3}\tau$  |
+| $135°$ | $\frac{3\pi}{4}$  | $\frac{3}{4}\pi$  |  $\frac{3}{8}\tau$  |
+| $150°$ | $\frac{5\pi}{6}$  | $\frac{5}{6}\pi$  | $\frac{5}{12}\tau$  |
+| $180°$ |       $\pi$       |       $\pi$       |  $\frac{1}{2}\tau$  |
+| $210°$ | $\frac{7\pi}{6}$  | $\frac{7}{6}\pi$  | $\frac{7}{12}\tau$  |
+| $225°$ | $\frac{5\pi}{4}$  | $\frac{5}{4}\pi$  |  $\frac{5}{8}\tau$  |
+| $240°$ | $\frac{4\pi}{3}$  | $\frac{4}{3}\pi$  |  $\frac{2}{3}\tau$  |
+| $270°$ | $\frac{3\pi}{2}$  | $\frac{3}{2}\pi$  |  $\frac{3}{4}\tau$  |
+| $300°$ | $\frac{5\pi}{3}$  | $\frac{5}{3}\pi$  |  $\frac{5}{6}\tau$  |
+| $315°$ | $\frac{7\pi}{4}$  | $\frac{7}{4}\pi$  |  $\frac{7}{8}\tau$  |
+| $330°$ | $\frac{11\pi}{6}$ | $\frac{11}{6}\pi$ | $\frac{11}{12}\tau$ |
+| $360°$ |      $2\pi$       |      $2\pi$       |       $\tau$        |
 
 ---
-
 ## 3. Razones trigonométricas en el triángulo rectángulo
 
 Las razones trigonométricas son nuestro principal objeto de estudio en esta clase. Son una forma de relacionar los ángulos con los lados de un triángulo rectángulo y, dado que se construyen a partir de ellos, solo funcionan en este contexto.
-
 ### 3.1 Definiciones fundamentales
 
 Dado un triángulo rectángulo con un ángulo agudo $\theta$:
-
-```
-        C
-        |\
-        | \
- opuesto|  \  hipotenusa
-        |   \
-        |    \
-        |_θ___\
-        A      B
-       adyacente
-```
-
+![[triangulo_rectangulo_angulo.png]]
 Vamos a definir las razones trigonométricas como:
 
 **Definición 3.1 (Seno):**
@@ -195,9 +185,10 @@ $$\tan(\theta) = \frac{\text{cateto opuesto}}{\text{cateto adyacente}} = \frac{\
 - **S**eno = **O**puesto/**H**ipotenusa
 - **C**oseno = **A**dyacente/**H**ipotenusa
 - **T**angente = **O**puesto/**A**dyacente
-
+![[SOHCAHTOA.png|552]]
 **Ejemplo 3.1:**
 En un triángulo rectángulo con hipotenusa $5$, cateto opuesto $3$ y cateto adyacente $4$:
+![[triangulo_3_4_5.png]]
 $$\sin(\theta) = \frac{3}{5} = 0.6$$
 $$\cos(\theta) = \frac{4}{5} = 0.8$$
 $$\tan(\theta) = \frac{3}{4} = 0.75$$
@@ -221,25 +212,13 @@ $$\cot(\theta) = \frac{1}{\tan(\theta)} = \frac{\text{cateto adyacente}}{\text{c
 | $\tan(\theta)$ | $\frac{\text{opuesto}}{\text{adyacente}}$    | $\cot(\theta) = \frac{1}{\tan(\theta)}$ |
 
 ---
-
 ## 4. Ángulos notables y tabla de valores
 
 ### 4.1 Triángulos especiales
 
 **Triángulo de 45°-45°-90°:**
 Pensemos en un cuadrado de lados iguales a 1 unidad: si trazamos una diagonal obtendremos un triángulo rectángulo con ambos catetos iguales a 1; su hipotenusa, por el teorema de Pitágoras, medirá $\sqrt{1^2+1^2}=\sqrt{2}$, y sus ángulos serán 90°–45°–45°. Con esto podemos obtener los valores de las funciones trigonométricas:
-
-```
-        •
-       /|\
-      / | \
-     /  |  \
-    / 1 | 1 \
-   /    |    \
-  /45° _|_ 45°\
- •_____√2______•
-```
-
+![[triangulo_especial_1.png]]
 $$\sin(45°) = \frac{\text{opuesto}}{\text{hipotenusa}} = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2}$$
 $$\cos(45°) = \frac{\text{adyacente}}{\text{hipotenusa}} = \frac{\sqrt{2}}{2}$$
 $$\tan(45°) = \frac{\sin(45°)}{\cos(45°)} = 1$$
@@ -261,9 +240,7 @@ Pensemos en un triángulo equilátero de lados iguales a 2: si trazamos una altu
 ```
 
 $$\sin(30°) = \frac{1}{2}, \quad \cos(30°) = \frac{\sqrt{3}}{2}, \quad \tan(30°) = \frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3}$$
-
 $$\sin(60°) = \frac{\sqrt{3}}{2}, \quad \cos(60°) = \frac{1}{2}, \quad \tan(60°) = \sqrt{3}$$
-
 > **Observación (invarianza de las razones trigonométricas):** Los valores de las razones trigonométricas dependen únicamente del ángulo, no del tamaño del triángulo. Es decir, $\sin\!\left(\dfrac{\pi}{6}\right)$ siempre vale $\dfrac{1}{2}$, independientemente de cuán grande o pequeño sea el triángulo rectángulo en el que se mida.
 
 **Demostración:** Sean dos triángulos rectángulos con el mismo ángulo agudo $\theta$ pero de distintos tamaños. Por el criterio de semejanza AA (ángulo-ángulo), ambos triángulos son semejantes, por lo que sus lados son proporcionales. Si los lados del segundo triángulo son $k$ veces los del primero, entonces:
@@ -272,15 +249,14 @@ El factor $k$ cancela en el cociente, demostrando que el valor no depende del ta
 
 **Ejemplo 3.2 (invarianza):**
 Consideremos dos triángulos rectángulos con ángulo $30°$:
+![[triangulo_semejante.png]]
 - Triángulo 1: hipotenusa $2$, opuesto $1$ → $\sin(30°) = \dfrac{1}{2}$
 - Triángulo 2: hipotenusa $10$, opuesto $5$ → $\sin(30°) = \dfrac{5}{10} = \dfrac{1}{2}$
-
 El resultado es idéntico en ambos casos.
 
 **Caso particular: $0°$ y $90°$**
 
 Pensemos en un triángulo $90°$-$60°$-$30°$. Si tomamos el ángulo de $60°$ y trazamos sucesivas bisectrices, generamos triángulos con ángulos cada vez más pequeños: $30°$, $15°$, $7.5°$, etc. Al analizar este proceso, el cateto opuesto se reduce progresivamente, el cateto adyacente se mantiene aproximadamente constante y la hipotenusa se acerca cada vez más al cateto adyacente.
-
 En el límite de este proceso, el "triángulo" degenera en un segmento con ángulo $0°$: el cateto opuesto colapsa a $0$ y la hipotenusa coincide con el cateto adyacente. Con esto:
 
 $$\sin(0°) = \frac{0}{\text{hipotenusa}} = 0, \qquad \cos(0°) = \frac{\text{adyacente}}{\text{hipotenusa}} = 1, \qquad \tan(0°) = \frac{0}{1} = 0$$
@@ -325,7 +301,6 @@ $$\sin(90°) = \frac{\text{hipotenusa}}{\text{hipotenusa}} = 1, \qquad \cos(90°
 | $\csc(\theta)$ | indefinido | $2$ | $\sqrt{2}$ | $\frac{2\sqrt{3}}{3}$ | $1$ |
 | $\sec(\theta)$ | $1$ | $\frac{2\sqrt{3}}{3}$ | $\sqrt{2}$ | $2$ | indefinido |
 | $\cot(\theta)$ | indefinido | $\sqrt{3}$ | $1$ | $\frac{\sqrt{3}}{3}$ | $0$ |
-
 ### 4.5 Extensión a los cuatro cuadrantes
 
 Hasta ahora hemos trabajado con ángulos agudos (entre $0$ y $\pi/2$). Para extender las funciones trigonométricas a todos los ángulos, utilizamos el **círculo unitario** y consideramos los cuatro cuadrantes del plano cartesiano.
@@ -346,39 +321,38 @@ Un ángulo se mide desde el eje X positivo en sentido **antihorario** (positivo)
 
 #### Signos de las funciones en cada cuadrante
 
+Para ilustrar los signos en cada cuadrante usaremos el triángulo 3-4-5: tomamos un punto a distancia $r=5$ del origen con catetos $|x|=4$ e $|y|=3$, reflejado en los cuatro cuadrantes. Las definiciones sobre el círculo son $\sin\theta = y/r$, $\cos\theta = x/r$, $\tan\theta = y/x$.
+
 **Cuadrante I** ($0 < \theta < \frac{\pi}{2}$) ($0° < \theta < 90°$):
-- $\sin(\theta) > 0$ (coordenada y positiva)
-- $\cos(\theta) > 0$ (coordenada x positiva)
+- $\sin(\theta) > 0$ (coordenada $y$ positiva)
+- $\cos(\theta) > 0$ (coordenada $x$ positiva)
 - $\tan(\theta) > 0$
 - **Todas las funciones son positivas**
 
+ **Ejemplo:** Punto $E=(4,\;3)$, $r=5$: $$\sin\theta = \frac{3}{5} > 0 \quad(\text{positivo}), \qquad \cos\theta = \frac{4}{5} > 0 \quad(\text{positivo}), \qquad \tan\theta = \frac{3}{4} > 0 \quad(\text{positivo})$$
 **Cuadrante II** ($\frac{\pi}{2} < \theta < \pi$) ($90° < \theta < 180°$):
-- $\sin(\theta) > 0$ (coordenada y positiva)
-- $\cos(\theta) < 0$ (coordenada x negativa)
+- $\sin(\theta) > 0$ (coordenada $y$ positiva)
+- $\cos(\theta) < 0$ (coordenada $x$ negativa)
 - $\tan(\theta) < 0$
 - **Solo seno y cosecante son positivos**
 
+ **Ejemplo:** Punto $F=(-4,\;3)$, $r=5$:> $$\sin\theta = \frac{3}{5} > 0 \quad(\text{positivo}), \qquad \cos\theta = \frac{-4}{5} < 0 \quad(\text{negativo}), \qquad \tan\theta = \frac{3}{-4} = -\frac{3}{4} < 0 \quad(\text{negativo})$$
 **Cuadrante III** ($\pi < \theta < \frac{3\pi}{2}$) ($180° < \theta < 270°$):
-- $\sin(\theta) < 0$ (coordenada y negativa)
-- $\cos(\theta) < 0$ (coordenada x negativa)
+- $\sin(\theta) < 0$ (coordenada $y$ negativa)
+- $\cos(\theta) < 0$ (coordenada $x$ negativa)
 - $\tan(\theta) > 0$
 - **Solo tangente y cotangente son positivos**
-
+  
+ **Ejemplo:** Punto $G=(-4,\;-3)$, $r=5$: $$\sin\theta = \frac{-3}{5} < 0 \quad(\text{negativo}), \qquad \cos\theta = \frac{-4}{5} < 0 \quad(\text{negativo}), \qquad \tan\theta = \frac{-3}{-4} = \frac{3}{4} > 0 \quad(\text{positivo})$$
 **Cuadrante IV** ($\frac{3\pi}{2} < \theta < 2\pi$) ($270° < \theta < 360°$):
-- $\sin(\theta) < 0$ (coordenada y negativa)
-- $\cos(\theta) > 0$ (coordenada x positiva)
+- $\sin(\theta) < 0$ (coordenada $y$ negativa)
+- $\cos(\theta) > 0$ (coordenada $x$ positiva)
 - $\tan(\theta) < 0$
 - **Solo coseno y secante son positivos**
-
+  
+**Ejemplo:** Punto $H=(4,\;-3)$, $r=5$:> $$\sin\theta = \frac{-3}{5} < 0 \quad(\text{negativo}), \qquad \cos\theta = \frac{4}{5} > 0 \quad(\text{positivo}), \qquad \tan\theta = \frac{-3}{4} < 0 \quad(\text{negativo})$$
 **Mnemotecnia - "TOSENTACOS":**
-```
-      S     |   Todos
-   (Seno)   | (Todos)
-  ----------+----------
-      T     |   C
-  (Tangente)|(Coseno)
-```
-
+![[TOSENTACOS.png]]
 #### Ángulo de referencia
 
 **Definición 4.6 (Ángulo de referencia):**
@@ -477,7 +451,6 @@ Calcule $\cos\!\left(\dfrac{5\pi}{4}\right)$:
    - Solo cambia el signo según el cuadrante
 
 ---
-
 ## 5. El círculo trigonométrico
 
 ### 5.1 Definición del círculo unitario
@@ -485,9 +458,13 @@ Calcule $\cos\!\left(\dfrac{5\pi}{4}\right)$:
 **Definición 5.1 (Círculo unitario):**
 El **círculo unitario** es el círculo de radio $1$ centrado en el origen del plano cartesiano:
 $$x^2 + y^2 = 1$$
+![[circulo_trigonometria.png]]
+Si escogemos un punto al azar perteneciente a la circunferencia y queremos obtener los valores de sus coordenadas $(x,y)$, podemos trazar un triangulo rectángulo donde sus catetos serán las coordenadas $x$ e $y$, la hipotenusa será el radio de la circunferencia $R$ y tendrá un Angulo $\theta$. Con esto podemos ver que que:
+* $cos(\theta) = x/R \to x=R\cdot cos(\theta)$
+* $sin(\theta) = y/R \to y=R\cdot \sin(\theta)$
+para este caso particular donde $R=1$ tendremos $(x,y) = (cos(\theta),sin(\theta))$
 
 **Definición extendida de funciones trigonométricas:**
-
 Dado un ángulo $\theta$ medido desde el eje X positivo (sentido antihorario), definimos:
 - El punto $P = (\cos(\theta), \sin(\theta))$ en el círculo unitario
 - $\sin(\theta)$ es la **coordenada y** del punto $P$
@@ -565,9 +542,20 @@ $$\cos(\theta + 2\pi) = \cos(\theta)$$
 $$\tan(\theta + \pi) = \tan(\theta)$$
 
 **Identidad 6.4 (Ángulos negativos):**
-$$\sin(-\theta) = -\sin(\theta)$$ (función impar)
+![[angulo_negativo.png]]
+**Paridad del Seno**:
+$$\sin(-\theta) = -\sin(\theta)$$
+(función impar)
+*Demostración:*
+$$sin(\theta)=y/R$$
+$$sin(-\theta)=-y/R=-(y/R)=-sin(\theta)$$
+**Paridad del Coseno**:
 $$\cos(-\theta) = \cos(\theta)$$ (función par)
+
+**Paridad del Coseno**:
 $$\tan(-\theta) = -\tan(\theta)$$ (función impar)
+*Demostración*:
+$$tan(-\theta)=\frac{sin(-\theta)}{cos(-\theta)}=\frac{-sin(\theta)}{cos(\theta)}=-\frac{sin(\theta)}{cos(\theta)}=-tan(\theta)$$
 
 ### 6.3 Identidades de ángulos complementarios
 
@@ -583,7 +571,6 @@ $$\cos(\pi/6) = \sin(\pi/3) = \frac{\sqrt{3}}{2}$$
 ---
 
 *NOTA*: Las siguientes identidades son muy útiles al momento de manipular ángulos y para resolver ejercicios. Sus demostraciones pueden hacerse con argumentos geométricos, pero son muy extensas; otra forma de demostrarlas es mediante el uso de números complejos, que es mucho más simple y elegante, pero ese tema se tocará en el curso de Álgebra I.
-
 ### 6.4 Identidades de suma y diferencia
 
 **Teorema 6.2 (Fórmulas de suma y diferencia):**
@@ -593,6 +580,16 @@ $$\cos(\alpha \pm \beta) = \cos(\alpha)\cos(\beta) \mp \sin(\alpha)\sin(\beta)$$
 $$\tan(\alpha \pm \beta) = \frac{\tan(\alpha) \pm \tan(\beta)}{1 \mp \tan(\alpha)\tan(\beta)}$$
 
 > **Nota sobre la notación $\pm/\mp$:** Cada fórmula condensa dos identidades en una sola expresión. El signo superior corresponde siempre a la **suma** ($\alpha + \beta$) y el inferior a la **diferencia** ($\alpha - \beta$). El símbolo $\mp$ indica que el signo se **invierte** respecto al del lado izquierdo: cuando afuera hay $+$, adentro hay $-$, y viceversa. Por ejemplo, en el coseno: $\cos(\alpha + \beta) = \cos\alpha\cos\beta - \sin\alpha\sin\beta$ (signo inferior), y $\cos(\alpha - \beta) = \cos\alpha\cos\beta + \sin\alpha\sin\beta$ (signo superior).
+
+**Demostración de la suma y diferencia de la tangente:**
+Por definición sabemos que $\tan(\alpha \pm \beta) = \frac{\sin(\alpha \pm \beta)}{\cos(\alpha \pm \beta)}$. Sustituyendo las fórmulas anteriores de seno y coseno:
+$$\tan(\alpha \pm \beta) = \frac{\sin(\alpha)\cos(\beta) \pm \cos(\alpha)\sin(\beta)}{\cos(\alpha)\cos(\beta) \mp \sin(\alpha)\sin(\beta)}$$
+
+Dividiendo el numerador y el denominador por el producto $\cos(\alpha)\cos(\beta)$:
+$$\tan(\alpha \pm \beta) = \frac{\frac{\sin(\alpha)\cos(\beta)}{\cos(\alpha)\cos(\beta)} \pm \frac{\cos(\alpha)\sin(\beta)}{\cos(\alpha)\cos(\beta)}}{\frac{\cos(\alpha)\cos(\beta)}{\cos(\alpha)\cos(\beta)} \mp \frac{\sin(\alpha)\sin(\beta)}{\cos(\alpha)\cos(\beta)}}$$
+
+Simplificando los términos, obtenemos la fórmula buscada:
+$$\tan(\alpha \pm \beta) = \frac{\tan(\alpha) \pm \tan(\beta)}{1 \mp \tan(\alpha)\tan(\beta)} \quad \blacksquare$$
 
 **Ejemplo 6.2:**
 Calcule $\sin\!\left(\dfrac{5\pi}{12}\right)$ usando $\dfrac{5\pi}{12} = \dfrac{\pi}{4} + \dfrac{\pi}{6}$:
@@ -610,26 +607,22 @@ $$\begin{align}
 **Teorema 6.3 (Ángulo doble):**
 $$\sin(2\theta) = 2\sin(\theta)\cos(\theta)$$
 $$\cos(2\theta) = \cos^2(\theta) - \sin^2(\theta)$$
+$$\tan(2\theta) = \frac{2\tan(\theta)}{1 - \tan^2(\theta)}$$
 
 **Formas alternativas de $\cos(2\theta)$:**
 $$\cos(2\theta) = 2\cos^2(\theta) - 1 = 1 - 2\sin^2(\theta)$$
 
-$$\tan(2\theta) = \frac{2\tan(\theta)}{1 - \tan^2(\theta)}$$
-
 **Demostración:**
-
 La idea es interpretar $2\theta$ como la suma $\theta + \theta$ y aplicar directamente las fórmulas de suma de ángulos.
 
 *Seno:*
 $$\sin(2\theta) = \sin(\theta + \theta) = \sin(\theta)\cos(\theta) + \cos(\theta)\sin(\theta) = 2\sin(\theta)\cos(\theta) \quad \blacksquare$$
-
 *Coseno:*
 $$\cos(2\theta) = \cos(\theta + \theta) = \cos(\theta)\cos(\theta) - \sin(\theta)\sin(\theta) = \cos^2(\theta) - \sin^2(\theta) \quad \blacksquare$$
 
 Las formas alternativas se obtienen sustituyendo la identidad pitagórica $\sin^2(\theta) = 1 - \cos^2(\theta)$ o $\cos^2(\theta) = 1 - \sin^2(\theta)$:
 $$\cos^2(\theta) - \sin^2(\theta) = \cos^2(\theta) - (1 - \cos^2(\theta)) = 2\cos^2(\theta) - 1$$
 $$\cos^2(\theta) - \sin^2(\theta) = (1 - \sin^2(\theta)) - \sin^2(\theta) = 1 - 2\sin^2(\theta)$$
-
 *Tangente:*
 $$\tan(2\theta) = \tan(\theta + \theta) = \frac{\tan(\theta) + \tan(\theta)}{1 - \tan(\theta)\tan(\theta)} = \frac{2\tan(\theta)}{1 - \tan^2(\theta)} \quad \blacksquare$$
 
@@ -647,7 +640,6 @@ $$\sin(2\theta) = 2\sin(\theta)\cos(\theta) = 2 \cdot \frac{3}{5} \cdot \frac{4}
 Las identidades de ángulo medio se obtienen directamente a partir de las formas alternativas de $\cos(2\theta)$.
 
 **Derivación:**
-
 A partir de $\cos(2\alpha) = 1 - 2\sin^2(\alpha)$, despejando $\sin^2(\alpha)$:
 $$\sin^2(\alpha) = \frac{1 - \cos(2\alpha)}{2}$$
 
@@ -688,12 +680,11 @@ Como $0 < \theta < \dfrac{\pi}{2}$, se tiene $0 < \dfrac{\theta}{2} < \dfrac{\pi
 $$\sin\!\left(\frac{\theta}{2}\right) = \sqrt{\frac{1 - \cos(\theta)}{2}} = \sqrt{\frac{1 - \dfrac{3}{5}}{2}} = \sqrt{\frac{\dfrac{2}{5}}{2}} = \sqrt{\frac{1}{5}} = \frac{1}{\sqrt{5}} = \frac{\sqrt{5}}{5}$$
 
 
-
-
 ---
 
 ## 7. Verificación de identidades trigonométricas
 
+Un ejercicio clásico en trigonometría consiste en verificar una identidad; es decir, nos presentan una supuesta igualdad matemática y debemos demostrar paso a paso que es verdadera para todos los valores definidos del ángulo. Si bien no existe un método único o universal para hacer esto, la práctica nos enseña diversas estrategias y técnicas algebraicas que facilitarán el desarrollo de la demostración.
 ### 7.1 Estrategias para verificar identidades
 
 **Técnicas comunes:**
@@ -724,20 +715,49 @@ Verificar: $\frac{\sin(\theta)}{1 + \cos(\theta)} = \frac{1 - \cos(\theta)}{\sin
 **Solución:** Multiplicamos cruzado o verificamos multiplicando el denominador de la izquierda por el numerador de la derecha:
 $$\sin(\theta) \cdot \sin(\theta) = (1 + \cos(\theta))(1 - \cos(\theta))$$
 $$\sin^2(\theta) = 1 - \cos^2(\theta)$$
-$$\sin^2(\theta) = \sin^2(\theta)$$ ✓
+$$\sin^2(\theta) = \sin^2(\theta)$$
+Verificado ✓
+
+**Ejemplo 7.3:**
+Verificar: $\sin^2(x)+2\sin(x)\cos(x)+\cos^2(x)=1+\dfrac{2\sin(x)}{\sec(x)}$
+
+**Solución:** Simplificamos cada lado por separado.
+
+*Lado izquierdo:*
+$$\sin^2(x)+2\sin(x)\cos(x)+\cos^2(x) = \bigl(\sin^2(x)+\cos^2(x)\bigr)+2\sin(x)\cos(x) = 1+2\sin(x)\cos(x)$$
+
+*Lado derecho:*
+$$1+\frac{2\sin(x)}{\sec(x)} = 1+2\sin(x)\cdot\frac{1}{\sec(x)} = 1+2\sin(x)\cos(x)$$
+
+ya que $\dfrac{1}{\sec(x)}=\cos(x)$ por definición.
+
+Ambos lados son iguales:
+$$1+2\sin(x)\cos(x) = 1+2\sin(x)\cos(x) \checkmark$$
+
+**Ejemplo 7.4:**
+Verificar: $\dfrac{\sin^2(x)+\cos^2(x)}{\sec(x)+\tan(x)}=\sec(x)-\tan(x)$
+
+**Solución:** El numerador del lado izquierdo es la identidad pitagórica:
+$$\frac{\sin^2(x)+\cos^2(x)}{\sec(x)+\tan(x)} = \frac{1}{\sec(x)+\tan(x)}$$
+
+Multiplicamos numerador y denominador por el conjugado $\sec(x)-\tan(x)$:
+$$\frac{1}{\sec(x)+\tan(x)} \cdot \frac{\sec(x)-\tan(x)}{\sec(x)-\tan(x)} = \frac{\sec(x)-\tan(x)}{\sec^2(x)-\tan^2(x)}$$
+
+El denominador se simplifica con la identidad $\sec^2(x)-\tan^2(x)=1$ (derivada de la identidad pitagórica):
+$$\frac{\sec(x)-\tan(x)}{1} = \sec(x)-\tan(x) \checkmark$$
 
 ---
-
 ## 8. Funciones trigonométricas
 
 Todas las razones trigonométricas también podemos trabajarlas como si fueran funciones, solo debemos considerar un ángulo $X$ como nuestras variable (medida en radianes para usar la misma recta real que hemos usado) y con esto podemos estudiar el comportamiento con las herramientas que ya hemos estudiado.
-
 ### 8.1 La función seno
 
 **Definición 8.1:**
 $$f(x) = \sin(x)$$
 
 Primero para estudiar las propiedades de esta funciones haremos una tabla de valores, ayudándonos de los ángulos notables y las identidades calcularemos varios valores
+
+> **Nota sobre el uso de radianes:** Resulta fundamental que la variable independiente $x$ represente un ángulo medido en **radianes**. Dado que el radián relaciona directamente el ángulo con la longitud de un arco (una medida real), usar radianes nos permite graficar las funciones trigonométricas sobre la misma recta numérica real que usamos para cualquier otra función (polinomial, exponencial, etc.). Esto facilita su análisis, comparación y el desarrollo de herramientas de Cálculo sobre ellas.
 
 |     $x$ (rad)      |     $x$ ($\tau$)     | $x$ (°) |               $\sin(x)$               |      Valor exacto      |
 | :----------------: | :------------------: | :-----: | :-----------------------------------: | :--------------------: |
@@ -758,8 +778,7 @@ Primero para estudiar las propiedades de esta funciones haremos una tabla de val
 | $\dfrac{7\pi}{4}$  |  $\dfrac{7\tau}{8}$  | $315°$  | $\sin\!\left(\dfrac{7\pi}{4}\right)$  | $-\dfrac{\sqrt{2}}{2}$ |
 | $\dfrac{11\pi}{6}$ | $\dfrac{11\tau}{12}$ | $330°$  | $\sin\!\left(\dfrac{11\pi}{6}\right)$ |    $-\dfrac{1}{2}$     |
 |       $2\pi$       |        $\tau$        | $360°$  |             $\sin(2\pi)$              |          $0$           |
-primer dibujo
-
+![[funcion_seno_1.png]]
 con esto ya nos podemos hacer una idea de la grafica pero si usamos las identidades para obtener mas valores podemos hacer un mejor bosquejo del grafico
 
 segundo dibujo
