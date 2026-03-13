@@ -750,54 +750,44 @@ $$\frac{\sec(x)-\tan(x)}{1} = \sec(x)-\tan(x) \checkmark$$
 ## 8. Funciones trigonométricas
 
 Todas las razones trigonométricas también podemos trabajarlas como si fueran funciones, solo debemos considerar un ángulo $X$ como nuestras variable (medida en radianes para usar la misma recta real que hemos usado) y con esto podemos estudiar el comportamiento con las herramientas que ya hemos estudiado.
+Primero para estudiar las propiedades de estas funciones haremos una tabla de valores con todas las razones trigonométricas, nos ayudaremos de los ángulos notables y las identidades calcularemos varios valores
+
+> **Nota sobre el uso de radianes:** Resulta fundamental que la variable independiente $x$ represente un ángulo medido en **radianes**. Dado que el radián relaciona directamente el ángulo con la longitud de un arco (una medida real), usar radianes nos permite graficar las funciones trigonométricas sobre la misma recta numérica real que usamos para cualquier otra función (polinomial, exponencial, etc.). Esto facilita su análisis, comparación y el desarrollo de herramientas de Cálculo sobre ellas.
+
+|     $x$ (rad)      |     $x$ ($\tau$)     | $x$ (°) |       $\sin(x)$        |       $\cos(x)$        |       $\tan(x)$        |        $\sec(x)$        |        $\csc(x)$        |       $\cot(x)$        |
+| :----------------: | :------------------: | :-----: | :--------------------: | :--------------------: | :--------------------: | :---------------------: | :---------------------: | :--------------------: |
+|        $0$         |         $0$          |  $0°$   |          $0$           |          $1$           |          $0$           |           $1$           |  $\infty$ (indefinido)  | $\infty$ (indefinido)  |
+|  $\dfrac{\pi}{6}$  |  $\dfrac{\tau}{12}$  |  $30°$  |     $\dfrac{1}{2}$     | $\dfrac{\sqrt{3}}{2}$  | $\dfrac{\sqrt{3}}{3}$  | $\dfrac{2\sqrt{3}}{3}$  |           $2$           |       $\sqrt{3}$       |
+|  $\dfrac{\pi}{4}$  |  $\dfrac{\tau}{8}$   |  $45°$  | $\dfrac{\sqrt{2}}{2}$  | $\dfrac{\sqrt{2}}{2}$  |          $1$           |       $\sqrt{2}$        |       $\sqrt{2}$        |          $1$           |
+|  $\dfrac{\pi}{3}$  |  $\dfrac{\tau}{6}$   |  $60°$  | $\dfrac{\sqrt{3}}{2}$  |     $\dfrac{1}{2}$     |       $\sqrt{3}$       |           $2$           | $\dfrac{2\sqrt{3}}{3}$  | $\dfrac{\sqrt{3}}{3}$  |
+|  $\dfrac{\pi}{2}$  |  $\dfrac{\tau}{4}$   |  $90°$  |          $1$           |          $0$           | $\infty$ (indefinido)  |  $\infty$ (indefinido)  |           $1$           |          $0$           |
+| $\dfrac{2\pi}{3}$  |  $\dfrac{\tau}{3}$   | $120°$  | $\dfrac{\sqrt{3}}{2}$  |    $-\dfrac{1}{2}$     |      $-\sqrt{3}$       |          $-2$           | $\dfrac{2\sqrt{3}}{3}$  | $-\dfrac{\sqrt{3}}{3}$ |
+| $\dfrac{3\pi}{4}$  |  $\dfrac{3\tau}{8}$  | $135°$  | $\dfrac{\sqrt{2}}{2}$  | $-\dfrac{\sqrt{2}}{2}$ |          $-1$          |       $-\sqrt{2}$       |       $\sqrt{2}$        |          $-1$          |
+| $\dfrac{5\pi}{6}$  | $\dfrac{5\tau}{12}$  | $150°$  |     $\dfrac{1}{2}$     | $-\dfrac{\sqrt{3}}{2}$ | $-\dfrac{\sqrt{3}}{3}$ | $-\dfrac{2\sqrt{3}}{3}$ |           $2$           |      $-\sqrt{3}$       |
+|       $\pi$        |  $\dfrac{\tau}{2}$   | $180°$  |          $0$           |          $-1$          |          $0$           |          $-1$           |  $\infty$ (indefinido)  | $\infty$ (indefinido)  |
+| $\dfrac{7\pi}{6}$  | $\dfrac{7\tau}{12}$  | $210°$  |    $-\dfrac{1}{2}$     | $-\dfrac{\sqrt{3}}{2}$ | $\dfrac{\sqrt{3}}{3}$  | $-\dfrac{2\sqrt{3}}{3}$ |          $-2$           |       $\sqrt{3}$       |
+| $\dfrac{5\pi}{4}$  |  $\dfrac{5\tau}{8}$  | $225°$  | $-\dfrac{\sqrt{2}}{2}$ | $-\dfrac{\sqrt{2}}{2}$ |          $1$           |       $-\sqrt{2}$       |       $-\sqrt{2}$       |          $1$           |
+| $\dfrac{4\pi}{3}$  |  $\dfrac{2\tau}{3}$  | $240°$  | $-\dfrac{\sqrt{3}}{2}$ |    $-\dfrac{1}{2}$     |       $\sqrt{3}$       |          $-2$           | $-\dfrac{2\sqrt{3}}{3}$ | $\dfrac{\sqrt{3}}{3}$  |
+| $\dfrac{3\pi}{2}$  |  $\dfrac{3\tau}{4}$  | $270°$  |          $-1$          |          $0$           | $\infty$ (indefinido)  |  $\infty$ (indefinido)  |          $-1$           |          $0$           |
+| $\dfrac{5\pi}{3}$  |  $\dfrac{5\tau}{6}$  | $300°$  | $-\dfrac{\sqrt{3}}{2}$ |     $\dfrac{1}{2}$     |      $-\sqrt{3}$       |           $2$           | $-\dfrac{2\sqrt{3}}{3}$ | $-\dfrac{\sqrt{3}}{3}$ |
+| $\dfrac{7\pi}{4}$  |  $\dfrac{7\tau}{8}$  | $315°$  | $-\dfrac{\sqrt{2}}{2}$ | $\dfrac{\sqrt{2}}{2}$  |          $-1$          |       $\sqrt{2}$        |       $-\sqrt{2}$       |          $-1$          |
+| $\dfrac{11\pi}{6}$ | $\dfrac{11\tau}{12}$ | $330°$  |    $-\dfrac{1}{2}$     | $\dfrac{\sqrt{3}}{2}$  | $-\dfrac{\sqrt{3}}{3}$ | $\dfrac{2\sqrt{3}}{3}$  |          $-2$           |      $-\sqrt{3}$       |
+|       $2\pi$       |        $\tau$        | $360°$  |          $0$           |          $1$           |          $0$           |           $1$           |  $\infty$ (indefinido)  | $\infty$ (indefinido)  |
+
 ### 8.1 La función seno
 
 **Definición 8.1:**
 $$f(x) = \sin(x)$$
 
-Primero para estudiar las propiedades de esta funciones haremos una tabla de valores, ayudándonos de los ángulos notables y las identidades calcularemos varios valores
-
-> **Nota sobre el uso de radianes:** Resulta fundamental que la variable independiente $x$ represente un ángulo medido en **radianes**. Dado que el radián relaciona directamente el ángulo con la longitud de un arco (una medida real), usar radianes nos permite graficar las funciones trigonométricas sobre la misma recta numérica real que usamos para cualquier otra función (polinomial, exponencial, etc.). Esto facilita su análisis, comparación y el desarrollo de herramientas de Cálculo sobre ellas.
-
-|     $x$ (rad)      |     $x$ ($\tau$)     | $x$ (°) |               $\sin(x)$               |      Valor exacto      |
-| :----------------: | :------------------: | :-----: | :-----------------------------------: | :--------------------: |
-|        $0$         |         $0$          |  $0°$   |               $\sin(0)$               |          $0$           |
-|  $\dfrac{\pi}{6}$  |  $\dfrac{\tau}{12}$  |  $30°$  |  $\sin\!\left(\dfrac{\pi}{6}\right)$  |     $\dfrac{1}{2}$     |
-|  $\dfrac{\pi}{4}$  |  $\dfrac{\tau}{8}$   |  $45°$  |  $\sin\!\left(\dfrac{\pi}{4}\right)$  | $\dfrac{\sqrt{2}}{2}$  |
-|  $\dfrac{\pi}{3}$  |  $\dfrac{\tau}{6}$   |  $60°$  |  $\sin\!\left(\dfrac{\pi}{3}\right)$  | $\dfrac{\sqrt{3}}{2}$  |
-|  $\dfrac{\pi}{2}$  |  $\dfrac{\tau}{4}$   |  $90°$  |  $\sin\!\left(\dfrac{\pi}{2}\right)$  |          $1$           |
-| $\dfrac{2\pi}{3}$  |  $\dfrac{\tau}{3}$   | $120°$  | $\sin\!\left(\dfrac{2\pi}{3}\right)$  | $\dfrac{\sqrt{3}}{2}$  |
-| $\dfrac{3\pi}{4}$  |  $\dfrac{3\tau}{8}$  | $135°$  | $\sin\!\left(\dfrac{3\pi}{4}\right)$  | $\dfrac{\sqrt{2}}{2}$  |
-| $\dfrac{5\pi}{6}$  | $\dfrac{5\tau}{12}$  | $150°$  | $\sin\!\left(\dfrac{5\pi}{6}\right)$  |     $\dfrac{1}{2}$     |
-|       $\pi$        |  $\dfrac{\tau}{2}$   | $180°$  |              $\sin(\pi)$              |          $0$           |
-| $\dfrac{7\pi}{6}$  | $\dfrac{7\tau}{12}$  | $210°$  | $\sin\!\left(\dfrac{7\pi}{6}\right)$  |    $-\dfrac{1}{2}$     |
-| $\dfrac{5\pi}{4}$  |  $\dfrac{5\tau}{8}$  | $225°$  | $\sin\!\left(\dfrac{5\pi}{4}\right)$  | $-\dfrac{\sqrt{2}}{2}$ |
-| $\dfrac{4\pi}{3}$  |  $\dfrac{2\tau}{3}$  | $240°$  | $\sin\!\left(\dfrac{4\pi}{3}\right)$  | $-\dfrac{\sqrt{3}}{2}$ |
-| $\dfrac{3\pi}{2}$  |  $\dfrac{3\tau}{4}$  | $270°$  | $\sin\!\left(\dfrac{3\pi}{2}\right)$  |          $-1$          |
-| $\dfrac{5\pi}{3}$  |  $\dfrac{5\tau}{6}$  | $300°$  | $\sin\!\left(\dfrac{5\pi}{3}\right)$  | $-\dfrac{\sqrt{3}}{2}$ |
-| $\dfrac{7\pi}{4}$  |  $\dfrac{7\tau}{8}$  | $315°$  | $\sin\!\left(\dfrac{7\pi}{4}\right)$  | $-\dfrac{\sqrt{2}}{2}$ |
-| $\dfrac{11\pi}{6}$ | $\dfrac{11\tau}{12}$ | $330°$  | $\sin\!\left(\dfrac{11\pi}{6}\right)$ |    $-\dfrac{1}{2}$     |
-|       $2\pi$       |        $\tau$        | $360°$  |             $\sin(2\pi)$              |          $0$           |
+Comenzaremos haciendo un bosquejo con los valores obtenidos en la tabla para el seno
 ![[funcion_seno_1.png]]
-con esto ya nos podemos hacer una idea de la grafica pero si usamos las identidades para obtener mas valores podemos hacer un mejor bosquejo del grafico
-
-segundo dibujo
-
-
+con esto ya nos podemos hacer una idea de la grafica pero si usamos propiedades como la periodicidad e identidades como el ángulo medio o la suma de ángulos para obtener mas valores podemos hacer un mejor bosquejo del grafico
+![[funcion_seno_2.png]]
 Con esto ya nos podemos dar una idea de como será la grafica de la función
 
 **Gráfica:**
-
-```
-    y
-    |
-  1 |    ╱‾‾╲        ╱‾‾╲
-    |   ╱    ╲      ╱    ╲
-----+--+------+----+------+-----> x
-    | 0   π   2π  3π   4π
- -1 |        ╲__╱        ╲__╱
-```
-
+![[funcion_seno_3.png]]
+La función seno es una función periódica, es decir, que se repite cada cierto intervalo especifico, además vemos que esta acotada, que tiene infinitas raíces 
 
 **Propiedades:**
 - **Dominio:** $(-\infty, +\infty)$
@@ -808,11 +798,18 @@ Con esto ya nos podemos dar una idea de como será la grafica de la función
 - **Máximos:** $x = \frac{\pi}{2} + 2n\pi$, valor $1$
 - **Mínimos:** $x = \frac{3\pi}{2} + 2n\pi$, valor $-1$
 
-
 ### 8.2 La función coseno
 
 **Definición 8.2:**
 $$f(x) = \cos(x)$$
+
+Se repetimos el mismo ejercicios para la funciones coseno obtendremos un resultado bastante similar 
+
+**Gráfica:**
+![[funcion_coseno_1.png]]
+Viendo su forma podemos intuir que sus propiedades serán similares a las de la función seno
+
+**Observación:** $\cos(x) = \sin(x + \frac{\pi}{2})$ (coseno es seno desplazado o viceversa dependiendo como se este mirando)
 
 **Propiedades:**
 - **Dominio:** $(-\infty, +\infty)$
@@ -823,32 +820,21 @@ $$f(x) = \cos(x)$$
 - **Máximos:** $x = 2n\pi$, valor $1$
 - **Mínimos:** $x = \pi + 2n\pi$, valor $-1$
 
-**Gráfica:**
-
-```
-    y
-    |
-  1 |‾‾╲        ╱‾‾╲        ╱‾‾
-    |   ╲      ╱    ╲      ╱
-----+----+----+------+----+----> x
-    |    π/2  π   3π/2  2π
- -1 |    ╲__╱        ╲__╱
-```
-
-**Observación:** $\cos(x) = \sin(x + \frac{\pi}{2})$ (coseno es seno desplazado)
-
 ### 8.3 La función tangente
 
 **Definición 8.3:**
 $$f(x) = \tan(x) = \frac{\sin(x)}{\cos(x)}$$
 
-**Propiedades:**
-- **Dominio:** $\mathbb{R} \setminus \{\frac{\pi}{2} + n\pi : n \in \mathbb{Z}\}$ (excluye donde $\cos(x) = 0$)
-- **Imagen:** $(-\infty, +\infty)$
-- **Período:** $\pi$
-- **Simetría:** Función impar
-- **Ceros:** $x = n\pi$
-- **Asíntotas verticales:** $x = \frac{\pi}{2} + n\pi$
+Nuevamente repetiremos nuestro ejercicios del bosquejo con la tangente para ver que obtendremos, primero con los angulos notables de $0$ a $2\pi$
+![[funcion_tangente_1.png]]
+esto no nos dice mucho, deberemos calcular mas puntos para tener una mejor aproximación 
+![[funcion_tangente_2.png]]
+Con esto ya tenemos una mejor visión, ahora debemos analizar un poco la función. Primero veamos $sin(x)$ y $cos(x)$ en la misma grafica
+![[funcion_seno_coseno.png]]
+podemos ir analizando por tramo:
+* Primer tramo de $[0,\pi/2)$ vemos que el seno aumenta y el coseno disminuye, lo que nos dará una función creciente hasta llegar a $\pi/2$ donde el denomino será $0$ y tendernos una indeterminación  
+* Segundo tramo de $(\pi/2,\pi]$ el seno será decreciente y el coseno será creciente pero en valores negativos, comenzaremos con valores cercanos a $1$ dividió por valores cercanos a $0$ pero negativos lo que nos dará resultados muy grandes en magnitud pero con signo negativo y poco a poco mientras seguimos avanzando como el coseno se hace mayor en magnitud por lo cual los resultados se volverán progresivamente mas pequeños hasta $\pi$ donde el numerador será $0$ por lo cual el resultado compartirá este valor
+* Tercer tramo de $[\pi,5\pi/2$
 
 **Gráfica:**
 
@@ -864,6 +850,16 @@ $$f(x) = \tan(x) = \frac{\sin(x)}{\cos(x)}$$
   / |    |/     |/     |
     -π/2 0  π/2  π  3π/2
 ```
+
+**Propiedades:**
+- **Dominio:** $\mathbb{R} \setminus \{\frac{\pi}{2} + n\pi : n \in \mathbb{Z}\}$ (excluye donde $\cos(x) = 0$)
+- **Imagen:** $(-\infty, +\infty)$
+- **Período:** $\pi$
+- **Simetría:** Función impar
+- **Ceros:** $x = n\pi$
+- **Asíntotas verticales:** $x = \frac{\pi}{2} + n\pi$
+
+
 
 ### 8.4 Transformaciones de funciones trigonométricas
 
