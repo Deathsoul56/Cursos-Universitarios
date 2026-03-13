@@ -749,8 +749,8 @@ $$\frac{\sec(x)-\tan(x)}{1} = \sec(x)-\tan(x) \checkmark$$
 ---
 ## 8. Funciones trigonométricas
 
-Todas las razones trigonométricas también podemos trabajarlas como si fueran funciones, solo debemos considerar un ángulo $X$ como nuestras variable (medida en radianes para usar la misma recta real que hemos usado) y con esto podemos estudiar el comportamiento con las herramientas que ya hemos estudiado.
-Primero para estudiar las propiedades de estas funciones haremos una tabla de valores con todas las razones trigonométricas, nos ayudaremos de los ángulos notables y las identidades calcularemos varios valores
+Todas las razones trigonométricas también podemos trabajarlas como si fueran funciones, solo debemos considerar un ángulo $x$ como nuestra variable (medida en radianes para usar la misma recta real que hemos usado) y con esto podemos estudiar el comportamiento con las herramientas que ya hemos estudiado.
+Primero, para estudiar las propiedades de estas funciones, haremos una tabla de valores con todas las razones trigonométricas; apoyándonos en los ángulos notables y las identidades, calcularemos varios valores
 
 > **Nota sobre el uso de radianes:** Resulta fundamental que la variable independiente $x$ represente un ángulo medido en **radianes**. Dado que el radián relaciona directamente el ángulo con la longitud de un arco (una medida real), usar radianes nos permite graficar las funciones trigonométricas sobre la misma recta numérica real que usamos para cualquier otra función (polinomial, exponencial, etc.). Esto facilita su análisis, comparación y el desarrollo de herramientas de Cálculo sobre ellas.
 
@@ -781,13 +781,13 @@ $$f(x) = \sin(x)$$
 
 Comenzaremos haciendo un bosquejo con los valores obtenidos en la tabla para el seno
 ![[funcion_seno_1.png]]
-con esto ya nos podemos hacer una idea de la grafica pero si usamos propiedades como la periodicidad e identidades como el ángulo medio o la suma de ángulos para obtener mas valores podemos hacer un mejor bosquejo del grafico
+con esto ya nos podemos hacer una idea de la gráfica, pero si usamos propiedades como la periodicidad e identidades como el ángulo medio o la suma de ángulos para obtener más valores podemos hacer un mejor bosquejo del gráfico
 ![[funcion_seno_2.png]]
 Con esto ya nos podemos dar una idea de como será la grafica de la función
 
 **Gráfica:**
 ![[funcion_seno_3.png]]
-La función seno es una función periódica, es decir, que se repite cada cierto intervalo especifico, además vemos que esta acotada, que tiene infinitas raíces 
+La función seno es una función periódica, es decir, que se repite cada cierto intervalo específico; además vemos que está acotada y que tiene infinitas raíces 
 
 **Propiedades:**
 - **Dominio:** $(-\infty, +\infty)$
@@ -803,7 +803,7 @@ La función seno es una función periódica, es decir, que se repite cada cierto
 **Definición 8.2:**
 $$f(x) = \cos(x)$$
 
-Se repetimos el mismo ejercicios para la funciones coseno obtendremos un resultado bastante similar 
+Si repetimos el mismo ejercicio para la función coseno, obtendremos un resultado bastante similar 
 
 **Gráfica:**
 ![[funcion_coseno_1.png]]
@@ -825,16 +825,20 @@ Viendo su forma podemos intuir que sus propiedades serán similares a las de la 
 **Definición 8.3:**
 $$f(x) = \tan(x) = \frac{\sin(x)}{\cos(x)}$$
 
-Nuevamente repetiremos nuestro ejercicios del bosquejo con la tangente para ver que obtendremos, primero con los angulos notables de $0$ a $2\pi$
+Nuevamente repetiremos nuestro ejercicio del bosquejo con la tangente para ver qué obtendremos, primero con los ángulos notables de $0$ a $2\pi$
 ![[funcion_tangente_1.png]]
-esto no nos dice mucho, deberemos calcular mas puntos para tener una mejor aproximación 
+Esto no nos dice mucho; deberemos calcular más puntos para tener una mejor aproximación 
 ![[funcion_tangente_2.png]]
-Con esto ya tenemos una mejor visión, ahora debemos analizar un poco la función. Primero veamos $sin(x)$ y $cos(x)$ en la misma grafica
+Con esto ya tenemos una mejor visión; ahora debemos analizar un poco la función. Primero veamos $\sin(x)$ y $\cos(x)$ en la misma gráfica:
 ![[funcion_seno_coseno.png]]
-podemos ir analizando por tramo:
-* Primer tramo de $[0,\pi/2)$ vemos que el seno aumenta y el coseno disminuye, lo que nos dará una función creciente hasta llegar a $\pi/2$ donde el denomino será $0$ y tendernos una indeterminación  
-* Segundo tramo de $(\pi/2,\pi]$ el seno será decreciente y el coseno será creciente pero en valores negativos, comenzaremos con valores cercanos a $1$ dividió por valores cercanos a $0$ pero negativos lo que nos dará resultados muy grandes en magnitud pero con signo negativo y poco a poco mientras seguimos avanzando como el coseno se hace mayor en magnitud por lo cual los resultados se volverán progresivamente mas pequeños hasta $\pi$ donde el numerador será $0$ por lo cual el resultado compartirá este valor
-* Tercer tramo de $[\pi,5\pi/2$
+Podemos ir analizando por tramos:
+* **Primer tramo** $[0,\,\pi/2)$: el seno aumenta y el coseno disminuye, lo que nos da una función creciente, hasta llegar a $\pi/2$ donde el denominador es $0$ y tenemos una asíntota vertical (la función crece hacia $+\infty$).
+* **Segundo tramo** $(\pi/2,\,\pi]$: el seno es decreciente y el coseno es creciente pero negativo. Comenzamos con valores cercanos a $1$ divididos por valores cercanos a $0^-$, lo que produce resultados muy grandes en magnitud y negativos; a medida que avanzamos, el coseno crece en magnitud y los resultados se vuelven progresivamente más pequeños en valor absoluto, hasta llegar a $\pi$ donde el numerador es $0$ y, por lo tanto, $\tan(\pi)=0$.
+* **Tercer tramo** $[\pi,\,3\pi/2)$: ambas funciones son negativas, por lo que su cociente es positivo. Este tramo tiene el mismo comportamiento que el primero (función creciente con asíntota en $3\pi/2$), solo que trasladado un período $\pi$.
+* **Cuarto tramo** $(3\pi/2,\,2\pi]$: análogo al segundo tramo; el cociente es negativo y la función crece desde $-\infty$ hasta $0$.
+
+Con este análisis y los puntos que trazamos, ya podemos tener una buena idea de la gráfica de la función. Además, podemos observar algunas propiedades importantes: su período es $\pi$ (la mitad del período de seno y coseno) y tiene infinitas asíntotas verticales en los puntos donde $\cos(x)=0$.
+Después de todo este trabajo, ya es momento de ver su gráfica:
 
 **Gráfica:**
 
@@ -858,8 +862,6 @@ podemos ir analizando por tramo:
 - **Simetría:** Función impar
 - **Ceros:** $x = n\pi$
 - **Asíntotas verticales:** $x = \frac{\pi}{2} + n\pi$
-
-
 
 ### 8.4 Transformaciones de funciones trigonométricas
 
