@@ -197,10 +197,11 @@ En el límite cuando $N \to \infty$, bajo condiciones de regularidad:
 $$\hat{f}(x) \xrightarrow{P} f(x)$$
 donde $f(x)$ es la verdadera función de densidad de probabilidad de la población.
 
----
-## 6. Forma de las distribuciones
+### 5.3 Forma de las distribuciones
 
-### 6.1 Simetría y asimetría
+Podemos hacernos de una idea de la forma de la distribucion de los datos mediante su histograma
+
+#### 5.3.1 Simetría y asimetría
 
 **Definición 6.1 (Distribución simétrica):**
 Una distribución es **simétrica** respecto a un valor central $c$ si su función de densidad satisface:
@@ -215,7 +216,7 @@ $$\text{Media} = \text{Mediana} = \text{Moda} = c$$
 ![[dist-simetrica.png]]
 **Definición 6.2 (Distribución asimétrica o sesgada):**
 Una distribución es **asimétrica** si no cumple la propiedad de simetría. El **sesgo** cuantifica la dirección y magnitud de la asimetría.
-#### 6.1.1 Sesgo positivo (sesgado a la derecha)
+#### 5.3.2 Sesgo positivo (sesgado a la derecha)
 
 **Características:**
 - La **cola derecha** es más larga que la izquierda
@@ -229,7 +230,7 @@ Una distribución es **asimétrica** si no cumple la propiedad de simetría. El 
 **Medida formal:** Coeficiente de asimetría de Fisher $g_1 > 0$
 
 ![[sesgada-der.png]]
-#### 6.1.2 Sesgo negativo (sesgado a la izquierda)
+#### 5.3.3 Sesgo negativo (sesgado a la izquierda)
 
 **Características:**
 - La **cola izquierda** es más larga que la derecha
@@ -243,7 +244,7 @@ Una distribución es **asimétrica** si no cumple la propiedad de simetría. El 
 **Medida formal:** Coeficiente de asimetría de Fisher $g_1 < 0$
 
 ![[sesgada-izq.png]]
-### 6.2 Modalidad
+### 5.3.4 Modalidad
 
 **Definición 6.3 (Moda de una distribución):**
 Una **moda** es un valor (o intervalo) donde la distribución alcanza un **máximo local** de frecuencia. Formalmente, $x_0$ es una moda si:
@@ -251,11 +252,11 @@ $$f(x_0) \geq f(x) \quad \forall x \in (x_0-\epsilon, x_0+\epsilon)$$
 para algún $\epsilon > 0$.
 
 **Clasificación por modalidad:**
-#### 6.2.1 Distribución unimodal
+**Distribución unimodal**
 - **Una sola moda** (un único pico)
 - La más común en fenómenos naturales
 - Ejemplos: Distribución normal, exponencial, chi-cuadrado
-#### 6.2.2 Distribución bimodal
+**Distribución bimodal**
 - **Dos modas** distintas (dos picos)
 - Sugiere la presencia de **dos subpoblaciones** o **dos procesos generadores** mezclados
 - Ejemplo: Alturas en una población mixta (hombres y mujeres), tiempos de reacción en dos grupos experimentales
@@ -263,11 +264,11 @@ para algún $\epsilon > 0$.
 **Interpretación crítica:** Una distribución bimodal puede indicar que el análisis debe hacerse **por separado** para cada grupo.
 
 ![[bimodal.png]]
-#### 6.2.3 Distribución multimodal
+**Distribución multimodal**
 - **Tres o más modas**
 - Menos común, indica estructura compleja
 - Puede sugerir necesidad de estratificación del análisis
-#### 6.2.4 Distribución uniforme
+**Distribución uniforme**
 - **Sin moda** (todas las frecuencias son aproximadamente iguales)
 - Rara en datos naturales, común en datos generados artificialmente
 ![[uniforme_histograma.png]]
@@ -292,9 +293,9 @@ Hacer el histograma con su respectivo polígono de frecuencia y un bosquejo de l
 ![[clase-ejercicio1.2.png]]
 
 ---
-## 7. Histograma de frecuencias absolutas vs. relativas
+## 6. Histograma de frecuencias absolutas vs. relativas
 
-### 7.1 Comparación formal
+### 6.1 Comparación formal
 
 | Aspecto | Frecuencias Absolutas $(n_i)$ | Frecuencias Relativas $(f_i)$ |
 |:--------|:-----------------------------|:-----------------------------|
@@ -302,9 +303,9 @@ Hacer el histograma con su respectivo polígono de frecuencia y un bosquejo de l
 | **Interpretación de área** | Número total de observaciones: $\sum n_i = N$ | Proporción total: $\sum f_i = 1$ |
 | **Comparabilidad** | Solo para muestras del mismo tamaño | Para muestras de **cualquier tamaño** |
 | **Uso típico** | Análisis exploratorio único | Comparación entre grupos |
-### 7.2 Ventaja fundamental del histograma de frecuencias relativas
+### 6.2 Ventaja fundamental del histograma de frecuencias relativas
 
-**Teorema 7.1 (Invarianza por tamaño muestral):**
+**Teorema 6.1 (Invarianza por tamaño muestral):**
 Sean $\mathbf{x}^{(1)} = (x_1^{(1)}, ..., x_{N_1}^{(1)})$ y $\mathbf{x}^{(2)} = (x_1^{(2)}, ..., x_{N_2}^{(2)})$ dos muestras de tamaños $N_1 \neq N_2$ provenientes de la misma población con distribución $F$. Si ambas muestras son suficientemente grandes y representativas, sus histogramas de **frecuencias relativas** convergirán a la misma forma, independientemente de $N_1$ y $N_2$:
 $$\hat{f}_1(x) \approx \hat{f}_2(x) \approx f(x)$$
 donde $f(x)$ es la verdadera densidad poblacional.
@@ -316,39 +317,225 @@ donde $f(x)$ es la verdadera densidad poblacional.
 
 **Ejemplo:** Comparar ingresos de dos ciudades con poblaciones muy diferentes ($N_1=500$ vs. $N_2=5000$). Con frecuencias absolutas, la comparación visual es engañosa; con frecuencias relativas, las formas se pueden comparar directamente.
 
+## 7. Gráfico de sectores (Gráfico de torta)
+
+### 7.1 Contexto histórico y definición intuitiva
+
+Un gráfico de sectores es una representación circular que se divide en porciones (sectores), donde cada porción ilustra la proporción o porcentaje que una categoría representa sobre el total. Es la analogía visual clásica de "cómo se reparte un pastel" entre varias partes.
+
+**Contexto Histórico:** El gráfico de sectores, ampliamente conocido como "gráfico de torta", fue introducido por primera vez por el ingeniero y economista escocés **William Playfair** en su obra *Statistical Breviary* (1801). Playfair, considerado el principal inventor de los gráficos estadísticos modernos, lo diseñó para mostrar las proporciones del Imperio Turco ubicado en Asia, Europa y África. Aunque en la actualidad existe un fuerte debate estadístico sobre su eficiencia visual frente al gráfico de barras, sigue siendo una de las representaciones más reconocidas globalmente.
+
+### 7.2 Definición formal 
+
+**Definición 7.1 (Gráfico de sectores o circular):**
+Sea $X$ una **variable cualitativa** o **cuantitativa discreta** con $k$ clases: $X_1, X_2, ..., X_k$ y frecuencias absolutas $n_1, n_2, ..., n_k$ (o relativas $f_i$) tal que $\sum_{i=1}^{k} n_i = N$. Un **gráfico de sectores** es una partición de un disco bidimensional (círculo) en $k$ sectores circulares disjuntos, donde:
+- Existe una biyección entre cada clase $X_i$ y un sector circular $S_i$.
+- El **ángulo central** $\alpha_i$ (y bidimensionalmente el área) del sector $S_i$ es estrictamente proporcional a la frecuencia relativa $f_i$ de la clase representada.
+
+**Propiedad 7.1 (Condición de proporcionalidad circular):**
+Dado que el círculo completo abarca un ángulo de $360^\circ$ (o $2\pi$ radianes) representando el total poblacional (100%), el ángulo central proyectado para la clase $X_i$ se define rigurosamente como:
+$$\alpha_i = f_i \cdot 360^\circ \quad \iff \quad \alpha_i = \left(\frac{n_i}{N}\right) \cdot 360^\circ$$
+
+![[grafico-torta.png]]
+
+### 7.3 Construcción formal
+
+**Algoritmo de construcción:**
+
+1. **Cálculo de frecuencias relativas:** Para cada clase $X_i$, calcular $f_i = \frac{n_i}{N}$.
+2. **Determinación angular:** Para cada clase, computar $\alpha_i = f_i \cdot 360^\circ$. Validar siempre que $\sum_{i=1}^{k} \alpha_i = 360^\circ$ (salvo errores mínimos de redondeo).
+3. **Trazado geométrico:** 
+   - Dibujar un círculo de radio arbitrario $R$.
+   - Trazar los $k$ sectores utilizando un transportador (o software), acumulando los ángulos $\alpha_1, \alpha_1+\alpha_2, ...$ de forma adyacente.
+4. **Etiquetado riguroso:** Asociar cada sector a su categoría (mediante leyendas o colores puros) y plasmar el **porcentaje explícito** sobre el sector para evitar malinterpretaciones del observador.
+
+### 7.4 Aplicabilidad, ventajas y limitaciones críticas
+
+**Criterio de uso apropiado:**
+El uso de gráficos de pastel está acotado preferentemente a:
+- Variables **cualitativas** (nominales u ordinales).
+- Ilustrar la **composición de un total cerrado** donde la suma es unívocamente el 100%.
+- Escenarios de dimensionalidad reducida (por convención general, $\mathbf{k \leq 5}$).
+
+**Limitaciones y problemas perceptivos (Cleveland y McGill, 1984):**
+La investigación formal en cognición visual ha demostrado sistemáticamente que **el cerebro humano es muy ineficiente decodificando ángulos y áreas** en comparación con las longitudes unidimensionales (como en un diagrama de barras). 
+
+- **Dimensionalidad excesiva:** Para muchas clases ($k > 5$), el gráfico se satura en "rebanadas" minúsculas, generando ruido cognitivo perceptible.
+- **Dificultad de contraste analítico:** Discernir perceptualmente entre una proporción del $18\%$ (aprox $65^\circ$) y una de $19\%$ (aprox $68^\circ$) sin etiquetas numéricas es un esfuerzo imposible para la percepción.
+- **Falacia del 3D:** Renderizar un gráfico de torta en 3D introduce una inclinación y altera la perspectiva aparente de los sectores fronterizos al observador, una grave violación a los principios éticos de la **proporcionalidad verdadera de Tufte**.
+
+## 8. Ojiva o polígono de frecuencias acumuladas
+
+### 8.1 Contexto histórico y etimología
+
+**Contexto Histórico:** El término "ojiva" aplicado a la estadística fue introducido por vez primera en 1901 por el eminente estadístico y economista británico **Arthur Lyon Bowley**. Bowley advirtió en sus publicaciones que la forma geométrica asintótica que adquiere una distribución de frecuencias acumuladas (particularmente la integral de la famosa Campana de Gauss) se asemejaba asombrosamente a la "ojiva" o arco apuntado clásico de la arquitectura gótica medieval y la forma balística. Esta dualidad analítico-geométrica fue tan elocuente que el término bautizó al gráfico de forma universal.
+
+**Definición casual:**
+Una ojiva es un gráfico de línea continuo que nos exhibe el recuento acumulado ("running total") de los datos a medida que avanzamos a lo largo de las clases de una variable. En lugar de responder "¿cuántas personas miden exactamente 1.70 m?" (como lo haría un histograma o curva de densidad en una clase), la ojiva responde inquisitivamente: "¿qué porcentaje o volumen de personas miden 1.70 m **o menos**?".
+
+### 8.2 Definición formal matemática
+
+**Definición 8.1 (Ojiva o Polígono de Frecuencias Acumuladas):**
+Sea $X$ una variable cuantitativa (continua o discreta) agrupada secuencialmente en $k$ clases finitas de la forma $I_i = [c_i, c_{i+1})$, donde $c_{i+1}$ representa abstractamente el límite superior estricto del intervalo. Sea $F_i$ la **frecuencia absoluta acumulada** (o $F_{R,i}$ como frecuencia relativa acumulada) definida de forma recursiva como la sumatoria integral $F_i = \sum_{m=1}^{i} f_m$.
+La **ojiva** es una representación paramétrica escalar consistente en la unión lineal de puntos cartesianos evaluados **exclusivamente sobre el límite superior** de cada clase. Topológicamente, es la traza vectorial unívoca dictada por los pares ordenados:
+$$P_i = (c_{i+1}, F_i), \quad \forall i \in \{1, 2, ..., k\}$$
+
+**Teorema 8.1 (Propiedad de isomorfismo continuo empírico):**
+En el modelado inferencial, la ojiva de frecuencias relativas porcentuales actúa directamente como el principal **Estimador Empírico Computacional** de la verdadera **Función de Distribución Acumulada** (FDA, o CDF por sus siglas en inglés) del marco axiomático de probabilidad, delimitada canónicamente por:
+$$F_X(x) = P(X \leq x)$$
+**Axioma de Convergencia asintótica:** Según los teoremas del límite de Glivenko-Cantelli, conforme el tamaño muestral $N \to \infty$ y el ancho de clase $\Delta c \to 0$, la curva discreta quebrada de la ojiva converge estructural y uniformemente en su probabilidad hacia la forma suave continua de su variable generatriz teórica.
+
+### 8.3 Algoritmo metodológico de construcción
+
+1. **Tabulación exhaustiva escalar:** Generar las columnas obligatorias de "Límites Superiores de Clase" ($c_{i+1}$) y la columna dependiente ligada a la secuencia de frecuencias acumuladas $F_i$ (absolutas numéricas) o $F_{R,i}$ (relativas porcentuales normalizadas a base 1).
+2. **Anclaje nulo topológico:** Para asegurar la validez física inquebrantable que un área probabilística vacía genera probabilidad $0$, se **debe anclar por obligación un nodo cero** artificial inferior coincidente con límite métrico primario ($c_1$) con una coordenada en el piso horizontal, formando la dupla $(c_1, 0)$.
+3. **Mapeo vectorial cartesiano escalonado:** Trazar posicionalmente el resto de la bóveda de la data trazando todos los $k$ pares empíricos calculados $(c_{i+1}, F_i)$ en el espacio métrico plano $\mathbb{R}^2$.
+4. **Interpolación segmentada directa:** Unir cronológicamente (con sentido absoluto de izquierda a derecha sin nunca retroceder) los nodos vectoriales contiguos valiéndose de segmentos puros de recta matemática en una sola dimensión.
+5. **Tope integral estructural:** El punto algorítmico terminal $(c_{k+1}, F_k)$ tiene que ascender irrevocablemente hasta alcanzar o emparejarse con el coloso final numérico poblacional analizado completo $N$ (para medidas absolutas) o su análogo escalado a cota absoluta $100\%$ ($1.0$). Un déficit aquí expone error humano en suma.
+
+![[ojiva-acumulada.png]]
+
+### 8.4 Utilidad paramétrica heurística e interpolación de posición
+
+**Relevancia funcional insuperable y utilidades analíticas profundas:**
+- **Localización microscópica y resolución inversa de Quantiles:** La curva de ojiva permite calcular interpolaciones algebraicas por inversión funcional. En ciencias sociales y ciencias de la salud, si deseamos estimar el **Decil 8** o **Percentil 85** poblacional, únicamente hace falta lanzar un rayo vector topológico horizontal trazado del eje $Y$ dependiente (en altura 80% u 85%) hacia adelante, impactar la ojiva en el plano de dispersión, y acto seguido dictaminar una transversal vertical plomada directo hasta el eje de piso estático $X$ para revelar en qué estrato crudo puntual ocurrió dicho percentil anatómico. Sirve como regla general para cualquier Cuartil $Q_1$, Mediana $Q_2$, etc.
+- **Auditoría de densidad y aglomeración poblacional de la pendiente:** En las gráficas de ojiva, rastrear su derivada matemática visual o inclinación (pendiente de secante), informa directamente la densidad subyacente de la data real. Zonas verticales escarpadas implican una altísima condensación estadística extrema de la moda de variados datos saturados en un corto trecho geométrico de longitud. Como es de esperarse, dominios con pendiente larga mesetaria avisan enormes fosos empíricos despoblados. El viraje global y gradual de todo el sistema hacia cóncavo o hacia convexo informa de a qué extremo se localiza el sesgo direccional macro (asimetría global), sin necesidad a calcular de forma teórica un parámetro explícito por de $g_1$ del coeficiente asimétrico cúbico de Fisher a mano alzada.
+
+## 9. Diagrama de Pareto
+
+### 9.1 Contexto histórico y definición intuitiva
+
+Un diagrama de Pareto es una poderosa combinación analítica que funde un gráfico de barras organizado de mayor a menor con un polígono de frecuencias acumuladas superpuesto. Su propósito principal en gestión y ciencia es ayudar a identificar rápidamente los problemas y causas más influyentes de un sistema, mostrando de forma muy elocuente cuáles variables se llevan el "león de la contribución" a un efecto global.
+
+**Contexto Histórico:** El principio subyacente fue introducido a finales del siglo XIX por el economista y sociólogo italiano **Vilfredo Pareto**, quien observó empíricamente que aproximadamente el 80% de la riqueza o propiedad de tierras en Italia estaba en manos de apenas el 20% de la población. Más tarde, en la década de 1940, el ingeniero de calidad **Joseph Juran** universalizó y formalizó este concepto estadístico bajo el nombre "Principio de Pareto" y lo adaptó al control de calidad, acuñando la famosa frase que distingue contundentemente entre los "pocos vitales y los muchos triviales".
+
+### 9.2 Definición formal y fundamentación empírica
+
+**Definición 8.1 (Diagrama de Pareto):**
+Sea $X$ una **variable cualitativa o nominal** que parametriza fallos, causas o eventos discretos con $k$ clases finitas: $X_1, X_2, ..., X_k$. Sean $n_1, n_2, ..., n_k$ sus respectivas frecuencias absolutas, las cuales reciben un reordenamiento artificial estricto en forma **monótonamente decreciente**, tal que $n_1 \geq n_2 \geq ... \geq n_k$.
+Un **diagrama de Pareto** es un constructo visual híbrido compuesto por:
+1. Un **gráfico de barras vertical**, donde la ordenada máxima de cada base rectangular es proporcional a su frecuencia respectiva $n_i$. Estas barras se adhieren sin separación espacial para ilustrar continuidad analítica.
+2. Una **ojiva porcentual** adjunta (un polígono de las frecuencias relativas acumuladas $F_i$), escalada sistemáticamente contra un eje secundario de ordenadas (Y-derecho) mapeado bajo el intervalo $[0\%, 100\%]$.
+
+**Teorema 8.1 (Principio de escasez o de eficacia marginal de Pareto - Regla 80/20):**
+Aunque no es una ley puramente axiomática, el postulado se revela como un isomorfismo empírico irrefutable en distribuciones de asimetría radical (colas pesadas). Establece que, usualmente, un pequeño clúster de causas (normalmente alrededor de $j/k \approx 0.20$) engendra la arrolladora mayoría del impacto total acumulado en el sistema; es decir:
+$$\sum_{i=1}^{j} f_i \approx 0.80$$
+
+![[diagrama-pareto.png]]
+
+### 9.3 Rigor metodológico en su algoritmo de construcción
+
+Construir un Pareto libre de sesgos exige acatar un algoritmo normalizado de doble escala:
+
+1. **Recolección y taxonometría categórica:** Cuantificar el vector de incidencias de un sistema de acuerdo a tipología bajo una ventana del tiempo controlada $T$.
+2. **Re-ordenación paramétrica:** Ordenar las categorías en el eje de las abscisas (X) estrictamente mediante su frecuencia $n_i$, de forma decreciente. *(Axioma de la miscelánea: Si existe un bloque heterogéneo condensado de eventos menores bajo el nombre "Otros", matemáticamente debe posicionarse al extremo final del eje $\mathbf{X_k}$, subvirtiendo la regla de decrecimiento para descartarlo como ruido visual)*.
+3. **Mapeo matemático acumulativo:** Computar para cada categoría reclasificada $i$, la frecuencia local relativa $f_i$ y su sumatoria integral $F_i = \sum_{m=1}^{i} f_m$.
+4. **Acoplamiento de proyección topológica:** 
+   - **Eje Y izquierdo (Primario):** Escalar sobre la suma discreta agregada ($0 \to \sum_{i=1}^k n_i$).
+   - **Eje Y derecho (Secundario):** Escalar paramétricamente ($0\% \to 100\%$).
+   - **Anclaje de la ojiva:** Anclar los nodos del polígono acumulativo asegurando que el nodo terminal converja exactamente con el techo absoluto (100%) en el límite derecho.
+
+### 9.4 Usabilidad analítica y restricciones de validación
+
+**Valoración funcional en la praxis heurística:**
+Su aplicación trasciende la estadística exploratoria simple y fundamenta la toma de decisiones gerencial en las ramas más técnicas *(e.g. Lean Six-Sigma, Desarrollo de Software)*. Ataca el dilema paramétrico de forma pragmática: **¿Hacia qué clúster apunto mis recursos logísticos para optimizar drásticamente la esperanza del ROI correctivo?** No hay alternativa contemporánea más elegante ni intuitiva para segmentar la "cabeza" que acapara la varianza poblacional general.
+
+**Limitaciones y advertencias del algoritmo:**
+- **La ceguera ante el "peso o gravedad costosa" (Severity Bias):** Mide el volumen pero no calibra el daño. Un defecto logístico rarísimo (ej. explosión termodinámica eventual) representará un $n_i$ bajísimo confundiéndose como "trivial" según la ojiva, pese a ser fatal. Solución: la mutación por *Pareto Multiplicativo Ponderado* (Costos $\propto n_i \cdot \text{Impacto}_i$).
+- **No escarba la relación causal basal funcional:** Revelará sin lugar a dudas *qué y cuánto* es lo que más falla en superficie, pero nunca proporcionará una epifanía empírica sobre *por qué* suceden esas fallas ni si exhiben colinealidad fuerte entre ellas.---
+
+
+## 10. Diagrama de tallo y hoja (Stem-and-Leaf Plot)
+
+### 10.1 Contexto histórico y definición intuitiva
+
+Es una técnica de representación semi-gráfica que desintegra "quirúrgicamente" cada número de una muestra cuantitativa en dos partes emparejadas: un "tallo" (los primeros dígitos posicionales) y una "hoja" (el último dígito residual). Visualmente, exhibe la silueta de un histograma horizontal, pero construido enteramente por el texto de los números crudos, impidiendo la pérdida tradicional de información numédica que ocurre al hacer agrupamientos ciegos.
+
+**Contexto Histórico:** El diagrama de tallo y hoja fue formalizado en la década de 1960 por el eminente matemático de Princeton **John W. Tukey**, pionero indiscutible del Análisis Exploratorio de Datos (EDA). Tukey buscaba desarrollar heurísticas visuales "rápidas y sucias" (quick-and-dirty) que los estadísticos pudieran trazar analógicamente en una época donde las computadoras interactuaban solo con tarjetas perforadas y carecían del renderizado visual moderno. Su filosofía no concebía este gráfico para reemplazar al robusto histograma, sino complementarlo para el modelado instantáneo y el respeto a la cifra atómica real.
+
+### 10.2 Definición formal y fundamentación topológica
+
+**Definición 9.1 (Diagrama de tallo y hojas):**
+Sea un conjunto de datos poblacionales (o muestrales) ordenado localmente $X = \{x_1, x_2, ..., x_N\}$ donde cada variable empírica $x_i$ está codificada en un sistema posicional de numeración abstracta (típicamente base 10). Se estipula un **operador de partición ortogonal** $\pi(x_i) = (T_i, H_i)$ donde:
+- **Tallo ($T_i$):** Componente algebraico de mayor magnitud jerárquica (decenas, centenas o millares).
+- **Hoja ($H_i$):** El remanente truncado unitario de menor sensibilidad jerárquica métrica, usualmente acotado al rango $H_i \in \{0, 1, ..., 9\}$.
+
+Consecuentemente, se aglomeran todos los submúltiplos $H_i$ co-relacionados a un mismo operador origen $T$ en una matriz indexada bidimensional. Al graficarlo, la cardinalidad de hojas subyacente a un tallo emula estructuralmente la frecuencia absoluta $n_i$ de un intervalo modular del histograma clásico.
+
+![[diagrama-tallo-hoja.png]]
+
+### 10.3 Algoritmo logístico de construcción sistemática
+
+La sintaxis constructiva requiere una estricta segregación numérica y canónica lineal:
+
+1. **Anclaje de la granularidad posicional:** Aislar el dígito dominante como núcleo del "tallo". Evaluando el dato experimental $x_k = 72$, el multiplicador decenal equivale al $7$ (escala estructural matriz) y remite como hoja unitaria expansiva al $2$.
+2. **Bisección vertical cartesiana:** Perpendicular a las ordenadas, trazar transversalmente un segmento interceptor vertical. En la región izquierda (abscisas categóricas), enumerar de forma asintóticamente estricta todo el intervalo métrico desde $T_{\min}$ a $T_{\max}$. ¡Advertencia estadística severa! Omitir visualmente un tallo inactivo (tallo donde ninguna hoja aterrizó y su frecuencia es $0$) vulnera y distorsiona la forma de densidad de la distribución empírica. 
+3. **Plasmado de la ramificación perimetrante:** Consignar para cada evento experimental crudo su respectivo $H_i$, indexándolo de forma paralela u horizontal al elemento $T_i$ de su tallo creador.
+4. **Ordenamiento canónico (post-tabulación EDA):** Ordenar estocásticamente las hojas de izquierda a derecha ascendentemente por orden de magnitud. Un tallo de muestra quedará codificado descriptivamente así: $5 \mid 1 \ 1 \ 2 \ 4 \ 6 \ 9$.
+
+### 10.4 Usabilidad analítica, pros y restricciones lógicas
+
+**Aciertos paramétricos insuperables:**
+- **Inmutabilidad intrínseca del dato (Data Intactness):** En la ontología del histograma estándar un intervalo "desvanece" la variable experimental tragándose el valor microscópico original (sabemos que hay 5 datos entre 10 y 20, pero no sus cifras). El diagrama de ramificación preserva la identidad atómica exacta y total sin alterar ni una cifra.
+- **Rastreo forense subatómico:** Su fisonomía devela imperfecciones sub-paramétricas ocultas, logrando identificar modas localizadas o anomalías psicológicas severas como el sesgo del redondeo algorítmico humano (un fenómeno en toma de inventarios donde por economía cerebral, el personal tabula un exceso brutal de valores terminados preferentemente en digitación de los rangos $\mathbf{0}$ o $\mathbf{5}$).
+
+**Limitantes estadísticas dogmáticas:**
+- **Barrera de fatiga dimensional (Hipótesis del N-Grande):** Resulta analíticamente asfixiante e ilegible bajo muestreos poblacionales densos ($N > 100$). Acentuadas aglomeraciones ahogan diametralmente la horizontalidad del papel, destrozando la percepción cognitiva de heurística rápida ideada por Tukey.
+- **Abstracción decimal anidada:** Tratándose de conjuntos experimentales de crudo control analítico con una altísima precisión y varianza marginal microscópica (por ejemplo, mediciones farmacológicas del orden $\{0.012, 0.015, 0.018\}$), el tallo natural deviene disfuncional. Dibujarlo forzaría re-escalamiento cognitivamente agobiante (factores multiplicativos $\lambda$-shift de $\times 1000$ previo al particionado) lo cual somete al interpretador posterior del gráfico a una fuerte probabilidad de equivocación y sesgo de lectura.
+
+
+## 11. Diagrama de caja y bigotes (Box Plot)
+
+### 11.1 Contexto histórico y definición intuitiva
+
+Un diagrama de caja es una estandarización visual que destila cualquier conjunto de datos masivo en un simple rectángulo (la caja) con dos líneas extendidas (los bigotes). Nos muestra de inmediato dónde está concentrada la "mitad" de la población, dónde está el equilibrio central, y detecta automáticamente aquellos valores que son tan extremos que deben considerarse anomalías o "bichos raros" dentro de la muestra.
+
+**Contexto Histórico:** El diagrama de caja, o _boxplot_, es otra joya magistral introducida en 1970 por el matemático **John W. Tukey** (y diseminada en su influyente libro de 1977, *Exploratory Data Analysis*). Mientras el histograma intentaba modelar toda la curva de densidad y el diagrama de tallo y hoja buscaba preservar toda la cifra atómica, Tukey diseñó el _boxplot_ con una filosofía contraria pero igualmente brillante: **la abstracción y la robustez**. Su objetivo era comprimir la "columna vertebral" de una distribución en una representación mínima e hipereficiente que fuera resistente a anomalías.
+
+### 11.2 Arquitectura formal y el Resumen de los 5 Números
+
+**Definición 10.1 (Diagrama de Caja de Tukey):**
+Sea una variable aleatoria cuantitativa con una muestra ordenada $X = (x_{(1)}, x_{(2)}, ..., x_{(N)})$. El diagrama de caja es la representación geométrica bidimensional fundamentada estrictamente en el **Resumen de los 5 números estadísticos de posición no paramétricos**:
+1. El valor Mínimo empírico (excluyendo atípicos).
+2. El Primer Cuartil ($Q_1$ o percentil 25).
+3. La Mediana ($Q_2$ o percentil 50).
+4. El Tercer Cuartil ($Q_3$ o percentil 75).
+5. El valor Máximo empírico (excluyendo atípicos).
+
+**Axiomas de diseño estructural:**
+- **La Caja central (El "Core"):** Se traza un rectángulo delimitado por los valores ordinales de $Q_1$ (base) y $Q_3$ (techo). Por definición matemática inquebrantable, exactamente **el 50% central de la dispersión de datos de toda la muestra habita dentro de esta caja**.
+- **La Dispersión Robusta (RIC):** La altura teórica de la caja se define como el Rango Intercuartílico: $\text{RIC} = Q_3 - Q_1$. Esta métrica mide la dispersión y es completamente inmune y ortogonal a la influencia de valores extremos.
+- **La Cicatriz de la Mediana:** Se segmenta la caja con una línea transversal ubicada exactamente en el valor de la Mediana ($Q_2$). Su asimetría respecto al centro de la caja revela de inmediato el sesgo natural (positivo o negativo) de la distribución focal.
+
+![[diagrama-caja.png]]
+
+### 11.3 Algoritmo heurístico de construcción y detección de anomalías
+
+El genio de este gráfico radica en su rigor para definir y marginar matemáticamente qué es un "Outlier" (valor atípico), negándose a dejarlo a la subjetividad humana.
+
+1. **Tabulación posicional:** Calcular rigurosamente los estadísticos de orden $Q_1$, $Mediana$ y $Q_3$. Trazar la caja transversal y su línea de segmentación mediana.
+2. **Cálculo de las Barreras Teóricas Inobservables (Fences):** Se computan los límites teóricos del sistema usando un factor de escala canónico propuesto por Tukey (1.5):
+   - **Barrera Interior Inferior:** $\text{LII} = Q_1 - 1.5 \cdot \text{RIC}$
+   - **Barrera Interior Superior:** $\text{LIS} = Q_3 + 1.5 \cdot \text{RIC}$
+   *(Nota: Valores que excedan $3.0 \cdot \text{RIC}$ se denominan "Atípicos Extremos" o "Far Outliers").*
+3. **Expansión de los Bigotes (Whiskers):** Los segmentos (bigotes) no viajan al infinito ni hasta los límites teóricos. Un bigote se arrastra hacia afuera solo hasta hacer contacto con **el último dato experimental real** que orbite dentro del límite de las barreras (es decir, el dato más extremo que aún cumple $x_i \geq \text{LII}$ y $x_i \leq \text{LIS}$).
+4. **Graficado individual del atípico:** Todo $x_i$ muestral que perfore y sobreviva fuera de estas barreras teóricas se considera una desviación, y es penalizado. Pierde el "anonimato" del bloque y es graficado individualmente flotando como un punto explícito, asterisco o cruz.
+
+### 11.4 Relevancia analítica de alto nivel y restricciones
+
+**¿Por qué es uno de los gráficos más importantes de la estadística contemporánea?**
+- **El Rey de la Comparatividad Estratificada:** Poner dos histogramas superpuestos es visualmente ruidoso. Poner 10 es ininteligible. Sin embargo, colocar 10 diagramas de caja en paralelo compartiendo el mismo eje (Boxplots paralelos) produce un despliegue paramétrico magnífico donde el cerebro humano compara instantáneamente el cambio de medias, empujes y varianzas de 10 estratos distintos de una pasada.
+- **Robustez y blindaje analítico:** Al ignorar la Media $(\mu)$ y la Varianza $(\sigma^2)$ (las cuales nacen sesgadas ante el menor defecto extremo), el gráfico de caja usa métricas no paramétricas ordinales ($Q_1, Q_2, Q_3$). Esto lo vuelve indestructible y ciego a perturbaciones extremas que destruirían otros modelos matemáticos.
+
+**Limitantes estadísticas dogmáticas:**
+- **Encubridor de las formas multi-modales:** La abstracción de Tukey tiene un costo gravísimo. Diferentes distribuciones empíricas completamente opuestas (una masa uniforme, y un fenómeno estrictamente bimodal de dos picos) **pueden generar algebraica e idénticamente el mismo diagrama de caja**. El boxplot asume unimodalidad tácita; es por ello que hoy en día, las variables críticas bivariadas en _Machine Learning_ o ciencia de datos exigen graficar encima el diagrama de caja sobre un *Violin Plot* (que incorpora la curva real de la densidad empírica lateralmente).
+
+
 ---
-## 8. Otros gráficos estadísticos importantes
 
-### 8.1 Diagrama de caja (Box Plot)
+## 11. Principios de buena práctica en visualización
 
-**Características:**
-- Resume la distribución mediante **cinco estadísticos**: mínimo, Q₁, mediana, Q₃, máximo
-- Identifica **valores atípicos** (outliers)
-- Permite comparar múltiples grupos fácilmente
-
-### 8.2 Gráfico de sectores (Pie Chart)
-
-**Uso:** Variables cualitativas, especialmente cuando se desea mostrar **proporciones** de un total.
-
-**Limitación:** Difícil comparar ángulos; el gráfico de barras suele ser superior.
-
-### 8.3 Gráfico de dispersión (Scatter Plot)
-
-**Uso:** Visualizar relación entre **dos variables cuantitativas**
-
-**Objetivo:** Identificar correlación, tendencias, patrones bivariados
-
-### 8.4 Ojiva o polígono de frecuencias acumuladas
-
-**Construcción:** Graficar $(c_{i+1}, F_i)$ para $i=1,...,k$ y conectar con segmentos
-
-**Interpretación:** Aproximación gráfica de la **función de distribución empírica** $F_N(x)$
-
----
-
-## 9. Principios de buena práctica en visualización
-
-### 9.1 Los principios de Tufte (1983)
+### 11.1 Los principios de Tufte (1983)
 
 Edward Tufte estableció principios fundamentales para gráficos estadísticos efectivos:
 
@@ -357,57 +544,60 @@ Edward Tufte estableció principios fundamentales para gráficos estadísticos e
 3. **Claridad**: Cada elemento debe tener un propósito comunicativo claro.
 4. **Densidad de datos**: Mostrar la mayor cantidad de información en el menor espacio posible sin sacrificar claridad.
 
-### 9.2 Errores comunes a evitar
+### 11.2 Errores comunes a evitar
 
 | Error | Problema | Solución |
 |:------|:---------|:---------|
 | **Eje Y truncado** | Exagera diferencias pequeñas | Iniciar eje en cero |
-| **3D innecesario** | Distorsiona proporciones | Usar 2D siempre que sea posible |
-| **Demasiados colores** | Confunde, no aporta información | Usar color con propósito específico |
-| **Escalas inconsistentes** | Impide comparación | Estandarizar escalas al comparar |
-| **Falta de etiquetas** | Información incompleta | Título, ejes, leyenda, unidades |
+| **3D innecesario** | Distorsiona proporciones astronómicamente | Usar 2D siempre que sea posible, estricto en gráficos de torta |
+| **Demasiados colores** | Confunde, no aporta información | Usar color con propósito específico o paleta monocromática |
+| **Escalas inconsistentes** | Impide comparación | Estandarizar escalas al comparar (e.g. ojivas normalizadas al 100%) |
+| **Falta de etiquetas** | Información incompleta | Título, ejes, leyenda, unidades numéricas claras |
 
 ---
 
-## 10. Resumen conceptual
+## 12. Resumen conceptual
 
-### 10.1 Tabla de decisión para elegir gráfico
+### 12.1 Tabla de decisión para elegir gráfico
 
 ```mermaid
 graph TD
-    A[¿Qué gráfico usar?] --> B{Tipo de variable}
-    B -->|Cualitativa o<br/>Discreta no agrupada| C[Gráfico de barras]
-    B -->|Continua o<br/>Discreta agrupada| D[Histograma]
+    A[¿Qué gráfico usar?] --> B{Naturaleza de la Variable}
     
-    D --> E{¿Objetivo?}
-    E -->|Forma de distribución| F[Histograma + Curva]
-    E -->|Comparar grupos| G[Polígono de frecuencias<br/>superpuesto]
-    E -->|Identificar outliers| H[Box plot]
+    B -->|Cualitativa / Nominal| C{¿Objetivo Analítico?}
+    C -->|Comparar conteos| C1[Gráfico de barras]
+    C -->|Composición Total 100%| C2[Gráfico de sectores<br/>(si k ≤ 5)]
+    C -->|Identificar "Pocos Vitales"| C3[Diagrama de Pareto]
     
-    C --> I{¿Múltiples grupos?}
-    I -->|No| J[Barras simples]
-    I -->|Sí| K[Barras agrupadas<br/>o apiladas]
+    B -->|Cuantitativa Continua /<br/>Discreta Agrupada| D{¿Objetivo Analítico?}
+    D -->|Densidad General| D1[Histograma + Curva]
+    D -->|Preservar Cifra Atómica| D2[Tallo y Hoja<br/>(si N < 100)]
+    D -->|Cuantiles y Percentiles| D3[Ojiva de Frecuencias<br/>Acumuladas]
+    D -->|Comparabilidad Estratificada| D4[Diagrama de Caja<br/>(Box Plot)]
+    D -->|Comparar Densidades| D5[Polígonos Superpuestos]
     
     style A fill:#e1f5ff,stroke:#333,stroke-width:2px
     style B fill:#fff4e1,stroke:#333,stroke-width:2px
+    style C fill:#f9e1ff,stroke:#333,stroke-width:1px
+    style D fill:#e1ffe5,stroke:#333,stroke-width:1px
 ```
 
-### 10.2 Conceptos clave
+### 12.2 Conceptos clave añadidos y consolidados
 
-| Concepto | Definición sintética | Aplicación |
-|:---------|:---------------------|:-----------|
-| **Gráfico de barras** | Rectángulos separados, altura = frecuencia | Variables discretas |
-| **Histograma** | Rectángulos adyacentes, área = frecuencia | Variables continuas agrupadas |
-| **Polígono de frecuencias** | Línea que conecta marcas de clase | Suavizado del histograma |
-| **Curva de densidad** | Función suave que aproxima distribución | Estimación no paramétrica |
-| **Simetría** | $f(c-x) = f(c+x)$ | Media = Mediana = Moda |
-| **Sesgo positivo** | Cola larga derecha | Media > Mediana |
-| **Sesgo negativo** | Cola larga izquierda | Media < Mediana |
-| **Bimodal** | Dos picos | Posible mezcla de poblaciones |
+| Concepto | Definición sintética / Topológica | Aplicación Estadística |
+|:---------|:--------------------------------|:-----------------------|
+| **Gráfico de barras** | Rectángulos separados, altura proporcional | Nominales / Discretas simples |
+| **Sectores (Torta)** | Biyección ángulo-frecuencia $\alpha_i = f_i 360^\circ$ | Composición de totales ($k \leq 5$) |
+| **Ojiva (FDA)** | Vector escalonado asintótico $(c_{i+1}, F_i)$ | Extracción inversa de Percentiles |
+| **Diagrama de Pareto** | Barras decrecientes + Ojiva acumulada acoplada | Regla técnica 80/20, Six-Sigma|
+| **Tallo y Hoja (EDA)** | Partición posicional ortogonal $\pi(x) = (T, H)$ | Auditoría subatómica, $N < 100$ |
+| **Boxplot (Caja)** | Abstracción de Tukey basada en $Q_1, Q_2, Q_3$ | Análisis de atípicos, Robustez |
+| **Histograma** | Rectángulos adyacentes, área total conservada | Función de Densidad (Continuas) |
+| **Simetría y Sesgo** | Relación de colas y deltas de Media-Mediana | Diagnóstico direccional previo |
 
 ---
 
-## 11. Ejemplo integrador
+## 13. Ejemplo integrador
 
 **Problema:** Analizar la distribución de alturas (en cm) de 100 estudiantes universitarios.
 
@@ -426,32 +616,32 @@ graph TD
 **Análisis gráfico:**
 
 1. **Histograma**: Muestra distribución **unimodal** con moda en $[165,170)$
-2. **Forma**: Aproximadamente **simétrica**, aunque con ligero **sesgo positivo** (cola derecha ligeramente más larga)
-3. **Interpretación**: La mayoría de estudiantes mide entre 160-175 cm (69% de los datos)
-4. **Comparación**: Si queremos comparar con otra universidad, usamos histograma de **frecuencias relativas**
+2. **Ojiva Cuantílica**: El $F_i=0.40$ en el límite $165$, indica que el primer cuartil y casi el percentil 40 se posiciona justo debajo de $165\text{cm}$.
+3. **Forma**: Aproximadamente **simétrica**, aunque con ligero **sesgo positivo** (cola derecha ligeramente más larga)
+4. **Comparación Estratificada**: Si queremos comparar con otra universidad, usamos múltiples **Boxplots paralelos** con el mismo eje métrico.
 
 ---
 
-## 12. Ejercicios propuestos
+## 14. Ejercicios propuestos
 
-**Ejercicio 1:** Explica por qué un histograma con intervalos de amplitud variable requiere graficar la **densidad** $f_i/a_i$ en lugar de la frecuencia $f_i$ directamente.
+**Ejercicio 1 (Visualización Avanzada):** Explica rigurosamente desde el paradigma del Análisis Exploratorio de Datos (EDA) de John Tukey, qué ventajas empíricas tiene el "tallo y hoja" sobre el histograma clásico si el tamaño de muestra poblacional es $N=42$.
 
 **Ejercicio 2:** Dada la siguiente distribución de calificaciones (0-10):
 ```
 5.5, 6.0, 6.5, 7.0, 7.0, 7.5, 7.5, 7.5, 8.0, 8.0,
 8.5, 8.5, 8.5, 8.5, 9.0, 9.0, 9.5, 10.0
 ```
-a) Construye un histograma con 5 intervalos  
-b) Clasifica la distribución (simétrica/asimétrica, unimodal/bimodal)  
-c) ¿Qué sugiere la forma sobre el nivel de dificultad del examen?
+a) Construye un diagrama de caja calculando a mano sus $5$ estadísticos.
+b) Proyecta una Ojiva y evalúa a ojo desnudo dónde cruza la línea del Decil 8 ($80\%$). 
+c) Clasifica la asimetría local.
 
-**Ejercicio 3:** Si una distribución es **bimodal**, ¿qué acciones deberías considerar antes de calcular la media como medida de tendencia central?
+**Ejercicio 3:** ¿Bajo qué escenario algorítmico el Teorema o Diagrama de Pareto perdería su fundamentabilidad analítica a nivel de gestión de calidad? (Pista: analizar una distribución estrictamente uniforme de errores).
 
-**Ejercicio 4 (Avanzado):** Demuestra que el área bajo un polígono de frecuencias relativas con intervalos de amplitud constante $a$ es igual a 1.
+**Ejercicio 4 (Cálculo Paramétrico):** Demuestra formalmente que una muestra empírica donde el límite empírico inferior coincide absolutamente con $Q_1$ carecerá visiblemente de un "bigote estructural izquierdo" en el Boxplot de Tukey.
 
 ---
 
-## 13. Conexión con temas futuros
+## 15. Conexión con temas futuros
 
 Los gráficos estudiados en esta clase son fundamentales para:
 - **Estadística Inferencial**: Visualizar supuestos de normalidad antes de pruebas paramétricas
