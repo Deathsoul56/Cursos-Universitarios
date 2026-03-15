@@ -483,6 +483,8 @@ La sintaxis constructiva requiere una estricta segregación numérica y canónic
 - **Barrera de fatiga dimensional (Hipótesis del N-Grande):** Resulta analíticamente asfixiante e ilegible bajo muestreos poblacionales densos ($N > 100$). Acentuadas aglomeraciones ahogan diametralmente la horizontalidad del papel, destrozando la percepción cognitiva de heurística rápida ideada por Tukey.
 - **Abstracción decimal anidada:** Tratándose de conjuntos experimentales de crudo control analítico con una altísima precisión y varianza marginal microscópica (por ejemplo, mediciones farmacológicas del orden $\{0.012, 0.015, 0.018\}$), el tallo natural deviene disfuncional. Dibujarlo forzaría re-escalamiento cognitivamente agobiante (factores multiplicativos $\lambda$-shift de $\times 1000$ previo al particionado) lo cual somete al interpretador posterior del gráfico a una fuerte probabilidad de equivocación y sesgo de lectura.
 
+grafico tallo y hoja con 2 muestras
+
 
 ## 11. Diagrama de caja y bigotes (Box Plot)
 
