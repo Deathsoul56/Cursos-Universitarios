@@ -307,18 +307,7 @@ Hasta ahora hemos trabajado con ángulos agudos (entre $0$ y $\pi/2$). Para exte
 
 **Definición 4.5 (Ángulos en el plano cartesiano):**
 Un ángulo se mide desde el eje X positivo en sentido **antihorario** (positivo) o **horario** (negativo).
-
-```
-       II   |   I
-            |
-      90°   |   0°
-   ---------|--------- 
-     180°   |   360°
-            |
-      III   |   IV
-           270°
-```
-
+![[cuadrantes.png]]
 #### Signos de las funciones en cada cuadrante
 
 Para ilustrar los signos en cada cuadrante usaremos el triángulo 3-4-5: tomamos un punto a distancia $r=5$ del origen con catetos $|x|=4$ e $|y|=3$, reflejado en los cuatro cuadrantes. Las definiciones sobre el círculo son $\sin\theta = y/r$, $\cos\theta = x/r$, $\tan\theta = y/x$.
@@ -463,7 +452,8 @@ Si escogemos un punto al azar perteneciente a la circunferencia y queremos obten
 * $cos(\theta) = x/R \to x=R\cdot cos(\theta)$
 * $sin(\theta) = y/R \to y=R\cdot \sin(\theta)$
 para este caso particular donde $R=1$ tendremos $(x,y) = (cos(\theta),sin(\theta))$
-
+vemos que la coordenada $x$ será igual al coseno muestras que la coordenadas $y$, con esta igualdad podemos ver como es el comportamiento mientras varia el ángulo simplemente viendo sus valores coordenados
+![[circulo_parametrico.gif]]
 **Definición extendida de funciones trigonométricas:**
 Dado un ángulo $\theta$ medido desde el eje X positivo (sentido antihorario), definimos:
 - El punto $P = (\cos(\theta), \sin(\theta))$ en el círculo unitario
@@ -841,19 +831,7 @@ Con este análisis y los puntos que trazamos, ya podemos tener una buena idea de
 Después de todo este trabajo, ya es momento de ver su gráfica:
 
 **Gráfica:**
-
-```
-    y
-    |
-    |    |      |      |
-    |   /|     /|     /|
-    |  / |    / |    / |
-----+-/--+---/--+---/--+----> x
-    |/   |  /   |  /   |
-   /|    | /    | /    |
-  / |    |/     |/     |
-    -π/2 0  π/2  π  3π/2
-```
+![[funcion_tangente_3.png]]
 
 **Propiedades:**
 - **Dominio:** $\mathbb{R} \setminus \{\frac{\pi}{2} + n\pi : n \in \mathbb{Z}\}$ (excluye donde $\cos(x) = 0$)
@@ -863,8 +841,30 @@ Después de todo este trabajo, ya es momento de ver su gráfica:
 - **Ceros:** $x = n\pi$
 - **Asíntotas verticales:** $x = \frac{\pi}{2} + n\pi$
 
-### 8.4 Transformaciones de funciones trigonométricas
+### 8.4 Funciones recíprocas (Secante, Cosecante y Cotangente)
 
+Al igual que las funciones principales, sus razones recíprocas también se extienden como funciones trigonométricas sobre los números reales. Aunque en la práctica (y en el Cálculo) el uso de seno, coseno y tangente abarca casi todas las aplicaciones, conocer gráficamente a sus recíprocas completa nuestro panorama.
+
+**1. La función Cosecante:** $f(x) = \csc(x) = \frac{1}{\sin(x)}$
+- **Comportamiento:** Al depender del inverso del seno, experimenta explosiones hacia $\pm\infty$ cada vez que $\sin(x)$ se acerca a cero. Esto se traduce en **asíntotas verticales** estrictamente donde se anula el seno: $x = n\pi$, con $n \in \mathbb{Z}$.
+- **Imagen:** $(-\infty, -1] \cup [1, +\infty)$. Curiosamente, la función cosecante jamás tomará valores dentro del intervalo $(-1, 1)$, que es justo el "territorio exclusivo" de su contraparte, el seno.
+- **Período:** $2\pi$.
+![[funcion_cosecante_1.png]]
+**2. La función Secante:** $f(x) = \sec(x) = \frac{1}{\cos(x)}$
+- **Comportamiento:** De manera análoga, la secante tiene asíntotas verticales allí donde el coseno vale cero: $x = \frac{\pi}{2} + n\pi$. Visualmente asimilan la forma de "campanas invertidas" o "U" que "descansan" por encima y por debajo apoyadas milimétricamente exactamente sobre los picos y valles de la gráfica original del coseno.
+- **Imagen:** $(-\infty, -1] \cup [1, +\infty)$.
+- **Período:** $2\pi$.
+![[funcion_secante_1.png]]
+**3. La función Cotangente:** $f(x) = \cot(x) = \frac{\cos(x)}{\sin(x)}$
+- **Comportamiento:** Posee asíntotas en los cruces por cero del seno ($x = n\pi$). Una diferencia estética remarcable respecto a la tangente, además de la traslación de las asíntotas, es que mientras la tangente es siempre creciente en sus intervalos de dominio contiguo, la cotangente es una función estrictamente **decreciente**.
+- **Imagen:** $(-\infty, +\infty)$.
+- **Período:** $\pi$.
+![[funcion_cotangente_1.png]]
+### 8.5 Transformaciones de funciones trigonométricas
+
+Ahora que ya conocemos las graficas de las funciones trigonométricas, vamos a estudiar como se comportando mientras vamos agregando mas constante
+
+Sean $A,B,C,D \in \mathbb{R}$
 **Forma general:**
 $$f(x) = A \cdot \sin(B \cdot x + C) + D$$
 

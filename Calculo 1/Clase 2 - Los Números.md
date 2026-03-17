@@ -1659,7 +1659,7 @@ Estas construcciones garantizan que $\mathbb{R}$ sea **completo**: toda sucesió
 
 ---
 
-## 7. Conjuntos infinitos y cardinalidades infinitas (Opcional)
+## 7. Conjuntos infinitos y cardinalidades infinitas [Opcional]
 
 ### 7.1 Concepto de infinito
 
