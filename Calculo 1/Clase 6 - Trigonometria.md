@@ -452,7 +452,7 @@ Si escogemos un punto al azar perteneciente a la circunferencia y queremos obten
 * $cos(\theta) = x/R \to x=R\cdot cos(\theta)$
 * $sin(\theta) = y/R \to y=R\cdot \sin(\theta)$
 para este caso particular donde $R=1$ tendremos $(x,y) = (cos(\theta),sin(\theta))$
-vemos que la coordenada $x$ será igual al coseno muestras que la coordenadas $y$, con esta igualdad podemos ver como es el comportamiento mientras varia el ángulo simplemente viendo sus valores coordenados
+vemos que la coordenada $x$ será igual al coseno muestras que la coordenadas $y$, con esta igualdad podemos ver como es el comportamiento de ambas razones trigonométricas mientras varia el ángulo simplemente viendo sus valores coordenados
 ![[circulo_parametrico.gif]]
 **Definición extendida de funciones trigonométricas:**
 Dado un ángulo $\theta$ medido desde el eje X positivo (sentido antihorario), definimos:
@@ -893,6 +893,7 @@ $$f(x) = 3\sin(2x - \pi) + 1$$
 - **Período:** $T = \frac{2\pi}{2} = \pi$
 - **Desfase:** $\phi = -\frac{-\pi}{2} = \frac{\pi}{2}$ (desplazado $\frac{\pi}{2}$ a la derecha)
 - **Desplazamiento vertical:** $D = 1$ (eje central en $y = 1$)
+![[funcion_seno_ejemplo1.png]]
 
 **Ejemplo 8.2:**
 $$g(x) = -2\cos\left(\frac{x}{3} + \frac{\pi}{4}\right) - 1$$
@@ -902,6 +903,7 @@ $$g(x) = -2\cos\left(\frac{x}{3} + \frac{\pi}{4}\right) - 1$$
 - **Período:** $T = \frac{2\pi}{1/3} = 6\pi$
 - **Desfase:** $\phi = -\frac{\pi/4}{1/3} = -\frac{3\pi}{4}$ (desplazado $\frac{3\pi}{4}$ a la izquierda)
 - **Desplazamiento vertical:** $D = -1$
+![[funcion_coseno_ejemplo1.png]]
 
 ---
 
@@ -960,6 +962,18 @@ $$x(t) = 1 + 2\cos(t), \quad y(t) = -3 + 2\sin(t)$$
 
 ## 10. Ecuaciones trigonométricas
 
+Una **ecuación trigonométrica** es una ecuación en la que la incógnita aparece dentro de una o más funciones trigonométricas. A diferencia de las identidades, que son verdaderas para todos los valores del dominio, las ecuaciones trigonométricas solo se satisfacen para ciertos valores de la variable.
+
+La principal particularidad de estas ecuaciones es que, dado que las funciones trigonométricas son **periódicas**, en general tienen **infinitas soluciones**: si $x_0$ es solución, también lo son $x_0 + 2n\pi$ (para seno y coseno) o $x_0 + n\pi$ (para tangente), con $n \in \mathbb{Z}$. Por esta razón es importante distinguir entre:
+- **Solución en un intervalo restringido** (por ejemplo $[0, 2\pi)$): se obtiene un número finito de soluciones.
+- **Solución general**: se expresa con el parámetro $n \in \mathbb{Z}$ para capturar todas las soluciones.
+
+La estrategia general para resolver una ecuación trigonométrica es:
+1. Aislar la función trigonométrica (como si fuera una ecuación algebraica).
+2. Identificar el ángulo de referencia usando la tabla de valores o identidades.
+3. Determinar en qué cuadrantes se cumple la condición (signo de la función).
+4. Escribir todas las soluciones en el intervalo pedido y, si corresponde, la solución general.
+
 ### 10.1 Ecuaciones básicas
 
 **Ejemplo 10.1:**
@@ -968,10 +982,10 @@ Resuelva $\sin(x) = \frac{1}{2}$ para $x \in [0, 2\pi)$.
 **Solución:**
 Los ángulos de referencia son $30° = \frac{\pi}{6}$ y $150° = \frac{5\pi}{6}$.
 
-$$x = \frac{\pi}{6} \quad \text{o} \quad x = \frac{5\pi}{6}$$
+$$x = \frac{\pi}{6} \quad \lor \quad x = \frac{5\pi}{6}$$
 
 **Solución general (todos los valores):**
-$$x = \frac{\pi}{6} + 2n\pi \quad \text{o} \quad x = \frac{5\pi}{6} + 2n\pi, \quad n \in \mathbb{Z}$$
+$$x = \frac{\pi}{6} + 2n\pi \quad \lor \quad x = \frac{5\pi}{6} + 2n\pi, \quad n \in \mathbb{Z}$$
 
 **Ejemplo 10.2:**
 Resuelva $\cos(x) = -\frac{\sqrt{2}}{2}$ para $x \in [0, 2\pi)$.
@@ -979,8 +993,7 @@ Resuelva $\cos(x) = -\frac{\sqrt{2}}{2}$ para $x \in [0, 2\pi)$.
 **Solución:**
 El ángulo de referencia es $45° = \frac{\pi}{4}$. Como el coseno es negativo en los cuadrantes II y III:
 
-$$x = \pi - \frac{\pi}{4} = \frac{3\pi}{4} \quad \text{o} \quad x = \pi + \frac{\pi}{4} = \frac{5\pi}{4}$$
-
+$$x = \pi - \frac{\pi}{4} = \frac{3\pi}{4} \quad \lor \quad x = \pi + \frac{\pi}{4} = \frac{5\pi}{4}$$
 ### 10.2 Ecuaciones con identidades
 
 **Ejemplo 10.3:**
