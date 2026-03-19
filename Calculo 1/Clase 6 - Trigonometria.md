@@ -442,7 +442,7 @@ Calcule $\cos\!\left(\dfrac{5\pi}{4}\right)$:
 ---
 ## 5. El círculo trigonométrico
 
-### 5.1 Definición del círculo unitario
+Pese a que la trigonometría nace de los triángulos rectángulos esta presenta una relación muy estrechas con los círculos
 
 **Definición 5.1 (Círculo unitario):**
 El **círculo unitario** es el círculo de radio $1$ centrado en el origen del plano cartesiano:
@@ -475,6 +475,13 @@ Dado un ángulo $\theta$ medido desde el eje X positivo (sentido antihorario), d
 **Ventaja:** Esta definición permite extender las funciones trigonométricas a **todos los ángulos** (no solo agudos).
 
 > Los signos de las funciones en cada cuadrante y los valores en los ángulos de ejes (0°, 90°, 180°, 270°, 360°) ya fueron detallados en la **§4.5** y en la tabla de la **§4.5**.
+
+**Visión alternativa**
+Otra forma de ver esto es solo trabajando con ángulos agudos, dependiendo del cuadrante es donde nacerán estos ángulos, aquí los podemos trabajar similar a como lo hicimos la primera vez, solo que aquí se usa la definición SORCARTOA
+seno = opuesto / radio
+coseno = adyacente / radio
+tangente = opuesto / adyacente
+![[SORCARTOA.png]]
 
 ---
 
