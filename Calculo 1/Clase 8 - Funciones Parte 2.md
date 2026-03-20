@@ -1,6 +1,6 @@
 # Clase 8 - Funciones Parte 2
 
-En esta clase profundizaremos en el análisis funcional, estableciendo definiciones formales para las transformaciones geométricas, la clasificación según simetría (paridad), la composición de funciones, y el estudio riguroso de la inyectividad, sobreyectividad y funciones inversas.
+En esta clase profundizaremos en el análisis de funciones, estableciendo definiciones formales para las transformaciones geométricas, la clasificación según simetría (paridad), la composición de funciones, y el estudio riguroso de la inyectividad, sobreyectividad y funciones inversas.
 
 ## 1. Transformaciones de Funciones
 
@@ -47,6 +47,45 @@ $$
 
 ---
 
+### 1.5 Gráficas de Funciones Transformadas
+
+Conocer las gráficas de las funciones elementales —parábola, valor absoluto, exponencial— no basta por sí solo. El verdadero poder del enfoque por transformaciones radica en que permite construir la gráfica de funciones compuestas **sin tabular punto a punto**: basta con identificar la función base $g$ y aplicar las transformaciones en el orden correcto.
+
+Toda función de la forma $f(x) = a \cdot g(b(x - h)) + k$ se puede graficar siguiendo el procedimiento:
+
+1. Partir de la gráfica de la **función base** $g(x)$.
+2. Aplicar el **escalado horizontal** (factor $\tfrac{1}{b}$ sobre el eje $x$).
+3. Aplicar el **desplazamiento horizontal** en $h$ unidades.
+4. Aplicar el **escalado vertical** (factor $|a|$ sobre el eje $y$; reflexión si $a < 0$).
+5. Aplicar el **desplazamiento vertical** en $k$ unidades.
+
+**Ejemplo 1.5 (Transformación de la parábola):**
+Graficar $f(x) = \dfrac{x^2}{2} + 5$.
+
+Se identifica la función base $g(x) = x^2$ y se reescribe:
+$$f(x) = \frac{1}{2}\,g(x) + 5$$
+
+Las transformaciones son, en orden:
+
+- **Contracción vertical** por $\dfrac{1}{2}$: $\quad g(x) = x^2 \;\longrightarrow\; \dfrac{x^2}{2}$
+
+![[transformacion_parabola_paso1.png]]
+
+- **Traslación vertical** $+5$: $\quad \dfrac{x^2}{2} \;\longrightarrow\; \dfrac{x^2}{2} + 5$
+
+![[transformacion_parabola_paso2.png]]
+
+Toda función desconocida puede construirse así: se descompone en su función base más las transformaciones necesarias para alcanzarla.
+
+> **Advertencia:** Los desplazamientos horizontales pueden resultar engañosos cuando la variable $x$ aparece multiplicada por una constante. La traslación horizontal de $f(x) = g\!\left(b(x-h)\right)$ es de $h$ unidades, **no** de $bh$. Es imprescindible factorizar el coeficiente de $x$ antes de leer el desplazamiento.
+
+**Ejemplo 1.6 (Desplazamiento horizontal con factor de escala):**
+Determinar el desplazamiento que lleva $f(x) = |2x|$ a $g(x) = |2x + 1|$.
+
+Factorizando el coeficiente de $x$ en el argumento de $g$:
+$$g(x) = |2x + 1| = \left|2\!\left(x + \frac{1}{2}\right)\right| = f\!\left(x + \frac{1}{2}\right)$$
+
+El desplazamiento es de $\dfrac{1}{2}$ unidad hacia la **izquierda**, no de $1$ unidad. Leer el "$+1$" como desplazamiento directo, sin factorizar primero el $2$, es el error más frecuente en este tipo de transformaciones.
 ## 2. Simetría de Funciones (Paridad)
 
 Sea $f: D \to \mathbb{R}$ una función con dominio $D$ simétrico respecto al origen (si $x \in D \Rightarrow -x \in D$).
