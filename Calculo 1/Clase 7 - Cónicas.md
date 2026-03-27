@@ -2,6 +2,8 @@
 
 ## 1. El plano cartesiano y transformaciones de coordenadas
 
+primero vamos a recordar algunos conceptos
+
 ### 1.1 El plano $\mathbb{R}^2$
 
 **Definición 1.1 (Plano cartesiano):**
@@ -13,13 +15,7 @@ $$\mathbb{R}^2 = \{(x, y) : x, y \in \mathbb{R}\}$$
 - **Origen:** Punto $O = (0, 0)$ donde se intersectan los ejes
 - **Cuadrantes:** Cuatro regiones delimitadas por los ejes
 
-```
-    II    |    I
-          |
-    ------+------
-          |
-    III   |    IV
-```
+![[cuadrantes.png]]
 
 **Definición 1.2 (Distancia entre dos puntos):**
 La distancia entre los puntos $P_1 = (x_1, y_1)$ y $P_2 = (x_2, y_2)$ es:
@@ -28,6 +24,8 @@ $$d(P_1, P_2) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$
 **Definición 1.3 (Punto medio):**
 El punto medio del segmento entre $P_1 = (x_1, y_1)$ y $P_2 = (x_2, y_2)$ es:
 $$M = \left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right)$$
+
+Ahora vamos a estudiar las transformacion que podemos realizar en el plano
 
 ### 1.2 Traslaciones (Translaciones)
 
@@ -92,16 +90,50 @@ x' = 2\cos(45°) - 2\sin(45°) = 2 \cdot \frac{\sqrt{2}}{2} - 2 \cdot \frac{\sqr
 y' = 2\sin(45°) + 2\cos(45°) = 2 \cdot \frac{\sqrt{2}}{2} + 2 \cdot \frac{\sqrt{2}}{2} = 2\sqrt{2}
 \end{cases}$$
 
-### 1.4 Transformaciones combinadas
+### 1.4 Reflexiones
+
+Una **reflexión** es una transformación que "espeja" todos los puntos del plano respecto a una recta fija llamada **eje de reflexión**.
+
+**Definición 1.6 (Reflexión):** Dado un eje $\ell$, la reflexión de un punto $P$ es el punto $P'$ tal que $\ell$ es la mediatriz del segmento $PP'$.
+
+**Casos fundamentales:**
+
+| Eje de reflexión | Sustitución en ecuaciones |
+|------------------|--------------------------|
+| Eje $X$ ($y = 0$) | $(x, y) \to (x, -y)$ |
+| Eje $Y$ ($x = 0$) | $(x, y) \to (-x, y)$ |
+| Recta $y = x$ | $(x, y) \to (y, x)$ |
+| Recta $y = -x$ | $(x, y) \to (-y, -x)$ |
+| Origen $(0,0)$ | $(x, y) \to (-x, -y)$ |
+
+**Ejemplo 1.5:**
+Refleje el punto $P = (3, 1)$ respecto a: a) el eje $X$, b) el eje $Y$, c) la recta $y = x$:
+
+a) Eje $X$: $P' = (3, -1)$
+b) Eje $Y$: $P' = (-3, 1)$
+c) $y = x$: $P' = (1, 3)$
+
+### 1.5 Transformaciones combinadas
 
 **Proposición 1.1:**
 Las transformaciones se pueden combinar. El orden importa:
 - Traslación seguida de rotación ≠ Rotación seguida de traslación (en general)
 
-**Ejemplo 1.5:**
+**Ejemplo 1.6:**
 Traslade $(1, 0)$ por $(1, 1)$ y luego rote $90°$:
 1. Traslación: $(1, 0) \to (2, 1)$
 2. Rotación: $(2, 1) \to (2\cos(90°) - 1\sin(90°), 2\sin(90°) + 1\cos(90°)) = (-1, 2)$
+
+**Ejemplo 1.7:**
+Aplique a $P = (3, -2)$: primero una reflexión respecto al eje $X$, luego una traslación por el vector $(1, 4)$:
+1. Reflexión respecto al eje $X$: $(3, -2) \to (3, 2)$
+2. Traslación por $(1, 4)$: $(3, 2) \to (3 + 1,\ 2 + 4) = (4, 6)$
+
+Comparar con el orden inverso (primero traslación, luego reflexión):
+1. Traslación por $(1, 4)$: $(3, -2) \to (4, 2)$
+2. Reflexión respecto al eje $X$: $(4, 2) \to (4, -2)$
+
+Los resultados $(4, 6) \neq (4, -2)$ confirman que **el orden de las transformaciones importa**.
 
 ---
 
@@ -115,14 +147,261 @@ $$Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$$
 
 donde $A$, $B$, $C$, $D$, $E$, $F$ son constantes reales y al menos uno de $A$, $B$, $C$ es distinto de cero.
 
-Esta relación nos dará como resultado un circulo, una elipse, una parábola o una hipérbola, estas cuatro secciones geométricas son llamadas las secciones cónicas pues son el resultado de intersecar un cono con un plan.
+Esta relación nos dará como resultado un circulo, una elipse, una parábola o una hipérbola, estaos cuatro lugares geométricos son llamados las secciones cónicas pues son el resultado de intersecar un cono con un plan.
 El termino cruzado $Bxy$ tiene relación con el ángulo de rotación de la sección cónica, en un principio trabajaremos sin el pero mas adelante lo incorporaremos para ver su comportamiento.
 
-**Observación:** Esta ecuación representa una **sección cónica** (o un caso degenerado).
+**Observación:** Si los tres coeficientes cuadráticos son nulos ($A = B = C = 0$), la ecuación se reduce a $Dx + Ey + F = 0$, que es la ecuación general de una **recta**. En ese sentido, la ecuación de segundo grado es una generalización: al "activar" los términos cuadráticos pasamos de rectas a conicas (o a algun caso degenerado).
 
-### 2.2 Clasificación de cónicas por discriminante
+### 2.2 Clasificación de cónicas
 
-**Teorema 2.1 (Clasificación por discriminante):**
+Consideremos la ecuación $Ax^2 + Cy^2 + Dx + Ey + F = 0$ (sin término mixto, $B = 0$) y estudiemos casos según los valores de $A$ y $C$.
+
+**1) Cuando $A = C \neq 0$ → Circunferencia**
+
+$$Ax^2 + Ay^2 + Dx + Ey + F = 0$$
+$$A\left(x^2 + \frac{D}{A}x\right) + A\left(y^2 + \frac{E}{A}y\right) = -F$$
+$$A\left(x + \frac{D}{2A}\right)^2 + A\left(y + \frac{E}{2A}\right)^2 = -F + \frac{D^2}{4A} + \frac{E^2}{4A}$$
+$$\left(x + \frac{D}{2A}\right)^2 + \left(y + \frac{E}{2A}\right)^2 = \frac{D^2 + E^2 - 4AF}{4A^2}$$
+$$(x - h)^2 + (y - k)^2 = R^2$$
+
+donde $h = -\dfrac{D}{2A}$, $\quad k = -\dfrac{E}{2A}$, $\quad R = \dfrac{\sqrt{D^2 + E^2 - 4AF}}{2|A|}$
+
+**Circunferencia** con centro $\left(-\dfrac{D}{2A},\, -\dfrac{E}{2A}\right)$ y radio $r = \dfrac{\sqrt{D^2 + E^2 - 4AF}}{2|A|}$ (cuando $D^2 + E^2 - 4AF > 0$).
+
+**2) Cuando $A \neq C$ y tienen el mismo signo → Elipse**
+
+$$A\left(x + \frac{D}{2A}\right)^2 + C\left(y + \frac{E}{2C}\right)^2 = -F + \frac{D^2}{4A} + \frac{E^2}{4C}$$
+
+Sea $R = -F + \dfrac{D^2}{4A} + \dfrac{E^2}{4C}$, dividiendo por $R$:
+
+$$\frac{(x - h)^2}{a^2} + \frac{(y - k)^2}{b^2} = 1$$
+
+donde $h = -\dfrac{D}{2A}$, $\quad k = -\dfrac{E}{2C}$, $\quad a^2 = \dfrac{R}{A}$, $\quad b^2 = \dfrac{R}{C}$, $\quad R = -F + \dfrac{D^2}{4A} + \dfrac{E^2}{4C}$
+
+**Elipse** con semiejes $a = \sqrt{R/A}$ y $b = \sqrt{R/C}$ (cuando $R > 0$, $A > 0$, $C > 0$).
+
+**3) Cuando $A = 0$ o $C = 0$ (pero no ambos) → Parábola**
+
+Si $C = 0$ y $A \neq 0$:
+
+$$Ax^2 + Dx + Ey + F = 0$$
+$$A\left(x + \frac{D}{2A}\right)^2 = -Ey - F + \frac{D^2}{4A}$$
+$$(x - h)^2 = 4p\,(y - k)$$
+
+donde $h = -\dfrac{D}{2A}$, $\quad k = \dfrac{D^2 - 4AF}{4AE}$, $\quad 4p = -\dfrac{E}{A}$
+
+**Parábola** de eje vertical. Análogamente, si $A = 0$ y $C \neq 0$ se obtiene una parábola de eje horizontal.
+
+**4) Cuando $A$ y $C$ tienen signos opuestos → Hipérbola**
+
+Supongamos $A > 0$ y $C < 0$. Completando cuadrados:
+
+$$A\left(x + \frac{D}{2A}\right)^2 + C\left(y + \frac{E}{2C}\right)^2 = R$$
+
+Dividiendo por $R$ (con $R \neq 0$):
+
+$$\frac{(x - h)^2}{a^2} - \frac{(y - k)^2}{b^2} = 1$$
+
+donde $h = -\dfrac{D}{2A}$, $\quad k = -\dfrac{E}{2C}$, $\quad a^2 = \dfrac{R}{A}$, $\quad b^2 = \dfrac{R}{|C|}$, $\quad R = -F + \dfrac{D^2}{4A} + \dfrac{E^2}{4C}$
+
+**Hipérbola** con eje transverso horizontal (si $R > 0$) o vertical (si $R < 0$).
+
+### 2.4 Eliminación del término mixto
+
+Ahora que sabemos clasificar una cónica cuando $B = 0$, nos surge la pregunta: ¿Cómo clasificamos cuando aparece el término cruzado $Bxy$? La estrategia será encontrar una transformación de coordenadas que lo elimine.
+
+**Paso 1: Entendiendo las transformaciones en las cónicas**
+
+Consideremos una circulo arbitraria, ya sabes que su ecuaciones va a tener la forma de:
+$$(x - h)^2 + (y - k)^2 = R^2$$
+
+si pensamos en la translación $x = x' + h$, $y = y' + k$ obtenemos:
+$$(x' + h - h)^2 + (y' +k - k)^2 = R^2$$
+$$(x')^2 + (y')^2 = R^2$$
+
+En los nuevos ejes, el círculo queda centrado en el origen. Este truco funciona porque la traslación desplaza el **centro** de la cónica. Sin embargo, veamos qué pasa con el término cruzado.
+
+Consideremos la ecuación simplificada $x^2 + xy + y^2 = C$ y apliquemos la traslación $x = x' + \alpha$, $y = y' + \beta$:
+$$(x' + \alpha)^2 + (x' + \alpha)(y' + \beta) + (y' + \beta)^2 = C$$
+$$(x'+\alpha)^2=x'^2+2x'\alpha + \alpha^2$$
+$$(y'+\beta)^2=y'^2+2y'\beta + \beta^2$$
+$$(x'+\alpha)(y'+\beta)=x'y'+x'\beta+y'\alpha+\alpha\beta$$
+
+Sumando los tres bloques:
+$$x'^2 + 2\alpha x' + \alpha^2 + x'y' + \beta x' + \alpha y' + \alpha\beta + y'^2 + 2\beta y' + \beta^2 = C$$
+
+Recolectando por tipo de término:
+$$x'^2 + x'y' + y'^2 + (2\alpha + \beta)\,x' + (\alpha + 2\beta)\,y' + (\alpha^2 + \alpha\beta + \beta^2) = C$$
+
+El coeficiente de $x'y'$ sigue siendo $1$, idéntico al original. La traslación solo agregó términos lineales y desplazó la constante, pero **no modificó ninguno de los coeficientes cuadráticos**. Esto tiene sentido: la traslación reubica el centro de la cónica, pero no cambia su orientación. Necesitamos una transformación que sí afecte la orientación: una **rotación**.
+
+**Paso 2: La rotación rota los ejes**
+
+Probemos con una rotación de ángulo $\theta$ (antihoraria):
+$$\begin{cases}
+x = x'\cos\theta - y'\sin\theta \\
+y = x'\sin\theta + y'\cos\theta
+\end{cases}$$
+
+Sustituimos en $x^2 + xy + y^2 = C$. Calculamos cada término:
+
+$$x^2 = x'^2\cos^2\theta - 2x'y'\cos\theta\sin\theta + y'^2\sin^2\theta$$
+
+$$y^2 = x'^2\sin^2\theta + 2x'y'\cos\theta\sin\theta + y'^2\cos^2\theta$$
+
+$$xy = (x'\cos\theta - y'\sin\theta)(x'\sin\theta + y'\cos\theta)
+= x'^2\cos\theta\sin\theta + x'y'(\cos^2\theta - \sin^2\theta) - y'^2\sin\theta\cos\theta$$
+
+Sumando $x^2 + xy + y^2$ y recolectando por tipo de término:
+
+- **Coeficiente de $x'^2$:** $\cos^2\theta + \cos\theta\sin\theta + \sin^2\theta = 1 + \dfrac{\sin(2\theta)}{2}$
+
+- **Coeficiente de $y'^2$:** $\sin^2\theta - \cos\theta\sin\theta + \cos^2\theta = 1 - \dfrac{\sin(2\theta)}{2}$
+
+- **Coeficiente de $x'y'$:** $-2\cos\theta\sin\theta + (\cos^2\theta - \sin^2\theta) + 2\cos\theta\sin\theta = \cos(2\theta)$
+
+La ecuación queda:
+$$\left(1 + \frac{\sin 2\theta}{2}\right)x'^2 + \cos(2\theta)\, x'y' + \left(1 - \frac{\sin 2\theta}{2}\right)y'^2 = C$$
+
+Para **eliminar el término $x'y'$** exigimos:
+$$\cos(2\theta) = 0 \quad \Longrightarrow \quad 2\theta = 90° \quad \Longrightarrow \quad \theta = 45°$$
+
+Con $\theta = 45°$, $\sin(2\theta) = 1$, y la ecuación se convierte en:
+$$\frac{3}{2}\,x'^2 + \frac{1}{2}\,y'^2 = C \quad \Longrightarrow \quad \frac{x'^2}{2C/3} + \frac{y'^2}{2C} = 1$$
+
+La ecuación resultante es la de una **elipse** en el nuevo sistema de coordenadas rotado.
+
+**Paso 3: Generalización a la ecuación completa**
+
+Aplicamos la misma rotación de ángulo $\theta$ a la ecuación general $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$. Sustituimos:
+$$x = x'\cos\theta - y'\sin\theta, \qquad y = x'\sin\theta + y'\cos\theta$$
+
+**Expansión de los términos cuadráticos:**
+
+$$Ax^2 = A\bigl(x'^2\cos^2\theta - 2x'y'\cos\theta\sin\theta + y'^2\sin^2\theta\bigr)$$
+
+$$Cy^2 = C\bigl(x'^2\sin^2\theta + 2x'y'\cos\theta\sin\theta + y'^2\cos^2\theta\bigr)$$
+
+$$Bxy = B\bigl(x'^2\cos\theta\sin\theta + x'y'(\cos^2\theta - \sin^2\theta) - y'^2\sin\theta\cos\theta\bigr)$$
+
+Sumando los tres bloques y recolectando por tipo de término:
+
+- **Coeficiente de $x'^2$:**
+$$A\cos^2\theta + B\cos\theta\sin\theta + C\sin^2\theta$$
+
+- **Coeficiente de $y'^2$:**
+$$A\sin^2\theta - B\cos\theta\sin\theta + C\cos^2\theta$$
+
+- **Coeficiente de $x'y'$:**
+$$-2A\cos\theta\sin\theta + B(\cos^2\theta - \sin^2\theta) + 2C\cos\theta\sin\theta$$
+
+Usando las identidades de ángulo doble $\sin(2\theta) = 2\sin\theta\cos\theta$, $\cos(2\theta) = \cos^2\theta - \sin^2\theta$ y las identidades de potencia $\cos^2\theta = \frac{1+\cos(2\theta)}{2}$, $\sin^2\theta = \frac{1-\cos(2\theta)}{2}$, podemos reescribir cada coeficiente en forma compacta:
+
+$$A' = \frac{A+C}{2} + \frac{(A-C)\cos(2\theta)}{2} + \frac{B\sin(2\theta)}{2}$$
+$$C' = \frac{A+C}{2} - \frac{(A-C)\cos(2\theta)}{2} - \frac{B\sin(2\theta)}{2}$$
+$$B' = B\cos(2\theta) - (A-C)\sin(2\theta)$$
+
+Nota: se puede verificar fácilmente que $A' + C' = A + C$, es decir, **la traza es invariante** (esto corresponde a temas de algebra lineal) bajo la rotación.
+Para demostrarlo solo debemos sumar los términos expuesto arriba
+$$A'+C' = \frac{A+C}{2} + \frac{A+C}{2} = A+C$$
+
+**Expansión de los términos lineales:**
+
+$$Dx + Ey = D(x'\cos\theta - y'\sin\theta) + E(x'\sin\theta + y'\cos\theta)$$
+$$= (D\cos\theta + E\sin\theta)\,x' + (-D\sin\theta + E\cos\theta)\,y'$$
+
+Por lo tanto:
+$$D' = D\cos\theta + E\sin\theta, \qquad E' = -D\sin\theta + E\cos\theta, \qquad F' = F$$
+
+**Condición de eliminación del término mixto:**
+
+Exigimos $B' = 0$:
+$$B\cos(2\theta) - (A-C)\sin(2\theta) = 0$$
+$$B\cos(2\theta) = (A-C)\sin(2\theta)$$
+
+Dividiendo (cuando $A \neq C$ y $\cos(2\theta) \neq 0$):
+$$\tan(2\theta) = \frac{B}{A - C}$$
+
+Caso especial: si $A=C$, entonces tendremos:
+$$B\cos(2\theta) = 0$$
+por lo tanto $2\theta = 90° \to \theta = 45°$
+
+**Teorema 2.2 (Rotación para eliminar el término mixto):**
+El término $Bxy$ en $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$ se elimina mediante una rotación de ángulo $\theta$ donde:
+$$\tan(2\theta) = \frac{B}{A - C}$$
+
+Tras la rotación, la ecuación queda en la forma clasificable de §2.2:
+$$A'x'^2 + C'y'^2 + D'x' + E'y' + F' = 0$$
+
+donde los nuevos coeficientes cuadráticos son:
+$$A' = A\cos^2\theta + B\cos\theta\sin\theta + C\sin^2\theta$$
+$$C' = A\sin^2\theta - B\cos\theta\sin\theta + C\cos^2\theta$$
+y los coeficientes lineales serán
+$$D' = D\cos\theta + E\sin\theta$$
+$$E' = -D\sin\theta + E\cos\theta$$
+$$F' = F$$
+
+### 2.3 El discriminante y su invarianza
+
+**Definición 2.2 (Discriminante):**
+Dada la ecuación general de segundo grado $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$, se define el **discriminante** como:
+$$\Delta = B^2 - 4AC$$
+
+Esta expresión involucra únicamente los coeficientes de los términos cuadráticos y captura la "forma geométrica" de la cónica, independientemente de su posición o ángulo en el plano.
+
+**Proposición 2.1 (Invarianza bajo traslación):**
+Una traslación no modifica los coeficientes $A$, $B$, $C$, por lo que:
+$$\Delta' = B'^2 - 4A'C' = B^2 - 4AC$$
+
+Esto es inmediato: como vimos en el Paso 1 del §2.4, la traslación solo agrega términos lineales.
+
+**Proposición 2.2 (Invarianza bajo rotación):**
+Tras una rotación de ángulo $\theta$, los nuevos coeficientes cuadráticos son:
+$$A' = \frac{A+C}{2} + \frac{(A-C)\cos(2\theta)}{2} + \frac{B\sin(2\theta)}{2}$$
+$$C' = \frac{A+C}{2} - \frac{(A-C)\cos(2\theta)}{2} - \frac{B\sin(2\theta)}{2}$$
+$$B' = B\cos(2\theta) - (A-C)\sin(2\theta)$$
+
+Calculamos $B'^2 - 4A'C'$ directamente. Partimos de las expresiones obtenidas en §2.2:
+
+**Paso 1: Calculamos $B'^2$.**
+
+Usamos la notación $s = \sin(2\theta)$, $c = \cos(2\theta)$ para no cargar la escritura. Entonces:
+$$B'^2 = \bigl[Bc - (A-C)s\bigr]^2 = B^2c^2 - 2B(A-C)sc + (A-C)^2s^2$$
+
+**Paso 2: Calculamos $4A'C'$.**
+
+Notamos que $A'$ y $C'$ tienen la forma $\frac{A+C}{2} \pm u$ con $u = \frac{(A-C)c + Bs}{2}$, por lo que:
+$$4A'C' = 4\left(\frac{A+C}{2} + u\right)\left(\frac{A+C}{2} - u\right) = 4\left[\left(\frac{A+C}{2}\right)^2 - u^2\right] = (A+C)^2 - 4u^2$$
+
+Calculamos $u^2$:
+$$u^2 = \frac{(A-C)^2c^2 + 2B(A-C)sc + B^2s^2}{4}$$
+
+Por lo tanto:
+$$4A'C' = (A+C)^2 - (A-C)^2c^2 - 2B(A-C)sc - B^2s^2$$
+
+**Paso 3: Calculamos $B'^2 - 4A'C'$.**
+
+$$B'^2 - 4A'C' = B^2c^2 - 2B(A-C)sc + (A-C)^2s^2 - (A+C)^2 + (A-C)^2c^2 + 2B(A-C)sc + B^2s^2$$
+
+Los términos $\pm 2B(A-C)sc$ se cancelan:
+$$= B^2(c^2 + s^2) + (A-C)^2(s^2 + c^2) - (A+C)^2$$
+
+Como $s^2 + c^2 = \sin^2(2\theta) + \cos^2(2\theta) = 1$:
+$$= B^2 + (A-C)^2 - (A+C)^2$$
+
+Expandiendo:
+$$= B^2 + A^2 - 2AC + C^2 - A^2 - 2AC - C^2 = B^2 - 4AC$$
+
+Por lo tanto:
+$$\boxed{B'^2 - 4A'C' = B^2 - 4AC}$$
+
+**El discriminante es invariante bajo rotaciones.** $\blacksquare$
+
+> **Consecuencia:** Como el discriminante no cambia bajo traslaciones ni rotaciones, podemos calcular $\Delta = B^2 - 4AC$ directamente en la ecuación original y aprovecharlo para clasificar la cónica, sin necesidad de realizar ninguna transformación previa.
+
+### 2.4 Clasificación por discriminante
+
+**Teorema 2.2 (Clasificación por discriminante):**
 La naturaleza de la cónica representada por $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$ se determina por el **discriminante**:
 $$\Delta = B^2 - 4AC$$
 
@@ -140,6 +419,30 @@ $$\Delta = B^2 - 4AC$$
 3. **$\Delta > 0$ (Hipérbola):**
    - **Hipérbola**
    - Caso degenerado: dos rectas que se intersectan
+
+**Demostración:**
+
+La idea clave es combinar los dos resultados anteriores:
+
+- Por el **Teorema 2.1**, existe una rotación de ángulo $\theta$ tal que $B' = 0$. La ecuación queda:
+$$A'x'^2 + C'y'^2 + D'x' + E'y' + F' = 0$$
+
+- Por la **Proposición 2.2**, el discriminante es invariante, luego:
+$$\Delta = B^2 - 4AC = B'^2 - 4A'C' = 0 - 4A'C' = -4A'C'$$
+
+Por lo tanto el signo de $\Delta$ determina exactamente el signo del producto $A'C'$, y entramos directamente en la clasificación del §2.2:
+
+**Caso $\Delta < 0$:** $\;-4A'C' < 0 \Rightarrow A'C' > 0$, es decir $A'$ y $C'$ tienen el **mismo signo**.
+
+Por §2.2 (Casos 1 y 2), esto corresponde a una **circunferencia** (si además $A'=C'$) o una **elipse** (si $A' \neq C'$). En términos de la ecuación original: $A'=C'$ ocurre cuando $A=C$ y $B=0$, pues la rotación no mezcla los coeficientes en ese caso.
+
+**Caso $\Delta = 0$:** $\;-4A'C' = 0 \Rightarrow A' = 0$ ó $C' = 0$.
+
+Si $A'=0$: la ecuación tiene solo $C'y'^2 + D'x' + E'y' + F' = 0$, que es una **parábola** en $y'$ (con eje horizontal en el sistema rotado). Análogamente si $C'=0$. Por §2.2 (Caso 3), esto es una parábola.
+
+**Caso $\Delta > 0$:** $\;-4A'C' > 0 \Rightarrow A'C' < 0$, es decir $A'$ y $C'$ tienen **signos opuestos**.
+
+Por §2.2 (Caso 4), esto corresponde a una **hipérbola**. $\blacksquare$
 
 **Ejemplo 2.1:**
 Clasifique las siguientes ecuaciones:
@@ -164,20 +467,11 @@ d) $x^2 - y^2 - 2x + 4y - 4 = 0$
    - $\Delta = 0^2 - 4(1)(-1) = 4 > 0$
    - **Hipérbola**
 
-### 2.3 Eliminación del término mixto
-
-**Teorema 2.2 (Rotación para eliminar término mixto):**
-El término $Bxy$ en la ecuación $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$ se puede eliminar mediante una rotación de ángulo $\theta$ donde:
-$$\tan(2\theta) = \frac{B}{A - C}$$
-
-Si $A = C$, entonces $\theta = 45°$ (o $\frac{\pi}{4}$).
-
-**Observación:** Después de la rotación, la ecuación toma la forma:
-$$A'x'^2 + C'y'^2 + D'x' + E'y' + F' = 0$$
-
 ---
 
 ## 3. Secciones cónicas: definición geométrica
+
+Aqui estudiaremos las secciones conicas a mas profundidad y con un enfoque mas geometrico
 
 ### 3.1 El cono circular recto
 
@@ -268,23 +562,36 @@ donde $C$ es el centro y $r > 0$ es el **radio**.
 La circunferencia con centro $C = (h, k)$ y radio $r$ tiene ecuación:
 $$(x - h)^2 + (y - k)^2 = r^2$$
 
+**Demostración:**
+
+Sea $C = (h, k)$ el centro fijo y $r > 0$ el radio. Por definición, un punto $P = (x, y)$ pertenece a la circunferencia si y solo si su distancia al centro es exactamente $r$:
+$$d(P, C) = r$$
+
+Aplicamos la fórmula de distancia entre dos puntos en $\mathbb{R}^2$:
+$$d(P, C) = \sqrt{(x - h)^2 + (y - k)^2}$$
+
+Sustituyendo la condición:
+$$\sqrt{(x - h)^2 + (y - k)^2} = r$$
+
+Como $r > 0$, ambos lados son no negativos y podemos elevar al cuadrado sin perder equivalencia:
+$$\boxed{(x - h)^2 + (y - k)^2 = r^2}$$
+
+El conjunto de todos los puntos $(x,y)$ que satisfacen esta ecuación es exactamente la circunferencia. $\blacksquare$
+
 **Caso particular (centro en el origen):**
+Si $h = k = 0$:
 $$x^2 + y^2 = r^2$$
 
 **Ejemplo 4.1:**
 La circunferencia con centro $(2, -3)$ y radio $5$ tiene ecuación:
 $$(x - 2)^2 + (y + 3)^2 = 25$$
 
-### 4.2 Ecuación general
+### 4.2 Ecuación general a canónica
 
 **Proposición 4.1:**
-Expandiendo la ecuación canónica, obtenemos la **forma general**:
-$$x^2 + y^2 + Dx + Ey + F = 0$$
-
-donde $D = -2h$, $E = -2k$, $F = h^2 + k^2 - r^2$.
-
-**Completación de cuadrados:**
-Para convertir de forma general a canónica:
+Con lo que ya hemos estudiado de la ecuación general de segundo grado y la ecuación canónica de la circunferencia, ahora practicaremos ejercicios académicos con ambas
+*Para convertir de forma general a canónica:*
+Tenemos la ecuación $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$, la estrategia aquí será la de **Completar de cuadrados:**
 1. Agrupar términos en $x$ y en $y$
 2. Completar cuadrados para ambas variables
 3. Identificar $(h, k)$ y $r$
@@ -300,6 +607,22 @@ x^2 - 6x + y^2 + 4y &= 3 \\
 
 - **Centro:** $(3, -2)$
 - **Radio:** $r = \sqrt{16} = 4$
+
+*Para convertir de forma canónica a general:*
+Tenemos una circunferencia centrada en $(h,k)$ con radio R $(x-h)^2 + (y-k)^2 = R^2$, la estrategia ahora será simplemente desarrollar los pretesis
+
+**Ejemplo 4.3:**
+Convierta la ecuación canónica $(x - 2)^2 + (y + 5)^2 = 9$ a forma general.
+
+Desarrollando los paréntesis:
+$$(x-2)^2 = x^2 - 4x + 4$$
+$$(y+5)^2 = y^2 + 10y + 25$$
+
+Sumando y pasando el $9$ al lado izquierdo:
+$$x^2 - 4x + 4 + y^2 + 10y + 25 - 9 = 0$$
+$$x^2 + y^2 - 4x + 10y + 20 = 0$$
+
+Verificación: $D = -4 = -2h = -2(2)$ ✓, $E = 10 = -2k = -2(-5)$ ✓, $F = h^2 + k^2 - r^2 = 4 + 25 - 9 = 20$ ✓
 
 ### 4.3 El número $\pi$
 
@@ -323,7 +646,7 @@ $$C = 2\pi r$$
 El **área del círculo** de radio $r$ es:
 $$A = \pi r^2$$
 
-**Ejemplo 4.3:**
+**Ejemplo 4.4:**
 Para un círculo de radio $5$ cm:
 - Perímetro: $C = 2\pi(5) = 10\pi \approx 31.42$ cm
 - Área: $A = \pi(5)^2 = 25\pi \approx 78.54$ cm²
@@ -337,7 +660,7 @@ Un **arco** es una porción de la circunferencia delimitada por dos puntos.
 La longitud de un arco que subtiende un ángulo central $\theta$ (en radianes) en una circunferencia de radio $r$ es:
 $$s = r\theta$$
 
-**Ejemplo 4.4:**
+**Ejemplo 4.5:**
 Un arco con ángulo central de $60° = \frac{\pi}{3}$ rad en una circunferencia de radio $6$ cm:
 $$s = 6 \cdot \frac{\pi}{3} = 2\pi \approx 6.28 \text{ cm}$$
 
