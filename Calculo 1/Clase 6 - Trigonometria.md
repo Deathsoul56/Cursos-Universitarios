@@ -227,18 +227,7 @@ Con esto vemos que $\sin(45°) = \cos(45°)$
 
 **Triángulo de 30°-60°-90°:**
 Pensemos en un triángulo equilátero de lados iguales a 2: si trazamos una altura obtendremos un triángulo rectángulo con cateto igual a 1 e hipotenusa igual a 2. Por Pitágoras, el otro cateto medirá $1^2+x^2=2^2 \Rightarrow x^2=4-1 \Rightarrow x=\sqrt{3}$:
-
-```
-        •
-       /|\
-      / | \
-     /  |  \
-  2 /   |√3 \
-   /    |    \
-  /30° _|_ 60°\
- •______1______•
-```
-
+![[triangulo_equilatero_angulos.png]]
 $$\sin(30°) = \frac{1}{2}, \quad \cos(30°) = \frac{\sqrt{3}}{2}, \quad \tan(30°) = \frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3}$$
 $$\sin(60°) = \frac{\sqrt{3}}{2}, \quad \cos(60°) = \frac{1}{2}, \quad \tan(60°) = \sqrt{3}$$
 > **Observación (invarianza de las razones trigonométricas):** Los valores de las razones trigonométricas dependen únicamente del ángulo, no del tamaño del triángulo. Es decir, $\sin\!\left(\dfrac{\pi}{6}\right)$ siempre vale $\dfrac{1}{2}$, independientemente de cuán grande o pequeño sea el triángulo rectángulo en el que se mida.
@@ -442,49 +431,40 @@ Calcule $\cos\!\left(\dfrac{5\pi}{4}\right)$:
 ---
 ## 5. El círculo trigonométrico
 
-Pese a que la trigonometría nace de los triángulos rectángulos esta presenta una relación muy estrechas con los círculos
+Pese a que la trigonometría clásica se origina en el estudio de los triángulos rectángulos, su marco analítico moderno presenta una interconexión estructural y geométrica irrefutable con la topología de los círculos.
 
 **Definición 5.1 (Círculo unitario):**
-El **círculo unitario** es el círculo de radio $1$ centrado en el origen del plano cartesiano:
+El **círculo unitario** se define matemáticamente como la circunferencia de radio $1$ centrada en el origen del plano cartesiano euclidiano, descrita mediante el lugar geométrico:
 $$x^2 + y^2 = 1$$
 ![[circulo_trigonometria.png]]
-Si escogemos un punto al azar perteneciente a la circunferencia y queremos obtener los valores de sus coordenadas $(x,y)$, podemos trazar un triangulo rectángulo donde sus catetos serán las coordenadas $x$ e $y$, la hipotenusa será el radio de la circunferencia $R$ y tendrá un Angulo $\theta$. Con esto podemos ver que que:
-* $cos(\theta) = x/R \to x=R\cdot cos(\theta)$
-* $sin(\theta) = y/R \to y=R\cdot \sin(\theta)$
-para este caso particular donde $R=1$ tendremos $(x,y) = (cos(\theta),sin(\theta))$
-vemos que la coordenada $x$ será igual al coseno muestras que la coordenadas $y$, con esta igualdad podemos ver como es el comportamiento de ambas razones trigonométricas mientras varia el ángulo simplemente viendo sus valores coordenados
+Si seleccionamos un punto arbitrario $(x,y)$ perteneciente a esta circunferencia y deseamos parametrizar sus coordenadas, podemos trazar un triángulo rectángulo cuyos catetos correspondan a las proyecciones ortogonales escalares $x$ e $y$. La hipotenusa será invariablemente equivalente al radio $R$ de la circunferencia, subtendiendo un ángulo tangencial $\theta$. Mediante este constructo geométrico analítico, deducimos que:
+* $\cos(\theta) = \frac{x}{R} \implies x = R \cdot \cos(\theta)$
+* $\sin(\theta) = \frac{y}{R} \implies y = R \cdot \sin(\theta)$
+
+Para el caso axiomático particular donde $R=1$ (la amplitud de la circunferencia unitaria), el sistema de coordenadas de componentes rectangulares se simplifica isométricamente a:
+$$(x,y) = (\cos(\theta), \sin(\theta))$$
+De esta rigurosa formulación se desprende que la coordenada de abscisas $x$ equivale intrínsecamente al valor del coseno, mientras que la ordenada $y$ corresponde al seno. Esta equivalencia nos dota de un modelo estricto para visualizar el comportamiento dinámico de ambas funciones trigonométricas a medida que el ángulo $\theta$ sufre una variación modular continua, observando empíricamente sus valores armónicos proyectados coordenadamente.
 ![[circulo_parametrico.gif]]
-**Definición extendida de funciones trigonométricas:**
-Dado un ángulo $\theta$ medido desde el eje X positivo (sentido antihorario), definimos:
-- El punto $P = (\cos(\theta), \sin(\theta))$ en el círculo unitario
-- $\sin(\theta)$ es la **coordenada y** del punto $P$
-- $\cos(\theta)$ es la **coordenada x** del punto $P$
+**Definición extendida de las funciones trigonométricas:**
+Dado un ángulo estandarizado $\theta$, medido con origen en el primer semi-eje de abscisas positivo (en estricto sentido de rotación analítico antihorario), se definen funcionalmente las proyecciones paramétricas como:
+- El vector-punto intersectante $P = (\cos(\theta), \sin(\theta))$ en dicho perímetro del círculo unitario.
+- $\sin(\theta)$ se extrae y define conceptualmente como la **coordenada geométrica de ordenadas $y$** de dicho punto autovalor $P$.
+- $\cos(\theta)$ se extrae unívocamente como la **coordenada geométrica de abscisas $x$** del mismo punto $P$.
+![[circulo_trigonometria_2.png]]
+**Ventaja topológica y analítica:** Esta conceptualización transciende y rompe definitivamente la atadura euclidiana de poseer triángulos interiores finitos limitados, permitiendo extrapolar y dar existencia continua al campo paramétrico de las series trigonométricas sobre la totalidad y convexidad de los números reales y **todos sus ángulos** $\theta \in \mathbb{R}$ (trascendiendo espectros agudos).
 
-```
-         y
-         |
-         | P(cosθ, sinθ)
-       1 |●
-         |  \
-         |   \ r=1
-         |    \
-    -----+-----●------- x
-         O     θ
-```
+> Los signos matriciales de las funciones en cada sub-espacio cuadrante y la convergencia de valores cardinales axiales (0°, 90°, 180°, 270°, 360°) se han estructurado ya con amplio rigor matemático deductivo dentro de la **§4.5**.
 
-**Ventaja:** Esta definición permite extender las funciones trigonométricas a **todos los ángulos** (no solo agudos).
+### 5.1 Perspectiva Geométrica de Radio-Vectores (Sistema SORCARTOA)
+Una formulación vectorial complementaria radica en modelar el subespacio operando única y exclusivamente mediante las magnitudes acotadas de ángulos agudos de referencia topológicos. Dependiendo rigurosamente de en qué frontera cuadrática o sub-espacio matricial nazca o descuelle el radio vector empírico observable, el tratamiento se homologa al primer abordaje fundacional de triángulos euclidianos elementales de la sección $1$. Esta formalización extendida es parametrizada bajo la mnemotecnia analítica SORCARTOA:
+* $\sin(\theta) = \frac{\text{Cateto Opuesto}}{\text{Radio Vector }(R)}$
+* $\cos(\theta) = \frac{\text{Cateto Adyacente}}{\text{Radio Vector }(R)}$
+* $\tan(\theta) = \frac{\text{Cateto Opuesto}}{\text{Cateto Adyacente}}$
 
-> Los signos de las funciones en cada cuadrante y los valores en los ángulos de ejes (0°, 90°, 180°, 270°, 360°) ya fueron detallados en la **§4.5** y en la tabla de la **§4.5**.
-
-**Visión alternativa**
-Otra forma de ver esto es solo trabajando con ángulos agudos, dependiendo del cuadrante es donde nacerán estos ángulos, aquí los podemos trabajar similar a como lo hicimos la primera vez, solo que aquí se usa la definición SORCARTOA
-seno = opuesto / radio
-coseno = adyacente / radio
-tangente = opuesto / adyacente
 ![[SORCARTOA.png]]
+Bajo esta axiomática transversal, el Radio Vector se consagra matemáticamente en todo tiempo y momento lineal escalar como una norma dimensional euclidiana de crecimiento o fuerza positiva, luego es retenida inflexible y llanamente como unidad medible estrictamente superior a cero ($R>0$). Por necesidad algebraicamente forzosa de la función armónica, las entidades funcionales que asumen íntegramente y absorben el desplazamiento oscilatorio polar y su respectiva mutación del signo estructural ($(+, -)$) son invariablemente las componentes cartesianas perimetrales relativas formadas con el origen, oscilando según fije dogmáticamente el cuadrante del espacio vectorial. Este elegante artificio es precisamente el lecho matricial de validación axiomática para la procedencia fundamental de la lógica en la distribución de la alternancia de signos deducida en apartados teóricos de axiomas anteriores, otorgando ahora una perspectiva cinemática superior para su compresión total y plena.
 
 ---
-
 ## 6. Identidades trigonométricas fundamentales
 
 Una identidad trigonométrica es una equivalencia entre dos expresiones; por ejemplo, en aritmética, las fracciones $2/3$ y $4/6$ son equivalentes, entonces la expresión $2/3=4/6$ es una identidad aritmética. Con esta idea desarrollaremos expresiones trigonométricas equivalentes. 
@@ -869,29 +849,48 @@ Al igual que las funciones principales, sus razones recíprocas también se exti
 ![[funcion_cotangente_1.png]]
 ### 8.5 Transformaciones de funciones trigonométricas
 
-Ahora que ya conocemos las graficas de las funciones trigonométricas, vamos a estudiar como se comportando mientras vamos agregando mas constante
+Una vez establecidas analíticamente las gráficas primigenias de las funciones trigonométricas, procederemos a estudiar formalmente su comportamiento algebraico bajo el efecto sistemático de la adición de constantes paramétricas operativas (transformaciones lineales afines vectoriales).
 
-Sean $A,B,C,D \in \mathbb{R}$
-**Forma general:**
+Sean los escalares reales $A,B,C,D \in \mathbb{R}$, asumiendo rigurosamente $A, B \neq 0$.
+**Forma general de la función periódica escalada:**
 $$f(x) = A \cdot \sin(B \cdot x + C) + D$$
+*Nota de invariabilidad métrica: Todo teorema o propiedad topológica inferida a continuación recae isomorfamente y es análoga para la variante en coseno.*
 
-**Parámetros:**
+**Análisis de Parámetros:**
 
-1. **$A$: Amplitud**
-   - Controla la altura máxima y mínima
-   - La función oscila entre $-|A| + D$ y $|A| + D$
+1. **El escalar $D$: Desplazamiento vertical (Traslación en ordenadas)**
+   - Evaluado como un campo $f(x) = \sin(x) + D$.
+   - Proyecta una **traslación vertical pura** carente absoluta de deformación tensorial. El eje medular o "centroide escalar radiante" de toda la función sufre un vectorización hacia la parte superior ($D > 0$) o decanta hacia la sección inferior ($D < 0$).
+   - La nueva métrica estabilizadora central será el límite $y = D$.
+*Ejemplo empírico analítico: $f(x) = \sin(x) + 5$*
+![[funcion_seno+5.png]]
 
-2. **$B$: Frecuencia**
-   - Controla cuántas oscilaciones completas hay en $2\pi$
-   - **Período:** $T = \frac{2\pi}{|B|}$
+2. **El escalar $A$: Amplitud paramétrica (Homotecia escalar modular)**
+   - Operado como el factor multi-tensor $f(x) = A \cdot \sin(x)$.
+   - Determina estructuralmente un estiramiento vertical (homotecia unidimensional) regulando las crestas cúspides y el sumidero inferior oscilatorio de la onda de transmisión acotando al co-dominio natural de la matriz.
+   - Analíticamente la función original oscila encerrada y amarrada entre $[- |A|, |A|]$.
+   - Generando un sistema mixto de desplazamiento transversal, en formato $A \cdot \sin(x) + D$ la gráfica modula de rango final cerrado en la sección estocástica entre $[- |A| + D, |A| + D]$.
+![[funcion_senox3.png]]
 
-3. **$C$: Desfase o fase inicial**
-   - Desplazamiento horizontal
-   - **Desfase:** $\phi = -\frac{C}{B}$ (hacia la izquierda si $\phi > 0$)
+3. **El escalar $B$: Compresión Frecuencial (Pulsación constante del marco espacial)**
+   - Subjetado estructuralmente en la parte íntima variable de la función $f(x) = \sin(B \cdot x)$.
+   - Parametriza y diseña matemáticamente el factor constante por el cual la red sufre una contracción pura (o aburguesamiento isomorfo) sobre el mismo plano ecuatorial del eje $x$. Es la razón determinística neta de conteo iterativo de oscilaciones de banda por bloque normal de radianes acotado a $2\pi$.
+   - Modificación sustantiva generalizada del **Período empírico:** $T = \frac{2\pi}{|B|}$
+   - **Demostración Analítica del Período:** Por definición de periodicidad matemática, una función $f(x)$ ostenta un período $T$ supremo si rige universalmente que $f(x + T) = f(x)$ para todo $x \in \mathbb{R}$. Sea $f(x) = \sin(B \cdot x)$, evaluamos el incremento topológico: 
+     $$f(x + T) = \sin(B(x + T)) = \sin(B \cdot x + B \cdot T)$$
+     Consagrando como axioma fundamental que la función seno originaria completa y sella su núcleo orbital isomorfo al sumar $2\pi$ a su argumento (i.e. $\sin(\theta + 2\pi) = \sin(\theta)$), forzamos la igualdad resolviendo el encaje de fase asintótica:
+     $$|B| \cdot T = 2\pi \implies T = \frac{2\pi}{|B|} \quad \blacksquare$$
+![[funcion_seno5x.png]]
 
-4. **$D$: Desplazamiento vertical**
-   - Mueve la gráfica hacia arriba ($D > 0$) o abajo ($D < 0$)
-   - La línea central es $y = D$
+4. **El escalar $C$: Desfase primigenio de campo (Traslación en abscisas)**
+   - Parametrizado matricialmente como base mutante topológica $f(x) = \sin(x + C)$.
+   - Operador matemático universal fundamental en señales; rige un corrimiento o ***shift* unidimensional rígido transversal de onda** (sin deformar las métricas internas de su fase o elongación perimetral radial).
+   - Arrastra el punto neutral génesis originario para mutarlo de origen. El punto de corte asintótico se formaliza como el radián de **Desfase empírico:** $\phi = -\frac{C}{B}$. El tren cinemático avanza forzosamente en abscisas en la dirección contraria del hiper-plano negativo izquierdo estandarizado si sucede que $\phi > 0$.
+   - **Demostración Analítica del Desfase:** Partiendo de la forma matricial completa del argumento vibratorio base subyacente del seno, $\sin(Bx + C)$, se despliega una disección algebraica y factorización forzada del tensor escalar frecuencial $B$:
+     $$\sin(B \cdot x + C) = \sin\left[B \cdot \left(x + \frac{C}{B}\right)\right]$$
+     Por axioma básico del cálculo y funciones reales, todo corrimiento morfológico interno sobre la variable independiente regido como $f(x - h)$ impone sistemáticamente una traslación horizontal rígida pura de toda la métrica equivalente al vector posicional $h$. En el interior de nuestro sistema, identificamos indudablemente que $h = -\frac{C}{B}$. Este vector de alteración escalar neta es concebido analíticamente como el desfase matricial $\phi$, evidenciando contundentemente que la génesis y nodo origen del modelo ($x=0$) ha migrado materialmente en el espacio y reposa ahora en la abscisa transversal perimetral $x = -\frac{C}{B}$. $\blacksquare$
+![[funcion_senox+1.png]]
+
 
 **Ejemplo 8.1:**
 $$f(x) = 3\sin(2x - \pi) + 1$$
