@@ -892,284 +892,508 @@ $$f(x) = A \cdot \sin(B \cdot x + C) + D$$
 ![[funcion_senox+1.png]]
 
 
-**Ejemplo 8.1:**
+**Ejemplo 8.1 (Análisis paramétrico analítico de una función senoidal):**
+Consideremos el modelado de la ecuación analítica del operador en el espacio:
 $$f(x) = 3\sin(2x - \pi) + 1$$
-
-- **Amplitud:** $A = 3$ → oscila entre $-2$ y $4$
-- **Período:** $T = \frac{2\pi}{2} = \pi$
-- **Desfase:** $\phi = -\frac{-\pi}{2} = \frac{\pi}{2}$ (desplazado $\frac{\pi}{2}$ a la derecha)
-- **Desplazamiento vertical:** $D = 1$ (eje central en $y = 1$)
+Procedemos a realizar el despiece escalar de sus tensores fundamentales basándonos en la estructura modular de la matriz $A \cdot \sin(Bx + C) + D$:
+- **Amplitud Modular Euclidiana ($A$):** La homotecia nos dicta que $A = 3$. Por lo tanto, el rango vibratorio original $[-1, 1]$ se expande isométricamente un factor de tres. Integrando el desplazamiento vertical empírico asintótico ($D = 1$), demostramos formalmente que la cota de frontera del co-dominio natural asume límites absolutos demarcados entre $y \in [-3+1, 3+1] = [-2, 4]$.
+- **Período Frecuencial Condicionado ($T$):** Al inspeccionar rigurosamente el argumento iterativo, advertimos $B = 2$. Luego, el período longitudinal por ciclo experimenta una compresión escalar neta fijada por: $T = \frac{2\pi}{|2|} = \pi$.
+- **Desfase Posicional Abscisal ($\phi$):** Aplicando un axioma directo de traslación afín de frontera local, determinamos el *shift* inicial de abscisas perimetrales resolviendo el nodo analítico: $\phi = -\frac{C}{B} = -\frac{(-\pi)}{2} = \frac{\pi}{2}$. Puesto irrefutablemente que $\phi > 0$, comprobamos con precisión matricial que toda la onda e infraestructura morfológica sufrió forzosamente un traslape lateral de $\frac{\pi}{2}$ radianes apuntando hacia el subespacio o cuadrante positivo referencial (derecha estandarizada).
+- **Desplazamiento Vertical Constante ($D$):** En conformidad con $D = 1$, la recta estructurante base en torno de la cual oscila sinérgicamente todo nuestro campo gravitatorio dinámico asciende linealmente reposando su nuevo origen o fulcro central en el intercepto cartesiano $y = 1$.
 ![[funcion_seno_ejemplo1.png]]
 
-**Ejemplo 8.2:**
+**Ejemplo 8.2 (Variante paramétrica con dilatación y reflexión topológica):**
+Apliquemos análogamente los principios analíticos ya fundamentados en el Ejemplo 8.1 al caso de un operador coseno:
 $$g(x) = -2\cos\left(\frac{x}{3} + \frac{\pi}{4}\right) - 1$$
-
-- **Amplitud:** $|A| = 2$
-- **Reflexión:** $A < 0$ → gráfica invertida
-- **Período:** $T = \frac{2\pi}{1/3} = 6\pi$
-- **Desfase:** $\phi = -\frac{\pi/4}{1/3} = -\frac{3\pi}{4}$ (desplazado $\frac{3\pi}{4}$ a la izquierda)
-- **Desplazamiento vertical:** $D = -1$
+Abstrayendo los tensores desde la forma general $g(x) = A \cdot \cos(Bx + C) + D$, sintetizamos:
+- **Amplitud y Reflexión ($A = -2$):** La magnitud escalar fija una amplitud de $|A| = 2$. Crucialmente, el signo negativo condiciona al sistema a un **vuelco especular o reflexión topológica** sobre su eje base, invirtiendo íntegramente crestas y valles.
+- **Período Dilatado ($T$):** Siendo $B = 1/3$ (elongación fraccionaria), el ciclo natural experimenta una dilatación temporal sustantiva: $T = \frac{2\pi}{1/3} = 6\pi$.
+- **Desfase Negativo ($\phi$):** Operando la traslación afín observamos que $\phi = -\frac{C}{B} = -\frac{\pi/4}{1/3} = -\frac{3\pi}{4}$. Puesto que $\phi < 0$, atestiguamos que la cúspide generatriz característica del coseno ha sido transpuesta $-\frac{3\pi}{4}$ radianes hacia el espectro negativo izquierdo.
+- **Desplazamiento Vertical ($D = -1$):** El fulcro geométrico de oscilación de la matriz decae linealmente y se estabiliza en la métrica $y = -1$.
 ![[funcion_coseno_ejemplo1.png]]
 
 ---
+## 9. Relación con círculos y ecuaciones paramétricas
 
-## 9. Relación con círculos y parametrización
+El vínculo intrínseco entre la geometría analítica y la trigonometría trasciende sobradamente la resolución estática de triángulos. Mediante la incursión de variables independientes de transición denominadas **parámetros**, adquirimos el poder analítico de modelar y vectorizar temporalmente la trayectoria de curvas planas cerradas con estricto rigor algebraico cinemático.
 
-### 9.1 Parametrización del círculo unitario
+### 9.1 Parametrización estocástica del círculo unitario
 
-**Proposición 9.1:**
-El círculo unitario $x^2 + y^2 = 1$ puede parametrizarse como:
+**Proposición 9.1 (Mapeo paramétrico base):**
+El lugar geométrico estático que dicta al círculo unitario acotado por la curva $x^2 + y^2 = 1$, admite una formulación paramétrica dinámica homóloga dependiente de un escalar continuo temporal o angular $t$:
 $$\begin{cases}
 x(t) = \cos(t) \\
 y(t) = \sin(t)
 \end{cases}, \quad t \in [0, 2\pi)$$
 
-**Verificación:** 
-$$x(t)^2 + y(t)^2 = \cos^2(t) + \sin^2(t) = 1$$ ✓
+**Verificación Axiomática de Coherencia:** 
+Sustituyendo de lleno el sistema paramétrico sobre nuestro cascarón cartesiano rector, recuperamos invariablemente la inquebrantable identidad pitagórica fundamental:
+$$x(t)^2 + y(t)^2 = \cos^2(t) + \sin^2(t) = 1 \quad \blacksquare$$
 
-A medida que $t$ varía de $0$ a $2\pi$, el punto $(\cos(t), \sin(t))$ recorre el círculo una vez en sentido antihorario.
+*Conclusión analítica:* Mientras el parámetro transitorio $t$ barre escalarmente el dominio diferencial continuo $[0, 2\pi)$, el vector posicional o cursor $\mathbf{r}(t) = (\cos(t), \sin(t))$ describe mecánicamente una vuelta parabólica completa o ciclo orbital en sentido rotacional antihorario puro.
 
-### 9.2 Parametrización de círculos de radio $R$
+### 9.2 Parametrización escalar para radios genéricos $R$
 
-**Proposición 9.2:**
-El círculo de radio $R$ centrado en el origen $x^2 + y^2 = R^2$ tiene parametrización:
+**Proposición 9.2 (Expansión matricial por homotecia radial):**
+Si re-escalamos o modulamos isométricamente el espacio completo por un tensor radiante $R > 0$, el círculo anclado en el polo con ecuación cartesiana acoplada $x^2 + y^2 = R^2$ se define paramétricamente mediante el producto abeliano:
 $$\begin{cases}
 x(t) = R\cos(t) \\
 y(t) = R\sin(t)
 \end{cases}, \quad t \in [0, 2\pi)$$
 
-**Verificación:**
-$$x(t)^2 + y(t)^2 = R^2\cos^2(t) + R^2\sin^2(t) = R^2(\cos^2(t) + \sin^2(t)) = R^2$$ ✓
+**Verificación Empírico-Matemática:**
+Introduciendo las variantes transitorias en la norma euclidiana general:
+$$x(t)^2 + y(t)^2 = (R\cos(t))^2 + (R\sin(t))^2 = R^2\cos^2(t) + R^2\sin^2(t)$$
+Extrayendo o factorizando el escalar común expansivo $R^2$:
+$$R^2 \left[ \cos^2(t) + \sin^2(t) \right] = R^2(1) = R^2 \quad \blacksquare$$
 
-**Ejemplo 9.1:**
-El círculo de radio $3$ se parametriza:
+**Ejemplo 9.1 (Radio-Vector escalado modularmente):**
+Considérese una órbita o toroide plano de radio $R = 3$. Su vectorización paramétrica queda expuesta como:
 $$x(t) = 3\cos(t), \quad y(t) = 3\sin(t)$$
 
-**Puntos específicos:**
-- $t = 0$: $(3, 0)$
-- $t = \frac{\pi}{2}$: $(0, 3)$
-- $t = \pi$: $(-3, 0)$
-- $t = \frac{3\pi}{2}$: $(0, -3)$
+Evaluación paramétrica estricta en los nodos cuadráticos críticos del plano:
+- **Estado de Origen ($t = 0$):** Inicia en la cúspide horizontal $\to (3, 0)$
+- **Primera Cuadratura ($t = \pi/2$):** Apogeo polar norte $\to (0, 3)$
+- **Afelio Diametral ($t = \pi$):** Traslado negativo total $\to (-3, 0)$
+- **Segunda Cuadratura ($t = 3\pi/2$):** Nadir polar sur $\to (0, -3)$
 
-### 9.3 Círculos desplazados
+### 9.3 Traslación paramétrica de círculos en cuadrantes
 
-**Proposición 9.3:**
-El círculo de radio $R$ centrado en $(h, k)$ tiene ecuación $(x - h)^2 + (y - k)^2 = R^2$ y parametrización:
-$$\begin{cases}
-x(t) = h + R\cos(t) \\
-y(t) = k + R\sin(t)
-\end{cases}$$
-
-**Ejemplo 9.2:**
-Círculo de radio $2$ centrado en $(1, -3)$:
-$$x(t) = 1 + 2\cos(t), \quad y(t) = -3 + 2\sin(t)$$
+**Proposición 9.3 (Circunferencias no concéntricas o trasladadas):**
+Si el círculo de radio $R$ tiene su centro desplazado al punto coordenado $(h, k)$, su parametrización adquiere el ajuste del desfase sumando estas coordenadas a su vector base:
+$$x(t) = h + R\cos(t), \quad y(t) = k + R\sin(t), \quad t \in [0, 2\pi)$$
 
 ---
-
 ## 10. Ecuaciones trigonométricas
 
-Una **ecuación trigonométrica** es una ecuación en la que la incógnita aparece dentro de una o más funciones trigonométricas. A diferencia de las identidades, que son verdaderas para todos los valores del dominio, las ecuaciones trigonométricas solo se satisfacen para ciertos valores de la variable.
+Una **ecuación trigonométrica** es una ecuación analítica en la que la variable o incógnita angular se encuentra dentro del argumento de una o más funciones trigonométricas. A diferencia de las *identidades*, que son igualdades válidas para cualquier valor de su dominio, las ecuaciones solo se satisfacen para ángulos específicos.
 
-La principal particularidad de estas ecuaciones es que, dado que las funciones trigonométricas son **periódicas**, en general tienen **infinitas soluciones**: si $x_0$ es solución, también lo son $x_0 + 2n\pi$ (para seno y coseno) o $x_0 + n\pi$ (para tangente), con $n \in \mathbb{Z}$. Por esta razón es importante distinguir entre:
-- **Solución en un intervalo restringido** (por ejemplo $[0, 2\pi)$): se obtiene un número finito de soluciones.
-- **Solución general**: se expresa con el parámetro $n \in \mathbb{Z}$ para capturar todas las soluciones.
+**Periodicidad y Soluciones Infinitas:**
+La principal característica de estas funciones es su oscilación y periodicidad infinita: si hallamos un ángulo solución $x_0$, entonces todos sus ángulos coterminales correspondientes también la satisfarán. Esto arroja teóricamente infinitas soluciones. Por esta razón, solemos dividir el abordaje en dos ramas:
+- **Solución acotada en un intervalo:** Se pide encontrar determinísticamente las soluciones atrapadas dentro de una sola rotación originaria, convencionalmente en el intervalo $[0, 2\pi)$. Se obtendrá un conjunto finito.
+- **Solución general:** Busca parametrizar todas las soluciones matemáticas posibles sumando ciclos acoplados enteros. Para esto añadimos notaciones cíclicas como $+ 2n\pi$ donde $n \in \mathbb{Z}$ (números enteros).
 
-La estrategia general para resolver una ecuación trigonométrica es:
-1. Aislar la función trigonométrica (como si fuera una ecuación algebraica).
-2. Identificar el ángulo de referencia usando la tabla de valores o identidades.
-3. Determinar en qué cuadrantes se cumple la condición (signo de la función).
-4. Escribir todas las soluciones en el intervalo pedido y, si corresponde, la solución general.
+### Estrategia General (Algoritmo de Resolución)
+1. **Despeje algebraico:** Aislar la función trigonométrica aplicando las leyes del álgebra básica o transicional analítica (reducción lineal, cuadrática, polinómica, etc.).
+2. **Ángulo de referencia:** Determinar primeramente como base de anclaje el ángulo agudo de referencia primario ubicado en el primer cuadrante.
+3. **Distribución por cuadrantes:** Trasladar el ángulo de referencia hacia los cuadrantes condicionados explícitamente por el signo (positivo o negativo) de la ecuación despejada resultante.
+4. **Respuesta unificada:** Reunir analíticamente todas las intersecciones resueltas que respeten nuestros dominios restringidos.
 
-### 10.1 Ecuaciones básicas
+### 10.1 Ecuaciones lineales básicas
 
-**Ejemplo 10.1:**
-Resuelva $\sin(x) = \frac{1}{2}$ para $x \in [0, 2\pi)$.
+**Ejemplo 10.1 (Ecuación directa con curva Seno):**
+Resuelva analíticamente $\sin(x) = \frac{1}{2}$ para un dominio acotado $x \in [0, 2\pi)$.
 
-**Solución:**
-Los ángulos de referencia son $30° = \frac{\pi}{6}$ y $150° = \frac{5\pi}{6}$.
+**Solución paso a paso:**
+- El **ángulo de referencia** (donde el seno vale $\frac{1}{2}$) corresponde a $30°$, que en radianes es $\frac{\pi}{6}$.
+- Analizando el signo, sabemos que la función seno es positiva en los cuadrantes I y II.
+- Por tanto, proyectamos nuestra solución hacia esos cuadrantes:
+  - Cuadrante I (solución directa): $x = \frac{\pi}{6}$.
+  - Cuadrante II (usamos simetría suplementaria): $x = \pi - \frac{\pi}{6} = \frac{5\pi}{6}$.
 
-$$x = \frac{\pi}{6} \quad \lor \quad x = \frac{5\pi}{6}$$
+**Conjunto solución en $[0, 2\pi)$:**
+$$\mathbb{S} = \left\{\frac{\pi}{6}, \frac{5\pi}{6}\right\}$$
 
-**Solución general (todos los valores):**
-$$x = \frac{\pi}{6} + 2n\pi \quad \lor \quad x = \frac{5\pi}{6} + 2n\pi, \quad n \in \mathbb{Z}$$
+*(Nota: Si se pidiese la solución general sin acotar dominios, lo representaríamos agregando multiplicadores del período $2k\pi$, quedando:)* 
+$$x = \frac{\pi}{6} + 2k\pi \quad \lor \quad x = \frac{5\pi}{6} + 2k\pi, \quad \forall k \in \mathbb{Z}$$
 
-**Ejemplo 10.2:**
-Resuelva $\cos(x) = -\frac{\sqrt{2}}{2}$ para $x \in [0, 2\pi)$.
+**Ejemplo 10.2 (Ecuación directa con curva Coseno y valores negativos):**
+Resuelva formalmente $\cos(x) = -\frac{\sqrt{2}}{2}$.
 
-**Solución:**
-El ángulo de referencia es $45° = \frac{\pi}{4}$. Como el coseno es negativo en los cuadrantes II y III:
+**Solución paso a paso:**
+- Evaluamos primero el **ángulo de referencia** (ignorando numéricamente el signo). Sabemos que buscar dónde el coseno vale $\frac{\sqrt{2}}{2}$ nos lleva al ancla referencial de $45°$ o $\frac{\pi}{4}$.
+- El signo explícitamente negativo ($-$) pre-establecido en la ecuación base nos obliga a re-ubicar diametralmente esta fase hacia los dominios donde la coordenada $X$ (y por ende el coseno) es negativa: los cuadrantes **II y III**.
+- Despliegue en Cuadrante II: $x = \pi - \frac{\pi}{4} = \frac{3\pi}{4}$
+- Despliegue en Cuadrante III: $x = \pi + \frac{\pi}{4} = \frac{5\pi}{4}$
 
-$$x = \pi - \frac{\pi}{4} = \frac{3\pi}{4} \quad \lor \quad x = \pi + \frac{\pi}{4} = \frac{5\pi}{4}$$
-### 10.2 Ecuaciones con identidades
+**Conjunto Solución Acotado:**
+$$\mathbb{S} = \left\{\frac{3\pi}{4} +2k\pi, \frac{5\pi}{4}+2k\pi\right\} \quad \forall k \in \mathbb{Z}$$
 
-**Ejemplo 10.3:**
-Resuelva $2\sin^2(x) - \sin(x) - 1 = 0$ para $x \in [0, 2\pi)$.
+### 10.2 Ecuaciones trigonométricas por subrogación cuadrática
 
-**Solución:**
-Sea $u = \sin(x)$. La ecuación se convierte en:
+Cuando la ecuación presenta funciones elevadas a una potencia (ej. cuadráticas integradas), se recurre al uso analítico del **Sustitución Algebraica** transitoria para reducir el orden de la resolución a un polinomio clásico.
+
+**Ejemplo 10.3 (Polinomio Trigonométrico Simple de Orden Dos):**
+Encontrar las raíces lícitas o intersecciones para $2\sin^2(x) - \sin(x) - 1 = 0$, para el intervalo $x \in [0, 2\pi)$.
+
+**Solución paso a paso:**
+- **Sustitución Transitoria Algebraica:** Definamos la equivalencia transitoria $u = \sin(x)$. Al realizarlo, simplificamos la expresión compleja hacia una ecuación cuadrática clásica:  
+$$2\sin^2(x) - \sin(x) - 1 = 0$$
 $$2u^2 - u - 1 = 0$$
+- **Factorización de la Cuadrática:** Factorizando polinomialmente obtenemos su expresión simplificada observable $\to (2u + 1)(u - 1) = 0$.
+  Esto bifurca nuestra búsqueda a dos posibles resultados analíticos:
+  $$u_1 = 1 \quad \text{o} \quad u_2 = -\frac{1}{2}$$
+- **Retorno de factor y resolución trigonométrica por casos:**
+  * **Caso Alfa ($u_1 = 1$):** Evaluamos y retornamos a la base trigonométrica original: $\sin(x) = 1$. Dicha cota ocurre de manera única en el diagrama superior, correspondiendo puntualmente al pináculo o cenit en $x = \frac{\pi}{2}$.
+  * **Caso Beta ($u_2 = -\frac{1}{2}$):** Evaluamos el segundo caso $\sin(x) = -\frac{1}{2}$. Vimos que su ángulo referencial para el positivo es $\frac{\pi}{6}$, pero para acatar el signo negativo debemos empujar vectorialmente nuestra ubicación hacía dominios Sur u opuestos (Cuadrantes III y IV), resultando consecuentemente en $x = \pi + \frac{\pi}{6} = \frac{7\pi}{6}$ y para el cuarto anclamos en $x = 2\pi - \frac{\pi}{6} = \frac{11\pi}{6}$.
 
-Factorizando: $(2u + 1)(u - 1) = 0$
+**Conjunto Solución Resultante Final:**
+$$\mathbb{S} = \left\{\frac{\pi}{2}, \frac{7\pi}{6}, \frac{11\pi}{6}\right\}$$
 
-$$u = -\frac{1}{2} \quad \text{o} \quad u = 1$$
+### 10.3 Ecuaciones con compresión de múltiplos angulares
 
-**Caso 1:** $\sin(x) = 1$
-$$x = \frac{\pi}{2}$$
+**Ejemplo 10.4 (Ajuste algorítmico y periodo iterativo):**
+Resolver sistemáticamente $\sin(2x) = \frac{\sqrt{3}}{2}$ evaluado sobre la franja $x \in [0, 2\pi)$.
 
-**Caso 2:** $\sin(x) = -\frac{1}{2}$
-$$x = \frac{7\pi}{6} \quad \text{o} \quad x = \frac{11\pi}{6}$$
+**Solución paso a paso:**
+- Definimos transitoriamente el argumento conjunto como variable abstracta $u = 2x$. Por lo tanto, buscaremos los puntos donde $\sin(u) = \frac{\sqrt{3}}{2}$.
+- Un detalle capital: al pedirnos hallar originalmente el segmento dictaminado por $x \in [0, 2\pi)$, por naturaleza el argumento escalar "el doble de rápido" ($u=2x$) presentará una oscilación mayor a su doble: $u \in [0, 4\pi)$. Esto significa que daremos **dos vueltas completas** sobre el círculo unitario buscando soluciones válidas continuas.
+- **Primera Rotación** (sobre el intervalo $[0, 2\pi)$): Las intersecciones o raíces asimilando la proporción conocida se gestan en:
+  $$u_1 = \frac{\pi}{3} \quad \text{(C. I)} \quad \text{y} \quad u_2 = \frac{2\pi}{3} \quad \text{(C. II)}$$
+- **Segunda Rotación Continuante** (sobre el intervalo acoplado extra $[2\pi, 4\pi)$): Se le debe acumular al vector el valor del periodo general referencial $2\pi$ a las respuestas basales originarias:
+  $$u_3 = \frac{\pi}{3} + 2\pi = \frac{7\pi}{3} \quad \text{y} \quad u_4 = \frac{2\pi}{3} + 2\pi = \frac{8\pi}{3}$$
+- **Despeje y Restablecimiento ($x$ Inicial):** 
+  En rigor normativo, al final del ejercicio nos abocamos directamente a deshacer la equivalencia original de $2x = u$, dividiendo por consiguiente la mitad a todos los resultados recabados y lograr posibilitar la respuesta base resolutoria para la función original de la ecuación:
+  $$x = \frac{\frac{\pi}{3}}{2}, \frac{\frac{2\pi}{3}}{2}, \frac{\frac{7\pi}{3}}{2}, \frac{\frac{8\pi}{3}}{2}$$
 
-**Soluciones:** $x \in \left\{\frac{\pi}{2}, \frac{7\pi}{6}, \frac{11\pi}{6}\right\}$
+**Conjunto Solución Comprobada:**
+$$\mathbb{S} = \left\{\frac{\pi}{6}, \frac{\pi}{3}, \frac{7\pi}{6}, \frac{4\pi}{3}\right\}$$
 
-**Ejemplo 10.4:**
-Resuelva $\tan(x) = \sqrt{3}$ para $x \in [0, 2\pi)$.
+### 10.4 Uso resolutorio de Identidades Fundamentales cruzadas
 
-**Solución:**
-El ángulo de referencia es $60° = \frac{\pi}{3}$. La tangente es positiva en los cuadrantes I y III:
+Es común que las ondas o ecuaciones mezclen componentes u oscilaciones distintas o funciones desbalanceadas (como tener la variable $x$ operando a la par contra un doblez $2x$). Tal factor es forzosamente incompatible de manera directa algebráica, obligándonos de forma metodológica vital a apelar a las **Identidades Trigonométricas Fundamentales** (Tema extenso visto previamente de rigor en la Sección 6) buscando poder homogeneizar paramétricamente sus factores hacia una variable unísona uniforme.
 
-$$x = \frac{\pi}{3} \quad \text{o} \quad x = \pi + \frac{\pi}{3} = \frac{4\pi}{3}$$
+**Ejemplo 10.5 (Homogeneización analítica por medio de Ángulos Dobles):**
+Resuelva formalmente la ecuación $\cos(2x) = \cos(x)$ para los casos posibles lícitos de cierre en $x \in [0, 2\pi)$.
 
-### 10.3 Ecuaciones con múltiplos
+**Solución paso a paso:**
+- Es impracticable e imposible simplificar la igualdad mientras las frecuencias del coseno sean disímiles ($2x$ contra $x$). Convertiremos y reemplazaremos analíticamente acudiendo al axioma establecido para el propio **Coseno del Ángulo Doble**, el cual decreta su equivalencia universal como: $\cos(2x) = 2\cos^2(x) - 1$.
+  Sustituyendo el vector de onda en nuestra operación logramos achatarlas y nivelar la ecuación completa a una sola escala natural cruzada de $x$:
+  $$2\cos^2(x) - 1 = \cos(x)$$
+- Reescribimos agrupándolo sistemáticamente en molde de ecuación cuadrática general para análisis igualada a cero:
+  $$2\cos^2(x) - \cos(x) - 1 = 0$$
+- Factorizamos de idéntico modo estructurado resolutorio al previamente operado del Ejemplo 10.3 (recurriendo brevemente a un factor algebraico de tipo $u = \cos(x)$):
+  $$(2u + 1)(u - 1) = 0 \implies (2\cos(x) + 1)(\cos(x) - 1) = 0$$
+- Esto nos faculta depurar en dos escenarios factibles e independientes referenciales originarios de raíces:
+  $$ \cos(x) = 1 \quad \text{o} \quad \cos(x) = -\frac{1}{2}$$
 
-**Ejemplo 10.5:**
-Resuelva $\sin(2x) = \frac{\sqrt{3}}{2}$ para $x \in [0, 2\pi)$.
+**Escenario Alfa:** Evaluando $\cos(x) = 1$
+Ocurre y verifica que sus raíces intersectan únicamente el dictamen asintótico y natural del origen temporal paramétrico:
+$$x = 0$$
 
-**Solución:**
-Sea $u = 2x$. Entonces $\sin(u) = \frac{\sqrt{3}}{2}$.
+**Escenario Beta:** Evaluando la expresión $\cos(x) = -\frac{1}{2}$
+Basándonos inicialmente determinando su ángulo paralelo base simple referencial (donde valdría un medio netamente puro $\frac{1}{2}$) como $\frac{\pi}{3}$, al evaluar que el requerimiento es cruzado y negativo ($-$) procedemos a resituarlo transversal estocástico proyectándolo de manera natural hacia dominios oeste:
+- Espectro Cuadrante II: $x = \pi - \frac{\pi}{3} = \frac{2\pi}{3}$
+- Espectro Cuadrante III: $x = \pi + \frac{\pi}{3} = \frac{4\pi}{3}$
 
-Para $u \in [0, 4\pi)$ (porque $x \in [0, 2\pi) \Rightarrow 2x \in [0, 4\pi)$):
-$$u = \frac{\pi}{3}, \frac{2\pi}{3}, \frac{\pi}{3} + 2\pi = \frac{7\pi}{3}, \frac{2\pi}{3} + 2\pi = \frac{8\pi}{3}$$
+**Conjunto Final y Global Restringido:**
+$$\mathbb{S} = \left\{0, \frac{2\pi}{3}, \frac{4\pi}{3}\right\}$$
 
-Luego:
-$$x = \frac{u}{2} = \frac{\pi}{6}, \frac{\pi}{3}, \frac{7\pi}{6}, \frac{4\pi}{3}$$
-
-### 10.4 Ecuaciones que requieren identidades
-
-**Ejemplo 10.6:**
-Resuelva $\cos(2x) = \cos(x)$ para $x \in [0, 2\pi)$.
-
-**Solución:**
-Usamos $\cos(2x) = 2\cos^2(x) - 1$:
-$$2\cos^2(x) - 1 = \cos(x)$$
-$$2\cos^2(x) - \cos(x) - 1 = 0$$
-
-Factorizando (con $u = \cos(x)$):
-$$(2u + 1)(u - 1) = 0$$
-
-$$\cos(x) = -\frac{1}{2} \quad \text{o} \quad \cos(x) = 1$$
-
-**Caso 1:** $\cos(x) = 1 \Rightarrow x = 0$
-
-**Caso 2:** $\cos(x) = -\frac{1}{2} \Rightarrow x = \frac{2\pi}{3}, \frac{4\pi}{3}$
-
-**Soluciones:** $x \in \left\{0, \frac{2\pi}{3}, \frac{4\pi}{3}\right\}$
-
+---
 ## 11. Teorema del seno y del coseno
 
-Hasta ahora hemos usado la trigonometría principalmente en triángulos **rectángulos**, donde tenemos la comodidad de un ángulo de $90°$ que simplifica todo. Pero ¿qué pasa cuando el triángulo no tiene ningún ángulo recto? Por ejemplo, si queremos calcular la distancia entre dos puntos conociendo ciertos ángulos, o encontrar un lado de un terreno triangular donde ningún ángulo es recto.
+Hasta el momento hemos abordado la trigonometría centrándonos en **triángulos rectángulos** (aquellos que poseen un ángulo recto de $90°$), lo cual simplifica la caracterización geométrica. Sin embargo, en el análisis matemático general, la mayoría de los triángulos son **oblicuángulos** (ningún ángulo es recto). 
 
-Para eso existen dos herramientas fundamentales que generalizan la trigonometría a **cualquier triángulo**: el **teorema del seno** y el **teorema del coseno**.
+Para resolver analíticamente cualquier triángulo general, disponemos de dos herramientas o leyes fundamentales que expanden la trigonometría clásica: el **Teorema del Seno** y el **Teorema del Coseno**.
 
-### 11.1 Notación para triángulos generales
+### 11.1 Notación paramétrica estándar
 
-Antes de enunciar los teoremas, establecemos la notación estándar para un triángulo general $ABC$:
+Para formular los teoremas, estableceremos primero una convención geométrica universal para el triángulo genérico $ABC$:
 
-- Los **vértices** se denotan con letras mayúsculas: $A$, $B$, $C$
-- Los **ángulos** interiores en cada vértice se denotan con letras griegas: $\alpha$ (en $A$), $\beta$ (en $B$), $\gamma$ (en $C$)
-- El **lado opuesto** a cada vértice se denota con la letra minúscula correspondiente: $a$ opuesto a $A$, $b$ opuesto a $B$, $c$ opuesto a $C$
+- Los **vértices** se identifican con letras mayúsculas latinas: $A, B, C$.
+- Los **ángulos internos** relativos a cada vértice se denotan con letras griegas: $\alpha$ (en $A$), $\beta$ (en $B$), y $\gamma$ (en $C$).
+- La longitud del **lado opuesto** a cada vértice se identifica con la letra minúscula homóloga: $a$ (frente a $A$), $b$ (frente a $B$), y $c$ (frente a $C$).
 
-Se cumple siempre:
+Por el axioma de geometría euclidiana, la suma interna de ángulos siempre cumple:
 $$\alpha + \beta + \gamma = 180° = \pi$$
 
-### 11.2 Teorema del seno
+### 11.2 Teorema del Seno (Ley de Proporcionalidad)
 
 #### Motivación
-
-Intuitivamente, en cualquier triángulo un lado más largo está "enfrentado" a un ángulo más grande. El teorema del seno cuantifica exactamente esa relación: la razón entre cada lado y el seno del ángulo opuesto es siempre la misma.
+De manera intuitiva, en cualquier triángulo, el lado de mayor longitud siempre se opone al ángulo de mayor abertura. El teorema del seno cuantifica formalmente esta relación directa, estableciendo que la razón o cociente entre la longitud de un lado y el seno de su ángulo opuesto es una constante analítica para los tres lados.
 
 **Teorema 11.1 (Ley de senos):**
-
 En todo triángulo $ABC$ con lados $a$, $b$, $c$ opuestos a los ángulos $\alpha$, $\beta$, $\gamma$ respectivamente:
-
 $$\frac{a}{\sin(\alpha)} = \frac{b}{\sin(\beta)} = \frac{c}{\sin(\gamma)} = 2R$$
+*(Donde $R$ representa analíticamente el radio del **circuncírculo**, la circunferencia externa que pasa por los tres vértices).*
 
-donde $R$ es el radio del **circuncírculo** (la circunferencia que pasa por los tres vértices).
+**Demostración Geométrica:**
+1. Trazamos la altura $h$ vertical desde el vértice $C$ hacia el lado base $c$. Esto segmenta el interior en dos triángulos rectángulos independientes.
+2. Analizamos el triángulo lateral que contiene al ángulo $\alpha$:
+   $$\sin(\alpha) = \frac{h}{b} \implies h = b\sin(\alpha)$$
+3. Analizamos el triángulo lateral contrapuesto que contiene al ángulo $\beta$:
+   $$\sin(\beta) = \frac{h}{a} \implies h = a\sin(\beta)$$
+4. Igualamos y transitamos ambas expresiones dependientes de la altura $h$:
+   $$b\sin(\alpha) = a\sin(\beta) \implies \frac{a}{\sin(\alpha)} = \frac{b}{\sin(\beta)}$$
+5. Repitiendo el argumento con la altura desde $B$ se obtiene $\dfrac{b}{\sin(\beta)} = \dfrac{c}{\sin(\gamma)}$, cerrando la comprobación unificada. $\blacksquare$
 
-**Demostración:**
+**Ejemplo 11.1 (Despeje lineal directo):**
+En un triángulo $ABC$, sabemos que $\alpha = 30°$, $\beta = 45°$ y el lado $a = 8$. Calcule $b$.
 
-Trazamos la altura $h$ desde el vértice $C$ hasta el lado $c$. Esto genera dos triángulos rectángulos:
+**Solución paso a paso:**
+- Por la ley de senos, relacionamos los lados y ángulos conocidos:
+  $$\frac{a}{\sin(\alpha)} = \frac{b}{\sin(\beta)}$$
+- Sustituimos por nuestra información paramétrica:
+  $$\frac{8}{\sin(30°)} = \frac{b}{\sin(45°)}$$
+- Despejamos la magnitud $b$ como incógnita central:
+  $$b = 8 \cdot \frac{\sin(45°)}{\sin(30°)}$$
+- Empleamos nuestros ángulos notables deducidos matricialmente en secciones previas:
+  $$b = 8 \cdot \frac{\frac{\sqrt{2}}{2}}{\frac{1}{2}} = 8\sqrt{2}$$
 
-En el triángulo que contiene a $\alpha$:
-$$\sin(\alpha) = \frac{h}{b} \Rightarrow h = b\sin(\alpha)$$
+**Ejemplo 11.2 (Resolución angular oblicuángula):**
+En un triángulo, $\beta = \frac{\pi}{6}$, $\gamma = \frac{\pi}{4}$ y el lado $b = 10$. Calcule el lado $c$ y el ángulo $\alpha$.
 
-En el triángulo que contiene a $\beta$:
-$$\sin(\beta) = \frac{h}{a} \Rightarrow h = a\sin(\beta)$$
+**Solución paso a paso:**
+- **Paso 1: Ángulo faltante.** Por el axioma interno, sabemos que la suma total debe ser $\pi$:
+  $$\alpha = \pi - \left(\frac{\pi}{6} + \frac{\pi}{4}\right) = \pi - \left(\frac{2\pi}{12} + \frac{3\pi}{12}\right) = \pi - \frac{5\pi}{12} = \frac{7\pi}{12} \text{ rad}$$
+- **Paso 2: Transposición transversal.** Empleando la ley de senos para hallar el escalar $c$:
+  $$\frac{c}{\sin(\gamma)} = \frac{b}{\sin(\beta)} \implies c = b \cdot \frac{\sin(\gamma)}{\sin(\beta)}$$
+- Sustituimos utilizando nuestras identidades conocidas:
+  $$c = 10 \cdot \frac{\sin(\frac{\pi}{4})}{\sin(\frac{\pi}{6})} = 10 \cdot \frac{\frac{\sqrt{2}}{2}}{\frac{1}{2}} = 10\sqrt{2}$$
 
-Igualando ambas expresiones:
-$$b\sin(\alpha) = a\sin(\beta) \Rightarrow \frac{a}{\sin(\alpha)} = \frac{b}{\sin(\beta)}$$
+> **El caso ambiguo (SSA):** Cuando matemáticamente abordamos una formulación teniendo únicamente *dos lados y el ángulo opuesto a uno de ellos*, el cálculo del seno podría arrojar **0, 1 o 2 triángulos posibles**. Para confirmarlo, debemos corroborar que el $\sin(\theta)$ asintótico caiga en su dominio lícito $[-1, 1]$ y luego analizar analíticamente si su suplemento no rompe la suma interna de ángulos del triángulo general.
 
-Repitiendo el argumento con la altura desde $B$ se obtiene $\dfrac{b}{\sin(\beta)} = \dfrac{c}{\sin(\gamma)}$, completando la igualdad triple. $\blacksquare$
-
-**Ejemplo 11.1:**
-En un triángulo $ABC$, $\alpha = 30°$, $\beta = 45°$ y $a = 8$. Calcule $b$.
-
-Por la ley de senos:
-$$b = a \cdot \frac{\sin(\beta)}{\sin(\alpha)} = 8 \cdot \frac{\sin(45°)}{\sin(30°)} = 8 \cdot \frac{\dfrac{\sqrt{2}}{2}}{\dfrac{1}{2}} = 8\sqrt{2}$$
-
-**Ejemplo 11.2:**
-En un triángulo, $\beta = \dfrac{\pi}{6}$, $\gamma = \dfrac{\pi}{4}$ y $b = 10$. Calcule $c$ y el ángulo $\alpha$.
-
-Primero encontramos $\alpha$:
-$$\alpha = \pi - \frac{\pi}{6} - \frac{\pi}{4} = \pi - \frac{2\pi}{12} - \frac{3\pi}{12} = \frac{7\pi}{12}$$
-
-Luego por la ley de senos:
-$$c = b \cdot \frac{\sin(\gamma)}{\sin(\beta)} = 10 \cdot \frac{\sin\!\left(\dfrac{\pi}{4}\right)}{\sin\!\left(\dfrac{\pi}{6}\right)} = 10 \cdot \frac{\dfrac{\sqrt{2}}{2}}{\dfrac{1}{2}} = 10\sqrt{2}$$
-
-> **Caso ambiguo (SSA):** Cuando se conocen dos lados y el ángulo opuesto a uno de ellos, puede haber **0, 1 o 2 triángulos** posibles. Se debe verificar si el valor de $\sin$ calculado cae en $[-1,1]$ y analizar si el ángulo admite dos posiciones.
-
-### 11.3 Teorema del coseno
+### 11.3 Teorema del Coseno (Pitágoras Generalizado)
 
 #### Motivación
-
-El teorema del coseno es una **generalización directa del teorema de Pitágoras**. Cuando el ángulo entre los dos lados conocidos es recto ($90°$), el coseno vale cero y recuperamos exactamente $c^2 = a^2 + b^2$. Para otros ángulos, el término $-2ab\cos(\gamma)$ "corrige" la fórmula: si el ángulo es agudo el tercer lado resulta menor de lo que Pitágoras indicaría, y si es obtuso, mayor.
+Podemos considerar a este teorema como la **generalización directa del Teorema de Pitágoras** para cualquier clase de triángulo. Cuando el ángulo $\gamma$ equivale a un ángulo recto ($90°$ ó $\frac{\pi}{2}$)$, su $\cos(\gamma)$ valdrá $0$, reduciendo la fórmula de cosenos exactamente a la norma fundamental: $c^2 = a^2 + b^2$. 
+Para ángulos diferentes, el factor residual ($-2ab\cos(\gamma)$) ajusta y "corrige" la magnitud real: si el ángulo es agudo, este restará distancia; si el ángulo es obtuso, el coseno será negativo, lo que terminará sumándole distancia a la fórmula final.
 
 **Teorema 11.2 (Ley de cosenos):**
-
-En todo triángulo $ABC$:
-
+En toda figura de encuadre triangular cerrada $ABC$, el cuadrado de todo lado equivale a la suma de cuadrados de los dos lados adyacentes a un ángulo, disminuidos por el doble producto de dichos lados multiplicados por el coseno del ángulo interno abarcado:
 $$a^2 = b^2 + c^2 - 2bc\cos(\alpha)$$
 $$b^2 = a^2 + c^2 - 2ac\cos(\beta)$$
 $$c^2 = a^2 + b^2 - 2ab\cos(\gamma)$$
 
-**Demostración:**
+**Demostración por Distancia Euclidiana:**
+1. Situamos paramétricamente el triángulo en el plano polar cartesiano posicionando $B$ sobre el origen de coordenadas $(0, 0)$ y $C$ en $(a, 0)$. 
+2. Las coordenadas espaciales vectoriales del tercer vértice $A$ quedan analíticamente formadas como $(c\cos(\beta),\ c\sin(\beta))$.
+3. Sabiendo que buscamos aislar la magnitud escalar $b = |AC|$, usamos la forma cartesiana de distancia:
+   $$\begin{align}
+   b^2 &= (x_A - x_C)^2 + (y_A - y_C)^2 \\
+   b^2 &= (c\cos(\beta) - a)^2 + (c\sin(\beta) - 0)^2 \\
+   b^2 &= c^2\cos^2(\beta) - 2ac\cos(\beta) + a^2 + c^2\sin^2(\beta)
+   \end{align}$$
+4. Agrupamos algebraicamente tomando como factor común $c^2$:
+   $$b^2 = c^2\underbrace{(\cos^2(\beta) + \sin^2(\beta))}_{=\,1} + a^2 - 2ac\cos(\beta)$$
+5. Asumiendo la identidad trigonométrica base universal axiomática, derivamos infaliblemente en nuestra ley:
+   $$b^2 = a^2 + c^2 - 2ac\cos(\beta) \quad \blacksquare$$
 
-Ubicamos el triángulo en el plano con $B$ en el origen y $C$ en $(a,\, 0)$. Entonces el vértice $A$ tiene coordenadas $(c\cos(\beta),\, c\sin(\beta))$.
+*(Nótese que las otras dos igualdades primarias surgen simplemente alterando simétricamente el anclaje inicial)*.
 
-Calculamos $b = |AC|$ usando la fórmula de distancia:
-$$\begin{align}
-b^2 &= (c\cos(\beta) - a)^2 + (c\sin(\beta) - 0)^2 \\
-&= c^2\cos^2(\beta) - 2ac\cos(\beta) + a^2 + c^2\sin^2(\beta) \\
-&= c^2\underbrace{(\cos^2(\beta) + \sin^2(\beta))}_{=\,1} + a^2 - 2ac\cos(\beta) \\
-&= a^2 + c^2 - 2ac\cos(\beta) \quad \blacksquare
-\end{align}$$
+**Ejemplo 11.3 (Aplicación directa de magnitud escalar):**
+En un triángulo oblicuángulo cualquiera, se miden lados colindantes $a = 5$, $b = 7$ y calculamos que su ángulo cruzado en el vértice opuesto es dictaminado como $\gamma = 60°$. Calcule analíticamente el tercer lado $c$.
 
-Las otras dos formas se obtienen por simetría ubicando los otros vértices en el origen.
+**Solución paso a paso:**
+- Aplicamos la matriz fundamental en la ley del coseno estructurada con respecto al vector $c$:
+  $$c^2 = a^2 + b^2 - 2ab\cos(\gamma)$$
+- Sustituimos el encuadre por los factores matemáticos empíricos dictados o numéricos:
+  $$c^2 = (5)^2 + (7)^2 - 2(5)(7)\cos(60°)$$
+- Intervenimos usando nuestro axioma de $\cos(60°) = \frac{1}{2}$ y sumamos las potencias:
+  $$c^2 = 25 + 49 - 70 \cdot \left(\frac{1}{2}\right) = 74 - 35 = 39$$
+- Rematamos limpiando la igualdad geométrica de potencias superiores usando su raíz natural dictaminada resolutoria pura paramétrica:
+  $$c = \sqrt{39}$$
+  - Cuadrante I (solución directa): $x = \frac{\pi}{6}$.
+  - Cuadrante II (usamos simetría suplementaria): $x = \pi - \frac{\pi}{6} = \frac{5\pi}{6}$.
 
-> **Conexión con Pitágoras:** Si $\gamma = \dfrac{\pi}{2}$, entonces $\cos\!\left(\dfrac{\pi}{2}\right) = 0$ y la ley de cosenos se reduce a $c^2 = a^2 + b^2$.
+**Conjunto solución en $[0, 2\pi)$:**
+$$\mathbb{S} = \left\{\frac{\pi}{6}, \frac{5\pi}{6}\right\}$$
 
-**Ejemplo 11.3:**
-En un triángulo, $a = 5$, $b = 7$ y $\gamma = 60°$. Calcule $c$.
+*(Nota: Si se pidiese la solución general sin acotar dominios, lo representaríamos agregando multiplicadores del período $2k\pi$, quedando:)* 
+$$x = \frac{\pi}{6} + 2k\pi \quad \lor \quad x = \frac{5\pi}{6} + 2k\pi, \quad \forall k \in \mathbb{Z}$$
 
-$$c^2 = 5^2 + 7^2 - 2(5)(7)\cos(60°) = 25 + 49 - 70 \cdot \frac{1}{2} = 74 - 35 = 39$$
-$$c = \sqrt{39}$$
+**Ejemplo 10.2 (Ecuación directa con curva Coseno y valores negativos):**
+Resuelva formalmente $\cos(x) = -\frac{\sqrt{2}}{2}$.
 
-**Ejemplo 11.4:**
-Un triángulo tiene lados $a = 6$, $b = 8$ y $c = 10$. Calcule el ángulo $\gamma$.
+**Solución paso a paso:**
+- Evaluamos primero el **ángulo de referencia** (ignorando numéricamente el signo). Sabemos que buscar dónde el coseno vale $\frac{\sqrt{2}}{2}$ nos lleva al ancla referencial de $45°$ o $\frac{\pi}{4}$.
+- El signo explícitamente negativo ($-$) pre-establecido en la ecuación base nos obliga a re-ubicar diametralmente esta fase hacia los dominios donde la coordenada $X$ (y por ende el coseno) es negativa: los cuadrantes **II y III**.
+- Despliegue en Cuadrante II: $x = \pi - \frac{\pi}{4} = \frac{3\pi}{4}$
+- Despliegue en Cuadrante III: $x = \pi + \frac{\pi}{4} = \frac{5\pi}{4}$
 
-Despejamos $\cos(\gamma)$:
-$$\cos(\gamma) = \frac{a^2 + b^2 - c^2}{2ab} = \frac{36 + 64 - 100}{2(6)(8)} = \frac{0}{96} = 0 \Rightarrow \gamma = \frac{\pi}{2}$$
+**Conjunto Solución Acotado:**
+$$\mathbb{S} = \left\{\frac{3\pi}{4} +2k\pi, \frac{5\pi}{4}+2k\pi\right\} \quad \forall k \in \mathbb{Z}$$
 
-El triángulo es rectángulo en $C$, lo cual es consistente con $6^2 + 8^2 = 10^2$.
+### 10.2 Ecuaciones trigonométricas por subrogación cuadrática
+
+Cuando la ecuación presenta funciones elevadas a una potencia (ej. cuadráticas integradas), se recurre al uso analítico del **Sustitución Algebraica** transitoria para reducir el orden de la resolución a un polinomio clásico.
+
+**Ejemplo 10.3 (Polinomio Trigonométrico Simple de Orden Dos):**
+Encontrar las raíces lícitas o intersecciones para $2\sin^2(x) - \sin(x) - 1 = 0$, para el intervalo $x \in [0, 2\pi)$.
+
+**Solución paso a paso:**
+- **Sustitución Transitoria Algebraica:** Definamos la equivalencia transitoria $u = \sin(x)$. Al realizarlo, simplificamos la expresión compleja hacia una ecuación cuadrática clásica:  
+$$2\sin^2(x) - \sin(x) - 1 = 0$$
+$$2u^2 - u - 1 = 0$$
+- **Factorización de la Cuadrática:** Factorizando polinomialmente obtenemos su expresión simplificada observable $\to (2u + 1)(u - 1) = 0$.
+  Esto bifurca nuestra búsqueda a dos posibles resultados analíticos:
+  $$u_1 = 1 \quad \text{o} \quad u_2 = -\frac{1}{2}$$
+- **Retorno de factor y resolución trigonométrica por casos:**
+  * **Caso Alfa ($u_1 = 1$):** Evaluamos y retornamos a la base trigonométrica original: $\sin(x) = 1$. Dicha cota ocurre de manera única en el diagrama superior, correspondiendo puntualmente al pináculo o cenit en $x = \frac{\pi}{2}$.
+  * **Caso Beta ($u_2 = -\frac{1}{2}$):** Evaluamos el segundo caso $\sin(x) = -\frac{1}{2}$. Vimos que su ángulo referencial para el positivo es $\frac{\pi}{6}$, pero para acatar el signo negativo debemos empujar vectorialmente nuestra ubicación hacía dominios Sur u opuestos (Cuadrantes III y IV), resultando consecuentemente en $x = \pi + \frac{\pi}{6} = \frac{7\pi}{6}$ y para el cuarto anclamos en $x = 2\pi - \frac{\pi}{6} = \frac{11\pi}{6}$.
+
+**Conjunto Solución Resultante Final:**
+$$\mathbb{S} = \left\{\frac{\pi}{2}, \frac{7\pi}{6}, \frac{11\pi}{6}\right\}$$
+
+### 10.3 Ecuaciones con compresión de múltiplos angulares
+
+**Ejemplo 10.4 (Ajuste algorítmico y periodo iterativo):**
+Resolver sistemáticamente $\sin(2x) = \frac{\sqrt{3}}{2}$ evaluado sobre la franja $x \in [0, 2\pi)$.
+
+**Solución paso a paso:**
+- Definimos transitoriamente el argumento conjunto como variable abstracta $u = 2x$. Por lo tanto, buscaremos los puntos donde $\sin(u) = \frac{\sqrt{3}}{2}$.
+- Un detalle capital: al pedirnos hallar originalmente el segmento dictaminado por $x \in [0, 2\pi)$, por naturaleza el argumento escalar "el doble de rápido" ($u=2x$) presentará una oscilación mayor a su doble: $u \in [0, 4\pi)$. Esto significa que daremos **dos vueltas completas** sobre el círculo unitario buscando soluciones válidas continuas.
+- **Primera Rotación** (sobre el intervalo $[0, 2\pi)$): Las intersecciones o raíces asimilando la proporción conocida se gestan en:
+  $$u_1 = \frac{\pi}{3} \quad \text{(C. I)} \quad \text{y} \quad u_2 = \frac{2\pi}{3} \quad \text{(C. II)}$$
+- **Segunda Rotación Continuante** (sobre el intervalo acoplado extra $[2\pi, 4\pi)$): Se le debe acumular al vector el valor del periodo general referencial $2\pi$ a las respuestas basales originarias:
+  $$u_3 = \frac{\pi}{3} + 2\pi = \frac{7\pi}{3} \quad \text{y} \quad u_4 = \frac{2\pi}{3} + 2\pi = \frac{8\pi}{3}$$
+- **Despeje y Restablecimiento ($x$ Inicial):** 
+  En rigor normativo, al final del ejercicio nos abocamos directamente a deshacer la equivalencia original de $2x = u$, dividiendo por consiguiente la mitad a todos los resultados recabados y lograr posibilitar la respuesta base resolutoria para la función original de la ecuación:
+  $$x = \frac{\frac{\pi}{3}}{2}, \frac{\frac{2\pi}{3}}{2}, \frac{\frac{7\pi}{3}}{2}, \frac{\frac{8\pi}{3}}{2}$$
+
+**Conjunto Solución Comprobada:**
+$$\mathbb{S} = \left\{\frac{\pi}{6}, \frac{\pi}{3}, \frac{7\pi}{6}, \frac{4\pi}{3}\right\}$$
+
+### 10.4 Uso resolutorio de Identidades Fundamentales cruzadas
+
+Es común que las ondas o ecuaciones mezclen componentes u oscilaciones distintas o funciones desbalanceadas (como tener la variable $x$ operando a la par contra un doblez $2x$). Tal factor es forzosamente incompatible de manera directa algebráica, obligándonos de forma metodológica vital a apelar a las **Identidades Trigonométricas Fundamentales** (Tema extenso visto previamente de rigor en la Sección 6) buscando poder homogeneizar paramétricamente sus factores hacia una variable unísona uniforme.
+
+**Ejemplo 10.5 (Homogeneización analítica por medio de Ángulos Dobles):**
+Resuelva formalmente la ecuación $\cos(2x) = \cos(x)$ para los casos posibles lícitos de cierre en $x \in [0, 2\pi)$.
+
+**Solución paso a paso:**
+- Es impracticable e imposible simplificar la igualdad mientras las frecuencias del coseno sean disímiles ($2x$ contra $x$). Convertiremos y reemplazaremos analíticamente acudiendo al axioma establecido para el propio **Coseno del Ángulo Doble**, el cual decreta su equivalencia universal como: $\cos(2x) = 2\cos^2(x) - 1$.
+  Sustituyendo el vector de onda en nuestra operación logramos achatarlas y nivelar la ecuación completa a una sola escala natural cruzada de $x$:
+  $$2\cos^2(x) - 1 = \cos(x)$$
+- Reescribimos agrupándolo sistemáticamente en molde de ecuación cuadrática general para análisis igualada a cero:
+  $$2\cos^2(x) - \cos(x) - 1 = 0$$
+- Factorizamos de idéntico modo estructurado resolutorio al previamente operado del Ejemplo 10.3 (recurriendo brevemente a un factor algebraico de tipo $u = \cos(x)$):
+  $$(2u + 1)(u - 1) = 0 \implies (2\cos(x) + 1)(\cos(x) - 1) = 0$$
+- Esto nos faculta depurar en dos escenarios factibles e independientes referenciales originarios de raíces:
+  $$ \cos(x) = 1 \quad \text{o} \quad \cos(x) = -\frac{1}{2}$$
+
+**Escenario Alfa:** Evaluando $\cos(x) = 1$
+Ocurre y verifica que sus raíces intersectan únicamente el dictamen asintótico y natural del origen temporal paramétrico:
+$$x = 0$$
+
+**Escenario Beta:** Evaluando la expresión $\cos(x) = -\frac{1}{2}$
+Basándonos inicialmente determinando su ángulo paralelo base simple referencial (donde valdría un medio netamente puro $\frac{1}{2}$) como $\frac{\pi}{3}$, al evaluar que el requerimiento es cruzado y negativo ($-$) procedemos a resituarlo transversal estocástico proyectándolo de manera natural hacia dominios oeste:
+- Espectro Cuadrante II: $x = \pi - \frac{\pi}{3} = \frac{2\pi}{3}$
+- Espectro Cuadrante III: $x = \pi + \frac{\pi}{3} = \frac{4\pi}{3}$
+
+**Conjunto Final y Global Restringido:**
+$$\mathbb{S} = \left\{0, \frac{2\pi}{3}, \frac{4\pi}{3}\right\}$$
+
+---
+## 11. Teorema del seno y del coseno
+
+Hasta el momento hemos abordado la trigonometría centrándonos en **triángulos rectángulos** (aquellos que poseen un ángulo recto de $90°$), lo cual simplifica la caracterización geométrica. Sin embargo, en el análisis matemático general, la mayoría de los triángulos son **oblicuángulos** (ningún ángulo es recto). 
+
+Para resolver analíticamente cualquier triángulo general, disponemos de dos herramientas o leyes fundamentales que expanden la trigonometría clásica: el **Teorema del Seno** y el **Teorema del Coseno**.
+
+### 11.1 Notación paramétrica estándar
+
+Para formular los teoremas, estableceremos primero una convención geométrica universal para el triángulo genérico $ABC$:
+
+- Los **vértices** se identifican con letras mayúsculas latinas: $A, B, C$.
+- Los **ángulos internos** relativos a cada vértice se denotan con letras griegas: $\alpha$ (en $A$), $\beta$ (en $B$), y $\gamma$ (en $C$).
+- La longitud del **lado opuesto** a cada vértice se identifica con la letra minúscula homóloga: $a$ (frente a $A$), $b$ (frente a $B$), y $c$ (frente a $C$).
+
+Por el axioma de geometría euclidiana, la suma interna de ángulos siempre cumple:
+$$\alpha + \beta + \gamma = 180° = \pi$$
+
+### 11.2 Teorema del Seno (Ley de Proporcionalidad)
+
+#### Motivación
+De manera intuitiva, en cualquier triángulo, el lado de mayor longitud siempre se opone al ángulo de mayor abertura. El teorema del seno cuantifica formalmente esta relación directa, estableciendo que la razón o cociente entre la longitud de un lado y el seno de su ángulo opuesto es una constante analítica para los tres lados.
+
+**Teorema 11.1 (Ley de senos):**
+En todo triángulo $ABC$ con lados $a$, $b$, $c$ opuestos a los ángulos $\alpha$, $\beta$, $\gamma$ respectivamente:
+$$\frac{a}{\sin(\alpha)} = \frac{b}{\sin(\beta)} = \frac{c}{\sin(\gamma)} = 2R$$
+*(Donde $R$ representa analíticamente el radio del **circuncírculo**, la circunferencia externa que pasa por los tres vértices).*
+
+**Demostración Geométrica:**
+1. Trazamos la altura $h$ vertical desde el vértice $C$ hacia el lado base $c$. Esto segmenta el interior en dos triángulos rectángulos independientes.
+2. Analizamos el triángulo lateral que contiene al ángulo $\alpha$:
+   $$\sin(\alpha) = \frac{h}{b} \implies h = b\sin(\alpha)$$
+3. Analizamos el triángulo lateral contrapuesto que contiene al ángulo $\beta$:
+   $$\sin(\beta) = \frac{h}{a} \implies h = a\sin(\beta)$$
+4. Igualamos y transitamos ambas expresiones dependientes de la altura $h$:
+   $$b\sin(\alpha) = a\sin(\beta) \implies \frac{a}{\sin(\alpha)} = \frac{b}{\sin(\beta)}$$
+5. Repitiendo el argumento con la altura desde $B$ se obtiene $\dfrac{b}{\sin(\beta)} = \dfrac{c}{\sin(\gamma)}$, cerrando la comprobación unificada. $\blacksquare$
+
+**Ejemplo 11.1 (Despeje lineal directo):**
+En un triángulo $ABC$, sabemos que $\alpha = 30°$, $\beta = 45°$ y el lado $a = 8$. Calcule $b$.
+
+**Solución paso a paso:**
+- Por la ley de senos, relacionamos los lados y ángulos conocidos:
+  $$\frac{a}{\sin(\alpha)} = \frac{b}{\sin(\beta)}$$
+- Sustituimos por nuestra información paramétrica:
+  $$\frac{8}{\sin(30°)} = \frac{b}{\sin(45°)}$$
+- Despejamos la magnitud $b$ como incógnita central:
+  $$b = 8 \cdot \frac{\sin(45°)}{\sin(30°)}$$
+- Empleamos nuestros ángulos notables deducidos matricialmente en secciones previas:
+  $$b = 8 \cdot \frac{\frac{\sqrt{2}}{2}}{\frac{1}{2}} = 8\sqrt{2}$$
+
+**Ejemplo 11.2 (Resolución angular oblicuángula):**
+En un triángulo, $\beta = \frac{\pi}{6}$, $\gamma = \frac{\pi}{4}$ y el lado $b = 10$. Calcule el lado $c$ y el ángulo $\alpha$.
+
+**Solución paso a paso:**
+- **Paso 1: Ángulo faltante.** Por el axioma interno, sabemos que la suma total debe ser $\pi$:
+  $$\alpha = \pi - \left(\frac{\pi}{6} + \frac{\pi}{4}\right) = \pi - \left(\frac{2\pi}{12} + \frac{3\pi}{12}\right) = \pi - \frac{5\pi}{12} = \frac{7\pi}{12} \text{ rad}$$
+- **Paso 2: Transposición transversal.** Empleando la ley de senos para hallar el escalar $c$:
+  $$\frac{c}{\sin(\gamma)} = \frac{b}{\sin(\beta)} \implies c = b \cdot \frac{\sin(\gamma)}{\sin(\beta)}$$
+- Sustituimos utilizando nuestras identidades conocidas:
+  $$c = 10 \cdot \frac{\sin(\frac{\pi}{4})}{\sin(\frac{\pi}{6})} = 10 \cdot \frac{\frac{\sqrt{2}}{2}}{\frac{1}{2}} = 10\sqrt{2}$$
+
+> **El caso ambiguo (SSA):** Cuando matemáticamente abordamos una formulación teniendo únicamente *dos lados y el ángulo opuesto a uno de ellos*, el cálculo del seno podría arrojar **0, 1 o 2 triángulos posibles**. Para confirmarlo, debemos corroborar que el $\sin(\theta)$ asintótico caiga en su dominio lícito $[-1, 1]$ y luego analizar analíticamente si su suplemento no rompe la suma interna de ángulos del triángulo general.
+
+### 11.3 Teorema del Coseno (Pitágoras Generalizado)
+
+#### Motivación
+Podemos considerar a este teorema como la **generalización directa del Teorema de Pitágoras** para cualquier clase de triángulo. Cuando el ángulo $\gamma$ equivale a un ángulo recto ($90°$ ó $\frac{\pi}{2}$)$, su $\cos(\gamma)$ valdrá $0$, reduciendo la fórmula de cosenos exactamente a la norma fundamental: $c^2 = a^2 + b^2$. 
+Para ángulos diferentes, el factor residual ($-2ab\cos(\gamma)$) ajusta y "corrige" la magnitud real: si el ángulo es agudo, este restará distancia; si el ángulo es obtuso, el coseno será negativo, lo que terminará sumándole distancia a la fórmula final.
+
+**Teorema 11.2 (Ley de cosenos):**
+En toda figura de encuadre triangular cerrada $ABC$, el cuadrado de todo lado equivale a la suma de cuadrados de los dos lados adyacentes a un ángulo, disminuidos por el doble producto de dichos lados multiplicados por el coseno del ángulo interno abarcado:
+$$a^2 = b^2 + c^2 - 2bc\cos(\alpha)$$
+$$b^2 = a^2 + c^2 - 2ac\cos(\beta)$$
+$$c^2 = a^2 + b^2 - 2ab\cos(\gamma)$$
+
+**Demostración por Distancia Euclidiana:**
+1. Situamos paramétricamente el triángulo en el plano polar cartesiano posicionando $B$ sobre el origen de coordenadas $(0, 0)$ y $C$ en $(a, 0)$. 
+2. Las coordenadas espaciales vectoriales del tercer vértice $A$ quedan analíticamente formadas como $(c\cos(\beta),\ c\sin(\beta))$.
+3. Sabiendo que buscamos aislar la magnitud escalar $b = |AC|$, usamos la forma cartesiana de distancia:
+   $$\begin{align}
+   b^2 &= (x_A - x_C)^2 + (y_A - y_C)^2 \\
+   b^2 &= (c\cos(\beta) - a)^2 + (c\sin(\beta) - 0)^2 \\
+   b^2 &= c^2\cos^2(\beta) - 2ac\cos(\beta) + a^2 + c^2\sin^2(\beta)
+   \end{align}$$
+4. Agrupamos algebraicamente tomando como factor común $c^2$:
+   $$b^2 = c^2\underbrace{(\cos^2(\beta) + \sin^2(\beta))}_{=\,1} + a^2 - 2ac\cos(\beta)$$
+5. Asumiendo la identidad trigonométrica base universal axiomática, derivamos infaliblemente en nuestra ley:
+   $$b^2 = a^2 + c^2 - 2ac\cos(\beta) \quad \blacksquare$$
+
+*(Nótese que las otras dos igualdades primarias surgen simplemente alterando simétricamente el anclaje inicial)*.
+
+**Ejemplo 11.3 (Aplicación directa de magnitud escalar):**
+En un triángulo oblicuángulo cualquiera, se miden lados colindantes $a = 5$, $b = 7$ y calculamos que su ángulo cruzado en el vértice opuesto es dictaminado como $\gamma = 60°$. Calcule analíticamente el tercer lado $c$.
+
+**Solución paso a paso:**
+- Aplicamos la matriz fundamental en la ley del coseno estructurada con respecto al vector $c$:
+  $$c^2 = a^2 + b^2 - 2ab\cos(\gamma)$$
+- Sustituimos el encuadre por los factores matemáticos empíricos dictados o numéricos:
+  $$c^2 = (5)^2 + (7)^2 - 2(5)(7)\cos(60°)$$
+- Intervenimos usando nuestro axioma de $\cos(60°) = \frac{1}{2}$ y sumamos las potencias:
+  $$c^2 = 25 + 49 - 70 \cdot \left(\frac{1}{2}\right) = 74 - 35 = 39$$
+- Rematamos limpiando la igualdad geométrica de potencias superiores usando su raíz natural dictaminada resolutoria pura paramétrica:
+  $$c = \sqrt{39}$$
+
+**Ejemplo 11.4 (Despeje y abstracción angular usando Lado-Lado-Lado):**
+Cierto parámetro para un triángulo posee un encuadre de magnitudes $a = 6$, $b = 8$ y $c = 10$. Retorne analítica y matemáticamente, por despeje, el ángulo $\gamma$.
+
+**Solución paso a paso:**
+- Tomamos nuevamente en asidero la forma madre fundamental de la ecuación original del teorema:
+  $$c^2 = a^2 + b^2 - 2ab\cos(\gamma)$$
+- Aislamos explícita y forzosamente nuestro término trascendente coseno mediante reubicación matriciana geométrica transitoria o corrimiento puro:
+  $$\cos(\gamma) = \frac{a^2 + b^2 - c^2}{2ab}$$
+- Imbuimos en nuestro encuadre transitorio algebraico escalar los parámetros numéricos dictados originariamente:
+  $$\cos(\gamma) = \frac{6^2 + 8^2 - 10^2}{2(6)(8)}$$
+- Resolvemos escalares puros del cálculo:
+  $$\cos(\gamma) = \frac{36 + 64 - 100}{96} = \frac{100 - 100}{96} = \frac{0}{96} = 0$$
+- Dictaminamos la nulidad abstracta o formal nulo evaluable:
+  Si evaluamos fehacientemente y comprobamos que riguroso analítico impone $\cos(\gamma) = 0$, implicará obligatoriamente una escuadra recta cruzada polar o corte asintótico, derivando unívocamente en respuesta natural en dominios de $\gamma = \frac{\pi}{2}$ radianes (o puntualmente $90°$).
+  *(Comprobable empíricamente de forma paralela asimilando qué proporciones numéricas o constantes de Lados $6, 8, 10$ es escalamiento directo del factor común paramétrico inquebrantable $3, 4, 5$).*
 
 ### 11.4 ¿Cuándo usar cada teorema?
 
@@ -1184,67 +1408,44 @@ El triángulo es rectángulo en $C$, lo cual es consistente con $6^2 + 8^2 = 10^
 
 ## 12. Ejercicios propuestos
 
-### 12.1 Conversión de ángulos
+Resuelva los siguientes ejercicios, detallando su procedimiento paso a paso.
 
-1. Convierta a radianes: $120°$, $225°$, $315°$
-2. Convierta a grados: $\frac{5\pi}{6}$, $\frac{7\pi}{4}$, $\frac{11\pi}{6}$
-3. Convierta $90°$ a gradianes
+### 12.1 Conversión de Ángulos y Bases Elementales
+1. Convierta a sexagesimal (grados): $\frac{5\pi}{6}$, $\frac{7\pi}{4}$ y $\frac{11\pi}{6}$.
+2. Convierta a radianes: $15°$, $120°$ y $315°$.
+3. Calcule el valor exacto de $\sin(15°)$ usando la fórmula de resta de ángulos apoyándose en $45°$ y $30°$.
 
-### 12.2 Razones trigonométricas
+### 12.2 Funciones Básicas y Razones Recíprocas
+4. En un triángulo rectángulo con hipotenusa de $13$ y un cateto de $5$, determine las seis funciones trigonométricas del ángulo agudo menor.
+5. Calcule el Seno de todos los ángulos interiores de un triángulo rectángulo de lados $3, 4, 5$.
+6. Si $\sec(\theta) = -3$ y el ángulo $\theta$ está en el segundo cuadrante, determine el valor exacto de $\sin(\theta)$ y $\cot(\theta)$.
 
-4. En un triángulo rectángulo con catetos $5$ y $12$, calcule las seis funciones trigonométricas del ángulo agudo menor
+### 12.3 Demostración de Identidades Fundamentales
+Demuestre las siguientes identidades:
+7. $\frac{1 - \sin^2(\theta)}{\cos(\theta)} = \cos(\theta)$
+8. $(\sin(x) + \cos(x))^2 = 1 + \sin(2x)$
+9. $\frac{\tan(\theta) + \cot(\theta)}{\sec(\theta)} = \csc(\theta)$
+10. Demuestre que $\cos(3\theta) = 4\cos^3(\theta) - 3\cos(\theta)$ (Pista: use la suma de ángulos con $(2\theta + \theta)$).
 
-5. Si $\sin(\theta) = \frac{2}{3}$ y $\theta$ está en el segundo cuadrante, encuentre $\cos(\theta)$ y $\tan(\theta)$
+### 12.4 Ecuaciones Trigonométricas Analíticas
+Encuentre las soluciones en el intervalo $x \in [0, 2\pi)$. Detalle el ángulo de referencia utilizado.
+11. $2\cos(x) + \sqrt{3} = 0$
+12. $2\sin^2(x) - \sin(x) - 1 = 0$
+13. $\tan^2(x) - 3 = 0$
 
-6. Si $\tan(\theta) = -\frac{3}{4}$ y $\theta$ está en el cuarto cuadrante, encuentre $\sin(\theta)$ y $\cos(\theta)$
+Encuentre la **solución general** para todos los reales (usando multiplicadores $+2k\pi$ o similares) de las siguientes ecuaciones:
+14. $\sin(2x) = \frac{1}{2}$
+15. $\cos^2(x) - \sin^2(x) = \frac{\sqrt{2}}{2}$
 
-### 12.3 Valores exactos
+### 12.5 Teoremas del Seno y del Coseno (Polígonos Oblicuángulos)
+16. Un terreno triangular tiene dos lados que miden $15 \text{m}$ y $20 \text{m}$. Si el ángulo comprendido entre ellos es de $120°$, calcule la longitud del tercer lado.
+17. Resuelva un triángulo con dimensiones $a = 12$, $b = 12\sqrt{3}$ y $\alpha = 30°$. Calcule el ángulo $\beta$ y verifique exhaustivamente si ocurre el "caso ambiguo" (donde dos ángulos sean posibles).
+18. Demuestre mediante el Teorema del Coseno que el triángulo de configuración $a=3, b=4, c=5$ tiene obligatoriamente un ángulo de $90°$ opuesto al lado $c$.
 
-7. Calcule sin usar calculadora: $\sin(150°)$, $\cos(240°)$, $\tan(135°)$
-
-8. Evalúe: $\sin\left(\frac{7\pi}{6}\right) + \cos\left(\frac{5\pi}{3}\right)$
-
-9. Simplifique: $\sin(30°)\cos(60°) + \cos(30°)\sin(60°)$
-
-### 12.4 Identidades
-
-10. Verifique: $\frac{1 - \sin^2(\theta)}{\cos(\theta)} = \cos(\theta)$
-
-11. Verifique: $(\sin(\theta) + \cos(\theta))^2 = 1 + 2\sin(\theta)\cos(\theta)$
-
-12. Verifique: $\frac{\tan(\theta) + \cot(\theta)}{\tan(\theta)} = \csc^2(\theta)$
-
-13. Simplifique: $\frac{\sin^2(\theta) - \cos^2(\theta)}{\sin(\theta) - \cos(\theta)}$
-
-### 12.5 Ecuaciones trigonométricas
-
-14. Resuelva para $x \in [0, 2\pi)$: $\sin(x) = -\frac{\sqrt{3}}{2}$
-
-15. Resuelva para $x \in [0, 2\pi)$: $2\cos(x) + 1 = 0$
-
-16. Resuelva para $x \in [0, 2\pi)$: $\tan^2(x) = 3$
-
-17. Resuelva para $x \in [0, 2\pi)$: $2\sin^2(x) + 3\sin(x) + 1 = 0$
-
-18. Resuelva para $x \in [0, 2\pi)$: $\cos(2x) = \frac{1}{2}$
-
-### 12.6 Aplicaciones
-
-19. Una rueda de radio $5$ metros gira. Encuentre la parametrización de la trayectoria de un punto en el borde
-
-20. Encuentre la ecuación del círculo de radio $4$ centrado en $(2, -1)$ en forma paramétrica
-
-21. Una onda se describe por $f(t) = 10\sin(4\pi t - \frac{\pi}{3}) + 5$. Determine su amplitud, período, desfase y desplazamiento vertical
-
-22. Demuestre que $\sin(3\theta) = 3\sin(\theta) - 4\sin^3(\theta)$ usando identidades de suma
-
-23. Si $\cos(\alpha) = \frac{3}{5}$ ($\alpha$ en cuadrante I) y $\sin(\beta) = \frac{5}{13}$ ($\beta$ en cuadrante II), calcule $\sin(\alpha + \beta)$
-
-24. Encuentre el ángulo de elevación del sol si un poste de $10$ metros proyecta una sombra de $15$ metros
-
-25. Una escalera de $8$ metros se apoya contra una pared formando un ángulo de $60°$ con el suelo. ¿A qué altura de la pared llega la escalera?
+### 12.6 Tópicos Complementarios (Curva Paramétrica y Desfases)
+19. Escriba la ecuación paramétrica de un punto oscilante sobre un círculo de radio $5$, cuyo centro ha sido desplazado hacia la coordenada $(3, -2)$.
+20. Dada la función $f(t) = -4\sin\!\left(2\pi t - \frac{\pi}{2}\right) + 1$, determine su magnitud de amplitud, su período, su desfase horizontal y su traslación vertical.
 
 ---
 
 **Fin de la Clase 6**
-
