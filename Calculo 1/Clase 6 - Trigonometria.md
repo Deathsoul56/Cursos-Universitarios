@@ -1096,7 +1096,7 @@ Para enunciar los teoremas, estableceremos primero la convención geométrica ha
 - Los **ángulos internos** relativos a cada vértice se denotan con letras griegas: $\alpha$ (en $A$), $\beta$ (en $B$), y $\gamma$ (en $C$).
 - La longitud del **lado opuesto** a cada vértice se identifica con la letra minúscula homóloga: $a$ (frente a $A$), $b$ (frente a $B$), y $c$ (frente a $C$).
 
-Por el postulado de geometría euclidiana, la suma interna de ángulos siempre cumple:
+Por el axioma de geometría euclidiana, la suma interna de ángulos siempre cumple:
 $$\alpha + \beta + \gamma = 180° = \pi$$
 
 ### 11.2 Teorema del Seno (Ley de Proporcionalidad)
