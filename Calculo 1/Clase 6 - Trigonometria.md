@@ -335,6 +335,7 @@ Para ilustrar los signos en cada cuadrante usaremos el triángulo 3-4-5: tomamos
 
 **Definición 4.6 (Ángulo de referencia):**
 El **ángulo de referencia** $\theta'$ es el ángulo agudo formado entre el lado terminal del ángulo y el eje X.
+![[angulo_referemcia.png]]
 
 **Cálculo del ángulo de referencia:**
 - **Cuadrante I:** $\theta' = \theta$
@@ -656,9 +657,7 @@ Como $0 < \theta < \dfrac{\pi}{2}$, se tiene $0 < \dfrac{\theta}{2} < \dfrac{\pi
 
 $$\sin\!\left(\frac{\theta}{2}\right) = \sqrt{\frac{1 - \cos(\theta)}{2}} = \sqrt{\frac{1 - \dfrac{3}{5}}{2}} = \sqrt{\frac{\dfrac{2}{5}}{2}} = \sqrt{\frac{1}{5}} = \frac{1}{\sqrt{5}} = \frac{\sqrt{5}}{5}$$
 
-
 ---
-
 ## 7. Verificación de identidades trigonométricas
 
 Un ejercicio clásico en trigonometría consiste en verificar una identidad; es decir, nos presentan una supuesta igualdad matemática y debemos demostrar paso a paso que es verdadera para todos los valores definidos del ángulo. Si bien no existe un método único o universal para hacer esto, la práctica nos enseña diversas estrategias y técnicas algebraicas que facilitarán el desarrollo de la demostración.
@@ -692,7 +691,7 @@ Verificar: $\frac{\sin(\theta)}{1 + \cos(\theta)} = \frac{1 - \cos(\theta)}{\sin
 **Solución:** Multiplicamos cruzado o verificamos multiplicando el denominador de la izquierda por el numerador de la derecha:
 $$\sin(\theta) \cdot \sin(\theta) = (1 + \cos(\theta))(1 - \cos(\theta))$$
 $$\sin^2(\theta) = 1 - \cos^2(\theta)$$
-$$\sin^2(\theta) = \sin^2(\theta)$$
+$$\sin^2(\theta) = \sin^2(\theta) \checkmark$$
 Verificado ✓
 
 **Ejemplo 7.3:**
@@ -918,7 +917,6 @@ Abstrayendo los tensores desde la forma general $g(x) = A \cdot \cos(Bx + C) + D
 ## 9. Relación con círculos y ecuaciones paramétricas
 
 El vínculo intrínseco entre la geometría analítica y la trigonometría trasciende sobradamente la resolución estática de triángulos. Mediante la incursión de variables independientes de transición denominadas **parámetros**, adquirimos el poder analítico de modelar y vectorizar temporalmente la trayectoria de curvas planas cerradas con estricto rigor algebraico cinemático.
-
 ### 9.1 Parametrización estocástica del círculo unitario
 
 **Proposición 9.1 (Mapeo paramétrico base):**
@@ -933,7 +931,6 @@ Sustituyendo de lleno el sistema paramétrico sobre nuestro cascarón cartesiano
 $$x(t)^2 + y(t)^2 = \cos^2(t) + \sin^2(t) = 1 \quad \blacksquare$$
 
 *Conclusión analítica:* Mientras el parámetro transitorio $t$ barre escalarmente el dominio diferencial continuo $[0, 2\pi)$, el vector posicional o cursor $\mathbf{r}(t) = (\cos(t), \sin(t))$ describe mecánicamente una vuelta parabólica completa o ciclo orbital en sentido rotacional antihorario puro.
-
 ### 9.2 Parametrización escalar para radios genéricos $R$
 
 **Proposición 9.2 (Expansión matricial por homotecia radial):**
@@ -1008,12 +1005,12 @@ Resuelva formalmente $\cos(x) = -\frac{\sqrt{2}}{2}$.
 - Despliegue en Cuadrante II: $x = \pi - \frac{\pi}{4} = \frac{3\pi}{4}$
 - Despliegue en Cuadrante III: $x = \pi + \frac{\pi}{4} = \frac{5\pi}{4}$
 
-**Conjunto Solución Acotado:**
+**Conjunto Solución:**
 $$\mathbb{S} = \left\{\frac{3\pi}{4} +2k\pi, \frac{5\pi}{4}+2k\pi\right\} \quad \forall k \in \mathbb{Z}$$
 
 ### 10.2 Ecuaciones trigonométricas por subrogación cuadrática
 
-Cuando la ecuación presenta funciones elevadas a una potencia (ej. cuadráticas integradas), se recurre al uso analítico del **Sustitución Algebraica** transitoria para reducir el orden de la resolución a un polinomio clásico.
+Cuando la ecuación presenta funciones elevadas a una potencia (ej. cuadráticas), se recurre al uso analítico del **Sustitución Algebraica** transitoria para reducir el orden de la resolución a un polinomio clásico.
 
 **Ejemplo 10.3 (Polinomio Trigonométrico Simple de Orden Dos):**
 Encontrar las raíces lícitas o intersecciones para $2\sin^2(x) - \sin(x) - 1 = 0$, para el intervalo $x \in [0, 2\pi)$.
@@ -1067,7 +1064,9 @@ Resuelva formalmente la ecuación $\cos(2x) = \cos(x)$ para los casos posibles l
 - Factorizamos de idéntico modo estructurado resolutorio al previamente operado del Ejemplo 10.3 (recurriendo brevemente a un factor algebraico de tipo $u = \cos(x)$):
   $$(2u + 1)(u - 1) = 0 \implies (2\cos(x) + 1)(\cos(x) - 1) = 0$$
 - Esto nos faculta depurar en dos escenarios factibles e independientes referenciales originarios de raíces:
-  $$ \cos(x) = 1 \quad \text{o} \quad \cos(x) = -\frac{1}{2}$$
+  $$ \cos(x) - 1 = 0 \to \cos(x) = 1$$
+$$ 2\cos(x) + 1 = 0 \to \cos(x) = -\frac{1}{2}$$
+$$ \cos(x) = 1 \quad \lor \quad \cos(x) = -\frac{1}{2}$$
 
 **Escenario Alfa:** Evaluando $\cos(x) = 1$
 Ocurre y verifica que sus raíces intersectan únicamente el dictamen asintótico y natural del origen temporal paramétrico:
@@ -1087,7 +1086,6 @@ $$\mathbb{S} = \left\{0, \frac{2\pi}{3}, \frac{4\pi}{3}\right\}$$
 Hasta el momento hemos abordado la trigonometría centrándonos en **triángulos rectángulos** (aquellos que poseen un ángulo recto de $90°$), lo cual simplifica la caracterización geométrica. Sin embargo, en la mayoría de los casos analíticos generales, los triángulos son **oblicuángulos** (ningún ángulo es recto). 
 
 Para resolver cualquier triángulo general, disponemos de dos herramientas fundamentales: el **Teorema del Seno** y el **Teorema del Coseno**.
-
 ### 11.1 Notación estándar
 
 Para enunciar los teoremas, estableceremos primero la convención geométrica habitual para el triángulo genérico $ABC$:
@@ -1095,7 +1093,7 @@ Para enunciar los teoremas, estableceremos primero la convención geométrica ha
 - Los **vértices** se identifican con letras mayúsculas latinas: $A, B, C$.
 - Los **ángulos internos** relativos a cada vértice se denotan con letras griegas: $\alpha$ (en $A$), $\beta$ (en $B$), y $\gamma$ (en $C$).
 - La longitud del **lado opuesto** a cada vértice se identifica con la letra minúscula homóloga: $a$ (frente a $A$), $b$ (frente a $B$), y $c$ (frente a $C$).
-
+![[notacion_triangulo.png]]
 Por el axioma de geometría euclidiana, la suma interna de ángulos siempre cumple:
 $$\alpha + \beta + \gamma = 180° = \pi$$
 
@@ -1107,7 +1105,6 @@ De manera intuitiva, en cualquier triángulo, el lado de mayor longitud siempre 
 **Teorema 11.1 (Ley de senos):**
 En todo triángulo $ABC$ con lados $a$, $b$, $c$ opuestos a los ángulos $\alpha$, $\beta$, $\gamma$ respectivamente:
 $$\frac{a}{\sin(\alpha)} = \frac{b}{\sin(\beta)} = \frac{c}{\sin(\gamma)}$$
-
 
 **Demostración Geométrica:**
 1. Trazamos la altura $h$ vertical desde el vértice $C$ hacia el lado base $c$. Esto divide la figura en dos triángulos rectángulos independientes.
@@ -1145,11 +1142,12 @@ En un triángulo, $\beta = \frac{\pi}{6}$, $\gamma = \frac{\pi}{4}$ y el lado $b
 
 > **El caso ambiguo (SSA):** Cuando al resolver la ecuación conocemos únicamente dos lados y el ángulo opuesto a uno de ellos, aplicar la función arco seno ($\arcsin$) podría dar lugar a **0, 1 o 2 triángulos posibles** diferentes simultáneamente viables. Esto es porque el seno es positivo y ambiguo tanto el cuadrante I (ángulo agudo) como en el cuadrante II (ángulo obtuso). Debemos corroborar si ambos resultados son lógicamente lícitos al someterlos a la suma máxima de $180°$.
 
+> **Nota:** Podemos invertir la igualdad de la ley del seno para obtener:
+> $$\frac{\sin(\alpha)}{a} = \frac{\sin(\beta)}{b} = \frac{\sin(\gamma)}{c}$$
+
 ### 11.3 Teorema del Coseno (Pitágoras Generalizado)
 
-**Motivación**
-Este teorema representa la **generalización del Teorema de Pitágoras** para cualquier triángulo. Cuando el ángulo estudiado es recto ($90°$), su $\cos(90°)$ vale $0$, evaporando el componente posterior y reduciendo la función netamente a $c^2 = a^2 + b^2$. 
-Para ángulos distintos, el factor residual ($-2ab\cos(\gamma)$) ajusta y modifica la longitud: si es un ángulo agudo el coseno positivo obligará a generar una resta mermando el lado, si es obtuso el coseno negativo generará un factor final de suma.
+Pensemos en el clásico Teorema de Pitágoras ($c^2 = a^2 + b^2$), el cual funciona de manera exacta siempre que el triángulo tenga un ángulo estricto de $90°$. ¿Pero qué ocurre si imaginamos un triángulo donde cerramos un poco ese ángulo (haciéndolo agudo)? En el mundo real, el lado opuesto será más corto de lo que la fórmula pitagórica predeciría. Por el contrario, si lo abrimos más allá del ángulo recto (haciéndolo obtuso), su lado opuesto deberá estirarse para conectarlo. El Teorema del Coseno es una extensión directa que toma en cuenta esto y añade un "factor de corrección" a Pitágoras para compensar justamente esa variación según qué tan abierto esté nuestro ángulo de estudio.
 
 **Teorema 11.2 (Ley de cosenos):**
 En todo triángulo $ABC$, el cuadrado de cualquier lado equivale a la suma de los cuadrados de los otros dos lados, siempre disminuidos por el doble de su producto expresamente multiplicado por el coseno del ángulo comprendido entre ellos:
