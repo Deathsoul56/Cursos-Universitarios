@@ -25,8 +25,7 @@ $$d(P_1, P_2) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$
 El punto medio del segmento entre $P_1 = (x_1, y_1)$ y $P_2 = (x_2, y_2)$ es:
 $$M = \left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right)$$
 
-Ahora vamos a estudiar las transformacion que podemos realizar en el plano
-
+Ahora vamos a estudiar las transformaciones que podemos realizar en el plano
 ### 1.2 Traslaciones (Translaciones)
 
 **Definición 1.4 (Traslación):**
@@ -90,11 +89,34 @@ x' = 2\cos(45°) - 2\sin(45°) = 2 \cdot \frac{\sqrt{2}}{2} - 2 \cdot \frac{\sqr
 y' = 2\sin(45°) + 2\cos(45°) = 2 \cdot \frac{\sqrt{2}}{2} + 2 \cdot \frac{\sqrt{2}}{2} = 2\sqrt{2}
 \end{cases}$$
 
-### 1.4 Reflexiones
+### 1.4 Homotecias (Escalamiento)
+
+Pensemos en situaciones donde la forma de una figura no cambia, pero sí su tamaño. Las proporciones se conservan bajo un factor de distorsión puro de aumento o decremento constante.
+
+**Definición 1.6 (Homotecia):**
+Una **homotecia** o escalamiento centrada en el origen con razón de escala $k$ (donde $k \in \mathbb{R}$ y $k \neq 0$) es una transformación geométrica que mapea cada punto $(x, y)$ a un nuevo punto $(x', y')$ bajo las reglas simétricas:
+$$\begin{cases}
+x' = kx \\
+y' = ky
+\end{cases}$$
+
+> **Observación:** Las propiedades inherentes directas derivan del factor $k$:
+> - Si acotamos magnitud $|k| > 1$, impone una **dilatación** dimensional.
+> - Si $0 < |k| < 1$, efectúa una compresión o **contracción**.
+> - En casos donde $k < 0$, la distorsión escala arrastrando una inversión simultánea (reflexión equivalente pasando de forma recta a través del origen central $(0,0)$).
+
+**Ejemplo 1.5:**
+Ejecute sobre el punto de coordenadas $P = (2, -1)$ una función matricial dictada de homotecia de expansión con razón paramétrica pura escalada $k = 3$. Evaluando:
+$$\begin{cases}
+x' = 3(2) = 6 \\
+y' = 3(-1) = -3
+\end{cases}$$
+El nodo resolutor se materializa en vector final $P' = (6, -3)$.
+### 1.5 Reflexiones
 
 Una **reflexión** es una transformación que "espeja" todos los puntos del plano respecto a una recta fija llamada **eje de reflexión**.
 
-**Definición 1.6 (Reflexión):** Dado un eje $\ell$, la reflexión de un punto $P$ es el punto $P'$ tal que $\ell$ es la mediatriz del segmento $PP'$.
+**Definición 1.7 (Reflexión):** Dado un eje $\ell$, la reflexión de un punto $P$ es el punto $P'$ tal que $\ell$ es la mediatriz del segmento $PP'$.
 
 **Casos fundamentales:**
 
@@ -106,25 +128,25 @@ Una **reflexión** es una transformación que "espeja" todos los puntos del plan
 | Recta $y = -x$ | $(x, y) \to (-y, -x)$ |
 | Origen $(0,0)$ | $(x, y) \to (-x, -y)$ |
 
-**Ejemplo 1.5:**
+**Ejemplo 1.6:**
 Refleje el punto $P = (3, 1)$ respecto a: a) el eje $X$, b) el eje $Y$, c) la recta $y = x$:
 
 a) Eje $X$: $P' = (3, -1)$
 b) Eje $Y$: $P' = (-3, 1)$
 c) $y = x$: $P' = (1, 3)$
 
-### 1.5 Transformaciones combinadas
+### 1.6 Transformaciones combinadas
 
 **Proposición 1.1:**
-Las transformaciones se pueden combinar. El orden importa:
-- Traslación seguida de rotación ≠ Rotación seguida de traslación (en general)
+Las transformaciones se pueden combinar. El orden importa categóricamente:
+- Traslación seguida de rotación ≠ Rotación seguida de traslación (en general).
 
-**Ejemplo 1.6:**
+**Ejemplo 1.7:**
 Traslade $(1, 0)$ por $(1, 1)$ y luego rote $90°$:
 1. Traslación: $(1, 0) \to (2, 1)$
 2. Rotación: $(2, 1) \to (2\cos(90°) - 1\sin(90°), 2\sin(90°) + 1\cos(90°)) = (-1, 2)$
 
-**Ejemplo 1.7:**
+**Ejemplo 1.8:**
 Aplique a $P = (3, -2)$: primero una reflexión respecto al eje $X$, luego una traslación por el vector $(1, 4)$:
 1. Reflexión respecto al eje $X$: $(3, -2) \to (3, 2)$
 2. Traslación por $(1, 4)$: $(3, 2) \to (3 + 1,\ 2 + 4) = (4, 6)$
@@ -133,10 +155,14 @@ Comparar con el orden inverso (primero traslación, luego reflexión):
 1. Traslación por $(1, 4)$: $(3, -2) \to (4, 2)$
 2. Reflexión respecto al eje $X$: $(4, 2) \to (4, -2)$
 
-Los resultados $(4, 6) \neq (4, -2)$ confirman que **el orden de las transformaciones importa**.
+Los resultados $(4, 6) \neq (4, -2)$ confirman de inmediato que **el orden de las transformaciones importa**.
+
+**Ejemplo 1.9 (Asociando escala):**
+Establezca las evaluaciones al dictaminar matriz para el punto inicial $P = (2, 4)$, evaluando que este deba sufrir primero un escalamiento de homotecia reductor paramétrico $k = 0.5$ para que el sistema resultante posteriormente acoplarse y dictaminar una traslación del operando por su correspondiente vector rector $(-3, 2)$.
+1. Expansión reductiva por Homotecia a $k = 0.5$: $(2, 4) \to (\frac{1}{2} \cdot 2, \frac{1}{2} \cdot 4) = (1, 2)$
+2. Sumatoria aditiva escalar rígida de Traslación sumando $(-3, 2)$: $(1, 2) \to (1 - 3, 2 + 2) = (-2, 4)$
 
 ---
-
 ## 2. Ecuación general de segundo grado
 
 ### 2.1 Forma general
@@ -147,11 +173,11 @@ $$Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$$
 
 donde $A$, $B$, $C$, $D$, $E$, $F$ son constantes reales y al menos uno de $A$, $B$, $C$ es distinto de cero.
 
-Esta relación nos dará como resultado un circulo, una elipse, una parábola o una hipérbola, estaos cuatro lugares geométricos son llamados las secciones cónicas pues son el resultado de intersecar un cono con un plan.
+Esta relación nos dará como resultado un circulo, una elipse, una parábola o una hipérbola, estos cuatro lugares geométricos son llamados las secciones cónicas pues son el resultado de intersecar un cono con un plan.
+![[conicas.jpg|524]]
 El termino cruzado $Bxy$ tiene relación con el ángulo de rotación de la sección cónica, en un principio trabajaremos sin el pero mas adelante lo incorporaremos para ver su comportamiento.
 
-**Observación:** Si los tres coeficientes cuadráticos son nulos ($A = B = C = 0$), la ecuación se reduce a $Dx + Ey + F = 0$, que es la ecuación general de una **recta**. En ese sentido, la ecuación de segundo grado es una generalización: al "activar" los términos cuadráticos pasamos de rectas a conicas (o a algun caso degenerado).
-
+**Observación:** Si los tres coeficientes cuadráticos son nulos ($A = B = C = 0$), la ecuación se reduce a $Dx + Ey + F = 0$, que es la ecuación general de una **recta**. En ese sentido, la ecuación de segundo grado es una generalización: al "activar" los términos cuadráticos pasamos de rectas a cónicas (o a algún caso degenerado).
 ### 2.2 Clasificación de cónicas
 
 Consideremos la ecuación $Ax^2 + Cy^2 + Dx + Ey + F = 0$ (sin término mixto, $B = 0$) y estudiemos casos según los valores de $A$ y $C$.
@@ -168,6 +194,7 @@ donde $h = -\dfrac{D}{2A}$, $\quad k = -\dfrac{E}{2A}$, $\quad R = \dfrac{\sqrt{
 
 **Circunferencia** con centro $\left(-\dfrac{D}{2A},\, -\dfrac{E}{2A}\right)$ y radio $r = \dfrac{\sqrt{D^2 + E^2 - 4AF}}{2|A|}$ (cuando $D^2 + E^2 - 4AF > 0$).
 
+![[circunferencia_hk.png]]
 **2) Cuando $A \neq C$ y tienen el mismo signo → Elipse**
 
 $$A\left(x + \frac{D}{2A}\right)^2 + C\left(y + \frac{E}{2C}\right)^2 = -F + \frac{D^2}{4A} + \frac{E^2}{4C}$$
@@ -190,7 +217,17 @@ $$(x - h)^2 = 4p\,(y - k)$$
 
 donde $h = -\dfrac{D}{2A}$, $\quad k = \dfrac{D^2 - 4AF}{4AE}$, $\quad 4p = -\dfrac{E}{A}$
 
-**Parábola** de eje vertical. Análogamente, si $A = 0$ y $C \neq 0$ se obtiene una parábola de eje horizontal.
+**Parábola** de eje vertical (abre hacia arriba o abajo).
+
+Si $A = 0$ y $C \neq 0$:
+
+$$Cy^2 + Dx + Ey + F = 0$$
+$$C\left(y + \frac{E}{2C}\right)^2 = -Dx - F + \frac{E^2}{4C}$$
+$$(y - k)^2 = 4p\,(x - h)$$
+
+donde $k = -\dfrac{E}{2C}$, $\quad h = \dfrac{E^2 - 4CF}{4CD}$, $\quad 4p = -\dfrac{D}{C}$
+
+**Parábola** de eje horizontal (abre hacia la izquierda o derecha).
 
 **4) Cuando $A$ y $C$ tienen signos opuestos → Hipérbola**
 
@@ -233,7 +270,11 @@ $$x'^2 + 2\alpha x' + \alpha^2 + x'y' + \beta x' + \alpha y' + \alpha\beta + y'^
 Recolectando por tipo de término:
 $$x'^2 + x'y' + y'^2 + (2\alpha + \beta)\,x' + (\alpha + 2\beta)\,y' + (\alpha^2 + \alpha\beta + \beta^2) = C$$
 
-El coeficiente de $x'y'$ sigue siendo $1$, idéntico al original. La traslación solo agregó términos lineales y desplazó la constante, pero **no modificó ninguno de los coeficientes cuadráticos**. Esto tiene sentido: la traslación reubica el centro de la cónica, pero no cambia su orientación. Necesitamos una transformación que sí afecte la orientación: una **rotación**.
+El coeficiente de $x'y'$ sigue siendo $1$, idéntico al original. La traslación solo agregó términos lineales y desplazó la constante, pero **no modificó ninguno de los coeficientes cuadráticos**. Esto tiene sentido: la traslación reubica el centro de la cónica, pero no cambia su orientación geométrica angular. 
+
+De manera análoga, si intentásemos aplicar un escalamiento mediante una **homotecia** ($x = kx', y = ky'$), el producto algebraico resultaría en $k^2 x'y'$. Aunque cambiaría numéricamente el coeficiente, la homotecia dictamina crecimiento o reducción pura, por lo que su término mixto seguirá estando atado a los ejes sin llegar nunca a eliminarse por completo (a menos que $k=0$, lo cual destruiría la figura).
+
+Necesitamos forzosamente una transformación matricial que sí afecte la orientación de coordenadas paramétricas: una **rotación**.
 
 **Paso 2: La rotación rota los ejes**
 
@@ -340,7 +381,6 @@ y los coeficientes lineales serán
 $$D' = D\cos\theta + E\sin\theta$$
 $$E' = -D\sin\theta + E\cos\theta$$
 $$F' = F$$
-
 ### 2.3 El discriminante y su invarianza
 
 **Definición 2.2 (Discriminante):**
@@ -396,8 +436,39 @@ Por lo tanto:
 $$\boxed{B'^2 - 4A'C' = B^2 - 4AC}$$
 
 **El discriminante es invariante bajo rotaciones.** $\blacksquare$
-
 > **Consecuencia:** Como el discriminante no cambia bajo traslaciones ni rotaciones, podemos calcular $\Delta = B^2 - 4AC$ directamente en la ecuación original y aprovecharlo para clasificar la cónica, sin necesidad de realizar ninguna transformación previa.
+
+**Proposición 2.3 (El discriminante como término de la fórmula general cuadrática):**
+Alternativamente, podemos justificar de manera natural el protagonismo de esta expresión analizando nuestro problema inicial simplemente como un polinomio cuadrático que intentamos resolver algebraicamente (despejando, por ejemplo, la variable $y$).
+
+**Demostración analítica:**
+Si retomamos nuestra la ecuación general original:
+$$Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$$
+
+Podemos reagruparla explícitamente tratando a $y$ como nuestra incógnita operativa, y al resto de elementos (incluyendo a $x$) como agrupaciones paramétricas constantes. Ordenando descendentemente por potencias de $y$:
+$$Cy^2 + (Bx + E)y + (Ax^2 + Dx + F) = 0$$
+
+Notamos que nos enfrentamos a una clásica ecuación de la forma $\alpha y^2 + \beta y + \gamma = 0$, identificando a:
+- $\alpha = C$
+- $\beta = (Bx + E)$
+- $\gamma = (Ax^2 + Dx + F)$
+
+Para despejar $y(x)$, utilizamos infaliblemente la fórmula resolvente de segundo grado:
+$$y = \frac{- \beta \pm \sqrt{\beta^2 - 4\alpha\gamma}}{2\alpha}$$
+
+Concentremos nuestra atención de manera exclusiva en el corazón o condición de realidad (el interior de la raíz cuadrada o "radicando"):
+$$\text{Radicando} = (Bx + E)^2 - 4C(Ax^2 + Dx + F)$$
+
+Desarrollamos los productos y el binomio al cuadrado:
+$$\text{Radicando} = B^2x^2 + 2BEx + E^2 - 4ACx^2 - 4CDx - 4CF$$
+
+Agrupamos finalmente los componentes basándonos ahora en el grado de $x$:
+$$\text{Radicando} = (B^2 - 4AC)x^2 + (2BE - 4CD)x + (E^2 - 4CF)$$
+
+Es justo en esta estructura polinómica donde la identidad se revela: para valores grandes de $x$, el **comportamiento asintótico o dominios posibles** es dictado fuertemente por su coeficiente principal cuadrático $x^2$. Ese bloque multiplicador inquebrantable de control es, exactamente, el factor $(B^2 - 4AC)$.
+
+- Si este factor es **negativo**, provocará rápidamente que toda el área de números colapse a raíces negativas (imaginarios) impidiendo que la curva siga existiendo, lo que físicamente implica una figura confinada, cerrada y acotada (**las elipses y círculos**).
+- Si es **positivo**, entonces para número grandes el radicando tenderá holgadamente hacia una raíz real lícita posibilitando infinitas soluciones, manifestándose en curvas que viajan sin fin al infinito (**las ramas de la hipérbola**). $\blacksquare$
 
 ### 2.4 Clasificación por discriminante
 
