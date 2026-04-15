@@ -539,85 +539,43 @@ d) $x^2 - y^2 - 2x + 4y - 4 = 0$
    - **Hipérbola**
 
 ---
-
 ## 3. Secciones cónicas: definición geométrica
 
-Aqui estudiaremos las secciones conicas a mas profundidad y con un enfoque mas geometrico
+Aquí estudiaremos las secciones cónicas a mas profundidad y con un enfoque mas geométrico
 
 ### 3.1 El cono circular recto
 
 **Definición 3.1 (Cono circular recto):**
 Un **cono circular recto** es la superficie generada por una recta (generatriz) que pasa por un punto fijo (vértice) y forma un ángulo constante con un eje fijo.
-
-```
-        *  vértice
-       /|\
-      / | \
-     /  |  \
-    /   |   \
-   /    |    \
-  /_____|_____\
-       eje
-```
-
+![[cono_circular.png]]
 **Definición 3.2 (Sección cónica):**
 Una **sección cónica** (o **cónica**) es la curva resultante de la intersección de un plano con un cono circular recto doble (dos conos opuestos por el vértice).
-
 ### 3.2 Tipos de secciones cónicas
 
 Dependiendo del ángulo del plano de corte:
 
 **1. Circunferencia:**
 - Plano perpendicular al eje del cono
-```
-    \     |     /
-     \    |    /
-      \   |   /
-       \==|==/  ← Circunferencia
-        \ | /
-         \|/
-```
+![[circulo_como_conica.jpg|327]]
 
 **2. Elipse:**
 - Plano oblicuo que corta una hoja del cono
 - No paralelo a ninguna generatriz
-```
-    \     /
-     \   /
-      \ /
-      / \  ← Elipse
-     /   \
-    /     \
-```
+![[elipse_como_conica.png|277]]
 
 **3. Parábola:**
 - Plano paralelo a una generatriz del cono
-```
-    \     /
-     \   |
-      \  |  ← Parábola
-       \ |
-        \|
-```
+![[parabola_como_conica.png]]
 
 **4. Hipérbola:**
 - Plano que corta ambas hojas del cono
-```
-    \     /
-     \   /
-      \ /
-      / \
-     /   \
-    /     \
-```
-
+![[hiperbola_como_conica.png]]
 **Casos degenerados:**
 - **Punto:** Plano pasa por el vértice (perpendicular al eje)
 - **Recta:** Plano pasa por el vértice (tangente a una generatriz)
 - **Dos rectas:** Plano pasa por el vértice (no tangente)
 
 ---
-
 ## 4. El círculo (circunferencia)
 
 ### 4.1 Definición y ecuación
@@ -679,10 +637,27 @@ x^2 - 6x + y^2 + 4y &= 3 \\
 - **Centro:** $(3, -2)$
 - **Radio:** $r = \sqrt{16} = 4$
 
-*Para convertir de forma canónica a general:*
-Tenemos una circunferencia centrada en $(h,k)$ con radio R $(x-h)^2 + (y-k)^2 = R^2$, la estrategia ahora será simplemente desarrollar los pretesis
+> **Casos Degenerados de la Circunferencia:**
+> Al completar los cuadrados, la constante final en el lado derecho (que llamaremos $M$) dictará la naturaleza real del lugar geométrico $(x - h)^2 + (y - k)^2 = M$:
+> 1. Si $M > 0$: Corresponde a una **circunferencia real** con radio $r = \sqrt{M}$.
+> 2. Si $M = 0$: Corresponde a una **circunferencia degenerada** de radio nulo. La figura geométrica colapsa y representa únicamente un **punto** ubicado en el centro $(h, k)$.
+> 3. Si $M < 0$: Corresponde a un **conjunto vacío** (también referido a veces como circunferencia imaginaria), dado que en los reales la suma de dos números al cuadrado no puede dar un resultado negativo.
 
-**Ejemplo 4.3:**
+**Ejemplo 4.3 (Identificando un caso degenerado):**
+Analice y determine qué figura geométrica describe $x^2 + y^2 - 2x + 6y + 10 = 0$.
+
+$$\begin{align}
+x^2 - 2x + y^2 + 6y &= -10 \\
+(x^2 - 2x + 1) + (y^2 + 6y + 9) &= -10 + 1 + 9 \\
+(x - 1)^2 + (y + 3)^2 &= 0
+\end{align}$$
+
+Como $M=0$, se trata de una circunferencia degenerada que describe únicamente al punto singular $(1, -3)$.
+
+*Para convertir de forma canónica a general:*
+Tenemos una circunferencia centrada en $(h,k)$ con radio R $(x-h)^2 + (y-k)^2 = R^2$, la estrategia ahora será simplemente desarrollar los paréntesis.
+
+**Ejemplo 4.4:**
 Convierta la ecuación canónica $(x - 2)^2 + (y + 5)^2 = 9$ a forma general.
 
 Desarrollando los paréntesis:
