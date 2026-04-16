@@ -674,7 +674,7 @@ Verificación: $D = -4 = -2h = -2(2)$ ✓, $E = 10 = -2k = -2(-5)$ ✓, $F = h^2
 
 **Definición 4.2 (Número $\pi$):**
 El número $\pi$ (pi) es la constante definida como la razón entre la **circunferencia** (perímetro) de un círculo y su **diámetro**:
-$$\pi = \frac{C}{d} = \frac{C}{2r}$$
+$$\pi = \frac{P}{d} = \frac{P}{2r}$$
 
 donde $C$ es la longitud de la circunferencia y $d = 2r$ es el diámetro.
 
@@ -686,7 +686,7 @@ donde $C$ es la longitud de la circunferencia y $d = 2r$ es el diámetro.
 
 **Teorema 4.2 (Perímetro):**
 El **perímetro** o **longitud de la circunferencia** de radio $r$ es:
-$$C = 2\pi r$$
+$$P = 2\pi r$$
 
 **Teorema 4.3 (Área):**
 El **área del círculo** de radio $r$ es:
@@ -740,7 +740,6 @@ Para la circunferencia $(x - 1)^2 + (y + 2)^2 = 9$:
   $$x = 1 + 3\cos(t), \quad y = -2 + 3\sin(t)$$
 
 ---
-
 ## 5. La elipse
 
 ### 5.1 Definición y ecuación
@@ -756,16 +755,62 @@ $$d(P, F_1) + d(P, F_2) = 2a$$
 
 para todo punto $P$ en la elipse, donde $a$ es el **semieje mayor**.
 
+**Teorema 5.1 (Ecuación canónica):**
+La elipse con centro en el origen y focos sobre el eje $x$ tiene ecuación canónica:
+$$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1, \quad \text{con } a > b > 0$$
+
+**Demostración geométrica:**
+1. Consideremos una elipse centrada en el origen $(0,0)$ con focos $F_1 = (-c, 0)$ y $F_2 = (c, 0)$.
+2. Todo punto $P = (x, y)$ de la elipse cumple:
+   $$d(P, F_1) + d(P, F_2) = 2a$$
+3. Reemplazando por la fórmula de distancia:
+   $$\sqrt{(x + c)^2 + (y - 0)^2} + \sqrt{(x - c)^2 + (y - 0)^2} = 2a$$
+4. Aislamos una de las raíces y elevamos al cuadrado:
+   $$\sqrt{(x + c)^2 + y^2} = 2a - \sqrt{(x - c)^2 + y^2}$$
+   $$(x + c)^2 + y^2 = 4a^2 - 4a\sqrt{(x - c)^2 + y^2} + (x - c)^2 + y^2$$
+5. Expandimos los binomios y cancelamos términos comunes ($x^2, c^2, y^2$):
+   $$2cx = 4a^2 - 4a\sqrt{(x - c)^2 + y^2} - 2cx$$
+   $$4cx - 4a^2 = - 4a\sqrt{(x - c)^2 + y^2}$$
+6. Dividimos por $-4$ y volvemos a elevar al cuadrado:
+   $$a^2 - cx = a\sqrt{(x - c)^2 + y^2}$$
+   $$(a^2 - cx)^2 = a^2\left((x - c)^2 + y^2\right)$$
+   $$a^4 - 2a^2 cx + c^2 x^2 = a^2(x^2 - 2cx + c^2 + y^2)$$
+7. Cancelamos $-2a^2 cx$ y reagrupamos $x$ e $y$:
+   $$(a^2 - c^2)x^2 + a^2 y^2 = a^2(a^2 - c^2)$$
+8. De la geometría de la elipse, cuando evaluamos en un vértice menor se forma un triángulo rectángulo con catetos $b$ y $c$, e hipotenusa $a$. Por ende $a^2 = b^2 + c^2$. Definimos entonces $b^2 = a^2 - c^2$:
+   $$b^2 x^2 + a^2 y^2 = a^2 b^2$$
+9. Al dividir todo entre la constante $a^2b^2$:
+   $$\boxed{\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1} \quad \blacksquare$$
+
+**Caso particular (orientación en el eje Y):**
+Si el eje rector o mayor se encuentra en posición vertical, ubicando sus focos en $(0, \pm c)$, la ecuación resulta:
+$$\frac{x^2}{b^2} + \frac{y^2}{a^2} = 1$$
+*(Nota: El denominador mayor siempre acompaña a la variable espacial de mayor elongación focal. Si $a^2$ está bajo $y^2$, la elipse es vertical).*
+
+**Ecuación canónica desplazada:**
+Bajo una traslación clásica $(x-h)$ y $(y-k)$, la elipse traslada su centro al punto $(h, k)$:
+- **Horizontal:** $\frac{(x - h)^2}{a^2} + \frac{(y - k)^2}{b^2} = 1$
+- **Vertical:** $\frac{(x - h)^2}{b^2} + \frac{(y - k)^2}{a^2} = 1$
+
+**Ejemplo 5.1:**
+Identifique los elementos de la elipse $\frac{(x - 2)^2}{16} + \frac{(y + 1)^2}{25} = 1$:
+- **Centro:** $(2, -1)$
+- **Orientación:** Al estar el denominador mayor (25) bajo la variable Y, la elipse es de orientación vertical.
+- $a^2 = 25 \Rightarrow a = 5$ 
+- $b^2 = 16 \Rightarrow b = 4$
+- Longitud del centro al foco: $c = \sqrt{a^2 - b^2} = \sqrt{25 - 16} = 3$
+- **Focos:** Estando en el eje Y vertical, al centro $(2, -1)$ le sumamos/restamos $c$ en su ordenada, resultando $F_1 = (2, 2)$ y $F_2 = (2, -4)$.
+
 ### 5.2 Elementos de la elipse
 
 **Componentes principales:**
 
-1. **Focos:** $F_1$ y $F_2$, separados por distancia $2c$
-2. **Centro:** Punto medio entre los focos
-3. **Eje mayor:** Segmento de longitud $2a$ que pasa por los focos
-4. **Eje menor:** Segmento perpendicular al eje mayor de longitud $2b$
-5. **Vértices mayores:** Puntos de intersección con el eje mayor
-6. **Vértices menores:** Puntos de intersección con el eje menor
+1. **Focos:** $F_1$ y $F_2$, separados por la distancia constante de $2c$.
+2. **Centro:** Punto medio entre ambos focos y centro de simetría de la elipse.
+3. **Eje mayor:** Segmento recto de medida $2a$ que une la elipse de extremo a extremo pasando por el centro y los focos.
+4. **Eje menor:** Segmento perpendicular al eje mayor, de longitud $2b$.
+5. **Vértices mayores:** Puntos de intersección del perímetro con el eje mayor.
+6. **Vértices menores:** Puntos de intersección del perímetro con el eje menor.
 
 **Relación fundamental:**
 $$a^2 = b^2 + c^2$$
@@ -775,7 +820,7 @@ donde:
 - $b$ = semieje menor
 - $c$ = distancia del centro a cada foco
 
-```
+```text
         Vértice menor
              •
              |
@@ -791,71 +836,15 @@ donde:
         |--b--|
 ```
 
-### 5.3 Ecuación canónica
+### 5.3 Ecuación general a canónica
 
-**Teorema 5.1 (Elipse horizontal con centro en el origen):**
-Si el eje mayor es horizontal:
-$$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1, \quad \text{con } a > b > 0$$
+**Proposición 5.1:**
+Similar al caso de la circunferencia, podemos convertir una ecuación polinomial $Ax^2 + Cy^2 + Dx + Ey + F = 0$ a su forma canónica mediante la **completación de cuadrados** (con la condición $A$ y $C$ del mismo signo, pero $A \neq C$). 
 
-- **Focos:** $F_1 = (-c, 0)$ y $F_2 = (c, 0)$ donde $c = \sqrt{a^2 - b^2}$
-- **Vértices mayores:** $(\pm a, 0)$
-- **Vértices menores:** $(0, \pm b)$
+**Ejemplo 5.2 (Completación de cuadrados en la elipse):**
+Lleve $9x^2 + 4y^2 - 36x + 8y + 4 = 0$ a forma canónica.
 
-**Teorema 5.2 (Elipse vertical con centro en el origen):**
-Si el eje mayor es vertical:
-$$\frac{x^2}{b^2} + \frac{y^2}{a^2} = 1, \quad \text{con } a > b > 0$$
-
-- **Focos:** $F_1 = (0, -c)$ y $F_2 = (0, c)$ donde $c = \sqrt{a^2 - b^2}$
-- **Vértices mayores:** $(0, \pm a)$
-- **Vértices menores:** $(\pm b, 0)$
-
-**Ejemplo 5.1:**
-La elipse $\frac{x^2}{25} + \frac{y^2}{9} = 1$:
-
-- $a^2 = 25 \Rightarrow a = 5$ (eje mayor horizontal)
-- $b^2 = 9 \Rightarrow b = 3$
-- $c = \sqrt{25 - 9} = \sqrt{16} = 4$
-- **Focos:** $(\pm 4, 0)$
-- **Vértices mayores:** $(\pm 5, 0)$
-- **Vértices menores:** $(0, \pm 3)$
-
-### 5.4 Ecuación con centro desplazado
-
-**Teorema 5.3 (Elipse con centro $(h, k)$):**
-
-**Eje mayor horizontal:**
-$$\frac{(x - h)^2}{a^2} + \frac{(y - k)^2}{b^2} = 1$$
-
-- **Centro:** $(h, k)$
-- **Focos:** $(h \pm c, k)$
-
-**Eje mayor vertical:**
-$$\frac{(x - h)^2}{b^2} + \frac{(y - k)^2}{a^2} = 1$$
-
-- **Centro:** $(h, k)$
-- **Focos:** $(h, k \pm c)$
-
-**Ejemplo 5.2:**
-La elipse $\frac{(x - 2)^2}{16} + \frac{(y + 1)^2}{25} = 1$:
-
-- **Centro:** $(2, -1)$
-- $a^2 = 25 \Rightarrow a = 5$ (eje mayor vertical)
-- $b^2 = 16 \Rightarrow b = 4$
-- $c = \sqrt{25 - 16} = 3$
-- **Focos:** $(2, -1 \pm 3) = (2, 2)$ y $(2, -4)$
-
-### 5.5 Ecuación general
-
-**Forma general de la elipse:**
-$$Ax^2 + Cy^2 + Dx + Ey + F = 0$$
-
-donde $A$ y $C$ tienen el mismo signo y $A \neq C$.
-
-**Proceso de completación de cuadrados:**
-
-**Ejemplo 5.3:**
-Lleve $9x^2 + 4y^2 - 36x + 8y + 4 = 0$ a forma canónica:
-
+**Solución paso a paso:**
 $$\begin{align}
 9x^2 - 36x + 4y^2 + 8y &= -4 \\
 9(x^2 - 4x) + 4(y^2 + 2y) &= -4 \\
@@ -865,7 +854,25 @@ $$\begin{align}
 \end{align}$$
 
 - **Centro:** $(2, -1)$
-- $a = 3$, $b = 2$, eje mayor vertical
+- **Orientación:** Eje mayor vertical.
+- $a = 3$, $b = 2$, distancia focal $c = \sqrt{9-4} = \sqrt{5}$.
+
+> **Casos Degenerados de la Elipse:**
+> Al completar los cuadrados, la constante final a la que igualamos la ecuación estandarizada estipula la existencia del lugar geométrico $\frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2} = M$:
+> 1. Si $M > 0$: Con un simple despeje obtenemos la forma canónica base equivaliendo a $1$. Existe una **elipse real**.
+> 2. Si $M = 0$: Corresponde a una **elipse degenerada**. Dado que los cuadrados no pueden sumar cero a menos que ambos sean nulos, la geometría colapsa exclusivamente al centro $(h, k)$, es decir, a un simple **punto**.
+> 3. Si $M < 0$: Esta suma arroja una contradicción matemática (cuadrados positivos no originan números negativos), dando lugar a una figura inerte conocida como conjunto vacío o **elipse imaginaria**.
+
+**Ejemplo 5.3 (Identificando un caso degenerado):**
+Analice la ecuación $2x^2 + 3y^2 - 8x + 6y + 11 = 0$.
+
+$$\begin{align}
+2(x^2 - 4x) + 3(y^2 + 2y) &= -11 \\
+2(x^2 - 4x + 4) + 3(y^2 + 2y + 1) &= -11 + 8 + 3 \\
+2(x - 2)^2 + 3(y + 1)^2 &= 0
+\end{align}$$
+
+Como la suma da cero absoluto ($M=0$), concluimos que es una elipse degenerada contenida estrictamente en el punto singular $(2, -1)$.
 
 ### 5.6 Excentricidad
 

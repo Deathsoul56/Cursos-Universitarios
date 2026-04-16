@@ -1110,6 +1110,21 @@ Deshacemos:
 - Si $u = 2$: $x^{1/3} = 2 \Rightarrow x = 8$
 - Si $u = 3$: $x^{1/3} = 3 \Rightarrow x = 27$
 
+### 6.6 Números trascendentes
+
+Habiendo explorado diversos tipos de ecuaciones polinomiales (cuadráticas, cúbicas, cuárticas), podemos hacer una distinción fundamental sobre la naturaleza de los números que surgen como solución.
+
+**Definición 6.4 (Número trascendente):**
+Un número real o complejo es **trascendente** (o trascendental) si no es raíz de ninguna ecuación polinómica no nula con coeficientes racionales. Es decir, no existe ninguna combinación de la forma:
+$$a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0 = 0$$
+donde los coeficientes $a_i$ sean números racionales ($a_i \in \mathbb{Q}$), que tenga a dicho número como solución $x$.
+
+> **Observación:** Si un número sí es solución de algún polinomio con coeficientes racionales (como $\sqrt{2}$ lo es de $x^2 - 2 = 0$, o $\frac{1}{2}$ de $2x - 1 = 0$), se le denomina **número algebraico**.
+
+**Ejemplo 6.5 (Constantes trascendentes famosas):**
+Las constantes matemáticas como $\pi$ o el número de Euler $e$ son números trascendentes. Ningún ajuste polinomial logrará que se cumpla la igualdad:
+$$a_n \pi^n + \dots + a_1 \pi + a_0 = 0$$
+
 ---
 
 ## 7. Ecuaciones racionales
