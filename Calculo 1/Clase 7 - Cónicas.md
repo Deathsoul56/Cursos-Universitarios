@@ -928,122 +928,79 @@ $$d(P, \text{foco}) = d(P, \text{directriz})$$
 
 **Componentes principales:**
 
-1. **Foco ($F$):** Punto fijo
-2. **Directriz ($\ell$):** Recta fija
-3. **Vértice ($V$):** Punto medio entre el foco y la directriz
-4. **Eje de simetría:** Recta perpendicular a la directriz que pasa por el foco
-5. **Parámetro ($p$):** Distancia del vértice al foco (y del vértice a la directriz)
+1. **Foco ($F$):** Punto fijo de anclaje ubicado en el lado interno de la curva parabólica.
+2. **Directriz ($\ell$):** Recta estática exterior a la curva, perpendicular al eje de simetría.
+3. **Vértice ($V$):** Punto principal de inflexión o doblez de la parábola, ubicado exactamente en el punto medio entre el foco y la directriz.
+4. **Eje de simetría:** Recta que parte la parábola en dos mitades idénticas, atraviesa el vértice y al foco, conectándolos de manera perpendicular con la directriz.
+5. **Parámetro ($p$):** La distancia constante que separa al vértice y al foco (y equivalentemente, al vértice de la directriz).
 
-```
+```text
         Directriz
     -----|-----
-          |
-          •  P (punto en parábola)
-         /|
-        / |
-       /  |
-      •---|---
-      F   V
-    Foco  Vértice
+         | p
+         •  P(x,y) (punto general en parábola)
+        /|
+       / |
+      /  |
+     •---|--- Eje de simetría
+     F   V
+   Foco  Vértice
 ```
 
 ### 6.3 Ecuación canónica
 
-**Teorema 6.1 (Parábola vertical con vértice en el origen):**
+**Teorema 6.1 (Ecuación canónica de la parábola):**
+La parábola centrada en el origen con vértice en $V(0,0)$ y eje de simetría vertical, abriendo hacia arriba, se expresa algebraicamente como:
+$$x^2 = 4py, \quad \text{con } p > 0$$
 
-**Abre hacia arriba:**
-$$x^2 = 4py, \quad p > 0$$
-- **Foco:** $(0, p)$
-- **Directriz:** $y = -p$
-- **Vértice:** $(0, 0)$
+donde su foco se ubica en $F = (0, p)$ y su recta directriz es $y = -p$.
 
-**Abre hacia abajo:**
-$$x^2 = -4py, \quad p > 0$$
-- **Foco:** $(0, -p)$
-- **Directriz:** $y = p$
-- **Vértice:** $(0, 0)$
+**Demostración geométrica:**
+1. Consideremos el vértice base en el origen $(0,0)$. Por ende, un foco definido sobre el eje $y$ estará en $(0, p)$ y la directriz horizontal opuesta será $y = -p$.
+2. Por definición primaria, la curva se compone de todos los puntos $P = (x, y)$ que cumplen la métrica de equidistancia:
+   $$d(P, \text{Foco}) = d(P, \text{Directriz})$$
+3. Insertando la fórmula de distancia (sabiendo que la distancia más corta de $P(x,y)$ a la recta horizontal $y = -p$ es al punto ortogonal $P'(x, -p)$):
+   $$\sqrt{(x - 0)^2 + (y - p)^2} = \sqrt{(x - x)^2 + (y - (-p))^2}$$
+   $$\sqrt{x^2 + (y - p)^2} = \sqrt{(y + p)^2}$$
+4. Elevamos ambos lados al cuadrado para eliminar los radicales:
+   $$x^2 + (y - p)^2 = (y + p)^2$$
+5. Expandimos los binomios al cuadrado a ambos lados de la igualdad:
+   $$x^2 + y^2 - 2py + p^2 = y^2 + 2py + p^2$$
+6. Cancelamos los términos idénticos en ambos lados ($y^2$ y $p^2$):
+   $$x^2 - 2py = 2py$$
+7. Ajustamos pasando el factor $y$ lineal y finalizando nuestro despeje obtenemos:
+   $$\boxed{x^2 = 4py} \quad \blacksquare$$
 
-**Teorema 6.2 (Parábola horizontal con vértice en el origen):**
+*(Nota: En análisis de funciones se suele utilizar el formato general simplificado $y = a x^2$. Notemos que ambas representaciones son totalmente compatibles y análogas sabiendo que la constante de amplitud simplemente es $a = \frac{1}{4p}$).*
 
-**Abre hacia la derecha:**
-$$y^2 = 4px, \quad p > 0$$
-- **Foco:** $(p, 0)$
-- **Directriz:** $x = -p$
-- **Vértice:** $(0, 0)$
+**Casos particulares (Orientación espacial):**
+Intercambiando los signos y las variables cuadráticas en las fórmulas, la geometría de la parábola adopta distintas orientaciones de apertura:
+- **Apertura inferior (hacia abajo, eje Y negativo):** $x^2 = -4py$ con $F=(0, -p)$
+- **Apertura lateral derecha (hacia la derecha, eje X positivo):** $y^2 = 4px$ con $F=(p, 0)$
+- **Apertura lateral izquierda (hacia la izquierda, eje X negativo):** $y^2 = -4px$ con $F=(-p, 0)$
 
-**Abre hacia la izquierda:**
-$$y^2 = -4px, \quad p > 0$$
-- **Foco:** $(-p, 0)$
-- **Directriz:** $x = p$
-- **Vértice:** $(0, 0)$
+**Ecuación con vértice desplazado:**
+Aplicando traslaciones para desplazar el vértice originario al punto coordenado $(h,k)$, la fórmula evoluciona integralmente:
+- **Aperturas de alineación vertical (arriba/abajo):** $(x - h)^2 = \pm 4p(y - k)$
+- **Aperturas de alineación horizontal (laterales):** $(y - k)^2 = \pm 4p(x - h)$
 
 **Ejemplo 6.1:**
-La parábola $x^2 = 12y$:
+Identifique los componentes geométricos de la parábola $(x - 3)^2 = -8(y + 2)$:
+- **Vértice originario:** $(3, -2)$.
+- **Orientación:** Ya que su variable cuadrática recae en las abscisas "X", su eje de apertura debe ser simétricamente vertical. Debido a que el factor es negativo $(-8)$, esta parábola se abre lógicamente **hacia abajo**.
+- El parámetro métrico será absoluto: $4p = 8 \Rightarrow p = 2$.
+- **Focos y directrices:** Al estar la curva apuntando hacia la directriz inferior vertical, el foco obligatoriamente se debe ubicar restándole en el eje y las $p$ unidades base: $F = (3, -2 - 2) = (3, -4)$. Reubicando en contraste la barrera directriz opuesta en $y = -2 + 2 = 0$.
 
-- Forma: $x^2 = 4py$ con $4p = 12 \Rightarrow p = 3$
-- **Vértice:** $(0, 0)$
-- **Foco:** $(0, 3)$
-- **Directriz:** $y = -3$
-- Abre hacia arriba
+### 6.4 Ecuación general a canónica
 
-### 6.4 Ecuación con vértice desplazado
+**Proposición 6.1 (Recuperación de canónica):**
+A marcada diferencia estructural con circunferencias y elipses puras, en el polinomio completo general de una parábola, observaremos un fuerte diferencial estandarizado: **solamente presentará una variable de la fórmula general elevada al factor cuadrático** exclusivo o puro.
+Es decir, será obligatoriamente de la forma $Ax^2 + Dx + Ey + F = 0$ o bien limitando a $Cy^2 + Dx + Ey + F = 0$. Para recuperar a su original forma canónica, se deberá aislar metódicamente y aplicar el proceso de completación solo a la variable que se presente en grado dos.
 
-**Teorema 6.3 (Parábola con vértice $(h, k)$):**
+**Ejemplo 6.2 (Completación de cuadrados en la parábola):**
+Normalice la ecuación polinomial $x^2 - 4x - 8y + 12 = 0$ encontrando su forma canónica desplazada, sus focos y su vértice referencial.
 
-**Vertical (abre arriba/abajo):**
-$$(x - h)^2 = 4p(y - k)$$
-- **Vértice:** $(h, k)$
-- **Foco:** $(h, k + p)$ si $p > 0$ (arriba); $(h, k + p)$ si $p < 0$ (abajo)
-- **Directriz:** $y = k - p$
-
-**Horizontal (abre derecha/izquierda):**
-$$(y - k)^2 = 4p(x - h)$$
-- **Vértice:** $(h, k)$
-- **Foco:** $(h + p, k)$ si $p > 0$ (derecha); $(h + p, k)$ si $p < 0$ (izquierda)
-- **Directriz:** $x = h - p$
-
-**Ejemplo 6.2:**
-La parábola $(x - 3)^2 = -8(y + 2)$:
-
-- **Vértice:** $(3, -2)$
-- $4p = -8 \Rightarrow p = -2$ (abre hacia abajo)
-- **Foco:** $(3, -2 + (-2)) = (3, -4)$
-- **Directriz:** $y = -2 - (-2) = 0$
-
-### 6.5 Forma estándar (cuadrática)
-
-**Forma cuadrática de la parábola vertical:**
-$$y = a(x - h)^2 + k$$
-
-donde $(h, k)$ es el vértice.
-
-**Relación con forma canónica:**
-$$a = \frac{1}{4p}$$
-
-- Si $a > 0$: abre hacia arriba
-- Si $a < 0$: abre hacia abajo
-
-**Ejemplo 6.3:**
-La parábola $y = 2(x - 1)^2 + 3$:
-
-- **Vértice:** $(1, 3)$
-- $a = 2 \Rightarrow p = \frac{1}{4(2)} = \frac{1}{8}$
-- **Foco:** $(1, 3 + \frac{1}{8}) = (1, \frac{25}{8})$
-- Abre hacia arriba
-
-### 6.6 Ecuación general
-
-**Parábola vertical:**
-$$x^2 + Dx + Ey + F = 0$$
-
-**Parábola horizontal:**
-$$y^2 + Dx + Ey + F = 0$$
-
-**Completación de cuadrados:**
-
-**Ejemplo 6.4:**
-Lleve $x^2 - 4x - 8y + 12 = 0$ a forma estándar:
-
+**Solución paso a paso:**
 $$\begin{align}
 x^2 - 4x &= 8y - 12 \\
 x^2 - 4x + 4 &= 8y - 12 + 4 \\
@@ -1051,9 +1008,16 @@ x^2 - 4x + 4 &= 8y - 12 + 4 \\
 (x - 2)^2 &= 8(y - 1)
 \end{align}$$
 
-- **Vértice:** $(2, 1)$
-- $4p = 8 \Rightarrow p = 2$
-- **Foco:** $(2, 3)$
+- **Vértice general:** $(2, 1)$.
+- **Orientación:** Cuyo factor resultante en base $y$ en lateral es positivo, la apertura rige de manera vertical base hacia arriba.
+- Extrayendo parámetro: $4p = 8 \Rightarrow p = 2$.
+- **Foco:** Si el vértice descansa sobre $y=1$ y abre hacia el cielo, sumamos su foco analógico y concluimos en el punto exacto $(2, 3)$.
+
+> **Casos Degenerados de la Parábola:**
+> ¿Qué pasa en completaciones fallidas si falta la variable de grado lineal opuesta final en su completación resolutoria igualizadora terminal? $(x - h)^2 = M$:
+> 1. Si el escalar transicional equivale a $M > 0$: Al carecer de la variable $y$, se trata de puras constantes directas dependientes de la $x$, por ende converge desdoblándose de la forma $x = h \pm \sqrt{M}$, trazando en el plano **dos rectas verticales exactamente paralelas** y separadas.
+> 2. Si el escalar colapsa a $M = 0$: Las dos líneas rectas se repliegan sobre sí mismas por no haber distancia de separación, resultando en **una solitaria recta doble idéntica** ($x=h$).
+> 3. Si por el contrario la igualdad asume un resultado matemáticamente irracional de $M < 0$: Proyecta matriz irresoluble, derivando el escenario geométrico en **rectas imaginarias o un conjunto vacío**.
 
 ### 6.7 Propiedades de la parábola
 
