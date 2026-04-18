@@ -1057,16 +1057,65 @@ donde $F_1$ y $F_2$ son los focos y $2a$ es la constante.
 **Propiedad fundamental:**
 $$|d(P, F_1) - d(P, F_2)| = 2a$$
 
+para todo punto $P$ en la hipérbola, donde $a$ es el **semieje transverso**.
+
+**Teorema 7.1 (Ecuación canónica):**
+La hipérbola con centro en el origen y focos sobre el eje $x$ tiene ecuación canónica:
+$$\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1, \quad \text{con } c > a > 0$$
+
+**Demostración geométrica:**
+1. Consideremos una hipérbola centrada en el origen $(0,0)$ con focos $F_1 = (-c, 0)$ y $F_2 = (c, 0)$.
+2. Todo punto $P = (x, y)$ de la hipérbola cumple:
+   $$|d(P, F_1) - d(P, F_2)| = 2a$$
+   Podemos quitar el valor absoluto considerando $d(P, F_1) - d(P, F_2) = \pm 2a$.
+3. Reemplazando por la fórmula de distancia:
+   $$\sqrt{(x + c)^2 + (y - 0)^2} - \sqrt{(x - c)^2 + (y - 0)^2} = \pm 2a$$
+4. Aislamos una de las raíces y elevamos al cuadrado:
+   $$\sqrt{(x + c)^2 + y^2} = \pm 2a + \sqrt{(x - c)^2 + y^2}$$
+   $$(x + c)^2 + y^2 = 4a^2 \pm 4a\sqrt{(x - c)^2 + y^2} + (x - c)^2 + y^2$$
+5. Expandimos los binomios y cancelamos términos comunes ($x^2, c^2, y^2$):
+   $$2cx = 4a^2 \pm 4a\sqrt{(x - c)^2 + y^2} - 2cx$$
+   $$4cx - 4a^2 = \pm 4a\sqrt{(x - c)^2 + y^2}$$
+6. Dividimos por $4$ y volvemos a elevar al cuadrado (el $\pm$ desaparece):
+   $$cx - a^2 = \pm a\sqrt{(x - c)^2 + y^2}$$
+   $$(cx - a^2)^2 = a^2\left((x - c)^2 + y^2\right)$$
+   $$c^2 x^2 - 2a^2 cx + a^4 = a^2(x^2 - 2cx + c^2 + y^2)$$
+7. Cancelamos $-2a^2 cx$ y reagrupamos $x$ e $y$:
+   $$(c^2 - a^2)x^2 - a^2 y^2 = a^2(c^2 - a^2)$$
+8. De la geometría de la hipérbola sabemos que $c > a$. Definimos entonces la constante positiva $b^2 = c^2 - a^2$:
+   $$b^2 x^2 - a^2 y^2 = a^2 b^2$$
+9. Al dividir todo entre la constante $a^2b^2$:
+   $$\boxed{\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1} \quad \blacksquare$$
+
+**Caso particular (orientación en el eje Y):**
+Si el eje transverso o principal se encuentra en posición vertical, ubicando sus focos en $(0, \pm c)$, la ecuación resulta:
+$$\frac{y^2}{a^2} - \frac{x^2}{b^2} = 1$$
+*(Nota: A diferencia de la elipse, aquí no orienta el denominador mayor, sino el término con **signo positivo**. Si $y^2$ es positivo, la hipérbola es vertical).*
+
+**Ecuación canónica desplazada:**
+Bajo una traslación clásica $(x-h)$ y $(y-k)$, la hipérbola traslada su centro al punto $(h, k)$:
+- **Horizontal:** $\frac{(x - h)^2}{a^2} - \frac{(y - k)^2}{b^2} = 1$
+- **Vertical:** $\frac{(y - k)^2}{a^2} - \frac{(x - h)^2}{b^2} = 1$
+
+**Ejemplo 7.1:**
+Identifique los elementos de la hipérbola $\frac{(y + 1)^2}{4} - \frac{(x - 2)^2}{9} = 1$:
+- **Centro:** $(2, -1)$
+- **Orientación:** Al estar el término de $Y$ como la fracción positiva, la hipérbola es de orientación vertical.
+- $a^2 = 4 \Rightarrow a = 2$
+- $b^2 = 9 \Rightarrow b = 3$
+- Longitud del centro al foco: $c = \sqrt{a^2 + b^2} = \sqrt{4 + 9} = \sqrt{13}$
+- **Focos:** Estando en el eje Y vertical, al centro $(2, -1)$ le sumamos/restamos $c$ en su ordenada, resultando focos en $F_1 = (2, -1 + \sqrt{13})$ y $F_2 = (2, -1 - \sqrt{13})$.
+
 ### 7.2 Elementos de la hipérbola
 
 **Componentes principales:**
 
-1. **Focos:** $F_1$ y $F_2$, separados por distancia $2c$
-2. **Centro:** Punto medio entre los focos
-3. **Eje transverso (real):** Segmento de longitud $2a$ que une los vértices
-4. **Eje conjugado (imaginario):** Segmento perpendicular de longitud $2b$
-5. **Vértices:** Puntos de intersección con el eje transverso
-6. **Asíntotas:** Rectas que la hipérbola se aproxima en el infinito
+1. **Focos:** $F_1$ y $F_2$, separados por la distancia constante de $2c$.
+2. **Centro:** Punto medio entre ambos focos y centro de simetría de la hipérbola.
+3. **Eje transverso (real):** Segmento de longitud $2a$ que une los vértices métricamente reales de la hipérbola.
+4. **Eje conjugado (imaginario):** Segmento perpendicular de longitud $2b$ a través del centro.
+5. **Vértices:** Puntos de intersección entre las ramas de la hipérbola y el eje transverso.
+6. **Asíntotas:** Vías delimitantes a las que la hipérbola se aproxima en el infinito sin llegar a tocarlas, dadas por diagonales de un rectángulo imaginario.
 
 **Relación fundamental:**
 $$c^2 = a^2 + b^2$$
@@ -1074,11 +1123,11 @@ $$c^2 = a^2 + b^2$$
 donde:
 - $a$ = semi-eje transverso (distancia del centro al vértice)
 - $b$ = semi-eje conjugado
-- $c$ = distancia del centro a cada foco
+- $c$ = distancia del centro a cada foco.
 
-**Observación:** En la hipérbola $c > a$, a diferencia de la elipse donde $c < a$.
+**Observación:** Matemáticamente en la hipérbola se cumple forzosamente que $c > a$, a primera diferencia de la elipse donde siempre $c < a$.
 
-```
+```text
         Asíntota
            /|
           / |
@@ -1091,75 +1140,15 @@ donde:
                Asíntota
 ```
 
-### 7.3 Ecuación canónica
+### 7.3 Ecuación general a canónica
 
-**Teorema 7.1 (Hipérbola horizontal con centro en el origen):**
-$$\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$$
+**Proposición 7.1:**
+Similar al caso de la elipse, podremos convertir cualquier ecuación polinómica extensa $Ax^2 + Cy^2 + Dx + Ey + F = 0$ a su forma canónica usando la **completación de cuadrados** (con la salvedad estructural obligatoria de que aquí los coeficientes cuadráticos $A$ y $C$ **deben tener signos opuestos**, lo que la distingue geométricamente).
 
-- **Eje transverso:** horizontal
-- **Focos:** $F_1 = (-c, 0)$ y $F_2 = (c, 0)$ donde $c = \sqrt{a^2 + b^2}$
-- **Vértices:** $(\pm a, 0)$
-- **Asíntotas:** $y = \pm \frac{b}{a}x$
+**Ejemplo 7.2 (Completación de cuadrados en la hipérbola):**
+Lleve $9x^2 - 4y^2 - 18x - 16y - 43 = 0$ a su forma canónica.
 
-**Teorema 7.2 (Hipérbola vertical con centro en el origen):**
-$$\frac{y^2}{a^2} - \frac{x^2}{b^2} = 1$$
-
-- **Eje transverso:** vertical
-- **Focos:** $F_1 = (0, -c)$ y $F_2 = (0, c)$ donde $c = \sqrt{a^2 + b^2}$
-- **Vértices:** $(0, \pm a)$
-- **Asíntotas:** $y = \pm \frac{a}{b}x$
-
-**Ejemplo 7.1:**
-La hipérbola $\frac{x^2}{9} - \frac{y^2}{16} = 1$:
-
-- $a^2 = 9 \Rightarrow a = 3$ (eje transverso horizontal)
-- $b^2 = 16 \Rightarrow b = 4$
-- $c = \sqrt{9 + 16} = 5$
-- **Focos:** $(\pm 5, 0)$
-- **Vértices:** $(\pm 3, 0)$
-- **Asíntotas:** $y = \pm \frac{4}{3}x$
-
-### 7.4 Ecuación con centro desplazado
-
-**Teorema 7.3 (Hipérbola con centro $(h, k)$):**
-
-**Eje transverso horizontal:**
-$$\frac{(x - h)^2}{a^2} - \frac{(y - k)^2}{b^2} = 1$$
-
-- **Centro:** $(h, k)$
-- **Focos:** $(h \pm c, k)$
-- **Vértices:** $(h \pm a, k)$
-- **Asíntotas:** $y - k = \pm \frac{b}{a}(x - h)$
-
-**Eje transverso vertical:**
-$$\frac{(y - k)^2}{a^2} - \frac{(x - h)^2}{b^2} = 1$$
-
-- **Centro:** $(h, k)$
-- **Focos:** $(h, k \pm c)$
-- **Vértices:** $(h, k \pm a)$
-- **Asíntotas:** $y - k = \pm \frac{a}{b}(x - h)$
-
-**Ejemplo 7.2:**
-La hipérbola $\frac{(y + 1)^2}{4} - \frac{(x - 2)^2}{9} = 1$:
-
-- **Centro:** $(2, -1)$
-- $a^2 = 4 \Rightarrow a = 2$ (eje transverso vertical)
-- $b^2 = 9 \Rightarrow b = 3$
-- $c = \sqrt{4 + 9} = \sqrt{13}$
-- **Focos:** $(2, -1 \pm \sqrt{13})$
-- **Vértices:** $(2, -1 \pm 2) = (2, 1)$ y $(2, -3)$
-- **Asíntotas:** $y + 1 = \pm \frac{2}{3}(x - 2)$
-
-### 7.5 Ecuación general
-
-**Forma general de la hipérbola:**
-$$Ax^2 - Cy^2 + Dx + Ey + F = 0$$
-
-donde $A$ y $C$ tienen **signos opuestos** (es la diferencia clave con la elipse).
-
-**Ejemplo 7.3:**
-Lleve $9x^2 - 4y^2 - 18x - 16y - 43 = 0$ a forma canónica:
-
+**Solución paso a paso:**
 $$\begin{align}
 9x^2 - 18x - 4y^2 - 16y &= 43 \\
 9(x^2 - 2x) - 4(y^2 + 4y) &= 43 \\
@@ -1169,7 +1158,26 @@ $$\begin{align}
 \end{align}$$
 
 - **Centro:** $(1, -2)$
-- $a = 2$, $b = 3$, eje transverso horizontal
+- **Orientación:** Eje transverso horizontal.
+- $a = 2$, $b = 3$, distancia focal $c = \sqrt{4+9} = \sqrt{13}$.
+
+> **Casos Degenerados de la Hipérbola:**
+> En sintonía con las demás cónicas, los despejes analíticos a los que se llega tras normalizar la figura a $\frac{(x-h)^2}{a^2} - \frac{(y-k)^2}{b^2} = M$, determinarán cuán integra sobrevivió su figura:
+> 1. Si $M > 0$: Al acoplar el despeje a divisor único proyecta su equivalencia en una **hipérbola horizontal** real de ramas abiertas laterales.
+> 2. Si $M < 0$: Proyectando equivalencia al multiplicar la igualdad por $-1$, se alteran los bloques asumiendo posición positiva sobre la variable de las yes. Determinando de esta manera una **hipérbola vertical** original de apertura superior e inferior.
+> 3. Si $M = 0$: Las diferencias dictaminadas de fracciones de cuadrados colapsan a nulo por completo; en efecto visual su estructura cónica se "adhiere y aplasta" totalmente contra sus propias líneas de asintota. De resultas colateral, la degeneración deviene rígidamente en **dos rectas que se intersectan** en el centro.
+
+**Ejemplo 7.3 (Identificando la recta secante degenerativa):**
+Analice algebraicamente la figura de $x^2 - 4y^2 - 2x - 16y - 15 = 0$:
+
+$$\begin{align}
+(x^2 - 2x) - 4(y^2 + 4y) &= 15 \\
+(x^2 - 2x + 1) - 4(y^2 + 4y + 4) &= 15 + 1 - 16 \\
+(x - 1)^2 - 4(y + 2)^2 &= 0
+\end{align}$$
+
+Procedemos a constatar la igualdad geométrica: $(x - 1)^2 = 4(y + 2)^2 \Rightarrow (x - 1) = \pm 2(y + 2)$.
+Como se ha deducido, este sistema polinómico cuadrático equivale únicamente bajo su despeje a **dos líneas rectas separadas secantes** ($x - 2y - 5 = 0$ y $x + 2y + 3 = 0$), una hipérbola estrucutral que colapsó en su centro degenerado.
 
 ### 7.6 Excentricidad
 
