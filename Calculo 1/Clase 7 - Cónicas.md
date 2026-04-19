@@ -59,14 +59,34 @@ $$(x - 2)^2 + (y + 3)^2 = 9$$
 ### 1.3 Rotaciones
 
 **Definición 1.5 (Rotación):**
-Una **rotación** es una transformación que gira todos los puntos del plano alrededor del origen por un ángulo $\theta$.
+Una **rotación** es una transformación geométrica isométrica (que conserva las distancias originales de la forma) que hace girar a todos los puntos del plano alrededor de un punto fijo establecido, llamado **centro de rotación**, por medio de un ángulo de amplitud constante $\theta$.
 
-**Fórmulas de rotación:**
-Para rotar un punto $(x, y)$ por un ángulo $\theta$ (sentido antihorario):
+> **Caso particular (centro en el origen):** En el flujo clásico de la geometría analítica y el estudio para estandarizar formas, la convención principal es analizar las rotaciones anclando el centro de giro exactamente sobre el origen de coordenadas $(0,0)$.
+
+**Teorema 1.1 (Fórmulas de rotación):**
+Para rotar un punto $(x, y)$ respecto al origen por un ángulo $\theta$ (en sentido antihorario), se utilizan las ecuaciones:
 $$\begin{cases}
 x' = x\cos(\theta) - y\sin(\theta) \\
 y' = x\sin(\theta) + y\cos(\theta)
 \end{cases}$$
+
+**Demostración:**
+1. Consideremos un punto $P(x, y)$ representado mediante coordenadas polares. Sea $r$ su distancia al origen y $\alpha$ el ángulo inicial que forma con el semieje positivo de las abscisas (eje $X$). Sus coordenadas se expresan como:
+$$x = r\cos(\alpha), \quad y = r\sin(\alpha)$$   ![[punto_polar.png]]
+2. Al rotar el punto $P$ en torno al origen un ángulo $\theta$ en sentido antihorario, obtenemos el nuevo punto $P'(x', y')$. La distancia al centro $r$ se mantiene inalterada, pero su nuevo ángulo respecto al eje $X$ pasa a ser la suma $(\alpha + \theta)$. Por lo tanto, sus nuevas coordenadas son:
+$$x' = r\cos(\alpha + \theta)$$
+$$y' = r\sin(\alpha + \theta)$$
+![[angulo_punto_rotado.png]]
+3. Expandimos utilizando las identidades trigonométricas para el seno y coseno de la suma de dos ángulos:
+$$\cos(\alpha + \theta) = \cos(\alpha)\cos(\theta) - \sin(\alpha)\sin(\theta)$$
+$$\sin(\alpha + \theta) = \sin(\alpha)\cos(\theta) + \cos(\alpha)\sin(\theta)$$
+4. Sustituyendo este desarrollo dentro de las ecuaciones del punto rotado:
+$$x' = r[\cos(\alpha)\cos(\theta) - \sin(\alpha)\sin(\theta)] = (r\cos\alpha)\cos\theta - (r\sin\alpha)\sin\theta$$
+$$y' = r[\sin(\alpha)\cos(\theta) + \cos(\alpha)\sin(\theta)] = (r\cos\alpha)\sin\theta + (r\sin\alpha)\cos\theta$$
+5. Finalmente, identificamos cuidadosamente que las posiciones originales aparecieron intactas como $x = r\cos(\alpha)$ y $y = r\sin(\alpha)$, de modo que basta con reemplazar de vuelta para coronar la ecuación:
+$$x' = x\cos(\theta) - y\sin(\theta)$$
+$$y' = x\sin(\theta) + y\cos(\theta)$$
+   Alcanzándose exitosamente la validez del teorema planteado. $\blacksquare$
 
 **Rotación inversa:**
 $$\begin{cases}
@@ -88,7 +108,6 @@ $$\begin{cases}
 x' = 2\cos(45°) - 2\sin(45°) = 2 \cdot \frac{\sqrt{2}}{2} - 2 \cdot \frac{\sqrt{2}}{2} = 0 \\
 y' = 2\sin(45°) + 2\cos(45°) = 2 \cdot \frac{\sqrt{2}}{2} + 2 \cdot \frac{\sqrt{2}}{2} = 2\sqrt{2}
 \end{cases}$$
-
 ### 1.4 Homotecias (Escalamiento)
 
 Pensemos en situaciones donde la forma de una figura no cambia, pero sí su tamaño. Las proporciones se conservan bajo un factor de distorsión puro de aumento o decremento constante.
@@ -910,7 +929,6 @@ $$e = \frac{4}{5} = 0.8$$
 $$A = \pi(4)(3) = 12\pi \approx 37.70 \text{ unidades}^2$$
 
 ---
-
 ## 6. La parábola
 
 ### 6.1 Definición y ecuación
@@ -1043,7 +1061,6 @@ Para $x^2 = 8y$ ($p = 2$):
 - Puntos del lado recto: $(-4, 2)$ y $(4, 2)$
 
 ---
-
 ## 7. La hipérbola
 
 ### 7.1 Definición y ecuación
@@ -1219,7 +1236,6 @@ Para $\frac{x^2}{4} - \frac{y^2}{9} = 1$:
 - Asíntotas pasan por las diagonales: $y = \pm \frac{3}{2}x$
 
 ---
-
 ## 8. Cónicas rotadas
 
 ### 8.1 Ecuación general con término mixto
@@ -1250,10 +1266,10 @@ Después de sustituir, la ecuación en las nuevas coordenadas $(x', y')$ no tend
 $$A'x'^2 + C'y'^2 + D'x' + E'y' + F' = 0$$
 
 **Ejemplo 8.1:**
-Elimine el término mixto de $x^2 + 2xy + y^2 - 8 = 0$:
+Elimine el término mixto de $5x^2 + 8xy + 5y^2 - 9 = 0$ y clasifique la cónica resultante.
 
-- $A = 1, B = 2, C = 1$
-- $\tan(2\theta) = \frac{2}{1 - 1} = \frac{2}{0}$ → indefinido → $2\theta = 90°$ → $\theta = 45°$
+- $A = 5, B = 8, C = 5$
+- $\tan(2\theta) = \frac{B}{A - C} = \frac{8}{5 - 5} = \frac{8}{0}$ → indefinido → $2\theta = 90°$ → $\theta = 45°$
 
 Usando $\cos(45°) = \sin(45°) = \frac{\sqrt{2}}{2}$:
 $$\begin{cases}
@@ -1261,17 +1277,25 @@ x = \frac{\sqrt{2}}{2}(x' - y') \\
 y = \frac{\sqrt{2}}{2}(x' + y')
 \end{cases}$$
 
-Sustituyendo:
-$$\left[\frac{\sqrt{2}}{2}(x' - y')\right]^2 + 2\left[\frac{\sqrt{2}}{2}(x' - y')\right]\left[\frac{\sqrt{2}}{2}(x' + y')\right] + \left[\frac{\sqrt{2}}{2}(x' + y')\right]^2 = 8$$
+Sustituyendo en la ecuación original:
+$$5\left[\frac{\sqrt{2}}{2}(x' - y')\right]^2 + 8\left[\frac{\sqrt{2}}{2}(x' - y')\right]\left[\frac{\sqrt{2}}{2}(x' + y')\right] + 5\left[\frac{\sqrt{2}}{2}(x' + y')\right]^2 = 9$$
 
-Simplificando:
-$$\frac{1}{2}(x' - y')^2 + (x'^2 - y'^2) + \frac{1}{2}(x' + y')^2 = 8$$
-$$\frac{1}{2}(x'^2 - 2x'y' + y'^2) + x'^2 - y'^2 + \frac{1}{2}(x'^2 + 2x'y' + y'^2) = 8$$
-$$\frac{1}{2}x'^2 - x'y' + \frac{1}{2}y'^2 + x'^2 - y'^2 + \frac{1}{2}x'^2 + x'y' + \frac{1}{2}y'^2 = 8$$
-$$2x'^2 = 8$$
-$$x'^2 = 4$$
+Desarrollando los términos al cuadrado y multiplicando:
+$$\frac{5}{2}(x' - y')^2 + \frac{8}{2}(x' - y')(x' + y') + \frac{5}{2}(x' + y')^2 = 9$$
+$$\frac{5}{2}(x'^2 - 2x'y' + y'^2) + 4(x'^2 - y'^2) + \frac{5}{2}(x'^2 + 2x'y' + y'^2) = 9$$
 
-Esta es una **parábola degenerada** (dos rectas paralelas): $x' = \pm 2$
+Agrupamos y factorizamos cada uno de los tipos de término respectivo ($x'^2$, $x'y'$ y $y'^2$):
+- **Términos en $x'^2$:** $\frac{5}{2} + 4 + \frac{5}{2} = 5 + 4 = 9$
+- **Términos en $x'y'$:** $-5 + 5 = 0$ *(¡el término mixto se elimina de manera efectiva!)*
+- **Términos en $y'^2$:** $\frac{5}{2} - 4 + \frac{5}{2} = 5 - 4 = 1$
+
+La nueva ecuación rotada simplificada se reduce limpiamente a:
+$$9x'^2 + y'^2 = 9$$
+
+Dividiendo todo entre 9 para llegar a la forma canónica base:
+$$\frac{x'^2}{1} + \frac{y'^2}{9} = 1$$
+
+**Conclusión:** Esta figura es una **elipse real** con su centro en el origen $(0,0)$. Originalmente, su eje mayor estaba inclinado $45°$ en el plano $xy$, pero bajo nuestra nueva perspectiva rotada ($x', y'$), se observa como una elipse tradicional vertical (ya que $a^2 = 9$ está bajo las ordenadas $y'$).
 
 ### 8.3 Identificación de cónicas rotadas
 
