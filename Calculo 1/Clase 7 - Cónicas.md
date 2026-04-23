@@ -2,7 +2,7 @@
 
 ## 1. El plano cartesiano y transformaciones de coordenadas
 
-primero vamos a recordar algunos conceptos
+Primero vamos a recordar algunos conceptos básicos.
 
 ### 1.1 El plano $\mathbb{R}^2$
 
@@ -25,7 +25,7 @@ $$d(P_1, P_2) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$
 El punto medio del segmento entre $P_1 = (x_1, y_1)$ y $P_2 = (x_2, y_2)$ es:
 $$M = \left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right)$$
 
-Ahora vamos a estudiar las transformaciones que podemos realizar en el plano
+Ahora vamos a estudiar las transformaciones que podemos realizar en el plano.
 ### 1.2 Traslaciones (Translaciones)
 
 **Definición 1.4 (Traslación):**
@@ -192,9 +192,9 @@ $$Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$$
 
 donde $A$, $B$, $C$, $D$, $E$, $F$ son constantes reales y al menos uno de $A$, $B$, $C$ es distinto de cero.
 
-Esta relación nos dará como resultado un circulo, una elipse, una parábola o una hipérbola, estos cuatro lugares geométricos son llamados las secciones cónicas pues son el resultado de intersecar un cono con un plan.
+Esta relación nos dará como resultado un círculo, una elipse, una parábola o una hipérbola. Estos cuatro lugares geométricos son llamados las secciones cónicas pues son el resultado de intersecar un cono con un plano.
 ![[conicas.jpg|524]]
-El termino cruzado $Bxy$ tiene relación con el ángulo de rotación de la sección cónica, en un principio trabajaremos sin el pero mas adelante lo incorporaremos para ver su comportamiento.
+El término cruzado $Bxy$ tiene relación con el ángulo de rotación de la sección cónica. En un principio trabajaremos sin él, pero más adelante lo incorporaremos para ver su comportamiento.
 
 **Observación:** Si los tres coeficientes cuadráticos son nulos ($A = B = C = 0$), la ecuación se reduce a $Dx + Ey + F = 0$, que es la ecuación general de una **recta**. En ese sentido, la ecuación de segundo grado es una generalización: al "activar" los términos cuadráticos pasamos de rectas a cónicas (o a algún caso degenerado).
 ### 2.2 Clasificación de cónicas
@@ -268,7 +268,7 @@ Ahora que sabemos clasificar una cónica cuando $B = 0$, nos surge la pregunta: 
 
 **Paso 1: Entendiendo las transformaciones en las cónicas**
 
-Consideremos una circulo arbitraria, ya sabes que su ecuaciones va a tener la forma de:
+Consideremos un círculo arbitrario; ya sabes que su ecuación va a tener la forma de:
 $$(x - h)^2 + (y - k)^2 = R^2$$
 
 si pensamos en la translación $x = x' + h$, $y = y' + k$ obtenemos:
@@ -361,8 +361,8 @@ $$A' = \frac{A+C}{2} + \frac{(A-C)\cos(2\theta)}{2} + \frac{B\sin(2\theta)}{2}$$
 $$C' = \frac{A+C}{2} - \frac{(A-C)\cos(2\theta)}{2} - \frac{B\sin(2\theta)}{2}$$
 $$B' = B\cos(2\theta) - (A-C)\sin(2\theta)$$
 
-Nota: se puede verificar fácilmente que $A' + C' = A + C$, es decir, **la traza es invariante** (esto corresponde a temas de algebra lineal) bajo la rotación.
-Para demostrarlo solo debemos sumar los términos expuesto arriba
+Nota: se puede verificar fácilmente que $A' + C' = A + C$, es decir, **la traza es invariante** (esto corresponde a temas de álgebra lineal) bajo la rotación.
+Para demostrarlo solo debemos sumar los términos expuestos arriba:
 $$A'+C' = \frac{A+C}{2} + \frac{A+C}{2} = A+C$$
 
 **Expansión de los términos lineales:**
@@ -560,7 +560,7 @@ d) $x^2 - y^2 - 2x + 4y - 4 = 0$
 ---
 ## 3. Secciones cónicas: definición geométrica
 
-Aquí estudiaremos las secciones cónicas a mas profundidad y con un enfoque mas geométrico
+Aquí estudiaremos las secciones cónicas a más profundidad y con un enfoque más geométrico.
 
 ### 3.1 El cono circular recto
 
@@ -637,7 +637,7 @@ $$(x - 2)^2 + (y + 3)^2 = 25$$
 ### 4.2 Ecuación general a canónica
 
 **Proposición 4.1:**
-Con lo que ya hemos estudiado de la ecuación general de segundo grado y la ecuación canónica de la circunferencia, ahora practicaremos ejercicios académicos con ambas
+Con lo que ya hemos estudiado de la ecuación general de segundo grado y la ecuación canónica de la circunferencia, ahora practicaremos ejercicios académicos con ambas.
 *Para convertir de forma general a canónica:*
 Tenemos la ecuación $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$, la estrategia aquí será la de **Completar de cuadrados:**
 1. Agrupar términos en $x$ y en $y$
@@ -893,7 +893,7 @@ $$\begin{align}
 
 Como la suma da cero absoluto ($M=0$), concluimos que es una elipse degenerada contenida estrictamente en el punto singular $(2, -1)$.
 
-### 5.6 Excentricidad
+### 5.4 Excentricidad
 
 **Definición 5.2 (Excentricidad):**
 La **excentricidad** de una elipse es:
@@ -908,7 +908,7 @@ $$e = \frac{c}{a}$$
 Para $\frac{x^2}{25} + \frac{y^2}{9} = 1$:
 $$e = \frac{4}{5} = 0.8$$
 
-### 5.7 Propiedades de la elipse
+### 5.5 Propiedades de la elipse
 
 **Proposición 5.1 (Propiedades):**
 
@@ -1037,7 +1037,7 @@ x^2 - 4x + 4 &= 8y - 12 + 4 \\
 > 2. Si el escalar colapsa a $M = 0$: Las dos líneas rectas se repliegan sobre sí mismas por no haber distancia de separación, resultando en **una solitaria recta doble idéntica** ($x=h$).
 > 3. Si por el contrario la igualdad asume un resultado matemáticamente irracional de $M < 0$: Proyecta matriz irresoluble, derivando el escenario geométrico en **rectas imaginarias o un conjunto vacío**.
 
-### 6.7 Propiedades de la parábola
+### 6.5 Propiedades de la parábola
 
 **Proposición 6.1 (Propiedades):**
 
@@ -1196,7 +1196,7 @@ $$\begin{align}
 Procedemos a constatar la igualdad geométrica: $(x - 1)^2 = 4(y + 2)^2 \Rightarrow (x - 1) = \pm 2(y + 2)$.
 Como se ha deducido, este sistema polinómico cuadrático equivale únicamente bajo su despeje a **dos líneas rectas separadas secantes** ($x - 2y - 5 = 0$ y $x + 2y + 3 = 0$), una hipérbola estrucutral que colapsó en su centro degenerado.
 
-### 7.6 Excentricidad
+### 7.4 Excentricidad
 
 **Definición 7.2 (Excentricidad):**
 La **excentricidad** de una hipérbola es:
@@ -1210,7 +1210,7 @@ $$e = \frac{c}{a}$$
 Para $\frac{x^2}{9} - \frac{y^2}{16} = 1$:
 $$e = \frac{5}{3} \approx 1.67$$
 
-### 7.7 Propiedades de la hipérbola
+### 7.5 Propiedades de la hipérbola
 
 **Proposición 7.1 (Propiedades):**
 
@@ -1383,7 +1383,6 @@ $$\frac{x'^2}{4} + \frac{y'^2}{1} = 1$$
 5. **Arquitectura:** Torres de refrigeración de centrales nucleares
 
 ---
-
 ## 10. Intersección de rectas con cónicas
 
 ### 10.1 Método general
@@ -1462,7 +1461,6 @@ $$3x + 4y = 25$$
 - **Parábola:** $p$ = distancia foco-vértice = vértice-directriz
 
 ---
-
 ## 12. Ejercicios propuestos
 
 ### 12.1 Transformaciones
@@ -1516,4 +1514,4 @@ $$3x + 4y = 25$$
 
 ---
 
-**Fin de la Clase 6**
+**Fin de la Clase 7**
