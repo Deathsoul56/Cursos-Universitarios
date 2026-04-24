@@ -80,12 +80,12 @@ Toda función desconocida puede construirse así: se descompone en su función b
 > **Advertencia:** Los desplazamientos horizontales pueden resultar engañosos cuando la variable $x$ aparece multiplicada por una constante. La traslación horizontal de $f(x) = g\!\left(b(x-h)\right)$ es de $h$ unidades, **no** de $bh$. Es imprescindible factorizar el coeficiente de $x$ antes de leer el desplazamiento.
 
 **Ejemplo 1.6 (Desplazamiento horizontal con factor de escala):**
-Determinar el desplazamiento que lleva $f(x) = |2x|$ a $g(x) = |2x + 1|$.
+Determinar el desplazamiento que lleva $f(x) = |3x|$ a $g(x) = |3x + 1|$.
 
 Factorizando el coeficiente de $x$ en el argumento de $g$:
-$$g(x) = |2x + 1| = \left|2\!\left(x + \frac{1}{2}\right)\right| = f\!\left(x + \frac{1}{2}\right)$$
+$$g(x) = |3x + 1| = \left|3\left(x + \frac{1}{3}\right)\right| = f\left(x + \frac{1}{3}\right)$$
 
-El desplazamiento es de $\dfrac{1}{2}$ unidad hacia la **izquierda**, no de $1$ unidad. Leer el "$+1$" como desplazamiento directo, sin factorizar primero el $2$, es el error más frecuente en este tipo de transformaciones.
+El desplazamiento real de la gráfica con respecto a $|3x|$ es de $\frac{1}{3}$ de unidad hacia la **izquierda**, no de $1$ unidad entera. Leer el "$+1$" como desplazamiento directo, sin factorizar primero el $3$, es el error más frecuente al realizar este tipo de transformaciones.
 ## 2. Simetría de Funciones (Paridad)
 
 Sea $f: D \to \mathbb{R}$ una función con dominio $D$ simétrico respecto al origen (si $x \in D \Rightarrow -x \in D$).
