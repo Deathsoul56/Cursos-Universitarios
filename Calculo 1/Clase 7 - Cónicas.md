@@ -108,6 +108,7 @@ $$\begin{cases}
 x' = 2\cos(45°) - 2\sin(45°) = 2 \cdot \frac{\sqrt{2}}{2} - 2 \cdot \frac{\sqrt{2}}{2} = 0 \\
 y' = 2\sin(45°) + 2\cos(45°) = 2 \cdot \frac{\sqrt{2}}{2} + 2 \cdot \frac{\sqrt{2}}{2} = 2\sqrt{2}
 \end{cases}$$
+Resultado: $P' = (0, 2\sqrt{2})$
 ### 1.4 Homotecias (Escalamiento)
 
 Pensemos en situaciones donde la forma de una figura no cambia, pero sí su tamaño. Las proporciones se conservan bajo un factor de distorsión puro de aumento o decremento constante.
@@ -1440,15 +1441,14 @@ Para nuestro caso:
 $$3x + 4y = 25$$
 
 ---
-
 ## 11. Resumen comparativo de cónicas
 
-| Cónica | Definición (lugar geométrico) | Ecuación canónica | Excentricidad |
-|--------|-------------------------------|-------------------|---------------|
-| **Círculo** | Puntos a distancia constante de un centro | $x^2 + y^2 = r^2$ | $e = 0$ |
-| **Elipse** | Suma de distancias a dos focos constante | $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$ | $0 < e < 1$ |
-| **Parábola** | Distancia a foco = distancia a directriz | $x^2 = 4py$ | $e = 1$ |
-| **Hipérbola** | Diferencia de distancias a dos focos constante | $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$ | $e > 1$ |
+| Cónica        | Definición (lugar geométrico)                  | Ecuación canónica                       | Excentricidad |
+| ------------- | ---------------------------------------------- | --------------------------------------- | ------------- |
+| **Círculo**   | Puntos a distancia constante de un centro      | $x^2 + y^2 = r^2$                       | $e = 0$       |
+| **Elipse**    | Suma de distancias a dos focos constante       | $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$ | $0 < e < 1$   |
+| **Parábola**  | Distancia a foco = distancia a directriz       | $x^2 = 4py$                             | $e = 1$       |
+| **Hipérbola** | Diferencia de distancias a dos focos constante | $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$ | $e > 1$       |
 
 **Discriminante $\Delta = B^2 - 4AC$:**
 - Elipse/Círculo: $\Delta < 0$
@@ -1461,51 +1461,108 @@ $$3x + 4y = 25$$
 - **Parábola:** $p$ = distancia foco-vértice = vértice-directriz
 
 ---
-## 12. Ejercicios propuestos
+## 12. Ejercicios resueltos
 
-### 12.1 Transformaciones
+**Ejercicio 1:** Hallar la ecuación general y canónica de la circunferencia que tiene centro en el punto $(2,5)$ y el radio es igual a 7.
+
+**Solución:**
+La ecuación canónica de la circunferencia está dada por:
+$$(x - h)^2 + (y - k)^2 = r^2$$
+Sustituyendo los valores del centro $(h, k) = (2, 5)$ y el radio $r = 7$:
+$$(x - 2)^2 + (y - 5)^2 = 7^2$$
+$$(x - 2)^2 + (y - 5)^2 = 49$$
+Si deseamos obtener la ecuación general, desarrollamos los binomios al cuadrado:
+$$x^2 - 4x + 4 + y^2 - 10y + 25 = 49$$
+$$x^2 + y^2 - 4x - 10y + 29 - 49 = 0$$
+$$\boxed{x^2 + y^2 - 4x - 10y - 20 = 0}$$
+
+**Ejercicio 2:** Hallar la ecuación de la circunferencia que tiene un diámetro con extremos los puntos $(8,-2)$ y $(2,6)$.
+
+**Solución:**
+1. **Calcular el centro:** El centro $(h, k)$ de la circunferencia es el punto medio del segmento del diámetro.
+   $$h = \frac{x_1 + x_2}{2} = \frac{8 + 2}{2} = \frac{10}{2} = 5$$
+   $$k = \frac{y_1 + y_2}{2} = \frac{-2 + 6}{2} = \frac{4}{2} = 2$$
+   Por lo tanto, el centro es $C(5, 2)$.
+
+2. **Calcular el radio:** El radio es la distancia desde el centro hasta cualquiera de los extremos del diámetro, o simplemente la mitad del diámetro total. Evaluando la longitud total del diámetro $D$:
+   $$D = \sqrt{(2 - 8)^2 + (6 - (-2))^2} = \sqrt{(-6)^2 + (8)^2} = \sqrt{36 + 64} = \sqrt{100} = 10$$
+   Sabiendo que $D = 2r$, el radio resulta ser $r = 5$.
+
+3. **Ecuación canónica:**
+   $$\boxed{(x - 5)^2 + (y - 2)^2 = 25}$$
+   *(Desarrollada en su forma general quedaría $x^2 + y^2 - 10x - 4y + 4 = 0$)*.
+
+**Ejercicio 3:** Calcular el centro y radio de la circunferencia $2x^2 + 2y^2 + 3x + 5y - 5 = 0$.
+
+**Solución:**
+1. **Normalizar la ecuación:** Para aplicar la completación de cuadrados, es imperativo que los coeficientes principales de $x^2$ y $y^2$ sean $1$. Dividimos toda la ecuación entre $2$:
+   $$x^2 + y^2 + \frac{3}{2}x + \frac{5}{2}y - \frac{5}{2} = 0$$
+
+2. **Agrupar y completar cuadrados:**
+   $$\left(x^2 + \frac{3}{2}x\right) + \left(y^2 + \frac{5}{2}y\right) = \frac{5}{2}$$
+   
+   Para completar cuadrados tomamos la mitad de los coeficientes lineales y los elevamos al cuadrado: 
+   - Para $x$: $\left(\frac{3/2}{2}\right)^2 = \left(\frac{3}{4}\right)^2 = \frac{9}{16}$
+   - Para $y$: $\left(\frac{5/2}{2}\right)^2 = \left(\frac{5}{4}\right)^2 = \frac{25}{16}$
+   
+   Sumamos estos términos a ambos lados de la igualdad para no alterarla:
+   $$\left(x^2 + \frac{3}{2}x + \frac{9}{16}\right) + \left(y^2 + \frac{5}{2}y + \frac{25}{16}\right) = \frac{5}{2} + \frac{9}{16} + \frac{25}{16}$$
+   
+   Escribiendo como binomios y homogeneizando fracciones del lado derecho ($\frac{5}{2} = \frac{40}{16}$):
+   $$\left(x + \frac{3}{4}\right)^2 + \left(y + \frac{5}{4}\right)^2 = \frac{40 + 9 + 25}{16}$$
+   $$\left(x + \frac{3}{4}\right)^2 + \left(y + \frac{5}{4}\right)^2 = \frac{74}{16} = \frac{37}{8}$$
+
+3. **Identificar elementos:**
+   Dado que llegamos a la forma estándar $(x - h)^2 + (y - k)^2 = r^2$.
+   - **Centro $(h, k)$:** $\left(-\frac{3}{4}, -\frac{5}{4}\right)$
+   - **Radio $r$:** $\sqrt{\frac{37}{8}} = \frac{\sqrt{37}}{2\sqrt{2}} = \frac{\sqrt{74}}{4} \approx 2.15$
+
+---
+## 13. Ejercicios propuestos
+
+### 13.1 Transformaciones
 
 1. Traslade el punto $(5, -2)$ por el vector $(-3, 4)$
 2. Rote el punto $(4, 0)$ por $60°$ alrededor del origen
 3. Encuentre la ecuación de $y = x^2$ después de trasladar por $(2, -3)$
 
-### 12.2 Circunferencias
+### 13.2 Circunferencias
 
 4. Encuentre el centro y radio de $x^2 + y^2 - 8x + 6y + 9 = 0$
 5. Escriba la ecuación de la circunferencia con centro $(-1, 4)$ y radio $7$
 6. Determine si el punto $(3, 5)$ está dentro, sobre o fuera de la circunferencia $x^2 + y^2 = 25$
 
-### 12.3 Elipses
+### 13.3 Elipses
 
 7. Para $\frac{x^2}{36} + \frac{y^2}{20} = 1$, encuentre: centro, vértices, focos y excentricidad
 8. Encuentre la ecuación de la elipse con focos $(\pm 3, 0)$ y vértices $(\pm 5, 0)$
 9. Lleve $25x^2 + 9y^2 - 100x + 18y - 116 = 0$ a forma canónica
 
-### 12.4 Parábolas
+### 13.4 Parábolas
 
 10. Para $x^2 = -16y$, encuentre: vértice, foco, directriz y dirección de apertura
 11. Encuentre la ecuación de la parábola con vértice $(0, 0)$, foco $(0, 3)$
 12. Lleve $y^2 + 8x - 6y + 25 = 0$ a forma canónica
 
-### 12.5 Hipérbolas
+### 13.5 Hipérbolas
 
 13. Para $\frac{y^2}{16} - \frac{x^2}{9} = 1$, encuentre: centro, vértices, focos, asíntotas y excentricidad
 14. Encuentre la ecuación de la hipérbola con vértices $(0, \pm 4)$ y focos $(0, \pm 5)$
 15. Lleve $9x^2 - 16y^2 + 36x + 32y - 124 = 0$ a forma canónica
 
-### 12.6 Cónicas rotadas
+### 13.6 Cónicas rotadas
 
 16. Clasifique usando el discriminante: $x^2 + 4xy + 4y^2 - 6x - 12y + 5 = 0$
 17. Encuentre el ángulo de rotación para eliminar el término mixto en $xy = 4$
 18. Para $x^2 + 2xy + y^2 - 4x + 4y = 0$, elimine el término mixto
 
-### 12.7 Aplicaciones
+### 13.7 Aplicaciones
 
 19. Una órbita elíptica tiene semieje mayor $a = 150$ millones de km y excentricidad $e = 0.0167$. Encuentre la distancia del Sol (en un foco) al perihelio y afelio
 20. Una antena parabólica tiene 4 m de ancho y 1 m de profundidad. ¿A qué distancia del vértice debe colocarse el receptor?
 21. Dos estaciones están a 600 km de distancia. Un barco recibe señales con diferencia de tiempo tal que está 200 km más cerca de una que de otra. ¿Qué tipo de curva describe su posición?
 
-### 12.8 Intersecciones y tangentes
+### 13.8 Intersecciones y tangentes
 
 22. Encuentre los puntos de intersección de $y = 2x - 1$ con $x^2 + y^2 = 10$
 23. Determine si la recta $y = x + 5$ es secante, tangente o exterior a $(x - 1)^2 + (y + 2)^2 = 9$

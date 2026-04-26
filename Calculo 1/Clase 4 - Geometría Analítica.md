@@ -670,35 +670,77 @@ Este resultado ilustra un principio fundamental del Cálculo: **aproximar curvas
 - **Longitud de arco** y **área bajo curvas**
 
 ---
+### 3.4 El círculo y la circunferencia
 
-### 3.4 Vértices, aristas y la fórmula de Euler
+En geometría plana clásica, es fundamental distinguir rigurosamente la figura bidimensional de su contorno perimetral.
 
-**Definición 3.20 (Poliedro):**
+**Definición 3.20 (Circunferencia):**
+La **circunferencia** es el lugar geométrico de todos los puntos de un plano que mantienen una distancia fija (equidistantes) respecto a un punto central. Matemáticamente, representa exclusivamente la línea del borde o contorno de la figura.
+
+**Definición 3.21 (Círculo):**
+El **círculo** es la superficie bidimensional o región del plano delimitada y encerrada por una circunferencia. Contiene a la circunferencia y a todo el espacio interior continuo.
+
+**Elementos y segmentos notables:**
+- **Centro:** El punto fijo interior equidistante a toda la circunferencia.
+- **Radio ($R$):** Segmento que vincula al centro con cualquier punto sobre la circunferencia.
+- **Diámetro ($D$):** Segmento máximo que une dos puntos de la circunferencia y pasa obligatoriamente por el centro. Se cumple siempre que $D = 2R$.
+- **Cuerda:** Cualquier segmento que vincule dos puntos de la circunferencia (el diámetro es la cuerda mayor posible).
+- **Arco:** Una porción curva continua de la propia circunferencia.
+
+**Proposición 3.22 (Perímetro y constante $\pi$):**
+La longitud total de la circunferencia o perímetro de un círculo se define a partir de la constante $\pi$ (proporción invariable entre la circunferencia y el diámetro):
+$$P = 2\pi R = \pi D$$
+
+**Teorema 3.23 (Área del círculo):**
+El área contenida por un círculo de radio $R$ es proporcional al cuadrado de su radio:
+$$A = \pi R^2$$
+*(Como descubrimos mediante el límite de polígonos en el Teorema 3.19, el área del círculo emerge de la convergencia límite $\lim_{n \to \infty} A_n = \pi R^2$).*
+
+**Definición 3.24 (Sector circular):**
+Un **sector circular** es la fracción del círculo encerrada entre dos radios y el arco que estos subtienden, semejante a una porción de tarta.
+
+**Proposición 3.25 (Cálculos de arco y sector):**
+Para un sector cuyo ángulo central es $\theta$ (medido estrictamente en **radianes**):
+- **Longitud de arco:** $s = R\theta$
+- **Área del sector:** $A_{\text{sector}} = \frac{1}{2}R^2\theta$
+
+*(Si se operara con ángulos en grados $\alpha$, es necesario aplicar el factor de conversión: $A_{\text{sector}} = \frac{\pi R^2 \alpha}{360°}$).*
+
+**Ejemplo 3.2:**
+Calcule el área y el perímetro (longitud de circunferencia) de un círculo de radio $5$ cm.
+- **Perímetro:** $P = 2\pi(5) = 10\pi \approx 31.42 \text{ cm}$
+- **Área:** $A = \pi(5)^2 = 25\pi \approx 78.54 \text{ cm}^2$
+
+---
+### 3.5 Vértices, aristas y la fórmula de Euler
+
+**Definición 3.26 (Poliedro):**
 Un **poliedro** es un sólido tridimensional limitado por caras planas poligonales.
 
 **Elementos de un poliedro:**
-- **Vértices (V):** Puntos donde se encuentran las aristas
-- **Aristas (A):** Segmentos donde se encuentran dos caras
-- **Caras (C):** Polígonos que forman las superficies del poliedro
+- **Vértices (V):** Puntos de encuentro y convergencia entre aristas.
+- **Aristas (A):** Segmentos rectos donde se intersectan dos caras.
+- **Caras (C):** Polígonos que conforman y cierran las superficies del poliedro.
 
-**Teorema 3.21 (Fórmula de Euler para poliedros convexos):**
-Para cualquier poliedro convexo:
+**Teorema 3.27 (Fórmula de Euler para poliedros convexos):**
+Para cualquier poliedro topológicamente convexo, sus elementos cumplen la invariante de Euler:
 $$V - A + C = 2$$
-**Ejemplo 3.2 (Cubo):**
-Un cubo tiene:
+
+**Ejemplo 3.3 (Cubo):**
+Un cubo tradicional contiene:
 - $V = 8$ vértices
 - $A = 12$ aristas
-- $C = 6$ caras
+- $C = 6$ caras cuadradas
 
-Verificación: $8 - 12 + 6 = 2$ ✓
+Verificación en la fórmula: $8 - 12 + 6 = 2$ ✓
 
-**Ejemplo 3.3 (Tetraedro):**
-Un tetraedro tiene:
+**Ejemplo 3.4 (Tetraedro):**
+Un tetraedro regular está constituido por:
 - $V = 4$ vértices
 - $A = 6$ aristas
-- $C = 4$ caras
+- $C = 4$ caras triangulares
 
-Verificación: $4 - 6 + 4 = 2$ ✓
+Verificación en la fórmula: $4 - 6 + 4 = 2$ ✓
 
 ---
 
