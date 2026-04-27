@@ -1104,7 +1104,8 @@ De manera intuitiva, en cualquier triángulo, el lado de mayor longitud siempre 
 
 **Teorema 11.1 (Ley de senos):**
 En todo triángulo $ABC$ con lados $a$, $b$, $c$ opuestos a los ángulos $\alpha$, $\beta$, $\gamma$ respectivamente:
-$$\frac{a}{\sin(\alpha)} = \frac{b}{\sin(\beta)} = \frac{c}{\sin(\gamma)}$$
+$$\frac{a}{\sin(\alpha)} = \frac{b}{\sin(\beta)} = \frac{c}{\sin(\gamma)}=k$$
+Donde $K$ es una constante real.
 
 **Demostración Geométrica:**
 1. Trazamos la altura $h$ vertical desde el vértice $C$ hacia el lado base $c$. Esto divide la figura en dos triángulos rectángulos independientes.
@@ -1155,11 +1156,31 @@ $$a^2 = b^2 + c^2 - 2bc\cos(\alpha)$$
 $$b^2 = a^2 + c^2 - 2ac\cos(\beta)$$
 $$c^2 = a^2 + b^2 - 2ab\cos(\gamma)$$
 
-**Demostración (idea intuitiva):**
-1. Situamos el triángulo en pleno plano cartesiano anclando el vértice $B$ en el origen $(0, 0)$ y $C$ con coordenadas escalares $(a, 0)$. 
-2. El tercer vértice $A$ queda desvelado vectorialmente mediante trigonometría asumiendo posición en $(c\cos(\beta),\ c\sin(\beta))$.
-3. Sabiendo que necesitamos buscar analíticamente la magnitud del lado de cierre opuesto dictaminado como $b = |AC|$, operamos con la simple y directa fórmula analítica de distancia punto a punto en el plano; este despeje conduce analíticamente exacto a la función madre: $b^2 = a^2 + c^2 - 2ac\cos(\beta)$. $\square$
-
+**Demostración geométrica paso a paso:**
+![[teorema_del_coseno.png]]
+1. Consideremos un triángulo genérico $ABC$ con lados $a, b, c$ y un ángulo $\alpha$ alojado en el vértice $A$.
+2. Trazamos una línea perpendicular (la altura $h$) desde el vértice superior $B$ hasta que cruza ortogonalmente la base inferior $b$ (es decir, el lado $AC$) en un nuevo punto que llamaremos $H$. Esto parte magistralmente la figura original en dos triángulos rectángulos: $\triangle ABH$ (a la izquierda) y $\triangle BCH$ (a la derecha).
+3. Evaluando la trigonometría fundamental del triángulo izquierdo $\triangle ABH$, expresamos su base $\overline{AH}$:
+   $$\cos(\alpha) = \frac{\overline{AH}}{c} \implies \overline{AH} = c\cdot\cos(\alpha)$$
+4. Aplicamos el Teorema de Pitágoras directamente sobre el triángulo $\triangle ABH$:
+   $$c^2 = (\overline{AH})^2 + h^2$$
+   Sustituimos el valor recién hallado de $\overline{AH}$ y desarrollamos:
+   $$c^2 = (c\cos\alpha)^2 + h^2$$
+   $$c^2 = c^2\cos^2\alpha + h^2 \quad \text{--- (Ecuación 1)}$$
+5. Pasamos a observar el triángulo de la derecha $\triangle BCH$. Sabemos que toda la base total del polígono grande mide $b$. Por ende, la base de esta segunda mitad derecha $\overline{HC}$ será simplemente el total restándole el pedacito de la izquierda:
+   $$\overline{HC} = b - c\cos(\alpha)$$
+6. Aplicamos una segunda iteración del Teorema de Pitágoras, pero ahora para este triángulo $\triangle BCH$ cuya hipotenusa es nuestro objetivo $a$:
+   $$a^2 = (\overline{HC})^2 + h^2$$
+   Reemplazamos su base:
+   $$a^2 = (b - c\cos\alpha)^2 + h^2$$
+7. Desarrollamos algebraicamente este binomio al cuadrado:
+   $$a^2 = b^2 - 2bc\cos\alpha + c^2\cos^2\alpha + h^2 \quad \text{--- (Ecuación 2)}$$
+8. Ahora que tenemos ambos teoremas planteados, procedemos a **restar** la Ecuación 2 de la Ecuación 1 ($Ec_1 - Ec_2$) para eliminar los términos molestos comunes (tachando mentalmente $+c^2\cos^2\alpha$ y $+h^2$ que se repiten en ambas ecuaciones):
+   $$c^2 - a^2 = -b^2 + 2bc\cos\alpha$$
+9. Reorganizamos enviando $-a^2$ hacia la derecha y trayendo el resto a la izquierda, consolidando el despeje canónico:
+   $$c^2 + b^2 - 2bc\cos\alpha = a^2$$
+   $$\boxed{a^2 = b^2 + c^2 - 2bc\cos(\alpha)}$$
+   Logrando demostrar con éxito y rigor la Ley de Cosenos de forma estrictamente geométrica. $\blacksquare$
 **Ejemplo 11.3 (Aplicación directa para encontrar lados):**
 En un triángulo oblicuángulo, conocemos los lados $a = 5$ y $b = 7$, sabiendo además que su ángulo comprendido opuesto a el vértice sobrante está dictaminado como $\gamma = 60°$. Calcule la magnitud del tercer lado $c$.
 
@@ -1198,7 +1219,6 @@ En un polígono rústico modelado disponemos sus longitudes de perimetría base 
 | Lados totales cerrados puros (SSS) | Ley de cosenos |
 
 ---
-
 ## 12. Ejercicios propuestos
 
 Resuelva los siguientes ejercicios, detallando su procedimiento paso a paso.
