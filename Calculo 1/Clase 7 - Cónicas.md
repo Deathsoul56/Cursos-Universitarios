@@ -690,9 +690,152 @@ $$x^2 + y^2 - 4x + 10y + 20 = 0$$
 
 Verificación: $D = -4 = -2h = -2(2)$ ✓, $E = 10 = -2k = -2(-5)$ ✓, $F = h^2 + k^2 - r^2 = 4 + 25 - 9 = 20$ ✓
 
-### 4.3 El número $\pi$
+### 4.3 Circunferencia definida por puntos
 
-**Definición 4.2 (Número $\pi$):**
+En la geometría analítica y euclidiana, la cantidad de puntos coordenados de los que dispongamos en el plano determinará explícitamente cuántas circunferencias podemos trazar de manera que sus perímetros pasen exactamente sobre todos ellos.
+
+**Proposición 4.2 (Existencia y unicidad por tres puntos):**
+Por tres puntos que sean **no colineales** (es decir, que no pertenezcan a una misma línea recta) pasa **una y solo una** circunferencia. 
+
+**Demostración geométrica (Construcción):**
+1. Sean $A$, $B$ y $C$ tres puntos cualesquiera separados y no colineales en el plano.
+2. Al conectar estos tres puntos mediante segmentos rectos ($\overline{AB}$, $\overline{BC}$, y $\overline{CA}$), podemos construir forzosamente un triángulo $\triangle ABC$.
+3. Para lograr trazar una circunferencia que pase con exactitud por las coordenadas $A$, $B$ y $C$, nuestro objetivo es encontrar un centro focal $O$ que se encuentre exactamente a la misma distancia de los tres vértices simultáneamente: $d(O,A) = d(O,B) = d(O,C) = r$.
+4. Por propiedades de la geometría básica, el lugar compuesto por todos los puntos que equidistan de dos extremos es la **mediatriz** (una línea perpendicular trazada desde el centro exacto de un segmento).
+5. Trazamos entonces la mediatriz del lado $\overline{AB}$ y la mediatriz del lado $\overline{BC}$. Como los tres puntos originales no están en la misma línea, estas dos rectas perpendiculares chocarán inevitablemente en un solo y único punto de intersección $O$.
+6. Este punto $O$ se denomina matemáticamente el **circuncentro** del triángulo. Al ser el cruce de las mediatrices, garantiza de forma absoluta que la distancia $O \to A$, $O \to B$ y $O \to C$ es idéntica.
+7. Al clavar la punta del compás en este circuncentro $O$ y expandir el lápiz hasta cualquier vértice (para capturar el radio $r$), trazamos un círculo perfecto que tocará mágicamente los tres puntos $A$, $B$ y $C$. Demostrando así su existencia irrepetible. $\blacksquare$
+![[circunferencia_3_puntos.png]]
+> *(Nota aclaratoria: Es usual en el argot confundir este punto con el "incentro", pero recordemos que el incentro se forma cortando bisectrices y crea una circunferencia que choca **por dentro** contra las "paredes" del triángulo, mientras que el circuncentro es el responsable de crear la circunferencia que abraza por fuera pasando por sus vértices).*
+
+**Demostración algebraica:**
+Partiendo de la ecuación general de la circunferencia $x^2 + y^2 + Dx + Ey + F = 0$, si exigimos que pase por tres puntos distintos $A(x_1, y_1)$, $B(x_2, y_2)$ y $C(x_3, y_3)$, obtenemos al sustituirlos un sistema de tres ecuaciones lineales con tres incógnitas ($D$, $E$ y $F$):
+$$
+\begin{cases}
+x_1D + y_1E + F = -(x_1^2 + y_1^2) \\
+x_2D + y_2E + F = -(x_2^2 + y_2^2) \\
+x_3D + y_3E + F = -(x_3^2 + y_3^2)
+\end{cases}
+$$
+
+Por los teoremas del álgebra lineal (Regla de Cramer), este sistema de $3 \times 3$ tendrá una **solución única** garantizada si y solo si el determinante de su matriz de coeficientes es distinto de cero. Geométricamente, dicho determinante es proporcional al área del triángulo formado por los tres puntos. Por ende, mientras los puntos **no sean colineales** (es decir, el área de su triángulo no sea cero), el sistema posee una única triada de valores $(D, E, F)$ como solución, demostrando algebraicamente la unicidad de la circunferencia. $\blacksquare$
+
+> *(Nota: Esta demostración utiliza conceptos de matrices, determinantes y sistemas lineales que se explorarán a fondo y se comprenderán con mayor naturalidad en el curso de Álgebra Lineal).*
+
+**Comportamiento con otras cantidades de puntos:**
+1. **Con un (1) solo punto:** Por un punto singular $P$ pueden pasar **infinitas** circunferencias de cualquier radio posible y ancladas con centros en cualquier dirección a su alrededor.
+2. **Con dos (2) puntos:** Por dos puntos $A$ y $B$ también pueden pasar **infinitas** circunferencias. Sin embargo, en este caso hay una restricción: todos los centros de estas circunferencias posibles estarán obligatoriamente alineados reposando sobre la recta mediatriz del segmento que une a $A$ con $B$.
+3. **Con cuatro (4) o más puntos:** En general, por cuatro o más puntos elegidos al azar **no pasa ninguna** circunferencia compartida. Para que una sola circunferencia logre cruzar por cuatro puntos distintos simultáneamente, estos deben cumplir condiciones paramétricas muy específicas (como pertenecer a los vértices de un cuadrilátero cíclico, como un rectángulo o un cuadrado perfecto); de no cumplirse, la curvatura sencillamente colapsa impidiendo trazar una figura circular unificada.
+
+**Estrategia algorítmica para encontrar la circunferencia que pasa por tres puntos no colineales algebraicamente:**
+
+Cuando se nos asignan las coordenadas cartesianas de tres puntos distintos $A = (x_1, y_1)$, $B = (x_2, y_2)$ y $C = (x_3, y_3)$, y se nos pide hallar la ecuación de la circunferencia única que los contiene, debemos seguir un procedimiento algebraico sistemático basado en la definición de que el centro $(h, k)$ equidista de todos los vértices.
+
+**Paso 1: Establecer el sistema de ecuaciones por distancia**
+Dado que la distancia desde el centro $(h, k)$ a cada punto debe ser idéntica (igual al radio $r$), podemos plantear dos igualdades basadas en el teorema de Pitágoras (o la fórmula de distancia):
+
+1.  **Igualdad A ($d(A, O)^2 = d(B, O)^2$):**
+    $$(x_1 - h)^2 + (y_1 - k)^2 = (x_2 - h)^2 + (y_2 - k)^2$$ 
+2.  **Igualdad B ($d(B, O)^2 = d(C, O)^2$):**
+    $$(x_2 - h)^2 + (y_2 - k)^2 = (x_3 - h)^2 + (y_3 - k)^2$$
+
+**Paso 2: Desarrollar algebraicamente las igualdades**
+Al expandir los términos al cuadrado, las variables $h^2$ y $k^2$ aparecerán en ambos lados de cada ecuación, permitiendo cancelarlas. Esto es fundamental, ya que nos permite pasar de un sistema de ecuaciones cuadráticas a uno lineal.
+
+Expandiendo la **Igualdad A**:  
+$(x_1^2 - 2x_1h + h^2) + (y_1^2 - 2y_1k + k^2) = (x_2^2 - 2x_2h + h^2) + (y_2^2 - 2y_2k + k^2)$
+
+Al cancelar los términos cuadráticos y reagrupar, obtenemos una ecuación lineal en términos de $h$ y $k$:
+
+$$h(2x_2 - 2x_1) + k(2y_2 - 2y_1) = x_2^2 + y_2^2 - x_1^2 - y_1^2 \quad \text{(Ecuación I)}$$
+
+De manera idéntica, desarrollamos la **Igualdad B** para obtener:
+
+$$h(2x_3 - 2x_2) + k(2y_3 - 2y_2) = x_3^2 + y_3^2 - x_2^2 - y_2^2 \quad \text{(Ecuación II)}$$
+
+**Paso 3: Resolver el sistema de ecuaciones lineales 2x2**
+Ahora disponemos de un sistema de dos ecuaciones con dos incógnitas ($h$ y $k$). Este sistema se puede resolver utilizando cualquier método estándar (sustitución, igualación o Cramer). La solución para $h$ y $k$ nos dará las coordenadas del centro de la circunferencia.
+
+**Paso 4: Calcular el radio**
+Una vez obtenido el centro $(h, k)$, el radio $r$ se calcula simplemente midiendo la distancia desde el centro a cualquiera de los tres puntos originales (por ejemplo, el punto $A$):
+
+$$r = \sqrt{(x_1 - h)^2 + (y_1 - k)^2}$$
+
+**Paso 5: Escribir la ecuación final**
+Finalmente, sustituimos los valores encontrados de $h$, $k$ y $r$ en la forma canónica de la circunferencia:
+
+$$\boxed{(x - h)^2 + (y - k)^2 = r^2}$$
+
+**Estrategia algorítmica para encontrar la circunferencia que pasa por tres puntos no colineales geométricamente:**
+
+**Paso 1: Trazar los segmentos**
+Conecta los tres puntos dados para formar un triángulo. Luego, traza los segmentos de recta $\overline{AB}$ y $\overline{BC}$.
+
+**Paso 2: Trazar las mediatrices**
+- Dibuja la **mediatriz** del segmento $\overline{AB}$. Para hacerlo, encuentra el punto medio de $\overline{AB}$ y traza una línea perpendicular que pase por ese punto.
+- De manera similar, dibuja la **mediatriz** del segmento $\overline{BC}$.
+
+**Paso 3: Encontrar el circuncentro**
+El punto donde se cruzan las dos mediatrices es el **circuncentro** $O$. Este es el centro de la circunferencia que pasa por los tres puntos.
+
+**Paso 4: Calcular el radio**
+Mide la distancia desde el circuncentro $O$ hasta cualquiera de los tres puntos originales (por ejemplo, $A$). Esta distancia es el radio $r$ de la circunferencia.
+
+**Paso 5: Trazar la circunferencia**
+Con el compás centrado en $O$ y la abertura igual al radio $r$, traza la circunferencia. Esta pasará por los tres puntos $A$, $B$ y $C$.
+
+**Ejemplo 4.5:**
+Hallar la ecuación de la circunferencia que pasa por los puntos $A = (2, 1)$, $B = (6, 13)$ y $C = (14, 5)$.
+
+**Solución paso a paso (Método Geométrico de Mediatrices):**
+
+Para hallar el centro (circuncentro), buscaremos la intersección de las mediatrices de los segmentos $\overline{AB}$ y $\overline{BC}$.
+
+**1. Calculamos los puntos medios de los segmentos:**
+El punto medio $M$ se obtiene promediando las coordenadas $M = \left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right)$.
+- Para $\overline{AB}$: $M_{AB} = \left(\frac{2 + 6}{2}, \frac{1 + 13}{2}\right) = (4, 7)$
+- Para $\overline{BC}$: $M_{BC} = \left(\frac{6 + 14}{2}, \frac{13 + 5}{2}\right) = (10, 9)$
+
+**2. Calculamos las pendientes de los segmentos:**
+La pendiente $m$ se define como $m = \frac{y_2 - y_1}{x_2 - x_1}$.
+- Pendiente de $\overline{AB}$: $m_{AB} = \frac{13 - 1}{6 - 2} = \frac{12}{4} = 3$
+- Pendiente de $\overline{BC}$: $m_{BC} = \frac{5 - 13}{14 - 6} = \frac{-8}{8} = -1$
+
+**3. Obtenemos las pendientes perpendiculares (mediatrices):**
+Una recta perpendicular invierte el signo y el numerador/denominador de su pendiente ($m_\perp = -\frac{1}{m}$).
+- Pendiente de la mediatriz a $\overline{AB}$ ($L_1$): $m_1 = -\frac{1}{3}$
+- Pendiente de la mediatriz a $\overline{BC}$ ($L_2$): $m_2 = -\frac{1}{-1} = 1$
+
+**4. Armamos las ecuaciones de las mediatrices:**
+Usando el modelo punto-pendiente $y - y_1 = m(x - x_1)$ evaluado en los puntos medios correspondientes.
+- Para $L_1$ (pasa por $M_{AB}(4, 7)$ con $m_1 = -\frac{1}{3}$):
+  $$y - 7 = -\frac{1}{3}(x - 4) \implies y = -\frac{1}{3}x + \frac{4}{3} + 7 \implies y = -\frac{1}{3}x + \frac{25}{3}$$
+- Para $L_2$ (pasa por $M_{BC}(10, 9)$ con $m_2 = 1$):
+  $$y - 9 = 1(x - 10) \implies y = x - 10 + 9 \implies y = x - 1$$
+
+**5. Intersectamos ambas mediatrices para hallar el Centro $(h,k)$:**
+Igualamos $L_1$ y $L_2$:
+$$x - 1 = -\frac{1}{3}x + \frac{25}{3}$$
+Sumamos $\frac{1}{3}x$ y $1$ a ambos lados:
+$$x + \frac{1}{3}x = \frac{25}{3} + 1$$
+$$\frac{4}{3}x = \frac{28}{3}$$
+Multiplicamos por $3$:
+$$4x = 28 \implies x = 7$$
+Sustituyendo $x=7$ en la sencilla recta $L_2$:
+$$y = 7 - 1 = 6$$
+Por tanto, el **Centro** es $C = (7, 6)$.
+
+**6. Calculamos el radio y armamos la ecuación final:**
+El radio $r$ es la distancia del centro $C(7, 6)$ a cualquier punto original, por ejemplo $A(2, 1)$.
+$$r^2 = (x_C - x_A)^2 + (y_C - y_A)^2$$
+$$r^2 = (7 - 2)^2 + (6 - 1)^2 = (5)^2 + (5)^2 = 25 + 25 = 50$$
+El radio es $r = \sqrt{50} = 5\sqrt{2} \approx 7.07$.
+
+**Ecuación canónica final:**
+$$(x - h)^2 + (y - k)^2 = r^2$$
+$$\boxed{(x - 7)^2 + (y - 6)^2 = 50}$$
+### 4.3 El número π
+
 El número $\pi$ (pi) es la constante definida como la razón entre la **circunferencia** (perímetro) de un círculo y su **diámetro**:
 $$\pi = \frac{P}{d} = \frac{P}{2r}$$
 
@@ -702,7 +845,7 @@ donde $C$ es la longitud de la circunferencia y $d = 2r$ es el diámetro.
 
 **Propiedad:** $\pi$ es un número irracional y trascendente.
 
-### 4.4 Perímetro y área
+### 4.5 Perímetro y área
 
 **Teorema 4.2 (Perímetro):**
 El **perímetro** o **longitud de la circunferencia** de radio $r$ es:
@@ -717,7 +860,7 @@ Para un círculo de radio $5$ cm:
 - Perímetro: $C = 2\pi(5) = 10\pi \approx 31.42$ cm
 - Área: $A = \pi(5)^2 = 25\pi \approx 78.54$ cm²
 
-### 4.5 Arco de circunferencia
+### 4.6 Arco de circunferencia
 
 **Definición 4.3 (Arco):**
 Un **arco** es una porción de la circunferencia delimitada por dos puntos.
@@ -738,7 +881,7 @@ $$A_{\text{sector}} = \frac{1}{2}r^2\theta$$
 
 donde $\theta$ está en radianes.
 
-### 4.6 Propiedades del círculo
+### 4.7 Propiedades del círculo
 
 **Proposición 4.2 (Propiedades):**
 
@@ -929,6 +1072,21 @@ $$e = \frac{4}{5} = 0.8$$
 Área de la elipse $\frac{x^2}{16} + \frac{y^2}{9} = 1$:
 $$A = \pi(4)(3) = 12\pi \approx 37.70 \text{ unidades}^2$$
 
+### 5.6 Elipse definida por puntos
+
+Al igual que demostramos previamente que una circunferencia queda rígidamente fijada en el plano usando 3 puntos, una elipse también puede definirse de manera única. Sin embargo, al ser una figura más compleja y maleable, la cantidad de puntos requerida para "anclarla" aumenta y depende de su orientación:
+
+**1. Elipse alineada (Ejes paralelos a las coordenadas cartesianas):**
+Si sabemos de antemano que la elipse no está inclinada (su término cruzado $xy$ es nulo), su ecuación adopta la forma general $Ax^2 + Cy^2 + Dx + Ey + F = 0$. Esta ecuación posee algebraicamente **4 grados de libertad** (o 4 proporciones independientes entre sus coeficientes). 
+Por lo tanto, se necesitan **exactamente 4 puntos** (no colineales) para definir una y solo una elipse alineada. Al sustituir sus coordenadas en la ecuación, se generará un sistema lineal de $4 \times 4$ cuya resolución arroja los coeficientes exactos de la elipse.
+
+**2. Elipse general (Rotación libre en el plano):**
+La ecuación completa universal de una cónica es $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$. Como siempre podemos normalizar la ecuación dividiendo todos los términos entre uno de ellos, nos restan **5 parámetros independientes** por revelar.
+Esto desemboca en un principio analítico hermoso y fundamental: por **cualesquiera 5 puntos** (en posición general, sin alineaciones de 3 ni colinealidades) pasa **una y solo una** curva cónica general. 
+Si el álgebra de esta solución arroja un discriminante $B^2 - 4AC < 0$, queda certificado que esa cónica única que logró abrazar a los 5 puntos es forzosamente una elipse.
+
+> *(Nota proyectiva: A diferencia de la circunferencia donde cruzar mediatrices resulta muy orgánico y fácil usando simplemente compás y regla, trazar geométricamente a mano la elipse perfecta que atraviesa 5 puntos aleatorios es un proceso sumamente avanzado. Involucra teoremas de geometría proyectiva —como el famoso **Teorema del hexágono de Pascal**—, razón por la cual en Cálculo Analítico solemos abordar este reto delegando el trabajo "pesado" a la resolución algebraica del sistema lineal $5 \times 5$).*
+
 ---
 ## 6. La parábola
 
@@ -1060,6 +1218,21 @@ x^2 - 4x + 4 &= 8y - 12 + 4 \\
 Para $x^2 = 8y$ ($p = 2$):
 - **Lado recto:** longitud $= 4(2) = 8$
 - Puntos del lado recto: $(-4, 2)$ y $(4, 2)$
+
+### 6.6 Parábola definida por puntos
+
+La cantidad de puntos necesarios para esculpir unívocamente una parábola depende críticamente de si conocemos a priori su orientación en el espacio cartesiano:
+
+**1. Parábola alineada (Eje de simetría paralelo a $Y$ o a $X$):**
+Si nos garantizan que la parábola es estrictamente vertical (que abre hacia arriba o hacia abajo) o estrictamente horizontal (hacia los lados), la ecuación general colapsa en un sencillo modelo polinómico de grado dos para una sola variable:
+- **Modelo vertical:** $y = ax^2 + bx + c$
+- **Modelo horizontal:** $x = ay^2 + by + c$
+Como salta a la vista, ambas formas dependen exclusivamente de **3 constantes incógnitas** ($a, b, c$). Por lo tanto, bastan **exactamente 3 puntos** no colineales para "atrapar" la parábola. Al introducirlos en la ecuación, obtenemos un amigable sistema lineal $3 \times 3$ cuya solución arroja los coeficientes finales.
+
+**2. Parábola general (Eje de simetría oblicuo/rotado):**
+Cuando la parábola sufre una rotación libre, se modela con la ecuación cónica completa $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$ (5 parámetros). Sin embargo, sabemos que la condición inquebrantable para que la figura no degenere en una elipse o hipérbola es que su discriminante sea estrictamente nulo: $B^2 - 4AC = 0$.
+Esta brutal restricción actúa como una "ecuación extra", reduciendo el sistema a **4 grados de libertad efectivos**. 
+A diferencia de sus hermanas, esto produce un fascinante capricho analítico: si arrojamos **4 puntos** al azar sobre un plano en posición general, generalmente existirán **dos parábolas distintas y cruzadas** capaces de atraparlos a ambos al mismo tiempo. Se requeriría información extra (como la inclinación de su eje de simetría o ubicar un quinto punto de desempate) para casarnos con una sola parábola rotada universal.
 
 ---
 ## 7. La hipérbola
@@ -1235,6 +1408,18 @@ $$e = \frac{5}{3} \approx 1.67$$
 Para $\frac{x^2}{4} - \frac{y^2}{9} = 1$:
 - Rectángulo auxiliar: vértices en $(\pm 2, \pm 3)$
 - Asíntotas pasan por las diagonales: $y = \pm \frac{3}{2}x$
+
+### 7.6 Hipérbola definida por puntos
+
+Al igual que sus parientes las elipses, las hipérbolas también tienen dos maneras distintas de ser definidas por puntos, dependiendo de si aceptamos o no la rotación en el plano:
+
+**1. Hipérbola alineada (Ejes paralelos a $X$ y a $Y$):**
+Si asumimos que la hipérbola no está inclinada (su término cruzado $Bxy$ es cero), su ecuación adopta la forma general polinómica $Ax^2 + Cy^2 + Dx + Ey + F = 0$. Como vimos en la completación de cuadrados, esta ecuación depende de **4 proporciones algebraicas** (grados de libertad).
+Por lo tanto, se necesitan **exactamente 4 puntos** no colineales para definir una y solo una hipérbola alineada. Al sustituir sus coordenadas, se genera un sistema lineal $4 \times 4$ que nos entrega los coeficientes exactos.
+
+**2. Hipérbola general (Rotación libre en el plano):**
+La ecuación cónica general $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$ cuenta con 5 coeficientes. Sin embargo, al requerir que sea una hipérbola (no una parábola ni elipse), su discriminante debe satisfacer $B^2 - 4AC > 0$. Esta restricción reduce el sistema a **4 parámetros independientes efectivos**.
+Como curiosidad geométrica, si se eligen **4 puntos** en posición general en el plano, suele haber **dos hipérbolas distintas** que pasan por esos cuatro puntos. Se necesita la información de un **quinto punto** (o alguna restricción adicional, como la dirección de su eje transverso) para seleccionar unívocamente la hipérbola buscada.
 
 ---
 ## 8. Cónicas rotadas
@@ -1463,7 +1648,8 @@ $$3x + 4y = 25$$
 ---
 ## 12. Ejercicios resueltos
 
-**Ejercicio 1:** Hallar la ecuación general y canónica de la circunferencia que tiene centro en el punto $(2,5)$ y el radio es igual a 7.
+### **Ejercicio 1:** 
+Hallar la ecuación general y canónica de la circunferencia que tiene centro en el punto $(2,5)$ y el radio es igual a 7.
 
 **Solución:**
 La ecuación canónica de la circunferencia está dada por:
@@ -1476,7 +1662,8 @@ $$x^2 - 4x + 4 + y^2 - 10y + 25 = 49$$
 $$x^2 + y^2 - 4x - 10y + 29 - 49 = 0$$
 $$\boxed{x^2 + y^2 - 4x - 10y - 20 = 0}$$
 
-**Ejercicio 2:** Hallar la ecuación de la circunferencia que tiene un diámetro con extremos los puntos $(8,-2)$ y $(2,6)$.
+### **Ejercicio 2:** 
+Hallar la ecuación de la circunferencia que tiene un diámetro con extremos los puntos $(8,-2)$ y $(2,6)$.
 
 **Solución:**
 1. **Calcular el centro:** El centro $(h, k)$ de la circunferencia es el punto medio del segmento del diámetro.
@@ -1492,7 +1679,8 @@ $$\boxed{x^2 + y^2 - 4x - 10y - 20 = 0}$$
    $$\boxed{(x - 5)^2 + (y - 2)^2 = 25}$$
    *(Desarrollada en su forma general quedaría $x^2 + y^2 - 10x - 4y + 4 = 0$)*.
 
-**Ejercicio 3:** Calcular el centro y radio de la circunferencia $2x^2 + 2y^2 + 3x + 5y - 5 = 0$.
+### **Ejercicio 3:** 
+Calcular el centro y radio de la circunferencia $2x^2 + 2y^2 + 3x + 5y - 5 = 0$.
 
 **Solución:**
 1. **Normalizar la ecuación:** Para aplicar la completación de cuadrados, es imperativo que los coeficientes principales de $x^2$ y $y^2$ sean $1$. Dividimos toda la ecuación entre $2$:
@@ -1514,8 +1702,33 @@ $$\boxed{x^2 + y^2 - 4x - 10y - 20 = 0}$$
 
 3. **Identificar elementos:**
    Dado que llegamos a la forma estándar $(x - h)^2 + (y - k)^2 = r^2$.
-   - **Centro $(h, k)$:** $\left(-\frac{3}{4}, -\frac{5}{4}\right)$
-   - **Radio $r$:** $\sqrt{\frac{37}{8}} = \frac{\sqrt{37}}{2\sqrt{2}} = \frac{\sqrt{74}}{4} \approx 2.15$
+**Ejercicio 4:** Representa la cónica $y^2-4y-6x-5=0$ con todos sus elementos.
+
+**Solución:**
+1. **Identificación de la cónica:** Al observar que solo la variable $y$ está elevada al cuadrado y la $x$ es lineal, deducimos inmediatamente que estamos frente a la ecuación de una **parábola** de orientación horizontal (abre hacia la izquierda o derecha).
+
+2. **Completación de cuadrados:**
+   Agrupamos los términos de $y$ a la izquierda y enviamos lo demás a la derecha:
+   $$y^2 - 4y = 6x + 5$$
+   
+   Completamos el cuadrado para $y$, sumando la mitad de su factor lineal al cuadrado, es decir $\left(\frac{-4}{2}\right)^2 = 4$, a ambos lados:
+   $$y^2 - 4y + 4 = 6x + 5 + 4$$
+   $$(y - 2)^2 = 6x + 9$$
+
+3. **Forma canónica:**
+   Factorizamos el lado derecho extrayendo el 6 para revelar el parámetro:
+   $$(y - 2)^2 = 6\left(x + \frac{9}{6}\right)$$
+   $$\boxed{(y - 2)^2 = 6\left(x + \frac{3}{2}\right)}$$
+
+4. **Elementos de la parábola:**
+   A partir de la ecuación $(y - k)^2 = 4p(x - h)$:
+   - **Vértice $(h, k)$:** $\left(-\frac{3}{2}, 2\right)$
+   - **Parámetro $p$:** Sabiendo que $4p = 6$, entonces $p = \frac{6}{4} = \frac{3}{2} = 1.5$.
+   - **Orientación:** Como la variable lineal es $x$ y el parámetro $4p$ es positivo $(+6)$, la parábola se abre hacia la **derecha**.
+   - **Foco:** Al abrir hacia la derecha, el foco se ubica sumando $p$ a la coordenada $x$ del vértice: 
+     $F = \left(-\frac{3}{2} + \frac{3}{2}, 2\right) = (0, 2)$.
+   - **Directriz:** Es una recta vertical ubicada restándole $p$ a la coordenada $x$ del vértice: 
+     $x = -\frac{3}{2} - \frac{3}{2} = -\frac{6}{2} \implies x = -3$.
 
 ---
 ## 13. Ejercicios propuestos
