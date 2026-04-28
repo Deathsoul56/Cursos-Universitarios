@@ -1702,7 +1702,6 @@ Calcular el centro y radio de la circunferencia $2x^2 + 2y^2 + 3x + 5y - 5 = 0$.
 
 3. **Identificar elementos:**
    Dado que llegamos a la forma estándar $(x - h)^2 + (y - k)^2 = r^2$.
-**Ejercicio 4:** Representa la cónica $y^2-4y-6x-5=0$ con todos sus elementos.
 
 **Solución:**
 1. **Identificación de la cónica:** Al observar que solo la variable $y$ está elevada al cuadrado y la $x$ es lineal, deducimos inmediatamente que estamos frente a la ecuación de una **parábola** de orientación horizontal (abre hacia la izquierda o derecha).
@@ -1729,6 +1728,95 @@ Calcular el centro y radio de la circunferencia $2x^2 + 2y^2 + 3x + 5y - 5 = 0$.
      $F = \left(-\frac{3}{2} + \frac{3}{2}, 2\right) = (0, 2)$.
    - **Directriz:** Es una recta vertical ubicada restándole $p$ a la coordenada $x$ del vértice: 
      $x = -\frac{3}{2} - \frac{3}{2} = -\frac{6}{2} \implies x = -3$.
+
+### **Ejercicio 4:** 
+Representa la cónica $y^2-4y-6x-5=0$ con todos sus elementos.
+
+**Solución:**
+1. **Identificación de la cónica:** Al observar que solo la variable $y$ está elevada al cuadrado y la $x$ es lineal, deducimos inmediatamente que estamos frente a la ecuación de una **parábola** de orientación horizontal (abre hacia la izquierda o derecha).
+
+2. **Completación de cuadrados:**
+   Agrupamos los términos de $y$ a la izquierda y enviamos lo demás a la derecha:
+   $$y^2 - 4y = 6x + 5$$
+   
+   Completamos el cuadrado para $y$, sumando la mitad de su factor lineal al cuadrado, es decir $\left(\frac{-4}{2}\right)^2 = 4$, a ambos lados:
+   $$y^2 - 4y + 4 = 6x + 5 + 4$$
+   $$(y - 2)^2 = 6x + 9$$
+
+3. **Forma canónica:**
+   Factorizamos el lado derecho extrayendo el 6 para revelar el parámetro:
+   $$(y - 2)^2 = 6\left(x + \frac{9}{6}\right)$$
+   $$\boxed{(y - 2)^2 = 6\left(x + \frac{3}{2}\right)}$$
+
+4. **Elementos de la parábola:**
+   A partir de la ecuación $(y - k)^2 = 4p(x - h)$: 
+   
+   - **Vértice $(h, k)$:** $\left(-\frac{3}{2}, 2\right)$
+   - **Parámetro $p$:** Sabiendo que $4p = 6$, entonces $p = \frac{6}{4} = \frac{3}{2} = 1.5$.
+   - **Orientación:** Como la variable lineal es $x$ y el parámetro $4p$ es positivo $(+6)$, la parábola se abre hacia la **derecha**.
+   - **Foco:** Al abrir hacia la derecha, el foco se ubica sumando $p$ a la coordenada $x$ del vértice: 
+     $F = \left(-\frac{3}{2} + \frac{3}{2}, 2\right) = (0, 2)$.
+   - **Directriz:** Es una recta vertical ubicada restándole $p$ a la coordenada $x$ del vértice: 
+     $x = -\frac{3}{2} - \frac{3}{2} = -\frac{6}{2} \implies x = -3$.
+
+### **Ejercicio 5:** 
+Hallar la ecuación de la circunferencia que pasa por los puntos $A(1,0)$, $B(3,-2)$ y $C(1,-4)$.
+
+**Solución paso a paso (Método de Mediatrices):**
+1. **Puntos medios:**
+   - De $\overline{AB}$: $M_{AB} = \left(\frac{1+3}{2}, \frac{0-2}{2}\right) = (2, -1)$
+   - De $\overline{BC}$: $M_{BC} = \left(\frac{3+1}{2}, \frac{-2-4}{2}\right) = (2, -3)$
+
+2. **Pendientes iniciales:**
+   - $m_{AB} = \frac{-2 - 0}{3 - 1} = \frac{-2}{2} = -1$
+   - $m_{BC} = \frac{-4 - (-2)}{1 - 3} = \frac{-2}{-2} = 1$
+
+3. **Pendientes perpendiculares (mediatrices):**
+   - $m_1 = -\frac{1}{-1} = 1$
+   - $m_2 = -\frac{1}{1} = -1$
+
+4. **Ecuaciones de las mediatrices:**
+   - $L_1$ (pasa por $(2, -1)$ con $m=1$): $y - (-1) = 1(x - 2) \implies y = x - 3$
+   - $L_2$ (pasa por $(2, -3)$ con $m=-1$): $y - (-3) = -1(x - 2) \implies y = -x - 1$
+
+5. **Intersección (Centro):**
+   Igualando $L_1$ y $L_2$:
+   $$x - 3 = -x - 1 \implies 2x = 2 \implies x = 1$$
+   Sustituyendo $x=1$ en $L_1$: $y = 1 - 3 = -2$. 
+   El **Centro** es $C(1, -2)$.
+
+6. **Radio y ecuación:**
+   Distancia de $C(1, -2)$ a $A(1, 0)$:
+   $$r^2 = (1 - 1)^2 + (0 - (-2))^2 = 0 + 4 = 4 \implies r = 2$$
+   La ecuación canónica es:
+   $$\boxed{(x - 1)^2 + (y + 2)^2 = 4}$$
+
+### **Ejercicio 6:** 
+Dada la cónica $9x^2 + 25y^2 - 36x + 150y + 36 = 0$, se pide:
+a) Identifica la cónica y defínela.
+b) Indica todos sus elementos.
+
+**Solución:**
+**a) Identificación y forma canónica:**
+Al observar que los coeficientes de $x^2$ ($9$) y $y^2$ ($25$) son del mismo signo pero diferentes en valor absoluto, sabemos que se trata de una **elipse**.
+Procedemos a agrupar y completar cuadrados:
+$$9(x^2 - 4x) + 25(y^2 + 6y) = -36$$
+Completando el trinomio cuadrado perfecto:
+$$9(x^2 - 4x + 4) + 25(y^2 + 6y + 9) = -36 + 9(4) + 25(9)$$
+$$9(x - 2)^2 + 25(y + 3)^2 = -36 + 36 + 225$$
+$$9(x - 2)^2 + 25(y + 3)^2 = 225$$
+Dividimos todo entre $225$ para igualar a $1$:
+$$\frac{(x - 2)^2}{25} + \frac{(y + 3)^2}{9} = 1$$
+
+**b) Elementos de la elipse:**
+Al ser el denominador de $x$ mayor que el de $y$ ($25 > 9$), es una elipse de eje mayor **horizontal**.
+- **Centro $(h, k)$:** $(2, -3)$
+- **Semiejes:** $a^2 = 25 \implies a = 5$ y $b^2 = 9 \implies b = 3$.
+- **Distancia focal ($c$):** $c^2 = a^2 - b^2 = 25 - 9 = 16 \implies c = 4$.
+- **Vértices (Eje mayor):** $(h \pm a, k) \implies (2 \pm 5, -3)$. Son $V_1(7, -3)$ y $V_2(-3, -3)$.
+- **Co-vértices (Eje menor):** $(h, k \pm b) \implies (2, -3 \pm 3)$. Son $B_1(2, 0)$ y $B_2(2, -6)$.
+- **Focos:** $(h \pm c, k) \implies (2 \pm 4, -3)$. Son $F_1(6, -3)$ y $F_2(-2, -3)$.
+- **Excentricidad:** $e = \frac{c}{a} = \frac{4}{5} = 0.8$.
 
 ---
 ## 13. Ejercicios propuestos
