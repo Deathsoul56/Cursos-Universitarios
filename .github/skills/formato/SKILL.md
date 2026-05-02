@@ -10,7 +10,6 @@ description: >
   nueva definición, nuevo teorema, nuevo ejemplo, Calculo 1, Calculo II, Álgebra,
   Probabilidad, Estadística, Ciencia de los Materiales, Cálculo Numérico.
 ---
-
 # SKILL: Cursos Universitarios STEM — Formato Estándar
 
 ## Objetivo
@@ -45,18 +44,21 @@ antes de ver la definición formal.
 **Formato:** Párrafo(s) de texto libre, sin etiqueta especial. Máximo 2–3 párrafos.
 
 **Patrones de escritura usados en el proyecto:**
+
 - "Pensemos en un/una..."
 - "Imaginemos..."
 - "La idea principal es..."
 - Descripción directa de la motivación geométrica o física
 
 **Ejemplo real del proyecto:**
+
 ```markdown
 Pensemos en un cuadrado de lados iguales a 1 unidad: si trazamos una diagonal
 obtendremos un triángulo rectángulo con ambos catetos iguales a 1...
 ```
 
 **Reglas:**
+
 - No usar jerga técnica que aún no haya sido definida en el texto
 - No escribir "es obvio que", "claramente", "trivialmente"
 - No poner etiqueta `**Idea intuitiva:**` — el párrafo habla por sí solo
@@ -70,18 +72,21 @@ Solo incluir si **aporta motivación o comprensión**. Nunca como relleno.
 **Formato — dos variantes según la relevancia:**
 
 **Variante A — integrado en la introducción** (cuando es breve y natural):
+
 ```markdown
 Esta noción, propuesta por Georg Cantor en 1874, es la base de toda la
 matemática moderna.
 ```
 
 **Variante B — bloque separado** (cuando merece atención propia):
+
 ```markdown
 > **Nota histórica:** En los *Elementos* (c. 300 a.C.), Euclides estableció
 > los fundamentos de la geometría mediante cinco postulados básicos.
 ```
 
 **Cuándo incluirlo:**
+
 - El nombre del objeto tiene un origen no obvio (e.g., "seno" viene del latín *sinus*)
 - El concepto tardó siglos en formalizarse (e.g., el límite en el Cálculo)
 - Existe una paradoja o controversia histórica relevante (e.g., paradoja de Russell)
@@ -92,6 +97,7 @@ matemática moderna.
 ## 3. Definiciones
 
 **Formato estándar:**
+
 ```markdown
 **Definición N.M (Nombre del concepto):**
 $$\text{expresión formal}$$
@@ -99,6 +105,7 @@ donde $a$ es [descripción] y $b$ es [descripción], con $a \in \text{dominio}$.
 ```
 
 **Reglas:**
+
 - Numeración correlativa dentro de la sección: `Definición 1.1`, `Definición 1.2`, etc.
 - Siempre especificar el dominio y condiciones de validez
 - Si la definición es corta, puede ir inline (sin bloque `$$`):
@@ -108,20 +115,21 @@ donde $a$ es [descripción] y $b$ es [descripción], con $a \in \text{dominio}$.
 
 **Variantes de objetos matemáticos y su formato:**
 
-| Objeto | Etiqueta |
-|---|---|
-| Definición | `**Definición N.M (Nombre):**` |
-| Teorema | `**Teorema N.M (Nombre):**` |
+| Objeto       | Etiqueta                           |
+| ------------ | ---------------------------------- |
+| Definición  | `**Definición N.M (Nombre):**`  |
+| Teorema      | `**Teorema N.M (Nombre):**`      |
 | Proposición | `**Proposición N.M (Nombre):**` |
-| Lema | `**Lema N.M (Nombre):**` |
-| Corolario | `**Corolario N.M (Nombre):**` |
-| Postulado | `**Postulado N:** texto` |
+| Lema         | `**Lema N.M (Nombre):**`         |
+| Corolario    | `**Corolario N.M (Nombre):**`    |
+| Postulado    | `**Postulado N:** texto`         |
 
 ---
 
 ## 4. Demostraciones
 
 **Formato:**
+
 ```markdown
 **Demostración:**
 [texto explicativo del enfoque]
@@ -133,6 +141,7 @@ $\blacksquare$
 ```
 
 **Reglas:**
+
 - Toda demostración termina con `$\blacksquare$`
 - Si la demostración es larga o requiere herramientas no vistas aún, indicarlo:
   ```markdown
@@ -144,6 +153,7 @@ $\blacksquare$
   ...
   $\square$
   ```
+
   Usar `$\square$` (cuadrado vacío) para demos no totalmente rigurosas,
   `$\blacksquare$` para demos completas y rigurosas.
 
@@ -152,6 +162,7 @@ $\blacksquare$
 ## 5. Ejemplos
 
 **Formato:**
+
 ```markdown
 **Ejemplo N.M:**
 [enunciado del ejemplo]
@@ -160,6 +171,7 @@ $$\text{desarrollo}$$
 ```
 
 **Reglas:**
+
 - Al menos un ejemplo por definición o teorema importante
 - Numeración correlativa: `Ejemplo 1.1`, `Ejemplo 1.2`, etc.
 - Preferir ejemplos que muestren el caso general **y** los casos límite
@@ -177,21 +189,25 @@ $$\text{desarrollo}$$
 ## 6. Observaciones y Notas
 
 **Observación** — para aclaraciones técnicas, extensiones o conexiones con otros temas:
+
 ```markdown
 > **Observación:** texto de la observación.
 ```
 
 **Observación importante** — cuando la distinción es crítica para no cometer errores:
+
 ```markdown
 > **Observación importante:** texto.
 ```
 
 **Nota** — para aclaraciones metodológicas, de notación o advertencias:
+
 ```markdown
 > **Nota:** texto de la nota.
 ```
 
 **Advertencia** — cuando hay un error común que el estudiante debe evitar:
+
 ```markdown
 > **Advertencia:** No confundir $\emptyset$ con $\{\emptyset\}$...
 ```
@@ -201,6 +217,7 @@ $$\text{desarrollo}$$
 ## Convenciones de formato general
 
 ### Encabezados
+
 ```markdown
 ## N. Título de sección principal
 ### N.M Nombre del concepto
@@ -208,33 +225,39 @@ $$\text{desarrollo}$$
 ```
 
 ### Separadores
+
 - Usar `---` entre secciones principales (`## N.`)
 - No usar `---` entre subsecciones (`### N.M`)
 
 ### Matemáticas
+
 - **Inline:** `$expresión$` para símbolos dentro del texto
 - **Display:** `$$ecuación$$` para ecuaciones importantes o multi-línea
 - Notación consistente: si se define $\theta$ para el ángulo, no cambiar a $\alpha$
 - Fracciones en display: preferir `\dfrac` sobre `\frac` para mayor legibilidad
 
 ### Imágenes (formato Obsidian)
+
 ```markdown
 ![[nombre_archivo.png]]
 ![[nombre_archivo.png|ancho]]    ← con ancho en píxeles
 ```
 
 ### Listas de propiedades numeradas
+
 ```markdown
 1. **Nombre de la propiedad:** descripción
 2. **Nombre de la propiedad:** descripción
 ```
 
 ### Tablas
+
 - Usar para comparaciones, clasificaciones y tablas de valores
 - Centrar columnas numéricas con `:---:`
 - Alinear texto a la izquierda con `:---`
 
 ### Lenguaje académico
+
 - Español formal y técnico
 - Verbos preferidos: "se define", "se cumple", "se demuestra", "se tiene que", "se verifica"
 - **Prohibido:** "es obvio que", "claramente", "trivialmente", "es fácil ver"
@@ -271,6 +294,50 @@ $\blacksquare$
 $$\text{desarrollo}$$
 
 > **Observación:** [aclaración técnica o extensión del concepto — OMITIR si no aplica]
+```
+
+---
+
+## 7. Ejercicios resueltos
+
+**Propósito:** Sección dedicada a problemas resueltos paso a paso. Cada ejercicio debe ser un título independiente para facilitar la navegación y referencia.
+
+**Formato estándar:**
+
+```markdown
+### Ejercicio N.M
+
+[Enunciado del ejercicio]
+
+**Solución:**
+[Desarrollo paso a paso]
+[Expresiones matemáticas]
+[Conclusión o respuesta final]
+```
+
+**Reglas:**
+
+- Cada ejercicio es un encabezado `###` (no `####`)
+- Numeración correlativa dentro de la sección: `Ejercicio 1:`, `Ejercicio 2:`, etc.
+- Siempre incluir **Solución:** como encabezado antes del desarrollo
+- Usar alineación (`\begin{align}`) para pasos algebraicos múltiples
+- Terminar con la respuesta final clara (destacarla si es relevante)
+
+**Ejemplo real del proyecto:**
+
+```markdown
+### Ejercicio 1:
+Encuentre el centro y radio de la circunferencia $x^2 + y^2 - 8x + 6y + 9 = 0$.
+
+**Solución:**
+Completamos cuadrados para $x$ e $y$:
+
+$$x^2 - 8x + y^2 + 6y = -9$$
+$$(x^2 - 8x + 16) + (y^2 + 6y + 9) = -9 + 16 + 9$$
+$$(x - 4)^2 + (y + 3)^2 = 16$$
+
+- **Centro:** $(4, -3)$
+- **Radio:** $r = \sqrt{16} = 4$
 ```
 
 ---

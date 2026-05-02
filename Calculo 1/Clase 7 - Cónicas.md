@@ -1648,7 +1648,7 @@ $$3x + 4y = 25$$
 ---
 ## 12. Ejercicios resueltos
 
-### **Ejercicio 1:** 
+### Ejercicio 1:
 Hallar la ecuación general y canónica de la circunferencia que tiene centro en el punto $(2,5)$ y el radio es igual a 7.
 
 **Solución:**
@@ -1662,7 +1662,9 @@ $$x^2 - 4x + 4 + y^2 - 10y + 25 = 49$$
 $$x^2 + y^2 - 4x - 10y + 29 - 49 = 0$$
 $$\boxed{x^2 + y^2 - 4x - 10y - 20 = 0}$$
 
-### **Ejercicio 2:** 
+**Respuesta final:** La ecuación canónica es $(x - 2)^2 + (y - 5)^2 = 49$ y la ecuación general es $x^2 + y^2 - 4x - 10y - 20 = 0$. $\blacksquare$
+
+### Ejercicio 2:
 Hallar la ecuación de la circunferencia que tiene un diámetro con extremos los puntos $(8,-2)$ y $(2,6)$.
 
 **Solución:**
@@ -1679,7 +1681,9 @@ Hallar la ecuación de la circunferencia que tiene un diámetro con extremos los
    $$\boxed{(x - 5)^2 + (y - 2)^2 = 25}$$
    *(Desarrollada en su forma general quedaría $x^2 + y^2 - 10x - 4y + 4 = 0$)*.
 
-### **Ejercicio 3:** 
+**Respuesta final:** La ecuación canónica de la circunferencia es $(x - 5)^2 + (y - 2)^2 = 25$. $\blacksquare$
+
+### Ejercicio 3:
 Calcular el centro y radio de la circunferencia $2x^2 + 2y^2 + 3x + 5y - 5 = 0$.
 
 **Solución:**
@@ -1701,35 +1705,13 @@ Calcular el centro y radio de la circunferencia $2x^2 + 2y^2 + 3x + 5y - 5 = 0$.
    $$\left(x + \frac{3}{4}\right)^2 + \left(y + \frac{5}{4}\right)^2 = \frac{74}{16} = \frac{37}{8}$$
 
 3. **Identificar elementos:**
-   Dado que llegamos a la forma estándar $(x - h)^2 + (y - k)^2 = r^2$.
+   Dado que llegamos a la forma estándar $(x - h)^2 + (y - k)^2 = r^2$:
+   - **Centro:** $\left(-\frac{3}{4}, -\frac{5}{4}\right)$
+   - **Radio:** $r = \sqrt{\frac{37}{8}} = \frac{\sqrt{74}}{4}$
 
-**Solución:**
-1. **Identificación de la cónica:** Al observar que solo la variable $y$ está elevada al cuadrado y la $x$ es lineal, deducimos inmediatamente que estamos frente a la ecuación de una **parábola** de orientación horizontal (abre hacia la izquierda o derecha).
+**Respuesta final:** El centro de la circunferencia es $C\left(-\frac{3}{4}, -\frac{5}{4}\right)$ y su radio es $r = \frac{\sqrt{74}}{4}$. $\blacksquare$
 
-2. **Completación de cuadrados:**
-   Agrupamos los términos de $y$ a la izquierda y enviamos lo demás a la derecha:
-   $$y^2 - 4y = 6x + 5$$
-   
-   Completamos el cuadrado para $y$, sumando la mitad de su factor lineal al cuadrado, es decir $\left(\frac{-4}{2}\right)^2 = 4$, a ambos lados:
-   $$y^2 - 4y + 4 = 6x + 5 + 4$$
-   $$(y - 2)^2 = 6x + 9$$
-
-3. **Forma canónica:**
-   Factorizamos el lado derecho extrayendo el 6 para revelar el parámetro:
-   $$(y - 2)^2 = 6\left(x + \frac{9}{6}\right)$$
-   $$\boxed{(y - 2)^2 = 6\left(x + \frac{3}{2}\right)}$$
-
-4. **Elementos de la parábola:**
-   A partir de la ecuación $(y - k)^2 = 4p(x - h)$:
-   - **Vértice $(h, k)$:** $\left(-\frac{3}{2}, 2\right)$
-   - **Parámetro $p$:** Sabiendo que $4p = 6$, entonces $p = \frac{6}{4} = \frac{3}{2} = 1.5$.
-   - **Orientación:** Como la variable lineal es $x$ y el parámetro $4p$ es positivo $(+6)$, la parábola se abre hacia la **derecha**.
-   - **Foco:** Al abrir hacia la derecha, el foco se ubica sumando $p$ a la coordenada $x$ del vértice: 
-     $F = \left(-\frac{3}{2} + \frac{3}{2}, 2\right) = (0, 2)$.
-   - **Directriz:** Es una recta vertical ubicada restándole $p$ a la coordenada $x$ del vértice: 
-     $x = -\frac{3}{2} - \frac{3}{2} = -\frac{6}{2} \implies x = -3$.
-
-### **Ejercicio 4:** 
+### Ejercicio 4:
 Representa la cónica $y^2-4y-6x-5=0$ con todos sus elementos.
 
 **Solución:**
@@ -1759,7 +1741,8 @@ Representa la cónica $y^2-4y-6x-5=0$ con todos sus elementos.
    - **Directriz:** Es una recta vertical ubicada restándole $p$ a la coordenada $x$ del vértice: 
      $x = -\frac{3}{2} - \frac{3}{2} = -\frac{6}{2} \implies x = -3$.
 
-### **Ejercicio 5:** 
+**Respuesta final:** Es una parábola horizontal con vértice en $\left(-\frac{3}{2}, 2\right)$, foco en $(0, 2)$ y directriz $x = -3$. $\blacksquare$
+### Ejercicio 5:
 Hallar la ecuación de la circunferencia que pasa por los puntos $A(1,0)$, $B(3,-2)$ y $C(1,-4)$.
 
 **Solución paso a paso (Método de Mediatrices):**
@@ -1791,7 +1774,9 @@ Hallar la ecuación de la circunferencia que pasa por los puntos $A(1,0)$, $B(3,
    La ecuación canónica es:
    $$\boxed{(x - 1)^2 + (y + 2)^2 = 4}$$
 
-### **Ejercicio 6:** 
+**Respuesta final:** La ecuación de la circunferencia es $(x - 1)^2 + (y + 2)^2 = 4$. $\blacksquare$
+
+### Ejercicio 6:
 Dada la cónica $9x^2 + 25y^2 - 36x + 150y + 36 = 0$, se pide:
 a) Identifica la cónica y defínela.
 b) Indica todos sus elementos.
@@ -1818,7 +1803,88 @@ Al ser el denominador de $x$ mayor que el de $y$ ($25 > 9$), es una elipse de ej
 - **Focos:** $(h \pm c, k) \implies (2 \pm 4, -3)$. Son $F_1(6, -3)$ y $F_2(-2, -3)$.
 - **Excentricidad:** $e = \frac{c}{a} = \frac{4}{5} = 0.8$.
 
+**Respuesta final:** Se trata de una elipse con centro en $(2, -3)$, semiejes $a=5$ y $b=3$, focos en $(6, -3)$ y $(-2, -3)$, y excentricidad $0.8$. $\blacksquare$
+### Ejercicio 7:
+Encuentre el centro y radio de la circunferencia dada por la ecuación $x^2 + y^2 - 8x + 6y + 9 = 0$.
+
+**Solución:**
+Completamos cuadrados para $x$ e $y$:
+
+$$x^2 - 8x + y^2 + 6y = -9$$
+$$(x^2 - 8x + 16) + (y^2 + 6y + 9) = -9 + 16 + 9$$
+$$(x - 4)^2 + (y + 3)^2 = 16$$
+
+- **Centro:** $(4, -3)$
+- **Radio:** $r = \sqrt{16} = 4$
+
+**Respuesta final:** El centro de la circunferencia es $(4, -3)$ y su radio es $r = 4$. $\blacksquare$
+
+### Ejercicio 8:
+Clasifique la cónica dada por la ecuación $4x^2 - 9y^2 + 8x - 18y - 29 = 0$ utilizando el discriminante.
+
+**Solución:**
+Identificamos los coeficientes: $A = 4$, $B = 0$, $C = -9$.
+
+Calculamos el discriminante:
+$$\Delta = B^2 - 4AC = 0^2 - 4(4)(-9) = 144 > 0$$
+
+Como $\Delta > 0$, la cónica corresponde a una **hipérbola**.
+
+Para llevar a forma canónica, completamos cuadrados:
+$$4(x^2 + 2x) - 9(y^2 + 2y) = 29$$
+$$4(x + 1)^2 - 9(y + 1)^2 = 36$$
+$$\frac{(x + 1)^2}{9} - \frac{(y + 1)^2}{4} = 1$$
+
+- **Centro:** $(-1, -1)$
+- **Semieje real:** $a = 3$
+- **Semieje imaginario:** $b = 2$
+
+**Respuesta final:** La cónica es una hipérbola con centro en $(-1, -1)$, semieje real $a = 3$ y semieje imaginario $b = 2$. $\blacksquare$
+
+### Ejercicio 9:
+Determine la ecuación de la parábola con vértice en $(0, 0)$ y foco en $(0, 4)$.
+
+**Solución:**
+Como el foco está sobre el eje $Y$ y el vértice en el origen, la parábola abre hacia arriba (dirección positiva en $y$).
+
+La distancia del vértice al foco es $p = 4$.
+
+La ecuación canónica de una parábola vertical con vértice en el origen es:
+$$x^2 = 4py$$
+
+Sustituyendo $p = 4$:
+$$x^2 = 16y$$
+
+- **Vértice:** $(0, 0)$
+- **Foco:** $(0, 4)$
+- **Directriz:** $y = -4$
+
+**Respuesta final:** La ecuación canónica de la parábola es $x^2 = 16y$. $\blacksquare$
+
+### Ejercicio 10:
+Lleve la ecuación $9x^2 + 4y^2 - 36x + 8y + 4 = 0$ a su forma canónica e identifique la cónica.
+
+**Solución:**
+Agrupamos términos y completamos cuadrados:
+
+$$9x^2 - 36x + 4y^2 + 8y = -4$$
+$$9(x^2 - 4x) + 4(y^2 + 2y) = -4$$
+$$9(x^2 - 4x + 4) + 4(y^2 + 2y + 1) = -4 + 36 + 4$$
+$$9(x - 2)^2 + 4(y + 1)^2 = 36$$
+
+Dividimos ambos lados por $36$:
+$$\frac{(x - 2)^2}{4} + \frac{(y + 1)^2}{9} = 1$$
+
+Como $A = 9$ y $C = 4$ tienen el mismo signo pero son diferentes, es una **elipse** con:
+- **Centro:** $(2, -1)$
+- **Semieje mayor:** $a = 3$ (vertical, ya que $a^2 = 9$ está bajo $y$)
+- **Semieje menor:** $b = 2$ (horizontal)
+- **Focos:** $c = \sqrt{9 - 4} = \sqrt{5}$
+
+**Respuesta final:** La ecuación canónica corresponde a una elipse $\frac{(x - 2)^2}{4} + \frac{(y + 1)^2}{9} = 1$ con centro en $(2, -1)$, semieje mayor vertical $a = 3$ y semieje menor $b = 2$. $\blacksquare$
+
 ---
+
 ## 13. Ejercicios propuestos
 
 ### 13.1 Transformaciones
