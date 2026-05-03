@@ -2665,8 +2665,85 @@ Esta "escalera" de conjuntos numéricos es el **fundamento** sobre el cual se co
 - Axioma de completitud (supremo)
 
 ---
+## 15. Ejercicios resueltos
 
-## 15. Ejercicios propuestos
+### Ejercicio 1:
+Demostrar formalmente que la suma de dos números racionales es siempre un número racional.
+
+**Solución:**
+Para que un número sea racional ($\mathbb{Q}$), debe poder expresarse como el cociente de dos enteros donde el denominador es distinto de cero.
+
+Sean $x$ e $y$ dos números racionales cualesquiera. Por definición, existen enteros $a, b, c, d$ con $b \neq 0$ y $d \neq 0$ tales que:
+$$x = \frac{a}{b} \quad \text{y} \quad y = \frac{c}{d}$$
+
+Realizamos la suma de ambos números:
+$$x + y = \frac{a}{b} + \frac{c}{d}$$
+
+Buscando un denominador común, se cumple que:
+$$x + y = \frac{ad + bc}{bd}$$
+
+Como el conjunto de los enteros ($\mathbb{Z}$) es cerrado bajo la multiplicación y la suma:
+1. El numerador $(ad + bc)$ es un número entero.
+2. El denominador $(bd)$ es un número entero.
+
+Además, como $b \neq 0$ y $d \neq 0$, su producto se verifica no nulo: $bd \neq 0$.
+Por lo tanto, la expresión final es el cociente de dos enteros con denominador no nulo, lo cual cumple exactamente la definición de un número racional.
+
+**Respuesta final:** Se demuestra que la suma de dos racionales pertenece siempre a $\mathbb{Q}$. $\blacksquare$
+
+### Ejercicio 2:
+Determinar si el número $45,312$ es divisible por $3$, $4$ y $9$, aplicando los criterios de divisibilidad estudiados.
+
+**Solución:**
+Se analiza cada caso aplicando su criterio correspondiente paso a paso:
+
+**Paso 1: Divisibilidad por 3**
+El criterio establece que la suma de las cifras debe ser múltiplo de $3$.
+$$4 + 5 + 3 + 1 + 2 = 15$$
+Dado que $15$ es divisible por $3$ ($15 = 3 \times 5$), se verifica que el número $45,312$ es divisible por $3$.
+
+**Paso 2: Divisibilidad por 4**
+El criterio establece que las dos últimas cifras deben formar un número múltiplo de $4$.
+Las dos últimas cifras son $12$.
+Dado que $12$ es divisible por $4$ ($12 = 4 \times 3$), se verifica que el número $45,312$ es divisible por $4$.
+
+**Paso 3: Divisibilidad por 9**
+El criterio establece que la suma de las cifras debe ser múltiplo de $9$.
+Tomamos la suma ya calculada en el paso uno: $15$.
+Dado que $15$ no es divisible por $9$, el número $45,312$ no es divisible por $9$.
+
+**Respuesta final:** El número $45,312$ es divisible por $3$ y por $4$, pero no es divisible por $9$.
+
+### Ejercicio 3:
+Demostrar que para dos cualesquiera números reales $a$ y $b$ se cumple que $a \cdot (-b) = -(ab)$.
+
+**Solución:**
+Queremos demostrar que la expresión $a \cdot (-b)$ actúa como el inverso aditivo de $ab$. Según el **Axioma 4** (elemento inverso de la suma), para probar que un elemento es el inverso de otro, basta con verificar que al sumarlos el resultado sea el elemento neutro ($0$):
+$$(ab) + (a \cdot (-b)) = 0$$
+
+**Paso 1: Aplicar distributividad**
+Partimos de la expresión original y aplicamos el **Axioma 11** (Distributividad) para factorizar la variable $a$:
+$$(ab) + (a \cdot (-b)) = a \cdot (b + (-b))$$
+
+**Paso 2: Elemento inverso de la suma**
+Por el **Axioma 4**, la suma de un número con su inverso aditivo siempre resulta en $0$. Por ende, reemplazamos $b + (-b)$ por $0$:
+$$a \cdot (b + (-b)) = a \cdot 0$$
+
+**Paso 3: Multiplicación por el neutro aditivo**
+Por las propiedades deducidas de los axiomas de cuerpo, sabemos que todo número real multiplicado por cero da cero ($a \cdot 0 = 0$).
+*(Nota: Esto se deduce de $a \cdot 0 = a \cdot (0 + 0) = a \cdot 0 + a \cdot 0$, lo que al restar $a \cdot 0$ a ambos lados demuestra que $0 = a \cdot 0$).*
+Por lo tanto:
+$$a \cdot 0 = 0$$
+
+**Conclusión:**
+Al encadenar todos los pasos, hemos comprobado que:
+$$(ab) + (a \cdot (-b)) = 0$$
+Dado que sumarle $a \cdot (-b)$ a $ab$ da como resultado $0$, queda certificado que $a \cdot (-b)$ es exactamente el inverso aditivo de $ab$.
+
+**Respuesta final:** Por unicidad del inverso aditivo en $\mathbb{R}$, se demuestra que $a \cdot (-b) = -(ab)$. $\blacksquare$
+
+---
+## 16. Ejercicios propuestos
 
 **Ejercicio 1:** Demuestra que $\mathbb{Z}$ tiene la misma cardinalidad que $\mathbb{N}$ construyendo explícitamente una biyección entre ellos.
 
