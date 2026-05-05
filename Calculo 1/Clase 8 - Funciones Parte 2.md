@@ -1,7 +1,6 @@
 # Clase 8 - Funciones Parte 2
 
 En esta clase profundizaremos en el análisis de funciones, estableciendo definiciones formales para las transformaciones geométricas, la clasificación según simetría (paridad), la composición de funciones, y el estudio riguroso de la inyectividad, sobreyectividad y funciones inversas.
-
 ## 1. Transformaciones de Funciones
 
 Las transformaciones permiten generar nuevas familias de funciones a partir de una función elemental $f(x)$.
@@ -38,12 +37,34 @@ Sea $y = f(c \cdot x)$ con $c > 0$.
 - **Reflexión respecto al eje X:** $y = -f(x)$. El punto $(x, y)$ se mapea a $(x, -y)$.
 - **Reflexión respecto al eje Y:** $y = f(-x)$. El punto $(x, y)$ se mapea a $(-x, y)$.
 
-### 1.4 Rotación (Nota formal)
+### 1.4 Rotación
 
-La rotación general de una función $y=f(x)$ no necesariamente resulta en una función (puede violar la unicidad de imagen). La transformación de coordenadas para una rotación de ángulo $\theta$ está dada por la matriz de rotación:
+La rotación general de una función $y=f(x)$ no necesariamente resulta en una nueva función válida (pues la gráfica podría "voltearse" sobre sí misma y violar la prueba de la línea vertical). Para rotar una gráfica un ángulo $\theta$ en sentido antihorario respecto al origen, tomamos cada punto original $(x, y)$ (donde recordamos que $y = f(x)$) y calculamos sus nuevas coordenadas transformadas $(x', y')$ utilizando el siguiente sistema de ecuaciones trigonométricas directas:
+
 $$
-\begin{pmatrix} x' \\ y' \end{pmatrix} = \begin{pmatrix} \cos \theta & -\sin \theta \\ \sin \theta & \cos \theta \end{pmatrix} \begin{pmatrix} x \\ f(x) \end{pmatrix}
+\begin{cases}
+x' = x \cos(\theta) - f(x) \sin(\theta) \\
+y' = x \sin(\theta) + f(x) \cos(\theta)
+\end{cases}
 $$
+
+**Demostración: Condición de Perpendicularidad (Rotación de $\pi/2$)**
+Podemos usar estas ecuaciones para demostrar rigurosamente de dónde viene la regla de que la pendiente de una recta perpendicular es $-1/m$. 
+Si tomamos una recta que pasa por el origen $f(x) = mx+b$ y la rotamos $\pi/2$ radianes ($90^\circ$), sabemos que $\cos(\pi/2) = 0$ y $\sin(\pi/2) = 1$. Sustituyendo esto en nuestro sistema:
+$$
+\begin{cases}
+x' = x(0) - (mx+b)(1) \implies x' = -mx-b \\
+y' = x(1) + (mx+b)(0) \implies y' = x
+\end{cases}
+$$
+
+De la primera ecuación, podemos despejar $x$:
+$$x = -\frac{x'}{m}+\frac{b}{m}$$
+
+Sustituyendo este valor en la segunda ecuación, obtenemos directamente la ecuación de la nueva recta transformada:
+$$y' = -\frac{1}{m} x'$$
+
+¡La nueva gráfica es una recta cuya pendiente es exactamente $-1/m$! Hemos demostrado algebraicamente la perpendicularidad. $\blacksquare$
 
 ---
 
