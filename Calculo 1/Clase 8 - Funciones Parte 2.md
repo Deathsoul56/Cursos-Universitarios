@@ -4,39 +4,45 @@ En esta clase profundizaremos en el análisis de funciones, estableciendo defini
 ## 1. Transformaciones de Funciones
 
 Las transformaciones permiten generar nuevas familias de funciones a partir de una función elemental $f(x)$.
-
 ### 1.1 Traslaciones (Desplazamientos)
 
 **Definición 1.1 (Traslación vertical):**
 Dada una función $y = f(x)$ y una constante $c > 0$:
 - La gráfica de $y = f(x) + c$ es la traslación de $f$ en $c$ unidades hacia **arriba**.
 - La gráfica de $y = f(x) - c$ es la traslación de $f$ en $c$ unidades hacia **abajo**.
+**Ejemplo:** Si $f(x) = x^2$, entonces $y = x^2 + 3$ mueve la parábola 3 unidades hacia arriba.
 
 **Definición 1.2 (Traslación horizontal):**
 Dada una función $y = f(x)$ y una constante $a > 0$:
 - La gráfica de $y = f(x - a)$ es la traslación de $f$ en $a$ unidades hacia la **derecha**.
 - La gráfica de $y = f(x + a)$ es la traslación de $f$ en $a$ unidades hacia la **izquierda**.
+**Ejemplo:** Si $f(x) = x^2$, entonces $y = (x - 2)^2$ mueve el vértice de la parábola 2 unidades hacia la derecha.
 
 **Intuición:** Para recuperar el mismo valor de $y$ en $f(x-a)$, la entrada $x$ debe ser $a$ unidades mayor que en la original.
-
 ### 1.2 Escalados (Dilataciones y Contracciones)
 
 **Definición 1.3 (Escalado vertical):**
 Sea $y = c \cdot f(x)$ con $c > 0$.
 - Si $c > 1$: **Dilatación vertical** (expansión) por un factor de $c$.
 - Si $0 < c < 1$: **Contracción vertical** (compresión) por un factor de $c$.
+**Ejemplo:** Si $f(x) = x^2$, entonces $y = 3x^2$ estira la parábola verticalmente, haciéndola lucir más "angosta" o cerrada.
 
 **Definición 1.4 (Escalado horizontal):**
 Sea $y = f(c \cdot x)$ con $c > 0$.
 - Si $c > 1$: **Contracción horizontal** por un factor de $1/c$.
 - Si $0 < c < 1$: **Dilatación horizontal** por un factor de $1/c$.
-
+**Ejemplo:** Si $f(x) = x^2$, entonces $y = (\frac{1}{2}x)^2$ ensancha la parábola horizontalmente.
 ### 1.3 Reflexiones
 
 **Definición 1.5 (Reflexiones):**
 - **Reflexión respecto al eje X:** $y = -f(x)$. El punto $(x, y)$ se mapea a $(x, -y)$.
 - **Reflexión respecto al eje Y:** $y = f(-x)$. El punto $(x, y)$ se mapea a $(-x, y)$.
 
+**Ejemplo:** Si usamos la función $f(x) = x^3 + 4$:
+- La reflexión respecto al eje X nos da $y = -(x^3 + 4) = -x^3 - 4$ (la curva entera se voltea hacia abajo).
+- La reflexión respecto al eje Y nos da $y = (-x)^3 + 4 = -x^3 + 4$ (la curva se voltea de izquierda a derecha, pero mantiene su altura).
+
+> *(Nota sobre simetrías: Algunas funciones elementales tienen propiedades visuales curiosas al reflejarse. Por ejemplo, al reflejar $f(x) = x^2$ respecto al eje Y, la gráfica se mantiene intacta ($(-x)^2 = x^2$). O en el caso de $f(x) = x^3$, su reflexión en el eje X ($-x^3$) resulta ser visualmente idéntica a su reflexión en el eje Y ($(-x)^3$). Este comportamiento lo analizaremos a fondo más adelante en la clasificación de funciones Pares e Impares).*
 ### 1.4 Rotación
 
 La rotación general de una función $y=f(x)$ no necesariamente resulta en una nueva función válida (pues la gráfica podría "voltearse" sobre sí misma y violar la prueba de la línea vertical). Para rotar una gráfica un ángulo $\theta$ en sentido antihorario respecto al origen, tomamos cada punto original $(x, y)$ (donde recordamos que $y = f(x)$) y calculamos sus nuevas coordenadas transformadas $(x', y')$ utilizando el siguiente sistema de ecuaciones trigonométricas directas:
@@ -50,24 +56,40 @@ $$
 
 **Demostración: Condición de Perpendicularidad (Rotación de $\pi/2$)**
 Podemos usar estas ecuaciones para demostrar rigurosamente de dónde viene la regla de que la pendiente de una recta perpendicular es $-1/m$. 
-Si tomamos una recta que pasa por el origen $f(x) = mx+b$ y la rotamos $\pi/2$ radianes ($90^\circ$), sabemos que $\cos(\pi/2) = 0$ y $\sin(\pi/2) = 1$. Sustituyendo esto en nuestro sistema:
+Si tomamos una recta genérica cualquiera $f(x) = mx+b$ y la rotamos $\pi/2$ radianes ($90^\circ$), sabemos que $\cos(\pi/2) = 0$ y $\sin(\pi/2) = 1$. Sustituyendo esto en nuestro sistema:
+
 $$
 \begin{cases}
-x' = x(0) - (mx+b)(1) \implies x' = -mx-b \\
+x' = x(0) - (mx+b)(1) \implies x' = -mx - b \\
 y' = x(1) + (mx+b)(0) \implies y' = x
 \end{cases}
 $$
 
 De la primera ecuación, podemos despejar $x$:
-$$x = -\frac{x'}{m}+\frac{b}{m}$$
+$$mx = -x' - b \implies x = -\frac{1}{m}x' - \frac{b}{m}$$
 
-Sustituyendo este valor en la segunda ecuación, obtenemos directamente la ecuación de la nueva recta transformada:
-$$y' = -\frac{1}{m} x'$$
+Sustituyendo este valor de $x$ en la segunda ecuación ($y' = x$), obtenemos directamente la ecuación de la nueva recta transformada:
+$$y' = -\frac{1}{m}x' - \frac{b}{m}$$
 
-¡La nueva gráfica es una recta cuya pendiente es exactamente $-1/m$! Hemos demostrado algebraicamente la perpendicularidad. $\blacksquare$
+¡La nueva gráfica sigue siendo una recta cuya pendiente es exactamente $-1/m$! Hemos demostrado algebraicamente que sin importar la posición inicial (intercepto $b$), la rotación de 90° siempre produce la condición de perpendicularidad. $\blacksquare$
+
+**Ejemplo 1.4: Rotación de $f(x) = \sin(x)$ (Violación de unicidad)**
+En el caso anterior, la rotación de la recta produjo otra recta (otra función). Sin embargo, veamos qué ocurre de manera extrema si rotamos una onda periódica como $f(x) = \sin(x)$ en un ángulo de $\pi/2$ radianes ($90^\circ$).
+
+Sabemos que $\cos(\pi/2) = 0$ y $\sin(\pi/2) = 1$. Sustituyendo en las ecuaciones de rotación:
+$$
+\begin{cases}
+x' = x(0) - \sin(x)(1) \implies x' = -\sin(x) \\
+y' = x(1) + \sin(x)(0) \implies y' = x
+\end{cases}
+$$
+![[sin(x)_rotado.png]]
+Si observamos con atención el resultado, dado que $x = y'$, la nueva gráfica satisface la ecuación $x' = -\sin(y')$. ¡Hemos transformado una onda que viajaba a lo largo del eje X en una onda que ahora serpentea verticalmente a lo largo del eje Y!
+
+Al graficar esto, la curva oscilará de izquierda a derecha entre $x' = -1$ y $x' = 1$ mientras sube y baja infinitamente a lo largo de $y'$. Si evaluamos la coordenada $x' = 0$, encontraremos **infinitos valores** para $y'$ correspondientes a las raíces del seno ($0, \pi, -\pi, 2\pi, \dots$). 
+Por ende, al trazar una línea recta vertical imaginaria sobre el origen del eje X, esta cortará la curva en infinitos puntos simultáneamente. Esto reprueba categóricamente la **prueba de la línea vertical**, violando la regla estricta de unicidad de imagen de toda función (cada entrada de $x$ debe mapear a **solo un** valor de $y$). Hemos demostrado así que una rotación general puede destruir completamente la integridad matemática de una función.
 
 ---
-
 ### 1.5 Gráficas de Funciones Transformadas
 
 Conocer las gráficas de las funciones elementales —parábola, valor absoluto, exponencial— no basta por sí solo. El verdadero poder del enfoque por transformaciones radica en que permite construir la gráfica de funciones compuestas **sin tabular punto a punto**: basta con identificar la función base $g$ y aplicar las transformaciones en el orden correcto.
@@ -107,32 +129,84 @@ Factorizando el coeficiente de $x$ en el argumento de $g$:
 $$g(x) = |3x + 1| = \left|3\left(x + \frac{1}{3}\right)\right| = f\left(x + \frac{1}{3}\right)$$
 
 El desplazamiento real de la gráfica con respecto a $|3x|$ es de $\frac{1}{3}$ de unidad hacia la **izquierda**, no de $1$ unidad entera. Leer el "$+1$" como desplazamiento directo, sin factorizar primero el $3$, es el error más frecuente al realizar este tipo de transformaciones.
+
+---
 ## 2. Simetría de Funciones (Paridad)
 
-Sea $f: D \to \mathbb{R}$ una función con dominio $D$ simétrico respecto al origen (si $x \in D \Rightarrow -x \in D$).
-
+Sea $f: D \to \mathbb{R}$ una función con un dominio $D$ simétrico respecto al origen (es decir, si $x \in D$, entonces obligatoriamente $-x \in D$). En la sección anterior sobre reflexiones vimos que ciertas gráficas presentan comportamientos fascinantes al transformarse. Aquí formalizamos esos fenómenos mediante el concepto de **Paridad**.
 ### 2.1 Funciones Pares e Impares
 
 **Definición 2.1 (Función Par):**
-Una función $f$ es **par** si:
+Una función $f$ es **par** si, para todo $x$ en su dominio, se cumple que evaluar un número negativo da exactamente el mismo resultado que evaluar el positivo:
 $$\forall x \in D, \quad f(-x) = f(x)$$
-**Propiedad Geométrica:** Su gráfica es simétrica respecto al **eje Y**.
-**Ejemplos:** $f(x) = x^2, \quad f(x) = |x|, \quad f(x) = \cos(x)$.
+- **Propiedad Geométrica:** Esto equivale a decir que su gráfica es idéntica tras aplicarle una reflexión respecto al **eje Y**. Es como si el eje Y actuara como un espejo perfecto.
+- **Conexión con reflexiones:** Como lo prometimos, esto explica por qué la función $f(x) = x^2$ al reflejarse en el eje Y nos daba $(-x)^2 = x^2$. ¡Esto la clasifica formalmente como el prototipo de una función par!
+- **Otros ejemplos:** $f(x) = |x|, \quad f(x) = \cos(x)$.
 
 **Definición 2.2 (Función Impar):**
-Una función $f$ es **impar** si:
+Una función $f$ es **impar** si, para todo $x$ en su dominio, el signo negativo puede "salir" de la función:
 $$\forall x \in D, \quad f(-x) = -f(x)$$
-**Propiedad Geométrica:** Su gráfica es simétrica respecto al **origen** $(0,0)$.
-**Ejemplos:** $f(x) = x^3, \quad f(x) = 1/x, \quad f(x) = \sin(x)$.
+- **Propiedad Geométrica:** Su gráfica es simétrica respecto al **origen** $(0,0)$. Esto equivale a rotar la gráfica 180° alrededor del origen, o lo que es lo mismo: aplicar una reflexión en el eje X y luego otra en el eje Y.
+- **Conexión con reflexiones:** En nuestro análisis previo de la nota, vimos que para $f(x) = x^3$, su reflexión en Y ($(-x)^3$) daba exactamente el mismo resultado visual que su reflexión en X ($-x^3$). Esa coincidencia $f(-x) = -f(x)$ es la huella digital inconfundible de una función impar.
+- **Otros ejemplos:** $f(x) = 1/x, \quad f(x) = \sin(x)$.
 
-**Teorema 2.1 (Descomposición de funciones):**
-Toda función $f: \mathbb{R} \to \mathbb{R}$ puede expresarse de manera única como la suma de una función par y una función impar:
+### 2.2 Teorema de Descomposición
+
+La inmensa mayoría de las funciones en la naturaleza no son ni pares ni impares (son asimétricas). Sin embargo, existe una propiedad matemática extraordinaria que permite fraccionarlas.
+
+**Teorema 2.1 (Descomposición de paridad):**
+Toda función $f: \mathbb{R} \to \mathbb{R}$ (o sobre un dominio simétrico) puede expresarse de manera *única* como la suma exacta de una función par y una función impar:
 $$f(x) = f_{par}(x) + f_{impar}(x)$$
-Donde:
+Donde las componentes se construyen artificialmente mediante las fórmulas:
 $$f_{par}(x) = \frac{f(x) + f(-x)}{2}, \quad f_{impar}(x) = \frac{f(x) - f(-x)}{2}$$
 
----
+**Demostración del Teorema:**
+La demostración consta de dos partes lógicas: asegurar que las fórmulas realmente cumplen su propósito (**Existencia**) y probar que son la única manera de lograrlo (**Unicidad**).
 
+**1. Existencia:**
+Si sumamos las dos fórmulas propuestas algebraicamente, obtenemos la función original:
+$$f_{par}(x) + f_{impar}(x) = \frac{f(x) + f(-x)}{2} + \frac{f(x) - f(-x)}{2} = \frac{2f(x)}{2} = f(x)$$
+Para comprobar que realmente tienen la paridad deseada, las evaluamos en $-x$:
+- Para la primera: $f_{par}(-x) = \frac{f(-x) + f(-(-x))}{2} = \frac{f(-x) + f(x)}{2} = f_{par}(x)$. Queda demostrado que es **par**.
+- Para la segunda: $f_{impar}(-x) = \frac{f(-x) - f(-(-x))}{2} = \frac{f(-x) - f(x)}{2} = -\frac{f(x) - f(-x)}{2} = -f_{impar}(x)$. Queda demostrado que es **impar**.
+
+**2. Unicidad:**
+Supongamos que existiera *otra* descomposición alternativa $f(x) = P(x) + I(x)$, donde $P$ sea par e $I$ sea impar.
+Al evaluar la función en $-x$, y usando las propiedades de paridad, tendríamos:
+$$f(-x) = P(-x) + I(-x) = P(x) - I(x)$$
+
+Hemos formado un sistema lineal de dos ecuaciones:
+1) $f(x) = P(x) + I(x)$
+2) $f(-x) = P(x) - I(x)$
+
+Si **sumamos** ambas ecuaciones, las partes impares ($I$) se anulan:
+$$f(x) + f(-x) = 2P(x) \implies P(x) = \frac{f(x) + f(-x)}{2}$$
+Si **restamos** la segunda de la primera, las partes pares ($P$) se anulan:
+$$f(x) - f(-x) = 2I(x) \implies I(x) = \frac{f(x) - f(-x)}{2}$$
+Acabamos de probar que cualquier supuesta "otra" descomposición $P(x)$ e $I(x)$ nos obliga irremediablemente a recaer en las mismas fórmulas originales. Por lo tanto, no hay otra manera de hacerlo; la descomposición es **absolutamente única**. $\blacksquare$
+
+**Ejemplo 2.1 (Descomposición de un polinomio asimétrico):**
+Descomponer la función $f(x) = x^2 + 2x + 3$.
+
+**Solución:** Primero hallamos el reflejo $f(-x)$:
+$$f(-x) = (-x)^2 + 2(-x) + 3 = x^2 - 2x + 3$$
+- Calculamos la **parte par** sumando ambos y dividiendo por 2:
+  $$f_{par}(x) = \frac{(x^2 + 2x + 3) + (x^2 - 2x + 3)}{2} = \frac{2x^2 + 6}{2} = x^2 + 3$$
+- Calculamos la **parte impar** restando y dividiendo por 2:
+  $$f_{impar}(x) = \frac{(x^2 + 2x + 3) - (x^2 - 2x + 3)}{2} = \frac{4x}{2} = 2x$$
+**Conclusión:** $f(x) = (x^2 + 3) + (2x)$. Hemos logrado separar de manera analítica un polinomio común en su "esqueleto" par ($x^2+3$) y su "esqueleto" impar ($2x$).
+
+**Ejemplo 2.2 (Descomposición de la función exponencial):**
+Descomponer la función asimétrica por excelencia, $f(x) = e^x$.
+
+**Solución:** Hallamos $f(-x) = e^{-x}$.
+- **Parte par:**
+$$f_{par}(x) = \frac{e^x + e^{-x}}{2}$$
+- **Parte impar:**
+$$f_{impar}(x) = \frac{e^x - e^{-x}}{2}$$
+**Conclusión:** ¡Estas dos mitades no son funciones ordinarias! Acabamos de derivar matemáticamente de la nada al famoso **Coseno Hiperbólico** ($\cosh(x)$) como la parte par de $e^x$, y al **Seno Hiperbólico** ($\sinh(x)$) como su parte impar. Así, se desvela la hermosa identidad: $e^x = \cosh(x) + \sinh(x)$. Esto se profundizara en la sección 8
+
+---
 ## 3. Funciones Definidas a Tramos
 
 **Concepto intuitivo:**
@@ -246,8 +320,7 @@ Donde:
 - $x_0$: Punto medio de la sigmoide.
 
 ---
-
-## 5. Periodicidad y Funciones Hiperbólicas
+## 5. Periodicidad
 
 ### 5.1 Funciones Periódicas
 
@@ -260,7 +333,9 @@ El menor valor positivo $T$ que satisface esta condición se denomina **periodo 
 - $\sin(x)$ tiene periodo $T = 2\pi$.
 - $\tan(x)$ tiene periodo $T = \pi$.
 
-### 5.2 Funciones Hiperbólicas
+
+---
+## 6 Funciones Hiperbólicas
 
 Las funciones hiperbólicas son análogas a las trigonométricas, pero definidas sobre la hipérbola unitaria $x^2 - y^2 = 1$ en lugar del círculo unitario. Se definen mediante combinaciones lineales de exponenciales $e^x$ y $e^{-x}$.
 
@@ -275,7 +350,7 @@ $$\cosh^2(x) - \sinh^2(x) = 1$$
 
 ---
 
-## 6. Composición de Funciones
+## 7. Composición de Funciones
 
 **Concepto intuitivo:**
 
@@ -294,7 +369,7 @@ La **composición** $f \circ g$ es conectar la salida de $g$ directamente como e
 - Después de $f$: $f(4) = 4^2 = 16$
 - Resultado final: $(f \circ g)(3) = 16$
 
-### 6.1 Definición y dominio
+### 7.1 Definición y dominio
 
 **Definición 6.1 (Composición de funciones):**
 Dadas dos funciones $f: B \to C$ y $g: A \to B$, la **composición** de $f$ con $g$, denotada $f \circ g$ (se lee "$f$ compuesta con $g$" o "$f$ círculo $g$"), es la función definida por:
