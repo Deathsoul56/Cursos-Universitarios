@@ -88,8 +88,6 @@ Si observamos con atención el resultado, dado que $x = y'$, la nueva gráfica s
 
 Al graficar esto, la curva oscilará de izquierda a derecha entre $x' = -1$ y $x' = 1$ mientras sube y baja infinitamente a lo largo de $y'$. Si evaluamos la coordenada $x' = 0$, encontraremos **infinitos valores** para $y'$ correspondientes a las raíces del seno ($0, \pi, -\pi, 2\pi, \dots$). 
 Por ende, al trazar una línea recta vertical imaginaria sobre el origen del eje X, esta cortará la curva en infinitos puntos simultáneamente. Esto reprueba categóricamente la **prueba de la línea vertical**, violando la regla estricta de unicidad de imagen de toda función (cada entrada de $x$ debe mapear a **solo un** valor de $y$). Hemos demostrado así que una rotación general puede destruir completamente la integridad matemática de una función.
-
----
 ### 1.5 Gráficas de Funciones Transformadas
 
 Conocer las gráficas de las funciones elementales —parábola, valor absoluto, exponencial— no basta por sí solo. El verdadero poder del enfoque por transformaciones radica en que permite construir la gráfica de funciones compuestas **sin tabular punto a punto**: basta con identificar la función base $g$ y aplicar las transformaciones en el orden correcto.
@@ -209,8 +207,6 @@ $$f_{impar}(x) = \frac{e^x - e^{-x}}{2}$$
 ---
 ## 3. Funciones Definidas a Tramos
 
-**Concepto intuitivo:**
-
 Algunas funciones tienen comportamientos diferentes en distintas regiones de su dominio. Por ejemplo, una tarifa telefónica puede tener un precio por minuto hasta cierta cantidad, y luego otro precio diferente. Estas funciones se expresan mediante "casos" o "tramos".
 
 **Definición 3.1 (Función a tramos):**
@@ -258,8 +254,6 @@ donde $k$ es el consumo en kWh y $C(k)$ es el costo en dólares.
 
 ### 3.2 Continuidad en los puntos de unión
 
-**Concepto intuitivo:**
-
 Cuando una función está definida a tramos, es importante verificar qué ocurre en los **puntos de transición** donde cambia la fórmula. La función puede ser:
 - **Continua:** No hay "saltos" en la gráfica
 - **Discontinua:** Hay un "salto" o "brecha" en ese punto
@@ -288,36 +282,167 @@ Hay un **salto** de 4 a 5, por lo que la función es **discontinua** en $x = 2$.
 **Nota:** El concepto formal de continuidad se estudiará en profundidad en el tema de Límites y Continuidad.
 
 ---
+## 4. Funciones Especiales y Funciones Peculiares
 
-## 4. Funciones Especiales
+La definición formal de función —una regla que asigna a cada elemento de un conjunto exactamente un elemento de otro conjunto— es deliberadamente amplia. Las funciones que se estudian en una primera clase (polinomios, exponenciales, trigonométricas, logaritmos) comparten una característica que nos vuelve cómodos: son curvas suaves, predecibles y fácilmente graficables. Sin embargo, la definición de función no exige ninguna de esas cualidades.
 
-### 4.1 Función Piso y Cielo (Parte Entera)
+**Definición 4.0 (Función Especial):**
+Se denomina **función especial** a toda función que, por su recurrencia y utilidad en matemáticas, física o ingeniería, ha recibido un nombre propio, una notación estandarizada y un estudio sistemático de sus propiedades. No existe un criterio único y universal para determinar si una función merece ese título; la distinción es convencional y refleja la importancia histórica y práctica de la función dentro de la comunidad científica.
 
-**Definición 4.1 (Función Piso / Floor):**
-La función piso, denotada $\lfloor x \rfloor$ o $\text{floor}(x)$, asigna a cada número real $x$ el mayor entero menor o igual a $x$.
-$$\lfloor x \rfloor = \max \{k \in \mathbb{Z} : k \leq x\}$$
-- **Propiedad:** $\lfloor x \rfloor \leq x < \lfloor x \rfloor + 1$
+Esta sección tiene dos propósitos distintos. Por un lado, presentar funciones con nombre propio que aparecerán repetidamente en cursos de ingeniería, física y computación —familiarizarse con ellas ahora facilita enormemente el trabajo futuro. Por otro, mostrar funciones construidas deliberadamente para desafiar la intuición, cuyo estudio ha sido fundamental para el desarrollo del Análisis Matemático moderno.
+### 4.1 Función Piso, Función Techo y Parte Fraccionaria
 
-**Definición 4.2 (Función Cielo / Ceiling):**
-La función cielo, denotada $\lceil x \rceil$ o $\text{ceil}(x)$, asigna el menor entero mayor o igual a $x$.
-$$\lceil x \rceil = \min \{k \in \mathbb{Z} : k \geq x\}$$
+Pensemos en el problema cotidiano de redondear un número real hacia el entero más cercano. Si se tiene $x = 3.7$, intuitivamente se sabe que "cabe" dentro del intervalo $[3, 4)$. Las funciones piso y techo formalizan exactamente esa idea: determinar cuál es el entero inmediatamente inferior o superior a un real dado.
 
-### 4.2 Función Signo y Heaviside
+**Definición 4.1 (Función Piso):**
+La función piso $\lfloor \cdot \rfloor : \mathbb{R} \to \mathbb{Z}$ asigna a cada $x \in \mathbb{R}$ el mayor entero menor o igual a $x$:
+$$\lfloor x \rfloor = \max\{k \in \mathbb{Z} : k \leq x\}$$
 
-**Definición 4.3 (Función Signo):**
+> **Observación:** Se cumple que $\lfloor x \rfloor \leq x < \lfloor x \rfloor + 1$ para todo $x \in \mathbb{R}$.
+
+**Definición 4.2 (Función Techo):**
+La función techo $\lceil \cdot \rceil : \mathbb{R} \to \mathbb{Z}$ asigna a cada $x \in \mathbb{R}$ el menor entero mayor o igual a $x$:
+$$\lceil x \rceil = \min\{k \in \mathbb{Z} : k \geq x\}$$
+
+**Ejemplo 4.1:**
+$$\lfloor 3.7 \rfloor = 3, \quad \lfloor -1.2 \rfloor = -2, \quad \lfloor 5 \rfloor = 5$$
+$$\lceil 3.7 \rceil = 4, \quad \lceil -1.2 \rceil = -1, \quad \lceil 5 \rceil = 5$$
+
+> **Advertencia:** Para números negativos, $\lfloor -1.2 \rfloor = -2$, no $-1$. La función piso siempre redondea hacia $-\infty$, no hacia cero.
+
+Una vez definida la función piso, se puede extraer de cualquier real su parte decimal de manera precisa.
+
+**Definición 4.3 (Parte Fraccionaria):**
+La parte fraccionaria $\{\cdot\} : \mathbb{R} \to [0,1)$ se define para todo $x \in \mathbb{R}$ como:
+$$\{x\} = x - \lfloor x \rfloor$$
+
+Su gráfica es una onda de sierra periódica de período 1: sube linealmente desde 0 hasta 1 (sin alcanzarlo) y luego reinicia. Es un ejemplo de función periódica que no tiene relación alguna con la trigonometría.
+
+**Ejemplo 4.2:**
+$$\{3.7\} = 3.7 - 3 = 0.7, \quad \{-1.2\} = -1.2 - (-2) = 0.8, \quad \{5\} = 0$$
+
+### 4.2 Función Signo y Función de Heaviside
+
+Estas dos funciones modelan comportamientos de "todo o nada": situaciones en que solo interesa el signo de una cantidad, o el instante en que un fenómeno se activa. Son omnipresentes en ingeniería de control, procesamiento de señales y sistemas dinámicos.
+
+**Definición 4.4 (Función Signo):**
+La función signo $\text{sgn} : \mathbb{R} \to \{-1, 0, 1\}$ se define como:
 $$\text{sgn}(x) = \begin{cases} -1 & \text{si } x < 0 \\ 0 & \text{si } x = 0 \\ 1 & \text{si } x > 0 \end{cases}$$
 
-**Definición 4.4 (Función de Heaviside o Escalón Unitario):**
-Fundamental en ingeniería de control y señales.
+**Definición 4.5 (Función de Heaviside):**
+La función de Heaviside $H : \mathbb{R} \to \{0, 1\}$, también llamada escalón unitario, se define como:
+
 $$H(x) = \begin{cases} 0 & \text{si } x < 0 \\ 1 & \text{si } x \geq 0 \end{cases}$$
-*(Nota: A veces se define $H(0)=0.5$ o indefinido, según el contexto).*
+
+> **Nota histórica:** Oliver Heaviside (1850–1925) fue un ingeniero eléctrico autodidacta que desarrolló esta función para modelar el encendido de circuitos eléctricos en $t = 0$. Sus métodos fueron inicialmente rechazados por carecer de rigor, pero resultaron correctos y hoy son estándar en ingeniería.
+
+> **Nota:** En algunos textos, $H(0)$ se define como $\frac{1}{2}$ o se deja indefinido. La definición varía según el contexto de aplicación.
+
+Se puede verificar que ambas funciones se relacionan mediante:
+$$\text{sgn}(x) = 2H(x) - 1 \quad \text{para } x \neq 0$$
 
 ### 4.3 Función Logística (Sigmoide)
-$$f(x) = \frac{L}{1 + e^{-k(x-x_0)}}$$
-Donde:
-- $L$: Supremo de la función (asíntota horizontal superior).
-- $k$: Tasa de crecimiento.
-- $x_0$: Punto medio de la sigmoide.
+
+Pensemos en el crecimiento de una población dentro de un ecosistema con recursos limitados: al principio crece lentamente (pocos individuos), luego se acelera (fase exponencial) y finalmente desacelera al acercarse al límite de recursos del entorno. Este comportamiento en forma de "S" es exactamente lo que describe la función logística.
+
+**Definición 4.6 (Función Logística):**
+La función logística $f : \mathbb{R} \to (0, L)$ se define como:
+$$f(x) = \frac{L}{1 + e^{-k(x - x_0)}}$$
+donde $L > 0$ es la cota superior (asíntota horizontal), $k > 0$ es la tasa de crecimiento y $x_0 \in \mathbb{R}$ es el punto de inflexión (centro de la curva).
+
+La forma más simple, con $L = 1$, $k = 1$, $x_0 = 0$, se denomina **función sigmoide estándar**:
+$$\sigma(x) = \frac{1}{1 + e^{-x}}$$
+
+> **Observación:** La función sigmoide es fundamental en aprendizaje automático: se utiliza como función de activación en redes neuronales y como función de salida en regresión logística, donde su recorrido $(0,1)$ permite interpretarla como una probabilidad.
+
+### 4.4 Función Gaussiana
+
+La función gaussiana describe la forma de la famosa "campana de Gauss". Aparece en probabilidad y estadística (distribución normal), en física cuántica (paquetes de onda), en óptica (perfiles de haces láser) y en procesamiento de imágenes, entre muchos otros contextos.
+
+**Definición 4.7 (Función Gaussiana):**
+La función gaussiana estándar $f : \mathbb{R} \to (0, 1]$ se define como:
+$$f(x) = e^{-x^2}$$
+
+Es siempre positiva, alcanza su máximo en $x = 0$ con $f(0) = 1$, y decrece simétricamente hacia cero en ambas direcciones.
+
+> **Observación:** En Cálculo Integral se verá que $f(x) = e^{-x^2}$ no posee antiderivada elemental: no existe ninguna combinación de funciones elementales (polinomios, exponenciales, trigonométricas, logaritmos) cuya derivada sea $e^{-x^2}$. A pesar de ello, el área encerrada bajo la curva sobre todo $\mathbb{R}$ tiene un valor exacto y sorprendente: $\sqrt{\pi}$.
+
+### 4.5 Función Sinc (Seno Cardinal)
+
+Si se observa qué ocurre con $\frac{\sin(x)}{x}$ al alejar $x$ del origen, se tiene una onda que oscila pero cuya amplitud decae progresivamente. Esta forma es característica de fenómenos de difracción en óptica y de filtros ideales en procesamiento de señales.
+
+**Definición 4.8 (Función Sinc):**
+La función seno cardinal $\text{sinc} : \mathbb{R} \to \mathbb{R}$ se define como:
+$$\text{sinc}(x) = \begin{cases} \dfrac{\sin(x)}{x} & \text{si } x \neq 0 \\[6pt] 1 & \text{si } x = 0 \end{cases}$$
+
+El valor en $x = 0$ se establece por continuidad: en Cálculo de Límites se demostrará que $\displaystyle\lim_{x \to 0} \frac{\sin(x)}{x} = 1$.
+
+### 4.6 Deltas: Kronecker y Dirac
+
+A veces interesa modelar un evento que ocurre en un único punto exacto: un golpe instantáneo, una carga puntual, un pulso eléctrico de duración despreciable. Las funciones delta surgen de esa necesidad.
+
+**Definición 4.9 (Delta de Kronecker):**
+Para $i, j \in \mathbb{Z}$, la delta de Kronecker $\delta : \mathbb{Z} \times \mathbb{Z} \to \{0,1\}$ se define como:
+$$\delta_{ij} = \begin{cases} 1 & \text{si } i = j \\ 0 & \text{si } i \neq j \end{cases}$$
+
+Se utiliza en álgebra lineal para describir matrices identidad y sistemas ortogonales. Será recurrente en el curso de Álgebra Lineal.
+
+**Definición 4.10 (Delta de Dirac):**
+La delta de Dirac $\delta(x)$ es el análogo continuo de la delta de Kronecker. Intuitivamente modela un impulso concentrado en un único punto: vale cero en todo $x \neq 0$, pero su "masa" total es exactamente 1. Se define formalmente en la teoría de distribuciones —una extensión del concepto de función que se estudia en cursos avanzados de Análisis— y no es una función en el sentido clásico.
+
+Se escribe habitualmente como:
+$$\delta(x) = \begin{cases} +\infty & \text{si } x = 0 \\ 0 & \text{si } x \neq 0 \end{cases}$$
+
+con la condición adicional de que su "masa" total es exactamente 1.
+
+> **Advertencia:** Esta definición a trozos es únicamente una descripción intuitiva. $\delta(x)$ no es una función en el sentido clásico —ninguna función puede valer $+\infty$ en un punto y aun así tener masa total finita dentro del marco habitual del Cálculo. Se define formalmente en la teoría de distribuciones, que corresponde a cursos avanzados de Análisis. Se menciona aquí como familiarización, dada su importancia en ingeniería de control, mecánica cuántica y ecuaciones diferenciales.
+
+### 4.7 Función Indicatriz y Función de Dirichlet
+
+Las siguientes funciones actúan como "detectores de pertenencia" a conjuntos. Son construcciones simples pero de gran importancia teórica.
+
+**Definición 4.11 (Función Indicatriz):**
+Sea $A \subseteq \mathbb{R}$. La función indicatriz $\mathbf{1}_A : \mathbb{R} \to \{0, 1\}$ se define como:
+$$\mathbf{1}_A(x) = \begin{cases} 1 & \text{si } x \in A \\ 0 & \text{si } x \notin A \end{cases}$$
+
+**Definición 4.12 (Función de Dirichlet):**
+La función de Dirichlet $D : \mathbb{R} \to \{0, 1\}$ es el caso particular de la función indicatriz sobre el conjunto de los racionales $\mathbb{Q}$:
+$$D(x) = \mathbf{1}_{\mathbb{Q}}(x) = \begin{cases} 1 & \text{si } x \in \mathbb{Q} \\ 0 & \text{si } x \notin \mathbb{Q} \end{cases}$$
+
+> **Nota histórica:** Peter Gustav Lejeune Dirichlet propuso esta función en 1829 como contraejemplo a la noción intuitiva de que toda función puede integrarse. Fue uno de los primeros ejemplos que impulsó el desarrollo riguroso del Análisis.
+
+Esta función es discontinua en absolutamente todos los puntos de $\mathbb{R}$. La razón es que entre dos racionales siempre existe un irracional y viceversa, de modo que en cualquier vecindad de cualquier punto conviven valores de ambos tipos. En consecuencia, la función oscila entre 0 y 1 en toda vecindad, sin importar cuán pequeña sea.
+
+### 4.8 Función de Thomae y Función de Weierstrass
+
+Estas dos funciones representan algunos de los resultados más contraintuitivos del Análisis Matemático del siglo XIX. Se presentan aquí como cultura matemática y como motivación para comprender que la continuidad y la derivabilidad son propiedades verdaderamente profundas.
+
+**Definición 4.13 (Función de Thomae):**
+La función de Thomae $T : \mathbb{R} \to [0, 1]$, también llamada función de las "palomitas de maíz", se define como:
+$$T(x) = \begin{cases} \dfrac{1}{q} & \text{si } x = \dfrac{p}{q} \in \mathbb{Q}, \text{ con } \gcd(p,q) = 1,\ q > 0 \\[6pt] 0 & \text{si } x \notin \mathbb{Q} \end{cases}$$
+
+Su comportamiento es profundamente contraintuitivo: es continua en cada número irracional y discontinua en cada número racional. Demuestra que los conjuntos de puntos de continuidad y discontinuidad de una función pueden tener una estructura arbitrariamente compleja.
+
+**Definición 4.14 (Función de Weierstrass):**
+La función de Weierstrass $W : \mathbb{R} \to \mathbb{R}$ se define como la serie:
+$$W(x) = \sum_{n=0}^{\infty} a^n \cos(b^n \pi x)$$
+donde $0 < a < 1$, $b$ es un entero positivo impar, y $ab > 1 + \frac{3}{2}\pi$.
+
+> **Nota histórica:** En 1872, Karl Weierstrass presentó esta función ante la Academia de Berlín, demostrando que es continua en todo $\mathbb{R}$ pero no es diferenciable en ningún punto. Hasta entonces, la comunidad matemática asumía —sin demostración— que toda función continua debía ser derivable salvo quizás en algunos puntos aislados. La presentación de Weierstrass fue considerada un escándalo matemático y obligó a refundar el Análisis sobre bases completamente rigurosas.
+
+Se menciona aquí únicamente como cultura general. Su estudio formal corresponde a Análisis Real.
+### 4.9 Ondas Cuadrada y Triangular
+
+En la práctica de la ingeniería, las oscilaciones no siempre tienen la forma suave del seno o el coseno. Las señales digitales, los circuitos de control y los sintetizadores de audio trabajan constantemente con formas de onda que presentan cambios abruptos o pendientes constantes a trozos.
+
+**Onda cuadrada:** Alterna periódicamente entre dos valores fijos, habitualmente $1$ y $-1$, con transiciones instantáneas. Modela señales digitales (bits) y señales de reloj en sistemas computacionales. Se puede expresar en términos de funciones ya definidas mediante:
+$$f(x) = \text{sgn}(\sin(x))$$
+
+**Onda triangular:** Sube y baja con pendiente lineal constante, formando una sucesión de picos afilados. Es común en síntesis de audio y en sistemas de barrido. Puede expresarse usando la parte fraccionaria:
+$$f(x) = \left| 2\left\{\frac{x}{T}\right\} - 1 \right|$$
+donde $T > 0$ es el período.
+
+> **Observación:** Tanto la onda cuadrada como la triangular son funciones periódicas que pueden descomponerse como sumas infinitas de senos y cosenos. Este resultado, conocido como **serie de Fourier**, se estudiará formalmente en cursos de Ecuaciones Diferenciales o de Señales y Sistemas, y constituye una de las herramientas más poderosas de la ingeniería aplicada.
 
 ---
 ## 5. Periodicidad
