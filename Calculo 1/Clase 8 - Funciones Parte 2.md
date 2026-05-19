@@ -447,17 +447,154 @@ donde $T > 0$ es el período.
 ---
 ## 5. Periodicidad
 
-### 5.1 Funciones Periódicas
+### 5.1 Concepto de Periodicidad y Definición Formal
+
+Muchos fenómenos en la naturaleza y en la ingeniería se repiten a intervalos regulares de tiempo o espacio: el latido de un corazón, el ciclo de las estaciones del año, el movimiento de un péndulo o la oscilación de un circuito eléctrico. Matemáticamente, capturamos este comportamiento repetitivo infinito mediante el concepto de funciones periódicas. La gran ventaja de estas funciones es que, si conocemos exactamente cómo se comportan en un solo ciclo, automáticamente conocemos su comportamiento en toda la recta real numérica.
 
 **Definición 5.1 (Función Periódica):**
-Una función $f$ se dice **periódica** si existe un número real $T > 0$ tal que:
-$$\forall x \in \text{Dom}(f), \quad f(x + T) = f(x)$$
-El menor valor positivo $T$ que satisface esta condición se denomina **periodo fundamental**.
+Una función $f: D \to \mathbb{R}$ se denomina **periódica** si existe un número real $T > 0$ tal que, para todo $x \in D$, se cumple:
+1. $x + T \in D$
+2. $f(x + T) = f(x)$
 
-**Ejemplos:**
-- $\sin(x)$ tiene periodo $T = 2\pi$.
-- $\tan(x)$ tiene periodo $T = \pi$.
+El número $T$ se llama un **período** de la función. El menor valor positivo $T$ que satisface esta condición se denomina **período fundamental** (frecuentemente llamado solo "el período").
 
+**Proposición 5.1 (Múltiplos del período):**
+Si $f$ es una función periódica con período $T$, entonces para cualquier número entero $n \in \mathbb{Z}$, se cumple que:
+$$f(x + nT) = f(x)$$
+Es decir, cualquier múltiplo entero del período fundamental también actúa como un período válido.
+
+**Ejemplo 5.1:**
+Las funciones trigonométricas son el arquetipo clásico por excelencia:
+- La función $f(x) = \sin(x)$ cumple que $\sin(x + 2\pi) = \sin(x)$, por lo que su período fundamental es $T = 2\pi$. Por la Proposición 5.1, también se cumple que $\sin(x + 4\pi) = \sin(x)$ o $\sin(x - 6\pi) = \sin(x)$.
+- La función $g(x) = \tan(x)$ tiene un período fundamental de $T = \pi$.
+### 5.2 Más Allá de la Trigonometría
+
+Aunque solemos asociar la periodicidad exclusivamente a los senos y cosenos, en la Sección 4 demostramos que existen muchas otras funciones periódicas exóticas y útiles.
+
+**Ejemplo 5.2 (Parte fraccionaria):**
+La función parte fraccionaria, $f(x) = \{x\} = x - \lfloor x \rfloor$, es estrictamente periódica. Vamos a demostrar analíticamente que su período es $T = 1$.
+
+**Solución:**
+Evaluamos la función desplazada en 1 unidad:
+$$\begin{align}
+f(x + 1) &= (x + 1) - \lfloor x + 1 \rfloor \\
+&= x + 1 - (\lfloor x \rfloor + 1) \\
+&= x - \lfloor x \rfloor \\
+&= f(x)
+\end{align}$$
+La función se repite idéntica cada 1 unidad entera, generando su clásica gráfica de "diente de sierra".
+
+**Ejemplo 5.3 (Ondas de ingeniería):**
+La onda cuadrada y la onda triangular introducidas previamente también son periódicas. En ingeniería y física, al período $T$ (medido en segundos) se le asocia directamente una **frecuencia** $f$ (medida en Hertz o ciclos por segundo), definida simplemente como el inverso del período: $f = \frac{1}{T}$.
+### 5.3 Alteración del Período mediante Transformaciones
+
+¿Qué ocurre si aplicamos una transformación de escalado horizontal a una función periódica? Como se vio en la sección de transformaciones (Sección 1.2), multiplicar la variable independiente por una constante comprime o estira la gráfica como si fuera un resorte.
+
+**Teorema 5.1 (Período de funciones escaladas):**
+Si $f(x)$ es una función periódica con período fundamental $T$, entonces la nueva función compuesta $g(x) = f(cx)$, donde $c \neq 0$, tiene un nuevo período fundamental dado por:
+$$T_{nuevo} = \frac{T}{|c|}$$
+
+**Demostración:**
+Buscamos un valor $P > 0$ tal que $g(x + P) = g(x)$ para todo $x$.
+Sustituyendo en nuestra definición de $g$:
+$$\begin{align}
+g(x + P) &= f(c(x + P)) \\
+&= f(cx + cP)
+\end{align}$$
+Sabemos por hipótesis que la función $f$ repite su valor cuando a su argumento interno se le suma su período original $T$. Por lo tanto, para que se complete un ciclo, la cantidad sumada $cP$ debe equivaler en magnitud a $T$:
+$$|c|P = T \implies P = \frac{T}{|c|}$$
+$\blacksquare$
+
+**Ejemplo 5.4:**
+Determinar el período de la función $h(x) = \sin(3x)$.
+
+**Solución:**
+Identificamos la función base y el factor de escalado:
+- Función base: $\sin(x) \implies T = 2\pi$
+- Factor de compresión: $c = 3$
+
+Aplicando el Teorema 5.1:
+$$T_{nuevo} = \frac{2\pi}{3}$$
+**Interpretación:** El factor 3 comprime la gráfica horizontalmente. Ahora, la onda del seno completa un ciclo entero en un intervalo tres veces más corto que el original.
+### 5.4 Análisis de Periodicidad en Casos Complejos
+
+A continuación, analizaremos funciones progresivamente más complejas para dominar el cálculo de períodos, desde casos directos hasta la combinación de múltiples ondas.
+
+**Ejemplo 5.5 (Caso simple: ensanchamiento horizontal):**
+Determinar el período fundamental de $f(x) = \cos\left(\frac{x}{4}\right)$.
+
+**Solución:**
+La función base es $\cos(x)$, cuyo período fundamental es $T = 2\pi$.
+El factor de escalado es $c = \frac{1}{4}$.
+Aplicando el Teorema 5.1:
+$$T_{nuevo} = \frac{2\pi}{1/4} = 8\pi$$
+La onda se ha "estirado" horizontalmente, tardando cuatro veces más en completar un ciclo.
+
+**Ejemplo 5.6 (Caso intermedio: potencias trigonométricas):**
+Determinar el período de $g(x) = \sin^2(x)$.
+
+**Solución:**
+A simple vista podría pensarse que el período sigue siendo $2\pi$, pero al elevar al cuadrado, las partes negativas de la onda seno se vuelven positivas, haciendo que el patrón de la onda se repita más rápido. Para demostrarlo analíticamente, usamos la identidad trigonométrica del ángulo doble:
+$$\sin^2(x) = \frac{1 - \cos(2x)}{2} = \frac{1}{2} - \frac{1}{2}\cos(2x)$$
+
+Esta expresión es simplemente una función $\cos(2x)$ desplazada y escalada verticalmente (transformaciones que no afectan su período en el eje horizontal). 
+Calculamos el período del término que define la oscilación, $\cos(2x)$:
+$$T_{nuevo} = \frac{2\pi}{2} = \pi$$
+Por lo tanto, el período fundamental de $\sin^2(x)$ se reduce a $\pi$.
+
+**Ejemplo 5.7 (Caso avanzado: suma de funciones periódicas):**
+Encontrar el período de la función combinada $h(x) = \sin(2x) + \cos(3x)$.
+
+**Solución:**
+Cuando sumamos dos funciones periódicas, la nueva función resultante será periódica solo si existe un intervalo maestro que contenga un número exacto de ciclos de **ambas** funciones a la vez. Este período maestro se encuentra calculando el Mínimo Común Múltiplo (MCM) de los períodos individuales.
+
+1. Período de $\sin(2x)$: $T_1 = \frac{2\pi}{2} = \pi$
+2. Período de $\cos(3x)$: $T_2 = \frac{2\pi}{3}$
+
+Buscamos el MCM entre $\pi$ y $\frac{2\pi}{3}$. Analizamos los múltiplos de cada uno para encontrar su primera coincidencia:
+- Múltiplos de $T_1$: $\pi, \mathbf{2\pi}, 3\pi, 4\pi, \ldots$
+- Múltiplos de $T_2$: $\frac{2\pi}{3}, \frac{4\pi}{3}, \mathbf{\frac{6\pi}{3}} \ (\text{que es } 2\pi), \frac{8\pi}{3}, \ldots$
+
+El primer valor en el que ambas ondas vuelven a sincronizarse perfectamente es $2\pi$. Por lo tanto, el período fundamental de $h(x)$ es $T = 2\pi$.
+
+**Ejemplo 5.8 (El monstruo de la suma: funciones inmensurables):**
+Demostrar si la función $p(x) = \sin(x) + \sin(\pi x)$ es periódica o no.
+
+**Solución:**
+Calculamos los períodos de ambas componentes individuales:
+1. Período de $\sin(x)$: $T_1 = 2\pi$
+2. Período de $\sin(\pi x)$: $T_2 = \frac{2\pi}{\pi} = 2$
+
+Para que la suma total sea periódica, debe existir un período global $T$ que sea múltiplo entero de ambos. Es decir, debe existir un par de números enteros positivos $n$ y $m$ tales que al dar $n$ saltos del primer período y $m$ saltos del segundo, lleguemos al mismo punto:
+$$n \cdot T_1 = m \cdot T_2$$
+Sustituyendo los períodos:
+$$n(2\pi) = m(2)$$
+Despejando $\pi$:
+$$\pi = \frac{m}{n}$$
+Esta ecuación nos está exigiendo que $\pi$ pueda expresarse como la fracción de dos números enteros ($\frac{m}{n}$). Pero sabemos desde la antigüedad que $\pi$ es un número **irracional**, por lo que tal fracción es matemáticamente imposible de construir. 
+
+**Conclusión:** ¡La función $p(x)$ **no es periódica**! A pesar de estar formada por la simple suma de dos ondas matemáticamente perfectas, sus frecuencias son "inconmensurables" (no encajan entre sí de forma racional). Al sumarlas, se crea un patrón de interferencia caótico que jamás vuelve a repetirse exactamente igual en toda la eternidad. A este tipo de curvas, que casi parecen repetirse pero nunca lo logran del todo, se les conoce en matemáticas avanzadas como **funciones cuasiperiódicas**, y son todo un campo de estudio propio.
+### 5.5 Galería de Funciones Periódicas Extravagantes
+
+Para expandir aún más nuestra intuición analítica, presentamos algunas construcciones algebraicas inusuales. Combinando funciones ya estudiadas (como piso, mantisa y signo) con la trigonometría, se pueden generar comportamientos periódicos que resultan perturbadores, contra-intuitivos o directamente "rotos".
+
+**1. La onda de sierra curva:** $f(x) = \{\sin(x)\}$
+Al componer la función parte fraccionaria (mantisa) con el seno, unimos dos mundos. En las crestas positivas, la función es idéntica a $\sin(x)$. Sin embargo, cuando el seno se vuelve negativo (por ejemplo, $-0.2$), su parte fraccionaria se calcula como $-0.2 - (-1) = 0.8$. El resultado son "dientes de sierra" que en lugar de estar formados por líneas rectas, tienen curvaturas suaves que se quiebran abruptamente.
+
+**2. La onda perezosa:** $f(x) = \lfloor \sin(x) \rfloor$
+Al aplicar la función piso al seno, destruimos por completo su suave oscilación. Dado que el seno está estrictamente acotado en el intervalo $[-1, 1]$, esta función vale $-1$ la mitad del tiempo y $0$ la otra mitad, logrando un minúsculo e instantáneo salto a $1$ exclusivamente en los máximos (como $\pi/2$). Es una función periódica que pasa gran parte de su vida como una simple línea horizontal a trozos.
+
+**3. La onda invertida repentinamente:** $f(x) = \sin(x) \cdot \text{sgn}(\cos(x))$
+Multiplicar por el signo del coseno tiene el efecto de invertir verticalmente la onda del seno de forma extremadamente brusca justo cuando el coseno cruza el eje X y cambia de signo (en los múltiplos impares de $\pi/2$). Visualmente genera una onda senoidal que sufre "cortocircuitos", exhibiendo discontinuidades de salto y cambios de fase violentos en pleno ciclo. Es geométricamente perturbadora.
+
+**4. El seno impostor:** $f(x) = (-1)^{\lfloor x \rfloor} \cdot \sin(\pi x)$
+La componente $\sin(\pi x)$ forma domos entre los números enteros. Por su parte, el término $(-1)^{\lfloor x \rfloor}$ actúa como un interruptor maestro que alterna entre $+1$ y $-1$ cada vez que cruzamos un número entero. Esta combinación obliga a que los domos negativos del seno se vuelvan positivos. Engaña al ojo: parece una curva suave, pero sus derivadas en los puntos enteros revelan que algo está "mal" y puntiagudo.
+
+**5. El caos infinito en las raíces:** $f(x) = \sin\!\left(\frac{1}{\sin(x)}\right)$
+Esta función está perfectamente definida en casi todos lados. Sin embargo, su comportamiento es salvaje en las raíces del seno original (los múltiplos de $\pi$). Al acercarnos a estos puntos de quiebre, el denominador se encoge, la fracción $\frac{1}{\sin(x)}$ explota hacia el infinito, y forzamos al seno exterior a oscilar infinitamente rápido. Es matemáticamente imposible de graficar con exactitud en la cercanía de estos puntos.
+
+**6. El falso $x$ (o el zigzag infinito):** $f(x) = \arccos(\cos(x))$
+El instinto inmediato de un estudiante de primer semestre es "cancelar" las funciones y asumir que el resultado es la simple función identidad $f(x) = x$ (una línea recta diagonal infinita, no periódica). ¡Gravísimo error! Debido a la restricción obligatoria del rango del arcocoseno, la identidad solo se cumple en el intervalo $[0, \pi]$. Fuera de ahí, la gráfica rebota. El resultado asombroso es una **onda triangular perfecta** formada por líneas rígidamente rectas en zigzag, que nacen de forma paradójica al componer dos de las curvas más suaves, redondas y "circulares" de la matemática. Destruye para siempre el mito algebraico de que $f^{-1}(f(x)) = x$ aplica ciegamente para todos los números reales.
 
 ---
 ## 6 Funciones Hiperbólicas

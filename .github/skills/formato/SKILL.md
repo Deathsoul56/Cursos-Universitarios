@@ -226,8 +226,8 @@ $$\text{desarrollo}$$
 
 ### Separadores
 
-- Usar `---` entre secciones principales (`## N.`)
-- No usar `---` entre subsecciones (`### N.M`)
+- Usar `---` **solo** cuando se cambia de sección grande o principal (encabezados `## N.`, por ejemplo, al pasar de la sección 4 a la 5).
+- Cuando se cambia entre subsecciones de la misma sección padre (por ejemplo, de `### 5.2` a `### 5.3`), **NO usar `---`**. El salto se indica únicamente con el nuevo título.
 
 ### Matemáticas
 
