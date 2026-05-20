@@ -232,7 +232,8 @@ $$\text{desarrollo}$$
 ### Matemáticas
 
 - **Inline:** `$expresión$` para símbolos dentro del texto
-- **Display:** `$$ecuación$$` para ecuaciones importantes o multi-línea
+- **Display simple:** `$$ecuación$$` para ecuaciones importantes de 1 o 2 líneas.
+- **Desarrollos matemáticos:** Si un bloque de ecuaciones (desarrollo o demostración) tiene **3 o más líneas**, es OBLIGATORIO agrupar todo en un único bloque usando el entorno `\begin{align} ... \end{align}` en lugar de múltiples bloques `$$` independientes.
 - Notación consistente: si se define $\theta$ para el ángulo, no cambiar a $\alpha$
 - Fracciones en display: preferir `\dfrac` sobre `\frac` para mayor legibilidad
 

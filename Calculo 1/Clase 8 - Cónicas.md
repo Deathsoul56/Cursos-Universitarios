@@ -1938,4 +1938,4 @@ Como $A = 9$ y $C = 4$ tienen el mismo signo pero son diferentes, es una **elips
 
 ---
 
-**Fin de la Clase 7**
+**Fin de la Clase 8**

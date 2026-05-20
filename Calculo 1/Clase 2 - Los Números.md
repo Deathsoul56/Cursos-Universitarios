@@ -458,16 +458,18 @@ Para cualesquiera $m, n \in \mathbb{N}$:
 **Ejemplo 3.1 (Calculando $2 + 3$):**
 
 Usando la definición recursiva:
-$$2 + 3 = 2 + S(2)$$
-$$= S(2 + 2)$$
-$$= S(2 + S(1))$$
-$$= S(S(2 + 1))$$
-$$= S(S(2 + S(0)))$$
-$$= S(S(S(2 + 0)))$$
-$$= S(S(S(2)))$$
-$$= S(S(3))$$
-$$= S(4)$$
-$$= 5$$
+$$\begin{align}
+2 + 3 &= 2 + S(2) \\
+&= S(2 + 2) \\
+&= S(2 + S(1)) \\
+&= S(S(2 + 1)) \\
+&= S(S(2 + S(0))) \\
+&= S(S(S(2 + 0))) \\
+&= S(S(S(2))) \\
+&= S(S(3)) \\
+&= S(4) \\
+&= 5
+\end{align}$$
 
 **Propiedades de la suma en $\mathbb{N}$:**
 
@@ -521,19 +523,21 @@ Para cualesquiera $m, n \in \mathbb{N}$:
 **Ejemplo 3.3 (Calculando $3 \times 4$):**
 
 Usando la definición recursiva:
-$$3 \cdot 4 = 3 \cdot S(3)$$
-$$= 3 \cdot 3 + 3$$
-$$= (3 \cdot S(2)) + 3$$
-$$= (3 \cdot 2 + 3) + 3$$
-$$= ((3 \cdot S(1)) + 3) + 3$$
-$$= ((3 \cdot 1 + 3) + 3) + 3$$
-$$= (((3 \cdot S(0)) + 3) + 3) + 3$$
-$$= (((3 \cdot 0 + 3) + 3) + 3) + 3$$
-$$= (((0 + 3) + 3) + 3) + 3$$
-$$= ((3 + 3) + 3) + 3$$
-$$= (6 + 3) + 3$$
-$$= 9 + 3$$
-$$= 12$$
+$$\begin{align}
+3 \cdot 4 &= 3 \cdot S(3) \\
+&= 3 \cdot 3 + 3 \\
+&= (3 \cdot S(2)) + 3 \\
+&= (3 \cdot 2 + 3) + 3 \\
+&= ((3 \cdot S(1)) + 3) + 3 \\
+&= ((3 \cdot 1 + 3) + 3) + 3 \\
+&= (((3 \cdot S(0)) + 3) + 3) + 3 \\
+&= (((3 \cdot 0 + 3) + 3) + 3) + 3 \\
+&= (((0 + 3) + 3) + 3) + 3 \\
+&= ((3 + 3) + 3) + 3 \\
+&= (6 + 3) + 3 \\
+&= 9 + 3 \\
+&= 12
+\end{align}$$
 
 **Propiedades de la multiplicación en $\mathbb{N}$:**
 
@@ -1679,7 +1683,7 @@ Un conjunto infinito $A$ es **numerable** (o **contable**) si existe una biyecci
 $$A = \{a_1, a_2, a_3, ...\}$$
 La **cardinalidad** de un conjunto numerable se denota $\aleph_0$ (aleph cero, primera letra del alfabeto hebreo).
 
-**Observación:** El concepto de **biyecciones** se estudiaría mas en profundidad en la clase 4.
+**Observación:** El concepto de **biyecciones** se estudiaría mas en profundidad en la [[Clase 9 - Funciones Parte 2]].
 
 **Propiedad fundamental:** $|\mathbb{N}| = |\mathbb{Z}| = |\mathbb{Q}| = \aleph_0$
 

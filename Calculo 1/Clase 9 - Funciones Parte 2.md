@@ -1,4 +1,4 @@
-# Clase 8 - Funciones Parte 2
+# Clase 9 - Funciones Parte 2
 
 En esta clase profundizaremos en el análisis de funciones, estableciendo definiciones formales para las transformaciones geométricas, la clasificación según simetría (paridad), la composición de funciones, y el estudio riguroso de la inyectividad, sobreyectividad y funciones inversas.
 ## 1. Transformaciones de Funciones

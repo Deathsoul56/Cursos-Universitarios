@@ -569,7 +569,7 @@ $$m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{\Delta y}{\Delta x}$$
 
 Una **recta** en el plano puede describirse de dos formas distintas:
 
-- **Geométricamente** (Clase 4): mediante su ecuación general $Ax + By + C = 0$
+- **Geométricamente** (Clase 5): mediante su ecuación general $Ax + By + C = 0$
 - **Funcionalmente** (esta clase): mediante $f(x) = mx + b$, donde $y = f(x)$
 
 El paso de una forma a la otra es sencillo: si $B \neq 0$, basta despejar $y$:
@@ -1122,4 +1122,4 @@ Las operaciones algebraicas con funciones son fundamentales para:
 
 ---
 
-**Fin de la Clase 5: Funciones Parte 1**
+**Fin de la Clase 6: Funciones Parte 1**

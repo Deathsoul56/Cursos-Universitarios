@@ -1261,4 +1261,4 @@ Encuentre la **solución general** para todos los reales (usando multiplicadores
 
 ---
 
-**Fin de la Clase 6**
+**Fin de la Clase 7**

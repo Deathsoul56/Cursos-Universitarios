@@ -1,4 +1,4 @@
-# Ecuaciones e Inecuaciones: Fundamentos Algebraicos
+# Ecuaciones: Fundamentos Algebraicos
 
 ## 1. Operaciones combinadas y jerarquía
 
@@ -1352,167 +1352,9 @@ $$y = \log_3(2^x) = x \cdot \frac{\ln(2)}{\ln(3)}$$
 - **Biología:** Modelos de poblaciones, cinética química
 
 ---
+## 10. Ejercicios propuestos
 
-## 10. Inecuaciones
-
-### 10.1 Definición y propiedades del orden
-
-**Definición 10.1 (Inecuación):**
-Una **inecuación** es una desigualdad que involucra una o más variables. Las relaciones de orden son: $<$, $>$, $\leq$, $\geq$. En este caso los resultados no serán números, sino un conjunto infinito de posibles resultados los cuales presentaremos en forma de intervalo. 
-
-**Proposición 10.1 (Propiedades del orden en $\mathbb{R}$):**
-
-1. **Adición:** Si $a < b$, entonces $a + c < b + c$ para todo $c \in \mathbb{R}$
-2. **Multiplicación por positivo:** Si $a < b$ y $c > 0$, entonces $ac < bc$
-3. **Multiplicación por negativo:** Si $a < b$ y $c < 0$, entonces $ac > bc$ **(se invierte)**
-4. **Transitividad:** Si $a < b$ y $b < c$, entonces $a < c$
-
-**¡CUIDADO!** Al multiplicar o dividir por un número **negativo**, se invierte el sentido de la desigualdad.
-
-### 10.2 Intervalos como conjuntos solución
-
-**Definición 10.2 (Intervalos):**
-
-- **Intervalo abierto:** $(a, b) = \{x \in \mathbb{R} : a < x < b\}$
-- **Intervalo cerrado:** $[a, b] = \{x \in \mathbb{R} : a \leq x \leq b\}$
-- **Intervalo semiabierto:** $[a, b) = \{x \in \mathbb{R} : a \leq x < b\}$, $(a, b]$
-- **Intervalos infinitos:** $(a, \infty) = \{x : x > a\}$, $(-\infty, b] = \{x : x \leq b\}$
-
-*nota*: Los intervalos infinitos siempre son abiertos
-
-**Representación gráfica:**
-- Círculo abierto (○) indica que el extremo **no está incluido**
-- Círculo cerrado (●) indica que el extremo **está incluido**
-
-### 10.3 Inecuaciones lineales
-
-**Ejemplo 10.1:**
-$$3x - 5 < 7$$
-$$3x < 12$$
-$$x < 4$$
-
-**Solución:** $(-\infty, 4)$
-
-**Ejemplo 10.2 (Con inversión):**
-$$-2x + 3 \geq 11$$
-$$-2x \geq 8$$
-$$x \leq -4 \quad \text{(dividimos por -2, invertimos)}$$
-
-**Solución:** $(-\infty, -4]$
-
-### 10.4 Inecuaciones cuadráticas
-
-**Método de resolución:**
-
-1. Llevar todo a un lado: $ax^2 + bx + c \lessgtr 0$
-2. Encontrar las raíces (si existen)
-3. Analizar el signo de la parábola en cada intervalo
-4. Seleccionar los intervalos que satisfacen la desigualdad
-
-**Ejemplo 10.3:**
-$$x^2 - 5x + 6 < 0$$
-
-Factorizamos:
-$$(x - 2)(x - 3) < 0$$
-
-Raíces: $x = 2$ y $x = 3$
-
-**Tabla de signos:**
-
-| Intervalo       | $(-\infty, 2)$ | $(2, 3)$ | $(3, \infty)$ |
-| --------------- | -------------- | -------- | ------------- |
-| $(x - 2)$       | $-$            | $+$      | $+$           |
-| $(x - 3)$       | $-$            | $-$      | $+$           |
-| $(x-2)(x-3)$    | $+$            | $-$      | $+$           |
-
-La desigualdad $(x-2)(x-3) < 0$ se cumple en $(2, 3)$.
-
-**Solución:** $(2, 3)$
-
-**Representación gráfica:**
-```
-      +           -           +
-  -------○=================○-------
-         2                 3
-```
-
-### 10.5 Inecuaciones racionales
-
-**Método de resolución:**
-
-1. Llevar todo a un lado: $\frac{P(x)}{Q(x)} \lessgtr 0$
-2. Encontrar raíces de $P(x)$ (numerador) y $Q(x)$ (denominador)
-3. Construir tabla de signos
-4. Seleccionar intervalos según la desigualdad
-
-**¡IMPORTANTE!** Los valores que anulan el denominador **nunca** están en la solución (ni siquiera con $\leq$ o $\geq$).
-
-**Ejemplo 10.4:**
-$$\frac{x + 1}{x - 2} \geq 0$$
-
-**Puntos críticos:**
-- Raíz del numerador: $x = -1$
-- Raíz del denominador: $x = 2$ (excluido siempre)
-
-**Tabla de signos:**
-
-| Intervalo           | $(-\infty, -1)$ | $(-1, 2)$ | $(2, \infty)$ |
-| ------------------- | --------------- | --------- | ------------- |
-| $(x + 1)$           | $-$             | $+$       | $+$           |
-| $(x - 2)$           | $-$             | $-$       | $+$           |
-| $\frac{x+1}{x-2}$   | $+$             | $-$       | $+$           |
-
-La desigualdad $\geq 0$ se cumple donde el cociente es positivo o cero:
-- En $(-\infty, -1)$: positivo ✓
-- En $x = -1$: cero (anula numerador) ✓
-- En $(2, \infty)$: positivo ✓
-
-**Solución:** $(-\infty, -1] \cup (2, \infty)$
-
-**Nota:** $x = 2$ no está incluido porque anula el denominador.
-
-### 10.6 Inecuaciones con valor absoluto
-
-Las inecuaciones con valor absoluto se resuelven utilizando las propiedades de la distancia.
-
-**Propiedades fundamentales:**
-Para cualquier número real $a > 0$:
-
-1. **Caso menor que:** $|x| < a \iff -a < x < a$
-   - Interpretación: La distancia de $x$ al origen es menor que $a$.
-   - Solución: Intervalo $(-a, a)$.
-   - Análogamente para $\leq$: $|x| \leq a \iff -a \leq x \leq a$.
-
-2. **Caso mayor que:** $|x| > a \iff x > a \lor x < -a$
-   - Interpretación: La distancia de $x$ al origen es mayor que $a$.
-   - Solución: Unión $(-\infty, -a) \cup (a, \infty)$.
-   - Análogamente para $\geq$: $|x| \geq a \iff x \geq a \lor x \leq -a$.
-
-**Ejemplo 10.5 (Caso menor):**
-Resolver $|2x - 3| \leq 5$
-
-Aplicamos la propiedad 1:
-$$-5 \leq 2x - 3 \leq 5$$
-$$-2 \leq 2x \leq 8$$
-$$-1 \leq x \leq 4$$
-
-**Solución:** $[-1, 4]$
-
-**Ejemplo 10.6 (Caso mayor):**
-Resolver $|3x + 1| > 7$
-
-Aplicamos la propiedad 2:
-$$3x + 1 > 7 \quad \lor \quad 3x + 1 < -7$$
-$$3x > 6 \quad \lor \quad 3x < -8$$
-$$x > 2 \quad \lor \quad x < -8/3$$
-
-**Solución:** $(-\infty, -8/3) \cup (2, \infty)$
-
----
-
-## 11. Ejercicios propuestos
-
-### 11.1 Ecuaciones lineales y cuadráticas
+### 10.1 Ecuaciones lineales y cuadráticas
 
 1. Resuelva: $3(x - 2) + 5 = 2(x + 1) - 7$
 2. Resuelva: $\frac{x}{2} - \frac{x-1}{3} = \frac{5}{6}$
@@ -1520,7 +1362,7 @@ $$x > 2 \quad \lor \quad x < -8/3$$
 4. Resuelva: $2x^2 + 3x - 5 = 0$
 5. Determine el discriminante y la naturaleza de las raíces de $x^2 + 4x + 5 = 0$
 
-### 11.2 Factorización y productos notables
+### 10.2 Factorización y productos notables
 
 6. Factorice: $x^2 - 16$
 7. Factorice: $4x^2 + 12x + 9$
@@ -1528,7 +1370,7 @@ $$x > 2 \quad \lor \quad x < -8/3$$
 9. Factorice: $x^3 - 27$
 10. Factorice completamente: $x^4 - 1$
 
-### 11.3 Ecuaciones especiales
+### 10.3 Ecuaciones especiales
 
 11. Resuelva la ecuación bicuadrática: $x^4 - 13x^2 + 36 = 0$
 12. Resuelva: $9^x - 4 \cdot 3^x + 3 = 0$
@@ -1539,14 +1381,7 @@ $$\begin{cases}
 x - 3y = -8
 \end{cases}$$
 
-### 11.4 Inecuaciones
-
-15. Resuelva: $5x - 7 \leq 3x + 9$
-16. Resuelva: $x^2 + x - 6 > 0$
-17. Resuelva: $\frac{x - 3}{x + 1} < 2$
-18. Resuelva: $|2x - 1| \leq 5$ (valor absoluto)
-
-### 11.5 Problemas aplicados
+### 10.4 Problemas aplicados
 
 19. La suma de dos números es 15 y su diferencia es 3. ¿Cuáles son los números?
 
@@ -1572,4 +1407,4 @@ x - 3y = -8
 
 ---
 
-*Fin de Clase 3 - Ecuaciones e Inecuaciones*
+*Fin de Clase 3 - Ecuaciones*
