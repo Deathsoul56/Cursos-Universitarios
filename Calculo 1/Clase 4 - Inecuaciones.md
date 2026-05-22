@@ -36,7 +36,6 @@ Para cualesquiera $a, b, c \in \mathbb{R}$:
 5. **Multiplicación por negativo:** Si $a < b$ y $c < 0$, entonces $ac > bc$.
 
 > **Advertencia:** ¡La última propiedad es la causa número uno de errores en cálculo! Al multiplicar o dividir una desigualdad por un número **negativo**, el símbolo de orden se **invierte**.
-
 ### 1.2 Inecuaciones: Estructura y Solución
 
 Ahora nos enfocaremos exclusivamente en las desigualdades condicionales.
@@ -103,136 +102,337 @@ Si la solución a una inecuación nos dicta que $x$ debe ser "mayor o igual a -2
 - **Intervalo:** $[-2, 5)$
 
 ---
+## 2. Inecuaciones Lineales
 
-## 2. Tipos de Inecuaciones y Resolución
+Al igual que con las ecuaciones, nuestro primer caso de estudio seran las inecuaciones lineales o de primer grado. Pensemos en la inecuación más simple posible: "¿Para qué valores de $x$ se cumple que $2x < 6$?". La respuesta es inmediata $x < 3$ y el proceso para obtenerla es casi idéntico al de resolver una ecuación lineal. Las inecuaciones lineales son el punto de partida natural del estudio de las inecuaciones, precisamente porque su resolución es directa y permite concentrarse en las reglas del orden sin distracciones algebraicas adicionales.
 
-### 2.1 Inecuaciones lineales
+**Definición 2.1 (Inecuación Lineal):**
+Una inecuación lineal en una variable $x$ es toda inecuación equivalente a alguna de las formas:
+$$ax + b < 0, \quad ax + b \leq 0, \quad ax + b > 0, \quad ax + b \geq 0$$
+con $a, b \in \mathbb{R}$ y $a \neq 0$. Se denomina lineal porque el término con la variable aparece únicamente a la primera potencia.
 
-**Ejemplo 2.1:**
-$$3x - 5 < 7$$
-$$3x < 12$$
-$$x < 4$$
+> **Observación:** La condición $a \neq 0$ es necesaria: si $a = 0$, la expresión $ax + b$ se reduce a la constante $b$, y la inecuación resultante es una desigualdad numérica cuya veracidad no depende de $x$ en absoluto. El conjunto solución sería $\mathbb{R}$ completo o $\emptyset$ según el valor de $b$, sin que haya nada que resolver.
 
-**Solución:** $(-\infty, 4)$
+### 2.1 Método de resolución
 
-**Ejemplo 2.2 (Con inversión):**
-$$-2x + 3 \geq 11$$
-$$-2x \geq 8$$
-$$x \leq -4 \quad \text{(dividimos por -2, invertimos)}$$
+De forma análoga a las ecuaciones el objetivo será aislar la variable $x$ aplicando operaciones algebraicas a ambos miembros de la desigualdad. Las operaciones permitidas son las mismas que en una ecuación lineal —sumar, restar, multiplicar y dividir— con una diferencia fundamental:
 
-**Solución:** $(-\infty, -4]$
+**Proposición 2.1 (Regla de inversión del orden):**
+Sea $c \in \mathbb{R}$ con $c < 0$. Si $f(x) < g(x)$, entonces:
+$$\begin{align}
+f(x) &< g(x) && \Big/ \cdot c \quad (c < 0) \\[1.5ex]
+c \cdot f(x) &> c \cdot g(x)
+\end{align}$$
+En general, multiplicar o dividir ambos miembros de una inecuación por un número negativo invierte el símbolo de desigualdad.
 
-### 2.2 Inecuaciones cuadráticas
+> **Advertencia:** Este es el error más frecuente al resolver inecuaciones. Dividir por un número negativo sin invertir el símbolo produce un conjunto solución completamente erróneo.
 
-**Método de resolución:**
+El procedimiento general para resolver $ax + b \leq 0$ consiste en:
 
-1. Llevar todo a un lado: $ax^2 + bx + c \lessgtr 0$
-2. Encontrar las raíces (si existen)
-3. Analizar el signo de la parábola en cada intervalo
-4. Seleccionar los intervalos que satisfacen la desigualdad
+1. **Trasladar el término independiente:** Restar $b$ a ambos miembros para obtener $ax \leq -b$.
+2. **Dividir por el coeficiente:** Dividir ambos miembros por $a$, recordando que si $a < 0$, el sentido de la desigualdad debe invertirse.
+3. **Expresar el conjunto solución:** Representar el intervalo resultante en la recta real y en notación de intervalo.
+### 2.2 Ejemplos resueltos
 
-**Ejemplo 2.3:**
-$$x^2 - 5x + 6 < 0$$
+**Ejemplo 2.1 (Resolución directa):**
+Resolver $3x - 5 < 7$.
 
-Factorizamos:
+**Solución:**
+Despejamos $x$ paso a paso:
+$$\begin{align}
+3x - 5 &< 7 \\
+3x &< 7 + 5 \\
+3x &< 12 \\
+x &< \frac{12}{3} \\
+x &< 4
+\end{align}$$
+
+**Respuesta:** El conjunto solución está formado por todos los números estrictamente menores a 4. En notación de intervalo: $(-\infty, 4)$. De forma grafica seria
+![[inercuaciones_ejemplo1.png]]
+
+**Ejemplo 2.2 (Multiplicación por negativo):**
+Resolver $-2x + 3 \geq 11$.
+
+**Solución:**
+$$\begin{align}
+-2x + 3 &\geq 11 \\
+-2x &\geq 11 - 3 \\
+-2x &\geq 8 \\
+x &\leq \frac{8}{-2} \quad \text{(se invierte el orden al dividir por -2)} \\
+x &\leq -4
+\end{align}$$
+
+**Respuesta:** En notación de intervalo: $(-\infty, -4]$.
+
+**Ejemplo 2.3 (Inecuación con fracciones):**
+Resolver $\dfrac{x + 2}{3} - \dfrac{x - 1}{2} > 1$.
+
+**Solución:**
+Primero, eliminamos los denominadores multiplicando toda la inecuación por el mínimo común múltiplo (MCM) de 3 y 2, que es 6. Como 6 es positivo, el sentido de la desigualdad se mantiene.
+$$\begin{align}
+6 \cdot \left( \frac{x + 2}{3} - \frac{x - 1}{2} \right) &> 6 \cdot (1) \\
+2(x + 2) - 3(x - 1) &> 6 \\
+2x + 4 - 3x + 3 &> 6 \\
+-x + 7 &> 6 \\
+-x &> 6 - 7 \\
+-x &> -1 \\
+x &< 1 \quad \text{(se multiplica por -1 y se invierte el orden)}
+\end{align}$$
+
+**Respuesta:** En notación de intervalo: $(-\infty, 1)$.
+
+
+---
+## 3. Inecuaciones Cuadráticas
+
+A diferencia de las inecuaciones lineales, en las cuadráticas el comportamiento de la expresión $ax^2 + bx + c$ cambia de signo en distintas regiones de la recta real. La estrategia de "despejar $x$" ya no es suficiente: en su lugar, se debe analizar dónde la expresión es positiva y dónde es negativa. La herramienta central para esto es la **tabla de signos**.
+ 
+**Definición 3.1 (Inecuación Cuadrática):**
+Una inecuación cuadrática en una variable $x$ es toda inecuación equivalente a alguna de las formas:
+$$ax^2 + bx + c < 0, \quad ax^2 + bx + c \leq 0, \quad ax^2 + bx + c > 0, \quad ax^2 + bx + c \geq 0$$
+con $a, b, c \in \mathbb{R}$ y $a \neq 0$. Se denomina cuadrática porque el término de mayor grado es $ax^2$.
+
+**Definición 3.2 (Puntos Críticos):**
+Los puntos críticos de una inecuación cuadrática son las raíces reales del polinomio $ax^2 + bx + c$, es decir, los valores $x_0 \in \mathbb{R}$ tales que $ax_0^2 + bx_0 + c = 0$. Estos puntos dividen la recta real en intervalos dentro de los cuales la expresión no cambia de signo.
+
+> **Observación:** El número de puntos críticos depende del discriminante $\Delta = b^2 - 4ac$. Si $\Delta > 0$ hay dos raíces reales distintas; si $\Delta = 0$ hay una raíz doble; si $\Delta < 0$ no hay raíces reales y la expresión tiene signo constante en todo $\mathbb{R}$.
+
+### 3.1 Método de los puntos críticos (Tabla de signos)
+ 
+El procedimiento estándar para resolver una inecuación cuadrática es:
+ 
+1. **Agrupar:** Llevar todos los términos a un miembro, dejando cero en el otro: $ax^2 + bx + c \lessgtr 0$.
+2. **Encontrar los puntos críticos:** Resolver $ax^2 + bx + c = 0$ mediante factorización o la fórmula cuadrática $x = \dfrac{-b \pm \sqrt{\Delta}}{2a}$. Sean $x_1 < x_2$ las dos raíces obtenidas.
+3. **Construir la tabla de signos:** Dividir $\mathbb{R}$ en intervalos usando los puntos críticos. En cada intervalo, evaluar el signo de cada factor y del producto total. Los puntos críticos $x_1$ y $x_2$ dividen la recta real en tres regiones disjuntas:
+$$(-\infty,\, x_1), \qquad (x_1,\, x_2), \qquad (x_2,\, \infty)$$
+Dentro de cada región, cada factor lineal $(x - x_1)$ y $(x - x_2)$ mantiene un signo constante. Para determinarlo, basta evaluar un punto de prueba cualquiera dentro del intervalo —no es necesario calcular el valor exacto, solo el signo.
+La tabla tiene la siguiente estructura general:
+ 
+| Intervalo | $(-\infty, x_1)$ | $x_1$ | $(x_1, x_2)$ | $x_2$ | $(x_2, \infty)$ |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| $(x - x_1)$ | $-$ | $0$ | $+$ | $+$ | $+$ |
+| $(x - x_2)$ | $-$ | $-$ | $-$ | $0$ | $+$ |
+| $(x-x_1)(x-x_2)$ | $+$ | $0$ | $-$ | $0$ | $+$ |
+ 
+Se leen los signos de la siguiente manera:
+- El factor $(x - x_1)$ es negativo a la izquierda de $x_1$, se anula en $x_1$, y es positivo a su derecha.
+- El factor $(x - x_2)$ es negativo a la izquierda de $x_2$, se anula en $x_2$, y es positivo a su derecha.
+- El signo del producto $(x-x_1)(x-x_2)$ se obtiene multiplicando los signos de cada fila: $(-)\cdot(-) = +$, $(-)\cdot(+) = -$, $(+)\cdot(+) = +$.
+> **Nota:** En la tabla se incluyen las columnas de $x_1$ y $x_2$ para registrar explícitamente que ambos factores se anulan ahí. Si la inecuación es estricta ($<$ o $>$), esos puntos se excluyen del conjunto solución; si incluye igualdad ($\leq$ o $\geq$), se incluyen.
+ 
+4. **Seleccionar:** Elegir los intervalos cuyo signo satisface la desigualdad original, incluyendo o excluyendo los puntos críticos según el símbolo.
+
+### 3.2 Ejemplos resueltos
+ 
+**Ejemplo 3.1 (Dos raíces reales distintas, $\Delta > 0$):**
+Resolver $x^2 - 5x + 6 < 0$.
+ 
+**Solución:**
+Se factoriza el polinomio:
 $$(x - 2)(x - 3) < 0$$
-
-Raíces: $x = 2$ y $x = 3$
-
-**Tabla de signos:**
-
+ 
+Los puntos críticos son $x = 2$ y $x = 3$. Se construye la tabla de signos:
+ 
 | Intervalo       | $(-\infty, 2)$ | $(2, 3)$ | $(3, \infty)$ |
-| --------------- | -------------- | -------- | ------------- |
+| :---            | :---:          | :---:    | :---:         |
 | $(x - 2)$       | $-$            | $+$      | $+$           |
 | $(x - 3)$       | $-$            | $-$      | $+$           |
 | $(x-2)(x-3)$    | $+$            | $-$      | $+$           |
+ 
+Se busca la región de signo negativo. Como la desigualdad es estricta ($< 0$), los puntos críticos se excluyen.
+ 
+**Respuesta:** $S = (2, 3)$.
+ 
+> **Observación:** Geométricamente, esto equivale a encontrar los valores de $x$ para los cuales la parábola $y = x^2 - 5x + 6$ se sitúa por debajo del eje $X$.
 
-La desigualdad $(x-2)(x-3) < 0$ se cumple en $(2, 3)$.
+**Ejemplo 3.2 (Raíz doble, $\Delta = 0$):**
+Resolver $x^2 - 4x + 4 \leq 0$.
+ 
+**Solución:**
+Se reconoce un cuadrado perfecto:
+$$(x - 2)^2 \leq 0$$
+ 
+Para todo $x \in \mathbb{R}$ se cumple $(x-2)^2 \geq 0$, por lo que la expresión nunca puede ser negativa. La única posibilidad es la igualdad, que ocurre en $x = 2$:
+$$\begin{align}
+(x - 2)^2 &= 0 \\
+x &= 2
+\end{align}$$
+ 
+**Respuesta:** $S = \{2\}$.
+ 
+> **Observación:** La parábola $y = (x-2)^2$ es tangente al eje $X$ en $x = 2$ y permanece por encima de él en todo otro punto. La inecuación $\leq 0$ solo se satisface en ese único punto de tangencia.
+ 
+**Ejemplo 3.3 (Sin raíces reales, $\Delta < 0$):**
+Resolver $x^2 + x + 1 > 0$.
+ 
+**Solución:**
+Se calcula el discriminante:
+$$\Delta = 1^2 - 4 \cdot 1 \cdot 1 = 1 - 4 = -3 < 0$$
+ 
+Como $\Delta < 0$, el polinomio no tiene raíces reales y no puede factorizarse sobre $\mathbb{R}$. Al ser $a = 1 > 0$, la parábola $y = x^2 + x + 1$ abre hacia arriba y nunca toca el eje $X$: la expresión es estrictamente positiva para todo $x \in \mathbb{R}$.
+ 
+**Respuesta:** $S = \mathbb{R}$.
+ 
+> **Observación:** Si la inecuación hubiera sido $x^2 + x + 1 < 0$, el conjunto solución sería $\emptyset$, ya que la expresión es siempre positiva. Este caso ilustra que el análisis del discriminante puede resolver la inecuación sin necesidad de tabla de signos.
 
-**Solución:** $(2, 3)$
+---
+## 4. Inecuaciones Racionales
 
-**Representación gráfica:**
-```text
-      +           -           +
-  -------○=================○-------
-         2                 3
-```
+Las inecuaciones racionales son aquellas donde la variable aparece en el denominador de una fracción. Su forma estándar, tras agrupar todos los términos algebraicos en un solo miembro, es:
+$$\frac{P(x)}{Q(x)} < 0 \quad (\text{o } >, \leq, \geq)$$
+donde $P(x)$ y $Q(x)$ son expresiones polinómicas.
 
-### 2.3 Inecuaciones racionales
+### 4.1 Consideraciones especiales del dominio
 
-**Método de resolución:**
+El método de resolución es prácticamente idéntico al de las inecuaciones cuadráticas (usando el método de los puntos críticos), pero se añade una restricción fundamental:
+> **Advertencia:** El denominador de una fracción matemática **jamás puede ser cero**. Por lo tanto, los valores de $x$ que anulan el denominador $Q(x)$ están estrictamente prohibidos y **nunca** formarán parte del conjunto solución (siempre llevarán intervalo abierto), incluso si la inecuación original incluye un símbolo de igualdad ($\leq$ o $\geq$).
 
-1. Llevar todo a un lado: $\frac{P(x)}{Q(x)} \lessgtr 0$
-2. Encontrar raíces de $P(x)$ (numerador) y $Q(x)$ (denominador)
-3. Construir tabla de signos
-4. Seleccionar intervalos según la desigualdad
+### 4.2 Ejemplos resueltos
 
-**¡IMPORTANTE!** Los valores que anulan el denominador **nunca** están en la solución (ni siquiera con $\leq$ o $\geq$).
+**Ejemplo 4.1 (Racional con mayor o igual):**
+Resolver $\dfrac{x + 1}{x - 2} \geq 0$.
 
-**Ejemplo 2.4:**
-$$\frac{x + 1}{x - 2} \geq 0$$
+**Solución:**
+La inecuación ya está en su forma estándar (todo a un lado y comparado con cero).
+Identificamos los **puntos críticos** determinando dónde se anulan el numerador y el denominador:
+- **Raíz del numerador:** $x + 1 = 0 \implies x = -1$
+- **Raíz del denominador (Punto prohibido):** $x - 2 = 0 \implies x = 2$
 
-**Puntos críticos:**
-- Raíz del numerador: $x = -1$
-- Raíz del denominador: $x = 2$ (excluido siempre)
-
-**Tabla de signos:**
+Construimos la tabla de signos utilizando estos dos puntos críticos para seccionar la recta real:
 
 | Intervalo           | $(-\infty, -1)$ | $(-1, 2)$ | $(2, \infty)$ |
-| ------------------- | --------------- | --------- | ------------- |
+| :---                | :---:           | :---:     | :---:         |
 | $(x + 1)$           | $-$             | $+$       | $+$           |
 | $(x - 2)$           | $-$             | $-$       | $+$           |
-| $\frac{x+1}{x-2}$   | $+$             | $-$       | $+$           |
+| $\dfrac{x+1}{x-2}$  | $+$             | $-$       | $+$           |
 
-La desigualdad $\geq 0$ se cumple donde el cociente es positivo o cero:
-- En $(-\infty, -1)$: positivo ✓
-- En $x = -1$: cero (anula numerador) ✓
-- En $(2, \infty)$: positivo ✓
+La inecuación original exige que el cociente sea mayor o igual a cero ($\geq 0$), por lo que buscamos las regiones con signo positivo:
+- El intervalo $(-\infty, -1)$ da signo positivo. En $x = -1$ el numerador se anula (el cociente es 0), lo cual está permitido por el símbolo $\geq$. (Extremo cerrado).
+- El intervalo $(2, \infty)$ da signo positivo. Sin embargo, en $x = 2$ el denominador se anula. (Extremo abierto).
 
-**Solución:** $(-\infty, -1] \cup (2, \infty)$
+**Respuesta:** El conjunto solución es la unión de ambos intervalos. En notación de intervalo: $(-\infty, -1] \cup (2, \infty)$.
 
-**Nota:** $x = 2$ no está incluido porque anula el denominador.
+---
+## 5. Inecuaciones con Valor Absoluto
 
-### 2.4 Inecuaciones con valor absoluto
+El valor absoluto $|x|$ representa la distancia geométrica desde un número $x$ hasta el origen (cero) en la recta real. Por ende, las inecuaciones con valor absoluto se resuelven traduciendo esta distancia geométrica a desigualdades algebraicas estándar.
 
-Las inecuaciones con valor absoluto se resuelven utilizando las propiedades de la distancia.
+### 5.1 Propiedades fundamentales de distancia
 
-**Propiedades fundamentales:**
-Para cualquier número real $a > 0$:
+Sea $a \in \mathbb{R}$ una constante positiva ($a > 0$). Tenemos dos casos diametralmente opuestos:
 
-1. **Caso menor que:** $|x| < a \iff -a < x < a$
-   - Interpretación: La distancia de $x$ al origen es menor que $a$.
-   - Solución: Intervalo $(-a, a)$.
-   - Análogamente para $\leq$: $|x| \leq a \iff -a \leq x \leq a$.
+1. **Caso "Menor que" (Acotamiento interno):**
+   $$|x| < a \iff -a < x < a$$
+   - **Interpretación:** La distancia de $x$ al origen es **menor** que $a$. Por tanto, $x$ debe estar atrapado entre $-a$ y $a$.
+   - **Solución:** Intervalo acotado $(-a, a)$.
+   - *(Aplica idénticamente para $\leq$)*.
 
-2. **Caso mayor que:** $|x| > a \iff x > a \lor x < -a$
-   - Interpretación: La distancia de $x$ al origen es mayor que $a$.
-   - Solución: Unión $(-\infty, -a) \cup (a, \infty)$.
-   - Análogamente para $\geq$: $|x| \geq a \iff x \geq a \lor x \leq -a$.
+2. **Caso "Mayor que" (Dispersión externa):**
+   $$|x| > a \iff x > a \lor x < -a$$
+   - **Interpretación:** La distancia de $x$ al origen es **mayor** que $a$. Por tanto, $x$ debe estar más lejos que $a$ por la derecha, o más lejos que $-a$ por la izquierda.
+   - **Solución:** Unión de intervalos divergentes $(-\infty, -a) \cup (a, \infty)$.
+   - *(Aplica idénticamente para $\geq$)*.
 
-**Ejemplo 2.5 (Caso menor):**
-Resolver $|2x - 3| \leq 5$
+### 5.2 Ejemplos resueltos
 
-Aplicamos la propiedad 1:
-$$-5 \leq 2x - 3 \leq 5$$
-$$-2 \leq 2x \leq 8$$
-$$-1 \leq x \leq 4$$
+**Ejemplo 5.1 (Acotamiento interno):**
+Resolver $|2x - 3| \leq 5$.
 
-**Solución:** $[-1, 4]$
+**Solución:**
+Dado que es un caso "menor o igual", aplicamos la primera propiedad para eliminar el valor absoluto, encerrando la expresión entre $-5$ y $5$:
+$$\begin{align}
+-5 &\leq 2x - 3 \leq 5 \\
+-5 + 3 &\leq 2x \leq 5 + 3 \quad \text{(sumamos 3 en cada parte)} \\
+-2 &\leq 2x \leq 8 \\
+\frac{-2}{2} &\leq x \leq \frac{8}{2} \quad \text{(dividimos entre 2)} \\
+-1 &\leq x \leq 4
+\end{align}$$
 
-**Ejemplo 2.6 (Caso mayor):**
-Resolver $|3x + 1| > 7$
+**Respuesta:** En notación de intervalo: $[-1, 4]$.
 
-Aplicamos la propiedad 2:
-$$3x + 1 > 7 \quad \lor \quad 3x + 1 < -7$$
-$$3x > 6 \quad \lor \quad 3x < -8$$
-$$x > 2 \quad \lor \quad x < -8/3$$
+**Ejemplo 5.2 (Dispersión externa):**
+Resolver $|3x + 1| > 7$.
 
-**Solución:** $(-\infty, -8/3) \cup (2, \infty)$
+**Solución:**
+Como es un caso "mayor estricto", aplicamos la segunda propiedad, separando el problema en dos inecuaciones lineales independientes que se unen lógicamente con una "o" ($\lor$):
+$$\begin{align}
+3x + 1 > 7 \quad &\lor \quad 3x + 1 < -7 \\
+3x > 6 \quad &\lor \quad 3x < -8 \\
+x > 2 \quad &\lor \quad x < -\frac{8}{3}
+\end{align}$$
+
+**Respuesta:** El conjunto solución es la unión de las dos regiones. En notación de intervalo: $\left(-\infty, -\frac{8}{3}\right) \cup (2, \infty)$.
 
 ---
 
-## 3. Ejercicios propuestos
+## 6. Sistemas de Inecuaciones
+
+Un sistema de inecuaciones consiste en dos o más inecuaciones que deben cumplirse **simultáneamente**. 
+
+### 6.1 Método de resolución
+
+A diferencia de los sistemas de ecuaciones (donde se usan métodos como sustitución o reducción cruzada), el enfoque para los sistemas de inecuaciones con una sola variable es estrictamente conjuntista:
+1. Se resuelve cada inecuación de forma individual, obteniendo el conjunto solución para cada una.
+2. Se encuentra la **intersección** ($\cap$) de todos los conjuntos solución obtenidos.
+3. El resultado de dicha intersección es el conjunto solución final del sistema.
+
+### 6.2 Ejemplos resueltos
+
+**Ejemplo 6.1 (Sistema lineal):**
+Resolver el siguiente sistema:
+$$\begin{cases} 
+2x - 5 < 3 \\ 
+-x + 4 \leq 2 
+\end{cases}$$
+
+**Solución:**
+Resolvemos la primera inecuación:
+$$\begin{align}
+2x - 5 &< 3 \\
+2x &< 8 \\
+x &< 4 \implies S_1 = (-\infty, 4)
+\end{align}$$
+
+Resolvemos la segunda inecuación:
+$$\begin{align}
+-x + 4 &\leq 2 \\
+-x &\leq -2 \\
+x &\geq 2 \quad \text{(invertimos orden por división negativa)} \\
+S_2 &= [2, \infty)
+\end{align}$$
+
+Buscamos la intersección de ambos conjuntos:
+$$S_{\text{total}} = S_1 \cap S_2 = (-\infty, 4) \cap [2, \infty)$$
+
+**Respuesta:** En notación de intervalo: $[2, 4)$.
+
+**Ejemplo 6.2 (Sistema mixto con cuadrática):**
+Resolver el siguiente sistema:
+$$\begin{cases} 
+x^2 - 9 \leq 0 \\ 
+x > 1 
+\end{cases}$$
+
+**Solución:**
+Resolvemos la inecuación cuadrática factorizando la diferencia de cuadrados:
+$$\begin{align}
+x^2 - 9 &\leq 0 \\
+(x - 3)(x + 3) &\leq 0
+\end{align}$$
+Las raíces son $x = 3$ y $x = -3$. Al evaluar los signos, vemos que el producto es negativo o cero en la franja comprendida entre ambas raíces:
+$$S_1 = [-3, 3]$$
+
+La segunda inecuación ya está despejada directamente:
+$$S_2 = (1, \infty)$$
+
+Intersectamos ambos conjuntos:
+$$S_{\text{total}} = [-3, 3] \cap (1, \infty)$$
+
+**Respuesta:** En notación de intervalo: $(1, 3]$.
+
+---
+
+## 7. Ejercicios Propuestos
 
 1. Resuelva: $5x - 7 \leq 3x + 9$
 2. Resuelva: $x^2 + x - 6 > 0$
