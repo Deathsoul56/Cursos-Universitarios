@@ -277,40 +277,87 @@ Como $\Delta < 0$, el polinomio no tiene raíces reales y no puede factorizarse 
 
 ---
 ## 4. Inecuaciones Racionales
-
-Las inecuaciones racionales son aquellas donde la variable aparece en el denominador de una fracción. Su forma estándar, tras agrupar todos los términos algebraicos en un solo miembro, es:
-$$\frac{P(x)}{Q(x)} < 0 \quad (\text{o } >, \leq, \geq)$$
-donde $P(x)$ y $Q(x)$ son expresiones polinómicas.
-
-### 4.1 Consideraciones especiales del dominio
-
-El método de resolución es prácticamente idéntico al de las inecuaciones cuadráticas (usando el método de los puntos críticos), pero se añade una restricción fundamental:
-> **Advertencia:** El denominador de una fracción matemática **jamás puede ser cero**. Por lo tanto, los valores de $x$ que anulan el denominador $Q(x)$ están estrictamente prohibidos y **nunca** formarán parte del conjunto solución (siempre llevarán intervalo abierto), incluso si la inecuación original incluye un símbolo de igualdad ($\leq$ o $\geq$).
-
+ 
+Hasta ahora, los puntos críticos de una inecuación eran únicamente los ceros del polinomio: los valores donde la expresión se anula. En las inecuaciones racionales aparece un nuevo tipo de punto crítico que no anula la expresión, sino que la hace **indefinida**: los ceros del denominador. Estos puntos también dividen la recta real en regiones de signo constante, pero a diferencia de las raíces del numerador, nunca pueden pertenecer al conjunto solución.
+ 
+**Definición 4.1 (Inecuación Racional):**
+Una inecuación racional en una variable $x$ es toda inecuación de la forma:
+$$\frac{P(x)}{Q(x)} < 0, \quad \frac{P(x)}{Q(x)} \leq 0, \quad \frac{P(x)}{Q(x)} > 0, \quad \frac{P(x)}{Q(x)} \geq 0$$
+donde $P(x)$ y $Q(x)$ son polinomios con $Q(x) \not\equiv 0$. El dominio natural de la inecuación es $\{x \in \mathbb{R} : Q(x) \neq 0\}$.
+ 
+**Definición 4.2 (Puntos Críticos de una Inecuación Racional):**
+Los puntos críticos son todos los valores $x_0 \in \mathbb{R}$ que anulan el numerador o el denominador, es decir, las soluciones de $P(x_0) = 0$ o $Q(x_0) = 0$. Se clasifican en dos categorías:
+ 
+- **Puntos tipo I (raíces del numerador):** Anulan la expresión. Pueden pertenecer al conjunto solución si el símbolo incluye igualdad ($\leq$ o $\geq$).
+- **Puntos tipo II (raíces del denominador):** Hacen la expresión indefinida. Están **excluidos del dominio** y nunca pertenecen al conjunto solución, independientemente del símbolo de desigualdad.
+### 4.1 Método de resolución
+ 
+El procedimiento es análogo al de las inecuaciones cuadráticas, con dos pasos adicionales:
+ 
+1. **Agrupar:** Llevar todos los términos a un miembro dejando cero en el otro. Si hay términos con distinto denominador, combinarlos en una sola fracción mediante mínimo común denominador.
+2. **Identificar los puntos críticos:** Encontrar las raíces de $P(x)$ y de $Q(x)$ por separado.
+3. **Construir la tabla de signos:** Incluir ambos tipos de puntos críticos para seccionar la recta real. Analizar el signo de $P(x)$ y $Q(x)$ en cada intervalo y determinar el signo del cociente.
+4. **Seleccionar:** Elegir los intervalos cuyo signo satisface la desigualdad. Incluir los puntos tipo I si el símbolo tiene igualdad; excluir siempre los puntos tipo II.
+> **Advertencia:** Un error frecuente es multiplicar ambos miembros de la inecuación por $Q(x)$ para eliminar el denominador. Esto es incorrecto porque el signo de $Q(x)$ no es constante en todo $\mathbb{R}$: puede ser positivo en algunos intervalos y negativo en otros, lo que obligaría a invertir el símbolo en unos casos y conservarlo en otros. El método correcto es siempre la tabla de signos.
+ 
 ### 4.2 Ejemplos resueltos
-
-**Ejemplo 4.1 (Racional con mayor o igual):**
+ 
+**Ejemplo 4.1 (Forma estándar directa):**
 Resolver $\dfrac{x + 1}{x - 2} \geq 0$.
-
+ 
 **Solución:**
-La inecuación ya está en su forma estándar (todo a un lado y comparado con cero).
-Identificamos los **puntos críticos** determinando dónde se anulan el numerador y el denominador:
-- **Raíz del numerador:** $x + 1 = 0 \implies x = -1$
-- **Raíz del denominador (Punto prohibido):** $x - 2 = 0 \implies x = 2$
-
-Construimos la tabla de signos utilizando estos dos puntos críticos para seccionar la recta real:
-
-| Intervalo           | $(-\infty, -1)$ | $(-1, 2)$ | $(2, \infty)$ |
-| :---                | :---:           | :---:     | :---:         |
-| $(x + 1)$           | $-$             | $+$       | $+$           |
-| $(x - 2)$           | $-$             | $-$       | $+$           |
-| $\dfrac{x+1}{x-2}$  | $+$             | $-$       | $+$           |
-
-La inecuación original exige que el cociente sea mayor o igual a cero ($\geq 0$), por lo que buscamos las regiones con signo positivo:
-- El intervalo $(-\infty, -1)$ da signo positivo. En $x = -1$ el numerador se anula (el cociente es 0), lo cual está permitido por el símbolo $\geq$. (Extremo cerrado).
-- El intervalo $(2, \infty)$ da signo positivo. Sin embargo, en $x = 2$ el denominador se anula. (Extremo abierto).
-
-**Respuesta:** El conjunto solución es la unión de ambos intervalos. En notación de intervalo: $(-\infty, -1] \cup (2, \infty)$.
+La inecuación ya está en forma estándar. Se identifican los puntos críticos:
+- **Tipo I** (numerador): $x + 1 = 0 \implies x = -1$
+- **Tipo II** (denominador): $x - 2 = 0 \implies x = 2$
+Se construye la tabla de signos:
+ 
+| Intervalo | $(-\infty, -1)$ | $-1$ | $(-1, 2)$ | $2$ | $(2, \infty)$ |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| $(x + 1)$ | $-$ | $0$ | $+$ | $+$ | $+$ |
+| $(x - 2)$ | $-$ | $-$ | $-$ | $0$ | $+$ |
+| $\dfrac{x+1}{x-2}$ | $+$ | $0$ | $-$ | $\nexists$ | $+$ |
+ 
+Se buscan las regiones con signo positivo o nulo ($\geq 0$):
+- $(-\infty, -1)$: signo $+$ ✓
+- $x = -1$: el cociente vale $0$, permitido por $\geq$ ✓ (Tipo I, se incluye)
+- $(-1, 2)$: signo $-$ ✗
+- $x = 2$: indefinido, prohibido (Tipo II, se excluye siempre)
+- $(2, \infty)$: signo $+$ ✓
+**Respuesta:** $S = (-\infty, -1] \cup (2, \infty)$.
+ 
+**Ejemplo 4.2 (Requiere agrupar antes de la tabla):**
+Resolver $\dfrac{x + 3}{x - 1} \leq 2$.
+ 
+**Solución:**
+La inecuación no está en forma estándar: hay un término $2$ en el miembro derecho. Se lleva todo al miembro izquierdo y se combina en una sola fracción:
+$$\begin{align}
+\frac{x + 3}{x - 1} - 2 &\leq 0 \\[6pt]
+\frac{x + 3}{x - 1} - \frac{2(x-1)}{x - 1} &\leq 0 \\[6pt]
+\frac{x + 3 - 2(x - 1)}{x - 1} &\leq 0 \\[6pt]
+\frac{x + 3 - 2x + 2}{x - 1} &\leq 0 \\[6pt]
+\frac{-x + 5}{x - 1} &\leq 0
+\end{align}$$
+ 
+Se identifican los puntos críticos:
+- **Tipo I** (numerador): $-x + 5 = 0 \implies x = 5$
+- **Tipo II** (denominador): $x - 1 = 0 \implies x = 1$
+Se construye la tabla de signos:
+ 
+| Intervalo | $(-\infty, 1)$ | $1$ | $(1, 5)$ | $5$ | $(5, \infty)$ |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| $(-x + 5)$ | $+$ | $+$ | $+$ | $0$ | $-$ |
+| $(x - 1)$ | $-$ | $0$ | $+$ | $+$ | $+$ |
+| $\dfrac{-x+5}{x-1}$ | $-$ | $\nexists$ | $+$ | $0$ | $-$ |
+ 
+Se buscan las regiones con signo negativo o nulo ($\leq 0$):
+- $(-\infty, 1)$: signo $-$ ✓
+- $x = 1$: indefinido, excluido (Tipo II) ✗
+- $(1, 5)$: signo $+$ ✗
+- $x = 5$: el cociente vale $0$, permitido por $\leq$ ✓ (Tipo I, se incluye)
+- $(5, \infty)$: signo $-$ ✓
+**Respuesta:** $S = (-\infty, 1) \cup [5, \infty)$.
+ 
+> **Observación:** El paso de agrupar todo en un solo cociente antes de la tabla es obligatorio. Si se hubiera multiplicado ambos miembros por $(x-1)$ directamente, el signo de ese factor es desconocido y la inversión del símbolo sería incorrecta en alguno de los intervalos.
 
 ---
 ## 5. Inecuaciones con Valor Absoluto
