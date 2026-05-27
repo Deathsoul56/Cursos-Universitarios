@@ -68,7 +68,6 @@ Para comprender la naturaleza de estos conjuntos, veamos algunas inecuaciones el
 - $x \leq 0 \implies$ El conjunto solución son todos los reales negativos incluyendo al cero ($\mathbb{R}^- \cup \{0\}$).
 - $x^2 < 0 \implies$ El conjunto solución es vacío ($\emptyset$), ya que ningún número real al cuadrado arroja un resultado negativo.
 - $|x| \geq 0 \implies$ El conjunto solución son todos los números reales ($\mathbb{R}$), pues el valor absoluto de cualquier número siempre es no negativo.
-
 ### 1.3 Intervalos como Conjuntos Solución
 
 Para representar estos infinitos valores, empleamos la notación de intervalos. Un intervalo es un subconjunto conexo de la recta real $\mathbb{R}$.
@@ -112,7 +111,6 @@ $$ax + b < 0, \quad ax + b \leq 0, \quad ax + b > 0, \quad ax + b \geq 0$$
 con $a, b \in \mathbb{R}$ y $a \neq 0$. Se denomina lineal porque el término con la variable aparece únicamente a la primera potencia.
 
 > **Observación:** La condición $a \neq 0$ es necesaria: si $a = 0$, la expresión $ax + b$ se reduce a la constante $b$, y la inecuación resultante es una desigualdad numérica cuya veracidad no depende de $x$ en absoluto. El conjunto solución sería $\mathbb{R}$ completo o $\emptyset$ según el valor de $b$, sin que haya nada que resolver.
-
 ### 2.1 Método de resolución
 
 De forma análoga a las ecuaciones el objetivo será aislar la variable $x$ aplicando operaciones algebraicas a ambos miembros de la desigualdad. Las operaciones permitidas son las mismas que en una ecuación lineal —sumar, restar, multiplicar y dividir— con una diferencia fundamental:
@@ -181,7 +179,6 @@ x &< 1 \quad \text{(se multiplica por -1 y se invierte el orden)}
 
 **Respuesta:** En notación de intervalo: $(-\infty, 1)$.
 
-
 ---
 ## 3. Inecuaciones Cuadráticas
 
@@ -221,7 +218,6 @@ Se leen los signos de la siguiente manera:
 > **Nota:** En la tabla se incluyen las columnas de $x_1$ y $x_2$ para registrar explícitamente que ambos factores se anulan ahí. Si la inecuación es estricta ($<$ o $>$), esos puntos se excluyen del conjunto solución; si incluye igualdad ($\leq$ o $\geq$), se incluyen.
  
 4. **Seleccionar:** Elegir los intervalos cuyo signo satisface la desigualdad original, incluyendo o excluyendo los puntos críticos según el símbolo.
-
 ### 3.2 Ejemplos resueltos
  
 **Ejemplo 3.1 (Dos raíces reales distintas, $\Delta > 0$):**
@@ -359,59 +355,243 @@ Se buscan las regiones con signo negativo o nulo ($\leq 0$):
  
 > **Observación:** El paso de agrupar todo en un solo cociente antes de la tabla es obligatorio. Si se hubiera multiplicado ambos miembros por $(x-1)$ directamente, el signo de ese factor es desconocido y la inversión del símbolo sería incorrecta en alguno de los intervalos.
 
+**Ejemplo 4.3 (Prohibición de multiplicar cruzado):**
+Resolver $\dfrac{x}{x-2} \geq \dfrac{3}{x+1}$.
+ 
+> **Advertencia (El error de multiplicar cruzado):**
+> Al ver esta inecuación, la tentación es "multiplicar en cruz" (como si fuera una ecuación), obteniendo $x(x+1) \geq 3(x-2)$. **¡Esto es un error grave!**
+> Al hacer esto, se asume implícitamente que $(x-2)$ y $(x+1)$ son positivos. Si alguno de ellos fuera negativo, el símbolo $\geq$ debería haberse invertido. Como ambos denominadores cambian de signo dependiendo del valor de $x$, la multiplicación cruzada destruye la inecuación original y produce resultados completamente erróneos.
+ 
+**Solución Correcta:**
+Siempre debemos trasladar todos los términos a un solo miembro de la inecuación para comparar con cero, y luego usar el mínimo común múltiplo.
+$$\begin{align}
+\frac{x}{x - 2} - \frac{3}{x + 1} &\geq 0 \\[6pt]
+\frac{x(x + 1) - 3(x - 2)}{(x - 2)(x + 1)} &\geq 0 \\[6pt]
+\frac{x^2 + x - 3x + 6}{(x - 2)(x + 1)} &\geq 0 \\[6pt]
+\frac{x^2 - 2x + 6}{(x - 2)(x + 1)} &\geq 0
+\end{align}$$
+
+Identificamos los puntos críticos:
+- **Tipo I (numerador):** $x^2 - 2x + 6 = 0$. Su discriminante es $\Delta = (-2)^2 - 4(1)(6) = 4 - 24 = -20 < 0$. Al ser $\Delta < 0$ y el coeficiente principal positivo, el numerador nunca se anula y es estrictamente **positivo** ($+$) para todo $x \in \mathbb{R}$.
+- **Tipo II (denominador):** $x - 2 = 0 \implies x = 2$, y $x + 1 = 0 \implies x = -1$.
+
+Construimos la tabla de signos usando únicamente los puntos críticos del denominador, ya que el numerador siempre es positivo:
+
+| Intervalo | $(-\infty, -1)$ | $-1$ | $(-1, 2)$ | $2$ | $(2, \infty)$ |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| $(x^2 - 2x + 6)$ | $+$ | $+$ | $+$ | $+$ | $+$ |
+| $(x - 2)$ | $-$ | $-$ | $-$ | $0$ | $+$ |
+| $(x + 1)$ | $-$ | $0$ | $+$ | $+$ | $+$ |
+| $\text{Cociente}$ | $+$ | $\nexists$ | $-$ | $\nexists$ | $+$ |
+
+Buscamos las regiones con signo positivo o nulo ($\geq 0$):
+- $(-\infty, -1)$: signo $+$ ✓
+- $x = -1$: indefinido (Tipo II, se excluye siempre) ✗
+- $(-1, 2)$: signo $-$ ✗
+- $x = 2$: indefinido (Tipo II, se excluye siempre) ✗
+- $(2, \infty)$: signo $+$ ✓
+
+**Respuesta:** $S = (-\infty, -1) \cup (2, \infty)$.
+
+**Desarrollo erróneo (multiplicando en cruz):**
+Si se procede de manera incorrecta realizando la multiplicación cruzada de los denominadores (omitiendo la variación de sus signos), se obtiene el siguiente desarrollo:
+$$\begin{align}
+x(x + 1) &\geq 3(x - 2) \\[6pt]
+x^2 + x &\geq 3x - 6 \\[6pt]
+x^2 - 2x + 6 &\geq 0
+\end{align}$$
+
+Al estudiar la expresión cuadrática $x^2 - 2x + 6$, se calcula su discriminante:
+$$\Delta = (-2)^2 - 4(1)(6) = -20$$
+
+Dado que el discriminante es negativo ($\Delta < 0$) y el coeficiente principal es positivo ($1 > 0$), la parábola asociada no corta el eje de las abscisas y se mantiene estrictamente por encima de este. Por lo tanto, la inecuación cuadrática se cumple para cualquier valor real de $x$, lo que conduciría al conjunto solución incorrecto:
+$$S_{\text{erróneo}} = \mathbb{R}$$
+
+**Demostración de la inconsistencia:**
+Para comprobar que este conjunto solución es incorrecto, basta con evaluar un valor de $x$ perteneciente a $S_{\text{erróneo}}$ que no pertenezca al conjunto solución correcto $S = (-\infty, -1) \cup (2, \infty)$.
+
+Tomando $x = 0 \in S_{\text{erróneo}}$ y sustituyendo en la inecuación original:
+$$\dfrac{0}{0 - 2} \geq \dfrac{3}{0 + 1} \implies 0 \geq 3$$
+
+Se llega a una contradicción aritmética directa, pues $0$ no es mayor ni igual a $3$. 
+
+De igual forma, evaluando $x = 1 \in S_{\text{erróneo}}$:
+$$\dfrac{1}{1 - 2} \geq \dfrac{3}{1 + 1} \implies -1 \geq \dfrac{3}{2}$$
+
+Lo cual también constituye una falsedad. Esto evidencia que la multiplicación cruzada elimina las restricciones impuestas por los denominadores y no conserva la relación de orden original.
+
 ---
 ## 5. Inecuaciones con Valor Absoluto
 
-El valor absoluto $|x|$ representa la distancia geométrica desde un número $x$ hasta el origen (cero) en la recta real. Por ende, las inecuaciones con valor absoluto se resuelven traduciendo esta distancia geométrica a desigualdades algebraicas estándar.
+En el estudio del Cálculo y el Análisis Matemático, muchas veces no nos interesa la dirección de una cantidad en el espacio, sino la magnitud de su desviación o su margen de error. Por ejemplo, en los procesos de manufactura de alta precisión, la diferencia entre la medida de una pieza fabricada y su diseño teórico debe mantenerse dentro de un rango preestablecido, sin importar si la pieza es ligeramente más grande o más pequeña. Esta idea de medir desviaciones o distancias sin importar su sentido es modelada rigurosamente por las inecuaciones con valor absoluto.
 
-### 5.1 Propiedades fundamentales de distancia
+Resolver una inecuación con valor absoluto consiste en encontrar el conjunto de puntos sobre la recta real que se encuentran a una cierta distancia (o dentro de un rango de distancias) de un punto de referencia. Para lograrlo, traducimos estas condiciones geométricas en inecuaciones algebraicas estándar mediante un conjunto de propiedades fundamentales.
 
-Sea $a \in \mathbb{R}$ una constante positiva ($a > 0$). Tenemos dos casos diametralmente opuestos:
+> **Nota histórica:** La notación moderna de las barras verticales $|x|$ para representar el valor absoluto fue introducida por el matemático alemán Karl Weierstrass en 1841, en un trabajo sobre teoría de funciones complejas. Anteriormente, los matemáticos solían describir este concepto verbalmente o mediante notaciones ad-hoc que resultaban engorrosas para el desarrollo del cálculo diferencial e integral.
 
-1. **Caso "Menor que" (Acotamiento interno):**
+La definición formal de valor absoluto ha sido establecida previamente en la [[Clase 2 - Los Números]]. A partir de ella, se define la distancia geométrica entre dos puntos de la recta real:
+
+**Definición 5.1 (Distancia en la recta real):**
+Dados dos números reales $x, y \in \mathbb{R}$, la distancia geométrica entre ambos se define como:
+$$d(x, y) = |x - y|$$
+
+**Teorema 5.1 (Propiedades fundamentales de las inecuaciones con valor absoluto):**
+Sea $a \in \mathbb{R}$ una constante positiva ($a > 0$). Se cumplen las siguientes equivalencias lógicas:
+
+1. **Acotamiento interno (Caso "menor que"):**
    $$|x| < a \iff -a < x < a$$
-   - **Interpretación:** La distancia de $x$ al origen es **menor** que $a$. Por tanto, $x$ debe estar atrapado entre $-a$ y $a$.
-   - **Solución:** Intervalo acotado $(-a, a)$.
-   - *(Aplica idénticamente para $\leq$)*.
+   *Esta propiedad se extiende de forma idéntica para la desigualdad no estricta ($\leq$):*
+   $$|x| \leq a \iff -a \leq x \leq a$$
 
-2. **Caso "Mayor que" (Dispersión externa):**
+2. **Dispersión externa (Caso "mayor que"):**
    $$|x| > a \iff x > a \lor x < -a$$
-   - **Interpretación:** La distancia de $x$ al origen es **mayor** que $a$. Por tanto, $x$ debe estar más lejos que $a$ por la derecha, o más lejos que $-a$ por la izquierda.
-   - **Solución:** Unión de intervalos divergentes $(-\infty, -a) \cup (a, \infty)$.
-   - *(Aplica idénticamente para $\geq$)*.
+   *Esta propiedad se extiende de forma idéntica para la desigualdad no estricta ($\geq$):*
+   $$|x| \geq a \iff x \geq a \lor x \leq -a$$
 
-### 5.2 Ejemplos resueltos
+3. **Propiedad cuadrática:**
+   $$|x| < |y| \iff x^2 < y^2$$
+
+4. **Desigualdad triangular:**
+   $$|x + y| \leq |x| + |y|$$
+
+**Demostración (Propiedad 1):**
+Se demostrará la doble implicación ($\iff$) analizando los casos según la definición de valor absoluto.
+
+- **Implicación directa ($\implies$):** Supongamos que $|x| < a$ con $a > 0$.
+  - Si $x \geq 0$, por definición se tiene que $|x| = x$. Por lo tanto, la desigualdad original resulta en $x < a$. Como $x \geq 0$ y $a > 0$, se cumple que $-a < 0 \leq x < a$, lo cual implica $-a < x < a$.
+  - Si $x < 0$, por definición se tiene que $|x| = -x$. Así, la desigualdad resulta en $-x < a$. Al multiplicar ambos miembros por $-1$ (lo cual invierte el sentido de la desigualdad), se obtiene $x > -a$. Puesto que $x < 0$ y $a > 0$, se cumple que $-a < x < 0 < a$, lo cual también implica $-a < x < a$.
+  
+  En consecuencia, para cualquier caso se deduce que $-a < x < a$.
+
+- **Implicación recíproca ($\impliedby$):** Supongamos ahora que $-a < x < a$.
+  - Si $x \geq 0$, se tiene que $|x| = x$. Puesto que por hipótesis $x < a$, se concluye de forma directa que $|x| < a$.
+  - Si $x < 0$, se tiene que $|x| = -x$. Puesto que por hipótesis $-a < x$, al multiplicar por $-1$ se obtiene $-x < a$, lo cual equivale a $|x| < a$.
+  
+  Por consiguiente, en cualquier caso se verifica que $|x| < a$.
+$\blacksquare$
+
+**Demostración (Propiedad 2):**
+Esta equivalencia lógica se demuestra de manera elegante recurriendo a la negación lógica de la Propiedad 1. Puesto que se verifica la equivalencia para el acotamiento no estricto:
+$$|x| \leq a \iff -a \leq x \leq a$$
+
+Al aplicar la negación lógica en ambos miembros de la equivalencia, se obtiene:
+$$\neg(|x| \leq a) \iff \neg(-a \leq x \leq a)$$
+
+La negación del miembro izquierdo es:
+$$\neg(|x| \leq a) \iff |x| > a$$
+
+Y la negación de la conjunción $-a \leq x \land x \leq a$ en el miembro derecho, aplicando las leyes de De Morgan, resulta en:
+$$\neg(-a \leq x \land x \leq a) \iff (x < -a \lor x > a)$$
+
+Por lo tanto, se establece la equivalencia deseada:
+$$|x| > a \iff x > a \lor x < -a$$
+$\blacksquare$
+
+**Demostración (Propiedad 3):**
+Recordemos de la *Clase 2* que para cualquier número real $u \in \mathbb{R}$ se cumple la identidad cuadrática $|u|^2 = u^2$. Además, la función cuadrática $f(t) = t^2$ es estrictamente creciente para valores no negativos ($t \geq 0$). 
+
+Dado que $|x| \geq 0$ y $|y| \geq 0$ para todo $x, y \in \mathbb{R}$, se cumple que:
+$$|x| < |y| \iff |x|^2 < |y|^2$$
+
+Sustituyendo la identidad cuadrática en ambos miembros de la desigualdad, se obtiene:
+$$x^2 < y^2$$
+
+De esta forma, queda demostrada la equivalencia lógica.
+$\blacksquare$
+
+**Demostración (Propiedad 4 - Desigualdad triangular):**
+Para cualquier número real $u \in \mathbb{R}$, se cumple por definición de valor absoluto que $-|u| \leq u \leq |u|$. Escribiendo esta relación para $x$ e $y$ de forma individual se obtiene:
+$$\begin{align}
+-|x| &\leq x \leq |x| \\[6pt]
+-|y| &\leq y \leq |y|
+\end{align}$$
+
+Al sumar miembro a miembro ambas desigualdades, se deduce que:
+$$-(|x| + |y|) \leq x + y \leq |x| + |y|$$
+
+Definamos la constante no negativa $a = |x| + |y|$. La desigualdad anterior se reescribe de la forma:
+$$-a \leq x + y \leq a$$
+
+Aplicando el Teorema 5.1 (Propiedad 1 en el sentido recíproco $\impliedby$), esta desigualdad de acotamiento interno es equivalente a:
+$$|x + y| \leq a$$
+
+Sustituyendo el valor de $a$, se concluye la desigualdad buscada:
+$$|x + y| \leq |x| + |y|$$
+$\blacksquare$
+
+### 5.1 Ejemplos resueltos
 
 **Ejemplo 5.1 (Acotamiento interno):**
 Resolver $|2x - 3| \leq 5$.
 
 **Solución:**
-Dado que es un caso "menor o igual", aplicamos la primera propiedad para eliminar el valor absoluto, encerrando la expresión entre $-5$ y $5$:
+Dado que la inecuación presenta la estructura de un acotamiento interno ($\leq$), aplicamos el Teorema 5.1 (Propiedad 1) para eliminar el valor absoluto, encerrando la expresión lineal entre $-5$ y $5$:
 $$\begin{align}
--5 &\leq 2x - 3 \leq 5 \\
--5 + 3 &\leq 2x \leq 5 + 3 \quad \text{(sumamos 3 en cada parte)} \\
--2 &\leq 2x \leq 8 \\
-\frac{-2}{2} &\leq x \leq \frac{8}{2} \quad \text{(dividimos entre 2)} \\
+-5 &\leq 2x - 3 \leq 5 \\[6pt]
+-5 + 3 &\leq 2x \leq 5 + 3 \quad \text{(se suma } 3 \text{ en todos los términos)} \\[6pt]
+-2 &\leq 2x \leq 8 \\[6pt]
+\dfrac{-2}{2} &\leq x \leq \dfrac{8}{2} \quad \text{(se divide entre } 2 \text{)} \\[6pt]
 -1 &\leq x \leq 4
 \end{align}$$
 
-**Respuesta:** En notación de intervalo: $[-1, 4]$.
+**Respuesta:** En notación de intervalo: $S = [-1, 4]$.
 
 **Ejemplo 5.2 (Dispersión externa):**
 Resolver $|3x + 1| > 7$.
 
 **Solución:**
-Como es un caso "mayor estricto", aplicamos la segunda propiedad, separando el problema en dos inecuaciones lineales independientes que se unen lógicamente con una "o" ($\lor$):
+Dado que la inecuación presenta la estructura de una dispersión externa ($>$), aplicamos el Teorema 5.1 (Propiedad 2), desglosando el problema en dos inecuaciones lineales unidas por el conectivo lógico disyuntivo "o" ($\lor$):
 $$\begin{align}
-3x + 1 > 7 \quad &\lor \quad 3x + 1 < -7 \\
-3x > 6 \quad &\lor \quad 3x < -8 \\
-x > 2 \quad &\lor \quad x < -\frac{8}{3}
+3x + 1 > 7 \quad &\lor \quad 3x + 1 < -7 \\[6pt]
+3x > 6 \quad &\lor \quad 3x < -8 \\[6pt]
+x > 2 \quad &\lor \quad x < -\dfrac{8}{3}
 \end{align}$$
 
-**Respuesta:** El conjunto solución es la unión de las dos regiones. En notación de intervalo: $\left(-\infty, -\frac{8}{3}\right) \cup (2, \infty)$.
+**Respuesta:** El conjunto solución es la unión de los intervalos divergentes. En notación de intervalo: $S = \left(-\infty, -\dfrac{8}{3}\right) \cup (2, \infty)$.
+
+**Ejemplo 5.3 (Valor absoluto en ambos lados):**
+Resolver $|2x - 1| < |x + 3|$.
+
+**Solución:**
+Dado que ambos miembros de la inecuación son estrictamente no negativos, podemos elevar al cuadrado en ambos miembros sin alterar la desigualdad, puesto que para $a, b \geq 0$ se cumple que $a < b \iff a^2 < b^2$:
+$$\begin{align}
+|2x - 1|^2 &< |x + 3|^2 \\[6pt]
+(2x - 1)^2 &< (x + 3)^2 \\[6pt]
+4x^2 - 4x + 1 &< x^2 + 6x + 9 \\[6pt]
+3x^2 - 10x - 8 &< 0
+\end{align}$$
+
+Ahora factorizamos la expresión cuadrática $3x^2 - 10x - 8$. Para ello, determinamos los puntos críticos resolviendo la ecuación cuadrática asociada $3x^2 - 10x - 8 = 0$ mediante la fórmula general:
+$$x = \dfrac{10 \pm \sqrt{(-10)^2 - 4(3)(-8)}}{2(3)} = \dfrac{10 \pm \sqrt{100 + 96}}{6} = \dfrac{10 \pm 14}{6}$$
+
+Se obtienen los dos puntos críticos:
+$$x_1 = \dfrac{24}{6} = 4 \quad \text{y} \quad x_2 = \dfrac{-4}{6} = -\dfrac{2}{3}$$
+
+Así, la inecuación cuadrática se reescribe como:
+$$(3x + 2)(x - 4) < 0$$
+
+Construimos la tabla de signos para identificar los intervalos donde el producto es estrictamente negativo:
+
+| Intervalo | $\left(-\infty, -\dfrac{2}{3}\right)$ | $-\dfrac{2}{3}$ | $\left(-\dfrac{2}{3}, 4\right)$ | $4$ | $(4, \infty)$ |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| $(3x + 2)$ | $-$ | $0$ | $+$ | $+$ | $+$ |
+| $(x - 4)$ | $-$ | $-$ | $-$ | $0$ | $+$ |
+| $\text{Producto}$ | $+$ | $0$ | $-$ | $0$ | $+$ |
+
+Buscamos las regiones con signo negativo ($< 0$):
+- $\left(-\infty, -\dfrac{2}{3}\right)$: signo $+$ ✗
+- $x = -\dfrac{2}{3}$: el producto vale $0$, excluido por el signo estrictamente menor ($<$) ✗
+- $\left(-\dfrac{2}{3}, 4\right)$: signo $-$ ✓
+- $x = 4$: el producto vale $0$, excluido ✗
+- $(4, \infty)$: signo $+$ ✗
+
+**Respuesta:** En notación de intervalo: $S = \left(-\dfrac{2}{3}, 4\right)$.
+
+> **Advertencia (Caso de constante no positiva):** Las propiedades del Teorema 5.1 asumen estrictamente que la constante $a$ es positiva ($a > 0$). Si se presenta una inecuación donde $a \leq 0$, las propiedades no se aplican directamente y debe usarse el análisis lógico elemental:
+> - Una inecuación del tipo $|f(x)| < -5$ **no tiene solución** ($S = \emptyset$), puesto que un valor absoluto nunca puede ser menor que un número negativo.
+> - Una inecuación del tipo $|f(x)| \geq -2$ se cumple para todo $x$ en el dominio de $f$ ($S = \text{Dom}(f)$), dado que un valor absoluto siempre es mayor o igual a cero, y por ende, mayor que cualquier negativo.
 
 ---
-
 ## 6. Sistemas de Inecuaciones
 
 Un sistema de inecuaciones consiste en dos o más inecuaciones que deben cumplirse **simultáneamente**. 
