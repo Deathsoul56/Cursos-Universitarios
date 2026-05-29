@@ -271,6 +271,75 @@ Como $\Delta < 0$, el polinomio no tiene raíces reales y no puede factorizarse 
  
 > **Observación:** Si la inecuación hubiera sido $x^2 + x + 1 < 0$, el conjunto solución sería $\emptyset$, ya que la expresión es siempre positiva. Este caso ilustra que el análisis del discriminante puede resolver la inecuación sin necesidad de tabla de signos.
 
+**Ejemplo 3.4 (Coeficiente cuadrático negativo, $a < 0$):**
+Resolver $-2x^2 + 5x + 3 \geq 0$.
+
+**Solución:**
+Cuando el coeficiente cuadrático es negativo, es sumamente recomendable multiplicar toda la inecuación por $-1$ para convertirlo en positivo y simplificar la factorización. Al realizar esta operación, se debe invertir el sentido del símbolo de desigualdad:
+$$\begin{align}
+-2x^2 + 5x + 3 &\geq 0 \quad \Big/ \cdot (-1) \\[6pt]
+2x^2 - 5x - 3 &\leq 0
+\end{align}$$
+
+Ahora procedemos a factorizar el polinomio cuadrático $2x^2 - 5x - 3$. Buscamos dos números que multiplicados den $-6$ (producto de $2 \cdot (-3)$) y sumados den $-5$. Estos números son $-6$ y $1$. Reescribimos el término central:
+$$\begin{align}
+2x^2 - 6x + x - 3 &\leq 0 \\[6pt]
+2x(x - 3) + 1(x - 3) &\leq 0 \\[6pt]
+(2x + 1)(x - 3) &\leq 0
+\end{align}$$
+
+Los puntos críticos se obtienen igualando cada factor a cero:
+- $2x + 1 = 0 \implies x = -\dfrac{1}{2}$
+- $x - 3 = 0 \implies x = 3$
+
+Construimos la tabla de signos correspondiente:
+
+| Intervalo | $\left(-\infty, -\dfrac{1}{2}\right)$ | $-\dfrac{1}{2}$ | $\left(-\dfrac{1}{2}, 3\right)$ | $3$ | $(3, \infty)$ |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| $(2x + 1)$ | $-$ | $0$ | $+$ | $+$ | $+$ |
+| $(x - 3)$ | $-$ | $-$ | $-$ | $0$ | $+$ |
+| $(2x+1)(x-3)$ | $+$ | $0$ | $-$ | $0$ | $+$ |
+
+Buscamos la región de signo negativo o nulo ($\leq 0$) según la inecuación transformada. Dado que el símbolo incluye la igualdad, los puntos críticos se incorporan en la solución.
+
+**Respuesta:** En notación de intervalo: $S = \left[-\dfrac{1}{2}, 3\right]$.
+
+> **Observación:** Si se hubiera optado por trabajar con el polinomio original sin multiplicar por $-1$, la tabla de signos habría arrojado idéntico resultado, pero requiriendo evaluar factores con coeficientes negativos (como $-2x - 1$ o similar), lo cual aumenta la probabilidad de incurrir en un error de signo.
+
+**Ejemplo 3.5 (Puntos críticos irracionales):**
+Resolver $x^2 - 2x - 4 > 0$.
+
+**Solución:**
+Intentamos factorizar por inspección, pero no existen números enteros sencillos que satisfagan la condición. Por lo tanto, calculamos las raíces mediante la fórmula general cuadrática:
+$$x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+Sustituyendo los coeficientes $a = 1$, $b = -2$, y $c = -4$:
+$$\begin{align}
+x &= \dfrac{-(-2) \pm \sqrt{(-2)^2 - 4(1)(-4)}}{2(1)} \\[6pt]
+x &= \dfrac{2 \pm \sqrt{4 + 16}}{2} \\[6pt]
+x &= \dfrac{2 \pm \sqrt{20}}{2} \\[6pt]
+x &= \dfrac{2 \pm 2\sqrt{5}}{2} \\[6pt]
+x &= 1 \pm \sqrt{5}
+\end{align}$$
+
+Los puntos críticos son:
+$$x_1 = 1 - \sqrt{5} \quad (\approx -1.24) \quad \text{y} \quad x_2 = 1 + \sqrt{5} \quad (\approx 3.24)$$
+
+Se reescribe la inecuación en su forma factorizada:
+$$\left(x - (1 - \sqrt{5})\right)\left(x - (1 + \sqrt{5})\right) > 0$$
+
+Dividimos la recta real empleando los puntos críticos irracionales y construimos la tabla de signos correspondientes:
+
+| Intervalo | $(-\infty, 1-\sqrt{5})$ | $1-\sqrt{5}$ | $(1-\sqrt{5}, 1+\sqrt{5})$ | $1+\sqrt{5}$ | $(1+\sqrt{5}, \infty)$ |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| $\left(x - (1-\sqrt{5})\right)$ | $-$ | $0$ | $+$ | $+$ | $+$ |
+| $\left(x - (1+\sqrt{5})\right)$ | $-$ | $-$ | $-$ | $0$ | $+$ |
+| $\text{Producto}$ | $+$ | $0$ | $-$ | $0$ | $+$ |
+
+Buscamos los intervalos donde el producto es estrictamente positivo ($> 0$). Dado que la desigualdad es estricta, los puntos críticos se excluyen.
+
+**Respuesta:** En notación de intervalo: $S = (-\infty, 1 - \sqrt{5}) \cup (1 + \sqrt{5}, \infty)$.
+
 ---
 ## 4. Inecuaciones Racionales
  
