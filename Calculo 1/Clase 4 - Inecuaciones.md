@@ -489,6 +489,37 @@ $$\dfrac{1}{1 - 2} \geq \dfrac{3}{1 + 1} \implies -1 \geq \dfrac{3}{2}$$
 
 Lo cual también constituye una falsedad. Esto evidencia que la multiplicación cruzada elimina las restricciones impuestas por los denominadores y no conserva la relación de orden original.
 
+**Ejemplo 4.4 (Numerador cuadrático factorizable):**
+Resolver $\dfrac{x^2 - x - 6}{x - 1} \leq 0$.
+
+**Solución:**
+La inecuación ya está en forma estándar (comparada con cero). Para facilitar el análisis de signos, factorizamos el trinomio cuadrático del numerador buscando dos números que multiplicados resulten en $-6$ y sumados den $-1$. Estos números son $-3$ y $2$:
+$$\dfrac{(x - 3)(x + 2)}{x - 1} \leq 0$$
+
+Identificamos los puntos críticos de la inecuación:
+- **Puntos tipo I (numerador):** $(x - 3)(x + 2) = 0 \implies x = 3 \quad \text{y} \quad x = -2$.
+- **Puntos tipo II (denominador):** $x - 1 = 0 \implies x = 1$.
+
+Estos puntos ordenados de menor a mayor ($-2 < 1 < 3$) dividen la recta real en cuatro intervalos. Construimos la tabla de signos evaluando cada factor lineal de manera independiente:
+
+| Intervalo | $(-\infty, -2)$ | $-2$ | $(-2, 1)$ | $1$ | $(1, 3)$ | $3$ | $(3, \infty)$ |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| $(x + 2)$ | $-$ | $0$ | $+$ | $+$ | $+$ | $+$ | $+$ |
+| $(x - 1)$ | $-$ | $-$ | $-$ | $0$ | $+$ | $+$ | $+$ |
+| $(x - 3)$ | $-$ | $-$ | $-$ | $-$ | $-$ | $0$ | $+$ |
+| $\text{Cociente}$ | $-$ | $0$ | $+$ | $\nexists$ | $-$ | $0$ | $+$ |
+
+Buscamos las regiones con signo negativo o nulo ($\leq 0$):
+- $(-\infty, -2)$: signo $-$ ✓
+- $x = -2$: permitido, el cociente vale $0$ (punto tipo I, se incluye) ✓
+- $(-2, 1)$: signo $+$ ✗
+- $x = 1$: indefinido, prohibido por anular el denominador (punto tipo II, se excluye siempre) ✗
+- $(1, 3)$: signo $-$ ✓
+- $x = 3$: permitido, el cociente vale $0$ (punto tipo I, se incluye) ✓
+- $(3, \infty)$: signo $+$ ✗
+
+**Respuesta:** En notación de intervalo: $S = (-\infty, -2] \cup (1, 3]$.
+
 ---
 ## 5. Inecuaciones con Valor Absoluto
 
