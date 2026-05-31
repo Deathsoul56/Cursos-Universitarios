@@ -179,6 +179,31 @@ x &< 1 \quad \text{(se multiplica por -1 y se invierte el orden)}
 
 **Respuesta:** En notación de intervalo: $(-\infty, 1)$.
 
+En muchas situaciones prácticas, no es suficiente con saber si una variable supera un límite inferior o si es menor que un tope máximo, sino que se requiere que se mantenga estrictamente confinada entre ambos extremos. Pensemos, por ejemplo, en la temperatura óptima para conservar un medicamento, la cual debe estar por encima de los $2\ ^\circ\text{C}$ pero sin sobrepasar los $8\ ^\circ\text{C}$. Del mismo modo, en problemas algebraicos, a menudo se busca que una expresión esté acotada simultáneamente entre dos valores límite. A este tipo de relaciones de confinamiento se las conoce como inecuaciones de doble desigualdad.
+
+**Definición 2.2 (Inecuación Simultánea o de Doble Desigualdad):**
+Una inecuación de doble desigualdad (o inecuación simultánea) en una variable $x$ es una expresión equivalente a:
+$$g(x) < f(x) \leq h(x)$$
+la cual representa la conjunción lógica de dos inecuaciones independientes que deben cumplirse de manera simultánea:
+$$(g(x) < f(x)) \land (f(x) \leq h(x))$$
+
+Para inecuaciones lineales donde la expresión central es de primer grado, de la forma $a < bx + c \leq d$ (con $b \neq 0$), el conjunto solución se puede determinar de manera directa aislando la variable $x$. Esto se logra aplicando operaciones aritméticas uniformes de forma simultánea en los tres miembros de la desigualdad.
+
+**Ejemplo 2.4 (Inecuación simultánea o de doble desigualdad):**
+Resolver $-3 < 2x + 1 \leq 7$.
+
+**Solución:**
+En este caso se presenta una inecuación simultánea, la cual exige que la expresión central $2x + 1$ satisfaga dos condiciones al mismo tiempo. El despeje de la variable $x$ se puede realizar operando de forma simultánea en los tres miembros de la desigualdad:
+$$\begin{align}
+-3 &< 2x + 1 \leq 7 \\[6pt]
+-3 - 1 &< 2x \leq 7 - 1 \quad \text{(se resta } 1 \text{ en cada miembro)} \\[6pt]
+-4 &< 2x \leq 6 \\[6pt]
+\dfrac{-4}{2} &< x \leq \dfrac{6}{2} \quad \text{(se divide entre } 2 \text{, manteniendo el orden)} \\[6pt]
+-2 &< x \leq 3
+\end{align}$$
+
+**Respuesta:** El conjunto solución es la región acotada abierta por la izquierda y cerrada por la derecha. En notación de intervalo: $S = (-2, 3]$.
+
 ---
 ## 3. Inecuaciones Cuadráticas
 
@@ -694,77 +719,160 @@ Buscamos las regiones con signo negativo ($< 0$):
 ---
 ## 6. Sistemas de Inecuaciones
 
-Un sistema de inecuaciones consiste en dos o más inecuaciones que deben cumplirse **simultáneamente**. 
+Pensemos en el diseño de un puente o una estructura de ingeniería: las vigas deben soportar fuerzas de compresión masivas, pero a la vez deben mantenerse ligeras para no sobrecargar los pilares. Esto significa que el peso de la estructura debe ser mayor que un límite mínimo de seguridad, pero menor que un límite máximo de resistencia física. Ambos límites imponen restricciones que se deben cumplir al mismo tiempo.
 
-### 6.1 Método de resolución
+En matemáticas, cuando un problema exige satisfacer múltiples restricciones o desigualdades simultáneamente, hablamos de un **sistema de inecuaciones**. A diferencia de los sistemas de ecuaciones lineales, donde buscamos la coincidencia exacta de rectas en un punto único, en los sistemas de inecuaciones buscamos la zona común o la superposición de varias regiones en la recta real.
 
-A diferencia de los sistemas de ecuaciones (donde se usan métodos como sustitución o reducción cruzada), el enfoque para los sistemas de inecuaciones con una sola variable es estrictamente conjuntista:
-1. Se resuelve cada inecuación de forma individual, obteniendo el conjunto solución para cada una.
-2. Se encuentra la **intersección** ($\cap$) de todos los conjuntos solución obtenidos.
-3. El resultado de dicha intersección es el conjunto solución final del sistema.
+> **Nota histórica:** Los sistemas de desigualdades lineales y sus métodos sistemáticos de resolución cobraron una relevancia trascendental a mediados del siglo XX con el surgimiento de la **programación lineal**, desarrollada por matemáticos como George Dantzig. Este campo, crucial para la optimización de recursos en economía, logística e ingeniería, se fundamenta enteramente en encontrar soluciones comunes a grandes sistemas de inecuaciones lineales simultáneas.
+
+**Definición 6.1 (Sistema de Inecuaciones en una Variable):**
+Un sistema de inecuaciones en una variable $x$ es un conjunto finito de dos o más inecuaciones que deben satisfacerse simultáneamente. Se representa mediante una llave que agrupa las inecuaciones:
+$$\begin{cases} 
+f_1(x) \lessgtr 0 \\[6pt] 
+f_2(x) \lessgtr 0 \\[6pt] 
+\vdots \\ 
+f_n(x) \lessgtr 0 
+\end{cases}$$
+
+El conjunto solución total de este sistema, denotado por $S_{\text{total}}$, se define formalmente como la intersección de los conjuntos solución individuales de cada inecuación:
+$$S_{\text{total}} = \bigcap_{i=1}^{n} S_i = S_1 \cap S_2 \cap \dots \cap S_n$$
+donde $S_i$ es el conjunto solución de la $i$-ésima inecuación $f_i(x) \lessgtr 0$.
+
+### 6.1 Método de resolución conjuntista
+
+A diferencia de los sistemas de ecuaciones, donde se emplean métodos analíticos de reducción o sustitución algebraicos cruzados, el enfoque para los sistemas de inecuaciones con una sola variable es puramente conjuntista y se desarrolla en los siguientes pasos:
+
+1. **Resolución individual:** Se determina el conjunto solución $S_i$ de cada una de las inecuaciones del sistema por separado, aplicando los métodos correspondientes (lineales, cuadráticos, racionales, o con valor absoluto).
+2. **Representación gráfica conjunta:** Se representan de manera simultánea los conjuntos $S_i$ sobre una misma recta real. Esto permite identificar visualmente las franjas o regiones donde se superponen todos los intervalos representados.
+3. **Intersección conjuntista:** Se calcula la intersección matemática de los intervalos. Si no existen puntos comunes entre todos los conjuntos individuales, se concluye que el sistema no tiene solución, por lo que el conjunto solución es vacío ($S_{\text{total}} = \emptyset$).
 
 ### 6.2 Ejemplos resueltos
 
-**Ejemplo 6.1 (Sistema lineal):**
-Resolver el siguiente sistema:
+**Ejemplo 6.1 (Sistema lineal clásico):**
+Resolver el siguiente sistema de inecuaciones:
 $$\begin{cases} 
-2x - 5 < 3 \\ 
+2x - 5 < 3 \\[6pt] 
 -x + 4 \leq 2 
 \end{cases}$$
 
 **Solución:**
-Resolvemos la primera inecuación:
+Resolvemos la primera inecuación de manera independiente:
 $$\begin{align}
-2x - 5 &< 3 \\
-2x &< 8 \\
+2x - 5 &< 3 \\[6pt]
+2x &< 8 \\[6pt]
 x &< 4 \implies S_1 = (-\infty, 4)
 \end{align}$$
 
-Resolvemos la segunda inecuación:
+Resolvemos la segunda inecuación de manera independiente:
 $$\begin{align}
--x + 4 &\leq 2 \\
--x &\leq -2 \\
-x &\geq 2 \quad \text{(invertimos orden por división negativa)} \\
-S_2 &= [2, \infty)
+-x + 4 &\leq 2 \\[6pt]
+-x &\leq -2 \\[6pt]
+x &\geq 2 \quad \text{(se invierte el orden al dividir por } -1\text{)} \implies S_2 = [2, \infty)
 \end{align}$$
 
-Buscamos la intersección de ambos conjuntos:
+Para determinar el conjunto solución total, intersectamos los intervalos de solución de ambas inecuaciones:
 $$S_{\text{total}} = S_1 \cap S_2 = (-\infty, 4) \cap [2, \infty)$$
 
-**Respuesta:** En notación de intervalo: $[2, 4)$.
+**Respuesta:** En notación de intervalo: $S_{\text{total}} = [2, 4)$.
 
-**Ejemplo 6.2 (Sistema mixto con cuadrática):**
-Resolver el siguiente sistema:
+**Ejemplo 6.2 (Sistema mixto con inecuación cuadrática):**
+Resolver el siguiente sistema de inecuaciones:
 $$\begin{cases} 
-x^2 - 9 \leq 0 \\ 
+x^2 - 9 \leq 0 \\[6pt] 
 x > 1 
 \end{cases}$$
 
 **Solución:**
-Resolvemos la inecuación cuadrática factorizando la diferencia de cuadrados:
+Resolvemos la primera inecuación factorizando la diferencia de cuadrados del polinomio de segundo grado:
 $$\begin{align}
-x^2 - 9 &\leq 0 \\
+x^2 - 9 &\leq 0 \\[6pt]
 (x - 3)(x + 3) &\leq 0
 \end{align}$$
-Las raíces son $x = 3$ y $x = -3$. Al evaluar los signos, vemos que el producto es negativo o cero en la franja comprendida entre ambas raíces:
+
+Las raíces del polinomio son los puntos críticos $x = 3$ y $x = -3$. Al evaluar los intervalos mediante una tabla de signos, se determina que el producto es negativo o nulo en el intervalo cerrado delimitado por las raíces:
 $$S_1 = [-3, 3]$$
 
-La segunda inecuación ya está despejada directamente:
+La segunda inecuación representa un intervalo directo y no requiere operaciones adicionales:
 $$S_2 = (1, \infty)$$
 
-Intersectamos ambos conjuntos:
-$$S_{\text{total}} = [-3, 3] \cap (1, \infty)$$
+Calculamos la intersección entre ambos conjuntos solución:
+$$S_{\text{total}} = S_1 \cap S_2 = [-3, 3] \cap (1, \infty)$$
 
-**Respuesta:** En notación de intervalo: $(1, 3]$.
+**Respuesta:** En notación de intervalo: $S_{\text{total}} = (1, 3]$.
+
+**Ejemplo 6.3 (Sistema sin solución - Intersección vacía):**
+Resolver el siguiente sistema de inecuaciones:
+$$\begin{cases} 
+2x + 3 \leq -1 \\[6pt] 
+x^2 - 3x - 4 < 0 
+\end{cases}$$
+
+**Solución:**
+Resolvemos la primera inecuación de manera independiente:
+$$\begin{align}
+2x + 3 &\leq -1 \\[6pt]
+2x &\leq -4 \\[6pt]
+x &\leq -2 \implies S_1 = (-\infty, -2]
+\end{align}$$
+
+Resolvemos la segunda inecuación factorizando el trinomio cuadrático:
+$$\begin{align}
+x^2 - 3x - 4 &< 0 \\[6pt]
+(x - 4)(x + 1) &< 0
+\end{align}$$
+
+Los puntos críticos son las raíces $x = 4$ y $x = -1$. Al evaluar los signos, se comprueba que el producto es estrictamente negativo en la región interior a las raíces:
+$$S_2 = (-1, 4)$$
+
+Buscamos los puntos de la recta real comunes a ambos conjuntos efectuando su intersección:
+$$S_{\text{total}} = S_1 \cap S_2 = (-\infty, -2] \cap (-1, 4)$$
+
+Dado que no existe ningún número real que pertenezca simultáneamente al intervalo $(-\infty, -2]$ y al intervalo $(-1, 4)$, los intervalos son disjuntos.
+
+**Respuesta:** El sistema no posee soluciones en el conjunto de los números reales. En notación de conjunto: $S_{\text{total}} = \emptyset$.
+
+> **Observación importante:** Al realizar la intersección de intervalos, se debe prestar especial atención a los extremos de cada intervalo (abiertos o cerrados). Un punto extremo pertenece a la intersección final si y solo si pertenece a **todos** los conjuntos solución individuales de las inecuaciones. Si un punto está excluido (extremo abierto) en al menos uno de los intervalos, debe excluirse inevitablemente del conjunto solución final.
 
 ---
 
 ## 7. Ejercicios Propuestos
 
-1. Resuelva: $5x - 7 \leq 3x + 9$
-2. Resuelva: $x^2 + x - 6 > 0$
-3. Resuelva: $\frac{x - 3}{x + 1} < 2$
-4. Resuelva: $|2x - 1| \leq 5$
+### 7.1 Ejercicios algebraicos de práctica
+
+1. **Inecuación lineal:** Resolver y graficar el conjunto solución de:
+   $$5x - 7 \leq 3x + 9$$
+
+2. **Inecuación cuadrática:** Resolver empleando tabla de signos:
+   $$x^2 + x - 6 > 0$$
+
+3. **Inecuación racional:** Determinar el conjunto solución de:
+   $$\dfrac{x - 3}{x + 1} < 2$$
+
+4. **Inecuación con valor absoluto:** Resolver aplicando propiedades métricas:
+   $$|2x - 1| \leq 5$$
+
+5. **Sistema de inecuaciones:** Resolver el siguiente sistema simultáneo:
+   $$\begin{cases} 
+   3x + 4 > 1 \\[6pt] 
+   x^2 - 5x + 4 \leq 0 
+   \end{cases}$$
+
+### 7.2 Problemas de aplicación práctica (enunciados)
+
+1. **Optimización de costos y utilidades:** Un fabricante de dispositivos electrónicos estima que el costo total de producir $x$ unidades diarias está dado por la función de costo lineal $C(x) = 25x + 3500$ (en dólares). Si cada unidad se vende en el mercado a $60$ dólares:
+   - Determine la función de utilidad diaria $U(x)$.
+   - Encuentre el número mínimo de unidades diarias que deben fabricarse y venderse para que la empresa comience a generar utilidades netas positivas (es decir, $U(x) > 0$).
+
+2. **Lanzamiento vertical de un proyectil:** Un proyectil es disparado verticalmente hacia arriba desde el nivel del suelo. Su altura $h$ (en metros) transcurridos $t$ segundos de vuelo está modelada por la función cuadrática $h(t) = -5t^2 + 80t$.
+   - Determine el intervalo de tiempo durante el cual el proyectil se encuentra a una altura estrictamente superior a los $240$ metros sobre el nivel del suelo.
+
+3. **Control de calidad y tolerancia industrial:** En una planta embotelladora, el volumen nominal de líquido de una botella de refresco de edición especial debe ser de $500\text{ ml}$. Debido al margen de tolerancia de los equipos, el volumen real $V$ puede diferir del nominal en un máximo de $8\text{ ml}$.
+   - Escriba esta especificación empleando una inecuación con valor absoluto.
+   - Resuelva la inecuación para encontrar el intervalo exacto de volúmenes de envasado aceptados por el departamento de control de calidad.
+
+4. **Farmacocinética médica:** La concentración $C$ (en miligramos por litro, $\text{mg/L}$) de un antibiótico en el torrente sanguíneo de un paciente, transcurridas $t$ horas desde su administración intravenosa, está modelada por la función racional:
+   $$C(t) = \dfrac{10t}{t^2 + 4}$$
+   - Determine el intervalo de tiempo en el cual la concentración del fármaco en sangre es estrictamente superior a los $2\text{ mg/L}$.
 
 ---
 
