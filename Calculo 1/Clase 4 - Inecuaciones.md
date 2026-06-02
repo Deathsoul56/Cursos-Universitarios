@@ -4,7 +4,7 @@
 
 ### 1.1 Desigualdades: Definición y Tipos
 
-A diferencia de las ecuaciones, que establecen una igualdad estricta entre dos cantidades, gran parte de la matemática se basa en comparar tamaños o magnitudes que no son iguales. Piensa en situaciones cotidianas: "la velocidad máxima es 120 km/h", "el presupuesto debe ser menor a 500 dólares". Las desigualdades nos permiten modelar matemáticamente estas restricciones y acotar valores.
+A diferencia de las ecuaciones, que establecen una igualdad estricta entre dos cantidades, gran parte de la matemática se basa en comparar tamaños o magnitudes que no son iguales. Pensemos en situaciones cotidianas: "la velocidad máxima es 120 km/h", "el presupuesto debe ser menor a 500 dólares". Las desigualdades nos permiten modelar matemáticamente estas restricciones y acotar valores.
 
 **Definición 1.1 (Desigualdad):**
 Una desigualdad es una relación matemática de orden que compara dos expresiones usando los símbolos:
@@ -36,6 +36,11 @@ Para cualesquiera $a, b, c \in \mathbb{R}$:
 5. **Multiplicación por negativo:** Si $a < b$ y $c < 0$, entonces $ac > bc$.
 
 > **Advertencia:** ¡La última propiedad es la causa número uno de errores en cálculo! Al multiplicar o dividir una desigualdad por un número **negativo**, el símbolo de orden se **invierte**.
+
+> **Nota:** Las propiedades 1–4 son los **axiomas del orden** del cuerpo ordenado $(\mathbb{R}, +, \cdot, <)$; se postulan como fundamentos del sistema numérico real y no se derivan de resultados más simples. La propiedad 5 sí admite demostración directa: si $a < b$ y $c < 0$, entonces $-c > 0$, y por la Propiedad 4 se obtiene $(-c) \cdot a < (-c) \cdot b$, es decir $-ac < -bc$, de donde $ac > bc$. $\square$
+
+> **Nota histórica:** El uso de desigualdades en matemáticas se remonta a la geometría griega: los *Elementos* de Euclides (c. 300 a.C.) contienen numerosas proposiciones sobre magnitudes desiguales, incluyendo resultados equivalentes a la desigualdad triangular. Sin embargo, el tratamiento algebraico formal de las propiedades del orden tuvo que esperar hasta el siglo XIX. Fue Augustin-Louis Cauchy quien, en su *Cours d'analyse* (1821), utilizó por primera vez desigualdades algebraicas de forma sistemática para fundamentar el análisis matemático. Poco después, Karl Weierstrass, Richard Dedekind y Giuseppe Peano formalizaron los axiomas de cuerpo ordenado de los que la Proposición 1.1 es la expresión central.
+
 ### 1.2 Inecuaciones: Estructura y Solución
 
 Ahora nos enfocaremos exclusivamente en las desigualdades condicionales.
@@ -68,6 +73,7 @@ Para comprender la naturaleza de estos conjuntos, veamos algunas inecuaciones el
 - $x \leq 0 \implies$ El conjunto solución son todos los reales negativos incluyendo al cero ($\mathbb{R}^- \cup \{0\}$).
 - $x^2 < 0 \implies$ El conjunto solución es vacío ($\emptyset$), ya que ningún número real al cuadrado arroja un resultado negativo.
 - $|x| \geq 0 \implies$ El conjunto solución son todos los números reales ($\mathbb{R}$), pues el valor absoluto de cualquier número siempre es no negativo.
+
 ### 1.3 Intervalos como Conjuntos Solución
 
 Para representar estos infinitos valores, empleamos la notación de intervalos. Un intervalo es un subconjunto conexo de la recta real $\mathbb{R}$.
@@ -100,6 +106,10 @@ Si la solución a una inecuación nos dicta que $x$ debe ser "mayor o igual a -2
 - **Conjunto:** $\{x \in \mathbb{R} : -2 \leq x < 5\}$
 - **Intervalo:** $[-2, 5)$
 
+**Aplicaciones:**
+
+Las propiedades del orden en $\mathbb{R}$ y la notación de intervalos son el lenguaje algebraico que sustenta todo el Cálculo diferencial e integral. La definición formal de límite —uno de los conceptos centrales del curso— se formula mediante inecuaciones del tipo $0 < |x - a| < \delta$ y $|f(x) - L| < \varepsilon$, donde $\delta$ y $\varepsilon$ son números positivos que cuantifican proximidad y tolerancia respectivamente. En optimización, determinar en qué regiones una función crece o decrece equivale a analizar cuándo su derivada satisface $f'(x) > 0$ o $f'(x) < 0$: el resultado es siempre un conjunto solución de una inecuación, expresado como unión de intervalos. En estadística, los intervalos de confianza —que expresan con qué certeza se estima un parámetro poblacional— son conjuntos solución de inecuaciones de la forma $|\hat{\theta} - \theta| \leq z_{\alpha/2} \cdot \sigma$.
+
 ---
 ## 2. Inecuaciones Lineales
 
@@ -111,6 +121,7 @@ $$ax + b < 0, \quad ax + b \leq 0, \quad ax + b > 0, \quad ax + b \geq 0$$
 con $a, b \in \mathbb{R}$ y $a \neq 0$. Se denomina lineal porque el término con la variable aparece únicamente a la primera potencia.
 
 > **Observación:** La condición $a \neq 0$ es necesaria: si $a = 0$, la expresión $ax + b$ se reduce a la constante $b$, y la inecuación resultante es una desigualdad numérica cuya veracidad no depende de $x$ en absoluto. El conjunto solución sería $\mathbb{R}$ completo o $\emptyset$ según el valor de $b$, sin que haya nada que resolver.
+
 ### 2.1 Método de resolución
 
 De forma análoga a las ecuaciones el objetivo será aislar la variable $x$ aplicando operaciones algebraicas a ambos miembros de la desigualdad. Las operaciones permitidas son las mismas que en una ecuación lineal —sumar, restar, multiplicar y dividir— con una diferencia fundamental:
@@ -130,6 +141,7 @@ El procedimiento general para resolver $ax + b \leq 0$ consiste en:
 1. **Trasladar el término independiente:** Restar $b$ a ambos miembros para obtener $ax \leq -b$.
 2. **Dividir por el coeficiente:** Dividir ambos miembros por $a$, recordando que si $a < 0$, el sentido de la desigualdad debe invertirse.
 3. **Expresar el conjunto solución:** Representar el intervalo resultante en la recta real y en notación de intervalo.
+
 ### 2.2 Ejemplos resueltos
 
 **Ejemplo 2.1 (Resolución directa):**
@@ -204,11 +216,17 @@ $$\begin{align}
 
 **Respuesta:** El conjunto solución es la región acotada abierta por la izquierda y cerrada por la derecha. En notación de intervalo: $S = (-2, 3]$.
 
+**Aplicaciones:**
+
+Las inecuaciones lineales son el modelo algebraico directo de cualquier problema de restricciones de primer grado. En economía, el análisis de punto de equilibrio se reduce a determinar para qué volumen de producción $x$ los ingresos $I(x) = px$ superan a los costos $C(x) = cx + F$: la inecuación $px > cx + F$ es lineal en $x$ y su solución es el umbral mínimo de producción rentable. En ingeniería, las condiciones de resistencia de materiales —"la tensión de trabajo no debe superar el límite de fluencia"— generan inecuaciones lineales sobre las variables de diseño. La **programación lineal**, que busca maximizar o minimizar una función objetivo bajo múltiples restricciones simultáneas, trabaja exclusivamente con sistemas de inecuaciones lineales; cada restricción del problema corresponde a una inecuación de la forma $\mathbf{a}_i \cdot \mathbf{x} \leq b_i$.
+
 ---
 ## 3. Inecuaciones Cuadráticas
 
-A diferencia de las inecuaciones lineales, en las cuadráticas el comportamiento de la expresión $ax^2 + bx + c$ cambia de signo en distintas regiones de la recta real. La estrategia de "despejar $x$" ya no es suficiente: en su lugar, se debe analizar dónde la expresión es positiva y dónde es negativa. La herramienta central para esto es la **tabla de signos**.
- 
+A diferencia de las inecuaciones lineales, en las cuadráticas el comportamiento de la expresión $ax^2 + bx + c$ cambia de signo en distintas regiones de la recta real. La estrategia de "despejar $x$" ya no es suficiente: en su lugar, se debe analizar dónde la expresión es positiva y dónde es negativa. La herramienta central para esto es la **tabla de signos**, cuya construcción depende de conocer las raíces del polinomio cuadrático.
+
+> **Nota histórica:** Los antecedentes de la fórmula cuadrática $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$ se remontan a las tablillas babilónicas (c. 2000 a.C.), donde los escribas resolvían problemas equivalentes a ecuaciones de segundo grado mediante procedimientos geométricos de completación del cuadrado. La formulación algebraica sistemática fue desarrollada por Al-Khwarizmi en su *Kitab al-mukhtasar fi hisab al-jabr wa-l-muqabala* (c. 820 d.C.), obra cuyo título dio origen a la palabra "álgebra". El papel del discriminante $\Delta = b^2 - 4ac$ como clasificador del número y tipo de raíces fue articulado progresivamente durante los siglos XVI y XVII en el contexto del análisis algebraico de polinomios, a través del trabajo de matemáticos como Cardano, Vieta y Descartes.
+
 **Definición 3.1 (Inecuación Cuadrática):**
 Una inecuación cuadrática en una variable $x$ es toda inecuación equivalente a alguna de las formas:
 $$ax^2 + bx + c < 0, \quad ax^2 + bx + c \leq 0, \quad ax^2 + bx + c > 0, \quad ax^2 + bx + c \geq 0$$
@@ -243,6 +261,7 @@ Se leen los signos de la siguiente manera:
 > **Nota:** En la tabla se incluyen las columnas de $x_1$ y $x_2$ para registrar explícitamente que ambos factores se anulan ahí. Si la inecuación es estricta ($<$ o $>$), esos puntos se excluyen del conjunto solución; si incluye igualdad ($\leq$ o $\geq$), se incluyen.
  
 4. **Seleccionar:** Elegir los intervalos cuyo signo satisface la desigualdad original, incluyendo o excluyendo los puntos críticos según el símbolo.
+
 ### 3.2 Ejemplos resueltos
  
 **Ejemplo 3.1 (Dos raíces reales distintas, $\Delta > 0$):**
@@ -365,6 +384,9 @@ Buscamos los intervalos donde el producto es estrictamente positivo ($> 0$). Dad
 
 **Respuesta:** En notación de intervalo: $S = (-\infty, 1 - \sqrt{5}) \cup (1 + \sqrt{5}, \infty)$.
 
+**Aplicaciones:**
+Las inecuaciones cuadráticas aparecen de forma natural en todo contexto donde intervienen funciones de segundo grado o expresiones bajo una raíz cuadrada. El dominio de la función $f(x) = \sqrt{g(x)}$ se determina resolviendo la inecuación $g(x) \geq 0$; cuando $g$ es cuadrática, la tabla de signos produce la respuesta directamente. En física, la condición de que un proyectil se encuentre sobre el nivel del suelo se reduce a $h(t) = -\frac{1}{2}g\, t^2 + v_0\, t > 0$, una inecuación cuadrática en $t$ cuya solución da el intervalo de tiempo de vuelo. En Cálculo diferencial, el análisis de concavidad de una función $f$ exige determinar los intervalos donde $f''(x) > 0$ (concavidad hacia arriba) o $f''(x) < 0$ (concavidad hacia abajo): cuando $f''$ es polinomial, la tabla de signos es la herramienta directa. En economía, las funciones de utilidad y costo cuadráticas generan inecuaciones de este tipo al determinar las condiciones de rentabilidad positiva.
+
 ---
 ## 4. Inecuaciones Racionales
  
@@ -380,6 +402,7 @@ Los puntos críticos son todos los valores $x_0 \in \mathbb{R}$ que anulan el nu
  
 - **Puntos tipo I (raíces del numerador):** Anulan la expresión. Pueden pertenecer al conjunto solución si el símbolo incluye igualdad ($\leq$ o $\geq$).
 - **Puntos tipo II (raíces del denominador):** Hacen la expresión indefinida. Están **excluidos del dominio** y nunca pertenecen al conjunto solución, independientemente del símbolo de desigualdad.
+
 ### 4.1 Método de resolución
  
 El procedimiento es análogo al de las inecuaciones cuadráticas, con dos pasos adicionales:
@@ -716,6 +739,15 @@ Buscamos las regiones con signo negativo ($< 0$):
 > - Una inecuación del tipo $|f(x)| < -5$ **no tiene solución** ($S = \emptyset$), puesto que un valor absoluto nunca puede ser menor que un número negativo.
 > - Una inecuación del tipo $|f(x)| \geq -2$ se cumple para todo $x$ en el dominio de $f$ ($S = \text{Dom}(f)$), dado que un valor absoluto siempre es mayor o igual a cero, y por ende, mayor que cualquier negativo.
 
+**Aplicaciones y trascendencia en el Cálculo:**
+
+Las inecuaciones con valor absoluto son la herramienta matemática por excelencia para modelar la noción de proximidad, cercanía y margen de error en la recta real. Por este motivo, constituyen la base fundamental sobre la que se construyen los conceptos más importantes del Cálculo y el Análisis Matemático:
+
+- **Definiciones conceptuales de continuidad y límite:** Aunque se estudiarán formalmente más adelante en el curso, las nociones de límite de una función, continuidad y convergencia de sucesiones se definen enteramente a través de desigualdades con valor absoluto (del tipo $|x - c| < \delta$ y $|f(x) - L| < \varepsilon$). Estas inecuaciones permiten cuantificar de manera rigurosa qué significa que una variable se "aproxime infinitamente" a un punto de referencia.
+- **Teoremas de acotamiento y estimación de errores:** En múltiples teoremas fundamentales del Cálculo (como el Teorema del Valor Medio o fórmulas de aproximación por desarrollos polinomiales de Taylor), el valor absoluto se emplea para acotar el término del error o residuo. Expresar que el error de una aproximación está acotado se traduce algebraicamente en resolver una inecuación de la forma $|x_{\text{real}} - x_{\text{aprox}}| < \text{tolerancia}$.
+- **Criterios de estabilidad y convergencia:** En los métodos numéricos y la resolución computacional de problemas matemáticos, la convergencia de algoritmos iterativos se comprueba verificando que la diferencia absoluta entre iteraciones sucesivas disminuya progresivamente por debajo de un umbral específico de precisión.
+- **Tolerancia y metrología aplicada:** En física e ingeniería, las especificaciones de calidad y tolerancias de diseño de piezas y sistemas se expresan de manera unívoca mediante inecuaciones con valor absoluto de la forma $|V - V_0| \leq t$, donde $V_0$ es el valor nominal de diseño y $t$ es la tolerancia admisible.
+
 ---
 ## 6. Sistemas de Inecuaciones
 
@@ -833,29 +865,87 @@ Dado que no existe ningún número real que pertenezca simultáneamente al inter
 
 > **Observación importante:** Al realizar la intersección de intervalos, se debe prestar especial atención a los extremos de cada intervalo (abiertos o cerrados). Un punto extremo pertenece a la intersección final si y solo si pertenece a **todos** los conjuntos solución individuales de las inecuaciones. Si un punto está excluido (extremo abierto) en al menos uno de los intervalos, debe excluirse inevitablemente del conjunto solución final.
 
+**Aplicaciones:**
+Los sistemas de inecuaciones formalizan matemáticamente cualquier situación donde múltiples restricciones deben cumplirse en simultáneo. El campo más importante que se fundamenta en ellos es la **programación lineal**: dados recursos limitados y restricciones expresadas como inecuaciones lineales sobre variables de decisión, se busca la asignación que optimiza una función objetivo. Su aplicación abarca la logística de distribución, la planificación de producción industrial, la optimización de portafolios financieros y el diseño de dietas en nutrición clínica. En ingeniería de control, los sistemas de inecuaciones aparecen al especificar simultáneamente condiciones de estabilidad, rango de operación y límites de seguridad sobre las variables del sistema. En estadística, la estimación con restricciones múltiples genera sistemas de inecuaciones cuya región de intersección define el conjunto de parámetros factibles.
+
 ---
 
 ## 7. Ejercicios Propuestos
 
 ### 7.1 Ejercicios algebraicos de práctica
 
-1. **Inecuación lineal:** Resolver y graficar el conjunto solución de:
+**Inecuaciones lineales:**
+
+1. Resolver y graficar el conjunto solución:
    $$5x - 7 \leq 3x + 9$$
 
-2. **Inecuación cuadrática:** Resolver empleando tabla de signos:
+2. Resolver la inecuación con fracciones:
+   $$\dfrac{2x - 1}{4} - \dfrac{x + 3}{6} > 1$$
+
+3. Resolver la inecuación de doble desigualdad simultánea:
+   $$-1 \leq \dfrac{3x + 2}{5} < 4$$
+
+**Inecuaciones cuadráticas:**
+
+4. Resolver empleando tabla de signos ($\Delta > 0$, dos raíces distintas):
    $$x^2 + x - 6 > 0$$
 
-3. **Inecuación racional:** Determinar el conjunto solución de:
+5. Resolver el caso de raíz doble ($\Delta = 0$):
+   $$-x^2 + 6x - 9 \geq 0$$
+
+6. Resolver el caso sin raíces reales ($\Delta < 0$):
+   $$2x^2 - 3x + 5 > 0$$
+
+7. Resolver con coeficiente principal negativo:
+   $$-3x^2 + 2x + 8 \geq 0$$
+
+**Inecuaciones racionales:**
+
+8. Determinar el conjunto solución (forma estándar directa):
+   $$\dfrac{x + 4}{x - 3} \leq 0$$
+
+9. Resolver la inecuación que requiere agrupar antes de la tabla de signos:
    $$\dfrac{x - 3}{x + 1} < 2$$
 
-4. **Inecuación con valor absoluto:** Resolver aplicando propiedades métricas:
-   $$|2x - 1| \leq 5$$
+10. Resolver con numerador cuadrático factorizable:
+    $$\dfrac{x^2 + x - 12}{2x - 1} > 0$$
 
-5. **Sistema de inecuaciones:** Resolver el siguiente sistema simultáneo:
-   $$\begin{cases} 
-   3x + 4 > 1 \\[6pt] 
-   x^2 - 5x + 4 \leq 0 
-   \end{cases}$$
+11. Resolver la inecuación con suma de cocientes (requiere mínimo común denominador):
+    $$\dfrac{1}{x - 2} + \dfrac{1}{x + 3} \leq 0$$
+
+**Inecuaciones con valor absoluto:**
+
+12. Resolver el caso de acotamiento interno:
+    $$|2x - 1| \leq 5$$
+
+13. Resolver el caso de dispersión externa:
+    $$|4x + 3| > 9$$
+
+14. Resolver con valor absoluto en ambos miembros:
+    $$|x - 2| < |3x + 4|$$
+
+15. Resolver la inecuación con constante no positiva, analizando el caso especial:
+    $$|5x - 1| \geq -3$$
+
+**Sistemas de inecuaciones:**
+
+16. Resolver el sistema lineal simultáneo:
+    $$\begin{cases} 
+    3x + 4 > 1 \\[6pt] 
+    x^2 - 5x + 4 \leq 0 
+    \end{cases}$$
+
+17. Resolver el sistema que combina una inecuación racional con una lineal:
+    $$\begin{cases} 
+    \dfrac{x + 1}{x - 4} \geq 0 \\[10pt] 
+    2x - 3 < 7 
+    \end{cases}$$
+
+18. Resolver el sistema cuya intersección resulta vacía (sin solución):
+    $$\begin{cases} 
+    |x - 1| \leq 2 \\[6pt] 
+    x^2 - x - 6 > 0 
+    \end{cases}$$
 
 ### 7.2 Problemas de aplicación práctica (enunciados)
 
