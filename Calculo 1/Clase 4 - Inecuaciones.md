@@ -62,17 +62,22 @@ Las inecuaciones pueden involucrar diversos tipos de funciones. A continuación,
 - **Valor absoluto (mayor estricto):** $|2x - 7| > 5$
 - **Logarítmica:** $\ln(x - 2) \leq 1$
 
+Tomemos la inecuación más simple posible: $x < 5$. Intuitivamente, sabemos que $x = 0$ la satisface, que $x = 1$ también la satisface, que $x = -100$ también, pero que $x = 6$ no la satisface pues $6$ no es menor que $5$. De hecho, cualquier número estrictamente menor que $5$ es una solución válida.
+
+Para apreciar qué tiene esto de especial, conviene compararlo con las ecuaciones. Una ecuación lineal como $x - 5 = 0$ tiene exactamente una solución; una cuadrática como $x^2 - 1 = 0$ tiene a lo sumo dos; en general, un polinomio de grado $n$ tiene a lo sumo $n$ raíces reales. Hay ecuaciones con infinitas soluciones, como $\sin(n\pi) = 0$, que se cumple para todo $n \in \mathbb{Z}$; sin embargo, ese conjunto infinito sigue siendo **numerable**, es decir, sus elementos pueden enumerarse uno por uno: $\{\ldots, -2\pi, -\pi, 0, \pi, 2\pi, \ldots\}$. En las inecuaciones, en cambio, el conjunto solución es casi siempre **no numerable**: abarca todo un continuo de la recta real, una región sin saltos ni huecos, que contiene infinitamente más puntos que cualquier lista enumerable. Al conjunto de todos los valores que hacen verdadera la desigualdad se le denomina **conjunto solución**.
+
 **Definición 1.3 (Conjunto Solución):**
 El **conjunto solución** de una inecuación es el conjunto de todos los valores reales que satisfacen la desigualdad. Dos inecuaciones se denominan **equivalentes** si tienen exactamente el mismo conjunto solución.
 
-> **Observación importante:** A diferencia de las ecuaciones lineales o cuadráticas, donde la solución suele ser un conjunto discreto de números (uno, dos o tres valores específicos), en las inecuaciones el conjunto solución es casi siempre **infinito**, abarcando todo un continuo en la recta numérica.
-
 **Ejemplo 1.3 (Conjuntos solución simples):**
 Para comprender la naturaleza de estos conjuntos, veamos algunas inecuaciones elementales:
-- $x > 0 \implies$ El conjunto solución son todos los números reales estrictamente positivos ($\mathbb{R}^+$).
-- $x \leq 0 \implies$ El conjunto solución son todos los reales negativos incluyendo al cero ($\mathbb{R}^- \cup \{0\}$).
-- $x^2 < 0 \implies$ El conjunto solución es vacío ($\emptyset$), ya que ningún número real al cuadrado arroja un resultado negativo.
-- $|x| \geq 0 \implies$ El conjunto solución son todos los números reales ($\mathbb{R}$), pues el valor absoluto de cualquier número siempre es no negativo.
+- $x > 0 \implies$ El conjunto solución son todos los números reales estrictamente positivos. En notación de intervalo: $(0, \infty)$.
+- $x \leq 0 \implies$ El conjunto solución son todos los reales negativos incluyendo al cero. En notación de intervalo: $(-\infty, 0]$.
+- $x > 5 \implies$ El conjunto solución son todos los reales estrictamente mayores a $5$. En notación de intervalo: $(5, \infty)$.
+- $x \leq -3 \implies$ El conjunto solución son todos los reales menores o iguales a $-3$. En notación de intervalo: $(-\infty, -3]$.
+- $|x| \leq 2 \implies$ Por la Propiedad 1 del Teorema 5.1 (que se estudiará en la Sección 5), equivale a $-2 \leq x \leq 2$. El conjunto solución es el intervalo cerrado $[-2, 2]$.
+- $x^2 < 0 \implies$ El conjunto solución es vacío ($\emptyset$), pues ningún número real al cuadrado arroja un resultado negativo.
+- $x^2 \geq 0 \implies$ El conjunto solución son todos los números reales ($\mathbb{R}$), pues el cuadrado de cualquier número siempre es no negativo.
 
 ### 1.3 Intervalos como Conjuntos Solución
 
@@ -105,10 +110,6 @@ Si la solución a una inecuación nos dicta que $x$ debe ser "mayor o igual a -2
 - **Inecuación:** $-2 \leq x < 5$
 - **Conjunto:** $\{x \in \mathbb{R} : -2 \leq x < 5\}$
 - **Intervalo:** $[-2, 5)$
-
-**Aplicaciones:**
-
-Las propiedades del orden en $\mathbb{R}$ y la notación de intervalos son el lenguaje algebraico que sustenta todo el Cálculo diferencial e integral. La definición formal de límite —uno de los conceptos centrales del curso— se formula mediante inecuaciones del tipo $0 < |x - a| < \delta$ y $|f(x) - L| < \varepsilon$, donde $\delta$ y $\varepsilon$ son números positivos que cuantifican proximidad y tolerancia respectivamente. En optimización, determinar en qué regiones una función crece o decrece equivale a analizar cuándo su derivada satisface $f'(x) > 0$ o $f'(x) < 0$: el resultado es siempre un conjunto solución de una inecuación, expresado como unión de intervalos. En estadística, los intervalos de confianza —que expresan con qué certeza se estima un parámetro poblacional— son conjuntos solución de inecuaciones de la forma $|\hat{\theta} - \theta| \leq z_{\alpha/2} \cdot \sigma$.
 
 ---
 ## 2. Inecuaciones Lineales
@@ -697,7 +698,67 @@ x > 2 \quad &\lor \quad x < -\dfrac{8}{3}
 
 **Respuesta:** El conjunto solución es la unión de los intervalos divergentes. En notación de intervalo: $S = \left(-\infty, -\dfrac{8}{3}\right) \cup (2, \infty)$.
 
-**Ejemplo 5.3 (Valor absoluto en ambos lados):**
+**Ejemplo 5.3 (Dispersión externa no lineal):**
+Resolver la inecuación racional con valor absoluto:
+$$\left| \dfrac{x + 2}{x - 1} \right| > 2$$
+
+**Solución:**
+En primer lugar, se establece la restricción de dominio para que la fracción esté bien definida en los números reales: el denominador no debe anularse, por lo que $x - 1 \neq 0$, lo que implica que $x \neq 1$. De este modo, el dominio admisible es $\text{Dom} = \mathbb{R} \setminus \{1\}$.
+
+Dado que la inecuación presenta la estructura de una dispersión externa ($|u| > a$), se aplica la Propiedad 2 del Teorema 5.1 para desglosar la desigualdad en dos inecuaciones racionales independientes conectadas por la disyunción lógica "o" ($\lor$):
+$$\dfrac{x + 2}{x - 1} > 2 \quad \lor \quad \dfrac{x + 2}{x - 1} < -2$$
+
+A continuación, se resuelve cada inecuación de manera separada:
+
+**Caso 1:** $\dfrac{x + 2}{x - 1} > 2$
+Se transpone el término constante al miembro izquierdo y se efectúa la suma algebraica para obtener una única fracción:
+$$\begin{align}
+\dfrac{x + 2}{x - 1} - 2 &> 0 \\[8pt]
+\dfrac{(x + 2) - 2(x - 1)}{x - 1} &> 0 \\[8pt]
+\dfrac{x + 2 - 2x + 2}{x - 1} &> 0 \\[8pt]
+\dfrac{-x + 4}{x - 1} &> 0
+\end{align}$$
+
+Los puntos críticos del cociente son los valores que anulan el numerador y el denominador:
+- Numerador: $-x + 4 = 0 \implies x = 4$
+- Denominador: $x - 1 = 0 \implies x = 1$
+
+Se realiza el análisis de signos para el cociente $\dfrac{-x + 4}{x - 1}$ en los intervalos definidos por estos puntos críticos:
+- Para $x \in (-\infty, 1)$, se tiene que $\dfrac{\text{positivo}}{\text{negativo}} < 0$.
+- Para $x \in (1, 4)$, se tiene que $\dfrac{\text{positivo}}{\text{positivo}} > 0$.
+- Para $x \in (4, \infty)$, se tiene que $\dfrac{\text{negativo}}{\text{positivo}} < 0$.
+
+Como se busca la región donde el cociente es estrictamente mayor que cero ($> 0$), el conjunto solución para este primer caso es:
+$$S_1 = (1, 4)$$
+
+**Caso 2:** $\dfrac{x + 2}{x - 1} < -2$
+Se transpone el término constante y se realiza la suma de fracciones:
+$$\begin{align}
+\dfrac{x + 2}{x - 1} + 2 &< 0 \\[8pt]
+\dfrac{(x + 2) + 2(x - 1)}{x - 1} &< 0 \\[8pt]
+\dfrac{x + 2 + 2x - 2}{x - 1} &< 0 \\[8pt]
+\dfrac{3x}{x - 1} &< 0
+\end{align}$$
+
+Los puntos críticos de este cociente son:
+- Numerador: $3x = 0 \implies x = 0$
+- Denominador: $x - 1 = 0 \implies x = 1$
+
+Se analiza el signo de $\dfrac{3x}{x - 1}$ en los respectivos intervalos:
+- Para $x \in (-\infty, 0)$, se verifica que $\dfrac{\text{negativo}}{\text{negativo}} > 0$.
+- Para $x \in (0, 1)$, se verifica que $\dfrac{\text{positivo}}{\text{negativo}} < 0$.
+- Para $x \in (1, \infty)$, se verifica que $\dfrac{\text{positivo}}{\text{positivo}} > 0$.
+
+Como se requiere que la expresión sea estrictamente menor que cero ($< 0$), la solución del segundo caso corresponde a:
+$$S_2 = (0, 1)$$
+
+**Respuesta:**
+Dado que la inecuación original está definida por la disyunción lógica de ambos casos, el conjunto solución global $S$ se obtiene mediante la unión de las soluciones parciales $S_1$ y $S_2$:
+$$S = S_1 \cup S_2 = (0, 1) \cup (1, 4)$$
+
+Obsérvese que el punto crítico $x = 1$ queda excluido de manera natural al ser un extremo abierto en ambos intervalos, lo cual es plenamente consistente con la restricción de dominio establecida al inicio.
+
+**Ejemplo 5.4 (Valor absoluto en ambos lados):**
 Resolver $|2x - 1| < |x + 3|$.
 
 **Solución:**
