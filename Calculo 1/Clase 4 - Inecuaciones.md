@@ -75,7 +75,7 @@ Para comprender la naturaleza de estos conjuntos, veamos algunas inecuaciones el
 - $x \leq 0 \implies$ El conjunto solución son todos los reales negativos incluyendo al cero. En notación de intervalo: $(-\infty, 0]$.
 - $x > 5 \implies$ El conjunto solución son todos los reales estrictamente mayores a $5$. En notación de intervalo: $(5, \infty)$.
 - $x \leq -3 \implies$ El conjunto solución son todos los reales menores o iguales a $-3$. En notación de intervalo: $(-\infty, -3]$.
-- $|x| \leq 2 \implies$ Por la Propiedad 1 del Teorema 5.1 (que se estudiará en la Sección 5), equivale a $-2 \leq x \leq 2$. El conjunto solución es el intervalo cerrado $[-2, 2]$.
+- $|x| \leq 2 \implies$ Por la Propiedad 1 del Teorema 6.1 (que se estudiará en la Sección 6), equivale a $-2 \leq x \leq 2$. El conjunto solución es el intervalo cerrado $[-2, 2]$.
 - $x^2 < 0 \implies$ El conjunto solución es vacío ($\emptyset$), pues ningún número real al cuadrado arroja un resultado negativo.
 - $x^2 \geq 0 \implies$ El conjunto solución son todos los números reales ($\mathbb{R}$), pues el cuadrado de cualquier número siempre es no negativo.
 
@@ -570,7 +570,165 @@ Buscamos las regiones con signo negativo o nulo ($\leq 0$):
 **Respuesta:** En notación de intervalo: $S = (-\infty, -2] \cup (1, 3]$.
 
 ---
-## 5. Inecuaciones con Valor Absoluto
+## 5. Otras Inecuaciones No Lineales (Orden Superior, Irracionales y Trascendentes)
+
+En la práctica del cálculo y en aplicaciones de modelación matemática, las restricciones raramente se limitan a relaciones lineales, cuadráticas o fraccionarias simples. Fenómenos físicos como el volumen de cuerpos geométricos optimizados, la velocidad de escape en campos gravitatorios, el crecimiento de poblaciones o la atenuación de ondas conducen a inecuaciones polinómicas de tercer grado o mayor (orden superior), a inecuaciones con radicales (irracionales) o a inecuaciones que involucran funciones exponenciales, logarítmicas o trigonométricas (trascendentes).
+
+Aunque estas inecuaciones pueden parecer complejas a primera vista, los principios fundamentales para su resolución siguen siendo los mismos: establecer el dominio de validez en los números reales y analizar el signo de las expresiones resultantes.
+
+### 5.1 Inecuaciones Polinómicas de Orden Superior
+
+**Definición 5.1 (Inecuación de orden superior):**
+Una inecuación polinómica de orden superior es una desigualdad de la forma:
+$$P(x) \gtrless 0$$
+donde $P(x) = a_n x^n + a_{n-1} x_{n-1} + \dots + a_1 x + a_0$ es un polinomio de grado $n \geq 3$ con coeficientes reales, y el símbolo de relación representa cualquiera de los operadores $\{<, >, \leq, \geq\}$.
+
+El método estándar para resolverlas consiste en factorizar el polinomio en sus términos lineales y cuadráticos irreducibles (utilizando técnicas como Ruffini, factor común o teoremas de raíces de polinomios) para luego realizar una tabla de signos con los puntos críticos obtenidos.
+
+**Ejemplo 5.1 (Polinómica de tercer grado):**
+Resolver el conjunto solución de la inecuación:
+$$x^3 - 2x^2 - 5x + 6 \geq 0$$
+
+**Solución:**
+En primer lugar, se busca factorizar el polinomio de tercer grado $P(x) = x^3 - 2x^2 - 5x + 6$. Evaluando divisores del término independiente $6$ mediante el teorema del resto, se verifica que para $x = 1$:
+$$P(1) = 1^3 - 2(1)^2 - 5(1) + 6 = 1 - 2 - 5 + 6 = 0$$
+
+Al ser $x = 1$ una raíz, aplicamos la división sintética (regla de Ruffini) para factorizar el polinomio:
+$$\begin{array}{r|rrrr}
+  & 1 & -2 & -5 & 6 \\
+1 &   &  1 & -1 & -6 \\
+\hline
+  & 1 & -1 & -6 & 0
+\end{array}$$
+
+El polinomio remanente es $x^2 - x - 6$, el cual se factoriza directamente como $(x - 3)(x + 2)$. De este modo, la inecuación se reescribe en su forma factorizada:
+$$(x - 1)(x - 3)(x + 2) \geq 0$$
+
+Los puntos críticos corresponden a las raíces del polinomio:
+- $x = 1$
+- $x = 3$
+- $x = -2$
+
+Estos puntos dividen la recta real en cuatro intervalos. Construimos la tabla de signos evaluando cada factor lineal de manera independiente:
+
+| Intervalo | $(-\infty, -2)$ | $-2$ | $(-2, 1)$ | $1$ | $(1, 3)$ | $3$ | $(3, \infty)$ |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| $(x + 2)$ | $-$ | $0$ | $+$ | $+$ | $+$ | $+$ | $+$ |
+| $(x - 1)$ | $-$ | $-$ | $-$ | $0$ | $+$ | $+$ | $+$ |
+| $(x - 3)$ | $-$ | $-$ | $-$ | $-$ | $-$ | $0$ | $+$ |
+| $\text{Producto}$ | $-$ | $0$ | $+$ | $0$ | $-$ | $0$ | $+$ |
+
+Buscamos las regiones con signo positivo o nulo ($\geq 0$):
+- $(-\infty, -2)$: signo $-$ ✗
+- $x = -2$: permitido, el producto vale $0$ (se incluye) ✓
+- $(-2, 1)$: signo $+$ ✓
+- $x = 1$: permitido, el producto vale $0$ (se incluye) ✓
+- $(1, 3)$: signo $-$ ✗
+- $x = 3$: permitido, el producto vale $0$ (se incluye) ✓
+- $(3, \infty)$: signo $+$ ✓
+
+**Respuesta:** En notación de intervalo: $S = [-2, 1] \cup [3, \infty)$.
+
+### 5.2 Inecuaciones Irracionales
+
+**Definición 5.2 (Inecuación irracional básica):**
+Una inecuación irracional es una desigualdad que contiene a la incógnita bajo el signo de un radical. En su forma básica con raíces de índice par (como la raíz cuadrada), se representa como:
+$$\sqrt{f(x)} < g(x)$$
+donde $f(x)$ y $g(x)$ son expresiones algebraicas con valores reales.
+
+La resolución de inecuaciones con raíces de índice par exige cumplir dos condiciones simultáneas para preservar la validez en el campo de los números reales:
+1. **Existencia del radicando:** La expresión dentro del radical debe ser no negativa ($f(x) \geq 0$).
+2. **Elevación al cuadrado:** Para poder elevar ambos miembros al cuadrado sin alterar la relación de orden, la expresión del miembro opuesto al radical debe ser positiva ($g(x) > 0$), asegurando así la compatibilidad aritmética.
+
+**Ejemplo 5.2 (Inecuación con raíz cuadrada):**
+Resolver el conjunto solución de:
+$$\sqrt{x + 5} < 3$$
+
+**Solución:**
+Para que la inecuación esté bien definida en los números reales, se deben plantear y cumplir simultáneamente las siguientes condiciones algebraicas:
+
+$$\begin{align}
+x + 5 \geq 0 &\quad \text{(condición de existencia de la raíz real)} \\[6pt]
+\sqrt{x + 5}^2 < 3^2 &\quad \text{(elevación al cuadrado en ambos miembros)}
+\end{align}$$
+
+Resolvemos la primera condición:
+$$x + 5 \geq 0 \implies x \geq -5 \implies S_1 = [-5, \infty)$$
+
+Resolvemos la segunda condición elevando al cuadrado:
+$$x + 5 < 9 \implies x < 4 \implies S_2 = (-\infty, 4)$$
+
+El conjunto solución final $S$ de la inecuación irracional se obtiene de la intersección de ambos conjuntos de restricciones, garantizando la existencia y el cumplimiento de la desigualdad al mismo tiempo:
+$$S = S_1 \cap S_2 = [-5, \infty) \cap (-\infty, 4)$$
+
+**Respuesta:** En notación de intervalo: $S = [-5, 4)$.
+
+### 5.3 Inecuaciones Trascendentes
+
+Las inecuaciones trascendentes son aquellas donde la variable independiente figura como argumento de una función que no puede expresarse mediante sumas, productos o cocientes algebraicos finitos de polinomios, tales como las funciones exponenciales, logarítmicas o trigonométricas. 
+
+La resolución de estas desigualdades no responde a un algoritmo universal, sino que se fundamenta en dos principios conceptuales del Análisis Matemático:
+1. **La propiedad de monotonía:** Si una función es estrictamente creciente (como $f(x) = e^x$ o $f(x) = \ln(x)$), entonces preserva el orden de la desigualdad al aplicarse o removerse de ambos miembros. Si es estrictamente decreciente, invierte el sentido de la desigualdad.
+2. **La periodicidad:** Las funciones trigonométricas repiten sus valores en ciclos regulares, por lo que resolver inecuaciones con senos o cosenos exige analizar el comportamiento en un período base y luego extender la solución a toda la recta real.
+
+**Ejemplo 5.3 (Inecuación exponencial):**
+Resolver la inecuación exponencial:
+$$3^{2x - 1} \geq 9$$
+
+**Solución:**
+En primer lugar, expresamos el miembro derecho en base $3$:
+$$3^{2x - 1} \geq 3^2$$
+
+Dado que la función exponencial de base $b = 3$ es estrictamente creciente ($3 > 1$), se conserva el sentido del operador de desigualdad al comparar los exponentes directamente:
+$$\begin{align}
+2x - 1 &\geq 2 \\[6pt]
+2x &\geq 3 \\[6pt]
+x &\geq \dfrac{3}{2}
+\end{align}$$
+
+**Respuesta:** En notación de intervalo: $S = \left[\dfrac{3}{2}, \infty\right)$.
+
+**Ejemplo 5.4 (Inecuación logarítmica):**
+Resolver la inecuación logarítmica:
+$$\ln(x - 2) < 0$$
+
+**Solución:**
+Para que la expresión logarítmica exista en el campo de los números reales, el argumento del logaritmo debe ser estrictamente positivo. Esto define la condición de dominio:
+$$x - 2 > 0 \implies x > 2 \implies \text{Dom} = (2, \infty)$$
+
+Una vez delimitado el dominio admisible, aplicamos la función exponencial de base $e$ en ambos miembros. Dado que $e \approx 2.718$ es mayor que $1$, la función exponencial es estrictamente creciente y preserva el sentido de la desigualdad:
+$$\begin{align}
+e^{\ln(x - 2)} &< e^0 \\[6pt]
+x - 2 &< 1 \\[6pt]
+x &< 3 \implies S_{\text{desigualdad}} = (-\infty, 3)
+\end{align}$$
+
+El conjunto solución final $S$ se determina mediante la intersección de la solución de la desigualdad con el dominio de definición de la función:
+$$S = S_{\text{desigualdad}} \cap \text{Dom} = (-\infty, 3) \cap (2, \infty)$$
+
+**Respuesta:** En notación de intervalo: $S = (2, 3)$.
+
+**Ejemplo 5.5 (Inecuación trigonométrica simple):**
+Resolver para $x \in [0, 2\pi]$ la inecuación trigonométrica:
+$$\sin(x) > \dfrac{1}{2}$$
+
+**Solución:**
+Analizamos en el círculo unitario (círculo goniométrico) los ángulos $x$ en el intervalo $[0, 2\pi]$ cuya ordenada (coordenada $y$) es estrictamente superior a $1/2$.
+
+Los valores fronteras donde $\sin(x) = 1/2$ dentro del primer período son:
+$$x_1 = \dfrac{\pi}{6} \quad \text{y} \quad x_2 = \pi - \dfrac{\pi}{6} = \dfrac{5\pi}{6}$$
+
+El seno es estrictamente mayor que $1/2$ para todos los ángulos comprendidos en el primer y segundo cuadrante ubicados sobre esta línea horizontal:
+$$\dfrac{\pi}{6} < x < \dfrac{5\pi}{6}$$
+
+**Respuesta:**
+Para el dominio restringido $[0, 2\pi]$, el conjunto solución es $S = \left(\dfrac{\pi}{6}, \dfrac{5\pi}{6}\right)$.
+
+> **Observación:** Si se requiriese resolver en todo el dominio de los números reales $\mathbb{R}$, se añade el período de oscilación de la función seno ($2\pi$) multiplicado por cualquier número entero $k \in \mathbb{Z}$. La solución general se expresaría como la unión infinita numerable:
+> $$S_{\text{general}} = \bigcup_{k \in \mathbb{Z}} \left(\dfrac{\pi}{6} + 2k\pi, \dfrac{5\pi}{6} + 2k\pi\right)$$
+
+---
+## 6. Inecuaciones con Valor Absoluto
 
 En el estudio del Cálculo y el Análisis Matemático, muchas veces no nos interesa la dirección de una cantidad en el espacio, sino la magnitud de su desviación o su margen de error. Por ejemplo, en los procesos de manufactura de alta precisión, la diferencia entre la medida de una pieza fabricada y su diseño teórico debe mantenerse dentro de un rango preestablecido, sin importar si la pieza es ligeramente más grande o más pequeña. Esta idea de medir desviaciones o distancias sin importar su sentido es modelada rigurosamente por las inecuaciones con valor absoluto.
 
@@ -580,11 +738,11 @@ Resolver una inecuación con valor absoluto consiste en encontrar el conjunto de
 
 La definición formal de valor absoluto ha sido establecida previamente en la [[Clase 2 - Los Números]]. A partir de ella, se define la distancia geométrica entre dos puntos de la recta real:
 
-**Definición 5.1 (Distancia en la recta real):**
+**Definición 6.1 (Distancia en la recta real):**
 Dados dos números reales $x, y \in \mathbb{R}$, la distancia geométrica entre ambos se define como:
 $$d(x, y) = |x - y|$$
 
-**Teorema 5.1 (Propiedades fundamentales de las inecuaciones con valor absoluto):**
+**Teorema 6.1 (Propiedades fundamentales de las inecuaciones con valor absoluto):**
 Sea $a \in \mathbb{R}$ una constante positiva ($a > 0$). Se cumplen las siguientes equivalencias lógicas:
 
 1. **Acotamiento interno (Caso "menor que"):**
@@ -661,20 +819,20 @@ $$-(|x| + |y|) \leq x + y \leq |x| + |y|$$
 Definamos la constante no negativa $a = |x| + |y|$. La desigualdad anterior se reescribe de la forma:
 $$-a \leq x + y \leq a$$
 
-Aplicando el Teorema 5.1 (Propiedad 1 en el sentido recíproco $\impliedby$), esta desigualdad de acotamiento interno es equivalente a:
+Aplicando el Teorema 6.1 (Propiedad 1 en el sentido recíproco $\impliedby$), esta desigualdad de acotamiento interno es equivalente a:
 $$|x + y| \leq a$$
 
 Sustituyendo el valor de $a$, se concluye la desigualdad buscada:
 $$|x + y| \leq |x| + |y|$$
 $\blacksquare$
 
-### 5.1 Ejemplos resueltos
+### 6.1 Ejemplos resueltos
 
-**Ejemplo 5.1 (Acotamiento interno):**
+**Ejemplo 6.1 (Acotamiento interno):**
 Resolver $|2x - 3| \leq 5$.
 
 **Solución:**
-Dado que la inecuación presenta la estructura de un acotamiento interno ($\leq$), aplicamos el Teorema 5.1 (Propiedad 1) para eliminar el valor absoluto, encerrando la expresión lineal entre $-5$ y $5$:
+Dado que la inecuación presenta la estructura de un acotamiento interno ($\leq$), aplicamos el Teorema 6.1 (Propiedad 1) para eliminar el valor absoluto, encerrando la expresión lineal entre $-5$ y $5$:
 $$\begin{align}
 -5 &\leq 2x - 3 \leq 5 \\[6pt]
 -5 + 3 &\leq 2x \leq 5 + 3 \quad \text{(se suma } 3 \text{ en todos los términos)} \\[6pt]
@@ -685,11 +843,11 @@ $$\begin{align}
 
 **Respuesta:** En notación de intervalo: $S = [-1, 4]$.
 
-**Ejemplo 5.2 (Dispersión externa):**
+**Ejemplo 6.2 (Dispersión externa):**
 Resolver $|3x + 1| > 7$.
 
 **Solución:**
-Dado que la inecuación presenta la estructura de una dispersión externa ($>$), aplicamos el Teorema 5.1 (Propiedad 2), desglosando el problema en dos inecuaciones lineales unidas por el conectivo lógico disyuntivo "o" ($\lor$):
+Dado que la inecuación presenta la estructura de una dispersión externa ($>$), aplicamos el Teorema 6.1 (Propiedad 2), desglosando el problema en dos inecuaciones lineales unidas por el conectivo lógico disyuntivo "o" ($\lor$):
 $$\begin{align}
 3x + 1 > 7 \quad &\lor \quad 3x + 1 < -7 \\[6pt]
 3x > 6 \quad &\lor \quad 3x < -8 \\[6pt]
@@ -698,14 +856,14 @@ x > 2 \quad &\lor \quad x < -\dfrac{8}{3}
 
 **Respuesta:** El conjunto solución es la unión de los intervalos divergentes. En notación de intervalo: $S = \left(-\infty, -\dfrac{8}{3}\right) \cup (2, \infty)$.
 
-**Ejemplo 5.3 (Dispersión externa no lineal):**
+**Ejemplo 6.3 (Dispersión externa no lineal):**
 Resolver la inecuación racional con valor absoluto:
 $$\left| \dfrac{x + 2}{x - 1} \right| > 2$$
 
 **Solución:**
 En primer lugar, se establece la restricción de dominio para que la fracción esté bien definida en los números reales: el denominador no debe anularse, por lo que $x - 1 \neq 0$, lo que implica que $x \neq 1$. De este modo, el dominio admisible es $\text{Dom} = \mathbb{R} \setminus \{1\}$.
 
-Dado que la inecuación presenta la estructura de una dispersión externa ($|u| > a$), se aplica la Propiedad 2 del Teorema 5.1 para desglosar la desigualdad en dos inecuaciones racionales independientes conectadas por la disyunción lógica "o" ($\lor$):
+Dado que la inecuación presenta la estructura de una dispersión externa ($|u| > a$), se aplica la Propiedad 2 del Teorema 6.1 para desglosar la desigualdad en dos inecuaciones racionales independientes conectadas por la disyunción lógica "o" ($\lor$):
 $$\dfrac{x + 2}{x - 1} > 2 \quad \lor \quad \dfrac{x + 2}{x - 1} < -2$$
 
 A continuación, se resuelve cada inecuación de manera separada:
@@ -758,7 +916,7 @@ $$S = S_1 \cup S_2 = (0, 1) \cup (1, 4)$$
 
 Obsérvese que el punto crítico $x = 1$ queda excluido de manera natural al ser un extremo abierto en ambos intervalos, lo cual es plenamente consistente con la restricción de dominio establecida al inicio.
 
-**Ejemplo 5.4 (Valor absoluto en ambos lados):**
+**Ejemplo 6.4 (Valor absoluto en ambos lados):**
 Resolver $|2x - 1| < |x + 3|$.
 
 **Solución:**
@@ -796,7 +954,7 @@ Buscamos las regiones con signo negativo ($< 0$):
 
 **Respuesta:** En notación de intervalo: $S = \left(-\dfrac{2}{3}, 4\right)$.
 
-> **Advertencia (Caso de constante no positiva):** Las propiedades del Teorema 5.1 asumen estrictamente que la constante $a$ es positiva ($a > 0$). Si se presenta una inecuación donde $a \leq 0$, las propiedades no se aplican directamente y debe usarse el análisis lógico elemental:
+> **Advertencia (Caso de constante no positiva):** Las propiedades del Teorema 6.1 asumen estrictamente que la constante $a$ es positiva ($a > 0$). Si se presenta una inecuación donde $a \leq 0$, las propiedades no se aplican directamente y debe usarse el análisis lógico elemental:
 > - Una inecuación del tipo $|f(x)| < -5$ **no tiene solución** ($S = \emptyset$), puesto que un valor absoluto nunca puede ser menor que un número negativo.
 > - Una inecuación del tipo $|f(x)| \geq -2$ se cumple para todo $x$ en el dominio de $f$ ($S = \text{Dom}(f)$), dado que un valor absoluto siempre es mayor o igual a cero, y por ende, mayor que cualquier negativo.
 
@@ -810,7 +968,7 @@ Las inecuaciones con valor absoluto son la herramienta matemática por excelenci
 - **Tolerancia y metrología aplicada:** En física e ingeniería, las especificaciones de calidad y tolerancias de diseño de piezas y sistemas se expresan de manera unívoca mediante inecuaciones con valor absoluto de la forma $|V - V_0| \leq t$, donde $V_0$ es el valor nominal de diseño y $t$ es la tolerancia admisible.
 
 ---
-## 6. Sistemas de Inecuaciones
+## 7. Sistemas de Inecuaciones
 
 Pensemos en el diseño de un puente o una estructura de ingeniería: las vigas deben soportar fuerzas de compresión masivas, pero a la vez deben mantenerse ligeras para no sobrecargar los pilares. Esto significa que el peso de la estructura debe ser mayor que un límite mínimo de seguridad, pero menor que un límite máximo de resistencia física. Ambos límites imponen restricciones que se deben cumplir al mismo tiempo.
 
@@ -818,7 +976,7 @@ En matemáticas, cuando un problema exige satisfacer múltiples restricciones o 
 
 > **Nota histórica:** Los sistemas de desigualdades lineales y sus métodos sistemáticos de resolución cobraron una relevancia trascendental a mediados del siglo XX con el surgimiento de la **programación lineal**, desarrollada por matemáticos como George Dantzig. Este campo, crucial para la optimización de recursos en economía, logística e ingeniería, se fundamenta enteramente en encontrar soluciones comunes a grandes sistemas de inecuaciones lineales simultáneas.
 
-**Definición 6.1 (Sistema de Inecuaciones en una Variable):**
+**Definición 7.1 (Sistema de Inecuaciones en una Variable):**
 Un sistema de inecuaciones en una variable $x$ es un conjunto finito de dos o más inecuaciones que deben satisfacerse simultáneamente. Se representa mediante una llave que agrupa las inecuaciones:
 $$\begin{cases} 
 f_1(x) \lessgtr 0 \\[6pt] 
@@ -831,7 +989,7 @@ El conjunto solución total de este sistema, denotado por $S_{\text{total}}$, se
 $$S_{\text{total}} = \bigcap_{i=1}^{n} S_i = S_1 \cap S_2 \cap \dots \cap S_n$$
 donde $S_i$ es el conjunto solución de la $i$-ésima inecuación $f_i(x) \lessgtr 0$.
 
-### 6.1 Método de resolución conjuntista
+### 7.1 Método de resolución conjuntista
 
 A diferencia de los sistemas de ecuaciones, donde se emplean métodos analíticos de reducción o sustitución algebraicos cruzados, el enfoque para los sistemas de inecuaciones con una sola variable es puramente conjuntista y se desarrolla en los siguientes pasos:
 
@@ -839,9 +997,9 @@ A diferencia de los sistemas de ecuaciones, donde se emplean métodos analítico
 2. **Representación gráfica conjunta:** Se representan de manera simultánea los conjuntos $S_i$ sobre una misma recta real. Esto permite identificar visualmente las franjas o regiones donde se superponen todos los intervalos representados.
 3. **Intersección conjuntista:** Se calcula la intersección matemática de los intervalos. Si no existen puntos comunes entre todos los conjuntos individuales, se concluye que el sistema no tiene solución, por lo que el conjunto solución es vacío ($S_{\text{total}} = \emptyset$).
 
-### 6.2 Ejemplos resueltos
+### 7.2 Ejemplos resueltos
 
-**Ejemplo 6.1 (Sistema lineal clásico):**
+**Ejemplo 7.1 (Sistema lineal clásico):**
 Resolver el siguiente sistema de inecuaciones:
 $$\begin{cases} 
 2x - 5 < 3 \\[6pt] 
@@ -868,7 +1026,7 @@ $$S_{\text{total}} = S_1 \cap S_2 = (-\infty, 4) \cap [2, \infty)$$
 
 **Respuesta:** En notación de intervalo: $S_{\text{total}} = [2, 4)$.
 
-**Ejemplo 6.2 (Sistema mixto con inecuación cuadrática):**
+**Ejemplo 7.2 (Sistema mixto con inecuación cuadrática):**
 Resolver el siguiente sistema de inecuaciones:
 $$\begin{cases} 
 x^2 - 9 \leq 0 \\[6pt] 
@@ -893,7 +1051,7 @@ $$S_{\text{total}} = S_1 \cap S_2 = [-3, 3] \cap (1, \infty)$$
 
 **Respuesta:** En notación de intervalo: $S_{\text{total}} = (1, 3]$.
 
-**Ejemplo 6.3 (Sistema sin solución - Intersección vacía):**
+**Ejemplo 7.3 (Sistema sin solución - Intersección vacía):**
 Resolver el siguiente sistema de inecuaciones:
 $$\begin{cases} 
 2x + 3 \leq -1 \\[6pt] 
@@ -930,10 +1088,110 @@ Dado que no existe ningún número real que pertenezca simultáneamente al inter
 Los sistemas de inecuaciones formalizan matemáticamente cualquier situación donde múltiples restricciones deben cumplirse en simultáneo. El campo más importante que se fundamenta en ellos es la **programación lineal**: dados recursos limitados y restricciones expresadas como inecuaciones lineales sobre variables de decisión, se busca la asignación que optimiza una función objetivo. Su aplicación abarca la logística de distribución, la planificación de producción industrial, la optimización de portafolios financieros y el diseño de dietas en nutrición clínica. En ingeniería de control, los sistemas de inecuaciones aparecen al especificar simultáneamente condiciones de estabilidad, rango de operación y límites de seguridad sobre las variables del sistema. En estadística, la estimación con restricciones múltiples genera sistemas de inecuaciones cuya región de intersección define el conjunto de parámetros factibles.
 
 ---
+## 8. Aplicaciones Teóricas en el Cálculo: Dominios y Restricciones
 
-## 7. Ejercicios Propuestos
+En el análisis matemático y el cálculo diferencial, las inecuaciones no solo son herramientas para la resolución de problemas aplicados, sino que constituyen el fundamento algebraico para definir el comportamiento de las funciones reales de variable real. Específicamente, las inecuaciones permiten delimitar el **dominio de definición** de funciones que presentan restricciones de existencia en el conjunto de los números reales ($\mathbb{R}$), tales como las raíces de índice par y los logaritmos.
 
-### 7.1 Ejercicios algebraicos de práctica
+### 8.1 Determinación de Dominios de Existencia
+
+El dominio de una función real $f$, denotado por $\text{Dom}(f)$, es el conjunto de todos los números reales para los cuales la expresión $f(x)$ está bien definida y arroja un valor real. Las restricciones fundamentales que se traducen en inecuaciones son:
+
+1. **Raíces de índice par:** Para una función de la forma $f(x) = \sqrt[2k]{g(x)}$ con $k \in \mathbb{N}$, la radicación solo está definida en los reales si el radicando es no negativo:
+   $$g(x) \geq 0$$
+
+2. **Funciones logarítmicas:** Para una función de la forma $f(x) = \log_b(g(x))$, el logaritmo solo está definido para valores estrictamente positivos del argumento:
+   $$g(x) > 0$$
+
+3. **Restricciones combinadas:** Si una expresión con restricciones se encuentra en el denominador de una fracción, el dominio excluye adicionalmente los puntos donde el denominador se anula. Por ejemplo, para $f(x) = \dfrac{1}{\sqrt{g(x)}}$, la condición se reduce a una inecuación estricta:
+   $$g(x) > 0$$
+
+### 8.2 Ejemplos resueltos
+
+**Ejemplo 8.1 (Dominio con radical cuadrático):**
+Determinar el dominio de definición de la función:
+$$f(x) = \sqrt{x^2 - 4x - 5}$$
+
+**Solución:**
+Para que la función arroje un resultado real, la expresión dentro de la raíz cuadrada debe ser mayor o igual a cero. Esto se modela mediante la inecuación cuadrática:
+$$x^2 - 4x - 5 \geq 0$$
+
+Factorizamos el trinomio cuadrático buscando dos números que multiplicados den $-5$ y sumados den $-4$. Estos números son $-5$ y $1$:
+$$(x - 5)(x + 1) \geq 0$$
+
+Los puntos críticos son $x = 5$ y $x = -1$. Al ser una parábola que abre hacia arriba ($a = 1 > 0$), la expresión es no negativa fuera del intervalo delimitado por sus raíces. También se puede verificar analizando intervalos en una tabla de signos:
+- Para $x \in (-\infty, -1]$, el producto es $\text{negativo} \cdot \text{negativo} \geq 0$ (permitido).
+- Para $x \in (-1, 5)$, el producto es $\text{negativo} \cdot \text{positivo} < 0$ (excluido).
+- Para $x \in [5, \infty)$, el producto es $\text{positivo} \cdot \text{positivo} \geq 0$ (permitido).
+
+**Respuesta:** El dominio de la función es:
+$$\text{Dom}(f) = (-\infty, -1] \cup [5, \infty)$$
+
+**Ejemplo 8.2 (Dominio con logaritmo y expresión racional):**
+Determinar el dominio de definición de la función:
+$$g(x) = \ln\left(\dfrac{2x + 6}{x - 4}\right)$$
+
+**Solución:**
+El logaritmo natural está definido únicamente si su argumento es estrictamente mayor que cero. Esto exige resolver la inecuación racional:
+$$\dfrac{2x + 6}{x - 4} > 0$$
+
+Identificamos los puntos críticos que definen los cambios de signo de la fracción:
+- Numerador: $2x + 6 = 0 \implies x = -3$
+- Denominador: $x - 4 = 0 \implies x = 4$
+
+Construimos la tabla de signos para analizar el comportamiento del cociente:
+
+| Intervalo | $(-\infty, -3)$ | $-3$ | $(-3, 4)$ | $4$ | $(4, \infty)$ |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| $(2x + 6)$ | $-$ | $0$ | $+$ | $+$ | $+$ |
+| $(x - 4)$ | $-$ | $-$ | $-$ | $0$ | $+$ |
+| $\text{Cociente}$ | $+$ | $0$ | $-$ | $\nexists$ | $+$ |
+
+Buscamos las regiones donde el cociente es estrictamente positivo ($> 0$). Excluimos los extremos puesto que el logaritmo requiere una desigualdad estricta y el punto $x = 4$ indetermina el denominador:
+- Para $x \in (-\infty, -3)$, el signo es positivo ✓
+- Para $x \in (-3, 4)$, el signo es negativo ✗
+- Para $x \in (4, \infty)$, el signo es positivo ✓
+
+**Respuesta:** El dominio de la función es:
+$$\text{Dom}(g) = (-\infty, -3) \cup (4, \infty)$$
+
+**Ejemplo 8.3 (Dominio con restricciones múltiples acopladas):**
+Determinar el dominio de definición de la función:
+$$h(x) = \sqrt{x + 3} + \dfrac{1}{\ln(5 - x)}$$
+
+**Solución:**
+Para que la función $h(x)$ esté definida, deben satisfacerse simultáneamente tres condiciones matemáticas en los reales:
+1. La raíz cuadrada debe tener un radicando no negativo.
+2. El logaritmo natural debe tener un argumento estrictamente positivo.
+3. El denominador de la fracción no debe anularse.
+
+Planteamos y resolvemos cada restricción por separado:
+
+* **Condición 1 (Raíz):**
+  $$x + 3 \geq 0 \implies x \geq -3 \implies S_1 = [-3, \infty)$$
+
+* **Condición 2 (Logaritmo):**
+  $$5 - x > 0 \implies -x > -5 \implies x < 5 \implies S_2 = (-\infty, 5)$$
+
+* **Condición 3 (Denominador no nulo):**
+  El denominador se anula cuando $\ln(5 - x) = 0$. Resolvemos esta ecuación:
+  $$\ln(5 - x) = 0 \implies 5 - x = e^0 \implies 5 - x = 1 \implies x = 4$$
+  Por lo tanto, se debe excluir el valor $x = 4$ del dominio:
+  $$S_3 = \mathbb{R} \setminus \{4\}$$
+
+El dominio global de la función se obtiene mediante la intersección simultánea de las tres soluciones parciales:
+$$\text{Dom}(h) = S_1 \cap S_2 \cap S_3 = [-3, \infty) \cap (-\infty, 5) \cap (\mathbb{R} \setminus \{4\})$$
+
+Realizando la intersección de los intervalos, obtenemos la región $[-3, 5)$ excluyendo el punto aislado $4$:
+$$\text{Dom}(h) = [-3, 5) \setminus \{4\}$$
+
+**Respuesta:** Expresado como unión de intervalos:
+$$\text{Dom}(h) = [-3, 4) \cup (4, 5)$$
+
+
+---
+## 9. Ejercicios Propuestos
+
+### 9.1 Ejercicios algebraicos de práctica
 
 **Inecuaciones lineales:**
 
@@ -1008,7 +1266,7 @@ Los sistemas de inecuaciones formalizan matemáticamente cualquier situación do
     x^2 - x - 6 > 0 
     \end{cases}$$
 
-### 7.2 Problemas de aplicación práctica (enunciados)
+### 9.2 Problemas de aplicación práctica (enunciados)
 
 1. **Optimización de costos y utilidades:** Un fabricante de dispositivos electrónicos estima que el costo total de producir $x$ unidades diarias está dado por la función de costo lineal $C(x) = 25x + 3500$ (en dólares). Si cada unidad se vende en el mercado a $60$ dólares:
    - Determine la función de utilidad diaria $U(x)$.
