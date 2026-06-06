@@ -34,18 +34,64 @@ Sea $y = f(c \cdot x)$ con $c > 0$.
 **Ejemplo:** Si $f(x) = x^2$, entonces $y = (\frac{1}{2}x)^2$ ensancha la parábola horizontalmente.
 ### 1.3 Reflexiones
 
-**Definición 1.5 (Reflexiones):**
+Imaginemos que observamos el reflejo de un paisaje sobre la superficie cristalina de un lago en absoluta calma: la línea del agua actúa como un espejo perfecto que invierte verticalmente todo lo que está por encima. En física, cuando un rayo de luz incide sobre un espejo plano, rebota de manera simétrica conservando su ángulo de incidencia. En acústica y procesamiento de señales, invertir la polaridad de una onda de sonido equivale a multiplicarla por $-1$, lo cual genera una onda "espejada" que puede emplearse para cancelar ruidos no deseados.
+
+En matemáticas, estas transformaciones geométricas de espejado se denominan **reflexiones**. Permiten voltear una gráfica vertical u horizontalmente con respecto a una recta de referencia (el eje de reflexión), mapeando cada punto original a un punto simétrico ubicado exactamente a la misma distancia de dicho eje.
+
+**Definición 1.5 (Reflexiones estándar):**
+Las reflexiones básicas se realizan con respecto a los ejes coordenados:
 - **Reflexión respecto al eje X:** $y = -f(x)$. El punto $(x, y)$ se mapea a $(x, -y)$.
 - **Reflexión respecto al eje Y:** $y = f(-x)$. El punto $(x, y)$ se mapea a $(-x, y)$.
-
+ 
 **Ejemplo:** Si usamos la función $f(x) = x^3 + 4$:
 - La reflexión respecto al eje X nos da $y = -(x^3 + 4) = -x^3 - 4$ (la curva entera se voltea hacia abajo).
 - La reflexión respecto al eje Y nos da $y = (-x)^3 + 4 = -x^3 + 4$ (la curva se voltea de izquierda a derecha, pero mantiene su altura).
-
+ 
 > *(Nota sobre simetrías: Algunas funciones elementales tienen propiedades visuales curiosas al reflejarse. Por ejemplo, al reflejar $f(x) = x^2$ respecto al eje Y, la gráfica se mantiene intacta ($(-x)^2 = x^2$). O en el caso de $f(x) = x^3$, su reflexión en el eje X ($-x^3$) resulta ser visualmente idéntica a su reflexión en el eje Y ($(-x)^3$). Este comportamiento lo analizaremos a fondo más adelante en la clasificación de funciones Pares e Impares).*
+
+### 1.3.1 Generalización: Reflexiones respecto a ejes arbitrarios
+
+Las reflexiones no se limitan a los ejes coordenados principales. Es posible reflejar una gráfica en torno a cualquier recta en el plano cartesiano.
+
+**1. Reflexión respecto a una recta horizontal $y = c$:**
+Si se desea reflejar la gráfica de $y = f(x)$ respecto a una recta de simetría horizontal de ecuación $y = c$, la distancia vertical de cualquier punto de la función original a la recta $y = c$ debe conservarse pero en sentido opuesto. 
+Si el punto original es $(x, f(x))$, su imagen reflejada $(x, y')$ tiene como punto medio al eje de reflexión, es decir:
+$$\dfrac{f(x) + y'}{2} = c \implies y' = 2c - f(x)$$
+De este modo, la ecuación de la función reflejada respecto a $y = c$ es:
+$$y = 2c - f(x)$$
+
+**2. Reflexión respecto a una recta vertical $x = c$:**
+Análogamente, si se refleja la gráfica de $y = f(x)$ con respecto a una recta vertical de ecuación $x = c$, la abscisa de cualquier punto $x$ se mapea a una nueva abscisa $x'$ de modo que $c$ es el punto medio entre ambos:
+$$\dfrac{x + x'}{2} = c \implies x' = 2c - x$$
+Por lo tanto, la ecuación de la función reflejada respecto a $x = c$ es:
+$$y = f(2c - x)$$
+
+**Ejemplo 1.3.1 (Ejes horizontales y verticales arbitrarios):**
+Dada la función $f(x) = \sqrt{x}$:
+- La reflexión respecto a la recta horizontal $y = 3$ nos da:
+  $$y = 2(3) - \sqrt{x} = 6 - \sqrt{x}$$
+- La reflexión respecto a la recta vertical $x = 4$ nos da:
+  $$y = \sqrt{2(4) - x} = \sqrt{8 - x}$$
+  *Donde el nuevo dominio requiere que $8 - x \geq 0 \implies x \leq 8$.*
+
+**3. Reflexión respecto a una recta oblicua arbitraria $y = mx + n$:**
+Si se desea reflejar la gráfica de una función con respecto a una recta oblicua $L: mx - y + n = 0$ (con $m \neq 0$), debemos recurrir a la geometría analítica. Para cualquier punto $(x, y)$ de la función (donde $y = f(x)$), su punto reflejado $(x', y')$ debe cumplir dos condiciones geométricas fundamentales:
+1. El segmento que une $(x, y)$ con $(x', y')$ debe ser perpendicular a la recta $L$ (pendiente $-\tfrac{1}{m}$).
+2. El punto medio del segmento debe pertenecer a la recta $L$.
+
+Al plantear y resolver el sistema de ecuaciones lineales resultante para las coordenadas transformadas $(x', y')$, se obtienen las siguientes ecuaciones de transformación paramétricas:
+$$
+\begin{cases}
+x' = \dfrac{(1 - m^2)x + 2m(f(x) - n)}{1 + m^2} \\[12pt]
+y' = \dfrac{2mx + (m^2 - 1)f(x) + 2n}{1 + m^2}
+\end{cases}
+$$
+
+> **Observación:** La curva resultante $(x', y')$ no siempre definirá una función en el sentido analítico estándar, ya que la gráfica podría fallar la prueba de la línea vertical dependiendo de la pendiente $m$ y de la naturaleza de $f(x)$ (este comportamiento se detallará en la subsección posterior sobre rotaciones).
+
 ### 1.4 Rotación
 
-La rotación general de una función $y=f(x)$ no necesariamente resulta en una nueva función válida (pues la gráfica podría "voltearse" sobre sí misma y violar la prueba de la línea vertical). Para rotar una gráfica un ángulo $\theta$ en sentido antihorario respecto al origen, tomamos cada punto original $(x, y)$ (donde recordamos que $y = f(x)$) y calculamos sus nuevas coordenadas transformadas $(x', y')$ utilizando el siguiente sistema de ecuaciones trigonométricas directas:
+La rotación general de una función $y=f(x)$ no necesariamente resulta en una nueva función válida (pues la gráfica podría "voltearse" sobre sí misma y violar la prueba de la línea vertical, un fenómeno de pérdida de unicidad análogo al descrito para la reflexión en rectas oblicuas en la subsección 1.3.1). Para rotar una gráfica un ángulo $\theta$ en sentido antihorario respecto al origen, tomamos cada punto original $(x, y)$ (donde recordamos que $y = f(x)$) y calculamos sus nuevas coordenadas transformadas $(x', y')$ utilizando el siguiente sistema de ecuaciones trigonométricas directas:
 
 $$
 \begin{cases}
