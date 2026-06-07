@@ -1096,7 +1096,7 @@ $$\frac{2}{3} \cdot \frac{4}{5} = \frac{2 \cdot 4}{3 \cdot 5} = \frac{8}{15}$$
 
 Podemos simplificar **cruzado** antes de multiplicar:
 
-$$\frac{6}{8} \cdot \frac{4}{9} = \frac{6}{8} \cdot \frac{4}{9} = \frac{\cancel{6}^3}{\cancel{8}_4} \cdot \frac{\cancel{4}^1}{\cancel{9}_3} = \frac{3 \cdot 1}{4 \cdot 3} = \frac{3}{12} = \frac{1}{4}$$
+$$\frac{6}{8} \cdot \frac{4}{9} = \frac{6}{8} \cdot \frac{4}{9} = \frac{\cancel{6}^2}{\cancel{8}_2} \cdot \frac{\cancel{4}^1}{\cancel{9}_3} = \frac{2 \cdot 1}{2 \cdot 3} = \frac{2}{6} = \frac{1}{3}$$
 
 O directamente:
 $$\frac{6 \cdot 4}{8 \cdot 9} = \frac{24}{72} = \frac{1}{3}$$
