@@ -958,7 +958,7 @@ El MCM se usa para:
 
 ### 4.7 Fracciones: Representación de números racionales
 
-**Motivación:** Los números enteros son suficientes para contar objetos completos, pero no para expresar partes, divisiones o proporciones. Por ejemplo: "la mitad de una pizza", "dos tercios de una hora", "tres cuartos de litro". Las **fracciones** resuelven esta limitación.
+Los números enteros son suficientes para contar objetos completos, pero no para expresar partes, divisiones o proporciones. Por ejemplo: "la mitad de una pizza", "dos tercios de una hora", "tres cuartos de litro". Las **fracciones** resuelven esta limitación.
 
 #### 4.7.1 Definición y partes de una fracción
 
@@ -985,19 +985,23 @@ $\frac{3}{4}$ significa: "dividir un todo en 4 partes iguales y tomar 3 de ellas
 
 **Tipos de fracciones:**
 
-1. **Fracción propia:** $|a| < |b|$ (el numerador es menor que el denominador)
-   - Ejemplo: $\frac{3}{4}$, $\frac{2}{5}$, $\frac{7}{10}$
-   - Representa un valor **menor que 1**
+1. **Fracción unitaria:** Es aquella cuyo numerador es igual a $1$ ($a = 1$, con $|b| > 1$). Representa una unidad del total de partes divididas.
+   - Ejemplo: $\frac{1}{2}$, $\frac{1}{5}$, $-\frac{1}{10}$
 
-2. **Fracción impropia:** $|a| \geq |b|$ (el numerador es mayor o igual que el denominador)
-   - Ejemplo: $\frac{7}{4}$, $\frac{5}{3}$, $\frac{8}{8}$
+2. **Fracción propia:** $|a| < |b|$ (el numerador es estrictamente menor que el denominador en valor absoluto).
+   - Ejemplo: $\frac{3}{4}$, $\frac{2}{5}$, $\frac{7}{10}$
+   - Representa un valor estrictamente **menor que 1**
+
+3. **Fracción impropia:** $|a| \geq |b|$ (el numerador es mayor o igual que el denominador en valor absoluto).
+   - Ejemplo: $\frac{7}{4}$, $\frac{5}{3}$
    - Representa un valor **mayor o igual a 1**
 
-3. **Fracción unitaria:** $a = b$ (numerador igual al denominador)
-   - Ejemplo: $\frac{5}{5} = 1$, $\frac{8}{8} = 1$
-   - Representa exactamente **1**
+4. **Fracción entera (o aparente):** Es el caso particular de la fracción impropia donde el numerador es un múltiplo del denominador. En particular, si el numerador es igual al denominador ($a = b$), representa exactamente la unidad ($1$).
+   - Ejemplo: $\frac{5}{5} = 1$, $\frac{8}{8} = 1$, $\frac{6}{6} = 1$
 
-4. **Número mixto:** Combinación de entero y fracción propia
+5. **Número mixto:** Combinación de un número entero y una fracción propia.
+   - Ejemplo: $2\frac{1}{3}$ (dos enteros y un tercio)
+   - Equivalente a fracción impropia: $2\frac{1}{3} = \frac{7}{3}$
    - Ejemplo: $2\frac{1}{3}$ (dos enteros y un tercio)
    - Equivalente a fracción impropia: $2\frac{1}{3} = \frac{7}{3}$
 
@@ -1109,6 +1113,18 @@ $$\frac{a}{b} \div \frac{c}{d} = \frac{a}{b} \cdot \frac{d}{c} = \frac{a \cdot d
 
 **Regla mnemotécnica:** "Multiplicar por el recíproco" o "invertir y multiplicar"
 
+**Fracciones compuestas (o complejas):**
+Una fracción compuesta es una fracción que contiene una o más fracciones en su numerador, en su denominador o en ambos. Su forma general se expresa como una división de fracciones:
+
+$$\dfrac{\dfrac{a}{b}}{\dfrac{c}{d}}$$
+
+Para simplificar una fracción compuesta, se aplica la regla de los extremos y medios (conocida coloquialmente en algunas regiones como el "método de la doble C" o "método de la oreja"), multiplicando los términos extremos para obtener el nuevo numerador y los términos medios para obtener el nuevo denominador:
+
+$$\dfrac{\dfrac{a}{b}}{\dfrac{c}{d}} = \dfrac{a \cdot d}{b \cdot c}$$
+
+**Ejemplo:**
+$$\dfrac{\dfrac{2}{3}}{\dfrac{4}{5}} = \dfrac{2 \cdot 5}{3 \cdot 4} = \dfrac{10}{12} = \dfrac{5}{6}$$
+
 **Ejemplo:**
 $$\frac{2}{3} \div \frac{4}{5} = \frac{2}{3} \cdot \frac{5}{4} = \frac{2 \cdot 5}{3 \cdot 4} = \frac{10}{12} = \frac{5}{6}$$
 
@@ -1184,6 +1200,47 @@ Verificación: $\frac{1}{3} < \frac{5}{12} < \frac{1}{2}$ (comprobado con denomi
 **Relación con los números racionales:**
 
 Las fracciones son la representación concreta del conjunto de los **números racionales** $\mathbb{Q}$, que se estudiará formalmente en la sección 6. Todo número racional puede expresarse como fracción $\frac{a}{b}$ con $a, b \in \mathbb{Z}$ y $b \neq 0$.
+
+#### 4.7.6 Fracciones continuas (opcional)
+
+Una fracción continua es una forma de representar números reales (tanto racionales como irracionales) mediante una fracción que se anida de forma infinita (o finita) en su propio denominador. Se expresa de la forma general:
+
+$$a_0 + \dfrac{1}{a_1 + \dfrac{1}{a_2 + \dfrac{1}{a_3 + \dots}}}$$
+
+donde $a_0$ es un número entero y $a_1, a_2, a_3, \dots$ son enteros positivos llamados cocientes parciales.
+
+**Fracciones continuas finitas (Números Racionales):**
+Si el proceso de anidamiento se detiene después de un número finito de pasos, la expresión representa siempre un número racional. Toda fracción simple se puede convertir en una fracción continua finita.
+
+**Ejemplo:**
+Convertir $\frac{7}{3}$ a fracción continua:
+$$\dfrac{7}{3} = 2 + \dfrac{1}{3}$$
+
+O el caso de $\frac{9}{7}$:
+$$\dfrac{9}{7} = 1 + \dfrac{2}{7} = 1 + \dfrac{1}{\dfrac{7}{2}} = 1 + \dfrac{1}{3 + \dfrac{1}{2}}$$
+
+**Fracciones continuas infinitas (Números Irracionales):**
+Si el anidamiento se prolonga de manera infinita, la expresión converge a un número irracional. Una de las fracciones continuas infinitas más célebres de la historia de la matemática es la siguiente fracción periódica:
+
+$$1 + \dfrac{1}{1 + \dfrac{1}{1 + \dfrac{1}{1 + \dots}}}$$
+
+Para hallar a qué valor numérico equivale esta expresión, definamos el valor límite de la fracción continua infinita como $x$. Dado que el denominador de la primera fracción contiene exactamente la misma estructura anidada de forma infinita, podemos sustituir todo ese denominador por la misma variable $x$:
+
+$$x = 1 + \dfrac{1}{x}$$
+
+Para resolver esta ecuación, multiplicamos todos los miembros por $x$ (con $x \neq 0$):
+$$\begin{align}
+x^2 &= x + 1 \\[6pt]
+x^2 - x - 1 &= 0
+\end{align}$$
+
+Aplicamos la fórmula general para ecuaciones cuadráticas para resolver $x^2 - x - 1 = 0$:
+$$x = \dfrac{-(-1) \pm \sqrt{(-1)^2 - 4(1)(-1)}}{2(1)} = \dfrac{1 \pm \sqrt{1 + 4}}{2} = \dfrac{1 \pm \sqrt{5}}{2}$$
+
+Dado que la fracción continua está constituida únicamente por sumas de enteros positivos, el valor de la expresión debe ser estrictamente positivo ($x > 0$). Por lo tanto, descartamos la raíz negativa y nos quedamos con el valor positivo:
+$$x = \dfrac{1 + \sqrt{5}}{2} \approx 1.61803398\dots$$
+
+Este número irracional extraordinario es el **número áureo** o la **proporción divina**, denotado tradicionalmente por la letra griega $\phi$ (fi). Este resultado revela una hermosa conexión profunda entre la aritmética de las fracciones y la geometría del crecimiento natural.
 
 ### 4.8 Valor absoluto: Distancia al origen
 
