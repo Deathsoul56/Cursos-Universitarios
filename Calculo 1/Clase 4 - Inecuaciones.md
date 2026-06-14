@@ -581,7 +581,7 @@ Aunque estas inecuaciones pueden parecer complejas a primera vista, los principi
 **Definición 5.1 (Inecuación de orden superior):**
 Una inecuación polinómica de orden superior es una desigualdad de la forma:
 $$P(x) \gtrless 0$$
-donde $P(x) = a_n x^n + a_{n-1} x_{n-1} + \dots + a_1 x + a_0$ es un polinomio de grado $n \geq 3$ con coeficientes reales, y el símbolo de relación representa cualquiera de los operadores $\{<, >, \leq, \geq\}$.
+donde $P(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0$ es un polinomio de grado $n \geq 3$ con coeficientes reales, y el símbolo de relación representa cualquiera de los operadores $\{<, >, \leq, \geq\}$.
 
 El método estándar para resolverlas consiste en factorizar el polinomio en sus términos lineales y cuadráticos irreducibles (utilizando técnicas como Ruffini, factor común o teoremas de raíces de polinomios) para luego realizar una tabla de signos con los puntos críticos obtenidos.
 
@@ -631,37 +631,99 @@ Buscamos las regiones con signo positivo o nulo ($\geq 0$):
 
 ### 5.2 Inecuaciones Irracionales
 
-**Definición 5.2 (Inecuación irracional básica):**
-Una inecuación irracional es una desigualdad que contiene a la incógnita bajo el signo de un radical. En su forma básica con raíces de índice par (como la raíz cuadrada), se representa como:
-$$\sqrt{f(x)} < g(x)$$
-donde $f(x)$ y $g(x)$ son expresiones algebraicas con valores reales.
+Pensemos en el cálculo de la velocidad de un objeto que cae en un campo gravitatorio o en el diseño de un canal hidráulico: estas situaciones físicas involucran leyes de potencia y raíces. Al modelar restricciones de desigualdad sobre estas variables, se llega a inecuaciones irracionales.
 
-La resolución de inecuaciones con raíces de índice par exige cumplir dos condiciones simultáneas para preservar la validez en el campo de los números reales:
+La dificultad de estas inecuaciones radica en que la operación de elevar a una potencia par no es inyectiva en el dominio de los números reales, lo que puede introducir soluciones extrañas o alterar el sentido de la desigualdad. Por lo tanto, se deben establecer con rigurosidad las condiciones de existencia de los radicales y analizar los signos de los miembros involucrados.
+
+**Definición 5.2 (Inecuación irracional de índice par):**
+Una inecuación irracional de índice par es una desigualdad de la forma general:
+$$\sqrt{f(x)} \lessgtr g(x)$$
+donde $f(x)$ y $g(x)$ son expresiones algebraicas con valores reales, y el símbolo de relación representa cualquiera de los operadores $\{<, >, \leq, \geq\}$.
+
+Para resolver estas inecuaciones en el campo de los reales, el análisis se divide en dos casos fundamentales según el sentido de la desigualdad:
+
+#### Caso I: Inecuaciones de la forma $\sqrt{f(x)} < g(x)$ (y $\sqrt{f(x)} \leq g(x)$)
+
+Para que exista una solución real en esta clase de desigualdades, se deben cumplir tres condiciones simultáneas:
 1. **Existencia del radicando:** La expresión dentro del radical debe ser no negativa ($f(x) \geq 0$).
-2. **Elevación al cuadrado:** Para poder elevar ambos miembros al cuadrado sin alterar la relación de orden, la expresión del miembro opuesto al radical debe ser positiva ($g(x) > 0$), asegurando así la compatibilidad aritmética.
+2. **Signo del miembro derecho:** Dado que la raíz cuadrada principal es siempre no negativa ($\sqrt{f(x)} \geq 0$), la única posibilidad de que sea estrictamente menor que $g(x)$ es que esta última sea estrictamente positiva ($g(x) > 0$). Si $g(x) \leq 0$, la inecuación no posee solución real (su conjunto solución es vacío, $\emptyset$).
+3. **Elevación al cuadrado:** Al ser ambos miembros no negativos, es válido elevar al cuadrado sin alterar la relación de orden: $f(x) < [g(x)]^2$.
 
-**Ejemplo 5.2 (Inecuación con raíz cuadrada):**
-Resolver el conjunto solución de:
-$$\sqrt{x + 5} < 3$$
+Estas condiciones se traducen en el siguiente sistema de inecuaciones simultáneas:
+$$\sqrt{f(x)} < g(x) \iff \begin{cases} f(x) \geq 0 \\ g(x) > 0 \\ f(x) < [g(x)]^2 \end{cases}$$
+
+**Ejemplo 5.2 (Desigualdad menor que con miembro derecho constante):**
+Resolver el conjunto solución de la inecuación $\sqrt{x + 5} < 3$.
 
 **Solución:**
-Para que la inecuación esté bien definida en los números reales, se deben plantear y cumplir simultáneamente las siguientes condiciones algebraicas:
+Se plantea el sistema de restricciones correspondiente para asegurar la validez de la desigualdad:
+$$\begin{cases}
+x + 5 \geq 0 & \text{(existencia del radicando)} \\
+3 > 0 & \text{(miembro derecho positivo, siempre verdadero)} \\
+x + 5 < 3^2 & \text{(elevación al cuadrado)}
+\end{cases}$$
 
-$$\begin{align}
-x + 5 \geq 0 &\quad \text{(condición de existencia de la raíz real)} \\[6pt]
-\sqrt{x + 5}^2 < 3^2 &\quad \text{(elevación al cuadrado en ambos miembros)}
-\end{align}$$
+Resolvemos de manera independiente las condiciones variables:
+- Para la primera condición: $x + 5 \geq 0 \implies x \geq -5$, lo que determina el conjunto $S_1 = [-5, \infty)$.
+- Para la tercera condición: $x + 5 < 9 \implies x < 4$, lo que determina el conjunto $S_2 = (-\infty, 4)$.
 
-Resolvemos la primera condición:
-$$x + 5 \geq 0 \implies x \geq -5 \implies S_1 = [-5, \infty)$$
-
-Resolvemos la segunda condición elevando al cuadrado:
-$$x + 5 < 9 \implies x < 4 \implies S_2 = (-\infty, 4)$$
-
-El conjunto solución final $S$ de la inecuación irracional se obtiene de la intersección de ambos conjuntos de restricciones, garantizando la existencia y el cumplimiento de la desigualdad al mismo tiempo:
-$$S = S_1 \cap S_2 = [-5, \infty) \cap (-\infty, 4)$$
+El conjunto solución final $S$ de la inecuación irracional se obtiene de la intersección de ambas restricciones:
+$$S = S_1 \cap S_2 = [-5, \infty) \cap (-\infty, 4) = [-5, 4)$$
 
 **Respuesta:** En notación de intervalo: $S = [-5, 4)$.
+
+#### Caso II: Inecuaciones de la forma $\sqrt{f(x)} > g(x)$ (y $\sqrt{f(x)} \geq g(x)$)
+
+En este escenario, el miembro derecho $g(x)$ no está obligado a ser positivo, lo que exige dividir el análisis en la unión de dos ramas lógicas mutuamente excluyentes según el signo de $g(x)$:
+
+- **Rama A (Miembro derecho negativo):** Si $g(x) < 0$, la desigualdad $\sqrt{f(x)} > g(x)$ se cumple de forma directa para todo $x$ en el dominio de definición de la raíz, debido a que todo número no negativo es estrictamente mayor que cualquier número negativo. El sistema asociado es:
+  $$\begin{cases} f(x) \geq 0 \\ x \in \text{Dom}(g) \text{ tal que } g(x) < 0 \end{cases}$$
+- **Rama B (Miembro derecho no negativo):** Si $g(x) \geq 0$, ambos miembros son no negativos y es posible elevar al cuadrado conservando el sentido de la desigualdad: $f(x) > [g(x)]^2$. La condición de existencia de la raíz ($f(x) \geq 0$) se cumple automáticamente por transitividad, dado que $f(x) > [g(x)]^2 \geq 0$. El sistema asociado es:
+  $$\begin{cases} g(x) \geq 0 \\ f(x) > [g(x)]^2 \end{cases}$$
+
+La solución final es la unión de los conjuntos solución obtenidos en ambas ramas:
+$$\sqrt{f(x)} > g(x) \iff \Big( f(x) \geq 0 \ \land \ g(x) < 0 \Big) \ \lor \ \Big( g(x) \geq 0 \ \land \ f(x) > [g(x)]^2 \Big)$$
+
+**Ejemplo 5.3 (Desigualdad mayor que con miembro derecho variable):**
+Resolver la inecuación $\sqrt{x + 2} > x$.
+
+**Solución:**
+Aplicamos la descomposición en ramas lógicas para el miembro derecho $g(x) = x$:
+
+1. **Rama A ($x < 0$):**
+   Planteamos las condiciones de existencia de la raíz y negatividad de la variable:
+   $$\begin{cases} x + 2 \geq 0 \implies x \geq -2 \\ x < 0 \end{cases}$$
+   La intersección de estas dos condiciones determina la solución de esta rama:
+   $$S_A = [-2, 0)$$
+
+2. **Rama B ($x \geq 0$):**
+   Planteamos las condiciones de no negatividad de la variable y elevación al cuadrado de la inecuación:
+   $$\begin{cases} x \geq 0 \\ x + 2 > x^2 \end{cases}$$
+   Resolvemos la desigualdad cuadrática resultante, $x^2 - x - 2 < 0$. Factorizando el polinomio:
+   $$(x - 2)(x + 1) < 0$$
+
+   Identificamos los puntos críticos: $x = -1$ y $x = 2$. Estos puntos dividen la recta real en tres intervalos, sobre los cuales analizamos el signo de cada factor lineal:
+
+   | Intervalo | $(-\infty, -1)$ | $(-1, 2)$ | $(2, \infty)$ |
+   | :--- | :---: | :---: | :---: |
+   | $(x + 1)$ | $-$ | $+$ | $+$ |
+   | $(x - 2)$ | $-$ | $-$ | $+$ |
+   | $\text{Producto}$ | $+$ | $-$ | $+$ |
+
+   Dado que buscamos los valores de $x$ para los cuales el producto es estrictamente negativo ($< 0$):
+   - $(-\infty, -1)$: signo positivo (se excluye)
+   - $x = -1$: el producto es cero (se excluye por ser desigualdad estricta)
+   - $(-1, 2)$: signo negativo (se incluye) ✓
+   - $x = 2$: el producto es cero (se excluye por ser desigualdad estricta)
+   - $(2, \infty)$: signo positivo (se excluye)
+
+   Por lo tanto, la solución de la inecuación cuadrática es el intervalo $(-1, 2)$. Al intersecar este conjunto con la restricción de esta rama ($x \geq 0$), se obtiene:
+   $$S_B = (-1, 2) \cap [0, \infty) = [0, 2)$$
+
+Finalmente, el conjunto solución general $S$ se obtiene mediante la unión de las soluciones de ambas ramas:
+$$S = S_A \cup S_B = [-2, 0) \cup [0, 2) = [-2, 2)$$
+
+**Respuesta:** En notación de intervalo: $S = [-2, 2)$.
 
 ### 5.3 Inecuaciones Trascendentes
 
@@ -671,7 +733,7 @@ La resolución de estas desigualdades no responde a un algoritmo universal, sino
 1. **La propiedad de monotonía:** Si una función es estrictamente creciente (como $f(x) = e^x$ o $f(x) = \ln(x)$), entonces preserva el orden de la desigualdad al aplicarse o removerse de ambos miembros. Si es estrictamente decreciente, invierte el sentido de la desigualdad.
 2. **La periodicidad:** Las funciones trigonométricas repiten sus valores en ciclos regulares, por lo que resolver inecuaciones con senos o cosenos exige analizar el comportamiento en un período base y luego extender la solución a toda la recta real.
 
-**Ejemplo 5.3 (Inecuación exponencial):**
+**Ejemplo 5.4 (Inecuación exponencial):**
 Resolver la inecuación exponencial:
 $$3^{2x - 1} \geq 9$$
 
@@ -688,7 +750,7 @@ x &\geq \dfrac{3}{2}
 
 **Respuesta:** En notación de intervalo: $S = \left[\dfrac{3}{2}, \infty\right)$.
 
-**Ejemplo 5.4 (Inecuación logarítmica):**
+**Ejemplo 5.5 (Inecuación logarítmica):**
 Resolver la inecuación logarítmica:
 $$\ln(x - 2) < 0$$
 
@@ -708,7 +770,7 @@ $$S = S_{\text{desigualdad}} \cap \text{Dom} = (-\infty, 3) \cap (2, \infty)$$
 
 **Respuesta:** En notación de intervalo: $S = (2, 3)$.
 
-**Ejemplo 5.5 (Inecuación trigonométrica simple):**
+**Ejemplo 5.6 (Inecuación trigonométrica simple):**
 Resolver para $x \in [0, 2\pi]$ la inecuación trigonométrica:
 $$\sin(x) > \dfrac{1}{2}$$
 
