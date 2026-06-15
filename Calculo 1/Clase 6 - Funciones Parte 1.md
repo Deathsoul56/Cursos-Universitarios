@@ -3,6 +3,8 @@
 ## 1. Relaciones y funciones
 
 ### 1.1 Producto cartesiano y relaciones
+**Contexto histórico:** El concepto formal de función es relativamente joven. Aunque la idea de mapear variables se puede intuir desde las matemáticas antiguas (ej. Euclides), su sistematización moderna se atribuye a Gottfried Leibniz en 1694, cuando acuñó el término "función" para describir una cantidad que *dependía* de otra variable. Este desarrollo permitió un enfoque algebraico y mecánico mucho más potente que cualquier cosa vista antes.
+**Propósito:** La teoría de conjuntos nos permite formalizar esta dependencia mediante la construcción del producto cartesiano $A \times B$, el cual es la base para definir qué son las relaciones matemáticas, sean estas simples (como "es par") o complejas (como "$x$ divide a $y$").
 
 **Definición 1.1 (Producto cartesiano):**
 Dados dos conjuntos $A$ y $B$, el **producto cartesiano** $A \times B$ es:
@@ -10,6 +12,7 @@ $$A \times B = \{(a, b) : a \in A, \, b \in B\}$$
 **Ejemplo 1.1:**
 Si $A = \{1, 2\}$ y $B = \{x, y, z\}$, entonces:
 $$A \times B = \{(1,x), (1,y), (1,z), (2,x), (2,y), (2,z)\}$$
+
 **Definición 1.2 (Relación):**
 Una **relación** $R$ de $A$ en $B$ es cualquier subconjunto de $A \times B$:
 $$R \subseteq A \times B$$
@@ -19,9 +22,10 @@ Si $(a, b) \in R$, decimos que "$a$ está relacionado con $b$" y escribimos $aRb
 Sea $A = \{1, 2, 3\}$ y $B = \{2, 4, 6, 8\}$. La relación "$x$ divide a $y$" es:
 $$R = \{(1,2), (1,4), (1,6), (1,8), (2,2), (2,4), (2,6), (2,8), (3,6)\}$$
 ### 1.2 Definición formal de función
+**Contexto histórico:** Aunque la idea de "dependencia" es antigua, su definición rigurosa moderna se consolidó gracias al trabajo de Karl Weierstrass y Richard Dedekind en el siglo XIX. El paso de una mera relación a lo que hoy llamamos función requiere dos condiciones clave: primero, debe haber *al menos* un valor de salida para cada entrada (la condición de la imagen), y segundo, no puede haber más de un valor de salida por una misma entrada. Este rigor fue esencial para el desarrollo del análisis matemático moderno.
 
 **Definición 1.3 (Función):**
-Una **función** $f$ de un conjunto $A$ en un conjunto $B$ es una relación que asigna a **cada elemento** de $A$ **exactamente un** elemento de $B$.
+Una **función** $f$ de un conjunto $A$ en un conjunto $B$ es una relación que asigna a cada elemento de $A$ exactamente un elemento de $B$.
 ![[diagrama_funcion.png]]
 **Notación:** $f: A \to B$
 - $A$ es el **dominio** de $f$ (conjunto de partida)
@@ -33,7 +37,7 @@ Una **función** $f$ de un conjunto $A$ en un conjunto $B$ es una relación que 
 **Ejemplo 1.3 (Es función):**
 $$f: \{1, 2, 3\} \to \{a, b, c\}$$
 $$f(1) = a, \quad f(2) = b, \quad f(3) = a$$
-Esto **es** una función (cada elemento del dominio tiene exactamente una imagen).
+Esto **es** una función porque cada elemento del dominio tiene exactamente una imagen.
 ![[ejemplo_funcion_1.png]]
 
 **Ejemplo 1.4 (NO es función):**
@@ -51,23 +55,13 @@ donde:
 
 ### 1.3.1 Imagen y preimagen
 
-**Concepto intuitivo:**
+Cuando trabajamos con una función $f: A \to B$, surgen dos preguntas naturales: qué valores de salida puede producir la función y, dado un valor de salida, qué valores de entrada lo produjeron.
 
-Cuando trabajamos con una función $f: A \to B$, surgen dos preguntas naturales:
-1. **¿Qué valores de salida puede producir la función?** Esta es la idea de la **imagen** de $f$.
-2. **Dado un valor de salida, ¿qué valores de entrada lo produjeron?** Esta es la idea de la **preimagen** de ese valor.
-
-**Idea intuitiva de imagen:**
-La **imagen o rango** de una función es el conjunto de todos los valores que la función **efectivamente alcanza** o "produce". Es decir, si aplicamos la función a todos los elementos del dominio, la imagen es la colección de todos los resultados obtenidos.
-
-**Ejemplo intuitivo 1:** Considera $f: \{1, 2, 3\} \to \{a, b, c, d\}$ definida por:
+La **imagen** de $f$ es el conjunto de todos los valores que la función efectivamente alcanza: si evaluamos $f$ en todos los elementos del dominio, la imagen es la colección de todos los resultados obtenidos. Por ejemplo, para $f: \{1, 2, 3\} \to \{a, b, c, d\}$ definida por:
 $$f(1) = a, \quad f(2) = b, \quad f(3) = b$$
-La imagen de $f$ es $\{a, b\}$ porque estos son los únicos valores que la función produce. Nota que $c$ y $d$ están en el codominio pero **no** en la imagen.
+la imagen de $f$ es $\{a, b\}$. Los elementos $c$ y $d$ pertenecen al codominio pero la función nunca los alcanza.
 
-**Idea intuitiva de preimagen:**
-La **preimagen** de un elemento $y$ del codominio es el conjunto de todos los elementos del dominio que la función "envía" a $y$. Es como preguntarse: "¿De dónde viene $y$?"
-
-**Ejemplo intuitivo 2:** En el ejemplo anterior:
+La **preimagen** de un elemento $y \in B$ es el conjunto de todos los $x \in A$ que la función envía a $y$. Retomando el ejemplo anterior:
 - La preimagen de $a$ es $\{1\}$ (solo el 1 produce $a$)
 - La preimagen de $b$ es $\{2, 3\}$ (tanto 2 como 3 producen $b$)
 - La preimagen de $c$ es $\emptyset$ (ningún elemento produce $c$)
@@ -88,51 +82,60 @@ Se lee: "La preimagen de $y$ es el conjunto de todos los $x$ en $A$ tales que $f
 
 **Nota importante:** El símbolo $f^{-1}(\{y\})$ denota la **preimagen** (un conjunto), **no** necesariamente la función inversa. La preimagen siempre existe, mientras que la función inversa solo existe para funciones biyectivas.
 
-**Observación importante (Imagen vs. Codominio):**
+> **Observación importante:** Al trabajar con una función $f: A \to B$ aparecen cuatro objetos que conviene no confundir. La distinción clave es que el codominio **se declara** al definir la función, mientras que la imagen **se calcula** evaluando $f$ en todo el dominio. Del mismo modo, el dominio es la totalidad del conjunto de partida, mientras que la preimagen de un elemento particular es solo el subconjunto de entradas que producen ese elemento.
 
-Es crucial distinguir entre **codominio** e **imagen**:
+| Concepto | Descripción | Relación con los otros |
+|:---|:---|:---|
+| **Dominio** $A$ | Todos los valores de entrada posibles | Fijo por definición; es todo el conjunto $A$ |
+| **Codominio** $B$ | Todos los destinos declarados como posibles | Se elige al definir $f$; puede ser más grande que lo que $f$ alcanza |
+| **Imagen** $\text{Im}(f)$ | Los valores de $B$ que $f$ realmente toma | Siempre $\text{Im}(f) \subseteq B$; puede ser subconjunto propio |
+| **Preimagen** $f^{-1}(\{y\})$ | Los $x \in A$ que producen un $y$ dado | Siempre $f^{-1}(\{y\}) \subseteq A$; puede ser $\emptyset$ si $y \notin \text{Im}(f)$ |
 
-- **Codominio** (o conjunto de llegada): Es el conjunto $B$ en la definición $f: A \to B$. Es el conjunto que especificamos como "destino posible" de la función, **independientemente de si todos sus elementos son realmente alcanzados**.
+**Ejemplo 1.5 ($f(x) = x^2$ con dominio finito):**
+Sea $f: A \to B$ definida por $f(x) = x^2$, con $A = \{-2, -1, 0, 1, 2\}$ y $B = \{-3, -2, -1, 0, 1, 2, 3, 4\}$.
 
-- **Imagen** (o rango): Es el subconjunto del codominio que **efectivamente** es alcanzado por la función. Es decir, $\text{Im}(f) = \{f(x) : x \in A\}$.
+Evaluamos $f$ en cada elemento del dominio:
 
-**Relación:** Siempre se cumple que $\text{Im}(f) \subseteq B$ (codominio), pero no necesariamente $\text{Im}(f) = B$.
+| $x \in A$ | $f(x) = x^2$ |
+|:---------:|:------------:|
+| $-2$      | $4$          |
+| $-1$      | $1$          |
+| $0$       | $0$          |
+| $1$       | $1$          |
+| $2$       | $4$          |
 
-**Ejemplo ilustrativo:**
-Consideremos $f: \mathbb{R} \to \mathbb{R}$ definida por $f(x) = x^2$.
+Con estos datos se identifican los cuatro conceptos:
 
-- **Dominio:** $\mathbb{R}$ (todos los números reales)
-- **Codominio:** $\mathbb{R}$ (especificado en la definición $f: \mathbb{R} \to \mathbb{R}$)
-- **Imagen:** $[0, +\infty) = \{y \in \mathbb{R} : y \geq 0\}$ (solo números no negativos)
-
-Observamos que $\text{Im}(f) = [0, +\infty) \subsetneq \mathbb{R}$ (la imagen es un subconjunto **propio** del codominio). Por ejemplo, $-1$ pertenece al codominio pero **no** a la imagen, ya que no existe $x \in \mathbb{R}$ tal que $x^2 = -1$.
-
-**Terminología:**
-- Si $\text{Im}(f) = B$, decimos que $f$ es **sobreyectiva** (o suryectiva).
-- Si cada elemento del codominio tiene **a lo sumo** una preimagen, $f$ es **inyectiva**.
-- Si $f$ es inyectiva y sobreyectiva, decimos que es **biyectiva**.
-
+- **Dominio:** $\text{Dom}(f) = \{-2, -1, 0, 1, 2\}$ — todo el conjunto $A$ de partida.
+- **Codominio:** $B = \{-3, -2, -1, 0, 1, 2, 3, 4\}$ — declarado en la definición; incluye elementos como $-3$ o $2$ que la función nunca alcanza.
+- **Imagen:** $\text{Im}(f) = \{0, 1, 4\}$ — los únicos valores que $f$ efectivamente produce. Se verifica $\text{Im}(f) \subsetneq B$.
+- **Preimagens de ejemplo:**
+  - $f^{-1}(\{1\}) = \{-1, 1\}$: dos entradas distintas producen el mismo resultado $1$.
+  - $f^{-1}(\{4\}) = \{-2, 2\}$: análogamente para el valor $4$.
+  - $f^{-1}(\{-2\}) = \emptyset$: el valor $-2$ pertenece al codominio pero no a la imagen; ningún real al cuadrado es negativo.
+![[Recursos/dominio_codominio_imagen_preimagen.png]]
+Para $f: \mathbb{R} \to \mathbb{R}$ definida por $f(x) = x^2$, el dominio y el codominio son ambos $\mathbb{R}$, pero la imagen se reduce a $[0, +\infty)$. La diferencia entre codominio e imagen queda visible en la gráfica: el codominio abarca todo el eje $Y$, mientras que la curva nunca desciende por debajo del eje $X$.
+![[dominio_codominio_imagen_R2.png]]
 ### 1.4 Determinación del dominio y rango
-
-**Concepto intuitivo:**
 
 Cuando trabajamos con funciones expresadas mediante fórmulas algebraicas, no siempre podemos evaluar la función en cualquier número real. Existen ciertas operaciones matemáticas que **no están definidas** para algunos valores. El dominio es precisamente el conjunto de valores donde la función "tiene sentido" o está bien definida.
 
-**Idea intuitiva del dominio:**
-El **dominio** de una función es el conjunto de todos los valores de entrada ($x$) para los cuales la función puede calcularse sin problemas. Es como preguntarse: "¿Qué números puedo sustituir en $x$ sin obtener una operación imposible?"
+Las restricciones más frecuentes son:
+1. **División por cero:** el denominador no puede anularse.
+2. **Raíces de índice par:** el radicando debe ser no negativo ($\sqrt{-4}$ no existe en $\mathbb{R}$).
+3. **Logaritmos:** el argumento debe ser estrictamente positivo ($\ln(0)$ y $\ln(-5)$ no existen en $\mathbb{R}$).
 
-**Operaciones problemáticas comunes:**
-1. **División por cero:** No podemos dividir entre cero
-2. **Raíces pares de números negativos:** No podemos calcular $\sqrt{-4}$ en los números reales
-3. **Logaritmos de números no positivos:** No podemos calcular $\ln(-5)$ o $\ln(0)$
+Por ejemplo, para $f(x) = \dfrac{1}{x-3}$, el valor $x = 3$ anula el denominador, por lo que se excluye y el dominio es $\mathbb{R} \setminus \{3\}$. Para $g(x) = \sqrt{x-2}$, se necesita $x - 2 \geq 0$, de modo que el dominio es $[2, +\infty)$.
 
-**Ejemplo intuitivo 1:** Para $f(x) = \frac{1}{x-3}$, no podemos usar $x = 3$ porque obtendríamos $\frac{1}{0}$, que no está definido. Por lo tanto, el dominio es "todos los reales excepto 3".
+**Definición 1.5 (Dominio de una función):**
+Sea $f: A \to B$ una función. El **dominio** de $f$, denotado $\text{Dom}(f)$, es el conjunto $A$:
+$$\text{Dom}(f) = A = \{x \in A : f(x) \text{ está definido}\}$$
 
-**Ejemplo intuitivo 2:** Para $f(x) = \sqrt{x-2}$, necesitamos que lo que está dentro de la raíz sea no negativo: $x - 2 \geq 0$, es decir, $x \geq 2$. El dominio es $[2, +\infty)$.
+Cuando la función se especifica mediante una fórmula algebraica sin indicar explícitamente el conjunto de partida, el dominio se toma por convención como el mayor subconjunto de $\mathbb{R}$ para el cual la expresión tiene sentido en los números reales.
 
 #### 1.4.1 Restricciones del dominio
 
-**Definición 1.5 (Dominio máximo):**
+**Definición 1.6 (Dominio máximo):**
 El **dominio máximo** (o dominio natural) de una función $f$ es el conjunto más grande de números reales para los cuales la expresión $f(x)$ está definida.
 
 **Casos que restringen el dominio:**
@@ -221,12 +224,9 @@ Para $g(x) = \ln\left(\frac{x+2}{x-1}\right)$:
 
 #### 1.4.2 Cálculo del rango o imagen
 
-**Concepto intuitivo:**
+El **rango** (o imagen) es el conjunto de todos los valores de salida ($y$) que la función efectivamente produce. A diferencia del dominio, que restringe los valores de entrada permitidos, el rango responde a la pregunta de qué valores puede alcanzar la función una vez evaluada.
 
-El **rango** (o imagen) es el conjunto de todos los valores de salida ($y$) que la función efectivamente produce. A diferencia del dominio (que son los valores de entrada permitidos), el rango representa "qué valores puede alcanzar la función".
-
-**Idea intuitiva del rango:**
-Dado el dominio de una función, al evaluar $f$ en todos los valores de $x$ del dominio, obtenemos un conjunto de valores $y = f(x)$. Este conjunto es el rango.
+Dado el dominio de una función, al evaluar $f$ en todos los valores de $x$ del dominio se obtiene un conjunto de valores $y = f(x)$. Ese conjunto es precisamente el rango.
 
 **Métodos para calcular el rango:**
 
@@ -354,19 +354,13 @@ Una forma de saber si una curva es o no una función es trazando una **recta ver
 
 ## 2. Monotonía de funciones
 
-**Concepto intuitivo:**
+Cuando observamos la gráfica de una función, podemos notar que algunas "suben" a medida que avanzamos de izquierda a derecha, otras "bajan", y algunas tienen comportamientos mixtos. Esta idea intuitiva de subir o bajar es lo que formalizamos con el concepto de **monotonía**.
 
-Cuando observamos la gráfica de una función, podemos notar que algunas funciones "suben" a medida que avanzamos de izquierda a derecha, otras "bajan", y algunas tienen comportamientos mixtos. Esta idea intuitiva de "subir" o "bajar" es lo que formalizamos con el concepto de **monotonía**.
+Una función es **creciente** si al movernos hacia la derecha en el eje $x$ (valores mayores de $x$), los valores de la función también aumentan: entre más a la derecha, más arriba. Por ejemplo, $f(x) = 2x$ es creciente, pues si $1 < 3$, entonces $f(1) = 2 < f(3) = 6$.
 
-**Idea intuitiva de función creciente:**
-Una función es **creciente** si al movernos hacia la derecha en el eje $x$ (valores mayores de $x$), los valores de la función también aumentan. Es decir, "entre más a la derecha, más arriba".
-
-**Ejemplo visual:** La función $f(x) = 2x$ es creciente: si tomamos $x_1 = 1$ y $x_2 = 3$ (con $1 < 3$), obtenemos $f(1) = 2$ y $f(3) = 6$, donde $2 < 6$. Al aumentar $x$, aumenta $f(x)$.
 ![[funcion_creciente_monotona.png]]
-**Idea intuitiva de función decreciente:**
-Una función es **decreciente** si al movernos hacia la derecha en el eje $x$, los valores de la función disminuyen. Es decir, "entre más a la derecha, más abajo".
 
-**Ejemplo visual:** La función $g(x) = -x$ es decreciente: si tomamos $x_1 = 1$ y $x_2 = 3$ (con $1 < 3$), obtenemos $g(1) = -1$ y $g(3) = -3$, donde $-1 > -3$. Al aumentar $x$, disminuye $g(x)$.
+Una función es **decreciente** si al movernos hacia la derecha en el eje $x$, los valores de la función disminuyen: entre más a la derecha, más abajo. Por ejemplo, $g(x) = -x$ es decreciente, pues si $1 < 3$, entonces $g(1) = -1 > g(3) = -3$.
 
 ### 2.1 Funciones crecientes y decrecientes
 
@@ -403,7 +397,7 @@ Sumando $2$ a ambos lados:
 $$3x_1 + 2 < 3x_2 + 2$$
 $$f(x_1) < f(x_2)$$
 
-Por lo tanto, $f$ es estrictamente creciente. $\square$
+Por lo tanto, $f$ es estrictamente creciente. $\blacksquare$
 
 **Ejemplo 2.2:**
 La función $g(x) = -2x + 5$ es **estrictamente decreciente** en $\mathbb{R}$.
@@ -419,7 +413,7 @@ Sumando $5$ a ambos lados:
 $$-2x_1 + 5 > -2x_2 + 5$$
 $$g(x_1) > g(x_2)$$
 
-Por lo tanto, $g$ es estrictamente decreciente. $\square$
+Por lo tanto, $g$ es estrictamente decreciente. $\blacksquare$
 
 **Ejemplo 2.3:**
 La función $h(x) = x^2$ **no es monótona** en $\mathbb{R}$.
@@ -466,8 +460,9 @@ Sea $f(x) = a(x-h)^2 + k$ con $a \neq 0$:
    - Si $a > 1$: estrictamente creciente en $\mathbb{R}$
    - Si $0 < a < 1$: estrictamente decreciente en $\mathbb{R}$
 
-2. **Función logarítmica** $f(x) = \log_a(x)$ con $a > 1$:
-   - Estrictamente creciente en $(0, +\infty)$
+2. **Función logarítmica** $f(x) = \log_a(x)$ con $a > 0$, $a \neq 1$:
+   - Si $a > 1$: estrictamente creciente en $(0, +\infty)$
+   - Si $0 < a < 1$: estrictamente decreciente en $(0, +\infty)$
 
 3. **Función raíz cuadrada** $f(x) = \sqrt{x}$:
    - Estrictamente creciente en $[0, +\infty)$
@@ -485,8 +480,6 @@ Como $2 > 1$, por la Proposición 2.3, $f$ es estrictamente creciente en $\mathb
 Efectivamente: $1 < 2 < 3$ y $2 < 4 < 8$.
 
 ### 2.4 Funciones acotadas
-
-**Concepto intuitivo:**
 
 Algunas funciones tienen valores que "no se escapan" por arriba o por abajo. Por ejemplo, la función $\sin(x)$ siempre está entre $-1$ y $1$, nunca toma valores fuera de ese rango. Decimos que está **acotada**.
 
@@ -527,11 +520,17 @@ Las funciones **periódicas** como $\sin(x)$ y $\cos(x)$ suelen estar acotadas:
 - $-1 \leq \sin(x) \leq 1$ para todo $x \in \mathbb{R}$
 - $-1 \leq \cos(x) \leq 1$ para todo $x \in \mathbb{R}$
 
+**Aplicaciones:**
+
+La monotonía es fundamental en problemas de optimización: saber si una función es creciente o decreciente permite identificar dónde alcanza sus valores máximos y mínimos sin necesidad de evaluarla en todos los puntos. En análisis de señales, una función monótona representa una tendencia clara que facilita el filtrado de ruido y la predicción de comportamientos. En economía, la monotonía de funciones de demanda o de costos permite deducir propiedades cualitativas importantes, como la existencia de equilibrios de mercado.
+
 ---
 
 ## 3. Función lineal y afín
 
 ### 3.1 Definición
+
+Las relaciones más simples entre dos variables son aquellas en las que una cambia a ritmo constante respecto de la otra. Si por cada hora trabajada se gana una cantidad fija, el salario total depende linealmente del tiempo; si además se recibe un pago inicial, la relación se vuelve afín. Estas funciones son el punto de partida natural para modelar procesos con crecimiento o decrecimiento uniforme.
 
 **Definición 3.1 (Función lineal):**
 Una **función lineal** tiene la forma:
@@ -641,6 +640,8 @@ Esto describe un círculo de radio 1 centrado en el origen.
 
 ### 5.1 Definición y forma general
 
+Muchos fenómenos naturales no crecen ni decrecen de manera constante, sino que alcanzan un punto máximo o mínimo y luego invierten su comportamiento. La trayectoria de una pelota lanzada al aire, la forma de un reflector parabólico o el área de una figura en función de uno de sus lados siguen este tipo de patrón. Las funciones cuadráticas capturan precisamente situaciones donde la tasa de cambio misma cambia de forma lineal.
+
 **Definición 5.1 (Función cuadrática):**
 Una **función cuadrática** tiene la forma:
 $$f(x) = ax^2 + bx + c$$
@@ -710,6 +711,8 @@ tiene vértice en $(3, 1)$ y abre hacia arriba ($a = 2 > 0$).
 
 ### 6.1 Función cúbica
 
+Cuando una relación entre variables es más compleja que una simple curva con un solo punto de inflexión, aparecen funciones cúbicas. Modelan situaciones donde el crecimiento acelera, frena y vuelve a acelerar, como ciertos procesos económicos, el volumen de un cubo en función de su arista, o el comportamiento de algunos sistemas físicos que presentan cambios de dirección.
+
 **Definición 6.1 (Función cúbica):**
 $$f(x) = ax^3 + bx^2 + cx + d, \quad a \neq 0$$
 
@@ -720,18 +723,7 @@ $$f(x) = ax^3 + bx^2 + cx + d, \quad a \neq 0$$
 
 **Ejemplo 6.1:**
 $$f(x) = x^3 - 3x$$
-
-```
-       y
-       |
-    2  |       /
-    1  |      /
--------|-----●-----●----> x
-   -2 -1  0  1  2
-   -1  |    /
-   -2  |   /
-```
-
+![[Recursos/funcion_cubica_x3_3x.png]]
 Raíces: $x^3 - 3x = 0 \Rightarrow x(x^2 - 3) = 0 \Rightarrow x = 0, \pm\sqrt{3}$
 
 ### 6.2 Función cuártica (grado 4)
@@ -749,10 +741,11 @@ $$f(x) = x^4 - 5x^2 + 4 = (x^2 - 1)(x^2 - 4)$$
 **Raíces:** $x = \pm 1, \pm 2$
 
 ---
-
 ## 7. Función raíz cuadrada
 
 ### 7.1 Definición y dominio
+
+La raíz cuadrada aparece naturalmente cuando se despeja una variable que aparece al cuadrado. Si se conoce el área de un cuadrado y se quiere hallar la longitud de su lado, o si se aplica el teorema de Pitágoras para encontrar la longitud de un cateto, se obtiene una expresión de la forma $\sqrt{x}$. Esta función permite invertir, de manera controlada, la operación de elevar al cuadrado.
 
 **Definición 7.1 (Función raíz cuadrada):**
 $$f(x) = \sqrt{x}$$
@@ -790,6 +783,8 @@ $$f(x) = \sqrt[n]{x} = x^{1/n}$$
 
 ### 8.1 Definición
 
+Algunos procesos no crecen por cantidades fijas, sino que se multiplican por un factor constante en cada intervalo de tiempo. El crecimiento de una población de bacterias, la desintegración radiactiva de un material o el capital generado por interés compuesto siguen este patrón multiplicativo. Las funciones exponenciales modelan precisamente situaciones donde el cambio relativo es constante.
+
 **Definición 8.1 (Función exponencial):**
 $$f(x) = a^x$$
 donde $a > 0$ y $a \neq 1$ (la **base** $a$ es constante positiva).
@@ -815,7 +810,7 @@ donde $a > 0$ y $a \neq 1$ (la **base** $a$ es constante positiva).
 - $\lim_{x \to -\infty} a^x = +\infty$
 - $\lim_{x \to +\infty} a^x = 0$ (asíntota horizontal en $y = 0$)
 
-**Ejemplo 8.2:**
+**Ejemplo 8.1:**
 Para $f(x) = 2^x$:
 
 | $x$ | $-2$ | $-1$ | $0$ | $1$ | $2$ | $3$ |
@@ -823,11 +818,17 @@ Para $f(x) = 2^x$:
 | $2^x$ | $\frac{1}{4}$ | $\frac{1}{2}$ | $1$ | $2$ | $4$ | $8$ |
 
 
+**Aplicaciones:**
+
+Las funciones exponenciales modelan procesos donde el cambio relativo es constante. En biología, describen el crecimiento de poblaciones bacterianas bajo condiciones ideales. En física, gobiernan la desintegración radiactiva y la ley de enfriamiento de Newton. En finanzas, el interés compuesto capitaliza el dinero de forma exponencial, de modo que pequeñas diferencias en la tasa o en el tiempo producen efectos significativos a largo plazo.
+
 ---
 
 ## 9. Función logarítmica
 
 ### 9.1 Definición
+
+Cuando una magnitud crece de manera multiplicativa, sus cambios absolutos pueden volverse enormes y difíciles de interpretar. El logaritmo convierte productos en sumas y potencias en productos, permitiendo manejar escalas muy amplias de forma más comprensible. Por eso aparece en contextos como la escala de Richter, la medición de intensidad sonora en decibelios o el cálculo de tiempos de duplicación en procesos exponenciales.
 
 **Definición 9.1 (Logaritmo):**
 El **logaritmo en base $a$** de $x$, denotado $\log_a(x)$, es el exponente al que hay que elevar $a$ para obtener $x$:
@@ -836,7 +837,7 @@ $$y = \log_a(x) \quad \Leftrightarrow \quad a^y = x$$
 **Dominio:** $(0, +\infty)$ (solo números positivos)
 **Imagen:** $(-\infty, +\infty)$
 
-**Ejemplo 8.1:**
+**Ejemplo 9.1:**
 - $\log_2(8) = 3$ porque $2^3 = 8$
 - $\log_{10}(100) = 2$ porque $10^2 = 100$
 - $\log_5(1) = 0$ porque $5^0 = 1$
@@ -852,7 +853,7 @@ Para $a, x, y > 0$ con $a \neq 1$:
 4. **Identidad fundamental:** $a^{\log_a(x)} = x$
 5. **Cambio de base:** $\log_a(x) = \frac{\log_b(x)}{\log_b(a)}$
 
-**Ejemplo 9.1:**
+**Ejemplo 9.2:**
 $$\log_2(32) = \log_2(2^5) = 5 \cdot \log_2(2) = 5 \cdot 1 = 5$$
 
 ### 9.3 Logaritmos especiales
@@ -872,36 +873,21 @@ Las funciones $f(x) = a^x$ y $g(x) = \log_a(x)$ son **inversas**:
 $$\log_a(a^x) = x \quad \text{y} \quad a^{\log_a(x)} = x$$
 
 **Interpretación geométrica:** Las gráficas de $y = a^x$ y $y = \log_a(x)$ son **simétricas respecto a la recta $y = x$**.
-
-```
-       y
-       |
-       |     y=2^x
-    4  |       /
-    3  |      /
-    2  |    /•
-    1  |  /  |  y=log₂(x)
--------|•----|-----> x
-       1  2  4
-```
-
-**Ejemplo 9.2:**
+![[Recursos/exp_log_inversas.png]]
+**Ejemplo 9.3:**
 Si $f(x) = 2^x$ pasa por $(3, 8)$, entonces $g(x) = \log_2(x)$ pasa por $(8, 3)$.
+
+**Aplicaciones:**
+
+El logaritmo permite trabajar cómodamente con escalas multiplicativas. En sismología, la escala de Richter usa logaritmos para expresar la energía liberada por un terremoto: cada unidad representa un incremento de diez veces en la amplitud registrada. En acústica, los decibelios miden la intensidad sonora de manera logarítmica porque el oído humano percibe diferencias de forma aproximadamente logarítmica. En química, el pH cuantifica la acidez de una disolución como el logaritmo negativo de la concentración de iones hidronio.
 
 ---
 
 ## 10. Álgebra de funciones
 
-**Concepto intuitivo:**
-
 Cuando trabajamos con funciones, podemos combinarlas de diversas formas para crear nuevas funciones. Así como podemos sumar números, también podemos **sumar funciones**. Estas operaciones se definen punto a punto: para cada valor de $x$, aplicamos la operación a los valores $f(x)$ y $g(x)$.
 
-**Idea intuitiva de suma de funciones:**
-Si tenemos dos funciones $f$ y $g$, la función **suma** $(f + g)$ se evalúa tomando el valor de $f$ y el valor de $g$ en cada punto, y luego sumándolos.
-
-**Ejemplo visual:** Si $f(x) = x$ y $g(x) = 2$, entonces:
-- $(f + g)(3) = f(3) + g(3) = 3 + 2 = 5$
-- $(f + g)(x) = x + 2$
+Si tenemos dos funciones $f$ y $g$, la función **suma** $(f + g)$ se evalúa tomando el valor de $f$ y el valor de $g$ en cada punto, y luego sumándolos. Por ejemplo, si $f(x) = x$ y $g(x) = 2$, entonces $(f + g)(3) = f(3) + g(3) = 3 + 2 = 5$, y en general $(f + g)(x) = x + 2$.
 
 ### 10.1 Operaciones aritméticas con funciones
 

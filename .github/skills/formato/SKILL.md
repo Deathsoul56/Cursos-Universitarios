@@ -18,6 +18,19 @@ Producir material académico universitario de alta calidad siguiendo el formato
 ya establecido en el proyecto. El contenido debe ser **formalmente correcto**,
 **pedagógicamente sólido** y **accesible sin sacrificar rigor**.
 
+**Espíritu del proyecto:** Estos apuntes no son un libro de texto. Son los apuntes
+de un estudiante brillante que entiende el material en profundidad y sabe explicarlo.
+El lector debe poder seguir la idea antes de ver la definición, y debe saber para qué
+sirve el objeto antes de olvidarlo. El pipeline canónico es:
+
+```
+motivación casual → definición formal → ejemplos → aplicaciones
+```
+
+Las primeras cinco capas son el núcleo del pipeline. La sección de aplicaciones es
+opcional: se incluye cuando enriquece la comprensión; se omite cuando no aporta
+valor adicional o cuando sobrecargaría la sección.
+
 ---
 
 ## Estructura de una sección
@@ -26,12 +39,13 @@ Cada sección principal usa el encabezado `## N. Título` y sus subsecciones
 `### N.M Nombre del concepto`. Dentro de cada subsección el orden es:
 
 ```
-1. Introducción/motivación casual        ← OBLIGATORIO
-2. Contexto histórico                    ← OPCIONAL
+1. Motivación casual                     ← OBLIGATORIO
+2. Contexto histórico                    ← RECOMENDADO
 3. Definición(es) formal(es)             ← OBLIGATORIO si hay objeto nuevo
 4. Teoremas / Proposiciones              ← según corresponda
 5. Ejemplos                              ← OBLIGATORIO al menos uno
-6. Observaciones / Notas                 ← según corresponda
+6. Aplicaciones                          ← OPCIONAL
+7. Observaciones / Notas                 ← según corresponda
 ```
 
 ---
@@ -65,9 +79,12 @@ obtendremos un triángulo rectángulo con ambos catetos iguales a 1...
 
 ---
 
-## 2. Contexto histórico (OPCIONAL)
+## 2. Contexto histórico (RECOMENDADO)
 
-Solo incluir si **aporta motivación o comprensión**. Nunca como relleno.
+La ciencia se entiende mejor en su contexto. El contexto histórico no es ornamento:
+revela por qué el concepto existe, qué problema urgía resolver, y por qué la definición
+tiene la forma que tiene. Se incluye por defecto; se omite solo cuando no hay nada
+relevante que decir.
 
 **Formato — dos variantes según la relevancia:**
 
@@ -85,12 +102,11 @@ matemática moderna.
 > los fundamentos de la geometría mediante cinco postulados básicos.
 ```
 
-**Cuándo incluirlo:**
+**Cuándo omitirlo:**
 
-- El nombre del objeto tiene un origen no obvio (e.g., "seno" viene del latín *sinus*)
-- El concepto tardó siglos en formalizarse (e.g., el límite en el Cálculo)
-- Existe una paradoja o controversia histórica relevante (e.g., paradoja de Russell)
-- El autor o época es relevante para entender el concepto
+- El concepto es puramente notacional o auxiliar (un símbolo de conveniencia, un lema interno)
+- La historia no aporta comprensión adicional al concepto en cuestión
+- El origen es contemporáneo y no hay controversia ni desarrollo significativo que contar
 
 ---
 
@@ -186,7 +202,62 @@ $$\text{desarrollo}$$
 
 ---
 
-## 6. Observaciones y Notas
+## 6. Aplicaciones
+
+**Propósito:** Conectar el objeto formal recién definido con contextos donde aparece
+de manera concreta: otras ramas de la matemática, física, ingeniería, computación, economía, etc.
+Esta sección responde la pregunta implícita del estudiante: *¿y esto para qué sirve?*
+
+**Cuándo incluirla:**
+
+Se incluye cuando el concepto tiene conexiones relevantes con otras áreas y la sección
+se beneficia de ese contexto. Se omite cuando no aporta comprensión adicional, cuando
+agregar aplicaciones sobrecargaría el tema, o cuando el objeto es puramente auxiliar
+(una notación interna, un lema que solo sirve para probar otro resultado).
+
+**Formato:**
+
+Párrafo(s) de texto, o lista cuando hay múltiples aplicaciones independientes.
+No es necesario desarrollar en profundidad cada aplicación — basta con indicar
+el contexto y por qué el objeto es útil allí.
+
+```markdown
+**Aplicaciones:**
+
+Este concepto aparece de forma central en [área 1]: [descripción breve].
+En [área 2], se utiliza para [descripción breve].
+
+- **[Área 1]:** descripción concisa del uso.
+- **[Área 2]:** descripción concisa del uso.
+- **[Área 3]:** descripción concisa del uso.
+```
+
+**Ejemplos de aplicaciones bien escritas:**
+
+```markdown
+**Aplicaciones:**
+
+La fórmula de la distancia euclidiana es la base del análisis de datos y aprendizaje
+automático: la mayoría de los algoritmos de clasificación y agrupamiento miden
+"similitud" precisamente como distancia en $\mathbb{R}^n$. En física, describe la
+separación real entre dos puntos en el espacio tridimensional y es el punto de partida
+para definir trabajo, campo eléctrico y potencial gravitacional.
+```
+
+```markdown
+**Aplicaciones:**
+
+- **Cálculo diferencial:** la continuidad es condición necesaria para la
+  diferenciabilidad; toda función derivable es continua.
+- **Análisis numérico:** los métodos de aproximación (bisección, Newton-Raphson)
+  exigen continuidad para garantizar la existencia de raíces.
+- **Ingeniería de control:** la respuesta de un sistema físico modelada por una
+  función continua garantiza ausencia de saltos bruscos en la señal de salida.
+```
+
+---
+
+## 7. Observaciones y Notas
 
 **Observación** — para aclaraciones técnicas, extensiones o conexiones con otros temas:
 
@@ -294,12 +365,16 @@ $\blacksquare$
 [enunciado concreto]
 $$\text{desarrollo}$$
 
+**Aplicaciones:**
+[Párrafo o lista indicando en qué contextos aparece este concepto y por qué es útil.
+OMITIR solo si el objeto es puramente auxiliar.]
+
 > **Observación:** [aclaración técnica o extensión del concepto — OMITIR si no aplica]
 ```
 
 ---
 
-## 7. Ejercicios resueltos
+## 8. Ejercicios resueltos
 
 **Propósito:** Sección dedicada a problemas resueltos paso a paso. Cada ejercicio debe ser un título independiente para facilitar la navegación y referencia.
 
@@ -354,3 +429,5 @@ $$(x - 4)^2 + (y + 3)^2 = 16$$
 - No usar conceptos sin haberlos definido previamente (o sin indicar el prerequisito)
 - No incluir secciones vacías ni marcadores de posición como "TODO"
 - No escribir encabezados `#### N.M.K` a menos que sea estrictamente necesario
+- No escribir "es obvio que", "claramente", "trivialmente", "simplemente" o "es fácil ver"
+- No dirigirse al lector en segunda persona informal ("haz esto", "fíjate que")
