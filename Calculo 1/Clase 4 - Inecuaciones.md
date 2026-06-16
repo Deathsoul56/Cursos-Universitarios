@@ -154,7 +154,7 @@ $$\begin{align}
 3x - 5 &< 7 \\
 3x &< 7 + 5 \\
 3x &< 12 \\
-x &< \frac{12}{3} \\
+x &< \dfrac{12}{3} \\
 x &< 4
 \end{align}$$
 
@@ -1180,10 +1180,22 @@ $$x^2 - 4x - 5 \geq 0$$
 Factorizamos el trinomio cuadrático buscando dos números que multiplicados den $-5$ y sumados den $-4$. Estos números son $-5$ y $1$:
 $$(x - 5)(x + 1) \geq 0$$
 
-Los puntos críticos son $x = 5$ y $x = -1$. Al ser una parábola que abre hacia arriba ($a = 1 > 0$), la expresión es no negativa fuera del intervalo delimitado por sus raíces. También se puede verificar analizando intervalos en una tabla de signos:
-- Para $x \in (-\infty, -1]$, el producto es $\text{negativo} \cdot \text{negativo} \geq 0$ (permitido).
-- Para $x \in (-1, 5)$, el producto es $\text{negativo} \cdot \text{positivo} < 0$ (excluido).
-- Para $x \in [5, \infty)$, el producto es $\text{positivo} \cdot \text{positivo} \geq 0$ (permitido).
+Los puntos críticos son $x = -1$ y $x = 5$. Construimos la tabla de signos para analizar el comportamiento del producto de los factores lineales en cada intervalo:
+
+| Intervalo | $(-\infty, -1)$ | $(-1, 5)$ | $(5, \infty)$ |
+| :--- | :---: | :---: | :---: |
+| $(x + 1)$ | $-$ | $+$ | $+$ |
+| $(x - 5)$ | $-$ | $-$ | $+$ |
+| $\text{Producto}$ | $+$ | $-$ | $+$ |
+
+Buscamos las regiones con signo positivo o nulo ($\geq 0$). Al tratarse de una desigualdad no estricta, los extremos de los intervalos (los puntos críticos $\{-1, 5\}$) se incluyen en el conjunto solución:
+- $(-\infty, -1)$: signo positivo (se incluye, cerrado en $-1$) ✓
+- $(-1, 5)$: signo negativo (se excluye)
+- $(5, \infty)$: signo positivo (se incluye, cerrado en $5$) ✓
+
+Otra forma de analizar esto es considerar que la parábola $y = x^2 - 4x - 5$ abre hacia arriba ($a = 1 > 0$), por lo que su valor es mayor o igual a cero fuera del intervalo delimitado por sus raíces.
+
+![[parabola_-1-5.png]]
 
 **Respuesta:** El dominio de la función es:
 $$\text{Dom}(f) = (-\infty, -1] \cup [5, \infty)$$
