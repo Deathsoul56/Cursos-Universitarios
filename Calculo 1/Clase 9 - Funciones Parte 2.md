@@ -1,4 +1,4 @@
-# Clase 9 - Funciones Parte 2
+# Funciones Parte 2
 
 En esta clase profundizaremos en el análisis de funciones, estableciendo definiciones formales para las transformaciones geométricas, la clasificación según simetría (paridad), la composición de funciones, y el estudio riguroso de la inyectividad, sobreyectividad y funciones inversas.
 ## 1. Transformaciones de Funciones
@@ -645,9 +645,13 @@ El instinto inmediato de un estudiante de primer semestre es "cancelar" las func
 
 ## 6. Funciones Hiperbólicas
 
-### 6.1 Origen analítico: La descomposición de la exponencial
+Pensemos en un cable eléctrico colgado entre dos postes, una cadena suspendida por sus extremos o incluso el arco de una vela tensada por el viento. A primera observación, estas curvas parecen parábolas, pero no lo son: su forma exacta está descrita por el **coseno hiperbólico**. Del mismo modo, cuando se estudia el movimiento acelerado en la relatividad especial o ciertas ecuaciones diferenciales sencillas, aparecen combinaciones de exponenciales $e^x$ y $e^{-x}$ que resultan ser más naturales de escribir como $\sinh(x)$ y $\cosh(x)$. Estas funciones no son una mera curiosidad notacional: organizan simetrías, simplifican fórmulas y conectan el álgebra exponencial con la geometría de la hipérbola de una manera tan limpia como los senos y cosenos conectan la exponencial imaginaria con la circunferencia.
 
-En la Sección 2.2 se introdujo el Teorema de Descomposición de Paridad, el cual establece que cualquier función real sobre un dominio simétrico puede expresarse de manera única como la suma de una función par y una función impar. Al aplicar este teorema a la función exponencial elemental $f(x) = e^x$ (la función asimétrica por excelencia), se obtienen de manera natural sus dos componentes de paridad:
+> **Nota histórica:** Aunque las combinaciones exponenciales $e^x \pm e^{-x}$ eran conocidas desde el siglo XVII, el estudio sistemático de las funciones hiperbólicas como familia independiente comenzó con **Vincenzo Riccati**, quien en 1757 publicó *Opuscula ad res physicas et mathematicas pertinentia* y acuñó los nombres *sinus hyperbolicus* y *cosinus hyperbolicus*. Poco después, **Johann Heinrich Lambert** (alrededor de 1768) profundizó en sus propiedades y estableció conexiones con la geometría de la hipérbola. Curiosamente, Lambert también fue uno de los primeros en demostrar que $\pi$ es irracional, el mismo tipo de obstáculo que encontramos cuando dos funciones trigonométricas tienen períodos inconmensurables.
+
+### 6.1 Origen analítico: la descomposición de la exponencial
+
+En la Sección 2.2 se introdujo el Teorema de Descomposición de Paridad, el cual establece que cualquier función real sobre un dominio simétrico puede expresarse de manera única como la suma de una función par y una función impar. Al aplicar este teorema a la función exponencial elemental $f(x) = e^x$, se obtienen de manera natural sus dos componentes de paridad:
 
 - **Componente par (Coseno hiperbólico):**
   $$f_{\text{par}}(x) = \dfrac{e^x + e^{-x}}{2}$$
@@ -655,30 +659,49 @@ En la Sección 2.2 se introdujo el Teorema de Descomposición de Paridad, el cua
 - **Componente impar (Seno hiperbólico):**
   $$f_{\text{impar}}(x) = \dfrac{e^x - e^{-x}}{2}$$
 
-Estas componentes estructuran una de las familias más importantes del análisis matemático. De esta descomposición surge de forma directa la identidad fundamental:
+Estas componentes estructuran una de las familias más importantes del análisis matemático. De esta descomposición surge de forma directa la identidad:
 $$e^x = \cosh(x) + \sinh(x)$$
 
-> **Nota de conexión algebraica:** Existe una de las deducciones más elegantes de estas funciones dentro de la teoría de los números complejos, mediante la fórmula de Euler ($e^{ix} = \cos(x) + i\sin(x)$), que conecta las funciones trigonométricas con las hiperbólicas a través de argumentos imaginarios: $\cos(ix) = \cosh(x)$ y $\sin(ix) = i\sinh(x)$. Esta correspondencia y su demostración formal se estudiarán en detalle en el curso de Álgebra. En este curso de Cálculo nos limitaremos a su análisis real.
+> **Nota de conexión algebraica:** Mediante la fórmula de Euler ($e^{ix} = \cos(x) + i\sin(x)$), las funciones trigonométricas y las hiperbólicas se conectan a través de argumentos imaginarios: $\cos(ix) = \cosh(x)$ y $\sin(ix) = i\sinh(x)$. Esta correspondencia y su demostración formal se estudiarán en detalle en el curso de Álgebra. En este curso de Cálculo nos limitaremos a su análisis real.
 
-### 6.2 Definiciones y analogía geométrica
+### 6.2 Definiciones formales y analogía geométrica
 
 **Definición 6.1 (Seno hiperbólico y Coseno hiperbólico):**
-Para todo $x \in \mathbb{R}$, se definen las funciones **seno hiperbólico** ($\sinh$) y **coseno hiperbólico** ($\cosh$) mediante las siguientes expresiones exponenciales reales:
-$$\sinh(x) = \dfrac{e^x - e^{-x}}{2}, \quad \cosh(x) = \dfrac{e^x + e^{-x}}{2}$$
+Se definen las funciones **seno hiperbólico** $\sinh: \mathbb{R} \to \mathbb{R}$ y **coseno hiperbólico** $\cosh: \mathbb{R} \to [1, +\infty)$ mediante:
+$$\sinh(x) = \dfrac{e^x - e^{-x}}{2}, \qquad \cosh(x) = \dfrac{e^x + e^{-x}}{2}$$
 
-El dominio de ambas funciones es todo el conjunto de los números reales ($\mathbb{R}$). 
+Ambas funciones tienen dominio $\mathbb{R}$. El recorrido de $\sinh$ es todo $\mathbb{R}$; el recorrido de $\cosh$ es $[1, +\infty)$, pues $e^x + e^{-x} \geq 2$ para todo $x \in \mathbb{R}$ por la desigualdad entre la media aritmética y la media geométrica.
 
-#### La analogía de la hipérbola equilátera
+La denominación "hiperbólicas" proviene de una analogía geométrica exacta con las funciones trigonométricas. En trigonometría ordinaria, al variar un parámetro angular $t$, el punto $(\cos(t), \sin(t))$ describe la **circunferencia unitaria** $x^2 + y^2 = 1$. En el caso hiperbólico, al variar un parámetro real $t$, el punto $(\cosh(t), \sinh(t))$ satisface:
 
-La denominación "hiperbólicas" proviene de una analogía geométrica exacta con las funciones trigonométricas (también llamadas circulares). 
-- En trigonometría ordinaria, al hacer variar un parámetro angular $t$, el punto coordenado $(x, y) = (\cos(t), \sin(t))$ describe la **circunferencia unitaria** de ecuación cartesiana:
-  $$x^2 + y^2 = 1$$
-- En cambio, al hacer variar un parámetro real $t$, el punto coordenado $(x, y) = (\cosh(t), \sinh(t))$ describe la rama derecha de la **hipérbola equilátera unitaria** de ecuación cartesiana:
-  $$x^2 - y^2 = 1$$
+$$\cosh^2(t) - \sinh^2(t) = 1$$
 
-Esta analogía no es solo formal, sino que el parámetro $t$ en las funciones hiperbólicas representa algebraicamente el doble del área del sector hiperbólico delimitado por la curva, de la misma forma que el ángulo $t$ en radianes representa el doble del área del sector circular en la circunferencia unitaria.
+por el Teorema 6.1, de modo que describe la rama derecha de la **hipérbola equilátera unitaria** $x^2 - y^2 = 1$. Además, el parámetro $t$ representa algebraicamente el doble del área del sector hiperbólico determinado por la curva, en completa analogía con el hecho de que el ángulo $t$ en radianes es el doble del área del sector circular en la circunferencia unitaria.
 
-### 6.3 Identidad fundamental y otras funciones hiperbólicas
+PONER GRAFICA AQUI: hipérbola equilátera $x^2 - y^2 = 1$ con la rama derecha parametrizada por $(\cosh t, \sinh t)$.
+
+**Proposición 6.1 (Propiedades básicas de $\sinh$ y $\cosh$):**
+Para todo $x \in \mathbb{R}$ se verifican las siguientes propiedades:
+
+1. **Paridad:** $\sinh(-x) = -\sinh(x)$ (función impar) y $\cosh(-x) = \cosh(x)$ (función par).
+2. **Cota inferior del coseno hiperbólico:** $\cosh(x) \geq 1$, con igualdad si y solo si $x = 0$.
+3. **Comportamiento en el origen:** $\sinh(0) = 0$ y $\cosh(0) = 1$.
+4. **Monotonía:** $\sinh$ es estrictamente creciente en $\mathbb{R}$; $\cosh$ es estrictamente decreciente en $(-\infty, 0]$ y estrictamente creciente en $[0, +\infty)$.
+
+**Demostración:**
+Las propiedades de paridad se siguen directamente de las definiciones exponenciales. En efecto:
+$$\sinh(-x) = \dfrac{e^{-x} - e^{x}}{2} = -\dfrac{e^{x} - e^{-x}}{2} = -\sinh(x)$$
+$$\cosh(-x) = \dfrac{e^{-x} + e^{x}}{2} = \cosh(x)$$
+
+La cota inferior de $\cosh$ se obtiene de la desigualdad $a + b \geq 2\sqrt{ab}$ aplicada a $a = e^x$ y $b = e^{-x}$, lo cual da $e^x + e^{-x} \geq 2$, es decir, $\cosh(x) \geq 1$. La igualdad ocurre cuando $e^x = e^{-x}$, es decir, cuando $x = 0$.
+
+Los valores en el origen se calculan sustituyendo $x = 0$ en las definiciones.
+
+La monotonía de $\sinh$ puede justificarse observando que $e^x$ es creciente y $e^{-x}$ es decreciente, de modo que su diferencia es estrictamente creciente. Para $\cosh$, la función es par y alcanza su mínimo global en $x = 0$, por lo que decrece hacia la izquierda del origen y crece hacia la derecha. $\blacksquare$
+
+PONER GRAFICA AQUI: gráficas de $y = \sinh(x)$ y $y = \cosh(x)$ en el mismo sistema de ejes, destacando el punto mínimo $(0,1)$ de $\cosh$ y el origen de coordenadas para $\sinh$.
+
+### 6.3 Identidad fundamental
 
 **Teorema 6.1 (Identidad hiperbólica fundamental):**
 Para todo $x \in \mathbb{R}$, se verifica la relación:
@@ -694,268 +717,260 @@ $$\begin{align}
 \end{align}$$
 Queda demostrada la identidad. $\blacksquare$
 
-A partir de las dos funciones hiperbólicas base, se definen las funciones hiperbólicas restantes en perfecta correspondencia con las razones trigonométricas:
+### 6.4 Otras funciones hiperbólicas
+
+A partir de $\sinh$ y $\cosh$ se definen las funciones hiperbólicas restantes en correspondencia con las razones trigonométricas.
 
 **Definición 6.2 (Otras funciones hiperbólicas):**
-Para los valores de $x$ donde los denominadores no se anulan, se definen:
-- **Tangente hiperbólica ($\tanh$):**
-  $$\tanh(x) = \dfrac{\sinh(x)}{\cosh(x)} = \dfrac{e^x - e^{-x}}{e^x + e^{-x}}, \quad \text{para } x \in \mathbb{R}$$
-- **Cotangente hiperbólica ($\coth$):**
-  $$\coth(x) = \dfrac{\cosh(x)}{\sinh(x)} = \dfrac{e^x + e^{-x}}{e^x - e^{-x}}, \quad \text{para } x \in \mathbb{R} \setminus \{0\}$$
-- **Secante hiperbólica ($\text{sech}$):**
-  $$\text{sech}(x) = \dfrac{1}{\cosh(x)} = \dfrac{2}{e^x + e^{-x}}, \quad \text{para } x \in \mathbb{R}$$
-- **Cosecante hiperbólica ($\text{csch}$):**
-  $$\text{csch}(x) = \dfrac{1}{\sinh(x)} = \dfrac{2}{e^x - e^{-x}}, \quad \text{para } x \in \mathbb{R} \setminus \{0\}$$
+Se definen las funciones:
 
-> **Nota sobre las funciones inversas:** La definición y análisis formal de las funciones hiperbólicas inversas (tales como el argumento del seno hiperbólico, $\text{arsinh}(x)$, o el argumento del coseno hiperbólico, $\text{arcosh}(x)$) se posponen para las secciones posteriores del curso, una vez establecido de manera rigurosa el concepto general de inyectividad e invertibilidad de funciones reales.
+- **Tangente hiperbólica:**
+  $$\tanh: \mathbb{R} \to (-1, 1), \qquad \tanh(x) = \dfrac{\sinh(x)}{\cosh(x)} = \dfrac{e^x - e^{-x}}{e^x + e^{-x}}$$
+
+- **Cotangente hiperbólica:**
+  $$\coth: \mathbb{R} \setminus \{0\} \to (-\infty, -1) \cup (1, +\infty), \qquad \coth(x) = \dfrac{\cosh(x)}{\sinh(x)} = \dfrac{e^x + e^{-x}}{e^x - e^{-x}}$$
+
+- **Secante hiperbólica:**
+  $$\text{sech}: \mathbb{R} \to (0, 1], \qquad \text{sech}(x) = \dfrac{1}{\cosh(x)} = \dfrac{2}{e^x + e^{-x}}$$
+
+- **Cosecante hiperbólica:**
+  $$\text{csch}: \mathbb{R} \setminus \{0\} \to \mathbb{R} \setminus \{0\}, \qquad \text{csch}(x) = \dfrac{1}{\sinh(x)} = \dfrac{2}{e^x - e^{-x}}$$
+
+**Proposición 6.2 (Comportamiento asintótico y paridad de $\tanh$):**
+La función $\tanh$ es impar, estrictamente creciente en $\mathbb{R}$, y satisface:
+$$\lim_{x \to +\infty} \tanh(x) = 1, \qquad \lim_{x \to -\infty} \tanh(x) = -1$$
+Por tanto, su gráfica tiene asíntotas horizontales $y = 1$ e $y = -1$.
+
+**Demostración:**
+La imparidad se sigue de la imparidad de $\sinh$ y la paridad de $\cosh$:
+$$\tanh(-x) = \dfrac{\sinh(-x)}{\cosh(-x)} = \dfrac{-\sinh(x)}{\cosh(x)} = -\tanh(x)$$
+
+Para los límites, multiplicamos numerador y denominador de la expresión exponencial por $e^{-x}$:
+$$\tanh(x) = \dfrac{1 - e^{-2x}}{1 + e^{-2x}}$$
+Cuando $x \to +\infty$, se tiene $e^{-2x} \to 0$, de modo que $\tanh(x) \to 1$. Cuando $x \to -\infty$, se escribe $\tanh(x) = \dfrac{e^{2x} - 1}{e^{2x} + 1}$, y como $e^{2x} \to 0$, se obtiene $\tanh(x) \to -1$. La monotonía estricta se deduce del crecimiento de $\sinh$ y de que $\cosh$ es positiva. $\blacksquare$
+
+PONER GRAFICA AQUI: gráfica de $y = \tanh(x)$ con las asíntotas horizontales $y = 1$ e $y = -1$.
+
+### 6.5 Ejemplos
+
+**Ejemplo 6.1 (Evaluación en el origen):**
+Calcular $\sinh(0)$, $\cosh(0)$ y verificar la identidad fundamental en $x = 0$.
+
+**Solución:**
+Sustituyendo $x = 0$ en las definiciones:
+$$\sinh(0) = \dfrac{e^0 - e^{-0}}{2} = \dfrac{1 - 1}{2} = 0$$
+$$\cosh(0) = \dfrac{e^0 + e^{-0}}{2} = \dfrac{1 + 1}{2} = 1$$
+
+Por tanto:
+$$\cosh^2(0) - \sinh^2(0) = 1^2 - 0^2 = 1$$
+lo cual confirma el Teorema 6.1 para este caso particular.
+
+**Ejemplo 6.2 (Simplificación de una tangente hiperbólica):**
+Calcular el valor exacto de $\tanh(\ln 2)$.
+
+**Solución:**
+Usando la expresión exponencial de $\tanh$:
+$$\tanh(\ln 2) = \dfrac{e^{\ln 2} - e^{-\ln 2}}{e^{\ln 2} + e^{-\ln 2}} = \dfrac{2 - \frac{1}{2}}{2 + \frac{1}{2}} = \dfrac{\frac{3}{2}}{\frac{5}{2}} = \dfrac{3}{5}$$
+
+Por lo tanto, $\tanh(\ln 2) = \dfrac{3}{5}$.
+
+**Ejemplo 6.3 (Verificación de la identidad fundamental):**
+Verificar que $\cosh^2(\ln 3) - \sinh^2(\ln 3) = 1$ mediante cálculo directo.
+
+**Solución:**
+Calculamos por separado:
+$$\cosh(\ln 3) = \dfrac{3 + \frac{1}{3}}{2} = \dfrac{\frac{10}{3}}{2} = \dfrac{5}{3}$$
+$$\sinh(\ln 3) = \dfrac{3 - \frac{1}{3}}{2} = \dfrac{\frac{8}{3}}{2} = \dfrac{4}{3}$$
+
+Entonces:
+$$\cosh^2(\ln 3) - \sinh^2(\ln 3) = \left(\dfrac{5}{3}\right)^2 - \left(\dfrac{4}{3}\right)^2 = \dfrac{25}{9} - \dfrac{16}{9} = \dfrac{9}{9} = 1$$
+como predice el Teorema 6.1.
+
+**Ejemplo 6.4 (Punto sobre una hipérbola):**
+Determinar las coordenadas del punto sobre la hipérbola $x^2 - y^2 = 1$ que corresponde al parámetro $t = \ln 2$.
+
+**Solución:**
+El punto buscado es $(\cosh(\ln 2), \sinh(\ln 2))$. Calculamos:
+$$\cosh(\ln 2) = \dfrac{2 + \frac{1}{2}}{2} = \dfrac{5}{4}, \qquad \sinh(\ln 2) = \dfrac{2 - \frac{1}{2}}{2} = \dfrac{3}{4}$$
+
+Así, el punto es $\left(\dfrac{5}{4}, \dfrac{3}{4}\right)$. Se verifica directamente que:
+$$\left(\dfrac{5}{4}\right)^2 - \left(\dfrac{3}{4}\right)^2 = \dfrac{25}{16} - \dfrac{9}{16} = \dfrac{16}{16} = 1$$
+
+### 6.6 Aplicaciones
+
+Las funciones hiperbólicas aparecen de manera recurrente en contextos donde coexisten comportamientos crecientes y decrecientes exponenciales, o donde la geometría de la hipérbola juega un papel central.
+
+- **Mecánica y arquitectura (catenaria):** La curva que describe un cable o una cadena homogénea colgada bajo su propio peso no es una parábola, sino una catenaria. En su forma más simple, su ecuación es $y = a \cosh\!\left(\dfrac{x}{a}\right)$, donde $a$ es una constante que depende de la tensión y del peso por unidad de longitud. Este modelo explica la forma de cables de suspensión, líneas de transmisión eléctrica y arcos arquitectónicos como el Arco Gateway de San Luis.
+
+- **Relatividad especial:** Las transformaciones de Lorentz, que relacionan las coordenadas espaciotemporales de dos observadores en movimiento relativo uniforme, pueden parametrizarse mediante funciones hiperbólicas. Si $\phi$ es la rapidez (ángulo hiperbólico), las transformaciones se escriben $x' = x \cosh(\phi) - ct \sinh(\phi)$ y $ct' = -x \sinh(\phi) + ct \cosh(\phi)$. Esta forma pone de relieve la analogía formal entre rotaciones espaciales y "rotaciones" en el espaciotiempo.
+
+- **Ecuaciones diferenciales:** La ecuación lineal de segundo orden $y'' - y = 0$ tiene como soluciones generales combinaciones de $e^x$ y $e^{-x}$, que pueden reescribirse como $y(x) = A \cosh(x) + B \sinh(x)$. Esta representación resulta especialmente útil cuando las condiciones iniciales o de contorno presentan simetrías par o impar, pues separa de manera natural las contribuciones simétricas y antisimétricas.
+
+- **Geometría hiperbólica:** En modelos como el disco de Poincaré o el semiplano superior, las distancias y las geodésicas se expresan mediante funciones hiperbólicas. El coseno hiperbólico aparece, por ejemplo, en la fórmula de la distancia hiperbólica entre dos puntos.
+
+### 6.7 Observaciones
+
+> **Observación (sobre las funciones inversas):** La definición y análisis formal de las funciones hiperbólicas inversas, como el argumento del seno hiperbólico $\text{arsinh}(x)$ o el argumento del coseno hiperbólico $\text{arcosh}(x)$, se posponen para secciones posteriores del curso, una vez establecidos de manera rigurosa los conceptos generales de inyectividad e invertibilidad de funciones reales.
+
+> **Observación (analogía trigonométrica):** Muchas identidades hiperbólicas pueden recordarse a partir de las identidades trigonométricas circulares cambiando el signo de los términos que contienen productos de dos senos hiperbólicos. Por ejemplo, la identidad circular $\cos^2(x) + \sin^2(x) = 1$ se convierte en $\cosh^2(x) - \sinh^2(x) = 1$. No obstante, esta regla mnemotécnica no sustituye una verificación algebraica directa.
+
+> **Observación (notación):** En la literatura en español se encuentran distintas notaciones para las funciones inversas hiperbólicas: $\text{arsinh}(x)$, $\text{argsinh}(x)$, $\text{asinh}(x)$ para el seno hiperbólico inverso, y análogamente para las demás. Todas ellas se refieren al mismo objeto matemático.
 
 ---
 
-## 7. Composición de Funciones
+## 7. Clasificación de Funciones
 
-**Concepto intuitivo:**
+Pensemos en una base de datos donde cada cliente debe recibir un número de identificación único, o en un teatro donde cada asiento debe estar ocupado, o en un salón de clases donde cada estudiante debe tener exactamente un pupitre. En cada caso, la relación entre dos conjuntos tiene propiedades distintas: a veces no se repiten valores, a veces no sobran elementos en el conjunto de llegada, y a veces ambas condiciones se cumplen a la vez. Estas tres situaciones corresponden, respectivamente, a las funciones inyectivas, sobreyectivas y biyectivas. Clasificar una función de este modo no es un ejercicio abstracto: es el primer paso para saber si una función puede invertirse, si preserva información, o si dos conjuntos tienen el mismo "tamaño".
 
-La **composición de funciones** es la operación de "aplicar una función y luego otra". Imaginemos un proceso en dos etapas: primero transformamos $x$ mediante una función $g$, obteniendo $g(x)$, y luego aplicamos otra función $f$ al resultado, obteniendo $f(g(x))$. Este proceso completo define una nueva función.
+> **Nota histórica:** La noción moderna de función como correspondencia arbitraria entre conjuntos fue consolidada por **Peter Gustav Lejeune Dirichlet** en 1837, al separar la idea de función de la de fórmula explícita. Más tarde, a finales del siglo XIX, **Georg Cantor** utilizó las funciones biyectivas como herramienta fundamental para comparar el tamaño de conjuntos infinitos, demostrando que existen diferentes "grados" de infinito. La notación estándar $f: A \to B$ para indicar dominio y codominio fue popularizada por el grupo **Nicolas Bourbaki** en sus tratados de mediados del siglo XX.
 
-**Idea intuitiva:**
-Pensemos en una función como una "máquina" que transforma entradas en salidas. Si tenemos dos máquinas:
-- La máquina $g$ convierte $x$ en $g(x)$
-- La máquina $f$ convierte $y$ en $f(y)$
+### 7.1 Dominio, codominio e imagen
 
-La **composición** $f \circ g$ es conectar la salida de $g$ directamente como entrada de $f$.
+Antes de clasificar una función, es necesario distinguir con precisión tres conjuntos que suelen confundirse: el dominio, el codominio y la imagen.
 
-**Ejemplo visual:** Si $g(x) = x + 1$ (sumar 1) y $f(x) = x^2$ (elevar al cuadrado), entonces:
-- Entrada: $x = 3$
-- Después de $g$: $g(3) = 3 + 1 = 4$
-- Después de $f$: $f(4) = 4^2 = 16$
-- Resultado final: $(f \circ g)(3) = 16$
+**Definición 7.1 (Dominio, codominio e imagen):**
+Dada una función $f: A \to B$:
 
-### 7.1 Definición y dominio
+- El conjunto $A$ se denomina **dominio** de $f$, denotado $\text{Dom}(f)$. Es el conjunto de todas las entradas permitidas.
+- El conjunto $B$ se denomina **codominio** de $f$. Es el conjunto de llegada donde se declara que toman valores las salidas.
+- La **imagen** o **recorrido** de $f$, denotada $\text{Im}(f)$ o $f(A)$, es el conjunto de todos los valores que la función realmente alcanza:
+  $$\text{Im}(f) = \{ y \in B : \exists x \in A \text{ tal que } f(x) = y \}$$
 
-**Definición 7.1 (Composición de funciones):**
-Dadas dos funciones $f: B \to C$ y $g: A \to B$, la **composición** de $f$ con $g$, denotada $f \circ g$ (se lee "$f$ compuesta con $g$" o "$f$ círculo $g$"), es la función definida por:
-$$(f \circ g)(x) = f(g(x))$$
+Siempre se cumple que $\text{Im}(f) \subseteq B$. La diferencia entre codominio e imagen es esencial: el codominio es parte de la definición de la función, mientras que la imagen es el resultado de evaluarla.
 
-**Notación:** Se lee de **derecha a izquierda**: primero aplicamos $g$, luego aplicamos $f al resultado.
+PONER GRAFICA AQUI: diagrama de correspondencia entre dos conjuntos $A$ y $B$ mediante flechas, destacando el dominio, el codominio y la imagen como subconjunto del codominio.
 
-**Definición 7.2 (Dominio de la composición):**
-El dominio de $f \circ g$ es:
-$$\text{Dom}(f \circ g) = \{x \in \text{Dom}(g) : g(x) \in \text{Dom}(f)\}$$
+**Ejemplo 7.1 (Identificación de dominio, codominio e imagen):**
+Sea $f: \mathbb{R} \to \mathbb{R}$ definida por $f(x) = x^2$.
 
-Es decir, debemos satisfacer **dos condiciones**:
-1. $x$ debe estar en el dominio de $g$
-2. El resultado $g(x)$ debe estar en el dominio de $f$
+- **Dominio:** $\text{Dom}(f) = \mathbb{R}$.
+- **Codominio:** $\mathbb{R}$, tal como fue declarado.
+- **Imagen:** $\text{Im}(f) = [0, +\infty)$, pues todo número real no negativo es el cuadrado de algún real, pero ningún número negativo puede obtenerse como cuadrado de un real.
 
-**Observación importante:** Para que $f \circ g$ esté bien definida, necesitamos que $\text{Im}(g) \cap \text{Dom}(f) \neq \emptyset$ (la imagen de $g$ debe tener intersección con el dominio de $f$).
+Observemos que si se redefine la misma regla con codominio $[0, +\infty)$, es decir, $f: \mathbb{R} \to [0, +\infty)$ dada por $f(x) = x^2$, la función cambia como objeto matemático, aunque la regla algebraica sea idéntica.
 
-**Ejemplo 7.1:**
-Sean $f(x) = \sqrt{x}$ y $g(x) = x - 3$. Calcular $(f \circ g)(x)$ y su dominio.
+### 7.2 Inyectividad
 
-**Solución:**
-$$(f \circ g)(x) = f(g(x)) = f(x-3) = \sqrt{x-3}$$
+Imaginemos que estamos asignando llaves a habitaciones en un hotel. Si asignamos la misma llave a dos habitaciones distintas, se generará un conflicto de duplicación. En matemáticas, la inyectividad representa la garantía de que no existan tales colisiones: a elementos distintos del dominio les corresponden siempre resultados distintos en el codominio.
 
-**Dominio:**
-- $\text{Dom}(g) = \mathbb{R}$
-- $\text{Dom}(f) = [0, +\infty)$
-- Necesitamos que $g(x) \in \text{Dom}(f)$, es decir, $x - 3 \geq 0$
-- Por lo tanto: $x \geq 3$
-
-$$\text{Dom}(f \circ g) = [3, +\infty)$$
-
-**Ejemplo 7.2:**
-Sean $f(x) = x^2$ y $g(x) = x + 1$. Calcular:
-a) $(f \circ g)(x)$
-b) $(g \circ f)(x)$
-
-**Solución:**
-a) $(f \circ g)(x) = f(g(x)) = f(x+1) = (x+1)^2 = x^2 + 2x + 1$
-
-b) $(g \circ f)(x) = g(f(x)) = g(x^2) = x^2 + 1$
-
-**Observación crucial:** En este ejemplo, $(f \circ g)(x) \neq (g \circ f)(x)$. Esto ilustra que la composición **no es conmutativa** en general.
-
-**Ejemplo 7.3:**
-Sean $f(x) = \frac{1}{x}$ y $g(x) = x^2 - 4$. Determinar el dominio de $(f \circ g)(x)$.
-
-**Solución:**
-$$(f \circ g)(x) = f(g(x)) = f(x^2 - 4) = \frac{1}{x^2 - 4}$$
-
-**Dominio:**
-- $\text{Dom}(g) = \mathbb{R}$
-- $\text{Dom}(f) = \mathbb{R} \setminus \{0\}$
-- Necesitamos $g(x) \neq 0$, es decir, $x^2 - 4 \neq 0$
-- $x^2 \neq 4 \Rightarrow x \neq \pm 2$
-
-$$\text{Dom}(f \circ g) = \mathbb{R} \setminus \{-2, 2\}$$
-
-**Ejemplo 7.4 (Composición con dominios restringidos):**
-Sean $f(x) = \sqrt{x}$ y $g(x) = \ln(x)$. Determinar el dominio de $(f \circ g)(x)$.
-
-**Solución:**
-$$(f \circ g)(x) = f(g(x)) = f(\ln(x)) = \sqrt{\ln(x)}$$
-
-**Dominio:**
-- $\text{Dom}(g) = (0, +\infty)$ (logaritmo requiere $x > 0$)
-- $\text{Dom}(f) = [0, +\infty)$ (raíz cuadrada requiere argumento $\geq 0$)
-- Necesitamos $\ln(x) \geq 0$, es decir, $x \geq 1$
-
-$$\text{Dom}(f \circ g) = [1, +\infty)$$
-
-### 7.2 Propiedades de la composición
-
-**Proposición 7.1 (No conmutatividad):**
-En general, $f \circ g \neq g \circ f$. Es decir, la composición de funciones **no es conmutativa**.
-
-**Ejemplo 7.5:**
-Si $f(x) = 2x$ y $g(x) = x + 3$:
-- $(f \circ g)(x) = 2(x+3) = 2x + 6$
-- $(g \circ f)(x) = 2x + 3$
-
-Claramente, $2x + 6 \neq 2x + 3$.
-
-**Proposición 7.2 (Asociatividad):**
-La composición de funciones **es asociativa**. Si $f$, $g$ y $h$ son funciones tales que las composiciones están definidas, entonces:
-$$f \circ (g \circ h) = (f \circ g) \circ h$$
-
-**Demostración:**
-Para cualquier $x$ en el dominio apropiado:
-$$[f \circ (g \circ h)](x) = f[(g \circ h)(x)] = f[g(h(x))]$$
-$$[(f \circ g) \circ h](x) = (f \circ g)[h(x)] = f[g(h(x))]$$
-
-Ambas expresiones son iguales. $\square$
-
-**Proposición 7.3 (Elemento identidad):**
-La función identidad $\text{id}(x) = x$ actúa como **elemento neutro** para la composición:
-$$f \circ \text{id} = \text{id} \circ f = f$$
-
-para cualquier función $f$.
-
-**Demostración:**
-$$(f \circ \text{id})(x) = f(\text{id}(x)) = f(x)$$
-$$(\text{id} \circ f)(x) = \text{id}(f(x)) = f(x)$$
-
-Por lo tanto, ambas composiciones dan $f$. $\square$
-
-**Proposición 7.4 (Composición con función inversa):**
-Si $f: A \to B$ es biyectiva con inversa $f^{-1}: B \to A$, entonces:
-$$f^{-1} \circ f = \text{id}_A \quad \text{y} \quad f \circ f^{-1} = \text{id}_B$$
-
-Donde $\text{id}_A$ es la función identidad en $A$ y $\text{id}_B$ es la función identidad en $B$.
-
-**Ejemplo 7.6:**
-Si $f(x) = 2x + 3$, entonces $f^{-1}(x) = \frac{x-3}{2}$. Verificamos:
-$$(f^{-1} \circ f)(x) = f^{-1}(2x+3) = \frac{(2x+3)-3}{2} = \frac{2x}{2} = x = \text{id}(x)$$
-$$(f \circ f^{-1})(x) = f\left(\frac{x-3}{2}\right) = 2\left(\frac{x-3}{2}\right) + 3 = x - 3 + 3 = x = \text{id}(x)$$
-
-### 7.3 Composición y clasificación de funciones
-
-**Teorema 7.1 (Composición de funciones inyectivas):**
-Si $f: B \to C$ y $g: A \to B$ son ambas inyectivas, entonces $f \circ g: A \to C$ es inyectiva.
-
-**Demostración:**
-Sean $x_1, x_2 \in A$ tales que $(f \circ g)(x_1) = (f \circ g)(x_2)$.
-
-Entonces:
-$$f(g(x_1)) = f(g(x_2))$$
-
-Como $f$ es inyectiva:
-$$g(x_1) = g(x_2)$$
-
-Como $g$ es inyectiva:
-$$x_1 = x_2$$
-
-Por lo tanto, $f \circ g$ es inyectiva. $\square$
-
-**Teorema 7.2 (Composición de funciones sobreyectivas):**
-Si $f: B \to C$ y $g: A \to B$ son ambas sobreyectivas, entonces $f \circ g: A \to C$ es sobreyectiva.
-
-**Demostración:**
-Sea $z \in C$ arbitrario. Como $f$ es sobreyectiva, existe $y \in B$ tal que $f(y) = z$.
-
-Como $g$ es sobreyectiva, existe $x \in A$ tal que $g(x) = y$.
-
-Entonces:
-$$(f \circ g)(x) = f(g(x)) = f(y) = z$$
-
-Por lo tanto, para todo $z \in C$ existe $x \in A$ tal que $(f \circ g)(x) = z$, lo que demuestra que $f \circ g$ es sobreyectiva. $\square$
-
-**Corolario 7.1 (Composición de funciones biyectivas):**
-Si $f: B \to C$ y $g: A \to B$ son ambas biyectivas, entonces $f \circ g: A \to C$ es biyectiva.
-
-Además, la inversa de la composición satisface:
-$$(f \circ g)^{-1} = g^{-1} \circ f^{-1}$$
-
-**Observación:** El orden se invierte en la inversa: "los calcetines se ponen antes que los zapatos, pero se quitan en orden inverso".
-
-**Ejemplo 7.7:**
-Sean $f(x) = e^x$ y $g(x) = x + 1$. Ambas son biyectivas de $\mathbb{R}$ en sus respectivas imágenes. La composición:
-$$(f \circ g)(x) = e^{x+1}$$
-
-es también biyectiva, y su inversa es:
-$$(f \circ g)^{-1}(x) = (g^{-1} \circ f^{-1})(x) = g^{-1}(\ln(x)) = \ln(x) - 1$$
-
-### 7.4 Descomposición de funciones
-
-Muchas funciones complejas pueden expresarse como composición de funciones más simples. Esta técnica es fundamental en cálculo (regla de la cadena para derivadas).
-
-**Ejemplo 7.8 (Identificar composición):**
-Dada $h(x) = \sqrt{x^2 + 1}$, expresarla como $h = f \circ g$.
-
-**Solución:**
-- Sea $g(x) = x^2 + 1$ (función interior)
-- Sea $f(x) = \sqrt{x}$ (función exterior)
-- Entonces: $h(x) = f(g(x)) = \sqrt{x^2 + 1}$
-
-**Ejemplo 7.9:**
-Expresemos $h(x) = \frac{1}{(x+2)^2}$ como composición de tres funciones.
-
-**Solución:**
-- Sea $r(x) = x + 2$
-- Sea $s(x) = x^2$
-- Sea $t(x) = \frac{1}{x}$
-- Entonces: $h = t \circ s \circ r$
-
-**Verificación:**
-$$(t \circ s \circ r)(x) = t(s(r(x))) = t(s(x+2)) = t((x+2)^2) = \frac{1}{(x+2)^2}$$
-
-**Ejemplo 7.10 (Composición iterada):**
-Si $f(x) = 2x$, entonces:
-- $(f \circ f)(x) = f(f(x)) = f(2x) = 2(2x) = 4x = 2^2 x$
-- $(f \circ f \circ f)(x) = f(f(f(x))) = 8x = 2^3 x$
-- En general: $f^{(n)}(x) = 2^n x$ (composición $n$ veces)
-
-**Notación:** $f^{(n)} = \underbrace{f \circ f \circ \cdots \circ f}_{n \text{ veces}}$
-
----
-
-## 8. Clasificación de Funciones
-
-Sea $f: A \to B$ una función. Clasificamos las funciones según cómo relacionan los elementos del dominio $A$ con el codominio $B$.
-
-### 8.1 Inyectividad (Uno a Uno)
-
-**Definición 8.1 (Función Inyectiva):**
-Una función $f$ es **inyectiva** (o inyección) si asigna imágenes distintas a elementos distintos del dominio. Formalmente:
+**Definición 7.2 (Función Inyectiva):**
+Sea $f: A \to B$ una función. Se dice que $f$ es **inyectiva** (o uno a uno) si elementos distintos del dominio $A$ producen imágenes distintas en el codominio $B$. Formalmente:
+$$\forall x_1, x_2 \in A, \quad x_1 \neq x_2 \implies f(x_1) \neq f(x_2)$$
+Equivalentemente, aplicando la contrapositiva:
 $$\forall x_1, x_2 \in A, \quad f(x_1) = f(x_2) \implies x_1 = x_2$$
-Equivalentemente (contrapositiva): $x_1 \neq x_2 \implies f(x_1) \neq f(x_2)$.
 
-**Prueba de la línea horizontal:** Una función es inyectiva si ninguna recta horizontal intersecta su gráfica en más de un punto.
+**Proposición 7.1 (Prueba de la línea horizontal):**
+Una función real de variable real $f: \text{Dom}(f) \to \mathbb{R}$ es inyectiva si y solo si cualquier recta horizontal de la forma $y = c$ (donde $c \in \mathbb{R}$) intersecta a su gráfica a lo sumo en un punto.
 
-### 8.2 Sobreyectividad (Epiyectiva o Sobre)
+**Demostración:**
+Si la función es inyectiva, dos valores distintos de $x$ no pueden tener la misma imagen $y$, por lo que ninguna recta horizontal puede cortar la gráfica en más de un punto. Recíprocamente, si toda recta horizontal corta la gráfica a lo sumo una vez, entonces para cada $y$ existe a lo sumo una preimagen, lo cual es precisamente la definición de inyectividad. $\blacksquare$
 
-**Definición 8.2 (Función Sobreyectiva):**
-Una función $f$ es **sobreyectiva** (o suryección) si todo elemento del codominio es imagen de al menos un elemento del dominio. Es decir, la imagen coincide con el codominio ($Im(f) = B$). Formalmente:
+PONER GRAFICA AQUI: ejemplo de prueba de la línea horizontal con una función inyectiva (por ejemplo, $f(x)=x^3$) y una no inyectiva (por ejemplo, $f(x)=x^2$), mostrando una recta horizontal que corta una sola vez en el primer caso y dos veces en el segundo.
+
+**Ejemplo 7.2 (Función lineal inyectiva):**
+Demostrar que la función $f: \mathbb{R} \to \mathbb{R}$ definida por $f(x) = 3x - 5$ es inyectiva.
+
+**Solución:**
+Sean $x_1, x_2 \in \mathbb{R}$ tales que $f(x_1) = f(x_2)$. Entonces:
+$$\begin{align}
+3x_1 - 5 &= 3x_2 - 5 \\
+3x_1 &= 3x_2 \\
+x_1 &= x_2
+\end{align}$$
+Dado que $f(x_1) = f(x_2)$ implica necesariamente que $x_1 = x_2$, la función es inyectiva.
+
+**Ejemplo 7.3 (Función cuadrática no inyectiva):**
+Demostrar que la función $f: \mathbb{R} \to \mathbb{R}$ definida por $f(x) = x^2$ no es inyectiva.
+
+**Solución:**
+Basta con exhibir un contraejemplo. Sean $x_1 = 2$ y $x_2 = -2$. Se tiene que $x_1 \neq x_2$, sin embargo:
+$$f(2) = 4 \quad \text{y} \quad f(-2) = 4$$
+Por lo tanto, $f(2) = f(-2)$ con $2 \neq -2$, lo cual viola la definición de inyectividad.
+
+> **Observación:** La inyectividad depende críticamente de la delimitación del dominio. Si se restringe el dominio de $f(x) = x^2$ a los reales no negativos, es decir, $f: [0, +\infty) \to \mathbb{R}$, la función resulta inyectiva, pues cada valor de $y$ positivo proviene de una única $x$ no negativa.
+
+### 7.3 Sobreyectividad
+
+Supongamos que en un teatro cada asiento en la sala debe ser ocupado por al menos un espectador. Si al comenzar la función no queda ningún asiento vacío, hemos cubierto la capacidad de la sala por completo. En matemáticas, una función es sobreyectiva si su conjunto de llegada (codominio) está completamente "cubierto" por los valores que la función realmente toma (su imagen). No quedan elementos sin preimagen en el codominio.
+
+**Definición 7.3 (Función Sobreyectiva):**
+Sea $f: A \to B$ una función. Se dice que $f$ es **sobreyectiva** (o sobre) si todo elemento del codominio $B$ es la imagen de al menos un elemento del dominio $A$. Formalmente:
 $$\forall y \in B, \quad \exists x \in A \text{ tal que } f(x) = y$$
+Esto es equivalente a afirmar que la imagen de la función coincide exactamente con su codominio: $\text{Im}(f) = B$.
 
-### 8.3 Biyectividad
+**Ejemplo 7.4 (Función cuadrática no sobreyectiva):**
+Analizar si la función $f: \mathbb{R} \to \mathbb{R}$ definida por $f(x) = x^2$ es sobreyectiva.
 
-**Definición 8.3 (Función Biyectiva):**
-Una función es **biyectiva** si es simultáneamente **inyectiva** y **sobreyectiva**.
-Esto implica una correspondencia **biunívoca** (uno a uno y sobre) entre los conjuntos $A$ y $B$.
+**Solución:**
+El codominio declarado es $\mathbb{R}$. Consideremos $y = -1$. Si existiera $x \in \mathbb{R}$ tal que $f(x) = -1$, se tendría $x^2 = -1$, lo cual es imposible en los números reales. Por tanto, $y = -1$ carece de preimagen y la función no es sobreyectiva. Su imagen es $\text{Im}(f) = [0, +\infty) \neq \mathbb{R}$.
+
+**Ejemplo 7.5 (Función cuadrática sobreyectiva):**
+Determinar si la función $f: \mathbb{R} \to [0, +\infty)$ definida por $f(x) = x^2$ es sobreyectiva.
+
+**Solución:**
+Ahora el codominio coincide con la imagen natural de la función. Para cualquier $y \in [0, +\infty)$, podemos tomar $x = \sqrt{y}$, que es un número real bien definido. Entonces:
+$$f(\sqrt{y}) = (\sqrt{y})^2 = y$$
+Como todo elemento del codominio tiene al menos una preimagen, la función es sobreyectiva.
+
+> **Observación:** Los Ejemplos 7.4 y 7.5 muestran que la sobreyectividad no es una propiedad de la sola fórmula algebraica, sino que depende de la elección explícita del codominio.
+
+### 7.4 Biyectividad
+
+Imaginemos un salón de clases donde cada estudiante está sentado en exactamente un pupitre, y no queda ningún pupitre libre ni ningún alumno de pie. Esta correspondencia perfecta, donde no hay duplicaciones (inyectividad) y no sobra ningún asiento (sobreyectividad), es lo que conocemos como biyectividad. Es una relación simétrica e ideal porque permite conectar dos conjuntos de manera bidireccional y totalmente reversible.
+
+**Definición 7.4 (Función Biyectiva):**
+Una función $f: A \to B$ es **biyectiva** si es simultáneamente inyectiva y sobreyectiva.
+
+PONER GRAFICA AQUI: diagrama de función biyectiva con conjuntos $A$ y $B$ del mismo tamaño finito, mostrando una correspondencia perfecta uno a uno mediante flechas.
+
+**Ejemplo 7.6 (Función lineal biyectiva):**
+Determinar si la función $f: \mathbb{R} \to \mathbb{R}$ definida por $f(x) = 2x + 1$ es biyectiva.
+
+**Solución:**
+Se verifican ambas condiciones por separado.
+
+1. **Inyectividad:** Sean $x_1, x_2 \in \mathbb{R}$ tales que $f(x_1) = f(x_2)$. Entonces:
+   $$\begin{align}
+   2x_1 + 1 &= 2x_2 + 1 \\
+   2x_1 &= 2x_2 \\
+   x_1 &= x_2
+   \end{align}$$
+   Por tanto, $f$ es inyectiva.
+
+2. **Sobreyectividad:** Sea $y \in \mathbb{R}$. Buscamos $x \in \mathbb{R}$ tal que $f(x) = y$:
+   $$\begin{align}
+   2x + 1 &= y \\
+   x &= \dfrac{y - 1}{2}
+   \end{align}$$
+   Dado que $\dfrac{y-1}{2}$ es un número real para todo $y \in \mathbb{R}$, toda salida tiene preimagen. Por tanto, $f$ es sobreyectiva.
+
+Como $f$ es inyectiva y sobreyectiva, es biyectiva.
+
+### 7.5 Aplicaciones
+
+La clasificación de funciones no es un mero etiquetado teórico: responde preguntas concretas sobre reversibilidad, tamaño de conjuntos y diseño de sistemas.
+
+- **Existencia de inversas:** Una función biyectiva es exactamente aquella que puede invertirse de manera unívoca. La inyectividad garantiza que la inversa esté bien definida (sin ambigüedades), mientras que la sobreyectividad garantiza que la inversa esté definida en todo el codominio. Este tema se desarrolla rigurosamente en la Sección 8.
+
+- **Cardinalidad y teoría de conjuntos:** Cantor utilizó las biyecciones para comparar el tamaño de conjuntos, incluso conjuntos infinitos. Dos conjuntos tienen la misma cardinalidad si y solo si existe una función biyectiva entre ellos. De este modo se demuestra, por ejemplo, que los números enteros y los números racionales tienen el mismo cardinal, aunque los racionales parezcan "más numerosos".
+
+- **Criptografía:** Los algoritmos de cifrado simétrico requieren transformaciones biyectivas. Esto asegura que cada texto cifrado provenga de un único mensaje original (inyectividad) y que cualquier texto cifrado pueda descifrarse (sobreyectividad).
+
+- **Bases de datos y sistemas de identificación:** Una clave primaria en una tabla de base de datos define una función inyectiva del conjunto de registros hacia el conjunto de valores de la clave. Esto evita duplicados y permite recuperar un único registro a partir de su identificador.
+
+- **Modelado matemático:** En muchos modelos físicos o económicos, la inyectividad garantiza que dos estados distintos del sistema no produzcan el mismo resultado observable, mientras que la sobreyectividad asegura que todo resultado observable es alcanzable por algún estado del sistema.
+
+### 7.6 Observaciones
+
+> **Observación (dependencia del dominio y del codominio):** Las propiedades de inyectividad, sobreyectividad y biyectividad dependen tanto del dominio como del codominio declarados. La misma regla algebraica puede ser inyectiva en un dominio y no inyectiva en otro, o sobreyectiva respecto a un codominio y no sobreyectiva respecto a otro.
+
+> **Observación (relación con funciones inversas):** Si $f: A \to B$ es biyectiva, entonces existe una única función $f^{-1}: B \to A$ tal que $f^{-1}(f(x)) = x$ para todo $x \in A$ y $f(f^{-1}(y)) = y$ para todo $y \in B$. La demostración formal de esta equivalencia se presenta en la Sección 8.
+
+> **Observación (composición de funciones):** La composición preserva las propiedades de inyectividad y sobreyectividad: la composición de funciones inyectivas es inyectiva, y la composición de funciones sobreyectivas es sobreyectiva. En consecuencia, la composición de funciones biyectivas es biyectiva. Estos resultados se demuestran formalmente en la Sección 9.
 
 ---
 
-## 9. Funciones Inversas
+## 8. Funciones Inversas
 
 **Concepto intuitivo:**
 
@@ -965,16 +980,16 @@ La función inversa "deshace" o "revierte" la acción de una función. Si una fu
 
 El concepto de inversa permite "deshacer" la acción de una función.
 
-### 9.1 Definición y Existencia
+### 8.1 Definición y Existencia
 
-**Teorema 9.1 (Existencia de la inversa):**
+**Teorema 8.1 (Existencia de la inversa):**
 Una función $f: A \to B$ tiene función inversa si y solo si $f$ es **biyectiva**.
 
 **Justificación:**
 - **Inyectividad** garantiza que cada valor de salida proviene de una única entrada (no hay ambigüedad)
 - **Sobreyectividad** garantiza que todo elemento del codominio tiene una preimagen (la inversa está definida en todo $B$)
 
-**Definición 9.1 (Función Inversa):**
+**Definición 8.1 (Función Inversa):**
 Si $f: A \to B$ es biyectiva, definimos su función inversa $f^{-1}: B \to A$ como:
 $$f^{-1}(y) = x \iff f(x) = y$$
 
@@ -989,7 +1004,7 @@ Las gráficas de $y=f(x)$ y $y=f^{-1}(x)$ son simétricas respecto a la recta id
 
 **Observación importante:** La notación $f^{-1}$ para la función inversa **no debe confundirse** con $[f(x)]^{-1} = \frac{1}{f(x)}$, que es el recíproco.
 
-### 9.2 Método algebraico para calcular la inversa
+### 8.2 Método algebraico para calcular la inversa
 
 **Procedimiento general:**
 
@@ -1003,7 +1018,7 @@ Para encontrar la función inversa $f^{-1}$ de una función biyectiva $f$:
 
 **Paso 4:** Verificar que $(f \circ f^{-1})(x) = x$ y $(f^{-1} \circ f)(x) = x$
 
-**Ejemplo 9.1 (Función lineal):**
+**Ejemplo 8.1 (Función lineal):**
 Encontrar la inversa de $f(x) = 2x + 3$.
 
 **Solución:**
@@ -1022,7 +1037,7 @@ $$f^{-1}(x) = \frac{x - 3}{2}$$
 $$(f \circ f^{-1})(x) = f\left(\frac{x-3}{2}\right) = 2\left(\frac{x-3}{2}\right) + 3 = x - 3 + 3 = x$$ ✓
 $$(f^{-1} \circ f)(x) = f^{-1}(2x+3) = \frac{(2x+3)-3}{2} = \frac{2x}{2} = x$$ ✓
 
-**Ejemplo 9.2 (Función racional):**
+**Ejemplo 8.2 (Función racional):**
 Encontrar la inversa de $f(x) = \frac{3x + 1}{x - 2}$.
 
 **Solución:**
@@ -1041,7 +1056,7 @@ $$f^{-1}(x) = \frac{2x + 1}{x - 3}$$
 
 **Observación:** Esta función es **autoinversa** salvo constantes: tiene la misma forma que la original.
 
-**Ejemplo 9.3 (Función exponencial):**
+**Ejemplo 8.3 (Función exponencial):**
 Encontrar la inversa de $f(x) = e^{x+2} - 1$.
 
 **Solución:**
@@ -1058,7 +1073,7 @@ $$f^{-1}(x) = \ln(x + 1) - 2$$
 
 **Dominio de $f^{-1}$:** Como $e^{x+2} > 0$, tenemos $y > -1$. Por lo tanto, $\text{Dom}(f^{-1}) = (-1, +\infty)$.
 
-**Ejemplo 9.4 (Función cúbica):**
+**Ejemplo 8.4 (Función cúbica):**
 Encontrar la inversa de $f(x) = x^3 + 1$.
 
 **Solución:**
@@ -1074,11 +1089,11 @@ $$f^{-1}(x) = \sqrt[3]{x - 1}$$
 
 **Observación:** Las funciones polinómicas de grado impar son biyectivas de $\mathbb{R}$ en $\mathbb{R}$, por lo que siempre tienen inversa global.
 
-### 9.3 Restricción del Dominio
+### 8.3 Restricción del Dominio
 
 Si una función no es inyectiva en su dominio natural (ej. $f(x) = x^2$), no posee inversa global. Sin embargo, podemos definir una **inversa parcial** restringiendo su dominio a un subconjunto donde sea inyectiva.
 
-**Ejemplo 9.5 (Función cuadrática restringida):**
+**Ejemplo 8.5 (Función cuadrática restringida):**
 La función $f(x) = x^2$ no es inyectiva en $\mathbb{R}$ (por ejemplo, $f(-2) = f(2) = 4$).
 
 Si restringimos a $f: [0, +\infty) \to [0, +\infty)$, entonces $f$ es biyectiva.
@@ -1093,7 +1108,7 @@ Si restringimos a $f: [0, +\infty) \to [0, +\infty)$, entonces $f$ es biyectiva.
 
 **Observación:** Si hubiéramos restringido a $f: (-\infty, 0] \to [0, +\infty)$, la inversa sería $f^{-1}(x) = -\sqrt{x}$.
 
-**Ejemplo 9.6 (Función cuadrática general):**
+**Ejemplo 8.6 (Función cuadrática general):**
 Encontrar la inversa de $f(x) = x^2 - 4x + 5$ restringida a $[2, +\infty)$.
 
 **Solución:**
@@ -1113,24 +1128,238 @@ $$x = 2 + \sqrt{y - 1}$$
 **Paso 3:**
 $$f^{-1}(x) = 2 + \sqrt{x - 1}, \quad x \geq 1$$
 
-### 9.4 Propiedades de la función inversa
+### 8.4 Propiedades de la función inversa
 
-**Proposición 9.1 (Dominio e imagen):**
+**Proposición 8.1 (Dominio e imagen):**
 Si $f: A \to B$ es biyectiva, entonces:
 - $\text{Dom}(f^{-1}) = \text{Im}(f)$
 - $\text{Im}(f^{-1}) = \text{Dom}(f) = A$
 
-**Proposición 9.2 (Inversa de la inversa):**
+**Proposición 8.2 (Inversa de la inversa):**
 Si $f$ es biyectiva, entonces:
 $$(f^{-1})^{-1} = f$$
 
-**Proposición 9.3 (Monotonía):**
+**Proposición 8.3 (Monotonía):**
 Si $f$ es estrictamente creciente y biyectiva, entonces $f^{-1}$ también es estrictamente creciente.
 
 Si $f$ es estrictamente decreciente y biyectiva, entonces $f^{-1}$ también es estrictamente decreciente.
 
-**Ejemplo 9.7:**
+**Ejemplo 8.7:**
 La función $f(x) = 2x + 3$ es estrictamente creciente. Su inversa $f^{-1}(x) = \frac{x-3}{2}$ también es estrictamente creciente.
+
+---
+
+## 9. Composición de Funciones
+
+La **composición de funciones** es la operación de "aplicar una función y luego otra". Imaginemos un proceso en dos etapas: primero transformamos $x$ mediante una función $g$, obteniendo $g(x)$, y luego aplicamos otra función $f$ al resultado, obteniendo $f(g(x))$. Este proceso completo define una nueva función.
+
+Pensemos en una función como una "máquina" que transforma entradas en salidas. Si tenemos dos máquinas:
+- La máquina $g$ convierte $x$ en $g(x)$
+- La máquina $f$ convierte $y$ en $f(y)$
+
+La **composición** $f \circ g$ es conectar la salida de $g$ directamente como entrada de $f$.
+
+**Ejemplo visual:** Si $g(x) = x + 1$ (sumar 1) y $f(x) = x^2$ (elevar al cuadrado), entonces:
+- Entrada: $x = 3$
+- Después de $g$: $g(3) = 3 + 1 = 4$
+- Después de $f$: $f(4) = 4^2 = 16$
+- Resultado final: $(f \circ g)(3) = 16$
+
+### 9.1 Definición y dominio
+
+**Definición 9.1 (Composición de funciones):**
+Dadas dos funciones $f: B \to C$ y $g: A \to B$, la **composición** de $f$ con $g$, denotada $f \circ g$ (se lee "$f$ compuesta con $g$" o "$f$ círculo $g$"), es la función definida por:
+$$(f \circ g)(x) = f(g(x))$$
+
+**Notación:** Se lee de **derecha a izquierda**: primero aplicamos $g$, luego aplicamos $f al resultado.
+
+**Definición 9.2 (Dominio de la composición):**
+El dominio de $f \circ g$ es:
+$$\text{Dom}(f \circ g) = \{x \in \text{Dom}(g) : g(x) \in \text{Dom}(f)\}$$
+
+Es decir, debemos satisfacer **dos condiciones**:
+1. $x$ debe estar en el dominio de $g$
+2. El resultado $g(x)$ debe estar en el dominio de $f$
+
+**Observación importante:** Para que $f \circ g$ esté bien definida, necesitamos que $\text{Im}(g) \cap \text{Dom}(f) \neq \emptyset$ (la imagen de $g$ debe tener intersección con el dominio de $f$).
+
+**Ejemplo 9.1:**
+Sean $f(x) = \sqrt{x}$ y $g(x) = x - 3$. Calcular $(f \circ g)(x)$ y su dominio.
+
+**Solución:**
+$$(f \circ g)(x) = f(g(x)) = f(x-3) = \sqrt{x-3}$$
+
+**Dominio:**
+- $\text{Dom}(g) = \mathbb{R}$
+- $\text{Dom}(f) = [0, +\infty)$
+- Necesitamos que $g(x) \in \text{Dom}(f)$, es decir, $x - 3 \geq 0$
+- Por lo tanto: $x \geq 3$
+
+$$\text{Dom}(f \circ g) = [3, +\infty)$$
+
+**Ejemplo 9.2:**
+Sean $f(x) = x^2$ y $g(x) = x + 1$. Calcular:
+a) $(f \circ g)(x)$
+b) $(g \circ f)(x)$
+
+**Solución:**
+a) $(f \circ g)(x) = f(g(x)) = f(x+1) = (x+1)^2 = x^2 + 2x + 1$
+
+b) $(g \circ f)(x) = g(f(x)) = g(x^2) = x^2 + 1$
+
+**Observación crucial:** En este ejemplo, $(f \circ g)(x) \neq (g \circ f)(x)$. Esto ilustra que la composición **no es conmutativa** en general.
+
+**Ejemplo 9.3:**
+Sean $f(x) = \frac{1}{x}$ y $g(x) = x^2 - 4$. Determinar el dominio de $(f \circ g)(x)$.
+
+**Solución:**
+$$(f \circ g)(x) = f(g(x)) = f(x^2 - 4) = \frac{1}{x^2 - 4}$$
+
+**Dominio:**
+- $\text{Dom}(g) = \mathbb{R}$
+- $\text{Dom}(f) = \mathbb{R} \setminus \{0\}$
+- Necesitamos $g(x) \neq 0$, es decir, $x^2 - 4 \neq 0$
+- $x^2 \neq 4 \Rightarrow x \neq \pm 2$
+
+$$\text{Dom}(f \circ g) = \mathbb{R} \setminus \{-2, 2\}$$
+
+**Ejemplo 9.4 (Composición con dominios restringidos):**
+Sean $f(x) = \sqrt{x}$ y $g(x) = \ln(x)$. Determinar el dominio de $(f \circ g)(x)$.
+
+**Solución:**
+$$(f \circ g)(x) = f(g(x)) = f(\ln(x)) = \sqrt{\ln(x)}$$
+
+**Dominio:**
+- $\text{Dom}(g) = (0, +\infty)$ (logaritmo requiere $x > 0$)
+- $\text{Dom}(f) = [0, +\infty)$ (raíz cuadrada requiere argumento $\geq 0$)
+- Necesitamos $\ln(x) \geq 0$, es decir, $x \geq 1$
+
+$$\text{Dom}(f \circ g) = [1, +\infty)$$
+
+### 9.2 Propiedades de la composición
+
+**Proposición 9.1 (No conmutatividad):**
+En general, $f \circ g \neq g \circ f$. Es decir, la composición de funciones **no es conmutativa**.
+
+**Ejemplo 9.5:**
+Si $f(x) = 2x$ y $g(x) = x + 3$:
+- $(f \circ g)(x) = 2(x+3) = 2x + 6$
+- $(g \circ f)(x) = 2x + 3$
+
+Claramente, $2x + 6 \neq 2x + 3$.
+
+**Proposición 9.2 (Asociatividad):**
+La composición de funciones **es asociativa**. Si $f$, $g$ y $h$ son funciones tales que las composiciones están definidas, entonces:
+$$f \circ (g \circ h) = (f \circ g) \circ h$$
+
+**Demostración:**
+Para cualquier $x$ en el dominio apropiado:
+$$[f \circ (g \circ h)](x) = f[(g \circ h)(x)] = f[g(h(x))]$$
+$$[(f \circ g) \circ h](x) = (f \circ g)[h(x)] = f[g(h(x))]$$
+
+Ambas expresiones son iguales. $\square$
+
+**Proposición 9.3 (Elemento identidad):**
+La función identidad $\text{id}(x) = x$ actúa como **elemento neutro** para la composición:
+$$f \circ \text{id} = \text{id} \circ f = f$$
+
+para cualquier función $f$.
+
+**Demostración:**
+$$(f \circ \text{id})(x) = f(\text{id}(x)) = f(x)$$
+$$(\text{id} \circ f)(x) = \text{id}(f(x)) = f(x)$$
+
+Por lo tanto, ambas composiciones dan $f$. $\square$
+
+**Proposición 9.4 (Composición con función inversa):**
+Si $f: A \to B$ es biyectiva con inversa $f^{-1}: B \to A$, entonces:
+$$f^{-1} \circ f = \text{id}_A \quad \text{y} \quad f \circ f^{-1} = \text{id}_B$$
+
+Donde $\text{id}_A$ es la función identidad en $A$ y $\text{id}_B$ es la función identidad en $B$.
+
+**Ejemplo 9.6:**
+Si $f(x) = 2x + 3$, entonces $f^{-1}(x) = \frac{x-3}{2}$. Verificamos:
+$$(f^{-1} \circ f)(x) = f^{-1}(2x+3) = \frac{(2x+3)-3}{2} = \frac{2x}{2} = x = \text{id}(x)$$
+$$(f \circ f^{-1})(x) = f\left(\frac{x-3}{2}\right) = 2\left(\frac{x-3}{2}\right) + 3 = x - 3 + 3 = x = \text{id}(x)$$
+
+### 9.3 Composición y clasificación de funciones
+
+**Teorema 9.1 (Composición de funciones inyectivas):**
+Si $f: B \to C$ y $g: A \to B$ son ambas inyectivas, entonces $f \circ g: A \to C$ es inyectiva.
+
+**Demostración:**
+Sean $x_1, x_2 \in A$ tales que $(f \circ g)(x_1) = (f \circ g)(x_2)$.
+
+Entonces:
+$$f(g(x_1)) = f(g(x_2))$$
+
+Como $f$ es inyectiva:
+$$g(x_1) = g(x_2)$$
+
+Como $g$ es inyectiva:
+$$x_1 = x_2$$
+
+Por lo tanto, $f \circ g$ es inyectiva. $\square$
+
+**Teorema 9.2 (Composición de funciones sobreyectivas):**
+Si $f: B \to C$ y $g: A \to B$ son ambas sobreyectivas, entonces $f \circ g: A \to C$ es sobreyectiva.
+
+**Demostración:**
+Sea $z \in C$ arbitrario. Como $f$ es sobreyectiva, existe $y \in B$ tal que $f(y) = z$.
+
+Como $g$ es sobreyectiva, existe $x \in A$ tal que $g(x) = y$.
+
+Entonces:
+$$(f \circ g)(x) = f(g(x)) = f(y) = z$$
+
+Por lo tanto, para todo $z \in C$ existe $x \in A$ tal que $(f \circ g)(x) = z$, lo que demuestra que $f \circ g$ es sobreyectiva. $\square$
+
+**Corolario 9.1 (Composición de funciones biyectivas):**
+Si $f: B \to C$ y $g: A \to B$ son ambas biyectivas, entonces $f \circ g: A \to C$ es biyectiva.
+
+Además, la inversa de la composición satisface:
+$$(f \circ g)^{-1} = g^{-1} \circ f^{-1}$$
+
+**Observación:** El orden se invierte en la inversa: "los calcetines se ponen antes que los zapatos, pero se quitan en orden inverso".
+
+**Ejemplo 9.7:**
+Sean $f(x) = e^x$ y $g(x) = x + 1$. Ambas son biyectivas de $\mathbb{R}$ en sus respectivas imágenes. La composición:
+$$(f \circ g)(x) = e^{x+1}$$
+
+es también biyectiva, y su inversa es:
+$$(f \circ g)^{-1}(x) = (g^{-1} \circ f^{-1})(x) = g^{-1}(\ln(x)) = \ln(x) - 1$$
+
+### 9.4 Descomposición de funciones
+
+Muchas funciones complejas pueden expresarse como composición de funciones más simples. Esta técnica es fundamental en cálculo (regla de la cadena para derivadas).
+
+**Ejemplo 9.8 (Identificar composición):**
+Dada $h(x) = \sqrt{x^2 + 1}$, expresarla como $h = f \circ g$.
+
+**Solución:**
+- Sea $g(x) = x^2 + 1$ (función interior)
+- Sea $f(x) = \sqrt{x}$ (función exterior)
+- Entonces: $h(x) = f(g(x)) = \sqrt{x^2 + 1}$
+
+**Ejemplo 9.9:**
+Expresemos $h(x) = \frac{1}{(x+2)^2}$ como composición de tres funciones.
+
+**Solución:**
+- Sea $r(x) = x + 2$
+- Sea $s(x) = x^2$
+- Sea $t(x) = \frac{1}{x}$
+- Entonces: $h = t \circ s \circ r$
+
+**Verificación:**
+$$(t \circ s \circ r)(x) = t(s(r(x))) = t(s(x+2)) = t((x+2)^2) = \frac{1}{(x+2)^2}$$
+
+**Ejemplo 9.10 (Composición iterada):**
+Si $f(x) = 2x$, entonces:
+- $(f \circ f)(x) = f(f(x)) = f(2x) = 2(2x) = 4x = 2^2 x$
+- $(f \circ f \circ f)(x) = f(f(f(x))) = 8x = 2^3 x$
+- En general: $f^{(n)}(x) = 2^n x$ (composición $n$ veces)
+
+**Notación:** $f^{(n)} = \underbrace{f \circ f \circ \cdots \circ f}_{n \text{ veces}}$
 
 ---
 
