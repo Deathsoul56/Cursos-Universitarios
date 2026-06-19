@@ -10,28 +10,28 @@ Las transformaciones permiten generar nuevas familias de funciones a partir de u
 Dada una función $y = f(x)$ y una constante $c > 0$:
 - La gráfica de $y = f(x) + c$ es la traslación de $f$ en $c$ unidades hacia **arriba**.
 - La gráfica de $y = f(x) - c$ es la traslación de $f$ en $c$ unidades hacia **abajo**.
-**Ejemplo:** Si $f(x) = x^2$, entonces $y = x^2 + 3$ mueve la parábola 3 unidades hacia arriba.
+**Ejemplo 1.1:** Si $f(x) = x^2$, entonces $y = x^2 + 3$ mueve la parábola 3 unidades hacia arriba.
 
 **Definición 1.2 (Traslación horizontal):**
 Dada una función $y = f(x)$ y una constante $a > 0$:
 - La gráfica de $y = f(x - a)$ es la traslación de $f$ en $a$ unidades hacia la **derecha**.
 - La gráfica de $y = f(x + a)$ es la traslación de $f$ en $a$ unidades hacia la **izquierda**.
-**Ejemplo:** Si $f(x) = x^2$, entonces $y = (x - 2)^2$ mueve el vértice de la parábola 2 unidades hacia la derecha.
+**Ejemplo 1.2:** Si $f(x) = x^2$, entonces $y = (x - 2)^2$ mueve el vértice de la parábola 2 unidades hacia la derecha.
 
-**Intuición:** Para recuperar el mismo valor de $y$ en $f(x-a)$, la entrada $x$ debe ser $a$ unidades mayor que en la original.
+Esta regla tiene una razón geométrica directa: para obtener el mismo valor de salida en la función desplazada $f(x-a)$, la entrada $x$ debe ser $a$ unidades mayor que en la función original.
 ### 1.2 Escalados (Dilataciones y Contracciones)
 
 **Definición 1.3 (Escalado vertical):**
 Sea $y = c \cdot f(x)$ con $c > 0$.
 - Si $c > 1$: **Dilatación vertical** (expansión) por un factor de $c$.
 - Si $0 < c < 1$: **Contracción vertical** (compresión) por un factor de $c$.
-**Ejemplo:** Si $f(x) = x^2$, entonces $y = 3x^2$ estira la parábola verticalmente, haciéndola lucir más "angosta" o cerrada.
+**Ejemplo 1.3:** Si $f(x) = x^2$, entonces $y = 3x^2$ estira la parábola verticalmente, haciéndola lucir más "angosta" o cerrada.
 
 **Definición 1.4 (Escalado horizontal):**
 Sea $y = f(c \cdot x)$ con $c > 0$.
 - Si $c > 1$: **Contracción horizontal** por un factor de $1/c$.
 - Si $0 < c < 1$: **Dilatación horizontal** por un factor de $1/c$.
-**Ejemplo:** Si $f(x) = x^2$, entonces $y = (\frac{1}{2}x)^2$ ensancha la parábola horizontalmente.
+**Ejemplo 1.4:** Si $f(x) = x^2$, entonces $y = (\frac{1}{2}x)^2$ ensancha la parábola horizontalmente.
 ### 1.3 Reflexiones
 
 Imaginemos que observamos el reflejo de un paisaje sobre la superficie cristalina de un lago en absoluta calma: la línea del agua actúa como un espejo perfecto que invierte verticalmente todo lo que está por encima. En física, cuando un rayo de luz incide sobre un espejo plano, rebota de manera simétrica conservando su ángulo de incidencia. En acústica y procesamiento de señales, invertir la polaridad de una onda de sonido equivale a multiplicarla por $-1$, lo cual genera una onda "espejada" que puede emplearse para cancelar ruidos no deseados.
@@ -43,7 +43,7 @@ Las reflexiones básicas se realizan con respecto a los ejes coordenados:
 - **Reflexión respecto al eje X:** $y = -f(x)$. El punto $(x, y)$ se mapea a $(x, -y)$.
 - **Reflexión respecto al eje Y:** $y = f(-x)$. El punto $(x, y)$ se mapea a $(-x, y)$.
  
-**Ejemplo:** Si usamos la función $f(x) = x^3 + 4$:
+**Ejemplo 1.5:** Si usamos la función $f(x) = x^3 + 4$:
 - La reflexión respecto al eje X nos da $y = -(x^3 + 4) = -x^3 - 4$ (la curva entera se voltea hacia abajo).
 - La reflexión respecto al eje Y nos da $y = (-x)^3 + 4 = -x^3 + 4$ (la curva se voltea de izquierda a derecha, pero mantiene su altura).
  
@@ -66,7 +66,7 @@ $$\dfrac{x + x'}{2} = c \implies x' = 2c - x$$
 Por lo tanto, la ecuación de la función reflejada respecto a $x = c$ es:
 $$y = f(2c - x)$$
 
-**Ejemplo 1.3.1 (Ejes horizontales y verticales arbitrarios):**
+**Ejemplo 1.6 (Ejes horizontales y verticales arbitrarios):**
 Dada la función $f(x) = \sqrt{x}$:
 - La reflexión respecto a la recta horizontal $y = 3$ nos da:
   $$y = 2(3) - \sqrt{x} = 6 - \sqrt{x}$$
@@ -119,7 +119,7 @@ $$y' = -\frac{1}{m}x' - \frac{b}{m}$$
 
 ¡La nueva gráfica sigue siendo una recta cuya pendiente es exactamente $-1/m$! Hemos demostrado algebraicamente que sin importar la posición inicial (intercepto $b$), la rotación de 90° siempre produce la condición de perpendicularidad. $\blacksquare$
 
-**Ejemplo 1.4: Rotación de $f(x) = \sin(x)$ (Violación de unicidad)**
+**Ejemplo 1.7: Rotación de $f(x) = \sin(x)$ (Violación de unicidad)**
 En el caso anterior, la rotación de la recta produjo otra recta (otra función). Sin embargo, veamos qué ocurre de manera extrema si rotamos una onda periódica como $f(x) = \sin(x)$ en un ángulo de $\pi/2$ radianes ($90^\circ$).
 
 Sabemos que $\cos(\pi/2) = 0$ y $\sin(\pi/2) = 1$. Sustituyendo en las ecuaciones de rotación:
@@ -146,7 +146,7 @@ Toda función de la forma $f(x) = a \cdot g(b(x - h)) + k$ se puede graficar sig
 4. Aplicar el **escalado vertical** (factor $|a|$ sobre el eje $y$; reflexión si $a < 0$).
 5. Aplicar el **desplazamiento vertical** en $k$ unidades.
 
-**Ejemplo 1.5 (Transformación de la parábola):**
+**Ejemplo 1.8 (Transformación de la parábola):**
 Graficar $f(x) = \dfrac{x^2}{2} + 5$.
 
 Se identifica la función base $g(x) = x^2$ y se reescribe:
@@ -166,7 +166,7 @@ Toda función desconocida puede construirse así: se descompone en su función b
 
 > **Advertencia:** Los desplazamientos horizontales pueden resultar engañosos cuando la variable $x$ aparece multiplicada por una constante. La traslación horizontal de $f(x) = g\!\left(b(x-h)\right)$ es de $h$ unidades, **no** de $bh$. Es imprescindible factorizar el coeficiente de $x$ antes de leer el desplazamiento.
 
-**Ejemplo 1.6 (Desplazamiento horizontal con factor de escala):**
+**Ejemplo 1.9 (Desplazamiento horizontal con factor de escala):**
 Determinar el desplazamiento que lleva $f(x) = |3x|$ a $g(x) = |3x + 1|$.
 
 Factorizando el coeficiente de $x$ en el argumento de $g$:
@@ -248,7 +248,7 @@ Descomponer la función asimétrica por excelencia, $f(x) = e^x$.
 $$f_{par}(x) = \frac{e^x + e^{-x}}{2}$$
 - **Parte impar:**
 $$f_{impar}(x) = \frac{e^x - e^{-x}}{2}$$
-**Conclusión:** ¡Estas dos mitades no son funciones ordinarias! Acabamos de derivar matemáticamente de la nada al famoso **Coseno Hiperbólico** ($\cosh(x)$) como la parte par de $e^x$, y al **Seno Hiperbólico** ($\sinh(x)$) como su parte impar. Así, se desvela la hermosa identidad: $e^x = \cosh(x) + \sinh(x)$. Esto se profundizara en la sección 8
+**Conclusión:** ¡Estas dos mitades no son funciones ordinarias! Acabamos de derivar matemáticamente de la nada al famoso **Coseno Hiperbólico** ($\cosh(x)$) como la parte par de $e^x$, y al **Seno Hiperbólico** ($\sinh(x)$) como su parte impar. Así, se desvela la hermosa identidad: $e^x = \cosh(x) + \sinh(x)$. Esto se profundizará en la sección 6.
 
 ---
 ## 3. Funciones Definidas a Tramos
@@ -304,7 +304,7 @@ Cuando una función está definida a tramos, es importante verificar qué ocurre
 - **Continua:** No hay "saltos" en la gráfica
 - **Discontinua:** Hay un "salto" o "brecha" en ese punto
 
-**Observación informal:** Una función es continua en un punto si "podemos dibujar la gráfica sin levantar el lápiz".
+**Observación:** En términos intuitivos, una función es continua en un punto si su gráfica no presenta saltos ni interrupciones en la vecindad de ese punto.
 
 **Ejemplo 3.5 (Función continua a tramos):**
 $$f(x) = \begin{cases} x + 2 & \text{si } x < 1 \\ 3 & \text{si } x = 1 \\ -x + 4 & \text{si } x > 1 \end{cases}$$
@@ -583,7 +583,7 @@ Determinar el período de $g(x) = \sin^2(x)$.
 A simple vista podría pensarse que el período sigue siendo $2\pi$, pero al elevar al cuadrado, las partes negativas de la onda seno se vuelven positivas, haciendo que el patrón de la onda se repita más rápido. Para demostrarlo analíticamente, usamos la identidad trigonométrica del ángulo doble:
 $$\sin^2(x) = \frac{1 - \cos(2x)}{2} = \frac{1}{2} - \frac{1}{2}\cos(2x)$$
 
-Esta expresión es simplemente una función $\cos(2x)$ desplazada y escalada verticalmente (transformaciones que no afectan su período en el eje horizontal). 
+Esta expresión es una función $\cos(2x)$ desplazada y escalada verticalmente, y tales transformaciones no afectan su período en el eje horizontal. 
 Calculamos el período del término que define la oscilación, $\cos(2x)$:
 $$T_{nuevo} = \frac{2\pi}{2} = \pi$$
 Por lo tanto, el período fundamental de $\sin^2(x)$ se reduce a $\pi$.
@@ -620,7 +620,7 @@ $$\pi = \frac{m}{n}$$
 Esta ecuación nos está exigiendo que $\pi$ pueda expresarse como la fracción de dos números enteros ($\frac{m}{n}$). Pero sabemos desde la antigüedad que $\pi$ es un número **irracional**, por lo que tal fracción es matemáticamente imposible de construir. 
 
 **Conclusión:** ¡La función $p(x)$ **no es periódica**! A pesar de estar formada por la simple suma de dos ondas matemáticamente perfectas, sus frecuencias son "inconmensurables" (no encajan entre sí de forma racional). Al sumarlas, se crea un patrón de interferencia caótico que jamás vuelve a repetirse exactamente igual en toda la eternidad. A este tipo de curvas, que casi parecen repetirse pero nunca lo logran del todo, se les conoce en matemáticas avanzadas como **funciones cuasiperiódicas**, y son todo un campo de estudio propio.
-### 5.5 Galería de Funciones Periódicas Extravagantes
+### 5.5 Funciones periódicas construidas
 
 Para expandir aún más nuestra intuición analítica, presentamos algunas construcciones algebraicas inusuales. Combinando funciones ya estudiadas (como piso, mantisa y signo) con la trigonometría, se pueden generar comportamientos periódicos que resultan perturbadores, contra-intuitivos o directamente "rotos".
 
@@ -645,7 +645,7 @@ El instinto inmediato de un estudiante de primer semestre es "cancelar" las func
 
 ## 6. Funciones Hiperbólicas
 
-Pensemos en un cable eléctrico colgado entre dos postes, una cadena suspendida por sus extremos o incluso el arco de una vela tensada por el viento. A primera observación, estas curvas parecen parábolas, pero no lo son: su forma exacta está descrita por el **coseno hiperbólico**. Del mismo modo, cuando se estudia el movimiento acelerado en la relatividad especial o ciertas ecuaciones diferenciales sencillas, aparecen combinaciones de exponenciales $e^x$ y $e^{-x}$ que resultan ser más naturales de escribir como $\sinh(x)$ y $\cosh(x)$. Estas funciones no son una mera curiosidad notacional: organizan simetrías, simplifican fórmulas y conectan el álgebra exponencial con la geometría de la hipérbola de una manera tan limpia como los senos y cosenos conectan la exponencial imaginaria con la circunferencia.
+Pensemos en un cable eléctrico colgado entre dos postes, una cadena suspendida por sus extremos o incluso el arco de una vela tensada por el viento. A primera observación, estas curvas parecen parábolas, pero no lo son: su forma exacta está descrita por la curva catenaria que matemáticamente se representa mediante la función **coseno hiperbólico**. Del mismo modo, cuando se estudia el movimiento acelerado en la relatividad especial o ciertas ecuaciones diferenciales sencillas, aparecen combinaciones de exponenciales $e^x$ y $e^{-x}$ que resultan ser más naturales de escribir como $\sinh(x)$ y $\cosh(x)$. Estas funciones no son una mera curiosidad notacional: organizan simetrías, simplifican fórmulas y conectan el álgebra exponencial con la geometría de la hipérbola de una manera tan limpia como los senos y cosenos conectan la exponencial imaginaria con la circunferencia.
 
 > **Nota histórica:** Aunque las combinaciones exponenciales $e^x \pm e^{-x}$ eran conocidas desde el siglo XVII, el estudio sistemático de las funciones hiperbólicas como familia independiente comenzó con **Vincenzo Riccati**, quien en 1757 publicó *Opuscula ad res physicas et mathematicas pertinentia* y acuñó los nombres *sinus hyperbolicus* y *cosinus hyperbolicus*. Poco después, **Johann Heinrich Lambert** (alrededor de 1768) profundizó en sus propiedades y estableció conexiones con la geometría de la hipérbola. Curiosamente, Lambert también fue uno de los primeros en demostrar que $\pi$ es irracional, el mismo tipo de obstáculo que encontramos cuando dos funciones trigonométricas tienen períodos inconmensurables.
 
@@ -663,7 +663,6 @@ Estas componentes estructuran una de las familias más importantes del análisis
 $$e^x = \cosh(x) + \sinh(x)$$
 
 > **Nota de conexión algebraica:** Mediante la fórmula de Euler ($e^{ix} = \cos(x) + i\sin(x)$), las funciones trigonométricas y las hiperbólicas se conectan a través de argumentos imaginarios: $\cos(ix) = \cosh(x)$ y $\sin(ix) = i\sinh(x)$. Esta correspondencia y su demostración formal se estudiarán en detalle en el curso de Álgebra. En este curso de Cálculo nos limitaremos a su análisis real.
-
 ### 6.2 Definiciones formales y analogía geométrica
 
 **Definición 6.1 (Seno hiperbólico y Coseno hiperbólico):**
@@ -671,6 +670,15 @@ Se definen las funciones **seno hiperbólico** $\sinh: \mathbb{R} \to \mathbb{R}
 $$\sinh(x) = \dfrac{e^x - e^{-x}}{2}, \qquad \cosh(x) = \dfrac{e^x + e^{-x}}{2}$$
 
 Ambas funciones tienen dominio $\mathbb{R}$. El recorrido de $\sinh$ es todo $\mathbb{R}$; el recorrido de $\cosh$ es $[1, +\infty)$, pues $e^x + e^{-x} \geq 2$ para todo $x \in \mathbb{R}$ por la desigualdad entre la media aritmética y la media geométrica.
+
+Antes de explorar la analogía geométrica que les da nombre, conviene visualizar el comportamiento de $\sinh(x)$ y $\cosh(x)$. La siguiente tabla muestra valores numéricos que anticipan la forma de sus gráficas: $\sinh$ crece de manera monótona pasando por el origen, mientras que $\cosh$ es una curva en forma de U con mínimo en $(0, 1)$.
+
+| $x$ | $-4$ | $-3$ | $-2$ | $-1$ | $0$ | $1$ | $2$ | $3$ | $4$ |
+| :--: | :--: | :--: | :--: | :--: | :-: | :--: | :--: | :--: | :--: |
+| $\sinh(x)$ | $-27.29$ | $-10.02$ | $-3.63$ | $-1.18$ | $0$ | $1.18$ | $3.63$ | $10.02$ | $27.29$ |
+| $\cosh(x)$ | $27.31$ | $10.07$ | $3.76$ | $1.54$ | $1$ | $1.54$ | $3.76$ | $10.07$ | $27.31$ |
+
+PONER GRAFICA AQUI: gráficas de $y = \sinh(x)$ y $y = \cosh(x)$ en el mismo sistema de ejes, destacando el mínimo $(0, 1)$ de $\cosh$ y el origen para $\sinh$.
 
 La denominación "hiperbólicas" proviene de una analogía geométrica exacta con las funciones trigonométricas. En trigonometría ordinaria, al variar un parámetro angular $t$, el punto $(\cos(t), \sin(t))$ describe la **circunferencia unitaria** $x^2 + y^2 = 1$. En el caso hiperbólico, al variar un parámetro real $t$, el punto $(\cosh(t), \sinh(t))$ satisface:
 
@@ -700,7 +708,6 @@ Los valores en el origen se calculan sustituyendo $x = 0$ en las definiciones.
 La monotonía de $\sinh$ puede justificarse observando que $e^x$ es creciente y $e^{-x}$ es decreciente, de modo que su diferencia es estrictamente creciente. Para $\cosh$, la función es par y alcanza su mínimo global en $x = 0$, por lo que decrece hacia la izquierda del origen y crece hacia la derecha. $\blacksquare$
 
 PONER GRAFICA AQUI: gráficas de $y = \sinh(x)$ y $y = \cosh(x)$ en el mismo sistema de ejes, destacando el punto mínimo $(0,1)$ de $\cosh$ y el origen de coordenadas para $\sinh$.
-
 ### 6.3 Identidad fundamental
 
 **Teorema 6.1 (Identidad hiperbólica fundamental):**
@@ -796,7 +803,25 @@ $$\cosh(\ln 2) = \dfrac{2 + \frac{1}{2}}{2} = \dfrac{5}{4}, \qquad \sinh(\ln 2) 
 Así, el punto es $\left(\dfrac{5}{4}, \dfrac{3}{4}\right)$. Se verifica directamente que:
 $$\left(\dfrac{5}{4}\right)^2 - \left(\dfrac{3}{4}\right)^2 = \dfrac{25}{16} - \dfrac{9}{16} = \dfrac{16}{16} = 1$$
 
-### 6.6 Aplicaciones
+### 6.6 Identidades hiperbólicas
+
+Así como existen identidades trigonométricas que simplifican expresiones con senos y cosenos, también existen identidades para las funciones hiperbólicas. Resulta curioso que muchas de estas identidades tienen una forma muy parecida a las trigonométricas, aunque sus demostraciones parten de las definiciones exponenciales y no de la geometría de la circunferencia.
+
+Por ejemplo, la fórmula del seno doble:
+$$\sinh(2x) = 2\sinh(x)\cosh(x)$$
+
+tiene exactamente la misma estructura que la identidad circular $\sin(2x) = 2\sin(x)\cos(x)$. Sin embargo, la demostración hiperbólica se obtiene directamente de las definiciones:
+$$2\sinh(x)\cosh(x) = 2 \cdot \dfrac{e^x - e^{-x}}{2} \cdot \dfrac{e^x + e^{-x}}{2} = \dfrac{e^{2x} - e^{-2x}}{2} = \sinh(2x)$$
+
+Algunas identidades adicionales que aparecen con frecuencia son:
+- $\cosh(2x) = \cosh^2(x) + \sinh^2(x)$ (compare con $\cos(2x) = \cos^2(x) - \sin^2(x)$)
+- $\cosh^2(x) - \sinh^2(x) = 1$ (la identidad fundamental)
+- $\sinh(x \pm y) = \sinh(x)\cosh(y) \pm \cosh(x)\sinh(y)$
+- $\cosh(x \pm y) = \cosh(x)\cosh(y) \pm \sinh(x)\sinh(y)$
+
+La coincidencia formal entre ambas familias de identidades no es casual: está gobernada por la fórmula de Euler y el paso de argumentos reales a imaginarios. No obstante, conviene recordar que los signos no siempre se preservan, por lo que cada identidad hiperbólica debe verificarse algebraicamente antes de usarse.
+
+### 6.7 Aplicaciones
 
 Las funciones hiperbólicas aparecen de manera recurrente en contextos donde coexisten comportamientos crecientes y decrecientes exponenciales, o donde la geometría de la hipérbola juega un papel central.
 
@@ -808,7 +833,7 @@ Las funciones hiperbólicas aparecen de manera recurrente en contextos donde coe
 
 - **Geometría hiperbólica:** En modelos como el disco de Poincaré o el semiplano superior, las distancias y las geodésicas se expresan mediante funciones hiperbólicas. El coseno hiperbólico aparece, por ejemplo, en la fórmula de la distancia hiperbólica entre dos puntos.
 
-### 6.7 Observaciones
+### 6.8 Observaciones
 
 > **Observación (sobre las funciones inversas):** La definición y análisis formal de las funciones hiperbólicas inversas, como el argumento del seno hiperbólico $\text{arsinh}(x)$ o el argumento del coseno hiperbólico $\text{arcosh}(x)$, se posponen para secciones posteriores del curso, una vez establecidos de manera rigurosa los conceptos generales de inyectividad e invertibilidad de funciones reales.
 
@@ -972,198 +997,211 @@ La clasificación de funciones no es un mero etiquetado teórico: responde pregu
 
 ## 8. Funciones Inversas
 
-**Concepto intuitivo:**
+Pensemos en las operaciones cotidianas que hacemos y luego deshacemos: abrir y cerrar una puerta, encender y apagar una luz, o escribir y borrar un texto. En matemáticas, muchas funciones también admiten una operación que las revierte: si $f$ transforma $x$ en $y$, entonces su función inversa $f^{-1}$ devuelve $y$ a su valor original $x$. Saber cuándo una función puede invertirse, y cómo calcular esa inversa, es esencial para resolver ecuaciones, cambiar entre sistemas de coordenadas y comprender la simetría de muchas construcciones geométricas.
 
-La función inversa "deshace" o "revierte" la acción de una función. Si una función $f$ transforma $x$ en $y$, la función inversa $f^{-1}$ transforma $y$ de regreso en $x$.
+> **Nota histórica:** La idea de función inversa aparece de manera implícita desde los inicios del cálculo: **Leonhard Euler** ya utilizaba relaciones funcionales inversas para conectar logaritmos con exponenciales, y arcos con trigonométricas. La notación moderna $f^{-1}$ fue sistematizada por el grupo **Nicolas Bourbaki** en el siglo XX, quienes también distinguieron con rigor entre la función inversa $f^{-1}$ y el recíproco algebraico $[f(x)]^{-1} = \frac{1}{f(x)}$.
 
-**Idea intuitiva:** Si $f$ es como "poner calcetines", entonces $f^{-1}$ es "quitarse los calcetines". Una operación cancela a la otra.
+### 8.1 Existencia y definición de la función inversa
 
-El concepto de inversa permite "deshacer" la acción de una función.
+El primer interrogante que debe responderse es cuándo una función admite inversa. La respuesta está íntimamente ligada a la clasificación introducida en la Sección 7.
 
-### 8.1 Definición y Existencia
+**Teorema 8.1 (Existencia de la función inversa):**
+Una función $f: A \to B$ tiene función inversa si y solo si $f$ es biyectiva.
 
-**Teorema 8.1 (Existencia de la inversa):**
-Una función $f: A \to B$ tiene función inversa si y solo si $f$ es **biyectiva**.
+**Demostración:**
+Se demuestran las dos implicaciones.
 
-**Justificación:**
-- **Inyectividad** garantiza que cada valor de salida proviene de una única entrada (no hay ambigüedad)
-- **Sobreyectividad** garantiza que todo elemento del codominio tiene una preimagen (la inversa está definida en todo $B$)
+$(\Rightarrow)$ Supongamos que $f$ tiene una función inversa $g: B \to A$. Entonces $g(f(x)) = x$ para todo $x \in A$ y $f(g(y)) = y$ para todo $y \in B$.
 
-**Definición 8.1 (Función Inversa):**
-Si $f: A \to B$ es biyectiva, definimos su función inversa $f^{-1}: B \to A$ como:
+- **Inyectividad:** Sean $x_1, x_2 \in A$ tales que $f(x_1) = f(x_2)$. Aplicando $g$ a ambos lados:
+  $$x_1 = g(f(x_1)) = g(f(x_2)) = x_2$$
+  Por tanto, $f$ es inyectiva.
+- **Sobreyectividad:** Sea $y \in B$. Tomando $x = g(y) \in A$, se tiene:
+  $$f(x) = f(g(y)) = y$$
+  Por tanto, todo elemento de $B$ tiene preimagen y $f$ es sobreyectiva.
+
+$(\Leftarrow)$ Supongamos ahora que $f$ es biyectiva. Como es sobreyectiva, para cada $y \in B$ existe al menos un $x \in A$ tal que $f(x) = y$. Como es inyectiva, dicho $x$ es único. Definimos entonces $g(y) = x$, donde $x$ es el único elemento de $A$ que satisface $f(x) = y$. Esta función $g$ cumple $g(f(x)) = x$ para todo $x \in A$ y $f(g(y)) = y$ para todo $y \in B$, de modo que $g$ es la inversa de $f$. $\blacksquare$
+
+**Definición 8.1 (Función inversa):**
+Sea $f: A \to B$ una función biyectiva. Se define su **función inversa** $f^{-1}: B \to A$ mediante:
 $$f^{-1}(y) = x \iff f(x) = y$$
 
-**Propiedades de la composición:**
-1. $(f^{-1} \circ f)(x) = f^{-1}(f(x)) = x, \quad \forall x \in A$
-2. $(f \circ f^{-1})(y) = f(f^{-1}(y)) = y, \quad \forall y \in B$
+Equivalentemente, la función inversa satisface las dos identidades:
+$$(f^{-1} \circ f)(x) = x, \quad \forall x \in A$$
+$$(f \circ f^{-1})(y) = y, \quad \forall y \in B$$
 
-Estas propiedades expresan que $f$ y $f^{-1}$ son inversas mutuas.
+> **Advertencia:** La notación $f^{-1}$ para la función inversa no debe confundirse con $[f(x)]^{-1} = \frac{1}{f(x)}$, que denota el recíproco algebraico.
 
-**Propiedad Gráfica:**
-Las gráficas de $y=f(x)$ y $y=f^{-1}(x)$ son simétricas respecto a la recta identidad $y=x$.
+### 8.2 Propiedades algebraicas y gráficas
 
-**Observación importante:** La notación $f^{-1}$ para la función inversa **no debe confundirse** con $[f(x)]^{-1} = \frac{1}{f(x)}$, que es el recíproco.
+**Proposición 8.1 (Dominio e imagen de la inversa):**
+Si $f: A \to B$ es biyectiva, entonces la función inversa $f^{-1}: B \to A$ satisface:
+$$\text{Dom}(f^{-1}) = \text{Im}(f) = B, \qquad \text{Im}(f^{-1}) = \text{Dom}(f) = A$$
 
-### 8.2 Método algebraico para calcular la inversa
+**Proposición 8.2 (Inversa de la inversa):**
+Si $f: A \to B$ es biyectiva, entonces $(f^{-1})^{-1} = f$.
 
-**Procedimiento general:**
+**Demostración:**
+Por definición, $f^{-1}$ va de $B$ a $A$ y revierte la acción de $f$. Aplicar nuevamente la inversa devuelve la función original, es decir, $(f^{-1})^{-1}(x) = f(x)$ para todo $x \in A$. $\blacksquare$
 
-Para encontrar la función inversa $f^{-1}$ de una función biyectiva $f$:
+**Proposición 8.3 (Simetría gráfica):**
+Las gráficas de $y = f(x)$ y $y = f^{-1}(x)$ son simétricas respecto a la recta identidad $y = x$.
 
-**Paso 1:** Escribir $y = f(x)$
+**Demostración:**
+Si $(a, b)$ pertenece a la gráfica de $f$, entonces $b = f(a)$, lo cual equivale a $a = f^{-1}(b)$. Por tanto, el punto $(b, a)$ pertenece a la gráfica de $f^{-1}$. La transformación $(a, b) \mapsto (b, a)$ es precisamente la reflexión respecto a la recta $y = x$. $\blacksquare$
 
-**Paso 2:** Despejar $x$ en términos de $y$, obteniendo $x = g(y)$
+PONER GRAFICA AQUI: gráficas de $y = f(x)$, $y = f^{-1}(x)$ y la recta $y = x$ en el mismo sistema de ejes, mostrando la simetría por reflexión respecto a la diagonal.
 
-**Paso 3:** La función $f^{-1}(y) = g(y)$ es la inversa. Por convención, reemplazamos la variable $y$ por $x$ para escribir $f^{-1}(x)$
+**Proposición 8.4 (Monotonía):**
+Si $f$ es estrictamente creciente y biyectiva, entonces $f^{-1}$ también es estrictamente creciente. Análogamente, si $f$ es estrictamente decreciente y biyectiva, entonces $f^{-1}$ también es estrictamente decreciente.
 
-**Paso 4:** Verificar que $(f \circ f^{-1})(x) = x$ y $(f^{-1} \circ f)(x) = x$
+**Demostración:**
+Supongamos que $f$ es estrictamente creciente y sean $y_1 < y_2$ en $B$. Sean $x_1 = f^{-1}(y_1)$ y $x_2 = f^{-1}(y_2)$. Si se tuviera $x_1 \geq x_2$, entonces, por el crecimiento estricto de $f$, se tendría $f(x_1) \geq f(x_2)$, es decir, $y_1 \geq y_2$, lo cual contradice la hipótesis. Por tanto, $x_1 < x_2$ y $f^{-1}$ es estrictamente creciente. El caso decreciente es análogo. $\blacksquare$
+
+### 8.3 Cálculo algebraico de la inversa
+
+Para calcular explícitamente la inversa de una función biyectiva dada por una fórmula, se sigue el siguiente procedimiento:
+
+1. Escribir $y = f(x)$.
+2. Despejar $x$ en términos de $y$, obteniendo $x = g(y)$.
+3. Definir $f^{-1}(x) = g(x)$, reemplazando la variable $y$ por $x$.
+4. Verificar que $(f \circ f^{-1})(x) = x$ y $(f^{-1} \circ f)(x) = x$.
 
 **Ejemplo 8.1 (Función lineal):**
-Encontrar la inversa de $f(x) = 2x + 3$.
+Encontrar la inversa de $f: \mathbb{R} \to \mathbb{R}$ definida por $f(x) = 2x + 3$.
 
 **Solución:**
+Escribimos $y = 2x + 3$ y despejamos $x$:
+$$\begin{align}
+y &= 2x + 3 \\
+y - 3 &= 2x \\
+x &= \frac{y - 3}{2}
+\end{align}$$
 
-**Paso 1:** $y = 2x + 3$
-
-**Paso 2:** Despejamos $x$:
-$$y = 2x + 3$$
-$$y - 3 = 2x$$
-$$x = \frac{y - 3}{2}$$
-
-**Paso 3:** Por lo tanto:
+Por tanto:
 $$f^{-1}(x) = \frac{x - 3}{2}$$
 
-**Paso 4 (Verificación):**
-$$(f \circ f^{-1})(x) = f\left(\frac{x-3}{2}\right) = 2\left(\frac{x-3}{2}\right) + 3 = x - 3 + 3 = x$$ ✓
-$$(f^{-1} \circ f)(x) = f^{-1}(2x+3) = \frac{(2x+3)-3}{2} = \frac{2x}{2} = x$$ ✓
+**Verificación:**
+$$\begin{align}
+(f \circ f^{-1})(x) &= f\left(\frac{x-3}{2}\right) = 2\left(\frac{x-3}{2}\right) + 3 = x \\
+(f^{-1} \circ f)(x) &= f^{-1}(2x+3) = \frac{(2x+3)-3}{2} = x
+\end{align}$$
+Ambas composiciones devuelven la identidad, como debe ser.
 
 **Ejemplo 8.2 (Función racional):**
-Encontrar la inversa de $f(x) = \frac{3x + 1}{x - 2}$.
+Encontrar la inversa de $f: \mathbb{R} \setminus \{2\} \to \mathbb{R} \setminus \{3\}$ definida por $f(x) = \dfrac{3x + 1}{x - 2}$.
 
 **Solución:**
+Escribimos $y = \dfrac{3x + 1}{x - 2}$ y despejamos $x$:
+$$\begin{align}
+y(x - 2) &= 3x + 1 \\
+yx - 2y &= 3x + 1 \\
+yx - 3x &= 2y + 1 \\
+x(y - 3) &= 2y + 1 \\
+x &= \frac{2y + 1}{y - 3}
+\end{align}$$
 
-**Paso 1:** $y = \frac{3x + 1}{x - 2}$
+Por tanto:
+$$f^{-1}(x) = \frac{2x + 1}{x - 3}, \qquad \text{con dominio } \mathbb{R} \setminus \{3\}$$
 
-**Paso 2:** Despejamos $x$:
-$$y(x - 2) = 3x + 1$$
-$$yx - 2y = 3x + 1$$
-$$yx - 3x = 2y + 1$$
-$$x(y - 3) = 2y + 1$$
-$$x = \frac{2y + 1}{y - 3}$$
-
-**Paso 3:**
-$$f^{-1}(x) = \frac{2x + 1}{x - 3}$$
-
-**Observación:** Esta función es **autoinversa** salvo constantes: tiene la misma forma que la original.
+Observemos que $f$ y $f^{-1}$ tienen la misma forma algebraica, salvo los coeficientes numéricos.
 
 **Ejemplo 8.3 (Función exponencial):**
-Encontrar la inversa de $f(x) = e^{x+2} - 1$.
+Encontrar la inversa de $f: \mathbb{R} \to (-1, +\infty)$ definida por $f(x) = e^{x+2} - 1$.
 
 **Solución:**
+Escribimos $y = e^{x+2} - 1$ y despejamos $x$:
+$$\begin{align}
+y + 1 &= e^{x+2} \\
+\ln(y + 1) &= x + 2 \\
+x &= \ln(y + 1) - 2
+\end{align}$$
 
-**Paso 1:** $y = e^{x+2} - 1$
+Por tanto:
+$$f^{-1}(x) = \ln(x + 1) - 2, \qquad \text{con dominio } (-1, +\infty)$$
 
-**Paso 2:** Despejamos $x$:
-$$y + 1 = e^{x+2}$$
-$$\ln(y + 1) = x + 2$$
-$$x = \ln(y + 1) - 2$$
-
-**Paso 3:**
-$$f^{-1}(x) = \ln(x + 1) - 2$$
-
-**Dominio de $f^{-1}$:** Como $e^{x+2} > 0$, tenemos $y > -1$. Por lo tanto, $\text{Dom}(f^{-1}) = (-1, +\infty)$.
+El dominio de $f^{-1}$ coincide con la imagen de $f$, pues $e^{x+2} > 0$ implica $f(x) > -1$ para todo $x \in \mathbb{R}$.
 
 **Ejemplo 8.4 (Función cúbica):**
-Encontrar la inversa de $f(x) = x^3 + 1$.
+Encontrar la inversa de $f: \mathbb{R} \to \mathbb{R}$ definida por $f(x) = x^3 + 1$.
 
 **Solución:**
+Escribimos $y = x^3 + 1$ y despejamos $x$:
+$$\begin{align}
+y - 1 &= x^3 \\
+x &= \sqrt[3]{y - 1}
+\end{align}$$
 
-**Paso 1:** $y = x^3 + 1$
-
-**Paso 2:**
-$$y - 1 = x^3$$
-$$x = \sqrt[3]{y - 1}$$
-
-**Paso 3:**
+Por tanto:
 $$f^{-1}(x) = \sqrt[3]{x - 1}$$
 
-**Observación:** Las funciones polinómicas de grado impar son biyectivas de $\mathbb{R}$ en $\mathbb{R}$, por lo que siempre tienen inversa global.
+Toda función polinómica de grado impar es biyectiva de $\mathbb{R}$ en $\mathbb{R}$, por lo que admite inversa global.
 
-### 8.3 Restricción del Dominio
+### 8.4 Restricción del dominio
 
-Si una función no es inyectiva en su dominio natural (ej. $f(x) = x^2$), no posee inversa global. Sin embargo, podemos definir una **inversa parcial** restringiendo su dominio a un subconjunto donde sea inyectiva.
+Si una función no es inyectiva en su dominio natural, no puede tener inversa global. No obstante, es frecuente que al restringir el dominio a un subconjunto donde la función sí sea inyectiva, se obtenga una función biyectiva y, por tanto, invertible.
 
 **Ejemplo 8.5 (Función cuadrática restringida):**
-La función $f(x) = x^2$ no es inyectiva en $\mathbb{R}$ (por ejemplo, $f(-2) = f(2) = 4$).
+La función $f(x) = x^2$ no es inyectiva en $\mathbb{R}$, pues $f(-2) = f(2) = 4$. Sin embargo, si se restringe a $f: [0, +\infty) \to [0, +\infty)$, la función resulta biyectiva.
 
-Si restringimos a $f: [0, +\infty) \to [0, +\infty)$, entonces $f$ es biyectiva.
+**Solución:**
+Para $x \geq 0$, escribimos $y = x^2$ y despejamos:
+$$x = \sqrt{y}$$
+donde se toma la raíz positiva porque $x \geq 0$. Por tanto:
+$$f^{-1}(x) = \sqrt{x}, \qquad \text{con dominio } [0, +\infty)$$
 
-**Cálculo de la inversa:**
-
-**Paso 1:** $y = x^2$ con $x \geq 0$
-
-**Paso 2:** $x = \sqrt{y}$ (tomamos raíz positiva porque $x \geq 0$)
-
-**Paso 3:** $f^{-1}(x) = \sqrt{x}$ con $\text{Dom}(f^{-1}) = [0, +\infty)$
-
-**Observación:** Si hubiéramos restringido a $f: (-\infty, 0] \to [0, +\infty)$, la inversa sería $f^{-1}(x) = -\sqrt{x}$.
+> **Observación:** Si se hubiera restringido el dominio a $(-\infty, 0]$, la inversa obtenida sería $f^{-1}(x) = -\sqrt{x}$. Esto muestra que la elección de la restricción afecta directamente la fórmula de la inversa.
 
 **Ejemplo 8.6 (Función cuadrática general):**
 Encontrar la inversa de $f(x) = x^2 - 4x + 5$ restringida a $[2, +\infty)$.
 
 **Solución:**
-
-Primero, completamos el cuadrado:
+Completamos el cuadrado:
 $$f(x) = (x-2)^2 + 1$$
 
-En $[2, +\infty)$, la función es inyectiva y su imagen es $[1, +\infty)$.
+En el intervalo $[2, +\infty)$, la función es estrictamente creciente, por lo que es inyectiva. Su imagen es $[1, +\infty)$. Escribimos $y = (x-2)^2 + 1$ y despejamos:
+$$\begin{align}
+y - 1 &= (x-2)^2 \\
+\sqrt{y - 1} &= x - 2 \\
+x &= 2 + \sqrt{y - 1}
+\end{align}$$
 
-**Paso 1:** $y = (x-2)^2 + 1$ con $x \geq 2$
+donde se toma la raíz positiva porque $x \geq 2$. Por tanto:
+$$f^{-1}(x) = 2 + \sqrt{x - 1}, \qquad \text{con dominio } [1, +\infty)$$
 
-**Paso 2:**
-$$y - 1 = (x-2)^2$$
-$$\sqrt{y - 1} = x - 2$$ (raíz positiva porque $x \geq 2$)
-$$x = 2 + \sqrt{y - 1}$$
+### 8.5 Aplicaciones
 
-**Paso 3:**
-$$f^{-1}(x) = 2 + \sqrt{x - 1}, \quad x \geq 1$$
+La posibilidad de invertir una función tiene consecuencias prácticas en múltiples áreas.
 
-### 8.4 Propiedades de la función inversa
+- **Resolución de ecuaciones:** Calcular la inversa de una función permite despejar variables de manera sistemática. Por ejemplo, resolver $a^x = b$ equivale a aplicar la inversa de la función exponencial, es decir, el logaritmo: $x = \log_a(b)$.
 
-**Proposición 8.1 (Dominio e imagen):**
-Si $f: A \to B$ es biyectiva, entonces:
-- $\text{Dom}(f^{-1}) = \text{Im}(f)$
-- $\text{Im}(f^{-1}) = \text{Dom}(f) = A$
+- **Criptografía y desencriptación:** En un esquema de cifrado simétrico, la función de cifrado debe ser biyectiva para que exista una función de descifrado única. La función de descifrado no es otra cosa que la inversa de la función de cifrado.
 
-**Proposición 8.2 (Inversa de la inversa):**
-Si $f$ es biyectiva, entonces:
-$$(f^{-1})^{-1} = f$$
+- **Cambios de coordenadas:** Muchas transformaciones geométricas, como las rotaciones o traslaciones, admiten inversas que permiten regresar al sistema de coordenadas original. Una transformación invertible debe ser, necesariamente, biyectiva.
 
-**Proposición 8.3 (Monotonía):**
-Si $f$ es estrictamente creciente y biyectiva, entonces $f^{-1}$ también es estrictamente creciente.
+- **Termodinámica y procesos reversibles:** En física, un proceso reversible puede describirse mediante una función cuya inversa existe, de modo que el sistema puede regresar a su estado inicial sin dejar rastro en el entorno.
 
-Si $f$ es estrictamente decreciente y biyectiva, entonces $f^{-1}$ también es estrictamente decreciente.
+- **Instrumentación y calibración:** Un sensor puede modelarse como una función que asigna una magnitud física a una señal eléctrica. Si la función del sensor es biyectiva en el rango de operación, su inversa permite recuperar la magnitud física a partir de la señal medida.
 
-**Ejemplo 8.7:**
-La función $f(x) = 2x + 3$ es estrictamente creciente. Su inversa $f^{-1}(x) = \frac{x-3}{2}$ también es estrictamente creciente.
+### 8.6 Observaciones
+
+> **Observación (unicidad de la inversa):** Si una función $f: A \to B$ es biyectiva, su inversa es única. En efecto, si $g$ y $h$ fueran dos funciones de $B$ en $A$ que satisfacen $g(f(x)) = x$ y $h(f(x)) = x$ para todo $x \in A$, entonces $g(y) = h(y)$ para todo $y \in B$ porque $f$ es sobreyectiva.
+
+> **Observación (inyectividad es necesaria):** La inyectividad de $f$ garantiza que $f^{-1}$ esté bien definida como función. Si $f$ no fuera inyectiva, un mismo valor $y$ tendría dos preimágenes distintas, y $f^{-1}(y)$ no podría asignar un único valor.
+
+> **Observación (sobreyectividad es necesaria):** La sobreyectividad de $f$ garantiza que $f^{-1}$ esté definida en todo el codominio $B$. Si $f$ no fuera sobreyectiva, existirían valores $y \in B$ sin preimagen, para los cuales $f^{-1}(y)$ no tendría sentido.
 
 ---
 
 ## 9. Composición de Funciones
 
-La **composición de funciones** es la operación de "aplicar una función y luego otra". Imaginemos un proceso en dos etapas: primero transformamos $x$ mediante una función $g$, obteniendo $g(x)$, y luego aplicamos otra función $f$ al resultado, obteniendo $f(g(x))$. Este proceso completo define una nueva función.
+Muchos procesos matemáticos y del mundo real se describen mejor como una sucesión de etapas: una primera transformación convierte la entrada en una cantidad intermedia, y una segunda transformación actúa sobre esa cantidad para producir el resultado final. Por ejemplo, en física la posición de un objeto puede depender del tiempo a través de una primera función, y la energía cinética puede depender de la posición a través de una segunda; la energía resulta entonces función del tiempo al componer ambas correspondencias.
 
-Pensemos en una función como una "máquina" que transforma entradas en salidas. Si tenemos dos máquinas:
-- La máquina $g$ convierte $x$ en $g(x)$
-- La máquina $f$ convierte $y$ en $f(y)$
+La **composición de funciones** formaliza esta idea: dadas dos funciones $g$ y $f$ con dominios y codominios compatibles, se define una nueva función $(f \circ g)(x) = f(g(x))$ que aplica primero $g$ y luego $f$. Esta operación es tan natural como la suma o el producto de funciones, pero tiene propiedades distintivas —en particular, no es conmutativa— que conviene estudiar con cuidado.
 
-La **composición** $f \circ g$ es conectar la salida de $g$ directamente como entrada de $f$.
-
-**Ejemplo visual:** Si $g(x) = x + 1$ (sumar 1) y $f(x) = x^2$ (elevar al cuadrado), entonces:
-- Entrada: $x = 3$
-- Después de $g$: $g(3) = 3 + 1 = 4$
-- Después de $f$: $f(4) = 4^2 = 16$
-- Resultado final: $(f \circ g)(3) = 16$
+**Ejemplo introductorio:** Si $g(x) = x + 1$ y $f(x) = x^2$, entonces:
+$$(f \circ g)(3) = f(g(3)) = f(4) = 4^2 = 16$$
+Es decir, la composición transforma $3$ en $16$ al sumar primero $1$ y luego elevar al cuadrado.
 
 ### 9.1 Definición y dominio
 
@@ -1171,7 +1209,7 @@ La **composición** $f \circ g$ es conectar la salida de $g$ directamente como e
 Dadas dos funciones $f: B \to C$ y $g: A \to B$, la **composición** de $f$ con $g$, denotada $f \circ g$ (se lee "$f$ compuesta con $g$" o "$f$ círculo $g$"), es la función definida por:
 $$(f \circ g)(x) = f(g(x))$$
 
-**Notación:** Se lee de **derecha a izquierda**: primero aplicamos $g$, luego aplicamos $f al resultado.
+**Notación:** Se lee de **derecha a izquierda**: primero aplicamos $g$, luego aplicamos $f$ al resultado.
 
 **Definición 9.2 (Dominio de la composición):**
 El dominio de $f \circ g$ es:
@@ -1246,7 +1284,7 @@ Si $f(x) = 2x$ y $g(x) = x + 3$:
 - $(f \circ g)(x) = 2(x+3) = 2x + 6$
 - $(g \circ f)(x) = 2x + 3$
 
-Claramente, $2x + 6 \neq 2x + 3$.
+Como $6 \neq 3$, se tiene $2x + 6 \neq 2x + 3$ para todo $x \in \mathbb{R}$.
 
 **Proposición 9.2 (Asociatividad):**
 La composición de funciones **es asociativa**. Si $f$, $g$ y $h$ son funciones tales que las composiciones están definidas, entonces:
@@ -1257,7 +1295,7 @@ Para cualquier $x$ en el dominio apropiado:
 $$[f \circ (g \circ h)](x) = f[(g \circ h)(x)] = f[g(h(x))]$$
 $$[(f \circ g) \circ h](x) = (f \circ g)[h(x)] = f[g(h(x))]$$
 
-Ambas expresiones son iguales. $\square$
+Ambas expresiones son iguales. $\blacksquare$
 
 **Proposición 9.3 (Elemento identidad):**
 La función identidad $\text{id}(x) = x$ actúa como **elemento neutro** para la composición:
@@ -1269,7 +1307,7 @@ para cualquier función $f$.
 $$(f \circ \text{id})(x) = f(\text{id}(x)) = f(x)$$
 $$(\text{id} \circ f)(x) = \text{id}(f(x)) = f(x)$$
 
-Por lo tanto, ambas composiciones dan $f$. $\square$
+Por lo tanto, ambas composiciones dan $f$. $\blacksquare$
 
 **Proposición 9.4 (Composición con función inversa):**
 Si $f: A \to B$ es biyectiva con inversa $f^{-1}: B \to A$, entonces:
@@ -1299,7 +1337,7 @@ $$g(x_1) = g(x_2)$$
 Como $g$ es inyectiva:
 $$x_1 = x_2$$
 
-Por lo tanto, $f \circ g$ es inyectiva. $\square$
+Por lo tanto, $f \circ g$ es inyectiva. $\blacksquare$
 
 **Teorema 9.2 (Composición de funciones sobreyectivas):**
 Si $f: B \to C$ y $g: A \to B$ son ambas sobreyectivas, entonces $f \circ g: A \to C$ es sobreyectiva.
@@ -1312,7 +1350,7 @@ Como $g$ es sobreyectiva, existe $x \in A$ tal que $g(x) = y$.
 Entonces:
 $$(f \circ g)(x) = f(g(x)) = f(y) = z$$
 
-Por lo tanto, para todo $z \in C$ existe $x \in A$ tal que $(f \circ g)(x) = z$, lo que demuestra que $f \circ g$ es sobreyectiva. $\square$
+Por lo tanto, para todo $z \in C$ existe $x \in A$ tal que $(f \circ g)(x) = z$, lo que demuestra que $f \circ g$ es sobreyectiva. $\blacksquare$
 
 **Corolario 9.1 (Composición de funciones biyectivas):**
 Si $f: B \to C$ y $g: A \to B$ son ambas biyectivas, entonces $f \circ g: A \to C$ es biyectiva.
@@ -1320,7 +1358,7 @@ Si $f: B \to C$ y $g: A \to B$ son ambas biyectivas, entonces $f \circ g: A \to 
 Además, la inversa de la composición satisface:
 $$(f \circ g)^{-1} = g^{-1} \circ f^{-1}$$
 
-**Observación:** El orden se invierte en la inversa: "los calcetines se ponen antes que los zapatos, pero se quitan en orden inverso".
+**Observación:** La fórmula $(f \circ g)^{-1} = g^{-1} \circ f^{-1}$ refleja el hecho de que, al deshacer una sucesión de operaciones, se debe revertir el orden en que fueron aplicadas.
 
 **Ejemplo 9.7:**
 Sean $f(x) = e^x$ y $g(x) = x + 1$. Ambas son biyectivas de $\mathbb{R}$ en sus respectivas imágenes. La composición:
@@ -1360,6 +1398,24 @@ Si $f(x) = 2x$, entonces:
 - En general: $f^{(n)}(x) = 2^n x$ (composición $n$ veces)
 
 **Notación:** $f^{(n)} = \underbrace{f \circ f \circ \cdots \circ f}_{n \text{ veces}}$
+
+### 9.5 Aplicaciones
+
+La composición de funciones aparece de manera recurrente tanto en matemáticas puras como en modelado aplicado.
+
+- **Cálculo diferencial:** La regla de la cadena para derivadas no es más que la derivada de una composición. Si $h = f \circ g$, entonces $h'(x) = f'(g(x)) \cdot g'(x)$. Reconocer la estructura $f(g(x))$ es el primer paso para derivar funciones complejas.
+
+- **Física:** Muchas magnitudes se obtienen por composición de relaciones. Por ejemplo, la presión atmosférica depende de la altitud, y la altitud puede depender del tiempo en un ascenso; la presión resulta entonces función del tiempo al componer ambas correspondencias.
+
+- **Ciencias de la computación:** Los programas funcionales construyen procesos complejos componiendo funciones simples en secuencia. Un pipeline de datos no es más que una composición $f_n \circ \cdots \circ f_2 \circ f_1$, donde cada etapa transforma la salida de la anterior.
+
+- **Criptografía:** Algunos sistemas cifrados combinan permutaciones y sustituciones mediante composición. La seguridad depende en parte de que la composición resultante sea difícil de invertir sin conocer las funciones individuales.
+
+### 9.6 Observaciones
+
+> **Observación (no conmutatividad):** La composición de funciones raramente conmuta. Incluso cuando $f \circ g$ y $g \circ f$ están ambas definidas, en general representan transformaciones distintas. La no conmutatividad es una de las diferencias más importantes entre la composición y las operaciones aritméticas usuales con funciones.
+
+> **Observación (composición iterada):** Cuando una función se compone consigo misma repetidamente, surgen comportamientos de gran interés en dinámica de sistemas, teoría de fractales y análisis numérico. Estudiar la iteración $f^{(n)}$ permite analizar estabilidad, puntos fijos y convergencia de métodos iterativos.
 
 ---
 
