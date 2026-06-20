@@ -33,6 +33,31 @@ valor adicional o cuando sobrecargaría la sección.
 
 ---
 
+## Estructura de una clase completa
+
+Una vez que la clase está **completamente redactada**, debe incluirse un **resumen ejecutivo**
+breve justo debajo del título principal `# Título de la clase`. Este párrafo describe en
+una o dos oraciones qué se estudiará en la clase y cuáles son los objetivos centrales.
+
+**Reglas:**
+
+- El resumen ejecutivo se escribe **al final**, cuando toda la clase está lista.
+- No debe anticipar secciones que aún no existen ni prometer contenido que no se cubrirá.
+- Debe ser conciso y servir como guía de lectura.
+
+**Ejemplo:**
+
+```markdown
+# Funciones Parte 2
+
+En esta clase profundizaremos en el análisis de funciones, estableciendo definiciones
+formales para las transformaciones geométricas, la clasificación según simetría (paridad),
+la composición de funciones, y el estudio riguroso de la inyectividad, sobreyectividad
+y funciones inversas.
+```
+
+---
+
 ## Estructura de una sección
 
 Cada sección principal usa el encabezado `## N. Título` y sus subsecciones

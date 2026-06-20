@@ -1,152 +1,103 @@
 # Funciones Parte 2
 
-En esta clase profundizaremos en el análisis de funciones, estableciendo definiciones formales para las transformaciones geométricas, la clasificación según simetría (paridad), la composición de funciones, y el estudio riguroso de la inyectividad, sobreyectividad y funciones inversas.
+Esta clase profundiza en el análisis de funciones reales. Se establecen definiciones formales para las transformaciones geométricas (traslaciones, escalados y reflexiones), la clasificación según simetría (funciones pares e impares), las funciones definidas a tramos y una galería de funciones especiales. Posteriormente se estudian la periodicidad, las funciones hiperbólicas, la clasificación según inyectividad, sobreyectividad y biyectividad, las funciones inversas, la composición, las inversas de funciones trigonométricas e hiperbólicas, la relación entre cónicas y funciones, y una primera introducción a las funciones implícitas.
+
 ## 1. Transformaciones de Funciones
 
-Las transformaciones permiten generar nuevas familias de funciones a partir de una función elemental $f(x)$.
+Muchas funciones que aparecen en la práctica no son completamente nuevas: son versiones modificadas de funciones elementales cuyas gráficas ya conocemos. Una parábola estirada, una raíz cuadrada desplazada o un coseno reflejado pueden construirse a partir de formas básicas sin necesidad de tabular punto a punto. El estudio sistemático de estas modificaciones se denomina **transformaciones de funciones** y constituye una herramienta fundamental para graficar, modelar y resolver problemas.
+
+> **Nota histórica:** Las transformaciones geométricas han acompañado a las matemáticas desde la antigüedad, pero su formalización algebraica cobró fuerza con la geometría analítica de **Descartes** y **Fermat** en el siglo XVII. A lo largo del siglo XIX y XX, el concepto se generalizó en áreas como la geometría de transformaciones y el análisis funcional, donde una transformación se entiende como una función que asigna a cada punto del plano (o de un espacio más abstracto) otro punto.
+
 ### 1.1 Traslaciones (Desplazamientos)
 
 **Definición 1.1 (Traslación vertical):**
-Dada una función $y = f(x)$ y una constante $c > 0$:
-- La gráfica de $y = f(x) + c$ es la traslación de $f$ en $c$ unidades hacia **arriba**.
-- La gráfica de $y = f(x) - c$ es la traslación de $f$ en $c$ unidades hacia **abajo**.
-**Ejemplo 1.1:** Si $f(x) = x^2$, entonces $y = x^2 + 3$ mueve la parábola 3 unidades hacia arriba.
+Sea $f: D \subseteq \mathbb{R} \to \mathbb{R}$ una función y sea $c \in \mathbb{R}$, $c \neq 0$. Se define la **traslación vertical** de $f$ como la función $T_v(f): D \to \mathbb{R}$ dada por:
+$$T_v(f)(x) = f(x) + c$$
+
+- Si $c > 0$, la gráfica de $f$ se desplaza $c$ unidades hacia **arriba**.
+- Si $c < 0$, la gráfica de $f$ se desplaza $|c|$ unidades hacia **abajo**.
+
+**Ejemplo 1.1:**
+Si $f(x) = x^2$, entonces $g(x) = x^2 + 3$ es la traslación vertical de $f$ en $3$ unidades hacia arriba. El vértice se mueve de $(0, 0)$ a $(0, 3)$, mientras que el dominio permanece siendo $\mathbb{R}$.
 
 **Definición 1.2 (Traslación horizontal):**
-Dada una función $y = f(x)$ y una constante $a > 0$:
-- La gráfica de $y = f(x - a)$ es la traslación de $f$ en $a$ unidades hacia la **derecha**.
-- La gráfica de $y = f(x + a)$ es la traslación de $f$ en $a$ unidades hacia la **izquierda**.
-**Ejemplo 1.2:** Si $f(x) = x^2$, entonces $y = (x - 2)^2$ mueve el vértice de la parábola 2 unidades hacia la derecha.
+Sea $f: D \subseteq \mathbb{R} \to \mathbb{R}$ una función y sea $a \in \mathbb{R}$, $a \neq 0$. Se define la **traslación horizontal** de $f$ como la función $T_h(f): D' \to \mathbb{R}$ dada por:
+$$T_h(f)(x) = f(x - a)$$
+donde $D' = \{x \in \mathbb{R} : x - a \in D\}$.
 
-Esta regla tiene una razón geométrica directa: para obtener el mismo valor de salida en la función desplazada $f(x-a)$, la entrada $x$ debe ser $a$ unidades mayor que en la función original.
+- Si $a > 0$, la gráfica de $f$ se desplaza $a$ unidades hacia la **derecha**.
+- Si $a < 0$, la gráfica de $f$ se desplaza $|a|$ unidades hacia la **izquierda**.
+
+La razón de esta inversión aparente es que para obtener el mismo valor $f(u)$ en la nueva función, la entrada debe ser $x = u + a$. Por tanto, cada punto de la gráfica original se mueve $a$ unidades en la dirección del eje $X$.
+
+**Ejemplo 1.2:**
+Si $f(x) = x^2$, entonces $g(x) = (x - 2)^2$ es la traslación horizontal de $f$ en $2$ unidades hacia la derecha. El vértice se mueve de $(0, 0)$ a $(2, 0)$.
+
 ### 1.2 Escalados (Dilataciones y Contracciones)
 
 **Definición 1.3 (Escalado vertical):**
-Sea $y = c \cdot f(x)$ con $c > 0$.
-- Si $c > 1$: **Dilatación vertical** (expansión) por un factor de $c$.
-- Si $0 < c < 1$: **Contracción vertical** (compresión) por un factor de $c$.
-**Ejemplo 1.3:** Si $f(x) = x^2$, entonces $y = 3x^2$ estira la parábola verticalmente, haciéndola lucir más "angosta" o cerrada.
+Sea $f: D \subseteq \mathbb{R} \to \mathbb{R}$ una función y sea $c \in \mathbb{R}$, $c \neq 0$. Se define el **escalado vertical** de $f$ como la función $E_v(f): D \to \mathbb{R}$ dada por:
+$$E_v(f)(x) = c \cdot f(x)$$
+
+- Si $|c| > 1$, la gráfica sufre una **dilatación vertical** por factor $|c|$.
+- Si $0 < |c| < 1$, la gráfica sufre una **contracción vertical** por factor $|c|$.
+- Si $c < 0$, además del escalado se produce una **reflexión respecto al eje $X$**.
+
+**Ejemplo 1.3:**
+Si $f(x) = x^2$, entonces $g(x) = 3x^2$ es una dilatación vertical por factor $3$. La parábola se estira, luciendo más cerrada o angosta cerca del vértice.
 
 **Definición 1.4 (Escalado horizontal):**
-Sea $y = f(c \cdot x)$ con $c > 0$.
-- Si $c > 1$: **Contracción horizontal** por un factor de $1/c$.
-- Si $0 < c < 1$: **Dilatación horizontal** por un factor de $1/c$.
-**Ejemplo 1.4:** Si $f(x) = x^2$, entonces $y = (\frac{1}{2}x)^2$ ensancha la parábola horizontalmente.
+Sea $f: D \subseteq \mathbb{R} \to \mathbb{R}$ una función y sea $c \in \mathbb{R}$, $c \neq 0$. Se define el **escalado horizontal** de $f$ como la función $E_h(f): D'' \to \mathbb{R}$ dada por:
+$$E_h(f)(x) = f(c \cdot x)$$
+donde $D'' = \{x \in \mathbb{R} : cx \in D\}$.
+
+- Si $|c| > 1$, la gráfica sufre una **contracción horizontal** por factor $\frac{1}{|c|}$.
+- Si $0 < |c| < 1$, la gráfica sufre una **dilatación horizontal** por factor $\frac{1}{|c|}$.
+- Si $c < 0$, además del escalado se produce una **reflexión respecto al eje $Y$**.
+
+**Ejemplo 1.4:**
+Si $f(x) = x^2$, entonces $g(x) = \left(\frac{1}{2}x\right)^2$ es una dilatación horizontal por factor $2$. La parábola se ensancha.
+
 ### 1.3 Reflexiones
 
-Imaginemos que observamos el reflejo de un paisaje sobre la superficie cristalina de un lago en absoluta calma: la línea del agua actúa como un espejo perfecto que invierte verticalmente todo lo que está por encima. En física, cuando un rayo de luz incide sobre un espejo plano, rebota de manera simétrica conservando su ángulo de incidencia. En acústica y procesamiento de señales, invertir la polaridad de una onda de sonido equivale a multiplicarla por $-1$, lo cual genera una onda "espejada" que puede emplearse para cancelar ruidos no deseados.
+**Definición 1.5 (Reflexiones respecto a los ejes):**
+Sea $f: D \subseteq \mathbb{R} \to \mathbb{R}$ una función. Se definen las siguientes reflexiones:
 
-En matemáticas, estas transformaciones geométricas de espejado se denominan **reflexiones**. Permiten voltear una gráfica vertical u horizontalmente con respecto a una recta de referencia (el eje de reflexión), mapeando cada punto original a un punto simétrico ubicado exactamente a la misma distancia de dicho eje.
+- **Reflexión respecto al eje $X$**: la función $R_X(f): D \to \mathbb{R}$ dada por:
+  $$R_X(f)(x) = -f(x)$$
+  El punto $(x, y)$ de la gráfica original se mapea al punto $(x, -y)$.
 
-**Definición 1.5 (Reflexiones estándar):**
-Las reflexiones básicas se realizan con respecto a los ejes coordenados:
-- **Reflexión respecto al eje X:** $y = -f(x)$. El punto $(x, y)$ se mapea a $(x, -y)$.
-- **Reflexión respecto al eje Y:** $y = f(-x)$. El punto $(x, y)$ se mapea a $(-x, y)$.
- 
-**Ejemplo 1.5:** Si usamos la función $f(x) = x^3 + 4$:
-- La reflexión respecto al eje X nos da $y = -(x^3 + 4) = -x^3 - 4$ (la curva entera se voltea hacia abajo).
-- La reflexión respecto al eje Y nos da $y = (-x)^3 + 4 = -x^3 + 4$ (la curva se voltea de izquierda a derecha, pero mantiene su altura).
- 
-> *(Nota sobre simetrías: Algunas funciones elementales tienen propiedades visuales curiosas al reflejarse. Por ejemplo, al reflejar $f(x) = x^2$ respecto al eje Y, la gráfica se mantiene intacta ($(-x)^2 = x^2$). O en el caso de $f(x) = x^3$, su reflexión en el eje X ($-x^3$) resulta ser visualmente idéntica a su reflexión en el eje Y ($(-x)^3$). Este comportamiento lo analizaremos a fondo más adelante en la clasificación de funciones Pares e Impares).*
+- **Reflexión respecto al eje $Y$**: la función $R_Y(f): D' \to \mathbb{R}$ dada por:
+  $$R_Y(f)(x) = f(-x)$$
+  donde $D' = \{x \in \mathbb{R} : -x \in D\}$. El punto $(x, y)$ se mapea al punto $(-x, y)$.
 
-### 1.3.1 Generalización: Reflexiones respecto a ejes arbitrarios
+Estas dos reflexiones surgen naturalmente en fenómenos físicos: el reflejo de un rayo de luz en un espejo plano, la inversión de polaridad en una señal de sonido o la imagen de un paisaje sobre la superficie de un lago en calma.
 
-Las reflexiones no se limitan a los ejes coordenados principales. Es posible reflejar una gráfica en torno a cualquier recta en el plano cartesiano.
+**Ejemplo 1.5:**
+Sea $f(x) = x^3 + 4$. Entonces:
+- La reflexión respecto al eje $X$ es $y = -(x^3 + 4) = -x^3 - 4$.
+- La reflexión respecto al eje $Y$ es $y = (-x)^3 + 4 = -x^3 + 4$.
 
-**1. Reflexión respecto a una recta horizontal $y = c$:**
-Si se desea reflejar la gráfica de $y = f(x)$ respecto a una recta de simetría horizontal de ecuación $y = c$, la distancia vertical de cualquier punto de la función original a la recta $y = c$ debe conservarse pero en sentido opuesto. 
-Si el punto original es $(x, f(x))$, su imagen reflejada $(x, y')$ tiene como punto medio al eje de reflexión, es decir:
-$$\dfrac{f(x) + y'}{2} = c \implies y' = 2c - f(x)$$
-De este modo, la ecuación de la función reflejada respecto a $y = c$ es:
-$$y = 2c - f(x)$$
+> **Observación:** Algunas funciones elementales presentan comportamientos notables al reflejarse. Por ejemplo, $f(x) = x^2$ satisface $(-x)^2 = x^2$, por lo que su reflexión respecto al eje $Y$ coincide consigo misma. El caso $f(x) = x^3$ cumple $-x^3 = (-x)^3$, lo que hace que su reflexión en el eje $X$ sea idéntica a su reflexión en el eje $Y$. Estas simetrías se estudian formalmente en la Sección 2 como funciones pares e impares.
 
-**2. Reflexión respecto a una recta vertical $x = c$:**
-Análogamente, si se refleja la gráfica de $y = f(x)$ con respecto a una recta vertical de ecuación $x = c$, la abscisa de cualquier punto $x$ se mapea a una nueva abscisa $x'$ de modo que $c$ es el punto medio entre ambos:
-$$\dfrac{x + x'}{2} = c \implies x' = 2c - x$$
-Por lo tanto, la ecuación de la función reflejada respecto a $x = c$ es:
-$$y = f(2c - x)$$
+### 1.4 Composición de transformaciones
 
-**Ejemplo 1.6 (Ejes horizontales y verticales arbitrarios):**
-Dada la función $f(x) = \sqrt{x}$:
-- La reflexión respecto a la recta horizontal $y = 3$ nos da:
-  $$y = 2(3) - \sqrt{x} = 6 - \sqrt{x}$$
-- La reflexión respecto a la recta vertical $x = 4$ nos da:
-  $$y = \sqrt{2(4) - x} = \sqrt{8 - x}$$
-  *Donde el nuevo dominio requiere que $8 - x \geq 0 \implies x \leq 8$.*
+Las transformaciones pueden aplicarse una tras otra. El resultado final depende del orden en que se combinen, especialmente cuando intervienen escalados y traslaciones horizontales.
 
-**3. Reflexión respecto a una recta oblicua arbitraria $y = mx + n$:**
-Si se desea reflejar la gráfica de una función con respecto a una recta oblicua $L: mx - y + n = 0$ (con $m \neq 0$), debemos recurrir a la geometría analítica. Para cualquier punto $(x, y)$ de la función (donde $y = f(x)$), su punto reflejado $(x', y')$ debe cumplir dos condiciones geométricas fundamentales:
-1. El segmento que une $(x, y)$ con $(x', y')$ debe ser perpendicular a la recta $L$ (pendiente $-\tfrac{1}{m}$).
-2. El punto medio del segmento debe pertenecer a la recta $L$.
+**Proposición 1.1 (Forma general de una función transformada):**
+Sea $g: D \subseteq \mathbb{R} \to \mathbb{R}$ una función base y sean $a, b \in \mathbb{R}\setminus\{0\}$ y $h, k \in \mathbb{R}$. La función:
+$$f(x) = a \cdot g\bigl(b(x - h)\bigr) + k$$
 
-Al plantear y resolver el sistema de ecuaciones lineales resultante para las coordenadas transformadas $(x', y')$, se obtienen las siguientes ecuaciones de transformación paramétricas:
-$$
-\begin{cases}
-x' = \dfrac{(1 - m^2)x + 2m(f(x) - n)}{1 + m^2} \\[12pt]
-y' = \dfrac{2mx + (m^2 - 1)f(x) + 2n}{1 + m^2}
-\end{cases}
-$$
+se obtiene aplicando a la gráfica de $g$, en orden, las siguientes transformaciones:
+1. Escalado horizontal por factor $\frac{1}{|b|}$ (y reflexión respecto al eje $Y$ si $b < 0$).
+2. Traslación horizontal de $h$ unidades.
+3. Escalado vertical por factor $|a|$ (y reflexión respecto al eje $X$ si $a < 0$).
+4. Traslación vertical de $k$ unidades.
 
-> **Observación:** La curva resultante $(x', y')$ no siempre definirá una función en el sentido analítico estándar, ya que la gráfica podría fallar la prueba de la línea vertical dependiendo de la pendiente $m$ y de la naturaleza de $f(x)$ (este comportamiento se detallará en la subsección posterior sobre rotaciones).
+**Demostración:**
+Comenzamos con $y = g(x)$. Sustituimos $x$ por $b(x - h)$, lo cual comprime o expande horizontalmente la gráfica y luego la desplaza $h$ unidades. Después multiplicamos por $a$, lo que escala verticalmente la imagen, y finalmente sumamos $k$, lo que desplaza la gráfica verticalmente. Cada operación actúa sobre el resultado de la anterior, de modo que el orden indicado es el correcto. $\blacksquare$
 
-### 1.4 Rotación
-
-La rotación general de una función $y=f(x)$ no necesariamente resulta en una nueva función válida (pues la gráfica podría "voltearse" sobre sí misma y violar la prueba de la línea vertical, un fenómeno de pérdida de unicidad análogo al descrito para la reflexión en rectas oblicuas en la subsección 1.3.1). Para rotar una gráfica un ángulo $\theta$ en sentido antihorario respecto al origen, tomamos cada punto original $(x, y)$ (donde recordamos que $y = f(x)$) y calculamos sus nuevas coordenadas transformadas $(x', y')$ utilizando el siguiente sistema de ecuaciones trigonométricas directas:
-
-$$
-\begin{cases}
-x' = x \cos(\theta) - f(x) \sin(\theta) \\
-y' = x \sin(\theta) + f(x) \cos(\theta)
-\end{cases}
-$$
-
-**Demostración: Condición de Perpendicularidad (Rotación de $\pi/2$)**
-Podemos usar estas ecuaciones para demostrar rigurosamente de dónde viene la regla de que la pendiente de una recta perpendicular es $-1/m$. 
-Si tomamos una recta genérica cualquiera $f(x) = mx+b$ y la rotamos $\pi/2$ radianes ($90^\circ$), sabemos que $\cos(\pi/2) = 0$ y $\sin(\pi/2) = 1$. Sustituyendo esto en nuestro sistema:
-
-$$
-\begin{cases}
-x' = x(0) - (mx+b)(1) \implies x' = -mx - b \\
-y' = x(1) + (mx+b)(0) \implies y' = x
-\end{cases}
-$$
-
-De la primera ecuación, podemos despejar $x$:
-$$mx = -x' - b \implies x = -\frac{1}{m}x' - \frac{b}{m}$$
-
-Sustituyendo este valor de $x$ en la segunda ecuación ($y' = x$), obtenemos directamente la ecuación de la nueva recta transformada:
-$$y' = -\frac{1}{m}x' - \frac{b}{m}$$
-
-¡La nueva gráfica sigue siendo una recta cuya pendiente es exactamente $-1/m$! Hemos demostrado algebraicamente que sin importar la posición inicial (intercepto $b$), la rotación de 90° siempre produce la condición de perpendicularidad. $\blacksquare$
-
-**Ejemplo 1.7: Rotación de $f(x) = \sin(x)$ (Violación de unicidad)**
-En el caso anterior, la rotación de la recta produjo otra recta (otra función). Sin embargo, veamos qué ocurre de manera extrema si rotamos una onda periódica como $f(x) = \sin(x)$ en un ángulo de $\pi/2$ radianes ($90^\circ$).
-
-Sabemos que $\cos(\pi/2) = 0$ y $\sin(\pi/2) = 1$. Sustituyendo en las ecuaciones de rotación:
-$$
-\begin{cases}
-x' = x(0) - \sin(x)(1) \implies x' = -\sin(x) \\
-y' = x(1) + \sin(x)(0) \implies y' = x
-\end{cases}
-$$
-![[sin(x)_rotado.png]]
-Si observamos con atención el resultado, dado que $x = y'$, la nueva gráfica satisface la ecuación $x' = -\sin(y')$. ¡Hemos transformado una onda que viajaba a lo largo del eje X en una onda que ahora serpentea verticalmente a lo largo del eje Y!
-
-Al graficar esto, la curva oscilará de izquierda a derecha entre $x' = -1$ y $x' = 1$ mientras sube y baja infinitamente a lo largo de $y'$. Si evaluamos la coordenada $x' = 0$, encontraremos **infinitos valores** para $y'$ correspondientes a las raíces del seno ($0, \pi, -\pi, 2\pi, \dots$). 
-Por ende, al trazar una línea recta vertical imaginaria sobre el origen del eje X, esta cortará la curva en infinitos puntos simultáneamente. Esto reprueba categóricamente la **prueba de la línea vertical**, violando la regla estricta de unicidad de imagen de toda función (cada entrada de $x$ debe mapear a **solo un** valor de $y$). Hemos demostrado así que una rotación general puede destruir completamente la integridad matemática de una función.
-### 1.5 Gráficas de Funciones Transformadas
-
-Conocer las gráficas de las funciones elementales —parábola, valor absoluto, exponencial— no basta por sí solo. El verdadero poder del enfoque por transformaciones radica en que permite construir la gráfica de funciones compuestas **sin tabular punto a punto**: basta con identificar la función base $g$ y aplicar las transformaciones en el orden correcto.
-
-Toda función de la forma $f(x) = a \cdot g(b(x - h)) + k$ se puede graficar siguiendo el procedimiento:
-
-1. Partir de la gráfica de la **función base** $g(x)$.
-2. Aplicar el **escalado horizontal** (factor $\tfrac{1}{b}$ sobre el eje $x$).
-3. Aplicar el **desplazamiento horizontal** en $h$ unidades.
-4. Aplicar el **escalado vertical** (factor $|a|$ sobre el eje $y$; reflexión si $a < 0$).
-5. Aplicar el **desplazamiento vertical** en $k$ unidades.
-
-**Ejemplo 1.8 (Transformación de la parábola):**
+**Ejemplo 1.6 (Transformación de la parábola):**
 Graficar $f(x) = \dfrac{x^2}{2} + 5$.
 
 Se identifica la función base $g(x) = x^2$ y se reescribe:
@@ -156,17 +107,13 @@ Las transformaciones son, en orden:
 
 - **Contracción vertical** por $\dfrac{1}{2}$: $\quad g(x) = x^2 \;\longrightarrow\; \dfrac{x^2}{2}$
 
-![[transformacion_parabola_paso1.png]]
+PONER GRAFICA AQUI: parábola $y = x^2$ contraída verticalmente por factor $1/2$, mostrando $y = x^2/2$.
 
 - **Traslación vertical** $+5$: $\quad \dfrac{x^2}{2} \;\longrightarrow\; \dfrac{x^2}{2} + 5$
 
-![[transformacion_parabola_paso2.png]]
+PONER GRAFICA AQUI: parábola $y = x^2/2$ trasladada 5 unidades hacia arriba, mostrando $y = x^2/2 + 5$.
 
-Toda función desconocida puede construirse así: se descompone en su función base más las transformaciones necesarias para alcanzarla.
-
-> **Advertencia:** Los desplazamientos horizontales pueden resultar engañosos cuando la variable $x$ aparece multiplicada por una constante. La traslación horizontal de $f(x) = g\!\left(b(x-h)\right)$ es de $h$ unidades, **no** de $bh$. Es imprescindible factorizar el coeficiente de $x$ antes de leer el desplazamiento.
-
-**Ejemplo 1.9 (Desplazamiento horizontal con factor de escala):**
+**Ejemplo 1.7 (Desplazamiento horizontal con factor de escala):**
 Determinar el desplazamiento que lleva $f(x) = |3x|$ a $g(x) = |3x + 1|$.
 
 Factorizando el coeficiente de $x$ en el argumento de $g$:
@@ -174,472 +121,751 @@ $$g(x) = |3x + 1| = \left|3\left(x + \frac{1}{3}\right)\right| = f\left(x + \fra
 
 El desplazamiento real de la gráfica con respecto a $|3x|$ es de $\frac{1}{3}$ de unidad hacia la **izquierda**, no de $1$ unidad entera. Leer el "$+1$" como desplazamiento directo, sin factorizar primero el $3$, es el error más frecuente al realizar este tipo de transformaciones.
 
+### 1.5 Transformaciones que no preservan la estructura funcional
+
+Las traslaciones, escalados y reflexiones respecto a los ejes transforman una función $y = f(x)$ en otra función $y = g(x)$. Sin embargo, otras transformaciones geométricas más generales, como las reflexiones respecto a rectas oblicuas o las rotaciones, pueden producir curvas que **no** satisfacen la definición de función, pues un mismo valor de $x$ puede corresponder a varios valores de $y$. A continuación se presentan estos casos como una extensión geométrica, con la advertencia de que su resultado no siempre es una función.
+
+#### 1.5.1 Reflexión respecto a rectas horizontales y verticales arbitrarias
+
+Sea $f: D \subseteq \mathbb{R} \to \mathbb{R}$ una función.
+
+- **Reflexión respecto a la recta horizontal $y = c$**: la imagen reflejada $(x, y')$ satisface que $c$ es el punto medio entre $f(x)$ e $y'$. Por tanto:
+  $$\frac{f(x) + y'}{2} = c \quad \Longrightarrow \quad y' = 2c - f(x)$$
+  La curva reflejada es $y = 2c - f(x)$, que sí es una función.
+
+- **Reflexión respecto a la recta vertical $x = c$**: la imagen reflejada tiene abscisa $x'$ tal que $c$ es el punto medio entre $x$ y $x'$. Entonces:
+  $$x' = 2c - x \quad \Longrightarrow \quad y = f(2c - x)$$
+  La curva reflejada es $y = f(2c - x)$, que también es una función, aunque su dominio puede cambiar.
+
+**Ejemplo 1.8 (Reflexiones en ejes arbitrarios):**
+Sea $f(x) = \sqrt{x}$.
+- La reflexión respecto a $y = 3$ es $y = 2(3) - \sqrt{x} = 6 - \sqrt{x}$.
+- La reflexión respecto a $x = 4$ es $y = \sqrt{2(4) - x} = \sqrt{8 - x}$, con dominio $(-\infty, 8]$.
+
+#### 1.5.2 Reflexión respecto a rectas oblicuas
+
+Reflejar respecto a una recta oblicua $y = mx + n$ exige usar geometría analítica. Para cada punto $(x, f(x))$ de la gráfica, su reflejado $(x', y')$ debe cumplir:
+
+1. El segmento que une $(x, f(x))$ con $(x', y')$ es perpendicular a la recta.
+2. El punto medio del segmento pertenece a la recta.
+
+Resolviendo el sistema resultante se obtiene:
+$$
+\begin{cases}
+x' = \dfrac{(1 - m^2)x + 2m\bigl(f(x) - n\bigr)}{1 + m^2} \\[12pt]
+y' = \dfrac{2mx + (m^2 - 1)f(x) + 2n}{1 + m^2}
+\end{cases}
+$$
+
+> **Observación:** La curva resultante $(x', y')$ no siempre define una función $y'$ en términos de $x'$, ya que puede fallar la prueba de la línea vertical.
+
+#### 1.5.3 Rotación
+
+Rotar una función $y = f(x)$ un ángulo $\theta$ en sentido antihorario respecto al origen transforma cada punto $(x, f(x))$ en $(x', y')$ mediante:
+$$
+\begin{cases}
+x' = x\cos(\theta) - f(x)\sin(\theta) \\
+y' = x\sin(\theta) + f(x)\cos(\theta)
+\end{cases}
+$$
+
+Nuevamente, la curva resultante no necesariamente es una función.
+
+**Ejemplo 1.9 (Rotación de una recta):**
+Sea $f(x) = mx + b$. Al rotarla $\frac{\pi}{2}$ radianes, con $\cos(\pi/2) = 0$ y $\sin(\pi/2) = 1$, se obtiene:
+$$
+\begin{cases}
+x' = -mx - b \\
+y' = x
+\end{cases}
+$$
+
+Despejando $x$ de la primera ecuación y sustituyendo en la segunda:
+$$x = -\frac{1}{m}x' - \frac{b}{m} \quad \Longrightarrow \quad y' = -\frac{1}{m}x' - \frac{b}{m}$$
+
+La recta rotada es otra recta cuya pendiente es $-\frac{1}{m}$, lo que ilustra algebraicamente la condición de perpendicularidad entre rectas.
+
+**Ejemplo 1.10 (Rotación de $f(x) = \sin(x)$):**
+Al rotar la función seno un ángulo $\frac{\pi}{2}$, se obtiene:
+$$
+\begin{cases}
+x' = -\sin(x) \\
+y' = x
+\end{cases}
+$$
+![[sin(x)_rotado.png]]
+Dado que $x = y'$, la nueva curva satisface $x' = -\sin(y')$. Esta curva oscila verticalmente y falla la prueba de la línea vertical: existen infinitos valores de $y'$ para un mismo $x'$, por ejemplo cuando $x' = 0$ se tiene $y' = n\pi$ para todo $n \in \mathbb{Z}$. Por tanto, la rotación no conserva la estructura de función.
+
+### 1.6 Aplicaciones
+
+Las transformaciones de funciones aparecen en múltiples contextos:
+
+- **Física:** El movimiento de un objeto que se desplaza, estira o refleja una trayectoria conocida se modela mediante traslaciones, escalados y reflexiones. Por ejemplo, una onda sinusoidal desplazada en el tiempo se representa como $f(t - t_0)$.
+
+- **Ingeniería y diseño:** Las señales de audio, las vibraciones mecánicas y los gráficos de control se generan a partir de formas básicas modificadas por factores de escala y desplazamientos.
+
+- **Ciencias de la computación:** Las transformaciones geométricas son la base del procesamiento de imágenes, la computación gráfica y el diseño asistido por ordenador.
+
+- **Matemáticas aplicadas:** Muchos modelos empíricos ajustan una función conocida mediante parámetros que actúan como traslaciones y escalados: $f(x) = a \cdot g(b(x - h)) + k$.
+
+### 1.7 Observaciones
+
+> **Observación (orden de las transformaciones):** Cuando se aplica más de una transformación, el orden importa. En particular, una traslación horizontal seguida de un escalado horizontal no produce el mismo resultado que un escalado seguido de una traslación. Por eso se recomienda escribir la función en la forma $f(x) = a \cdot g(b(x - h)) + k$ antes de interpretar las transformaciones.
+
+> **Observación (dominio y rango):** Las traslaciones verticales y los escalados verticales no modifican el dominio de una función, pero sí su rango. Las traslaciones horizontales y los escalados horizontales pueden modificar el dominio. Las reflexiones respecto a los ejes no cambian el dominio si este es simétrico respecto al origen, pero una reflexión respecto al eje $Y$ reemplaza el dominio $D$ por $-D = \{-x : x \in D\}$.
+
+> **Observación (funciones que no son funciones):** Las reflexiones oblicuas y las rotaciones transforman gráficas de funciones en curvas generales del plano. Estas curvas deben estudiarse con herramientas de geometría analítica o, más adelante, con parametrizaciones.
+
 ---
 ## 2. Simetría de Funciones (Paridad)
 
-Sea $f: D \to \mathbb{R}$ una función con un dominio $D$ simétrico respecto al origen (es decir, si $x \in D$, entonces obligatoriamente $-x \in D$). En la sección anterior sobre reflexiones vimos que ciertas gráficas presentan comportamientos fascinantes al transformarse. Aquí formalizamos esos fenómenos mediante el concepto de **Paridad**.
-### 2.1 Funciones Pares e Impares
+Al estudiar transformaciones geométricas surgen preguntas naturales: ¿qué funciones se ven iguales al reflejarse en el eje vertical? ¿cuáles se reproducen al rotarse 180° alrededor del origen? Estas simetrías no son solo curiosidades visuales: simplifican cálculos, permiten predecir comportamientos y aparecen en modelos físicos donde ciertas cantidades deben conservarse ante cambios de signo. El lenguaje matemático que captura estas ideas es el de **funciones pares e impares**.
 
-**Definición 2.1 (Función Par):**
-Una función $f$ es **par** si, para todo $x$ en su dominio, se cumple que evaluar un número negativo da exactamente el mismo resultado que evaluar el positivo:
+> **Nota histórica:** La clasificación de funciones según su comportamiento ante el cambio $x \mapsto -x$ es tan antigua como el estudio de las series de potencias en el siglo XVIII. **Leonhard Euler** observó que muchas funciones elementales podían separarse en partes simétricas y antisimétricas, lo que resultó esencial para el desarrollo del análisis de Fourier en el siglo XIX. Hoy en día, la paridad sigue siendo una herramienta básica en física, ingeniería y teoría de señales.
+
+### 2.1 Funciones pares e impares
+
+En toda esta sección se considerarán funciones cuyo dominio $D$ es **simétrico respecto al origen**, es decir, si $x \in D$, entonces $-x \in D$. Esta condición es necesaria para poder evaluar $f(-x)$ siempre que esté definido $f(x)$.
+
+**Definición 2.1 (Función par):**
+Sea $f: D \subseteq \mathbb{R} \to \mathbb{R}$ una función con dominio simétrico respecto al origen. Se dice que $f$ es **par** si:
 $$\forall x \in D, \quad f(-x) = f(x)$$
-- **Propiedad Geométrica:** Esto equivale a decir que su gráfica es idéntica tras aplicarle una reflexión respecto al **eje Y**. Es como si el eje Y actuara como un espejo perfecto.
-- **Conexión con reflexiones:** Como lo prometimos, esto explica por qué la función $f(x) = x^2$ al reflejarse en el eje Y nos daba $(-x)^2 = x^2$. ¡Esto la clasifica formalmente como el prototipo de una función par!
-- **Otros ejemplos:** $f(x) = |x|, \quad f(x) = \cos(x)$.
 
-**Definición 2.2 (Función Impar):**
-Una función $f$ es **impar** si, para todo $x$ en su dominio, el signo negativo puede "salir" de la función:
+Geométricamente, la gráfica de una función par es simétrica respecto al **eje $Y$**.
+
+**Ejemplo 2.1:**
+La función $f(x) = x^2$ es par, pues:
+$$f(-x) = (-x)^2 = x^2 = f(x)$$
+Otras funciones pares elementales son $f(x) = |x|$ y $f(x) = \cos(x)$.
+
+**Definición 2.2 (Función impar):**
+Sea $f: D \subseteq \mathbb{R} \to \mathbb{R}$ una función con dominio simétrico respecto al origen. Se dice que $f$ es **impar** si:
 $$\forall x \in D, \quad f(-x) = -f(x)$$
-- **Propiedad Geométrica:** Su gráfica es simétrica respecto al **origen** $(0,0)$. Esto equivale a rotar la gráfica 180° alrededor del origen, o lo que es lo mismo: aplicar una reflexión en el eje X y luego otra en el eje Y.
-- **Conexión con reflexiones:** En nuestro análisis previo de la nota, vimos que para $f(x) = x^3$, su reflexión en Y ($(-x)^3$) daba exactamente el mismo resultado visual que su reflexión en X ($-x^3$). Esa coincidencia $f(-x) = -f(x)$ es la huella digital inconfundible de una función impar.
-- **Otros ejemplos:** $f(x) = 1/x, \quad f(x) = \sin(x)$.
 
-### 2.2 Teorema de Descomposición
+Geométricamente, la gráfica de una función impar es simétrica respecto al **origen** $(0, 0)$. Esto equivale a aplicar una reflexión respecto al eje $X$ seguida de una reflexión respecto al eje $Y$.
 
-La inmensa mayoría de las funciones en la naturaleza no son ni pares ni impares (son asimétricas). Sin embargo, existe una propiedad matemática extraordinaria que permite fraccionarlas.
+**Ejemplo 2.2:**
+La función $f(x) = x^3$ es impar, pues:
+$$f(-x) = (-x)^3 = -x^3 = -f(x)$$
+Otras funciones impares elementales son $f(x) = \frac{1}{x}$ y $f(x) = \sin(x)$.
+
+### 2.2 Propiedades algebraicas
+
+Las funciones pares e impares interactúan de manera predecible bajo sumas, productos y composiciones. Estas reglas permiten determinar la paridad de una función compleja sin volver a verificar la definición desde cero.
+
+**Proposición 2.1 (Álgebra de funciones pares e impares):**
+Sean $f$ y $g$ funciones con dominio simétrico respecto al origen.
+
+1. **Suma:**
+   - Par $+$ Par $=$ Par.
+   - Impar $+$ Impar $=$ Impar.
+   - Par $+$ Impar no tiene paridad definida en general.
+
+2. **Producto:**
+   - Par $\cdot$ Par $=$ Par.
+   - Impar $\cdot$ Impar $=$ Par.
+   - Par $\cdot$ Impar $=$ Impar.
+
+3. **Composición:**
+   - Si $g$ es par, entonces $g \circ f$ es par cualquiera sea $f$.
+   - Si $g$ es impar y $f$ es impar, entonces $g \circ f$ es impar.
+   - Si $g$ es impar y $f$ es par, entonces $g \circ f$ es par.
+
+**Demostración (producto de dos funciones impares):**
+Sean $f$ y $g$ funciones impares. Entonces:
+$$(f \cdot g)(-x) = f(-x) \cdot g(-x) = \bigl(-f(x)\bigr) \cdot \bigl(-g(x)\bigr) = f(x) \cdot g(x) = (f \cdot g)(x)$$
+Por tanto, $f \cdot g$ es par. Las demás afirmaciones se demuestran de forma análoga. $\blacksquare$
+
+**Ejemplo 2.3:**
+La función $h(x) = x^2 \sin(x)$ es impar, pues $x^2$ es par, $\sin(x)$ es impar, y el producto de una función par por una impar es impar. En efecto:
+$$h(-x) = (-x)^2 \sin(-x) = x^2 \bigl(-\sin(x)\bigr) = -x^2 \sin(x) = -h(x)$$
+
+### 2.3 Descomposición en partes par e impar
+
+La mayoría de las funciones no son ni pares ni impares. Sin embargo, toda función con dominio simétrico puede descomponerse de manera única como suma de una función par y una función impar.
 
 **Teorema 2.1 (Descomposición de paridad):**
-Toda función $f: \mathbb{R} \to \mathbb{R}$ (o sobre un dominio simétrico) puede expresarse de manera *única* como la suma exacta de una función par y una función impar:
-$$f(x) = f_{par}(x) + f_{impar}(x)$$
-Donde las componentes se construyen artificialmente mediante las fórmulas:
-$$f_{par}(x) = \frac{f(x) + f(-x)}{2}, \quad f_{impar}(x) = \frac{f(x) - f(-x)}{2}$$
+Sea $f: D \subseteq \mathbb{R} \to \mathbb{R}$ una función con dominio simétrico respecto al origen. Entonces existe un único par de funciones $f_p: D \to \mathbb{R}$ par y $f_i: D \to \mathbb{R}$ impar tales que:
+$$f(x) = f_p(x) + f_i(x), \quad \forall x \in D$$
 
-**Demostración del Teorema:**
-La demostración consta de dos partes lógicas: asegurar que las fórmulas realmente cumplen su propósito (**Existencia**) y probar que son la única manera de lograrlo (**Unicidad**).
+Las componentes están dadas explícitamente por:
+$$f_p(x) = \frac{f(x) + f(-x)}{2}, \qquad f_i(x) = \frac{f(x) - f(-x)}{2}$$
 
-**1. Existencia:**
-Si sumamos las dos fórmulas propuestas algebraicamente, obtenemos la función original:
-$$f_{par}(x) + f_{impar}(x) = \frac{f(x) + f(-x)}{2} + \frac{f(x) - f(-x)}{2} = \frac{2f(x)}{2} = f(x)$$
-Para comprobar que realmente tienen la paridad deseada, las evaluamos en $-x$:
-- Para la primera: $f_{par}(-x) = \frac{f(-x) + f(-(-x))}{2} = \frac{f(-x) + f(x)}{2} = f_{par}(x)$. Queda demostrado que es **par**.
-- Para la segunda: $f_{impar}(-x) = \frac{f(-x) - f(-(-x))}{2} = \frac{f(-x) - f(x)}{2} = -\frac{f(x) - f(-x)}{2} = -f_{impar}(x)$. Queda demostrado que es **impar**.
+**Demostración:**
+Se demuestran existencia y unicidad.
 
-**2. Unicidad:**
-Supongamos que existiera *otra* descomposición alternativa $f(x) = P(x) + I(x)$, donde $P$ sea par e $I$ sea impar.
-Al evaluar la función en $-x$, y usando las propiedades de paridad, tendríamos:
+*Existencia.* Definimos $f_p$ y $f_i$ mediante las fórmulas anteriores. Sumando ambas expresiones:
+$$f_p(x) + f_i(x) = \frac{f(x) + f(-x)}{2} + \frac{f(x) - f(-x)}{2} = \frac{2f(x)}{2} = f(x)$$
+
+Además, evaluando en $-x$:
+$$f_p(-x) = \frac{f(-x) + f(x)}{2} = f_p(x)$$
+por lo que $f_p$ es par. Análogamente:
+$$f_i(-x) = \frac{f(-x) - f(x)}{2} = -\frac{f(x) - f(-x)}{2} = -f_i(x)$$
+por lo que $f_i$ es impar.
+
+*Unicidad.* Supongamos que $f(x) = P(x) + I(x)$ con $P$ par e $I$ impar. Evaluando en $-x$ se obtiene:
 $$f(-x) = P(-x) + I(-x) = P(x) - I(x)$$
+Resolviendo el sistema:
+$$\begin{align}
+f(x) &= P(x) + I(x) \\
+f(-x) &= P(x) - I(x)
+\end{align}$$
+se llega a:
+$$P(x) = \frac{f(x) + f(-x)}{2}, \qquad I(x) = \frac{f(x) - f(-x)}{2}$$
+Por tanto, $P = f_p$ e $I = f_i$. $\blacksquare$
 
-Hemos formado un sistema lineal de dos ecuaciones:
-1) $f(x) = P(x) + I(x)$
-2) $f(-x) = P(x) - I(x)$
+**Ejemplo 2.4 (Descomposición de un polinomio):**
+Descomponer $f(x) = x^2 + 2x + 3$ en sus partes par e impar.
 
-Si **sumamos** ambas ecuaciones, las partes impares ($I$) se anulan:
-$$f(x) + f(-x) = 2P(x) \implies P(x) = \frac{f(x) + f(-x)}{2}$$
-Si **restamos** la segunda de la primera, las partes pares ($P$) se anulan:
-$$f(x) - f(-x) = 2I(x) \implies I(x) = \frac{f(x) - f(-x)}{2}$$
-Acabamos de probar que cualquier supuesta "otra" descomposición $P(x)$ e $I(x)$ nos obliga irremediablemente a recaer en las mismas fórmulas originales. Por lo tanto, no hay otra manera de hacerlo; la descomposición es **absolutamente única**. $\blacksquare$
+Primero se calcula $f(-x) = x^2 - 2x + 3$. Entonces:
+$$\begin{align}
+f_p(x) &= \frac{(x^2 + 2x + 3) + (x^2 - 2x + 3)}{2} = x^2 + 3 \\
+f_i(x) &= \frac{(x^2 + 2x + 3) - (x^2 - 2x + 3)}{2} = 2x
+\end{align}$$
 
-**Ejemplo 2.1 (Descomposición de un polinomio asimétrico):**
-Descomponer la función $f(x) = x^2 + 2x + 3$.
+Por tanto, $f(x) = (x^2 + 3) + 2x$, donde $x^2 + 3$ es par y $2x$ es impar.
 
-**Solución:** Primero hallamos el reflejo $f(-x)$:
-$$f(-x) = (-x)^2 + 2(-x) + 3 = x^2 - 2x + 3$$
-- Calculamos la **parte par** sumando ambos y dividiendo por 2:
-  $$f_{par}(x) = \frac{(x^2 + 2x + 3) + (x^2 - 2x + 3)}{2} = \frac{2x^2 + 6}{2} = x^2 + 3$$
-- Calculamos la **parte impar** restando y dividiendo por 2:
-  $$f_{impar}(x) = \frac{(x^2 + 2x + 3) - (x^2 - 2x + 3)}{2} = \frac{4x}{2} = 2x$$
-**Conclusión:** $f(x) = (x^2 + 3) + (2x)$. Hemos logrado separar de manera analítica un polinomio común en su "esqueleto" par ($x^2+3$) y su "esqueleto" impar ($2x$).
+**Ejemplo 2.5 (Descomposición de la exponencial):**
+Descomponer $f(x) = e^x$.
 
-**Ejemplo 2.2 (Descomposición de la función exponencial):**
-Descomponer la función asimétrica por excelencia, $f(x) = e^x$.
+Como $f(-x) = e^{-x}$, se tiene:
+$$\begin{align}
+f_p(x) &= \frac{e^x + e^{-x}}{2} \\
+f_i(x) &= \frac{e^x - e^{-x}}{2}
+\end{align}$$
 
-**Solución:** Hallamos $f(-x) = e^{-x}$.
-- **Parte par:**
-$$f_{par}(x) = \frac{e^x + e^{-x}}{2}$$
-- **Parte impar:**
-$$f_{impar}(x) = \frac{e^x - e^{-x}}{2}$$
-**Conclusión:** ¡Estas dos mitades no son funciones ordinarias! Acabamos de derivar matemáticamente de la nada al famoso **Coseno Hiperbólico** ($\cosh(x)$) como la parte par de $e^x$, y al **Seno Hiperbólico** ($\sinh(x)$) como su parte impar. Así, se desvela la hermosa identidad: $e^x = \cosh(x) + \sinh(x)$. Esto se profundizará en la sección 6.
+Estas expresiones definen, respectivamente, el **coseno hiperbólico** y el **seno hiperbólico**:
+$$e^x = \cosh(x) + \sinh(x)$$
+
+Esta identidad se estudiará con más detalle en la Sección 6.
+
+### 2.4 Aplicaciones
+
+La clasificación según paridad simplifica muchos problemas prácticos:
+
+- **Cálculo de integrales:** En intervalos simétricos $[-a, a]$, la integral de una función impar es cero y la integral de una función par se reduce al doble de la integral en $[0, a]$. Esto acelera los cálculos y evita errores.
+
+- **Series de Fourier:** Toda función periódica puede descomponerse en una parte par (serie de cosenos) y una parte impar (serie de senos). Esta separación es fundamental en el análisis de señales y vibraciones.
+
+- **Física:** Muchas leyes de conservación y potenciales presentan simetrías de paridad. Un potencial eléctrico par respecto a un plano implica que el campo eléctrico es impar, y viceversa.
+
+- **Teoría de señales:** Las señales eléctricas y acústicas se descomponen frecuentemente en componentes simétricas y antisimétricas para su análisis y filtrado.
+
+### 2.5 Observaciones
+
+> **Observación (dominio simétrico):** La noción de paridad solo tiene sentido cuando el dominio de la función es simétrico respecto al origen. Por ejemplo, $f(x) = \sqrt{x}$ no puede clasificarse como par ni impar porque su dominio $[0, +\infty)$ no contiene valores negativos.
+
+> **Observación (cero en el origen):** Si $f$ es impar y $0 \in D$, entonces $f(0) = -f(0)$, lo que implica $f(0) = 0$. Esto explica por qué las funciones impares elementales como $\sin(x)$, $x^3$ y $1/x$ (en su dominio extendido) pasan por el origen o tienen una discontinuidad allí.
+
+> **Observación (paridad y reflexiones):** La relación con las reflexiones estudiadas en la Sección 1 es directa: una función par es invariante bajo reflexión respecto al eje $Y$, mientras que una función impar es invariante bajo la composición de reflexiones respecto a los ejes $X$ e $Y$.
 
 ---
 ## 3. Funciones Definidas a Tramos
 
-Algunas funciones tienen comportamientos diferentes en distintas regiones de su dominio. Por ejemplo, una tarifa telefónica puede tener un precio por minuto hasta cierta cantidad, y luego otro precio diferente. Estas funciones se expresan mediante "casos" o "tramos".
+Muchas situaciones cotidianas cambian de regla según el valor de una variable. Una tarifa telefónica cobra distinto antes y después de cierta cantidad de minutos; un impuesto aplica porcentajes diferentes según rangos de ingreso; una señal eléctrica se activa solo cuando supera un umbral. En matemáticas, estas reglas se expresan mediante **funciones definidas a tramos**: una única función que usa distintas fórmulas en distintas partes de su dominio.
 
-**Definición 3.1 (Función a tramos):**
-Una **función definida a tramos** (o función por partes) es una función que se define mediante diferentes expresiones algebraicas en distintos subconjuntos del dominio. Formalmente:
+> **Nota histórica:** El uso explícito de funciones definidas por casos se consolidó en el siglo XIX, cuando los matemáticos comenzaron a construir ejemplos de funciones con comportamientos irregulares —como la función de Dirichlet o la función de Weierstrass— que desafiaban la intuición geométrica. Estas construcciones fueron decisivas para precisar conceptos como continuidad, derivabilidad e integrabilidad, que se estudiarán formalmente en cursos posteriores.
 
-$$f(x) = \begin{cases} f_1(x) & \text{si } x \in D_1 \\ f_2(x) & \text{si } x \in D_2 \\ \vdots & \vdots \\ f_n(x) & \text{si } x \in D_n \end{cases}$$
+### 3.1 Definición formal
 
-donde $D_1, D_2, \ldots, D_n$ son subconjuntos **disjuntos** cuya unión es el dominio de $f$.
+**Definición 3.1 (Función definida a tramos):**
+Sea $D \subseteq \mathbb{R}$ un conjunto y sean $D_1, D_2, \ldots, D_n$ subconjuntos de $D$, dos a dos disjuntos, tales que:
+$$D = D_1 \cup D_2 \cup \cdots \cup D_n$$
 
-### 3.1 Ejemplos fundamentales
+Una función $f: D \to \mathbb{R}$ está **definida a tramos** si para cada $i \in \{1, 2, \ldots, n\}$ existe una función $f_i: D_i \to \mathbb{R}$ tal que:
+$$f(x) = f_i(x) \quad \text{si } x \in D_i$$
+
+Equivalentemente:
+$$f(x) = \begin{cases}
+f_1(x) & \text{si } x \in D_1 \\
+f_2(x) & \text{si } x \in D_2 \\
+\vdots & \vdots \\
+f_n(x) & \text{si } x \in D_n
+\end{cases}$$
+
+> **Observación:** La condición de que los conjuntos $D_i$ sean disjuntos garantiza que la función esté bien definida: cada $x \in D$ pertenece a un único tramo y, por tanto, recibe un único valor $f(x)$.
+
+### 3.2 Ejemplos fundamentales
 
 **Ejemplo 3.1 (Valor absoluto):**
 La función valor absoluto es el ejemplo más conocido de función a tramos:
-$$f(x) = |x| = \begin{cases} -x & \text{si } x < 0 \\ x & \text{si } x \geq 0 \end{cases}$$
+$$f(x) = |x| = \begin{cases}
+-x & \text{si } x < 0 \\
+x & \text{si } x \geq 0
+\end{cases}$$
 
-**Análisis:**
-- Para $x < 0$: $|x| = -x$ (negamos el número negativo para obtener su magnitud)
-- Para $x \geq 0$: $|x| = x$ (el número ya es no negativo)
-- **Punto crítico:** $x = 0$ es donde cambia la definición
+Para $x < 0$, el valor absoluto cambia el signo del número negativo para obtener su magnitud. Para $x \geq 0$, el número ya es no negativo y el valor absoluto no lo altera. El punto $x = 0$ es donde cambia la definición.
 
 **Ejemplo 3.2 (Función rampa):**
-La función rampa, denotada $r(x)$ o $\text{ramp}(x)$, se define como:
-$$r(x) = \max(0, x) = \begin{cases} 0 & \text{si } x < 0 \\ x & \text{si } x \geq 0 \end{cases}$$
+La función rampa, denotada $r(x)$, se define como:
+$$r(x) = \max(0, x) = \begin{cases}
+0 & \text{si } x < 0 \\
+x & \text{si } x \geq 0
+\end{cases}$$
 
-Esta función es ampliamente usada en:
-- Ingeniería eléctrica (señales)
-- Redes neuronales (función de activación ReLU)
-- Economía (funciones de demanda)
-
-**Observación:** Se puede expresar como $r(x) = \frac{x + |x|}{2}$.
+Esta función aparece en ingeniería eléctrica, redes neuronales (como función de activación ReLU) y economía. También puede escribirse como:
+$$r(x) = \frac{x + |x|}{2}$$
 
 **Ejemplo 3.3 (Función definida por tres tramos):**
-$$f(x) = \begin{cases} x^2 & \text{si } x < -1 \\ 1 & \text{si } -1 \leq x \leq 1 \\ 2x - 1 & \text{si } x > 1 \end{cases}$$
+Sea:
+$$f(x) = \begin{cases}
+x^2 & \text{si } x < -1 \\
+1 & \text{si } -1 \leq x \leq 1 \\
+2x - 1 & \text{si } x > 1
+\end{cases}$$
 
-**Evaluación:**
-- $f(-2) = (-2)^2 = 4$ (usa el primer tramo)
-- $f(0) = 1$ (usa el segundo tramo)
-- $f(3) = 2(3) - 1 = 5$ (usa el tercer tramo)
+Su evaluación en puntos concretos es:
+- $f(-2) = (-2)^2 = 4$ (primer tramo)
+- $f(0) = 1$ (segundo tramo)
+- $f(3) = 2(3) - 1 = 5$ (tercer tramo)
 
 **Ejemplo 3.4 (Tarifa escalonada):**
-Una compañía eléctrica cobra según el consumo:
-$$C(k) = \begin{cases} 0.10k & \text{si } 0 \leq k \leq 100 \\ 10 + 0.15(k-100) & \text{si } 100 < k \leq 300 \\ 40 + 0.20(k-300) & \text{si } k > 300 \end{cases}$$
+Una compañía eléctrica cobra según el consumo $k$ (en kWh):
+$$C(k) = \begin{cases}
+0.10k & \text{si } 0 \leq k \leq 100 \\
+10 + 0.15(k-100) & \text{si } 100 < k \leq 300 \\
+40 + 0.20(k-300) & \text{si } k > 300
+\end{cases}$$
 
-donde $k$ es el consumo en kWh y $C(k)$ es el costo en dólares.
+donde $C(k)$ es el costo en dólares. Los tramos corresponden a rangos de consumo con tarifas progresivas.
 
-### 3.2 Continuidad en los puntos de unión
+### 3.3 Dominio y evaluación
 
-Cuando una función está definida a tramos, es importante verificar qué ocurre en los **puntos de transición** donde cambia la fórmula. La función puede ser:
-- **Continua:** No hay "saltos" en la gráfica
-- **Discontinua:** Hay un "salto" o "brecha" en ese punto
+Para trabajar con una función a tramos se siguen dos pasos básicos:
 
-**Observación:** En términos intuitivos, una función es continua en un punto si su gráfica no presenta saltos ni interrupciones en la vecindad de ese punto.
+1. **Determinar el dominio:** el dominio de $f$ es la unión de los dominios de todos los tramos, respetando las restricciones de cada fórmula.
+2. **Evaluar en un punto:** dado $x_0 \in D$, se identifica cuál es el único tramo $D_i$ al que pertenece $x_0$ y se aplica la fórmula correspondiente $f_i(x_0)$.
 
-**Ejemplo 3.5 (Función continua a tramos):**
-$$f(x) = \begin{cases} x + 2 & \text{si } x < 1 \\ 3 & \text{si } x = 1 \\ -x + 4 & \text{si } x > 1 \end{cases}$$
+**Ejemplo 3.5:**
+Sea:
+$$f(x) = \begin{cases}
+\sqrt{x} & \text{si } 0 \leq x < 4 \\
+\dfrac{8}{x} & \text{si } x \geq 4
+\end{cases}$$
 
-**Verificación en $x = 1$:**
-- Desde la izquierda: $\lim_{x \to 1^-} f(x) = 1 + 2 = 3$
-- En el punto: $f(1) = 3$
-- Desde la derecha: $\lim_{x \to 1^+} f(x) = -1 + 4 = 3$
+El dominio es $[0, +\infty)$. Para evaluar $f(2)$ se usa el primer tramo: $f(2) = \sqrt{2}$. Para evaluar $f(4)$ se usa el segundo tramo: $f(4) = \frac{8}{4} = 2$.
 
-Como todos coinciden, la función es **continua** en $x = 1$.
+### 3.4 Continuidad intuitiva en los puntos de unión
 
-**Ejemplo 3.6 (Función discontinua a tramos):**
-$$g(x) = \begin{cases} x^2 & \text{si } x < 2 \\ x + 3 & \text{si } x \geq 2 \end{cases}$$
+En los **puntos de transición** donde cambia la fórmula, la gráfica de una función a tramos puede presentar dos comportamientos: puede **unirse sin saltos** o puede presentar un **salto**.
 
-**Verificación en $x = 2$:**
-- Desde la izquierda: $\lim_{x \to 2^-} g(x) = 2^2 = 4$
-- En el punto: $g(2) = 2 + 3 = 5$
+Aunque el estudio formal de la continuidad corresponde al tema de Límites y Continuidad, es posible verificar de manera intuitiva si una función a tramos está bien "empalmada" en un punto $x = a$ comprobando que los valores de los tramos laterales coinciden con el valor de la función en $a$.
 
-Hay un **salto** de 4 a 5, por lo que la función es **discontinua** en $x = 2$.
+**Ejemplo 3.6 (Función bien empalmeda):**
+Sea:
+$$f(x) = \begin{cases}
+x + 2 & \text{si } x < 1 \\
+3 & \text{si } x = 1 \\
+-x + 4 & \text{si } x > 1
+\end{cases}$$
 
-**Nota:** El concepto formal de continuidad se estudiará en profundidad en el tema de Límites y Continuidad.
+Para $x = 1$:
+- El tramo de la izquierda da $1 + 2 = 3$.
+- El valor en el punto es $f(1) = 3$.
+- El tramo de la derecha da $-1 + 4 = 3$.
+
+Como los tres valores coinciden, la gráfica no presenta saltos en $x = 1$.
+
+**Ejemplo 3.7 (Función con salto):**
+Sea:
+$$g(x) = \begin{cases}
+x^2 & \text{si } x < 2 \\
+x + 3 & \text{si } x \geq 2
+\end{cases}$$
+
+Para $x = 2$:
+- El tramo de la izquierda da $2^2 = 4$.
+- El valor en el punto es $g(2) = 2 + 3 = 5$.
+
+Como no coinciden, la gráfica presenta un salto en $x = 2$.
+
+> **Nota:** El concepto formal de continuidad, junto con las definiciones precisas de límite lateral y discontinuidad, se estudiará en el tema de Límites y Continuidad.
+
+### 3.5 Aplicaciones
+
+Las funciones a tramos modelan situaciones donde la regla de asignación cambia según condiciones:
+
+- **Economía:** Impuestos progresivos, tarifas de servicios públicos, costos de envío por rangos de peso.
+- **Ingeniería eléctrica:** Señales digitales, funciones de activación en redes neuronales (ReLU), controladores de encendido/apagado.
+- **Mecánica:** Fuerzas de fricción que cambian según la dirección del movimiento, resortes con comportamientos distintos en compresión y extensión.
+- **Matemáticas:** Valor absoluto, parte entera, funciones definidas por casos en problemas de optimización.
+
+### 3.6 Observaciones
+
+> **Observación (disjunción de tramos):** Es fundamental que los tramos sean disjuntos. Si un valor $x_0$ perteneciera a dos tramos distintos con fórmulas diferentes, la función no estaría bien definida. En la práctica, cuando las condiciones usan desigualdades estrictas en un extremo y no estrictas en el otro, como $x < a$ y $x \geq a$, se garantiza la disjunción.
+
+> **Observación (gráfica):** Para graficar una función a tramos se dibuja cada fórmula solo sobre su dominio correspondiente. En los puntos de transición se debe indicar si el punto pertenece o no a cada tramo mediante círculos abiertos o cerrados.
+
+> **Observación (extensión futura):** Las funciones a tramos son un terreno natural para estudiar continuidad, derivabilidad e integrabilidad. Muchas de las funciones "patológicas" que motivaron la rigurosización del análisis en el siglo XIX fueron construidas precisamente mediante definiciones a tramos o como límites de ellas.
 
 ---
 ## 4. Funciones Especiales y Funciones Peculiares
 
-La definición formal de función —una regla que asigna a cada elemento de un conjunto exactamente un elemento de otro conjunto— es deliberadamente amplia. Las funciones que se estudian en una primera clase (polinomios, exponenciales, trigonométricas, logaritmos) comparten una característica que nos vuelve cómodos: son curvas suaves, predecibles y fácilmente graficables. Sin embargo, la definición de función no exige ninguna de esas cualidades.
+La definición de función es deliberadamente amplia: una regla que asigna a cada elemento de un conjunto exactamente un elemento de otro conjunto. Los polinomios, exponenciales, logaritmos y trigonométricas son ejemplos suaves y predecibles, pero la definición no exige ninguna de esas cualidades. A lo largo de la historia han surgido funciones con comportamientos irregulares que resultaron esenciales para comprender qué es posible dentro del análisis matemático y para modelar fenómenos donde las reglas cambian de manera abrupta.
 
-**Definición 4.0 (Función Especial):**
-Se denomina **función especial** a toda función que, por su recurrencia y utilidad en matemáticas, física o ingeniería, ha recibido un nombre propio, una notación estandarizada y un estudio sistemático de sus propiedades. No existe un criterio único y universal para determinar si una función merece ese título; la distinción es convencional y refleja la importancia histórica y práctica de la función dentro de la comunidad científica.
+> **Nota histórica:** Durante el siglo XIX, matemáticos como **Peter Gustav Lejeune Dirichlet**, **Karl Weierstrass** y **Johann Thomae** construyeron funciones que desafiaron las intuiciones dominantes sobre continuidad, derivabilidad e integrabilidad. Estos ejemplos mostraron que conceptos que parecían obvios requerían definiciones rigurosas, lo que impulsó la modernización del análisis. Al mismo tiempo, ingenieros como **Oliver Heaviside** desarrollaron funciones discontinuas para modelar circuitos eléctricos, demostrando que las matemáticas irregulares también tienen aplicaciones prácticas.
 
-Esta sección tiene dos propósitos distintos. Por un lado, presentar funciones con nombre propio que aparecerán repetidamente en cursos de ingeniería, física y computación —familiarizarse con ellas ahora facilita enormemente el trabajo futuro. Por otro, mostrar funciones construidas deliberadamente para desafiar la intuición, cuyo estudio ha sido fundamental para el desarrollo del Análisis Matemático moderno.
-### 4.1 Función Piso, Función Techo y Parte Fraccionaria
+### 4.1 Función piso, función techo y parte fraccionaria
 
-Pensemos en el problema cotidiano de redondear un número real hacia el entero más cercano. Si se tiene $x = 3.7$, intuitivamente se sabe que "cabe" dentro del intervalo $[3, 4)$. Las funciones piso y techo formalizan exactamente esa idea: determinar cuál es el entero inmediatamente inferior o superior a un real dado.
+Muchos procesos cotidianos requieren convertir un número real en un entero: contar objetos completos, determinar cuántas unidades caben en una medida o calcular el tiempo transcurrido en horas enteras. Las funciones piso y techo formalizan estas operaciones, mientras que la parte fraccionaria extrae lo que sobra.
 
-**Definición 4.1 (Función Piso):**
+**Definición 4.1 (Función piso):**
 La función piso $\lfloor \cdot \rfloor : \mathbb{R} \to \mathbb{Z}$ asigna a cada $x \in \mathbb{R}$ el mayor entero menor o igual a $x$:
 $$\lfloor x \rfloor = \max\{k \in \mathbb{Z} : k \leq x\}$$
 
-> **Observación:** Se cumple que $\lfloor x \rfloor \leq x < \lfloor x \rfloor + 1$ para todo $x \in \mathbb{R}$.
+Equivalentemente, $\lfloor x \rfloor$ es el único entero que satisface:
+$$\lfloor x \rfloor \leq x < \lfloor x \rfloor + 1$$
 
-**Definición 4.2 (Función Techo):**
+**Definición 4.2 (Función techo):**
 La función techo $\lceil \cdot \rceil : \mathbb{R} \to \mathbb{Z}$ asigna a cada $x \in \mathbb{R}$ el menor entero mayor o igual a $x$:
 $$\lceil x \rceil = \min\{k \in \mathbb{Z} : k \geq x\}$$
 
 **Ejemplo 4.1:**
-$$\lfloor 3.7 \rfloor = 3, \quad \lfloor -1.2 \rfloor = -2, \quad \lfloor 5 \rfloor = 5$$
-$$\lceil 3.7 \rceil = 4, \quad \lceil -1.2 \rceil = -1, \quad \lceil 5 \rceil = 5$$
+$$\lfloor 3.7 \rfloor = 3, \qquad \lfloor -1.2 \rfloor = -2, \qquad \lfloor 5 \rfloor = 5$$
+$$\lceil 3.7 \rceil = 4, \qquad \lceil -1.2 \rceil = -1, \qquad \lceil 5 \rceil = 5$$
 
 > **Advertencia:** Para números negativos, $\lfloor -1.2 \rfloor = -2$, no $-1$. La función piso siempre redondea hacia $-\infty$, no hacia cero.
 
-Una vez definida la función piso, se puede extraer de cualquier real su parte decimal de manera precisa.
-
-**Definición 4.3 (Parte Fraccionaria):**
-La parte fraccionaria $\{\cdot\} : \mathbb{R} \to [0,1)$ se define para todo $x \in \mathbb{R}$ como:
+**Definición 4.3 (Parte fraccionaria):**
+La parte fraccionaria $\{\cdot\} : \mathbb{R} \to [0, 1)$ se define como:
 $$\{x\} = x - \lfloor x \rfloor$$
 
-Su gráfica es una onda de sierra periódica de período 1: sube linealmente desde 0 hasta 1 (sin alcanzarlo) y luego reinicia. Es un ejemplo de función periódica que no tiene relación alguna con la trigonometría.
+Su gráfica es una función periódica de período 1 con forma de diente de sierra.
 
 **Ejemplo 4.2:**
-$$\{3.7\} = 3.7 - 3 = 0.7, \quad \{-1.2\} = -1.2 - (-2) = 0.8, \quad \{5\} = 0$$
+$$\{3.7\} = 0.7, \qquad \{-1.2\} = 0.8, \qquad \{5\} = 0$$
 
-### 4.2 Función Signo y Función de Heaviside
+### 4.2 Función signo y función de Heaviside
 
-Estas dos funciones modelan comportamientos de "todo o nada": situaciones en que solo interesa el signo de una cantidad, o el instante en que un fenómeno se activa. Son omnipresentes en ingeniería de control, procesamiento de señales y sistemas dinámicos.
+Estas funciones modelan situaciones de "todo o nada": detectar el signo de una cantidad o el instante en que un fenómeno se activa. Son fundamentales en ingeniería de control, procesamiento de señales y sistemas dinámicos.
 
-**Definición 4.4 (Función Signo):**
-La función signo $\text{sgn} : \mathbb{R} \to \{-1, 0, 1\}$ se define como:
-$$\text{sgn}(x) = \begin{cases} -1 & \text{si } x < 0 \\ 0 & \text{si } x = 0 \\ 1 & \text{si } x > 0 \end{cases}$$
+**Definición 4.4 (Función signo):**
+La función signo $\operatorname{sgn} : \mathbb{R} \to \{-1, 0, 1\}$ se define como:
+$$\operatorname{sgn}(x) = \begin{cases}
+-1 & \text{si } x < 0 \\
+0 & \text{si } x = 0 \\
+1 & \text{si } x > 0
+\end{cases}$$
 
 **Definición 4.5 (Función de Heaviside):**
 La función de Heaviside $H : \mathbb{R} \to \{0, 1\}$, también llamada escalón unitario, se define como:
+$$H(x) = \begin{cases}
+0 & \text{si } x < 0 \\
+1 & \text{si } x \geq 0
+\end{cases}$$
 
-$$H(x) = \begin{cases} 0 & \text{si } x < 0 \\ 1 & \text{si } x \geq 0 \end{cases}$$
+> **Nota histórica:** Oliver Heaviside (1850–1925), ingeniero eléctrico autodidacta, introdujo esta función para modelar el encendido instantáneo de circuitos eléctricos. Aunque sus métodos fueron inicialmente criticados por falta de rigor, resultaron correctos y se convirtieron en estándar de la ingeniería.
 
-> **Nota histórica:** Oliver Heaviside (1850–1925) fue un ingeniero eléctrico autodidacta que desarrolló esta función para modelar el encendido de circuitos eléctricos en $t = 0$. Sus métodos fueron inicialmente rechazados por carecer de rigor, pero resultaron correctos y hoy son estándar en ingeniería.
+> **Nota:** En algunos textos se define $H(0) = \frac{1}{2}$ o se deja indefinido. La elección depende del contexto de aplicación.
 
-> **Nota:** En algunos textos, $H(0)$ se define como $\frac{1}{2}$ o se deja indefinido. La definición varía según el contexto de aplicación.
+Ambas funciones se relacionan mediante:
+$$\operatorname{sgn}(x) = 2H(x) - 1, \quad \text{para } x \neq 0$$
 
-Se puede verificar que ambas funciones se relacionan mediante:
-$$\text{sgn}(x) = 2H(x) - 1 \quad \text{para } x \neq 0$$
+### 4.3 Función logística (sigmoide)
 
-### 4.3 Función Logística (Sigmoide)
+Muchos procesos de crecimiento no son ilimitados: una población aumenta rápidamente al principio, pero su tasa decrece al acercarse a la capacidad de carga del ambiente. El modelo que describe este comportamiento es la función logística.
 
-Pensemos en el crecimiento de una población dentro de un ecosistema con recursos limitados: al principio crece lentamente (pocos individuos), luego se acelera (fase exponencial) y finalmente desacelera al acercarse al límite de recursos del entorno. Este comportamiento en forma de "S" es exactamente lo que describe la función logística.
-
-**Definición 4.6 (Función Logística):**
+**Definición 4.6 (Función logística):**
 La función logística $f : \mathbb{R} \to (0, L)$ se define como:
 $$f(x) = \frac{L}{1 + e^{-k(x - x_0)}}$$
-donde $L > 0$ es la cota superior (asíntota horizontal), $k > 0$ es la tasa de crecimiento y $x_0 \in \mathbb{R}$ es el punto de inflexión (centro de la curva).
+donde $L > 0$ es la cota superior, $k > 0$ es la tasa de crecimiento y $x_0 \in \mathbb{R}$ es el punto de inflexión.
 
-La forma más simple, con $L = 1$, $k = 1$, $x_0 = 0$, se denomina **función sigmoide estándar**:
+La forma más simple, con $L = 1$, $k = 1$ y $x_0 = 0$, se denomina **función sigmoide estándar**:
 $$\sigma(x) = \frac{1}{1 + e^{-x}}$$
 
-> **Observación:** La función sigmoide es fundamental en aprendizaje automático: se utiliza como función de activación en redes neuronales y como función de salida en regresión logística, donde su recorrido $(0,1)$ permite interpretarla como una probabilidad.
+La función sigmoide es ampliamente utilizada en aprendizaje automático como función de activación en redes neuronales y como salida en regresión logística, donde su recorrido $(0, 1)$ permite interpretar valores como probabilidades.
 
-### 4.4 Función Gaussiana
+### 4.4 Función gaussiana
 
-La función gaussiana describe la forma de la famosa "campana de Gauss". Aparece en probabilidad y estadística (distribución normal), en física cuántica (paquetes de onda), en óptica (perfiles de haces láser) y en procesamiento de imágenes, entre muchos otros contextos.
+La función gaussiana describe la conocida "campana de Gauss". Aparece en probabilidad y estadística (distribución normal), física cuántica (paquetes de onda), óptica (perfiles de haces láser) y procesamiento de imágenes.
 
-**Definición 4.7 (Función Gaussiana):**
+**Definición 4.7 (Función gaussiana):**
 La función gaussiana estándar $f : \mathbb{R} \to (0, 1]$ se define como:
 $$f(x) = e^{-x^2}$$
 
-Es siempre positiva, alcanza su máximo en $x = 0$ con $f(0) = 1$, y decrece simétricamente hacia cero en ambas direcciones.
+Es siempre positiva, alcanza su máximo $f(0) = 1$ y decrece simétricamente hacia cero en ambas direcciones.
 
-> **Observación:** En Cálculo Integral se verá que $f(x) = e^{-x^2}$ no posee antiderivada elemental: no existe ninguna combinación de funciones elementales (polinomios, exponenciales, trigonométricas, logaritmos) cuya derivada sea $e^{-x^2}$. A pesar de ello, el área encerrada bajo la curva sobre todo $\mathbb{R}$ tiene un valor exacto y sorprendente: $\sqrt{\pi}$.
+> **Observación:** En Cálculo Integral se demuestra que $f(x) = e^{-x^2}$ no posee antiderivada elemental, pero el área bajo la curva en toda la recta real es $\sqrt{\pi}$.
 
-### 4.5 Función Sinc (Seno Cardinal)
+### 4.5 Función sinc (seno cardinal)
 
-Si se observa qué ocurre con $\frac{\sin(x)}{x}$ al alejar $x$ del origen, se tiene una onda que oscila pero cuya amplitud decae progresivamente. Esta forma es característica de fenómenos de difracción en óptica y de filtros ideales en procesamiento de señales.
+La función sinc aparece en fenómenos de difracción en óptica y en el diseño de filtros ideales en procesamiento de señales. Su definición requiere una extensión continua en el origen.
 
-**Definición 4.8 (Función Sinc):**
-La función seno cardinal $\text{sinc} : \mathbb{R} \to \mathbb{R}$ se define como:
-$$\text{sinc}(x) = \begin{cases} \dfrac{\sin(x)}{x} & \text{si } x \neq 0 \\[6pt] 1 & \text{si } x = 0 \end{cases}$$
+**Definición 4.8 (Función sinc):**
+La función seno cardinal $\operatorname{sinc} : \mathbb{R} \to \mathbb{R}$ se define como:
+$$\operatorname{sinc}(x) = \begin{cases}
+\dfrac{\sin(x)}{x} & \text{si } x \neq 0 \\
+1 & \text{si } x = 0
+\end{cases}$$
 
-El valor en $x = 0$ se establece por continuidad: en Cálculo de Límites se demostrará que $\displaystyle\lim_{x \to 0} \frac{\sin(x)}{x} = 1$.
+El valor en $x = 0$ se elige para que la función sea continua, ya que en el tema de Límites se demostrará que:
+$$\lim_{x \to 0} \frac{\sin(x)}{x} = 1$$
 
 ### 4.6 Deltas: Kronecker y Dirac
 
-A veces interesa modelar un evento que ocurre en un único punto exacto: un golpe instantáneo, una carga puntual, un pulso eléctrico de duración despreciable. Las funciones delta surgen de esa necesidad.
+En física e ingeniería surge con frecuencia la necesidad de modelar eventos concentrados en un punto: un golpe instantáneo, una carga puntual o un pulso eléctrico de duración despreciable.
 
 **Definición 4.9 (Delta de Kronecker):**
-Para $i, j \in \mathbb{Z}$, la delta de Kronecker $\delta : \mathbb{Z} \times \mathbb{Z} \to \{0,1\}$ se define como:
-$$\delta_{ij} = \begin{cases} 1 & \text{si } i = j \\ 0 & \text{si } i \neq j \end{cases}$$
+Para $i, j \in \mathbb{Z}$, la delta de Kronecker $\delta : \mathbb{Z} \times \mathbb{Z} \to \{0, 1\}$ se define como:
+$$\delta_{ij} = \begin{cases}
+1 & \text{si } i = j \\
+0 & \text{si } i \neq j
+\end{cases}$$
 
-Se utiliza en álgebra lineal para describir matrices identidad y sistemas ortogonales. Será recurrente en el curso de Álgebra Lineal.
+Se utiliza en álgebra lineal para describir matrices identidad y sistemas ortogonales.
 
 **Definición 4.10 (Delta de Dirac):**
-La delta de Dirac $\delta(x)$ es el análogo continuo de la delta de Kronecker. Intuitivamente modela un impulso concentrado en un único punto: vale cero en todo $x \neq 0$, pero su "masa" total es exactamente 1. Se define formalmente en la teoría de distribuciones —una extensión del concepto de función que se estudia en cursos avanzados de Análisis— y no es una función en el sentido clásico.
+La delta de Dirac es el análogo continuo de la delta de Kronecker. Intuitivamente modela un impulso concentrado en un punto: vale cero fuera del origen y su "masa" total es 1. No es una función en el sentido clásico; se define formalmente en la teoría de distribuciones, que se estudia en cursos avanzados de análisis.
 
-Se escribe habitualmente como:
-$$\delta(x) = \begin{cases} +\infty & \text{si } x = 0 \\ 0 & \text{si } x \neq 0 \end{cases}$$
+Se representa de manera informal como:
+$$\delta(x) = \begin{cases}
++\infty & \text{si } x = 0 \\
+0 & \text{si } x \neq 0
+\end{cases}$$
 
-con la condición adicional de que su "masa" total es exactamente 1.
+con la condición adicional de que su integral sobre toda la recta real es 1.
 
-> **Advertencia:** Esta definición a trozos es únicamente una descripción intuitiva. $\delta(x)$ no es una función en el sentido clásico —ninguna función puede valer $+\infty$ en un punto y aun así tener masa total finita dentro del marco habitual del Cálculo. Se define formalmente en la teoría de distribuciones, que corresponde a cursos avanzados de Análisis. Se menciona aquí como familiarización, dada su importancia en ingeniería de control, mecánica cuántica y ecuaciones diferenciales.
+> **Advertencia:** La delta de Dirac no es una función en el sentido clásico. Ninguna función puede valer $+\infty$ en un punto y tener integral finita. Se presenta aquí como familiarización por su importancia en ingeniería de control, mecánica cuántica y ecuaciones diferenciales.
 
-### 4.7 Función Indicatriz y Función de Dirichlet
+### 4.7 Función indicatriz y función de Dirichlet
 
-Las siguientes funciones actúan como "detectores de pertenencia" a conjuntos. Son construcciones simples pero de gran importancia teórica.
+La función indicatriz detecta si un elemento pertenece a un conjunto dado. Un caso particular históricamente importante es la función de Dirichlet.
 
-**Definición 4.11 (Función Indicatriz):**
+**Definición 4.11 (Función indicatriz):**
 Sea $A \subseteq \mathbb{R}$. La función indicatriz $\mathbf{1}_A : \mathbb{R} \to \{0, 1\}$ se define como:
-$$\mathbf{1}_A(x) = \begin{cases} 1 & \text{si } x \in A \\ 0 & \text{si } x \notin A \end{cases}$$
+$$\mathbf{1}_A(x) = \begin{cases}
+1 & \text{si } x \in A \\
+0 & \text{si } x \notin A
+\end{cases}$$
 
 **Definición 4.12 (Función de Dirichlet):**
-La función de Dirichlet $D : \mathbb{R} \to \{0, 1\}$ es el caso particular de la función indicatriz sobre el conjunto de los racionales $\mathbb{Q}$:
-$$D(x) = \mathbf{1}_{\mathbb{Q}}(x) = \begin{cases} 1 & \text{si } x \in \mathbb{Q} \\ 0 & \text{si } x \notin \mathbb{Q} \end{cases}$$
+La función de Dirichlet $D : \mathbb{R} \to \{0, 1\}$ es la indicatriz del conjunto de los números racionales:
+$$D(x) = \mathbf{1}_{\mathbb{Q}}(x) = \begin{cases}
+1 & \text{si } x \in \mathbb{Q} \\
+0 & \text{si } x \notin \mathbb{Q}
+\end{cases}$$
 
-> **Nota histórica:** Peter Gustav Lejeune Dirichlet propuso esta función en 1829 como contraejemplo a la noción intuitiva de que toda función puede integrarse. Fue uno de los primeros ejemplos que impulsó el desarrollo riguroso del Análisis.
+> **Nota histórica:** Dirichlet propuso esta función en 1829 como contraejemplo a la idea intuitiva de que toda función acotada es integrable. Fue uno de los primeros ejemplos que impulsaron el desarrollo riguroso del análisis.
 
-Esta función es discontinua en absolutamente todos los puntos de $\mathbb{R}$. La razón es que entre dos racionales siempre existe un irracional y viceversa, de modo que en cualquier vecindad de cualquier punto conviven valores de ambos tipos. En consecuencia, la función oscila entre 0 y 1 en toda vecindad, sin importar cuán pequeña sea.
+La función de Dirichlet es discontinua en todo punto de $\mathbb{R}$, pues en cualquier vecindad de cualquier número conviven racionales e irracionales.
 
-### 4.8 Función de Thomae y Función de Weierstrass
+### 4.8 Funciones de Thomae y Weierstrass
 
-Estas dos funciones representan algunos de los resultados más contraintuitivos del Análisis Matemático del siglo XIX. Se presentan aquí como cultura matemática y como motivación para comprender que la continuidad y la derivabilidad son propiedades verdaderamente profundas.
+Algunas funciones del siglo XIX mostraron que la continuidad y la derivabilidad son propiedades mucho más delicadas de lo que la intuición sugiere.
 
 **Definición 4.13 (Función de Thomae):**
-La función de Thomae $T : \mathbb{R} \to [0, 1]$, también llamada función de las "palomitas de maíz", se define como:
-$$T(x) = \begin{cases} \dfrac{1}{q} & \text{si } x = \dfrac{p}{q} \in \mathbb{Q}, \text{ con } \gcd(p,q) = 1,\ q > 0 \\[6pt] 0 & \text{si } x \notin \mathbb{Q} \end{cases}$$
+La función de Thomae $T : \mathbb{R} \to [0, 1]$ se define como:
+$$T(x) = \begin{cases}
+\dfrac{1}{q} & \text{si } x = \dfrac{p}{q} \in \mathbb{Q}, \text{ con } \gcd(p, q) = 1,\ q > 0 \\[6pt]
+0 & \text{si } x \notin \mathbb{Q}
+\end{cases}$$
 
-Su comportamiento es profundamente contraintuitivo: es continua en cada número irracional y discontinua en cada número racional. Demuestra que los conjuntos de puntos de continuidad y discontinuidad de una función pueden tener una estructura arbitrariamente compleja.
+Esta función es continua en todo número irracional y discontinua en todo número racional, mostrando que los conjuntos de continuidad y discontinuidad pueden tener estructuras complejas.
 
 **Definición 4.14 (Función de Weierstrass):**
-La función de Weierstrass $W : \mathbb{R} \to \mathbb{R}$ se define como la serie:
+La función de Weierstrass $W : \mathbb{R} \to \mathbb{R}$ se define mediante la serie:
 $$W(x) = \sum_{n=0}^{\infty} a^n \cos(b^n \pi x)$$
-donde $0 < a < 1$, $b$ es un entero positivo impar, y $ab > 1 + \frac{3}{2}\pi$.
+donde $0 < a < 1$, $b$ es un entero positivo impar y $ab > 1 + \frac{3}{2}\pi$.
 
-> **Nota histórica:** En 1872, Karl Weierstrass presentó esta función ante la Academia de Berlín, demostrando que es continua en todo $\mathbb{R}$ pero no es diferenciable en ningún punto. Hasta entonces, la comunidad matemática asumía —sin demostración— que toda función continua debía ser derivable salvo quizás en algunos puntos aislados. La presentación de Weierstrass fue considerada un escándalo matemático y obligó a refundar el Análisis sobre bases completamente rigurosas.
+> **Nota histórica:** En 1872, Weierstrass demostró que esta función es continua en toda la recta real pero no es derivable en ningún punto. Este resultado contradijo la creencia extendida de que toda función continua era derivable salvo en puntos aislados, y obligó a refundar el análisis sobre bases rigurosas.
 
-Se menciona aquí únicamente como cultura general. Su estudio formal corresponde a Análisis Real.
-### 4.9 Ondas Cuadrada y Triangular
+Ambas funciones se mencionan aquí como cultura general; su estudio formal corresponde a cursos de análisis real.
 
-En la práctica de la ingeniería, las oscilaciones no siempre tienen la forma suave del seno o el coseno. Las señales digitales, los circuitos de control y los sintetizadores de audio trabajan constantemente con formas de onda que presentan cambios abruptos o pendientes constantes a trozos.
+### 4.9 Ondas cuadrada y triangular
 
-**Onda cuadrada:** Alterna periódicamente entre dos valores fijos, habitualmente $1$ y $-1$, con transiciones instantáneas. Modela señales digitales (bits) y señales de reloj en sistemas computacionales. Se puede expresar en términos de funciones ya definidas mediante:
-$$f(x) = \text{sgn}(\sin(x))$$
+En ingeniería, las señales periódicas no siempre tienen forma sinusoidal. Las ondas cuadrada y triangular son ejemplos de funciones periódicas con cambios abruptos o pendientes constantes.
 
-**Onda triangular:** Sube y baja con pendiente lineal constante, formando una sucesión de picos afilados. Es común en síntesis de audio y en sistemas de barrido. Puede expresarse usando la parte fraccionaria:
+**Definición 4.15 (Onda cuadrada):**
+La onda cuadrada de período $2\pi$ que alterna entre $1$ y $-1$ puede expresarse como:
+$$f(x) = \operatorname{sgn}(\sin(x))$$
+
+Modela señales digitales y señales de reloj en sistemas computacionales.
+
+**Definición 4.16 (Onda triangular):**
+La onda triangular de período $T > 0$ puede expresarse mediante la parte fraccionaria:
 $$f(x) = \left| 2\left\{\frac{x}{T}\right\} - 1 \right|$$
-donde $T > 0$ es el período.
 
-> **Observación:** Tanto la onda cuadrada como la triangular son funciones periódicas que pueden descomponerse como sumas infinitas de senos y cosenos. Este resultado, conocido como **serie de Fourier**, se estudiará formalmente en cursos de Ecuaciones Diferenciales o de Señales y Sistemas, y constituye una de las herramientas más poderosas de la ingeniería aplicada.
+Es común en síntesis de audio y sistemas de barrido.
+
+> **Observación:** Ambas ondas pueden descomponerse como sumas infinitas de senos y cosenos mediante series de Fourier, tema que se estudia en cursos de ecuaciones diferenciales y de señales y sistemas.
+
+### 4.10 Aplicaciones
+
+Las funciones especiales y las funciones con discontinuidades aparecen en múltiples áreas:
+
+- **Ingeniería eléctrica:** La función de Heaviside modela el encendido de circuitos; la función signo representa señales bipolares; las ondas cuadrada y triangular son fundamentales en electrónica digital y audio.
+- **Procesamiento de señales:** La función sinc es la respuesta en frecuencia del filtro pasabajos ideal; la delta de Dirac representa impulsos unitarios.
+- **Aprendizaje automático:** La función sigmoide se usa como activación en redes neuronales; la función rampa es la base de la activación ReLU.
+- **Probabilidad y estadística:** La función gaussiana describe la distribución normal, central en estadística inferencial y teoría de errores.
+- **Análisis matemático:** Las funciones de Dirichlet, Thomae y Weierstrass fueron decisivas para desarrollar definiciones rigurosas de integrabilidad, continuidad y derivabilidad.
+
+### 4.11 Observaciones
+
+> **Observación (funciones con nombre propio):** El hecho de que una función reciba un nombre propio no implica que sea más importante que otras, sino que aparece con suficiente frecuencia como para merecer notación estandarizada. Muchas de estas funciones surgen de problemas concretos en física o ingeniería.
+
+> **Observación (uso de conceptos futuros):** Varias de las funciones de esta sección —sinc, delta de Dirac, gaussiana, Weierstrass— se comprenden plenamente solo con herramientas de cálculo avanzado. Se presentan aquí como primera familiarización, de modo que su aparición posterior no sea sorprendente.
+
+> **Observación (relación con funciones a tramos):** Muchas funciones de esta sección, como el valor absoluto, la función rampa, la función signo, la de Heaviside y las ondas cuadrada y triangular, son ejemplos de funciones definidas a tramos.
 
 ---
 ## 5. Periodicidad
 
-### 5.1 Concepto de Periodicidad y Definición Formal
+Muchos fenómenos naturales y tecnológicos se repiten a intervalos regulares: el latido cardíaco, las estaciones del año, el movimiento de un péndulo, la oscilación de un circuito eléctrico o las ondas de sonido. Matemáticamente, estos comportamientos se modelan mediante **funciones periódicas**, cuya utilidad principal radica en que basta estudiar un solo ciclo para conocer la función en toda su extensión.
 
-Muchos fenómenos en la naturaleza y en la ingeniería se repiten a intervalos regulares de tiempo o espacio: el latido de un corazón, el ciclo de las estaciones del año, el movimiento de un péndulo o la oscilación de un circuito eléctrico. Matemáticamente, capturamos este comportamiento repetitivo infinito mediante el concepto de funciones periódicas. La gran ventaja de estas funciones es que, si conocemos exactamente cómo se comportan en un solo ciclo, automáticamente conocemos su comportamiento en toda la recta real numérica.
+> **Nota histórica:** El estudio sistemático de las funciones periódicas comenzó con la astronomía antigua, donde los modelos de ciclos planetarios requerían describir movimientos repetitivos. En el siglo XVIII, **Jean-Baptiste Joseph Fourier** demostró que toda función periódica suficientemente regular puede descomponerse como suma infinita de senos y cosenos. Este resultado, conocido como **serie de Fourier**, transformó la física matemática y sigue siendo central en ingeniería, acústica, óptica y procesamiento de señales.
 
-**Definición 5.1 (Función Periódica):**
-Una función $f: D \to \mathbb{R}$ se denomina **periódica** si existe un número real $T > 0$ tal que, para todo $x \in D$, se cumple:
+### 5.1 Definición y propiedades básicas
+
+**Definición 5.1 (Función periódica):**
+Sea $f: D \subseteq \mathbb{R} \to \mathbb{R}$ una función. Se dice que $f$ es **periódica** si existe un número real $T > 0$ tal que, para todo $x \in D$, se cumple:
 1. $x + T \in D$
 2. $f(x + T) = f(x)$
 
-El número $T$ se llama un **período** de la función. El menor valor positivo $T$ que satisface esta condición se denomina **período fundamental** (frecuentemente llamado solo "el período").
+El número $T$ recibe el nombre de **período** de $f$. Si existe un período mínimo, es decir, un período positivo menor que cualquier otro, se denomina **período fundamental**.
 
-**Proposición 5.1 (Múltiplos del período):**
-Si $f$ es una función periódica con período $T$, entonces para cualquier número entero $n \in \mathbb{Z}$, se cumple que:
+**Proposición 5.1 (Múltiplos enteros de un período):**
+Sea $f: D \to \mathbb{R}$ una función periódica con período $T$. Entonces, para todo $n \in \mathbb{Z}$ y para todo $x \in D$ tal que $x + nT \in D$, se cumple:
 $$f(x + nT) = f(x)$$
-Es decir, cualquier múltiplo entero del período fundamental también actúa como un período válido.
+
+**Demostración:**
+Para $n = 0$ la afirmación es inmediata. Para $n > 0$ se aplica la definición de período $n$ veces:
+$$f(x + nT) = f\bigl(x + (n-1)T + T\bigr) = f\bigl(x + (n-1)T\bigr) = \cdots = f(x)$$
+Para $n < 0$ se razona de manera análoga desplazándose hacia la izquierda. $\blacksquare$
 
 **Ejemplo 5.1:**
-Las funciones trigonométricas son el arquetipo clásico por excelencia:
-- La función $f(x) = \sin(x)$ cumple que $\sin(x + 2\pi) = \sin(x)$, por lo que su período fundamental es $T = 2\pi$. Por la Proposición 5.1, también se cumple que $\sin(x + 4\pi) = \sin(x)$ o $\sin(x - 6\pi) = \sin(x)$.
-- La función $g(x) = \tan(x)$ tiene un período fundamental de $T = \pi$.
-### 5.2 Más Allá de la Trigonometría
+Las funciones trigonométricas son el ejemplo arquetípico de funciones periódicas:
+- $f(x) = \sin(x)$ satisface $\sin(x + 2\pi) = \sin(x)$, por lo que $T = 2\pi$ es un período. De hecho, es el período fundamental.
+- $g(x) = \tan(x)$ satisface $\tan(x + \pi) = \tan(x)$, por lo que su período fundamental es $\pi$.
 
-Aunque solemos asociar la periodicidad exclusivamente a los senos y cosenos, en la Sección 4 demostramos que existen muchas otras funciones periódicas exóticas y útiles.
+### 5.2 Ejemplos de funciones periódicas no trigonométricas
+
+La periodicidad no es exclusiva de las funciones trigonométricas.
 
 **Ejemplo 5.2 (Parte fraccionaria):**
-La función parte fraccionaria, $f(x) = \{x\} = x - \lfloor x \rfloor$, es estrictamente periódica. Vamos a demostrar analíticamente que su período es $T = 1$.
-
-**Solución:**
-Evaluamos la función desplazada en 1 unidad:
+La función $f(x) = \{x\} = x - \lfloor x \rfloor$ es periódica con período $T = 1$. En efecto:
 $$\begin{align}
 f(x + 1) &= (x + 1) - \lfloor x + 1 \rfloor \\
 &= x + 1 - (\lfloor x \rfloor + 1) \\
 &= x - \lfloor x \rfloor \\
 &= f(x)
 \end{align}$$
-La función se repite idéntica cada 1 unidad entera, generando su clásica gráfica de "diente de sierra".
+
+Su gráfica es la conocida onda diente de sierra.
 
 **Ejemplo 5.3 (Ondas de ingeniería):**
-La onda cuadrada y la onda triangular introducidas previamente también son periódicas. En ingeniería y física, al período $T$ (medido en segundos) se le asocia directamente una **frecuencia** $f$ (medida en Hertz o ciclos por segundo), definida simplemente como el inverso del período: $f = \frac{1}{T}$.
-### 5.3 Alteración del Período mediante Transformaciones
+La onda cuadrada y la onda triangular, definidas en la Sección 4, también son funciones periódicas. En ingeniería y física, al período $T$ (medido en segundos) se le asocia una **frecuencia** $f$ (medida en Hertz) mediante:
+$$f = \frac{1}{T}$$
 
-¿Qué ocurre si aplicamos una transformación de escalado horizontal a una función periódica? Como se vio en la sección de transformaciones (Sección 1.2), multiplicar la variable independiente por una constante comprime o estira la gráfica como si fuera un resorte.
+### 5.3 Efecto del escalado horizontal
 
-**Teorema 5.1 (Período de funciones escaladas):**
-Si $f(x)$ es una función periódica con período fundamental $T$, entonces la nueva función compuesta $g(x) = f(cx)$, donde $c \neq 0$, tiene un nuevo período fundamental dado por:
-$$T_{nuevo} = \frac{T}{|c|}$$
+**Teorema 5.1 (Período de una función escalada):**
+Sea $f: D \to \mathbb{R}$ una función periódica con período fundamental $T$. Sea $c \in \mathbb{R}\setminus\{0\}$ y sea $g(x) = f(cx)$, definida para los $x$ tales que $cx \in D$. Entonces $g$ es periódica y un período de $g$ es:
+$$T_g = \frac{T}{|c|}$$
+
+Si $T$ es el período fundamental de $f$, entonces $T/|c|$ es el período fundamental de $g$.
 
 **Demostración:**
-Buscamos un valor $P > 0$ tal que $g(x + P) = g(x)$ para todo $x$.
-Sustituyendo en nuestra definición de $g$:
-$$\begin{align}
-g(x + P) &= f(c(x + P)) \\
-&= f(cx + cP)
-\end{align}$$
-Sabemos por hipótesis que la función $f$ repite su valor cuando a su argumento interno se le suma su período original $T$. Por lo tanto, para que se complete un ciclo, la cantidad sumada $cP$ debe equivaler en magnitud a $T$:
-$$|c|P = T \implies P = \frac{T}{|c|}$$
-$\blacksquare$
+Sea $P = \frac{T}{|c|}$. Entonces:
+$$g(x + P) = f\bigl(c(x + P)\bigr) = f(cx + cP) = f\left(cx + \frac{c}{|c|}T\right)$$
+Como $f$ es periódica con período $T$, se tiene $f\left(cx + \frac{c}{|c|}T\right) = f(cx) = g(x)$. Por tanto, $P$ es un período de $g$.
+
+La afirmación sobre el período fundamental requiere demostrar que no existe un período positivo menor que $P$; este paso se omite aquí porque utiliza propiedades de la función $f$ que se estudian en cursos de análisis. $\blacksquare$
 
 **Ejemplo 5.4:**
-Determinar el período de la función $h(x) = \sin(3x)$.
+Determinar el período de $h(x) = \sin(3x)$.
 
-**Solución:**
-Identificamos la función base y el factor de escalado:
-- Función base: $\sin(x) \implies T = 2\pi$
-- Factor de compresión: $c = 3$
+La función base es $\sin(x)$, cuyo período fundamental es $2\pi$, y el factor de escalado es $c = 3$. Aplicando el teorema:
+$$T_h = \frac{2\pi}{3}$$
 
-Aplicando el Teorema 5.1:
-$$T_{nuevo} = \frac{2\pi}{3}$$
-**Interpretación:** El factor 3 comprime la gráfica horizontalmente. Ahora, la onda del seno completa un ciclo entero en un intervalo tres veces más corto que el original.
-### 5.4 Análisis de Periodicidad en Casos Complejos
+La gráfica se comprime horizontalmente: ahora la onda completa un ciclo en un intervalo tres veces más corto.
 
-A continuación, analizaremos funciones progresivamente más complejas para dominar el cálculo de períodos, desde casos directos hasta la combinación de múltiples ondas.
+### 5.4 Cálculo de períodos en casos más complejos
 
-**Ejemplo 5.5 (Caso simple: ensanchamiento horizontal):**
+**Ejemplo 5.5 (Ensanchamiento horizontal):**
 Determinar el período fundamental de $f(x) = \cos\left(\frac{x}{4}\right)$.
 
-**Solución:**
-La función base es $\cos(x)$, cuyo período fundamental es $T = 2\pi$.
-El factor de escalado es $c = \frac{1}{4}$.
-Aplicando el Teorema 5.1:
-$$T_{nuevo} = \frac{2\pi}{1/4} = 8\pi$$
-La onda se ha "estirado" horizontalmente, tardando cuatro veces más en completar un ciclo.
+La función base es $\cos(x)$, con período fundamental $2\pi$, y el factor de escalado es $c = \frac{1}{4}$. Por tanto:
+$$T_f = \frac{2\pi}{1/4} = 8\pi$$
 
-**Ejemplo 5.6 (Caso intermedio: potencias trigonométricas):**
-Determinar el período de $g(x) = \sin^2(x)$.
+**Ejemplo 5.6 (Potencias trigonométricas):**
+Determinar el período fundamental de $g(x) = \sin^2(x)$.
 
-**Solución:**
-A simple vista podría pensarse que el período sigue siendo $2\pi$, pero al elevar al cuadrado, las partes negativas de la onda seno se vuelven positivas, haciendo que el patrón de la onda se repita más rápido. Para demostrarlo analíticamente, usamos la identidad trigonométrica del ángulo doble:
+Usando la identidad del ángulo doble:
 $$\sin^2(x) = \frac{1 - \cos(2x)}{2} = \frac{1}{2} - \frac{1}{2}\cos(2x)$$
 
-Esta expresión es una función $\cos(2x)$ desplazada y escalada verticalmente, y tales transformaciones no afectan su período en el eje horizontal. 
-Calculamos el período del término que define la oscilación, $\cos(2x)$:
-$$T_{nuevo} = \frac{2\pi}{2} = \pi$$
-Por lo tanto, el período fundamental de $\sin^2(x)$ se reduce a $\pi$.
+La función resultante es una traslación y escalado vertical de $\cos(2x)$, cuyo período es:
+$$T_g = \frac{2\pi}{2} = \pi$$
 
-**Ejemplo 5.7 (Caso avanzado: suma de funciones periódicas):**
-Encontrar el período de la función combinada $h(x) = \sin(2x) + \cos(3x)$.
+Por tanto, el período fundamental de $\sin^2(x)$ es $\pi$.
 
-**Solución:**
-Cuando sumamos dos funciones periódicas, la nueva función resultante será periódica solo si existe un intervalo maestro que contenga un número exacto de ciclos de **ambas** funciones a la vez. Este período maestro se encuentra calculando el Mínimo Común Múltiplo (MCM) de los períodos individuales.
+**Ejemplo 5.7 (Suma de funciones periódicas):**
+Determinar el período fundamental de $h(x) = \sin(2x) + \cos(3x)$.
 
-1. Período de $\sin(2x)$: $T_1 = \frac{2\pi}{2} = \pi$
-2. Período de $\cos(3x)$: $T_2 = \frac{2\pi}{3}$
+Los períodos de las componentes son:
+$$T_1 = \frac{2\pi}{2} = \pi, \qquad T_2 = \frac{2\pi}{3}$$
 
-Buscamos el MCM entre $\pi$ y $\frac{2\pi}{3}$. Analizamos los múltiplos de cada uno para encontrar su primera coincidencia:
-- Múltiplos de $T_1$: $\pi, \mathbf{2\pi}, 3\pi, 4\pi, \ldots$
-- Múltiplos de $T_2$: $\frac{2\pi}{3}, \frac{4\pi}{3}, \mathbf{\frac{6\pi}{3}} \ (\text{que es } 2\pi), \frac{8\pi}{3}, \ldots$
+El período de la suma, si existe, es el menor número positivo que es múltiplo entero de ambos. Comparando múltiplos:
+- Múltiplos de $\pi$: $\pi, 2\pi, 3\pi, \ldots$
+- Múltiplos de $\frac{2\pi}{3}$: $\frac{2\pi}{3}, \frac{4\pi}{3}, 2\pi, \ldots$
 
-El primer valor en el que ambas ondas vuelven a sincronizarse perfectamente es $2\pi$. Por lo tanto, el período fundamental de $h(x)$ es $T = 2\pi$.
+La primera coincidencia es $2\pi$, por lo que el período fundamental de $h$ es $T = 2\pi$.
 
-**Ejemplo 5.8 (El monstruo de la suma: funciones inmensurables):**
-Demostrar si la función $p(x) = \sin(x) + \sin(\pi x)$ es periódica o no.
+**Ejemplo 5.8 (Suma de funciones con períodos inconmensurables):**
+Determinar si $p(x) = \sin(x) + \sin(\pi x)$ es periódica.
 
-**Solución:**
-Calculamos los períodos de ambas componentes individuales:
-1. Período de $\sin(x)$: $T_1 = 2\pi$
-2. Período de $\sin(\pi x)$: $T_2 = \frac{2\pi}{\pi} = 2$
+Los períodos de las componentes son:
+$$T_1 = 2\pi, \qquad T_2 = \frac{2\pi}{\pi} = 2$$
 
-Para que la suma total sea periódica, debe existir un período global $T$ que sea múltiplo entero de ambos. Es decir, debe existir un par de números enteros positivos $n$ y $m$ tales que al dar $n$ saltos del primer período y $m$ saltos del segundo, lleguemos al mismo punto:
-$$n \cdot T_1 = m \cdot T_2$$
-Sustituyendo los períodos:
-$$n(2\pi) = m(2)$$
-Despejando $\pi$:
+Si $p$ fuera periódica con período $T$, entonces $T$ debería ser múltiplo entero de ambos períodos. Es decir, existirían $n, m \in \mathbb{N}$ tales que:
+$$T = n \cdot 2\pi = m \cdot 2$$
+
+Despejando se obtendría:
 $$\pi = \frac{m}{n}$$
-Esta ecuación nos está exigiendo que $\pi$ pueda expresarse como la fracción de dos números enteros ($\frac{m}{n}$). Pero sabemos desde la antigüedad que $\pi$ es un número **irracional**, por lo que tal fracción es matemáticamente imposible de construir. 
 
-**Conclusión:** ¡La función $p(x)$ **no es periódica**! A pesar de estar formada por la simple suma de dos ondas matemáticamente perfectas, sus frecuencias son "inconmensurables" (no encajan entre sí de forma racional). Al sumarlas, se crea un patrón de interferencia caótico que jamás vuelve a repetirse exactamente igual en toda la eternidad. A este tipo de curvas, que casi parecen repetirse pero nunca lo logran del todo, se les conoce en matemáticas avanzadas como **funciones cuasiperiódicas**, y son todo un campo de estudio propio.
-### 5.5 Funciones periódicas construidas
+lo cual es imposible porque $\pi$ es irracional. Por tanto, $p(x)$ **no es periódica**. Este tipo de funciones se denomina **cuasiperiódica** y aparece en física, por ejemplo en el estudio de cristales cuasicristalinos.
 
-Para expandir aún más nuestra intuición analítica, presentamos algunas construcciones algebraicas inusuales. Combinando funciones ya estudiadas (como piso, mantisa y signo) con la trigonometría, se pueden generar comportamientos periódicos que resultan perturbadores, contra-intuitivos o directamente "rotos".
+### 5.5 Construcciones periódicas a partir de funciones conocidas
 
-**1. La onda de sierra curva:** $f(x) = \{\sin(x)\}$
-Al componer la función parte fraccionaria (mantisa) con el seno, unimos dos mundos. En las crestas positivas, la función es idéntica a $\sin(x)$. Sin embargo, cuando el seno se vuelve negativo (por ejemplo, $-0.2$), su parte fraccionaria se calcula como $-0.2 - (-1) = 0.8$. El resultado son "dientes de sierra" que en lugar de estar formados por líneas rectas, tienen curvaturas suaves que se quiebran abruptamente.
+Combinando funciones ya estudiadas es posible construir funciones periódicas con comportamientos variados.
 
-**2. La onda perezosa:** $f(x) = \lfloor \sin(x) \rfloor$
-Al aplicar la función piso al seno, destruimos por completo su suave oscilación. Dado que el seno está estrictamente acotado en el intervalo $[-1, 1]$, esta función vale $-1$ la mitad del tiempo y $0$ la otra mitad, logrando un minúsculo e instantáneo salto a $1$ exclusivamente en los máximos (como $\pi/2$). Es una función periódica que pasa gran parte de su vida como una simple línea horizontal a trozos.
+**Ejemplo 5.9 (Onda diente de sierra curva):**
+La función $f(x) = \{\sin(x)\}$ compone la parte fraccionaria con el seno. Donde el seno es positivo, la función coincide con $\sin(x)$; donde es negativo, la parte fraccionaria lo desplaza, generando una onda con quiebres.
 
-**3. La onda invertida repentinamente:** $f(x) = \sin(x) \cdot \text{sgn}(\cos(x))$
-Multiplicar por el signo del coseno tiene el efecto de invertir verticalmente la onda del seno de forma extremadamente brusca justo cuando el coseno cruza el eje X y cambia de signo (en los múltiplos impares de $\pi/2$). Visualmente genera una onda senoidal que sufre "cortocircuitos", exhibiendo discontinuidades de salto y cambios de fase violentos en pleno ciclo. Es geométricamente perturbadora.
-**4. El seno impostor:** $f(x) = (-1)^{\lfloor x \rfloor} \cdot \sin(\pi x)$
-La componente $\sin(\pi x)$ forma domos entre los números enteros. Por su parte, el término $(-1)^{\lfloor x \rfloor}$ actúa como un interruptor maestro que alterna entre $+1$ y $-1$ cada vez que cruzamos un número entero. Esta combinación obliga a que los domos negativos del seno se vuelvan positivos. Engaña al ojo: parece una curva suave, pero sus derivadas en los puntos enteros revelan que algo está "mal" y puntiagudo.
+**Ejemplo 5.10 (Piso del seno):**
+La función $f(x) = \lfloor \sin(x) \rfloor$ toma solo los valores $-1$, $0$ y $1$. Es una función escalonada periódica que ilustra cómo una función discontinua puede surgir de una función continua.
 
-**5. El caos infinito en las raíces:** $f(x) = \sin\!\left(\frac{1}{\sin(x)}\right)$
-Esta función está perfectamente definida en casi todos lados. Sin embargo, su comportamiento es salvaje en las raíces del seno original (los múltiplos de $\pi$). Al acercarnos a estos puntos de quiebre, el denominador se encoge, la fracción $\frac{1}{\sin(x)}$ explota hacia el infinito, y forzamos al seno exterior a oscilar infinitamente rápido. Es matemáticamente imposible de graficar con exactitud en la cercanía de estos puntos.
+**Ejemplo 5.11 (Seno rectificado por signo del coseno):**
+La función $f(x) = \sin(x) \cdot \operatorname{sgn}(\cos(x))$ coincide con $\sin(x)$ cuando $\cos(x) > 0$ y con $-\sin(x)$ cuando $\cos(x) < 0$. Presenta discontinuidades de salto en los múltiplos impares de $\frac{\pi}{2}$.
 
-**6. El falso $x$ (o el zigzag infinito):** $f(x) = \arccos(\cos(x))$
-El instinto inmediato de un estudiante de primer semestre es "cancelar" las funciones y asumir que el resultado es la simple función identidad $f(x) = x$ (una línea recta diagonal infinita, no periódica). ¡Gravísimo error! Debido a la restricción obligatoria del rango del arcocoseno, la identidad solo se cumple en el intervalo $[0, \pi]$. Fuera de ahí, la gráfica rebota. El resultado asombroso es una **onda triangular perfecta** formada por líneas rígidamente rectas en zigzag, que nacen de forma paradójica al componer dos de las curvas más suaves, redondas y "circulares" de la matemática. Destruye para siempre el mito algebraico de que $f^{-1}(f(x)) = x$ aplica ciegamente para todos los números reales.
+**Ejemplo 5.12 (Alternancia de domos):**
+La función $f(x) = (-1)^{\lfloor x \rfloor} \sin(\pi x)$ alterna de signo en cada intervalo entero. Es continua en todo $\mathbb{R}$ y periódica de período $2$, aunque su construcción utilice una función escalonada.
+
+**Ejemplo 5.13 (Oscilación rápida cerca de las raíces):**
+La función $f(x) = \sin\!\left(\frac{1}{\sin(x)}\right)$ está definida siempre que $\sin(x) \neq 0$. Cerca de los múltiplos de $\pi$, el argumento $\frac{1}{\sin(x)}$ crece en magnitud sin cota, por lo que la función oscila cada vez más rápido. No puede graficarse con precisión en esas vecindades.
+
+**Ejemplo 5.14 (Onda triangular a partir del arcocoseno):**
+La función $f(x) = \arccos(\cos(x))$ no coincide con la función identidad en toda la recta real. Debido a que el rango de $\arccos$ es $[0, \pi]$, la función resultante es una onda triangular periódica de período $2\pi$, dada por:
+$$f(x) = |x - 2k\pi| \quad \text{para } x \in [(2k-1)\pi, (2k+1)\pi], \ k \in \mathbb{Z}$$
+
+Este ejemplo muestra que la composición $f^{-1}(f(x))$ no siempre reduce a $x$: la inversión debe respetar los dominios y rangos de las funciones involucradas.
+
+### 5.6 Aplicaciones
+
+Las funciones periódicas son centrales en múltiples disciplinas:
+
+- **Física:** Oscilaciones mecánicas, ondas electromagnéticas, sonido, movimiento planetario.
+- **Ingeniería:** Señales de comunicación, circuitos de corriente alterna, control de vibraciones.
+- **Música y acústica:** Las notas musicales son ondas periódicas; el timbre depende de los armónicos adicionales.
+- **Biología:** Ritmos circadianos, ciclos cardíacos, patrones de población.
+- **Análisis matemático:** Las series de Fourier permiten descomponer funciones periódicas complejas en sumas de senos y cosenos.
+
+### 5.7 Observaciones
+
+> **Observación (período y dominio):** La definición de función periódica exige que si $x \in D$, entonces $x + T \in D$. Por tanto, funciones definidas en dominios acotados no pueden ser periódicas salvo que el dominio tenga una estructura especial.
+
+> **Observación (suma de funciones periódicas):** La suma de dos funciones periódicas es periódica solo si los cocientes de sus períodos son números racionales. Si los períodos son inconmensurables, como en el Ejemplo 5.8, la suma es cuasiperiódica.
+
+> **Observación (series de Fourier):** Toda función periódica suficientemente regular puede aproximarse mediante una suma infinita de senos y cosenos. Este resultado justifica por qué el estudio detallado de las funciones trigonométricas es tan importante en matemáticas aplicadas.
 
 ---
 
@@ -651,7 +877,7 @@ Pensemos en un cable eléctrico colgado entre dos postes, una cadena suspendida 
 
 ### 6.1 Origen analítico: la descomposición de la exponencial
 
-En la Sección 2.2 se introdujo el Teorema de Descomposición de Paridad, el cual establece que cualquier función real sobre un dominio simétrico puede expresarse de manera única como la suma de una función par y una función impar. Al aplicar este teorema a la función exponencial elemental $f(x) = e^x$, se obtienen de manera natural sus dos componentes de paridad:
+En la Sección 2.3 se introdujo el Teorema de Descomposición de Paridad, el cual establece que cualquier función real sobre un dominio simétrico puede expresarse de manera única como la suma de una función par y una función impar. Al aplicar este teorema a la función exponencial elemental $f(x) = e^x$, se obtienen de manera natural sus dos componentes de paridad:
 
 - **Componente par (Coseno hiperbólico):**
   $$f_{\text{par}}(x) = \dfrac{e^x + e^{-x}}{2}$$
@@ -707,7 +933,6 @@ Los valores en el origen se calculan sustituyendo $x = 0$ en las definiciones.
 
 La monotonía de $\sinh$ puede justificarse observando que $e^x$ es creciente y $e^{-x}$ es decreciente, de modo que su diferencia es estrictamente creciente. Para $\cosh$, la función es par y alcanza su mínimo global en $x = 0$, por lo que decrece hacia la izquierda del origen y crece hacia la derecha. $\blacksquare$
 
-PONER GRAFICA AQUI: gráficas de $y = \sinh(x)$ y $y = \cosh(x)$ en el mismo sistema de ejes, destacando el punto mínimo $(0,1)$ de $\cosh$ y el origen de coordenadas para $\sinh$.
 ### 6.3 Identidad fundamental
 
 **Teorema 6.1 (Identidad hiperbólica fundamental):**
@@ -738,10 +963,10 @@ Se definen las funciones:
   $$\coth: \mathbb{R} \setminus \{0\} \to (-\infty, -1) \cup (1, +\infty), \qquad \coth(x) = \dfrac{\cosh(x)}{\sinh(x)} = \dfrac{e^x + e^{-x}}{e^x - e^{-x}}$$
 
 - **Secante hiperbólica:**
-  $$\text{sech}: \mathbb{R} \to (0, 1], \qquad \text{sech}(x) = \dfrac{1}{\cosh(x)} = \dfrac{2}{e^x + e^{-x}}$$
+  $$\operatorname{sech}: \mathbb{R} \to (0, 1], \qquad \operatorname{sech}(x) = \dfrac{1}{\cosh(x)} = \dfrac{2}{e^x + e^{-x}}$$
 
 - **Cosecante hiperbólica:**
-  $$\text{csch}: \mathbb{R} \setminus \{0\} \to \mathbb{R} \setminus \{0\}, \qquad \text{csch}(x) = \dfrac{1}{\sinh(x)} = \dfrac{2}{e^x - e^{-x}}$$
+  $$\operatorname{csch}: \mathbb{R} \setminus \{0\} \to \mathbb{R} \setminus \{0\}, \qquad \operatorname{csch}(x) = \dfrac{1}{\sinh(x)} = \dfrac{2}{e^x - e^{-x}}$$
 
 **Proposición 6.2 (Comportamiento asintótico y paridad de $\tanh$):**
 La función $\tanh$ es impar, estrictamente creciente en $\mathbb{R}$, y satisface:
@@ -835,11 +1060,11 @@ Las funciones hiperbólicas aparecen de manera recurrente en contextos donde coe
 
 ### 6.8 Observaciones
 
-> **Observación (sobre las funciones inversas):** La definición y análisis formal de las funciones hiperbólicas inversas, como el argumento del seno hiperbólico $\text{arsinh}(x)$ o el argumento del coseno hiperbólico $\text{arcosh}(x)$, se posponen para secciones posteriores del curso, una vez establecidos de manera rigurosa los conceptos generales de inyectividad e invertibilidad de funciones reales.
+> **Observación (sobre las funciones inversas):** La definición y análisis formal de las funciones hiperbólicas inversas, como el argumento del seno hiperbólico $\operatorname{arsinh}(x)$ o el argumento del coseno hiperbólico $\operatorname{argcosh}(x)$, se posponen para secciones posteriores del curso, una vez establecidos de manera rigurosa los conceptos generales de inyectividad e invertibilidad de funciones reales.
 
 > **Observación (analogía trigonométrica):** Muchas identidades hiperbólicas pueden recordarse a partir de las identidades trigonométricas circulares cambiando el signo de los términos que contienen productos de dos senos hiperbólicos. Por ejemplo, la identidad circular $\cos^2(x) + \sin^2(x) = 1$ se convierte en $\cosh^2(x) - \sinh^2(x) = 1$. No obstante, esta regla mnemotécnica no sustituye una verificación algebraica directa.
 
-> **Observación (notación):** En la literatura en español se encuentran distintas notaciones para las funciones inversas hiperbólicas: $\text{arsinh}(x)$, $\text{argsinh}(x)$, $\text{asinh}(x)$ para el seno hiperbólico inverso, y análogamente para las demás. Todas ellas se refieren al mismo objeto matemático.
+> **Observación (notación):** En la literatura en español se encuentran distintas notaciones para las funciones inversas hiperbólicas: $\operatorname{arsinh}(x)$, $\operatorname{argsinh}(x)$, $\operatorname{asinh}(x)$ para el seno hiperbólico inverso, y análogamente para las demás. Todas ellas se refieren al mismo objeto matemático.
 
 ---
 
@@ -1199,7 +1424,8 @@ Muchos procesos matemáticos y del mundo real se describen mejor como una sucesi
 
 La **composición de funciones** formaliza esta idea: dadas dos funciones $g$ y $f$ con dominios y codominios compatibles, se define una nueva función $(f \circ g)(x) = f(g(x))$ que aplica primero $g$ y luego $f$. Esta operación es tan natural como la suma o el producto de funciones, pero tiene propiedades distintivas —en particular, no es conmutativa— que conviene estudiar con cuidado.
 
-**Ejemplo introductorio:** Si $g(x) = x + 1$ y $f(x) = x^2$, entonces:
+**Ejemplo 9.1:**
+Si $g(x) = x + 1$ y $f(x) = x^2$, entonces:
 $$(f \circ g)(3) = f(g(3)) = f(4) = 4^2 = 16$$
 Es decir, la composición transforma $3$ en $16$ al sumar primero $1$ y luego elevar al cuadrado.
 
@@ -1209,7 +1435,7 @@ Es decir, la composición transforma $3$ en $16$ al sumar primero $1$ y luego el
 Dadas dos funciones $f: B \to C$ y $g: A \to B$, la **composición** de $f$ con $g$, denotada $f \circ g$ (se lee "$f$ compuesta con $g$" o "$f$ círculo $g$"), es la función definida por:
 $$(f \circ g)(x) = f(g(x))$$
 
-**Notación:** Se lee de **derecha a izquierda**: primero aplicamos $g$, luego aplicamos $f$ al resultado.
+> **Nota:** La notación $f \circ g$ se lee de **derecha a izquierda**: primero aplicamos $g$, luego aplicamos $f$ al resultado.
 
 **Definición 9.2 (Dominio de la composición):**
 El dominio de $f \circ g$ es:
@@ -1219,9 +1445,9 @@ Es decir, debemos satisfacer **dos condiciones**:
 1. $x$ debe estar en el dominio de $g$
 2. El resultado $g(x)$ debe estar en el dominio de $f$
 
-**Observación importante:** Para que $f \circ g$ esté bien definida, necesitamos que $\text{Im}(g) \cap \text{Dom}(f) \neq \emptyset$ (la imagen de $g$ debe tener intersección con el dominio de $f$).
+> **Observación importante:** Para que $f \circ g$ esté bien definida, necesitamos que $\text{Im}(g) \cap \text{Dom}(f) \neq \emptyset$ (la imagen de $g$ debe tener intersección con el dominio de $f$).
 
-**Ejemplo 9.1:**
+**Ejemplo 9.2:**
 Sean $f(x) = \sqrt{x}$ y $g(x) = x - 3$. Calcular $(f \circ g)(x)$ y su dominio.
 
 **Solución:**
@@ -1235,7 +1461,7 @@ $$(f \circ g)(x) = f(g(x)) = f(x-3) = \sqrt{x-3}$$
 
 $$\text{Dom}(f \circ g) = [3, +\infty)$$
 
-**Ejemplo 9.2:**
+**Ejemplo 9.3:**
 Sean $f(x) = x^2$ y $g(x) = x + 1$. Calcular:
 a) $(f \circ g)(x)$
 b) $(g \circ f)(x)$
@@ -1245,9 +1471,9 @@ a) $(f \circ g)(x) = f(g(x)) = f(x+1) = (x+1)^2 = x^2 + 2x + 1$
 
 b) $(g \circ f)(x) = g(f(x)) = g(x^2) = x^2 + 1$
 
-**Observación crucial:** En este ejemplo, $(f \circ g)(x) \neq (g \circ f)(x)$. Esto ilustra que la composición **no es conmutativa** en general.
+> **Observación crucial:** En este ejemplo, $(f \circ g)(x) \neq (g \circ f)(x)$. Esto ilustra que la composición **no es conmutativa** en general.
 
-**Ejemplo 9.3:**
+**Ejemplo 9.4:**
 Sean $f(x) = \frac{1}{x}$ y $g(x) = x^2 - 4$. Determinar el dominio de $(f \circ g)(x)$.
 
 **Solución:**
@@ -1261,7 +1487,7 @@ $$(f \circ g)(x) = f(g(x)) = f(x^2 - 4) = \frac{1}{x^2 - 4}$$
 
 $$\text{Dom}(f \circ g) = \mathbb{R} \setminus \{-2, 2\}$$
 
-**Ejemplo 9.4 (Composición con dominios restringidos):**
+**Ejemplo 9.5 (Composición con dominios restringidos):**
 Sean $f(x) = \sqrt{x}$ y $g(x) = \ln(x)$. Determinar el dominio de $(f \circ g)(x)$.
 
 **Solución:**
@@ -1279,7 +1505,7 @@ $$\text{Dom}(f \circ g) = [1, +\infty)$$
 **Proposición 9.1 (No conmutatividad):**
 En general, $f \circ g \neq g \circ f$. Es decir, la composición de funciones **no es conmutativa**.
 
-**Ejemplo 9.5:**
+**Ejemplo 9.6:**
 Si $f(x) = 2x$ y $g(x) = x + 3$:
 - $(f \circ g)(x) = 2(x+3) = 2x + 6$
 - $(g \circ f)(x) = 2x + 3$
@@ -1315,7 +1541,7 @@ $$f^{-1} \circ f = \text{id}_A \quad \text{y} \quad f \circ f^{-1} = \text{id}_B
 
 Donde $\text{id}_A$ es la función identidad en $A$ y $\text{id}_B$ es la función identidad en $B$.
 
-**Ejemplo 9.6:**
+**Ejemplo 9.7:**
 Si $f(x) = 2x + 3$, entonces $f^{-1}(x) = \frac{x-3}{2}$. Verificamos:
 $$(f^{-1} \circ f)(x) = f^{-1}(2x+3) = \frac{(2x+3)-3}{2} = \frac{2x}{2} = x = \text{id}(x)$$
 $$(f \circ f^{-1})(x) = f\left(\frac{x-3}{2}\right) = 2\left(\frac{x-3}{2}\right) + 3 = x - 3 + 3 = x = \text{id}(x)$$
@@ -1358,9 +1584,9 @@ Si $f: B \to C$ y $g: A \to B$ son ambas biyectivas, entonces $f \circ g: A \to 
 Además, la inversa de la composición satisface:
 $$(f \circ g)^{-1} = g^{-1} \circ f^{-1}$$
 
-**Observación:** La fórmula $(f \circ g)^{-1} = g^{-1} \circ f^{-1}$ refleja el hecho de que, al deshacer una sucesión de operaciones, se debe revertir el orden en que fueron aplicadas.
+> **Observación:** La fórmula $(f \circ g)^{-1} = g^{-1} \circ f^{-1}$ refleja el hecho de que, al deshacer una sucesión de operaciones, se debe revertir el orden en que fueron aplicadas.
 
-**Ejemplo 9.7:**
+**Ejemplo 9.8:**
 Sean $f(x) = e^x$ y $g(x) = x + 1$. Ambas son biyectivas de $\mathbb{R}$ en sus respectivas imágenes. La composición:
 $$(f \circ g)(x) = e^{x+1}$$
 
@@ -1371,7 +1597,7 @@ $$(f \circ g)^{-1}(x) = (g^{-1} \circ f^{-1})(x) = g^{-1}(\ln(x)) = \ln(x) - 1$$
 
 Muchas funciones complejas pueden expresarse como composición de funciones más simples. Esta técnica es fundamental en cálculo (regla de la cadena para derivadas).
 
-**Ejemplo 9.8 (Identificar composición):**
+**Ejemplo 9.9 (Identificar composición):**
 Dada $h(x) = \sqrt{x^2 + 1}$, expresarla como $h = f \circ g$.
 
 **Solución:**
@@ -1379,7 +1605,7 @@ Dada $h(x) = \sqrt{x^2 + 1}$, expresarla como $h = f \circ g$.
 - Sea $f(x) = \sqrt{x}$ (función exterior)
 - Entonces: $h(x) = f(g(x)) = \sqrt{x^2 + 1}$
 
-**Ejemplo 9.9:**
+**Ejemplo 9.10:**
 Expresemos $h(x) = \frac{1}{(x+2)^2}$ como composición de tres funciones.
 
 **Solución:**
@@ -1391,13 +1617,13 @@ Expresemos $h(x) = \frac{1}{(x+2)^2}$ como composición de tres funciones.
 **Verificación:**
 $$(t \circ s \circ r)(x) = t(s(r(x))) = t(s(x+2)) = t((x+2)^2) = \frac{1}{(x+2)^2}$$
 
-**Ejemplo 9.10 (Composición iterada):**
+**Ejemplo 9.11 (Composición iterada):**
 Si $f(x) = 2x$, entonces:
 - $(f \circ f)(x) = f(f(x)) = f(2x) = 2(2x) = 4x = 2^2 x$
 - $(f \circ f \circ f)(x) = f(f(f(x))) = 8x = 2^3 x$
 - En general: $f^{(n)}(x) = 2^n x$ (composición $n$ veces)
 
-**Notación:** $f^{(n)} = \underbrace{f \circ f \circ \cdots \circ f}_{n \text{ veces}}$
+> **Nota:** La notación $f^{(n)}$ representa la composición iterada $\underbrace{f \circ f \circ \cdots \circ f}_{n \text{ veces}}$.
 
 ### 9.5 Aplicaciones
 
@@ -1418,314 +1644,456 @@ La composición de funciones aparece de manera recurrente tanto en matemáticas 
 > **Observación (composición iterada):** Cuando una función se compone consigo misma repetidamente, surgen comportamientos de gran interés en dinámica de sistemas, teoría de fractales y análisis numérico. Estudiar la iteración $f^{(n)}$ permite analizar estabilidad, puntos fijos y convergencia de métodos iterativos.
 
 ---
-
 ## 10. Inversas de Funciones Trascendentes
 
-### 10.1 Funciones Trigonométricas Inversas
+Resolver una ecuación trigonométrica como $\sin(\theta) = \frac{1}{2}$ presenta una dificultad inmediata: sin restricciones adicionales, existen infinitos ángulos que satisfacen la igualdad porque el seno es periódico. Para poder despejar $\theta$ de manera unívoca es necesario restringir el dominio de la función trigonométrica a un intervalo donde sea inyectiva. Esta idea conduce a las funciones trigonométricas inversas, que son indispensables en física, ingeniería y cálculo integral. De manera análoga, las funciones hiperbólicas inversas surgen al despejar el argumento en las definiciones exponenciales de $\sinh$, $\cosh$ y $\tanh$.
 
-Dado que las funciones trigonométricas son periódicas (y por tanto no inyectivas), se definen restringiendo sus dominios principales.
+> **Nota histórica:** Las notaciones $\arcsin$, $\arccos$ y $\arctan$ se consolidaron en el siglo XVIII, en gran medida gracias al trabajo de **Leonhard Euler**, quien sistematizó el uso de funciones y sus inversas. El prefijo "arco" proviene de la interpretación geométrica: si $\theta = \arcsin(x)$, entonces $\theta$ es la medida de un arco cuyo seno vale $x$. Las funciones hiperbólicas inversas, en cambio, se expresan naturalmente mediante logaritmos, lo que las convierte en herramientas frecuentes en integración y ecuaciones diferenciales.
 
-**Definición 10.1 (Arco Seno):** Isomorfismo inverso de $\sin(x)$ restringido a $[-\frac{\pi}{2}, \frac{\pi}{2}]$.
-$$y = \arcsin(x) \iff \sin(y) = x, \quad y \in [-\frac{\pi}{2}, \frac{\pi}{2}]$$
+### 10.1 Funciones trigonométricas inversas
 
-**Definición 10.2 (Arco Coseno):** Inversa de $\cos(x)$ restringido a $[0, \pi]$.
+**Definición 10.1 (Arco seno):**
+La función **arcoseno** $\arcsin: [-1, 1] \to \left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$ es la inversa de la función $\sin: \left[-\frac{\pi}{2}, \frac{\pi}{2}\right] \to [-1, 1]$. Se define mediante:
+$$y = \arcsin(x) \iff \sin(y) = x, \quad y \in \left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$$
+
+**Definición 10.2 (Arco coseno):**
+La función **arcocoseno** $\arccos: [-1, 1] \to [0, \pi]$ es la inversa de la función $\cos: [0, \pi] \to [-1, 1]$. Se define mediante:
 $$y = \arccos(x) \iff \cos(y) = x, \quad y \in [0, \pi]$$
 
-**Definición 10.3 (Arco Tangente):** Inversa de $\tan(x)$ restringido a $(-\frac{\pi}{2}, \frac{\pi}{2})$.
-$$y = \arctan(x) \iff \tan(y) = x, \quad y \in (-\frac{\pi}{2}, \frac{\pi}{2})$$
+**Definición 10.3 (Arco tangente):**
+La función **arcotangente** $\arctan: \mathbb{R} \to \left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$ es la inversa de la función $\tan: \left(-\frac{\pi}{2}, \frac{\pi}{2}\right) \to \mathbb{R}$. Se define mediante:
+$$y = \arctan(x) \iff \tan(y) = x, \quad y \in \left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$$
 
-### 10.2 Funciones Hiperbólicas Inversas
+**Proposición 10.1 (Propiedades de las funciones trigonométricas inversas):**
+Para todo $x$ en el dominio correspondiente se verifican las siguientes propiedades:
 
-Se pueden expresar explícitamente usando logaritmos naturales:
+1. $\arcsin(-x) = -\arcsin(x)$ (función impar).
+2. $\arccos(-x) = \pi - \arccos(x)$.
+3. $\arctan(-x) = -\arctan(x)$ (función impar).
+4. $\arcsin(x) + \arccos(x) = \dfrac{\pi}{2}$.
 
-1. $\text{argsinh}(x) = \ln(x + \sqrt{x^2+1}), \quad \forall x \in \mathbb{R}$
-2. $\text{argcosh}(x) = \ln(x + \sqrt{x^2-1}), \quad x \geq 1$
-3. $\text{argtanh}(x) = \frac{1}{2}\ln\left(\frac{1+x}{1-x}\right), \quad |x|<1$
+**Demostración:**
+La primera propiedad se sigue de que $\sin$ es impar en $\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$:
+$$\sin(-\arcsin(x)) = -\sin(\arcsin(x)) = -x$$
+Por lo tanto $-\arcsin(x)$ es el único ángulo en $\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$ cuyo seno es $-x$, es decir, $\arcsin(-x) = -\arcsin(x)$.
+
+La cuarta propiedad se obtiene observando que si $\alpha = \arcsin(x)$, entonces $\sin(\alpha) = x$ y $\alpha \in \left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$. Como $\cos\left(\frac{\pi}{2} - \alpha\right) = \sin(\alpha) = x$ y $\frac{\pi}{2} - \alpha \in [0, \pi]$, se tiene:
+$$\arccos(x) = \frac{\pi}{2} - \alpha = \frac{\pi}{2} - \arcsin(x)$$
+De donde $\arcsin(x) + \arccos(x) = \frac{\pi}{2}$. $\blacksquare$
+
+**Ejemplo 10.1:**
+Calcular los siguientes valores:
+- $\arcsin\left(\frac{1}{2}\right) = \frac{\pi}{6}$, pues $\sin\left(\frac{\pi}{6}\right) = \frac{1}{2}$ y $\frac{\pi}{6} \in \left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$.
+- $\arccos\left(-\frac{1}{2}\right) = \frac{2\pi}{3}$, pues $\cos\left(\frac{2\pi}{3}\right) = -\frac{1}{2}$ y $\frac{2\pi}{3} \in [0, \pi]$.
+- $\arctan(1) = \frac{\pi}{4}$, pues $\tan\left(\frac{\pi}{4}\right) = 1$ y $\frac{\pi}{4} \in \left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$.
+
+### 10.2 Funciones hiperbólicas inversas
+
+**Proposición 10.2 (Fórmulas logarítmicas):**
+Las funciones hiperbólicas inversas admiten las siguientes expresiones mediante logaritmos naturales:
+
+1. $\operatorname{argsinh}(x) = \ln\left(x + \sqrt{x^2 + 1}\right), \quad x \in \mathbb{R}$.
+2. $\operatorname{argcosh}(x) = \ln\left(x + \sqrt{x^2 - 1}\right), \quad x \geq 1$.
+3. $\operatorname{argtanh}(x) = \dfrac{1}{2}\ln\left(\dfrac{1 + x}{1 - x}\right), \quad |x| < 1$.
+
+**Demostración (de la fórmula para argsinh):**
+Sea $y = \operatorname{argsinh}(x)$. Entonces $x = \sinh(y) = \dfrac{e^y - e^{-y}}{2}$. Multiplicando por $2e^y$:
+$$2x e^y = e^{2y} - 1$$
+Reordenando se obtiene una ecuación cuadrática en $e^y$:
+$$e^{2y} - 2x e^y - 1 = 0$$
+Resolviendo:
+$$e^y = \frac{2x \pm \sqrt{4x^2 + 4}}{2} = x \pm \sqrt{x^2 + 1}$$
+Como $e^y > 0$ para todo $y \in \mathbb{R}$, debemos elegir el signo positivo:
+$$e^y = x + \sqrt{x^2 + 1}$$
+Aplicando logaritmo natural:
+$$y = \ln\left(x + \sqrt{x^2 + 1}\right)$$
+Por lo tanto $\operatorname{argsinh}(x) = \ln\left(x + \sqrt{x^2 + 1}\right)$. $\blacksquare$
+
+**Ejemplo 10.2:**
+- $\operatorname{argsinh}(0) = \ln(0 + 1) = 0$, que coincide con $\sinh(0) = 0$.
+- $\operatorname{argcosh}(1) = \ln(1 + 0) = 0$, que coincide con $\cosh(0) = 1$.
+- $\operatorname{argtanh}(0) = \frac{1}{2}\ln(1) = 0$, que coincide con $\tanh(0) = 0$.
+
+### 10.3 Aplicaciones
+
+Las funciones trigonométricas inversas aparecen cada vez que se conoce una razón trigonométrica y se desea recuperar el ángulo asociado. En navegación y astronomía permiten calcular ángulos de elevación, acimut o fases orbitales a partir de medidas observables. En cálculo integral, son esenciales para evaluar integrales de la forma $\int \frac{dx}{\sqrt{1 - x^2}}$ o $\int \frac{dx}{1 + x^2}$.
+
+Las funciones hiperbólicas inversas aparecen con frecuencia en problemas de física y geometría. La función $\operatorname{argcosh}$ describe, por ejemplo, la forma de la catenaria invertida y aparece en la distancia hiperbólica del semiplano superior. La función $\operatorname{argsinh}$ surge al integrar expresiones como $\frac{1}{\sqrt{1 + x^2}}$ y en la parametrización de ciertas trayectorias relativistas.
+
+### 10.4 Observaciones
+
+> **Observación (notación):** En distintos textos se encuentran las notaciones $\sin^{-1}(x)$, $\cos^{-1}(x)$, $\tan^{-1}(x)$ como sinónimos de $\arcsin(x)$, $\arccos(x)$, $\arctan(x)$. Es importante no confundir $\sin^{-1}(x)$ con $\frac{1}{\sin(x)}$; la primera denota la función inversa, mientras que la segunda es el recíproco. Para evitar ambigüedades, en este curso preferimos la notación "arco".
+
+> **Observación (dominio y rango):** El dominio y el rango de las funciones trigonométricas inversas están determinados por la restricción que hace a la función original inyectiva. Cambiar el intervalo de restricción cambiaría la función inversa obtenida, por lo que las elecciones $\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$ para el seno, $[0, \pi]$ para el coseno y $\left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$ para la tangente son convenciones estándar que conviene recordar.
 
 ---
-
 ## 11. Cónicas y Funciones
 
-**Concepto intuitivo:**
+Las secciones cónicas son curvas que aparecen constantemente en modelos físicos e ingenieriles: órbitas planetarias, reflectores, antenas y sistemas de navegación. Sin embargo, desde el punto de vista funcional presentan una dificultad inmediata: la mayoría no son funciones $y = f(x)$ en su totalidad. El círculo, la elipse y la hipérbola horizontal asignan dos valores de $y$ a un mismo $x$, por lo que es necesario dividirlas en ramas. Esta sección no repite la teoría de cónicas, que se desarrolla con todo rigor en [[Clase 8 - Cónicas]], sino que se concentra en cómo extraer funciones de ellas paso a paso.
 
-Las **cónicas** son curvas que se obtienen al intersectar un cono con un plano. Dependiendo del ángulo del plano, obtenemos diferentes figuras: círculo, elipse, parábola o hipérbola. Estas curvas son fundamentales en matemáticas, física (órbitas planetarias), ingeniería y arquitectura.
+### 11.1 Estrategia general
 
-Las secciones cónicas se definen generalmente por ecuaciones implícitas de la forma $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$. Estas ecuaciones generalmente **no definen funciones**, ya que para un $x$ dado pueden existir dos valores de $y$.
+Para obtener funciones $y = f(x)$ a partir de una ecuación implícita de una cónica se sigue un procedimiento sistemático:
 
-Para tratarlas como funciones, debemos resolver explícitamente para $y$, obteniendo dos ramas (o funciones):
+1. **Aislar el término en $y$**: mover todos los términos que contengan $y$ a un lado de la ecuación y el resto al otro.
+2. **Despejar $y$**: aplicar raíces, divisiones u otras operaciones para obtener una expresión de la forma $y = \dots$.
+3. **Interpretar el signo $\pm$**: si aparece una raíz cuadrada, la ecuación original contiene simultáneamente los dos signos. Cada signo determina una **rama** de la cónica.
+4. **Determinar el dominio**: la expresión bajo la raíz (o cualquier otra restricción) debe ser no negativa. El conjunto de $x$ que cumple esta condición es el dominio de cada rama.
 
-### 11.1 El Círculo
+A continuación se aplica este procedimiento a cada cónica básica. Al final se presenta una tabla resumen.
 
-**Ecuación canónica:**
-$$(x - h)^2 + (y - k)^2 = r^2$$
+### 11.2 El círculo
 
-donde $(h, k)$ es el centro y $r$ es el radio.
-
-**Círculo centrado en el origen:**
+Partimos de la ecuación de un círculo centrado en el origen con radio $r > 0$:
 $$x^2 + y^2 = r^2$$
 
-**Funciones explícitas:**
-Despejando $y$:
+**Paso 1: aislar $y^2$.**
+Restamos $x^2$ en ambos lados:
 $$y^2 = r^2 - x^2$$
+
+**Paso 2: despejar $y$.**
+Tomamos raíz cuadrada en ambos lados. Recuerde que $\sqrt{y^2} = |y|$, por lo que debemos considerar ambos signos:
+$$|y| = \sqrt{r^2 - x^2}$$
 $$y = \pm\sqrt{r^2 - x^2}$$
 
-- **Rama superior (semicírculo):** $f_1(x) = \sqrt{r^2 - x^2}, \quad x \in [-r, r]$
-- **Rama inferior (semicírculo):** $f_2(x) = -\sqrt{r^2 - x^2}, \quad x \in [-r, r]$
+**Paso 3: identificar las ramas.**
+El signo $+$ corresponde a la rama superior del círculo y el signo $-$ a la rama inferior:
+$$\begin{align}
+f_1(x) &= \sqrt{r^2 - x^2} \\
+f_2(x) &= -\sqrt{r^2 - x^2}
+\end{align}$$
 
-**Dominio:** $x \in [-r, r]$ (debemos tener $r^2 - x^2 \geq 0$)
+**Paso 4: determinar el dominio.**
+La expresión dentro de la raíz debe satisfacer:
+$$r^2 - x^2 \geq 0 \quad \Longleftrightarrow \quad x^2 \leq r^2 \quad \Longleftrightarrow \quad -r \leq x \leq r$$
+
+Por tanto, el dominio de ambas ramas es:
+$$\text{Dom}(f_1) = \text{Dom}(f_2) = [-r, r]$$
 
 **Ejemplo 11.1:**
-Para el círculo $x^2 + y^2 = 9$ (radio $r = 3$):
-- Rama superior: $y = \sqrt{9 - x^2}$, $x \in [-3, 3]$
-- Rama inferior: $y = -\sqrt{9 - x^2}$, $x \in [-3, 3]$
+Para el círculo $x^2 + y^2 = 9$, con $r = 3$, se obtiene:
+$$\begin{align}
+y^2 &= 9 - x^2 \\
+y &= \pm\sqrt{9 - x^2}
+\end{align}$$
 
-### 11.2 La Elipse
+Las dos ramas son:
+$$f_1(x) = \sqrt{9 - x^2}, \qquad f_2(x) = -\sqrt{9 - x^2}$$
+con dominio común $[-3, 3]$.
 
-**Ecuación canónica:**
-$$\frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2} = 1$$
+### 11.3 La elipse
 
-donde:
-- $(h, k)$ es el centro
-- $a$ es el semieje mayor (horizontal si $a > b$)
-- $b$ es el semieje menor (vertical si $a > b$)
-
-**Elipse centrada en el origen:**
+La elipse centrada en el origen con semiejes $a > 0$ y $b > 0$ tiene ecuación:
 $$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$$
 
-**Funciones explícitas:**
-Despejando $y$:
+**Paso 1: aislar el término en $y$.**
 $$\frac{y^2}{b^2} = 1 - \frac{x^2}{a^2}$$
-$$y^2 = b^2\left(1 - \frac{x^2}{a^2}\right) = \frac{b^2(a^2 - x^2)}{a^2}$$
+
+**Paso 2: despejar $y^2$ y luego $y$.**
+Multiplicamos por $b^2$:
+$$y^2 = b^2\left(1 - \frac{x^2}{a^2}\right) = \frac{b^2}{a^2}(a^2 - x^2)$$
+
+Tomamos raíz cuadrada:
 $$y = \pm\frac{b}{a}\sqrt{a^2 - x^2}$$
 
-- **Rama superior:** $f_1(x) = \frac{b}{a}\sqrt{a^2 - x^2}, \quad x \in [-a, a]$
-- **Rama inferior:** $f_2(x) = -\frac{b}{a}\sqrt{a^2 - x^2}, \quad x \in [-a, a]$
+**Paso 3: identificar las ramas.**
+$$\begin{align}
+f_1(x) &= \frac{b}{a}\sqrt{a^2 - x^2} \quad \text{(rama superior)} \\
+f_2(x) &= -\frac{b}{a}\sqrt{a^2 - x^2} \quad \text{(rama inferior)}
+\end{align}$$
 
-**Dominio:** $x \in [-a, a]$
+**Paso 4: determinar el dominio.**
+Se requiere:
+$$a^2 - x^2 \geq 0 \quad \Longleftrightarrow \quad -a \leq x \leq a$$
+
+Por tanto:
+$$\text{Dom}(f_1) = \text{Dom}(f_2) = [-a, a]$$
 
 **Ejemplo 11.2:**
-Para la elipse $\frac{x^2}{16} + \frac{y^2}{9} = 1$ (con $a = 4$ y $b = 3$):
-- Rama superior: $y = \frac{3}{4}\sqrt{16 - x^2}$, $x \in [-4, 4]$
-- Rama inferior: $y = -\frac{3}{4}\sqrt{16 - x^2}$, $x \in [-4, 4]$
+Para la elipse $\frac{x^2}{16} + \frac{y^2}{9} = 1$, con $a = 4$ y $b = 3$, se obtiene:
+$$\begin{align}
+\frac{y^2}{9} &= 1 - \frac{x^2}{16} \\
+y^2 &= 9\left(1 - \frac{x^2}{16}\right) = \frac{9}{16}(16 - x^2) \\
+y &= \pm\frac{3}{4}\sqrt{16 - x^2}
+\end{align}$$
 
-**Propiedades de la elipse:**
-- Si $a = b = r$, la elipse se convierte en un círculo de radio $r$
-- **Excentricidad:** $e = \frac{c}{a}$ donde $c = \sqrt{a^2 - b^2}$ (si $a > b$)
-- Si $e = 0$: círculo
-- Si $0 < e < 1$: elipse
+Las ramas son:
+$$f_1(x) = \frac{3}{4}\sqrt{16 - x^2}, \qquad f_2(x) = -\frac{3}{4}\sqrt{16 - x^2}$$
+con dominio $[-4, 4]$.
 
-### 11.3 La Parábola
+### 11.4 La parábola
 
-**Parábola con eje vertical (abre hacia arriba o abajo):**
-$$y = ax^2 + bx + c$$
+La parábola presenta dos casos según la orientación de su eje.
 
-Esta **sí define una función** directamente.
+#### 11.4.1 Parábola de eje vertical
 
-**Forma canónica:**
-$$y - k = a(x - h)^2$$
+Su ecuación canónica es:
+$$y = a(x - h)^2 + k$$
 
-donde $(h, k)$ es el vértice.
+En este caso $y$ ya aparece despejada, por lo que la ecuación **sí define directamente** una función:
+$$f(x) = a(x - h)^2 + k$$
+con dominio $\mathbb{R}$. Si el vértice está en el origen, esto se reduce a $f(x) = ax^2$.
 
-**Parábola con eje horizontal (abre hacia derecha o izquierda):**
-$$x = ay^2 + by + c$$
+#### 11.4.2 Parábola de eje horizontal
 
-Esta **no define** $y$ como función de $x$, pero define $x$ como función de $y$.
+Su ecuación canónica es:
+$$x = a(y - k)^2 + h$$
 
-**Forma canónica:**
-$$x - h = a(y - k)^2$$
+Aquí $x$ está en función de $y$, no al revés. Para expresar $y$ en términos de $x$ se procede así.
 
-**Funciones explícitas (parábola horizontal):**
-Despejando $y$ de $x = a(y - k)^2 + h$:
-$$(y - k)^2 = \frac{x - h}{a}$$
-$$y = k \pm \sqrt{\frac{x - h}{a}}$$
+**Paso 1: aislar $(y - k)^2$.**
+$$a(y - k)^2 = x - h$$
+$$ (y - k)^2 = \frac{x - h}{a}$$
 
-- **Rama superior:** $f_1(x) = k + \sqrt{\frac{x - h}{a}}$
-- **Rama inferior:** $f_2(x) = k - \sqrt{\frac{x - h}{a}}$
+**Paso 2: tomar raíz cuadrada.**
+$$y - k = \pm\sqrt{\frac{x - h}{a}}$$
 
-**Dominio:** Depende del signo de $a$:
-- Si $a > 0$: $x \geq h$ (parábola abre a la derecha)
-- Si $a < 0$: $x \leq h$ (parábola abre a la izquierda)
+**Paso 3: despejar $y$ e identificar ramas.**
+$$\begin{align}
+f_1(x) &= k + \sqrt{\frac{x - h}{a}} \quad \text{(rama superior)} \\
+f_2(x) &= k - \sqrt{\frac{x - h}{a}} \quad \text{(rama inferior)}
+\end{align}$$
+
+**Paso 4: determinar el dominio.**
+La fracción dentro de la raíz debe ser no negativa. Si $a > 0$, entonces $x - h \geq 0$, es decir, $x \geq h$. Si $a < 0$, entonces $x - h \leq 0$, es decir, $x \leq h$.
 
 **Ejemplo 11.3:**
-Para la parábola $x = y^2$ (equivalente a $y^2 = x$):
-- Rama superior: $y = \sqrt{x}$, $x \geq 0$
-- Rama inferior: $y = -\sqrt{x}$, $x \geq 0$
+Para la parábola $x = y^2$, con $h = k = 0$ y $a = 1$, se obtiene:
+$$\begin{align}
+y^2 &= x \\
+y &= \pm\sqrt{x}
+\end{align}$$
 
-### 11.4 La Hipérbola
+Las ramas son $f_1(x) = \sqrt{x}$ y $f_2(x) = -\sqrt{x}$, ambas con dominio $[0, +\infty)$.
 
-**Ecuación canónica (hipérbola horizontal):**
-$$\frac{(x-h)^2}{a^2} - \frac{(y-k)^2}{b^2} = 1$$
+### 11.5 La hipérbola
 
-**Hipérbola centrada en el origen:**
+#### 11.5.1 Hipérbola horizontal
+
+Su ecuación canónica centrada en el origen es:
 $$\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$$
 
-**Funciones explícitas:**
-Despejando $y$:
-$$\frac{y^2}{b^2} = \frac{x^2}{a^2} - 1 = \frac{x^2 - a^2}{a^2}$$
-$$y^2 = \frac{b^2(x^2 - a^2)}{a^2}$$
+**Paso 1: aislar el término en $y$.**
+$$\frac{y^2}{b^2} = \frac{x^2}{a^2} - 1$$
+
+**Paso 2: despejar $y^2$ y luego $y$.**
+Multiplicamos por $b^2$:
+$$y^2 = b^2\left(\frac{x^2}{a^2} - 1\right) = \frac{b^2}{a^2}(x^2 - a^2)$$
+
+Tomamos raíz cuadrada:
 $$y = \pm\frac{b}{a}\sqrt{x^2 - a^2}$$
 
-- **Rama superior:** $f_1(x) = \frac{b}{a}\sqrt{x^2 - a^2}$
-- **Rama inferior:** $f_2(x) = -\frac{b}{a}\sqrt{x^2 - a^2}$
+**Paso 3: identificar las ramas.**
+$$\begin{align}
+f_1(x) &= \frac{b}{a}\sqrt{x^2 - a^2} \quad \text{(rama superior)} \\
+f_2(x) &= -\frac{b}{a}\sqrt{x^2 - a^2} \quad \text{(rama inferior)}
+\end{align}$$
 
-**Dominio:** $x \in (-\infty, -a] \cup [a, +\infty)$ (necesitamos $x^2 - a^2 \geq 0$)
+**Paso 4: determinar el dominio.**
+Se requiere:
+$$x^2 - a^2 \geq 0 \quad \Longleftrightarrow \quad x \leq -a \quad \text{o} \quad x \geq a$$
 
-**Ejemplo 11.4 (Hipérbola equilátera):**
-Para $x^2 - y^2 = 1$ (con $a = b = 1$):
-- Rama superior: $f_1(x) = \sqrt{x^2 - 1}$, $x \in (-\infty, -1] \cup [1, +\infty)$
-- Rama inferior: $f_2(x) = -\sqrt{x^2 - 1}$, $x \in (-\infty, -1] \cup [1, +\infty)$
+Por tanto:
+$$\text{Dom}(f_1) = \text{Dom}(f_2) = (-\infty, -a] \cup [a, +\infty)$$
 
-**Asíntotas:**
-La hipérbola $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$ tiene asíntotas:
-$$y = \pm\frac{b}{a}x$$
+**Ejemplo 11.4:**
+Para la hipérbola $x^2 - y^2 = 1$, con $a = b = 1$, se obtiene:
+$$\begin{align}
+y^2 &= x^2 - 1 \\
+y &= \pm\sqrt{x^2 - 1}
+\end{align}$$
 
-**Hipérbola vertical:**
+Las ramas son $f_1(x) = \sqrt{x^2 - 1}$ y $f_2(x) = -\sqrt{x^2 - 1}$, con dominio $(-\infty, -1] \cup [1, +\infty)$.
+
+#### 11.5.2 Hipérbola vertical
+
+Su ecuación canónica centrada en el origen es:
 $$\frac{y^2}{b^2} - \frac{x^2}{a^2} = 1$$
 
-Esta define $y$ como función de $x$ directamente (sin necesidad de separar en ramas para cada valor de $x$ en el dominio central).
+Procediendo de manera análoga se obtiene:
+$$y = \pm\frac{b}{a}\sqrt{x^2 + a^2}$$
+
+En este caso $x^2 + a^2$ es siempre positivo, por lo que ambas ramas están definidas para todo $x \in \mathbb{R}$:
+$$\begin{align}
+f_1(x) &= \frac{b}{a}\sqrt{x^2 + a^2} \\
+f_2(x) &= -\frac{b}{a}\sqrt{x^2 + a^2}
+\end{align}$$
+con dominio $\mathbb{R}$.
+
+### 11.6 Tabla resumen
+
+La siguiente tabla condensa el resultado del proceso anterior para cónicas centradas en el origen.
+
+| Cónica | Ecuación implícita | Ramas funcionales | Dominio |
+|---|---|---|---|
+| Círculo | $x^2 + y^2 = r^2$ | $f_1(x) = \sqrt{r^2 - x^2}$, $f_2(x) = -\sqrt{r^2 - x^2}$ | $[-r, r]$ |
+| Elipse | $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$ | $f_1(x) = \frac{b}{a}\sqrt{a^2 - x^2}$, $f_2(x) = -\frac{b}{a}\sqrt{a^2 - x^2}$ | $[-a, a]$ |
+| Parábola vertical | $y = ax^2$ | $f(x) = ax^2$ | $\mathbb{R}$ |
+| Parábola horizontal | $x = ay^2$ | $f_1(x) = \sqrt{x/a}$, $f_2(x) = -\sqrt{x/a}$ | $[0, +\infty)$ si $a > 0$; $(-\infty, 0]$ si $a < 0$ |
+| Hipérbola horizontal | $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$ | $f_1(x) = \frac{b}{a}\sqrt{x^2 - a^2}$, $f_2(x) = -\frac{b}{a}\sqrt{x^2 - a^2}$ | $(-\infty, -a] \cup [a, +\infty)$ |
+| Hipérbola vertical | $\frac{y^2}{b^2} - \frac{x^2}{a^2} = 1$ | $f_1(x) = \frac{b}{a}\sqrt{x^2 + a^2}$, $f_2(x) = -\frac{b}{a}\sqrt{x^2 + a^2}$ | $\mathbb{R}$ |
+
+### 11.7 Cónicas trasladadas
+
+Cuando el centro de la cónica no está en el origen, el procedimiento es el mismo; solo aparecen desplazamientos $h$ y $k$ en las fórmulas. Veamos el caso del círculo.
+
+Partimos de:
+$$(x - h)^2 + (y - k)^2 = r^2$$
+
+**Paso 1: aislar $(y - k)^2$.**
+$$(y - k)^2 = r^2 - (x - h)^2$$
+
+**Paso 2: tomar raíz cuadrada.**
+$$y - k = \pm\sqrt{r^2 - (x - h)^2}$$
+
+**Paso 3: despejar $y$ e identificar ramas.**
+$$\begin{align}
+f_1(x) &= k + \sqrt{r^2 - (x - h)^2} \quad \text{(rama superior)} \\
+f_2(x) &= k - \sqrt{r^2 - (x - h)^2} \quad \text{(rama inferior)}
+\end{align}$$
+
+**Paso 4: determinar el dominio.**
+Se requiere:
+$$r^2 - (x - h)^2 \geq 0 \quad \Longleftrightarrow \quad (x - h)^2 \leq r^2 \quad \Longleftrightarrow \quad h - r \leq x \leq h + r$$
+
+Por tanto:
+$$\text{Dom}(f_1) = \text{Dom}(f_2) = [h - r, h + r]$$
+
+**Ejemplo 11.5:**
+Para el círculo $(x - 2)^2 + (y + 1)^2 = 25$, con centro $(h, k) = (2, -1)$ y radio $r = 5$, se obtiene:
+$$\begin{align}
+(y + 1)^2 &= 25 - (x - 2)^2 \\
+y + 1 &= \pm\sqrt{25 - (x - 2)^2} \\
+y &= -1 \pm \sqrt{25 - (x - 2)^2}
+\end{align}$$
+
+Las ramas son:
+$$f_1(x) = -1 + \sqrt{25 - (x - 2)^2}, \qquad f_2(x) = -1 - \sqrt{25 - (x - 2)^2}$$
+con dominio $[-3, 7]$.
+
+> **Nota:** Para el resto de las cónicas trasladadas (elipse, parábola e hipérbola) el procedimiento es análogo: se aisla el término con $y$, se despeja y se ajusta el dominio según el nuevo centro $(h, k)$.
+
+### 11.8 Aplicaciones
+
+La necesidad de expresar una cónica como función surge cada vez que se desea estudiar pendientes, áreas o movimiento a lo largo de una de sus ramas.
+
+- **Mecánica celeste:** Una órbita elíptica se describe globalmente por la ecuación implícita de la elipse, pero el movimiento de un planeta se estudia mediante una parametrización o una rama funcional que depende del tiempo.
+
+- **Óptica y telecomunicaciones:** Un reflector parabólico se modela con $y = ax^2$, que ya es una función. En cambio, un espejo elíptico requiere elegir la rama superior o inferior según la región iluminada.
+
+- **Navegación:** Los sistemas de posicionamiento por diferencia de tiempos usan hipérbolas. Para convertir los datos en una trayectoria estimada se trabaja con ramas funcionales y parametrizaciones.
+
+### 11.9 Observaciones
+
+> **Observación (cónicas y funciones):** Ninguna cónica cerrada o con dos ramas define una función $y = f(x)$ de manera global. El círculo, la elipse y la hipérbola horizontal deben dividirse en rama superior e inferior. La parábola de eje vertical sí es función, mientras que la de eje horizontal define $x$ como función de $y$.
+
+> **Observación (referencia):** Para la clasificación completa, propiedades geométricas, focos, directrices, excentricidad y cónicas rotadas, consultar [[Clase 8 - Cónicas]].
 
 ---
 
 ## 12. Funciones Implícitas
 
-**Concepto intuitivo:**
+Hasta ahora hemos trabajado con funciones dadas de forma **explícita**, es decir, con ecuaciones en las que $y$ ya aparece despejada en términos de $x$, como $y = x^2 + 1$ o $y = \sqrt{x}$. Sin embargo, muchas relaciones matemáticas naturales se presentan de forma **implícita**, donde $x$ e $y$ aparecen mezclados en una misma ecuación. La ecuación de un círculo $x^2 + y^2 = 25$, la de una elipse o incluso curvas más elaboradas como el folium de Descartes son ejemplos de este tipo de relaciones.
 
-Hasta ahora hemos trabajado principalmente con **funciones explícitas**, donde la variable dependiente $y$ se expresa directamente en términos de la variable independiente $x$: $y = f(x)$. Por ejemplo, $y = x^2 + 3x + 1$.
+En una ecuación implícita no siempre es necesario ni posible despejar $y$. Cuando sí se puede, el resultado suele ser una o más funciones explícitas llamadas **ramas**. Cuando no se puede, la relación sigue siendo perfectamente válida como curva en el plano, pero requiere herramientas más avanzadas —límites, derivadas y, más adelante, cálculo multivariable— para estudiarla en profundidad. Esta sección introduce la idea de función implícita usando únicamente álgebra básica.
 
-Sin embargo, muchas relaciones matemáticas se expresan de forma **implícita**, donde $x$ e $y$ están relacionadas por una ecuación pero no podemos (o no necesitamos) despejar $y$ explícitamente. Por ejemplo: $x^2 + y^2 = 25$ (un círculo).
+> **Nota histórica:** El lenguaje de las ecuaciones implícitas nace con la geometría analítica de **René Descartes** y **Pierre de Fermat** en el siglo XVII. Descartes estudió la curva $x^3 + y^3 = 3axy$, conocida como *folium de Descartes*, como ejemplo de una relación entre $x$ e $y$ que no admite un despeje sencillo. Esta misma idea preparó el terreno para el desarrollo posterior del cálculo diferencial.
 
-Una **función implícita** es aquella definida por una ecuación de la forma:
+### 12.1 La idea central
+
+Una ecuación de la forma:
 $$F(x, y) = 0$$
 
-donde $F$ es una función de dos variables.
-
-### 12.1 Definición formal
-
-**Definición 12.1 (Ecuación implícita):**
-Una **ecuación implícita** en $x$ e $y$ es una relación de la forma:
-$$F(x, y) = 0$$
-
-donde $F: \mathbb{R}^2 \to \mathbb{R}$ es una función de dos variables.
-
-**Observación:** No toda ecuación implícita define a $y$ como función de $x$. Para que defina una función, debe cumplirse que para cada $x$ en el dominio, existe un **único** valor de $y$ que satisface la ecuación.
+relaciona a $x$ e $y$ sin que una de las variables aparezca necesariamente despejada. Decimos que esta ecuación **define implícitamente** a $y$ como función de $x$ cuando, al despejar $y$, obtenemos una o más expresiones del tipo $y = f(x)$.
 
 **Ejemplo 12.1:**
-La ecuación $x^2 + y^2 = 9$ **no define** $y$ como función de $x$ porque para cada $x \in (-3, 3)$ existen **dos** valores de $y$ que satisfacen la ecuación: $y = \pm\sqrt{9 - x^2}$.
+La ecuación $2x + 3y = 6$ está dada de forma implícita, pero despejar $y$ es inmediato:
+$$\begin{align}
+3y &= 6 - 2x \\
+y &= 2 - \frac{2}{3}x
+\end{align}$$
 
-Sin embargo, si restringimos la ecuación a $y \geq 0$, entonces sí define una función: $y = \sqrt{9 - x^2}$ (semicírculo superior).
-
-### 12.2 El Teorema de la Función Implícita
-
-El **Teorema de la Función Implícita** (que se estudia con rigor en cálculo multivariable) proporciona condiciones bajo las cuales una ecuación implícita $F(x, y) = 0$ define localmente a $y$ como función de $x$.
-
-**Teorema 12.1 (Teorema de la Función Implícita - versión informal):**
-Si $F(x, y) = 0$ es una ecuación donde:
-1. $F$ es una función suave (diferenciable)
-2. En un punto $(x_0, y_0)$ que satisface $F(x_0, y_0) = 0$
-3. La derivada parcial $\frac{\partial F}{\partial y} \neq 0$ en $(x_0, y_0)$
-
-Entonces, **localmente** (cerca de $x_0$), la ecuación define a $y$ como función de $x$: $y = f(x)$.
-
-**Observación:** La condición $\frac{\partial F}{\partial y} \neq 0$ garantiza que podemos "despejar" $y$ en términos de $x$ cerca del punto considerado.
-
-**Nota:** El estudio completo de este teorema, incluyendo su demostración y aplicaciones, se realiza en cursos de Cálculo Multivariable. Aquí presentamos la idea intuitiva.
-
-### 12.3 Derivación implícita
-
-Aunque no despejemos $y$ explícitamente, podemos calcular $\frac{dy}{dx}$ mediante **derivación implícita**: derivamos ambos lados de la ecuación $F(x, y) = 0$ respecto a $x$, tratando a $y$ como función de $x$.
+Por tanto, define explícitamente la función lineal $f(x) = 2 - \frac{2}{3}x$, con dominio $\mathbb{R}$.
 
 **Ejemplo 12.2:**
-Dada la ecuación del círculo $x^2 + y^2 = 9$, encontrar $\frac{dy}{dx}$.
+La ecuación $x^2 + y^2 = 9$ no define a $y$ como una única función de $x$, porque al despejar obtenemos dos valores:
+$$\begin{align}
+y^2 &= 9 - x^2 \\
+y &= \pm\sqrt{9 - x^2}
+\end{align}$$
 
-**Solución:**
-Derivamos ambos lados respecto a $x$:
-$$\frac{d}{dx}(x^2 + y^2) = \frac{d}{dx}(9)$$
-$$2x + 2y\frac{dy}{dx} = 0$$
+Cada signo determina una rama:
+- Rama superior: $f_1(x) = \sqrt{9 - x^2}$, con dominio $[-3, 3]$.
+- Rama inferior: $f_2(x) = -\sqrt{9 - x^2}$, con dominio $[-3, 3]$.
 
-Despejamos $\frac{dy}{dx}$:
-$$2y\frac{dy}{dx} = -2x$$
-$$\frac{dy}{dx} = -\frac{x}{y}, \quad y \neq 0$$
+La ecuación completa representa el círculo, pero cada rama por separado sí es una función.
 
-**Interpretación:** La pendiente de la tangente al círculo en el punto $(x, y)$ es $-\frac{x}{y}$.
+### 12.2 Despejando $y$ en las cónicas
 
-**Ejemplo 12.3:**
-Para la elipse $\frac{x^2}{16} + \frac{y^2}{9} = 1$, encontrar $\frac{dy}{dx}$.
+En la sección anterior vimos que las cónicas pueden escribirse de forma implícita. Ahora retomamos esas ecuaciones y las despejamos paso a paso, obteniendo las ramas funcionales correspondientes.
 
-**Solución:**
-Derivamos:
-$$\frac{2x}{16} + \frac{2y}{9}\frac{dy}{dx} = 0$$
-$$\frac{x}{8} + \frac{2y}{9}\frac{dy}{dx} = 0$$
-$$\frac{dy}{dx} = -\frac{9x}{16y}, \quad y \neq 0$$
+**Ejemplo 12.3 (Elipse):**
+Para la elipse $\frac{x^2}{16} + \frac{y^2}{9} = 1$, se tiene:
+$$\begin{align}
+\frac{y^2}{9} &= 1 - \frac{x^2}{16} \\
+y^2 &= 9\left(1 - \frac{x^2}{16}\right) = \frac{9}{16}(16 - x^2) \\
+y &= \pm\frac{3}{4}\sqrt{16 - x^2}
+\end{align}$$
 
-### 12.4 Relación con las cónicas
+Las ramas son $f_1(x) = \frac{3}{4}\sqrt{16 - x^2}$ y $f_2(x) = -\frac{3}{4}\sqrt{16 - x^2}$, ambas con dominio $[-4, 4]$.
 
-Las **cónicas** son ejemplos perfectos de funciones implícitas. Aunque la ecuación general de una cónica:
-$$Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$$
+**Ejemplo 12.4 (Parábola horizontal):**
+Para la parábola $x = y^2$, se tiene:
+$$\begin{align}
+y^2 &= x \\
+y &= \pm\sqrt{x}
+\end{align}$$
 
-no define $y$ como función explícita de $x$ globalmente, **localmente** (en ciertos subconjuntos) sí lo hace.
-
-**Ejemplo 12.4 (Círculo):**
-$$F(x, y) = x^2 + y^2 - r^2 = 0$$
-
-- **Rama superior:** $y = \sqrt{r^2 - x^2}$ (para $y > 0$)
-- **Rama inferior:** $y = -\sqrt{r^2 - x^2}$ (para $y < 0$)
+Las ramas son $f_1(x) = \sqrt{x}$ y $f_2(x) = -\sqrt{x}$, con dominio $[0, +\infty)$.
 
 **Ejemplo 12.5 (Hipérbola):**
-$$F(x, y) = x^2 - y^2 - 1 = 0$$
+Para la hipérbola $x^2 - y^2 = 1$, se tiene:
+$$\begin{align}
+y^2 &= x^2 - 1 \\
+y &= \pm\sqrt{x^2 - 1}
+\end{align}$$
 
-- **Rama superior:** $y = \sqrt{x^2 - 1}$ (para $y > 0$)
-- **Rama inferior:** $y = -\sqrt{x^2 - 1}$ (para $y < 0$)
+Las ramas son $f_1(x) = \sqrt{x^2 - 1}$ y $f_2(x) = -\sqrt{x^2 - 1}$, con dominio $(-\infty, -1] \cup [1, +\infty)$.
 
-### 12.5 Ejemplos adicionales
+### 12.3 Cuando no se puede despejar fácilmente
 
-**Ejemplo 12.6 (Ecuación de tercer grado):**
-La ecuación $y^3 + y - x = 0$ define implícitamente $y$ como función de $x$.
+No toda ecuación implícita admite un despeje sencillo en términos de funciones elementales. En esos casos la relación se estudia como curva en el plano, y más adelante, con herramientas de cálculo diferencial, se podrá analizar su comportamiento sin necesidad de despejar.
 
-Verificación mediante el teorema:
-$$F(x, y) = y^3 + y - x$$
-$$\frac{\partial F}{\partial y} = 3y^2 + 1 > 0, \quad \forall y \in \mathbb{R}$$
-
-Como $\frac{\partial F}{\partial y} \neq 0$ siempre, el teorema garantiza que para cada $x$ existe un único $y$ tal que $F(x, y) = 0$.
-
-**Derivada implícita:**
-$$3y^2\frac{dy}{dx} + \frac{dy}{dx} - 1 = 0$$
-$$\frac{dy}{dx}(3y^2 + 1) = 1$$
-$$\frac{dy}{dx} = \frac{1}{3y^2 + 1}$$
-
-**Ejemplo 12.7 (Folium de Descartes):**
+**Ejemplo 12.6 (Folium de Descartes):**
 La curva definida por:
-$$x^3 + y^3 = 3xy$$
+$$x^3 + y^3 = 3axy$$
 
-es un ejemplo clásico de relación implícita que no puede expresarse fácilmente de forma explícita.
+con $a > 0$, es un ejemplo clásico. Aunque algebraicamente es posible despejar $y$ usando la fórmula de Cardano para ecuaciones cúbicas, la expresión resultante es tan complicada que no resulta útil. Por esta razón se prefiere trabajar con la ecuación implícita.
 
-**Derivada implícita:**
-$$3x^2 + 3y^2\frac{dy}{dx} = 3y + 3x\frac{dy}{dx}$$
-$$3y^2\frac{dy}{dx} - 3x\frac{dy}{dx} = 3y - 3x^2$$
-$$\frac{dy}{dx}(y^2 - x) = y - x^2$$
-$$\frac{dy}{dx} = \frac{y - x^2}{y^2 - x}, \quad y^2 \neq x$$
-
-**Ejemplo 12.8 (Lemniscata de Bernoulli):**
+**Ejemplo 12.7 (Lemniscata de Bernoulli):**
+La curva:
 $$(x^2 + y^2)^2 = 2a^2(x^2 - y^2)$$
 
-Esta curva con forma de "8" es otro ejemplo de función implícita que no tiene forma explícita simple.
+con $a > 0$, tiene forma de "8". Despejar $y$ de manera sencilla no es viable, por lo que la descripción implícita es la forma natural de estudiarla.
 
-### 12.6 Importancia de las funciones implícitas
+### 12.4 Aplicaciones
 
-Las funciones implícitas son fundamentales en:
+Las ecuaciones implícitas aparecen en contextos donde las variables están relacionadas de manera natural, sin que una de ellas sea la "variable de salida" evidente.
 
-1. **Geometría:** Muchas curvas algebraicas (cónicas, lemniscatas, etc.) se definen naturalmente de forma implícita
+- **Geometría:** Las cónicas, el folium de Descartes y la lemniscata de Bernoulli se expresan de forma implícita de manera elegante. La forma implícita suele ser más compacta y simétrica que cualquier despeje explícito.
 
-2. **Física:** Leyes de conservación (energía, momento) suelen expresarse como ecuaciones implícitas
+- **Física:** Muchas leyes naturales se escriben como ecuaciones que relacionan varias cantidades. Por ejemplo, la ecuación de estado de un gas real relaciona presión, volumen y temperatura de forma implícita.
 
-3. **Economía:** Curvas de indiferencia, isocuantas e isocostos se representan implícitamente
+- **Economía:** Las curvas de indiferencia y las isocuantas describen conjuntos de puntos $(x, y)$ que satisfacen una ecuación $F(x, y) = k$. Aunque en este curso aún no se estudian las tasas marginales, la idea de una relación implícita entre variables ya está presente.
 
-4. **Ingeniería:** Ecuaciones de estado, relaciones termodinámicas
+### 12.5 Observaciones
 
-5. **Cálculo avanzado:** Permite trabajar con relaciones complejas sin necesidad de despejar variables explícitamente
+> **Observación (forma implícita vs. explícita):** La elección entre ambas formas depende del propósito. Si se busca simetría y generalidad, la forma implícita es preferible. Si se necesita evaluar o graficar una función, a menudo es necesario recurrir a ramas explícitas.
 
-**Proposición 12.1 (Ventaja de la forma implícita):**
-Para muchas curvas algebraicas, la forma implícita es más simple y elegante que cualquier forma explícita equivalente.
+> **Observación (curvas que no son funciones):** Muchas curvas importantes, como el círculo completo o la elipse completa, no son funciones $y = f(x)$. Para estudiarlas con las herramientas del cálculo se recurre a dividirlas en ramas o, más adelante, a parametrizaciones.
 
-**Ejemplo:** El círculo $x^2 + y^2 = r^2$ es mucho más simple que sus dos ramas explícitas $y = \pm\sqrt{r^2 - x^2}$.
+> **Observación (hacia el futuro):** Cuando el curso desarrolle las herramientas del cálculo diferencial, será posible estudiar ecuaciones implícitas sin despejar $y$. Ese estudio incluye la **derivación implícita** y el **Teorema de la Función Implícita**, que se abordan formalmente en cursos de cálculo multivariable.
 
 ---
+
+*Fin de Clase 9 - Funciones Parte 2*
