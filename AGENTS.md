@@ -100,6 +100,7 @@ Esa skill define en detalle:
 - **PROHIBIDO:** "es obvio que", "claramente", "trivialmente", "es fácil ver", "simplemente"
 - **PROHIBIDO:** etiquetas como `**Idea intuitiva:**` — el párrafo motivacional habla por sí solo
 - **PROHIBIDO:** hablar al lector en segunda persona informal ("haz esto", "fíjate que")
+- **PROHIBIDO:** omitir una demostración alegando que es "trivial" o "se deja como ejercicio para el lector". Toda afirmación demostrable debe demostrarse aquí o, si corresponde a otro curso, diferirse con referencia explícita a la sección o curso donde se demostrará.
 
 ## Matemáticas
 

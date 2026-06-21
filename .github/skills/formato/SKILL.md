@@ -188,6 +188,7 @@ $\blacksquare$
   ```markdown
   **Demostración:** Se demostrará en la Sección N.M cuando se introduzca [concepto].
   ```
+- **NO omitir una demostración alegando que es "trivial" o "se deja como ejercicio para el lector".** Si un resultado no se prueba en la clase actual, debe diferirse con referencia explícita a la sección o curso donde se demostrará.
 - Si la demostración es una "idea intuitiva" (no totalmente rigurosa), indicarlo:
   ```markdown
   **Demostración (idea intuitiva):**
@@ -451,6 +452,7 @@ $$(x - 4)^2 + (y + 3)^2 = 16$$
 - No añadir contexto histórico que no aporte comprensión
 - No presentar demostraciones informales como si fueran formales
   (usar `$\square$` si es informal, `$\blacksquare$` si es rigurosa)
+- No omitir demostraciones alegando que son "triviales" o "ejercicio para el lector"
 - No usar conceptos sin haberlos definido previamente (o sin indicar el prerequisito)
 - No incluir secciones vacías ni marcadores de posición como "TODO"
 - No escribir encabezados `#### N.M.K` a menos que sea estrictamente necesario

@@ -1,14 +1,17 @@
 # Los Números: Fundamentos y Construcción
 
+En esta clase se construyen los sistemas numéricos fundamentales —naturales, enteros, racionales, irracionales y reales— a partir de la teoría de conjuntos, y se establecen los axiomas que caracterizan a los números reales como cuerpo ordenado completo.
+
 ## 1. Teoría de conjuntos: Lenguaje fundamental de las matemáticas
 
 ### 1.1 Concepto intuitivo de conjunto
 
-**Idea intuitiva:** Un **conjunto** es una colección de objetos bien definidos, llamados **elementos**. Esta noción, propuesta por Georg Cantor en 1874, es la base de toda la matemática moderna.
-Ejemplo: Sea $A$ el conjunto de los colores primarios, entonces:
-$$A = \{\text{rojo}, \text{azul},\text{amarillo}\}$$
-Los conjunto se denotan llaves $\{\}$
-Los elementos de un conjunto no se repiten por lo tanto $\{2, 2, 3\} = \{2, 3\}$
+Pensemos en una colección de objetos bien definidos: los colores primarios, los números pares, o los puntos de una recta. En matemáticas, a esas colecciones se las llama **conjuntos**, y a cada objeto individual se lo llama **elemento**. Esta noción, propuesta por Georg Cantor en 1874, es la base de toda la matemática moderna.
+
+Sea $A$ el conjunto de los colores primarios, entonces:
+$$A = \{\text{rojo}, \text{azul}, \text{amarillo}\}$$
+
+> **Nota:** Los conjuntos se denotan con llaves $\{\}$. Además, los elementos de un conjunto no se repiten: por ejemplo, $\{2, 2, 3\} = \{2, 3\}$.
 
 **Notación básica:**
 - Si $x$ es elemento del conjunto $A$, escribimos $x \in A$ (se lee "x pertenece a A")
@@ -32,7 +35,13 @@ Especificar una propiedad que caracteriza a los elementos.
 $$A = \{x \in \mathbb{N} : x \text{ es par y } x \leq 8\}$$
 Se lee: "A es el conjunto de todos los x en los naturales tales que x es par y x es menor o igual a 8"
 
-**Observación:** La notación por comprensión tiene la forma general:
+**c) Representación gráfica: diagramas de Venn**
+
+Además de las notaciones algebraicas, los conjuntos pueden representarse gráficamente mediante **diagramas de Venn**. En estos diagramas, cada conjunto se dibuja como una curva cerrada (habitualmente un círculo o una elipse) y los elementos se representan como puntos en su interior. La intersección entre conjuntos aparece como la región común a ambas curvas, y la inclusión como una curva dentro de otra. Esta representación es especialmente útil para visualizar relaciones e ilustrar operaciones entre pocos conjuntos.
+![[diagrama_venn_A.png]]
+*Figura 1.2.1: Diagrama de Venn del conjunto $A = \{2, 4, 6, 8\}$ dentro del universo $U = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}$. Los elementos dentro de la elipse magenta pertenecen a $A$; los elementos fuera de la elipse pero dentro del rectángulo pertenecen a $U$ pero no a $A$.*
+
+> **Observación:** La notación por comprensión tiene la forma general:
 $$\{x \in U : P(x)\}$$
 donde $U$ es un "universo" de referencia y $P(x)$ (se lee P de x) es una propiedad o predicado que cumple $x$.
 
@@ -63,7 +72,7 @@ Si $A = \{1, 2, 3, 4\}$ y $B = \{3, 4, 5, 6\}$, entonces:
 
 ### 1.4 La paradoja de Russell y los límites de la intuición
 
-**Advertencia importante:** La noción intuitiva de conjunto tiene limitaciones profundas. Bertrand Russell descubrió en 1901 una paradoja que muestra que no podemos definir conjuntos de manera completamente libre.
+> **Advertencia importante:** La noción intuitiva de conjunto tiene limitaciones profundas. Bertrand Russell descubrió en 1901 una paradoja que muestra que no podemos definir conjuntos de manera completamente libre.
 
 **La paradoja de Russell:**
 Consideremos el conjunto $R$ definido como:
@@ -105,15 +114,15 @@ $\forall x$ *se lee ¨"Para todo x"*
    - $A \setminus \emptyset = A$
    - $\emptyset \setminus A = \emptyset$
 
-**Observación filosófica:**
-El conjunto vacío puede parecer abstracto o incluso paradójico ("¿cómo puede existir un conjunto de nada?"), pero es absolutamente fundamental en matemáticas. Es el "ladrillo" más básico desde el cual se construyen todos los números (ver Sección 4). Así como el cero es esencial en aritmética, el conjunto vacío es esencial en teoría de conjuntos.
+> **Observación filosófica:**
+> El conjunto vacío puede parecer abstracto o incluso paradójico ("¿cómo puede existir un conjunto de nada?"), pero es absolutamente fundamental en matemáticas. Es el "ladrillo" más básico desde el cual se construyen todos los números (ver Sección 4). Así como el cero es esencial en aritmética, el conjunto vacío es esencial en teoría de conjuntos.
 
-**Analogía:** Piensa en el conjunto vacío como una caja vacía: la caja existe aunque no contenga nada. El conjunto vacío es "algo" (un conjunto válido), pero ese algo no contiene elementos.
+> **Analogía:** El conjunto vacío puede imaginarse como una caja vacía: la caja existe aunque no contenga nada. El conjunto vacío es "algo" (un conjunto válido), pero ese algo no contiene elementos.
 
-**Notación importante:** No confundir:
-- $\emptyset$ (el conjunto vacío, que no tiene elementos)
-- $\{\emptyset\}$ (el conjunto que contiene al conjunto vacío como único elemento, por lo tanto tiene 1 elemento)
-- $\{\{\emptyset\}\}$ (el conjunto que contiene al conjunto $\{\emptyset\}$, tiene 1 elemento)
+> **Notación importante:** No confundir:
+> - $\emptyset$ (el conjunto vacío, que no tiene elementos)
+> - $\{\emptyset\}$ (el conjunto que contiene al conjunto vacío como único elemento, por lo tanto tiene 1 elemento)
+> - $\{\{\emptyset\}\}$ (el conjunto que contiene al conjunto $\{\emptyset\}$, tiene 1 elemento)
 
 Estas distinciones serán cruciales en la construcción de von Neumann de los números naturales.
 
@@ -127,7 +136,7 @@ La **cardinalidad** de un conjunto finito $A$, denotada $|A|$ o $\#A$ o $\text{c
 - $|\{a, b, c, d, e\}| = 5$
 - $|\emptyset| = 0$ (el conjunto vacío no tiene elementos)
 
-**Observación:** Para conjuntos infinitos, la noción de cardinalidad es más sutil y se basa en la idea de **biyecciones** entre conjuntos (ver Sección 8).
+> **Observación:** Para conjuntos infinitos, la noción de cardinalidad es más sutil y se basa en la idea de **biyecciones** entre conjuntos (ver Sección 8).
 
 ### 1.7 Conjunto potencia
 
@@ -139,7 +148,7 @@ $$\mathcal{P}(A) = \{B : B \subseteq A\}$$
 Si $A = \{1, 2\}$, entonces:
 $$\mathcal{P}(A) = \{\emptyset, \{1\}, \{2\}, \{1,2\}\}$$
 
-Observa que $\mathcal{P}(A)$ contiene **4 elementos**: el conjunto vacío, los dos conjuntos unitarios, y el conjunto completo $A$.
+Se observa que $\mathcal{P}(A)$ contiene **4 elementos**: el conjunto vacío, los dos conjuntos unitarios, y el conjunto completo $A$.
 
 **Ejemplo 1.4:**
 Si $A = \{a, b, c\}$, entonces:
@@ -150,7 +159,7 @@ En este caso, $|\mathcal{P}(A)| = 8$.
 **Caso especial - El conjunto vacío:**
 $$\mathcal{P}(\emptyset) = \{\emptyset\}$$
 
-Nota que el conjunto potencia del vacío **no es vacío**: contiene un elemento (el conjunto vacío mismo).
+Nótese que el conjunto potencia del vacío **no es vacío**: contiene un elemento (el conjunto vacío mismo).
 
 **Teorema 1.1 (Cardinalidad del conjunto potencia):**
 Si $A$ es un conjunto finito con $|A| = n$, entonces:
@@ -187,7 +196,7 @@ $$|A| < |\mathcal{P}(A)|$$
 Este resultado implica que existe una **jerarquía infinita de infinitos**:
 $$|\mathbb{N}| < |\mathcal{P}(\mathbb{N})| < |\mathcal{P}(\mathcal{P}(\mathbb{N}))| < |\mathcal{P}(\mathcal{P}(\mathcal{P}(\mathbb{N})))| < ...$$
 
-**Observación profunda:** El teorema de Cantor muestra que **no existe un "infinito más grande"**: dado cualquier conjunto infinito, siempre podemos construir uno más grande (su conjunto potencia). Esta es una de las ideas más profundas y hermosas de las matemáticas modernas.
+> **Observación profunda:** El teorema de Cantor muestra que **no existe un "infinito más grande"**: dado cualquier conjunto infinito, siempre podemos construir uno más grande (su conjunto potencia). Esta es una de las ideas más profundas y hermosas de las matemáticas modernas.
 
 ---
 
@@ -231,10 +240,10 @@ Para expresar ideas matemáticas con precisión, usamos símbolos lógicos está
 |  $\approx$ | Aproximadamente igual            | $\pi \approx 3.14$       | "pi aproximadamente 3.14"             |
 |  $\equiv$  | Idénticamente igual, congruente  | $x^2 - 1 \equiv (x-1)(x+1)$ | "x² - 1 idénticamente igual a (x-1)(x+1)" |
 
-**Observación sobre $\Rightarrow$ vs $\geq$:**
-- $\Rightarrow$ (flecha simple) denota **implicación lógica** entre proposiciones
-- $\geq$ denota **relación de orden** entre números
-- No confundir: "$x > 0 \Rightarrow x^2 > 0$" (implicación) vs "$x \geq 0$" (comparación)
+> **Observación sobre $\Rightarrow$ vs $\geq$:**
+> - $\Rightarrow$ (flecha simple) denota **implicación lógica** entre proposiciones
+> - $\geq$ denota **relación de orden** entre números
+> - No confundir: "$x > 0 \Rightarrow x^2 > 0$" (implicación) vs "$x \geq 0$" (comparación)
 
 ### 2.3 Terminología matemática fundamental
 
@@ -277,7 +286,7 @@ Un **lema** es una proposición **auxiliar** que se demuestra principalmente par
 Un **corolario** es una proposición que se deduce de manera **directa y casi inmediata** de un teorema o proposición anterior. Es una "consecuencia fácil".
 
 **Características:**
-- Su demostración es breve, a menudo trivial
+- Su demostración es breve y suele ser inmediata
 - Deriva naturalmente de un resultado previo
 - Puede ser muy útil en aplicaciones
 
@@ -300,7 +309,7 @@ Lema (auxiliar) → Teorema (resultado principal) → Corolario (consecuencia)
 Proposición (resultado menor)
 ```
 
-**Observación:** En la práctica, la distinción entre teorema, proposición y lema no siempre es estricta. Lo que un autor llama "proposición" otro podría llamar "teorema" si lo considera suficientemente importante. Sin embargo, los axiomas y corolarios tienen roles más claramente definidos.
+> **Observación:** En la práctica, la distinción entre teorema, proposición y lema no siempre es estricta. Lo que un autor llama "proposición" otro podría llamar "teorema" si lo considera suficientemente importante. Sin embargo, los axiomas y corolarios tienen roles más precisamente definidos.
 
 ### 2.6 El alfabeto griego: aliado esencial de las matemáticas
 
@@ -374,24 +383,24 @@ El **alfabeto griego** es una herramienta indispensable en matemáticas, ciencia
 |   $\Psi$   |         $\psi$          | Psi     | psi           | Función de onda (mecánica cuántica)             |
 |  $\Omega$  |        $\omega$         | Omega   | omega         | Frecuencia angular, resistencia eléctrica (Ω)   |
 
-**Observaciones importantes:**
+> **Observaciones importantes:**
+>
+> 1. **Variantes tipográficas:** Algunas letras tienen variantes estilísticas:
+>    - Épsilon: $\epsilon$ (lunate) vs $\varepsilon$ (curvilínea)
+>    - Theta: $\theta$ (con línea) vs $\vartheta$ (script theta)
+>    - Pi: $\pi$ (normal) vs $\varpi$ (variante pomega)
+>    - Rho: $\rho$ (normal) vs $\varrho$ (con cola)
+>    - Phi: $\phi$ (cerrada) vs $\varphi$ (abierta)
+>
+> 2. **Letras griegas en mayúscula que se parecen a las latinas:**
+>    - $\Alpha$ (A), $\Beta$ (B), $\Epsilon$ (E), $\Zeta$ (Z), $\Eta$ (H), $\Iota$ (I), $\Kappa$ (K), $\Mu$ (M), $\Nu$ (N), $\Omicron$ (O), $\Rho$ (P), $\Tau$ (T), $\Chi$ (X)
+>    - Por esta similitud, raramente se usan las mayúsculas de estas letras en notación matemática
+>
+> 3. **Letras distintivas más usadas:**
+>    - Mayúsculas: $\Gamma, \Delta, \Theta, \Lambda, \Xi, \Pi, \Sigma, \Phi, \Psi, \Omega$
+>    - Minúsculas: $\alpha, \beta, \gamma, \delta, \epsilon, \zeta, \theta, \lambda, \mu, \pi, \rho, \sigma, \tau, \phi, \omega$
 
-1. **Variantes tipográficas:** Algunas letras tienen variantes estilísticas:
-   - Épsilon: $\epsilon$ (lunate) vs $\varepsilon$ (curvilínea)
-   - Theta: $\theta$ (con línea) vs $\vartheta$ (script theta)
-   - Pi: $\pi$ (normal) vs $\varpi$ (variante pomega)
-   - Rho: $\rho$ (normal) vs $\varrho$ (con cola)
-   - Phi: $\phi$ (cerrada) vs $\varphi$ (abierta)
-
-2. **Letras griegas en mayúscula que se parecen a las latinas:**
-   - $\Alpha$ (A), $\Beta$ (B), $\Epsilon$ (E), $\Zeta$ (Z), $\Eta$ (H), $\Iota$ (I), $\Kappa$ (K), $\Mu$ (M), $\Nu$ (N), $\Omicron$ (O), $\Rho$ (P), $\Tau$ (T), $\Chi$ (X)
-   - Por esta similitud, raramente se usan las mayúsculas de estas letras en notación matemática
-
-3. **Letras distintivas más usadas:**
-   - Mayúsculas: $\Gamma, \Delta, \Theta, \Lambda, \Xi, \Pi, \Sigma, \Phi, \Psi, \Omega$
-   - Minúsculas: $\alpha, \beta, \gamma, \delta, \epsilon, \zeta, \theta, \lambda, \mu, \pi, \rho, \sigma, \tau, \phi, \omega$
-
-**Recomendación práctica:** Al estudiar matemáticas, familiarízate con la pronunciación y escritura de las letras griegas. Son tan fundamentales como los números arábigos. Saber leerlas y escribirlas correctamente es esencial para comunicación matemática efectiva.
+> **Recomendación práctica:** Al estudiar matemáticas, es recomendable familiarizarse con la pronunciación y escritura de las letras griegas. Son tan fundamentales como los números arábigos, y saber leerlas y escribirlas correctamente es esencial para la comunicación matemática efectiva.
 
 ---
 
@@ -413,7 +422,7 @@ $$3 := \{0, 1, 2\} = \{ \quad \emptyset,\{\emptyset\},\{\emptyset,\{\emptyset\}\
 $$4 := \{0,1,2,3\} = \{\emptyset,\{\emptyset\},\{\emptyset,\{\emptyset\}\},\{\emptyset,\{\emptyset\},\{\emptyset,\{\emptyset\}\}\}\}​ = \{\{\}, \{ \{\} \}, \{ \{\}, \{ \{\} \} \}, \{ \{\}, \{ \{\} \}, \{ \{\}, \{ \{\} \} \} \}\}$$
 $$n := \{0, 1, 2, ..., n-1\}$$
 
-**Observación clave:** En esta construcción, cada número natural $n$ es el conjunto de todos los números naturales **menores** que $n$. Además, $|n| = n$ (la cardinalidad del conjunto coincide con el número mismo).
+> **Observación clave:** En esta construcción, cada número natural $n$ es el conjunto de todos los números naturales **menores** que $n$. Además, $|n| = n$ (la cardinalidad del conjunto coincide con el número mismo).
 
 **Función sucesor:**
 $$S(n) = n \cup \{n\} = n + 1$$
@@ -428,7 +437,7 @@ $$\mathbb{N} = \{0, 1, 2, 3, 4, ...\}$$
 - $\mathbb{N}^{*} = \{1, 2, 3, 4, ...\}$ (naturales **sin** cero, también denotado $\mathbb{N}^{+}$)
 - $\mathbb{N} = \{0, 1, 2, 3, ...\}$ (naturales **con** cero, también denotado $\mathbb{N}_0$ o $\mathbb{W}$)
 
-**Nota:** Diferentes textos usan convenciones distintas. Algunos incluyen el 0 en $\mathbb{N}$, otros no. Lo importante es establecer claramente la convención al inicio siempre y cuando sea relevantes, si para una trabajo no es relevante si el 0 pertenece o no a los naturales simplemente no se menciona. El debate de si 0 pertenece o no a los naturales es un tema que no tiene una respuesta válida para todos los casos, depende del contexto.
+> **Nota:** Diferentes textos usan convenciones distintas: algunos incluyen el 0 en $\mathbb{N}$ y otros no. En este curso se adopta $\mathbb{N} = \{0, 1, 2, \dots\}$, pero lo esencial es declarar la convención al inicio de cada desarrollo. El debate sobre el 0 no tiene una respuesta universal; depende del contexto.
 
 ### 3.2 La recta numérica de los naturales
 
@@ -453,7 +462,7 @@ Para cualesquiera $m, n \in \mathbb{N}$:
 1. **Caso base:** $m + 0 = m$
 2. **Caso recursivo:** $m + S(n) = S(m + n)$
 
-**Interpretación:** Para sumar $m + n$, aplicamos la función sucesor $n$ veces al número $m$.
+> **Interpretación:** Para sumar $m + n$, aplicamos la función sucesor $n$ veces al número $m$.
 
 **Ejemplo 3.1 (Calculando $2 + 3$):**
 
@@ -481,7 +490,7 @@ $$\begin{align}
 4. **Elemento neutro:** $\forall m \in \mathbb{N}, \quad m + 0 = 0 + m = m$
 5. **Ley de cancelación:** $\forall m, n, p \in \mathbb{N}, \quad m + p = n + p \Rightarrow m = n$
 
-**Observación:** Estas propiedades se demuestran por **inducción matemática** sobre los números naturales, técnica que estudiaremos en detalle en el curso de Algebra I.
+> **Observación:** Estas propiedades se demuestran por **inducción matemática** sobre los números naturales, técnica que estudiaremos en detalle en el curso de Algebra I.
 #### 3.3.2 La resta en $\mathbb{N}$: Operación parcial
 
 **Definición 3.4 (Resta en $\mathbb{N}$):**
@@ -489,7 +498,7 @@ Dados $m, n \in \mathbb{N}$, decimos que $m - n$ **existe en $\mathbb{N}$** si y
 $$n + k = m$$
 En ese caso, escribimos $k = m - n$.
 
-**Observación crítica:** La resta en $\mathbb{N}$ es una **operación parcial**: no siempre está definida.
+> **Observación crítica:** La resta en $\mathbb{N}$ es una **operación parcial**: no siempre está definida.
 
 **Ejemplo 3.2:**
 - $12 - 2 = 10$ está definida en $\mathbb{N}$, porque $2 + 10 = 12$
@@ -502,9 +511,9 @@ $$m - n \in \mathbb{N} \quad \Leftrightarrow \quad m \geq n$$
 
 **El problema de la resta:** Como la resta no siempre está definida en $\mathbb{N}$, necesitamos **ampliar** este sistema numérico. Esta limitación motiva la construcción de los números enteros $\mathbb{Z}$ (ver Sección 4).
 
-**Notación para este curso:**
-- Cuando escribimos $m - n$ en el contexto de $\mathbb{N}$, asumimos implícitamente que $m \geq n$
-- Ecuaciones como "$5 + x = 3$" no tienen solución en $\mathbb{N}$, lo cual veremos resuelto en $\mathbb{Z}$
+> **Notación para este curso:**
+> - Cuando escribimos $m - n$ en el contexto de $\mathbb{N}$, asumimos implícitamente que $m \geq n$
+> - Ecuaciones como "$5 + x = 3$" no tienen solución en $\mathbb{N}$, lo cual veremos resuelto en $\mathbb{Z}$
 #### 3.3.3 La multiplicación en $\mathbb{N}$
 
 Aunque no es el foco principal de esta sección, mencionamos brevemente la multiplicación para completitud.
@@ -518,7 +527,7 @@ Para cualesquiera $m, n \in \mathbb{N}$:
 1. **Caso base:** $m \cdot 0 = 0$
 2. **Caso recursivo:** $m \cdot S(n) = m \cdot n + m$
 
-**Interpretación:** $m \cdot n$ significa "sumar $m$ consigo mismo $n$ veces".
+> **Interpretación:** $m \cdot n$ significa "sumar $m$ consigo mismo $n$ veces".
 
 **Ejemplo 3.3 (Calculando $3 \times 4$):**
 
@@ -551,7 +560,7 @@ $$\begin{align}
 6. **Ley de cancelación:** $\forall m, n, p \in \mathbb{N}, \quad m \cdot p = n \cdot p \land p \neq 0 \Rightarrow m = n$
 7. **Absorción del cero:** $\forall m \in \mathbb{N}, \quad m \cdot 0 = 0 \cdot m = 0$
 
-**Observación:** Estas propiedades también se demuestran por inducción matemática. La propiedad distributiva es especialmente importante, ya que conecta las dos operaciones fundamentales (suma y multiplicación).
+> **Observación:** Estas propiedades también se demuestran por inducción matemática. La propiedad distributiva es especialmente importante, ya que conecta las dos operaciones fundamentales (suma y multiplicación).
 
 **Concepto de Múltiplo:**
 
@@ -605,10 +614,10 @@ Podemos definir varios subconjuntos útiles de los enteros:
 - **Enteros no negativos:** $\mathbb{Z}_{\geq 0} = \{0, 1, 2, 3, ...\} = \mathbb{N}$ (incluye el cero)
 - **Enteros no positivos:** $\mathbb{Z}_{\leq 0} = \{..., -3, -2, -1, 0\}$ (incluye el cero)
 
-**Observación:** Note que:
-- $\mathbb{Z}^+ = \mathbb{N} \setminus \{0\}$ (los positivos son los naturales sin el cero)
-- $\mathbb{Z} = \mathbb{Z}^- \cup \{0\} \cup \mathbb{Z}^+$ (unión disjunta)
-- $\mathbb{Z}_{\geq 0} = \mathbb{N}$ bajo nuestra convención
+> **Observación:** Note que:
+> - $\mathbb{Z}^+ = \mathbb{N} \setminus \{0\}$ (los positivos son los naturales sin el cero)
+> - $\mathbb{Z} = \mathbb{Z}^- \cup \{0\} \cup \mathbb{Z}^+$ (unión disjunta)
+> - $\mathbb{Z}_{\geq 0} = \mathbb{N}$ bajo nuestra convención
 
 **Definición formal:**
 
@@ -720,9 +729,9 @@ La multiplicación en $\mathbb{Z}$ satisface las siguientes propiedades para cua
    $$a \cdot b = 0 \Leftrightarrow a = 0 \text{ o } b = 0$$
    (Si el producto es cero, al menos uno de los factores debe ser cero)
 
-**Observación importante:** A diferencia de $\mathbb{Q}$ o $\mathbb{R}$, en $\mathbb{Z}$ **no todo elemento tiene inverso multiplicativo**. Por ejemplo:
-- No existe $x \in \mathbb{Z}$ tal que $2 \cdot x = 1$ (porque $x = \frac{1}{2} \notin \mathbb{Z}$)
-- Solo $1$ y $-1$ tienen inversos multiplicativos en $\mathbb{Z}$
+> **Observación importante:** A diferencia de $\mathbb{Q}$ o $\mathbb{R}$, en $\mathbb{Z}$ **no todo elemento tiene inverso multiplicativo**. Por ejemplo:
+> - No existe $x \in \mathbb{Z}$ tal que $2 \cdot x = 1$ (porque $x = \frac{1}{2} \notin \mathbb{Z}$)
+> - Solo $1$ y $-1$ tienen inversos multiplicativos en $\mathbb{Z}$
 
 Esta limitación motiva la construcción del conjunto $\mathbb{Q}$ de los números racionales (Sección 5).
 
@@ -768,9 +777,9 @@ En ese caso, decimos que:
 4. $a \mid 0$ para todo $a \in \mathbb{Z} \setminus \{0\}$
 5. Si $a \mid b$ y $a \mid c$, entonces $a \mid (b + c)$ y $a \mid (b - c)$
 
-**Observación importante:** A diferencia de $\mathbb{N}$ o $\mathbb{Q}$, en $\mathbb{Z}$ la división **no siempre produce un resultado entero**. Por ejemplo:
-- $7 \div 2 = 3.5 \notin \mathbb{Z}$
-- $10 \div 3 = 3.333... \notin \mathbb{Z}$
+> **Observación importante:** A diferencia de $\mathbb{N}$ o $\mathbb{Q}$, en $\mathbb{Z}$ la división **no siempre produce un resultado entero**. Por ejemplo:
+> - $7 \div 2 = 3.5 \notin \mathbb{Z}$
+> - $10 \div 3 = 3.333... \notin \mathbb{Z}$
 
 Esto motiva la necesidad de los números racionales (Sección 5).
 
@@ -780,6 +789,16 @@ Esto motiva la necesidad de los números racionales (Sección 5).
 Dados $a, b \in \mathbb{Z}$ con $b > 0$, existen **únicos** enteros $q$ (cociente) y $r$ (resto o residuo) tales que:
 $$a = b \cdot q + r \quad \text{con} \quad 0 \leq r < b$$
 
+**Demostración:**
+
+*Existencia.* Consideremos el conjunto $S = \{a - bq : q \in \mathbb{Z}\} \cap \mathbb{N}_0$. Como $b > 0$, tomando $q$ suficientemente negativo se tiene $a - bq \geq 0$, por lo que $S$ es no vacío. Por el principio del buen orden, $S$ tiene un mínimo $r = a - bq_0$ con $q_0 \in \mathbb{Z}$. Se cumple $r \geq 0$ por construcción. Si $r \geq b$, entonces:
+$$a - b(q_0 + 1) = r - b \geq 0$$
+sería un elemento de $S$ estrictamente menor que $r$, lo cual contradice la minimalidad de $r$. Por lo tanto $r < b$.
+
+*Unicidad.* Supongamos que $a = bq + r = bq' + r'$ con $0 \leq r, r' < b$. Restando se obtiene:
+$$b(q - q') = r' - r.$$
+Como $-b < r' - r < b$, el único múltiplo de $b$ en ese intervalo es $0$. Luego $r' = r$ y, como $b \neq 0$, se tiene $q' = q$. $\blacksquare$
+
 **Ejemplos 4.2:**
 - $17 = 5 \cdot 3 + 2$ (dividendo 17, divisor 5, cociente 3, resto 2)
 - $23 = 7 \cdot 3 + 2$ (dividendo 23, divisor 7, cociente 3, resto 2)
@@ -787,7 +806,7 @@ $$a = b \cdot q + r \quad \text{con} \quad 0 \leq r < b$$
 - $14 = 4 \cdot 3 + 2$
 - $15 = 3 \cdot 5 + 0$ (resto cero: 3 divide exactamente a 15)
 
-**Interpretación:** Si dividimos $a$ entre $b$, obtenemos un cociente $q$ y un resto $r$ que es siempre menor que el divisor $b$.
+> **Interpretación:** Si dividimos $a$ entre $b$, obtenemos un cociente $q$ y un resto $r$ que es siempre menor que el divisor $b$.
 
 **Subsección 4.4.1: La operación módulo**
 
@@ -805,7 +824,7 @@ $$a \bmod b = r \quad \text{donde} \quad a = b \cdot q + r \quad \text{con} \qua
 - $6 \bmod 4 = 2$ (porque $6 = 4 \cdot 1 + 2$)
 - $20 \bmod 6 = 2$ (porque $20 = 6 \cdot 3 + 2$)
 
-**Interpretación intuitiva:** $a \bmod b$ responde a la pregunta: "¿Cuál es el resto cuando divido $a$ entre $b$?"
+> **Interpretación intuitiva:** $a \bmod b$ responde a la pregunta: "¿Cuál es el resto cuando divido $a$ entre $b$?"
 
 **Propiedades básicas del módulo:**
 1. $0 \leq a \bmod b < b$ para todo $a \in \mathbb{Z}$, $b > 0$
@@ -828,7 +847,7 @@ Si hoy es lunes (día 1) y queremos saber qué día será dentro de 100 días:
 $$(1 + 100) \bmod 7 = 101 \bmod 7 = 3$$
 Por lo tanto, será miércoles (día 3).
 
-**Observación sobre notación:** En programación, el operador módulo se denota típicamente como `%` (por ejemplo, en Python, C, Java: `17 % 5` devuelve `2`).
+> **Observación sobre notación:** En programación, el operador módulo se denota típicamente como `%` (por ejemplo, en Python, C, Java: `17 % 5` devuelve `2`).
 
 ### 4.4.2 Conjunto de divisores
 
@@ -880,6 +899,15 @@ El **algoritmo de Euclides** es un método eficiente para calcular el MCD basado
 **Teorema 4.2 (Algoritmo de Euclides):**
 Si $a = b \cdot q + r$ con $0 \leq r < b$, entonces:
 $$\gcd(a, b) = \gcd(b, r)$$
+
+**Demostración:**
+
+Sea $d = \gcd(a, b)$. Entonces $d \mid a$ y $d \mid b$, de modo que $d \mid (a - bq) = r$. Por tanto $d$ es un divisor común de $b$ y $r$, luego $d \leq \gcd(b, r)$.
+
+Recíprocamente, sea $d' = \gcd(b, r)$. Entonces $d' \mid b$ y $d' \mid r$, por lo que $d' \mid (bq + r) = a$. Así $d'$ es un divisor común de $a$ y $b$, de donde $d' \leq \gcd(a, b)$.
+
+De ambas desigualdades se concluye que $\gcd(a, b) = \gcd(b, r)$. $\blacksquare$
+
 **Procedimiento:**
 1. Dividir $a$ entre $b$ obteniendo resto $r$
 2. Reemplazar $a$ por $b$ y $b$ por $r$
@@ -1189,7 +1217,7 @@ $$\frac{2}{3} = \frac{80}{120}, \quad \frac{3}{5} = \frac{72}{120}, \quad \frac{
 
 $$72 < 75 < 80 \quad \Rightarrow \quad \frac{3}{5} < \frac{5}{8} < \frac{2}{3}$$
 
-**Observación importante:** Las fracciones forman un conjunto **denso** en la recta numérica: entre dos fracciones cualesquiera, siempre existe otra fracción.
+> **Observación importante:** Las fracciones forman un conjunto **denso** en la recta numérica: entre dos fracciones cualesquiera, siempre existe otra fracción.
 
 **Ejemplo de densidad:**
 Entre $\frac{1}{2}$ y $\frac{1}{3}$ está el promedio:
@@ -1302,9 +1330,9 @@ $$d(a, b) = |a - b| = |b - a|$$
 - Distancia entre -2 y 5: $d(-2, 5) = |-2 - 5| = |-7| = 7$
 - Distancia entre -8 y -3: $d(-8, -3) = |-8 - (-3)| = |-5| = 5$
 
-**Interpretación:** La distancia entre dos números es el número de "pasos" que debemos dar en la recta para ir de uno al otro.
+> **Interpretación:** La distancia entre dos números es el número de "pasos" que debemos dar en la recta para ir de uno al otro.
 
-**Observación importante:** El concepto de valor absoluto como distancia se extiende naturalmente a los números reales (Sección 6) y es fundamental para definir límites, continuidad y convergencia en Cálculo.
+> **Observación importante:** El concepto de valor absoluto como distancia se extiende naturalmente a los números reales (Sección 6) y es fundamental para definir límites, continuidad y convergencia en Cálculo.
 
 ### 4.9 La recta de los enteros
 
@@ -1346,8 +1374,8 @@ Para resolver este problema, **ampliamos** $\mathbb{Z}$ a $\mathbb{Q}$.
 $$\mathbb{Q} = \left\{\frac{p}{q} : p,q \in \mathbb{Z}, q \neq 0\right\}$$
 El símbolo $\mathbb{Q}$ proviene del inglés *quotient* (cociente).
 
-**Interpretación:** Un número racional es una **fracción** $\frac{p}{q}$ donde $p$ es un entero (numerador) y $q$ es un natural (denominador).
-Cuando tenemos el caso donde $\gcd(p,q)=1$ decimos que el numero ${p}/{q}$ es una fracción irreducible.
+> **Interpretación:** Un número racional es una **fracción** $\frac{p}{q}$ donde $p$ es un entero (numerador) y $q$ es un natural (denominador).
+> Cuando tenemos el caso donde $\gcd(p,q)=1$ decimos que el numero ${p}/{q}$ es una fracción irreducible.
 
 Si tenemos la fracción ${p'}/{q'}$ y además $\gcd(p',q')=k$ podemos reducir esta fracción a otra fracción irreducible de la siguiente manera:
 $$\frac{p'}{q'} \cdot 1 = \frac{p'}{q'} \cdot \frac{k}{k}=\frac{p}{q} \quad \text{con} \quad p = \frac{p'}{k} ,\quad q=\frac{q'}{k}$$
@@ -1407,7 +1435,7 @@ $$\frac{2}{11} = 0.\overline{18} = 0.181818...$$
 - $\frac{5}{11} = 0.\overline{45}$ (período: 45)
 - $\frac{4}{9} = 0.\overline{4}$ (período: 4)
 
-**Observación:** La longitud del período puede variar. Por ejemplo, $\frac{1}{7}$ tiene período de longitud 6, mientras que $\frac{1}{3}$ tiene período de longitud 1.
+> **Observación:** La longitud del período puede variar. Por ejemplo, $\frac{1}{7}$ tiene período de longitud 6, mientras que $\frac{1}{3}$ tiene período de longitud 1.
 
 #### 5.3.3 Decimal semiperiódico (o periódico mixto)
 
@@ -1429,7 +1457,7 @@ $$\frac{7}{12} = 0.58\overline{3} = 0.58333...$$
 - $\frac{11}{30} = 0.3\overline{6}$ (antiperíodo: 3, período: 6) — denominador: $2 \cdot 3 \cdot 5 = 30$
 - $\frac{13}{60} = 0.21\overline{6}$ (antiperíodo: 21, período: 6) — denominador: $2^2 \cdot 3 \cdot 5 = 60$
 
-**Observación:** La longitud del antiperíodo está determinada por las potencias de 2 y 5 en el denominador.
+> **Observación:** La longitud del antiperíodo está determinada por las potencias de 2 y 5 en el denominador.
 #### 5.3.4 Teorema de caracterización
 
 **Teorema 5.1 (Caracterización decimal de racionales):**
@@ -1547,18 +1575,18 @@ Se denota $x = \sqrt[n]{a}$ o $x = a^{1/n}$.
 - $n = 2$: **raíz cuadrada** $\sqrt{a} = \sqrt[2]{a}$
 - $n = 3$: **raíz cúbica** $\sqrt[3]{a}$
 
-**Observaciones importantes:**
-
-1. Para $n$ **par** y $a \geq 0$: existe una única raíz **no negativa** (raíz principal)
-   - $\sqrt{16} = 4$ (tomamos la raíz positiva)
-   - $\sqrt{9} = 3$
-
-2. Para $n$ **impar**: existe una única raíz real para todo $a \in \mathbb{R}$
-   - $\sqrt[3]{-8} = -2$ (las raíces impares pueden ser negativas)
-   - $\sqrt[3]{27} = 3$
-
-3. Para $n$ par y $a < 0$: **no existe raíz real** (se necesitan números complejos)
-   - $\sqrt{-4} \notin \mathbb{R}$ (no existe raíz cuadrada real de un número negativo)
+> **Observaciones importantes:**
+>
+> 1. Para $n$ **par** y $a \geq 0$: existe una única raíz **no negativa** (raíz principal)
+>    - $\sqrt{16} = 4$ (tomamos la raíz positiva)
+>    - $\sqrt{9} = 3$
+>
+> 2. Para $n$ **impar**: existe una única raíz real para todo $a \in \mathbb{R}$
+>    - $\sqrt[3]{-8} = -2$ (las raíces impares pueden ser negativas)
+>    - $\sqrt[3]{27} = 3$
+>
+> 3. Para $n$ par y $a < 0$: **no existe raíz real** (se necesitan números complejos)
+>    - $\sqrt{-4} \notin \mathbb{R}$ (no existe raíz cuadrada real de un número negativo)
 
 **Propiedades de las raíces:**
 
@@ -1581,7 +1609,7 @@ El **logaritmo en base $b$** de $a$ (con $b > 0$, $b \neq 1$, $a > 0$) es el nú
 $$x = \log_b(a) \iff b^x = a$$
 Se denota $x = \log_b(a)$ a la operación de logaritmo.
 
-**Interpretación:** El logaritmo responde a la pregunta: "¿A qué potencia debo elevar $b$ para obtener $a$?"
+> **Interpretación:** El logaritmo responde a la pregunta: "¿A qué potencia debo elevar $b$ para obtener $a$?"
 
 **Bases especiales y notación:**
 
@@ -1698,10 +1726,10 @@ $$\mathbb{R} = \mathbb{Q} \cup \mathbb{I}$$
 
 Geométricamente, $\mathbb{R}$ corresponde a **todos los puntos** de la recta numérica, sin dejar ningún "hueco".
 
-**Nota sobre la formalidad:**
-La construcción rigurosa de $\mathbb{R}$ es técnicamente compleja y se realiza mediante:
-1. **Cortaduras de Dedekind** (Richard Dedekind, 1872)
-2. **Sucesiones de Cauchy** (Georg Cantor, 1872)
+> **Nota sobre la formalidad:**
+> La construcción rigurosa de $\mathbb{R}$ es técnicamente compleja y se realiza mediante:
+> 1. **Cortaduras de Dedekind** (Richard Dedekind, 1872)
+> 2. **Sucesiones de Cauchy** (Georg Cantor, 1872)
 
 Estas construcciones garantizan que $\mathbb{R}$ sea **completo**: toda sucesión de Cauchy converge a un elemento de $\mathbb{R}$. Los detalles se estudiarán en el curso de **Análisis Real**.
 
@@ -1716,7 +1744,7 @@ Estas construcciones garantizan que $\mathbb{R}$ sea **completo**: toda sucesió
 - Es **continuo**: no tiene "huecos"
 - Es **denso en sí mismo**: entre dos reales distintos hay infinitos reales
 - Es **completo**: toda sucesión convergente de reales tiene límite en $\mathbb{R}$
-- Es **no numerable**: tiene cardinalidad $\aleph_1 > \aleph_0$ (ver Sección 8)
+- Es **no numerable**: tiene cardinalidad $\mathfrak{c} = 2^{\aleph_0} > \aleph_0$ (ver Sección 8)
 
 ---
 
@@ -1740,7 +1768,7 @@ Un conjunto infinito $A$ es **numerable** (o **contable**) si existe una biyecci
 $$A = \{a_1, a_2, a_3, ...\}$$
 La **cardinalidad** de un conjunto numerable se denota $\aleph_0$ (aleph cero, primera letra del alfabeto hebreo).
 
-**Observación:** El concepto de **biyecciones** se estudiaría mas en profundidad en la [[Clase 9 - Funciones Parte 2]].
+> **Observación:** El concepto de **biyecciones** se estudiaría mas en profundidad en la [[Clase 9 - Funciones Parte 2]].
 
 **Propiedad fundamental:** $|\mathbb{N}| = |\mathbb{Z}| = |\mathbb{Q}| = \aleph_0$
 
@@ -1750,7 +1778,7 @@ El matemático alemán David Hilbert (1862-1943) propuso una paradoja que ilustr
 
 **La paradoja del Hotel de Hilbert:**
 
-Imagine un hotel con **infinitas habitaciones** numeradas: 1, 2, 3, 4, 5, ... hasta el infinito.
+Imaginemos un hotel con **infinitas habitaciones** numeradas: 1, 2, 3, 4, 5, ... hasta el infinito.
 
 **Escenario 1: Llega un nuevo huésped, pero el hotel está lleno**
 
@@ -1762,7 +1790,7 @@ Imagine un hotel con **infinitas habitaciones** numeradas: 1, 2, 3, 4, 5, ... ha
   - Huésped de habitación $n$ → habitación $n+1$
 - **Resultado:** ¡La habitación 1 queda libre para el nuevo huésped!
 
-**Interpretación matemática:** Esto demuestra que $\aleph_0 + 1 = \aleph_0$
+> **Interpretación matemática:** Esto demuestra que $\aleph_0 + 1 = \aleph_0$
 
 **Escenario 2: Llegan infinitos nuevos huéspedes**
 
@@ -1776,7 +1804,7 @@ Imagine un hotel con **infinitas habitaciones** numeradas: 1, 2, 3, 4, 5, ... ha
 - **Resultado:** ¡Todas las habitaciones **impares** quedan libres! (1, 3, 5, 7, ...)
 - Los infinitos nuevos huéspedes ocupan las habitaciones 1, 3, 5, 7, ...
 
-**Interpretación matemática:** Esto demuestra que $\aleph_0 + \aleph_0 = \aleph_0$ y $2 \cdot \aleph_0 = \aleph_0$
+> **Interpretación matemática:** Esto demuestra que $\aleph_0 + \aleph_0 = \aleph_0$ y $2 \cdot \aleph_0 = \aleph_0$
 
 **Escenario 3: Llegan infinitos autobuses con infinitos huéspedes cada uno**
 
@@ -1785,7 +1813,7 @@ Imagine un hotel con **infinitas habitaciones** numeradas: 1, 2, 3, 4, 5, ... ha
 - **Solución:** Usar la enumeración de Cantor (ver subsección sobre $\mathbb{Q}$)
 - **Resultado:** ¡Todos pueden ser acomodados!
 
-**Interpretación matemática:** Esto demuestra que $\aleph_0 \cdot \aleph_0 = \aleph_0$
+> **Interpretación matemática:** Esto demuestra que $\aleph_0 \cdot \aleph_0 = \aleph_0$
 
 #### 7.2.2 Paradojas del infinito: Aritmética de $\aleph_0$
 
@@ -1804,7 +1832,7 @@ El infinito no se comporta como los números finitos. Las siguientes ecuaciones 
 1. **Potencia finita:** $\aleph_0^n = \aleph_0$ para $n \in \mathbb{N}$ finito
    - $\mathbb{N}^2$, $\mathbb{N}^3$, etc., son numerables
 
-**Advertencia:** Estas propiedades **NO** se cumplen para operaciones como $2^{\aleph_0}$, que es **estrictamente mayor** que $\aleph_0$ (ver Teorema de Cantor sobre el conjunto potencia).
+> **Advertencia:** Estas propiedades **NO** se cumplen para operaciones como $2^{\aleph_0}$, que es **estrictamente mayor** que $\aleph_0$ (ver Teorema de Cantor sobre el conjunto potencia).
 
 #### 7.2.3 Demostración: $|\mathbb{Z}| = |\mathbb{N}|$
 
@@ -1866,7 +1894,7 @@ Enteros:       0  -1   1  -2   2  -3   3  -4   4  -5  ...
 
 Por lo tanto, $f$ es biyectiva, y $|\mathbb{Z}| = |\mathbb{N}| = \aleph_0$. $\square$
 
-**Observación profunda:** Aunque $\mathbb{Z}$ parece "dos veces más grande" que $\mathbb{N}$ (tiene negativos y positivos), podemos **emparejar** perfectamente cada entero con un natural único. Esto es la esencia de la equipotencia: dos conjuntos tienen la misma cardinalidad si sus elementos pueden ponerse en correspondencia uno a uno.
+> **Observación profunda:** Aunque $\mathbb{Z}$ parece "dos veces más grande" que $\mathbb{N}$ (tiene negativos y positivos), podemos **emparejar** perfectamente cada entero con un natural único. Esto es la esencia de la equipotencia: dos conjuntos tienen la misma cardinalidad si sus elementos pueden ponerse en correspondencia uno a uno.
 #### 7.2.4 Los racionales son numerables: El método diagonal de Cantor
 
 **Teorema 7.2:** $|\mathbb{Q}| = |\mathbb{N}| = \aleph_0$
@@ -1895,7 +1923,7 @@ Georg Cantor demostró que los racionales positivos pueden "listarse" usando un 
 ...  ...    ...    ...    ...    ...    ...
 ```
 
-**Observación:** Cada racional positivo $\frac{p}{q}$ aparece en la posición (fila $q$, columna $p$).
+> **Observación:** Cada racional positivo $\frac{p}{q}$ aparece en la posición (fila $q$, columna $p$).
 
 **Paso 2:** Recorremos la tabla en **diagonal**, siguiendo este patrón en zigzag:
 
@@ -1921,9 +1949,9 @@ $$\mathbb{Q} = \left\{0, \frac{1}{1}, -\frac{1}{1}, \frac{2}{1}, -\frac{2}{1}, \
 
 Por lo tanto, $\mathbb{Q}$ puede ser listado en una secuencia, lo que significa que $|\mathbb{Q}| = \aleph_0$. $\square$
 
-**Observación crucial:** Este método **diagonal** permite convertir una tabla bidimensional (infinita × infinita) en una lista unidimensional (secuencia). Es uno de los resultados más sorprendentes de Cantor: aunque hay "infinitos infinitos" de racionales, podemos contarlos uno por uno.
+> **Observación crucial:** Este método **diagonal** permite convertir una tabla bidimensional (infinita × infinita) en una lista unidimensional (secuencia). Es uno de los resultados más sorprendentes de Cantor: aunque hay "infinitos infinitos" de racionales, podemos contarlos uno por uno.
 
-**Nota histórica:** Cantor usó una técnica similar (el **argumento diagonal**) para demostrar lo contrario sobre $\mathbb{R}$: que los reales **no** son numerables (ver Sección 8.1). Ambos métodos diagonales son fundamentales en teoría de conjuntos.
+> **Nota histórica:** Cantor usó una técnica similar (el **argumento diagonal**) para demostrar lo contrario sobre $\mathbb{R}$: que los reales **no** son numerables (ver Sección 8.1). Ambos métodos diagonales son fundamentales en teoría de conjuntos.
 
 ---
 
@@ -1946,13 +1974,13 @@ Construimos un nuevo número $r = 0.b_1b_2b_3...$ donde cada dígito $b_i$ es di
 Entonces $r$ es distinto de **todos** los números en la lista (difiere de $r_i$ en el i-ésimo dígito), lo cual contradice que la lista contenía todos los reales. $\square$
 
 **Definición 8.1 (Cardinalidad del continuo):**
-La cardinalidad de $\mathbb{R}$ se denota $\mathfrak{c}$ (letra gótica "c" de *continuo*) o $\aleph_1$ (aleph uno).
+La cardinalidad de $\mathbb{R}$ se denota $\mathfrak{c}$ (letra gótica "c" de *continuo*) y se cumple $\mathfrak{c} = 2^{\aleph_0}$. La notación $\aleph_1$ se reserva para el siguiente cardinal infinito después de $\aleph_0$; la igualdad $\mathfrak{c} = \aleph_1$ es la **Hipótesis del Continuo**, independiente de ZFC.
 
 **Jerarquía de infinitos:**
-$$|\mathbb{N}| = \aleph_0 < |\mathbb{R}| = \aleph_1$$
+$$|\mathbb{N}| = \aleph_0 < |\mathbb{R}| = \mathfrak{c} = 2^{\aleph_0}$$
 
-**Observación profunda:** Existen "tamaños" de infinito. El infinito de los reales es **estrictamente mayor** que el infinito de los naturales. Cantor demostró que existe una jerarquía infinita de cardinalidades:
-$$\aleph_0 < \aleph_1 < \aleph_2 < \aleph_3 < ...$$
+> **Observación profunda:** Existen "tamaños" de infinito. El infinito de los reales es **estrictamente mayor** que el infinito de los naturales. Cantor demostró que existe una jerarquía infinita de cardinalidades:
+> $$\aleph_0 < \aleph_1 < \aleph_2 < \aleph_3 < ...$$
 
 ### 8.2 Paradojas de conjuntos infinitos
 
@@ -1964,9 +1992,9 @@ De hecho:
 $$|\mathbb{N}| = |\mathbb{Z}| = |\mathbb{Q}| = \aleph_0$$
 
 Pero:
-$$|\mathbb{R}| = \aleph_1 > \aleph_0$$
+$$|\mathbb{R}| = \mathfrak{c} > \aleph_0$$
 
-**Mención al problema del continuo:** La **Hipótesis del Continuo** de Cantor afirma que no existe ningún conjunto cuya cardinalidad esté **estrictamente entre** $\aleph_0$ y $\aleph_1$. Kurt Gödel (1940) y Paul Cohen (1963) demostraron que esta hipótesis es **independiente** de los axiomas de la teoría de conjuntos (ZFC): no se puede demostrar ni refutar dentro del sistema axiomático estándar.
+**Mención al problema del continuo:** La **Hipótesis del Continuo** de Cantor afirma que no existe ningún conjunto cuya cardinalidad esté **estrictamente entre** $\aleph_0$ y $2^{\aleph_0}$, o equivalentemente, que $\mathfrak{c} = \aleph_1$. Kurt Gödel (1940) y Paul Cohen (1963) demostraron que esta hipótesis es **independiente** de los axiomas de la teoría de conjuntos (ZFC): no se puede demostrar ni refutar dentro del sistema axiomático estándar.
 
 ### 8.3 Biyecciones sorprendentes
 
@@ -1977,9 +2005,9 @@ Consideremos la función:
 $$f: (0,1) \to \mathbb{R}, \quad f(x) = \tan\left(\pi\left(x - \frac{1}{2}\right)\right)$$
 
 Esta función es una biyección (se puede verificar que es inyectiva y sobreyectiva). Por lo tanto:
-$$|(0,1)| = |\mathbb{R}| = \aleph_1$$
+$$|(0,1)| = |\mathbb{R}| = \mathfrak{c}$$
 
-**Interpretación:** En un segmento de longitud 1 hay "tantos puntos" como en toda la recta infinita. ¡El infinito tiene propiedades contraintuitivas!
+> **Interpretación:** En un segmento de longitud 1 hay "tantos puntos" como en toda la recta infinita. ¡El infinito tiene propiedades contraintuitivas!
 
 **Propiedad 8.2:** El círculo unitario tiene la misma cardinalidad que la recta real.
 
@@ -1995,11 +2023,11 @@ Los números reales no solo son un conjunto, sino una **estructura algebraica** 
 
 **Los cinco Axiomas de Peano para $\mathbb{N}$:**
 
-1. $1 \in \mathbb{N}$ (existe un primer número natural)
+1. $0 \in \mathbb{N}$ (existe un primer número natural)
 2. Todo número natural $n$ tiene un **sucesor** $S(n) \in \mathbb{N}$
-3. $1$ no es sucesor de ningún número natural ($\forall n \in \mathbb{N}, \, S(n) \neq 1$)
+3. $0$ no es sucesor de ningún número natural ($\forall n \in \mathbb{N}, \, S(n) \neq 0$)
 4. La función sucesor es **inyectiva**: $S(n) = S(m) \Rightarrow n = m$
-5. **Principio de inducción**: Si $P(1)$ es verdadero, y $P(n) \Rightarrow P(S(n))$ para todo $n$, entonces $P(n)$ es verdadero para todo $n \in \mathbb{N}$
+5. **Principio de inducción**: Si $P(0)$ es verdadero, y $P(n) \Rightarrow P(S(n))$ para todo $n$, entonces $P(n)$ es verdadero para todo $n \in \mathbb{N}$
 
 **Jerarquía de construcción:**
 ```
@@ -2056,7 +2084,7 @@ El axioma que distingue $\mathbb{R}$ de $\mathbb{Q}$:
 **Axioma 16 (Completitud o del supremo):**
 Todo subconjunto no vacío de $\mathbb{R}$ que está **acotado superiormente** tiene un **supremo** (mínima cota superior) en $\mathbb{R}$.
 
-**Interpretación:** Este axioma garantiza que $\mathbb{R}$ "no tiene huecos". Es el axioma que falta en $\mathbb{Q}$ y que se necesita para hacer Cálculo (límites, continuidad, convergencia).
+> **Interpretación:** Este axioma garantiza que $\mathbb{R}$ "no tiene huecos". Es el axioma que falta en $\mathbb{Q}$ y que se necesita para hacer Cálculo (límites, continuidad, convergencia).
 
 ---
 
@@ -2075,7 +2103,7 @@ $$1 + 0 = 1$$
 
 Esto es **inmediato del axioma**. $\square$
 
-**Nota:** Esta es una aplicación directa del axioma, no requiere deducción adicional.
+> **Nota:** Esta es una aplicación directa del axioma, no requiere deducción adicional.
 
 ### 10.2 Demostración: $1 + 1 = 2$
 
@@ -2090,7 +2118,7 @@ $$1 + 1 := S(1) = 2$$
 
 Por lo tanto, $1 + 1 = 2$ por **definición**. $\square$
 
-**Observación filosófica:** Esta "demostración" puede parecer trivial, pero formaliza precisamente qué significa "2". Bertrand Russell y Alfred North Whitehead dedicaron cientos de páginas en *Principia Mathematica* (1910-1913) para probar rigurosamente que $1 + 1 = 2$ desde los fundamentos de la lógica.
+> **Observación filosófica:** Esta "demostración" puede parecer inmediata, pero formaliza precisamente qué significa "2". Bertrand Russell y Alfred North Whitehead dedicaron cientos de páginas en *Principia Mathematica* (1910-1913) para probar rigurosamente que $1 + 1 = 2$ desde los fundamentos de la lógica.
 
 ### 10.3 Demostración: Ley de cancelación de la suma
 
@@ -2199,8 +2227,8 @@ $$n! = n \times (n-1) \times (n-2) \times \dots \times 2 \times 1$$
 - Desarrollo en series de Taylor
 - Coeficientes binomiales: $\binom{n}{k} = \frac{n!}{k!(n-k)!}$
 
-**Observación:**
-Aunque el factorial se define originalmente sobre los naturales, puede extenderse a los números reales positivos mediante la **función Gamma**: $\Gamma(n+1) = n!$ para $n \in \mathbb{N}_0$.
+> **Observación:**
+> Aunque el factorial se define originalmente sobre los naturales, puede extenderse a los números reales positivos mediante la **función Gamma**: $\Gamma(n+1) = n!$ para $n \in \mathbb{N}_0$.
 
 ### 11.3 Números pares e impares
 
@@ -2229,22 +2257,22 @@ $$\mathbb{Z} = \{\text{pares}\} \cup \{\text{impares}\} \quad \text{y} \quad \{\
 **Propiedades de paridad:**
 
 1. **Suma de pares:** par + par = par
-   - **Demostración:** $(2a) + (2b) = 2(a + b)$ ✓
+   - **Demostración:** Sean $n = 2a$ y $m = 2b$ con $a, b \in \mathbb{Z}$. Entonces $n + m = 2(a + b)$, que es de la forma $2k$ con $k \in \mathbb{Z}$. Por tanto, $n + m$ es par. $\square$
 
 2. **Suma de impares:** impar + impar = par
-   - **Demostración:** $(2a + 1) + (2b + 1) = 2(a + b + 1)$ ✓
+   - **Demostración:** Sean $n = 2a + 1$ y $m = 2b + 1$ con $a, b \in \mathbb{Z}$. Entonces $n + m = 2(a + b + 1)$, que es de la forma $2k$ con $k \in \mathbb{Z}$. Por tanto, $n + m$ es par. $\square$
 
 3. **Suma de par e impar:** par + impar = impar
-   - **Demostración:** $(2a) + (2b + 1) = 2(a + b) + 1$ ✓
+   - **Demostración:** Sean $n = 2a$ par y $m = 2b + 1$ impar con $a, b \in \mathbb{Z}$. Entonces $n + m = 2(a + b) + 1$, que es de la forma $2k + 1$ con $k \in \mathbb{Z}$. Por tanto, $n + m$ es impar. $\square$
 
 4. **Producto de pares:** par × par = par
-   - **Demostración:** $(2a) \cdot (2b) = 2(2ab)$ ✓
+   - **Demostración:** Sean $n = 2a$ y $m = 2b$ con $a, b \in \mathbb{Z}$. Entonces $n \cdot m = 2(2ab)$, que es de la forma $2k$ con $k \in \mathbb{Z}$. Por tanto, $n \cdot m$ es par. $\square$
 
 5. **Producto de impares:** impar × impar = impar
-   - **Demostración:** $(2a + 1)(2b + 1) = 4ab + 2a + 2b + 1 = 2(2ab + a + b) + 1$ ✓
+   - **Demostración:** Sean $n = 2a + 1$ y $m = 2b + 1$ con $a, b \in \mathbb{Z}$. Entonces $n \cdot m = 4ab + 2a + 2b + 1 = 2(2ab + a + b) + 1$, que es de la forma $2k + 1$ con $k \in \mathbb{Z}$. Por tanto, $n \cdot m$ es impar. $\square$
 
 6. **Producto de par e impar:** par × impar = par
-   - **Demostración:** $(2a) \cdot (2b + 1) = 2(a(2b + 1))$ ✓
+   - **Demostración:** Sean $n = 2a$ par y $m = 2b + 1$ impar con $a, b \in \mathbb{Z}$. Entonces $n \cdot m = 2\bigl(a(2b + 1)\bigr)$, que es de la forma $2k$ con $k \in \mathbb{Z}$. Por tanto, $n \cdot m$ es par. $\square$
 
 **Tabla de paridad:**
 
@@ -2263,7 +2291,7 @@ Los **criterios de divisibilidad** son reglas que permiten determinar si un núm
 
 **Criterio de divisibilidad por 2:**
 
-**Proposición 11.2:** Un número entero es divisible por $2$ si y solo si su última cifra es par, ósea termina en $0, 2, 4, 6$ u $8$.
+**Proposición 11.2:** Un número entero es divisible por $2$ si y solo si su última cifra es par; es decir, termina en $0, 2, 4, 6$ u $8$.
 
 **Demostración:** Todo número puede escribirse como:
 $$n = 10a + b$$
@@ -2309,7 +2337,7 @@ donde $b$ representa las dos últimas cifras ($0 \leq b < 100$).
 
 Como $100 = 4 \times 25$, tenemos:
 $$n = 4(25a) + b$$
-Claramente, $4 \mid n$ si y solo si $4 \mid b$. $\square$
+Por lo tanto, $4 \mid n$ si y solo si $4 \mid b$. $\square$
 
 **Ejemplos:**
 - $3528$: las dos últimas cifras son $28$, y $28 = 4 \times 7$ ✓ → $4 \mid 3528$
@@ -2369,7 +2397,7 @@ Por lo tanto, $8 \mid n \Leftrightarrow 8 \mid b$. $\square$
 
 **Proposición 11.9:** Un número es divisible por $10$ si y solo si su última cifra es $0$.
 
-**Demostración:** Trivial, ya que $n = 10a + b$ y $10 \mid n \Leftrightarrow b = 0$. $\square$
+**Demostración:** Escribamos $n = 10a + b$ con $0 \leq b \leq 9$. Como $10 \equiv 0 \pmod{10}$, se tiene $n \equiv b \pmod{10}$. Por tanto $10 \mid n$ si y solo si $10 \mid b$. Pero el único dígito divisible por $10$ es $b = 0$. $\square$
 
 **Criterio de divisibilidad por 11:**
 
@@ -2391,46 +2419,12 @@ Es decir, $11 \mid n$ si y solo si $11$ divide la suma alternada $a_0 - a_1 + a_
 
 **Proposición 11.11:** Un número es divisible por $7$ si y solo si la diferencia entre el número sin la última cifra y el doble de la última cifra es divisible por $7$.
 
-**Demostración:** Sea $n = 10a + b$, donde $b$ es la última cifra.
-
-Queremos probar que $7 \mid n \Leftrightarrow 7 \mid (a - 2b)$.
-
-Observemos que:
-$$n = 10a + b$$
-$$20n = 200a + 20b$$
-$$20n + n = 200a + 20b + 10a + b = 210a + 21b = 21(10a + b)$$
-$$21n = 21(10a + b)$$
-
-Como $21 = 3 \times 7$:
-$$7 \mid n \quad \Leftrightarrow \quad 7 \mid 21n$$
-
-Ahora, consideremos:
-$$21n - 21b = 21(10a + b) - 21b = 210a = 7(30a)$$
-
-Por lo tanto:
-$$7 \mid n \quad \Leftrightarrow \quad 7 \mid (n - b) = 10a$$
-
-Multiplicando $10a$ por $-2$:
-$$7 \mid 10a \quad \Leftrightarrow \quad 7 \mid (-20a)$$
-
-Sumando $21a = 7(3a)$ (que es múltiplo de $7$):
-$$7 \mid (-20a) \quad \Leftrightarrow \quad 7 \mid (-20a + 21a) = a$$
-
-Pero en realidad, el criterio estándar dice: $7 \mid n \Leftrightarrow 7 \mid (a - 2b)$.
-
-**Verificación directa:** Como $n = 10a + b$, queremos ver que $7 \mid (10a + b) \Leftrightarrow 7 \mid (a - 2b)$.
-
-$$10a + b \equiv 0 \pmod{7}$$
-$$10a \equiv -b \pmod{7}$$
-$$10a \equiv -b \pmod{7}$$
-
-Como $10 \equiv 3 \pmod{7}$:
-$$3a \equiv -b \pmod{7}$$
-
-Multiplicando ambos lados por $5$ (ya que $3 \times 5 = 15 \equiv 1 \pmod{7}$):
-$$a \equiv -5b \equiv 2b \pmod{7}$$
-$$a - 2b \equiv 0 \pmod{7}$$
-
+**Demostración:** Sea $n = 10a + b$, donde $b$ es la última cifra. Multiplicando por $2$:
+$$2n = 20a + 2b.$$
+Como $20 \equiv -1 \pmod{7}$, se tiene:
+$$2n \equiv -a + 2b \pmod{7}.$$
+Puesto que $\gcd(2, 7) = 1$, la congruencia $7 \mid n$ equivale a $7 \mid 2n$, es decir:
+$$-a + 2b \equiv 0 \pmod{7} \quad \Longleftrightarrow \quad a - 2b \equiv 0 \pmod{7}.$$
 Por lo tanto, $7 \mid n \Leftrightarrow 7 \mid (a - 2b)$. $\square$
 
 **Procedimiento alternativo (iterativo):**
@@ -2444,12 +2438,12 @@ Por lo tanto, $7 \mid n \Leftrightarrow 7 \mid (a - 2b)$. $\square$
 - $1001$: $100 - 2(1) = 98$, luego $9 - 2(8) = 9 - 16 = -7$, y $7 \mid (-7)$ ✓ → $7 \mid 1001$
 - $1234$: $123 - 2(4) = 115$, luego $11 - 2(5) = 1$, y $7 \nmid 1$ ✗ → $7 \nmid 1234$
 
-**Observación sobre criterios compuestos:**
+> **Observación sobre criterios compuestos:**
 
-Para algunos números que son **productos de factores coprimos**, el criterio de divisibilidad es simplemente la **conjunción** de los criterios de sus factores.
+Para algunos números que son **productos de factores coprimos**, el criterio de divisibilidad se reduce a la **conjunción** de los criterios de sus factores.
 
-**Proposición 11.12 (Criterios compuestos):** Si $n = p \cdot q$ con $\gcd(p, q) = 1$, entonces:
-$$d \mid n \quad \Leftrightarrow \quad (p \mid n) \land (q \mid n)$$
+**Proposición 11.12 (Criterios compuestos):** Si $n = p \cdot q$ con $\gcd(p, q) = 1$, entonces para todo $m \in \mathbb{Z}$:
+$$n \mid m \quad \Leftrightarrow \quad (p \mid m) \land (q \mid m)$$
 
 **Ejemplos:**
 
@@ -2530,7 +2524,7 @@ Para manejar estas operaciones gigantescas, Donald Knuth introdujo en 1976 una n
 
 **Ejemplos:**
 - $3 \uparrow\uparrow 2 = 3^3 = 27$
-- $3 \uparrow\uparrow 3 = 3^{3^3} = 3^{27} = 7.625.597.282.987$ 
+- $3 \uparrow\uparrow 3 = 3^{3^3} = 3^{27} = 7\,625\,597\,282\,987$ 
 #### 11.5.4 Pentación, Hexación y N-ación
 
 La secuencia continúa indefinidamente añadiendo más flechas.
@@ -2541,7 +2535,7 @@ $$a \uparrow\uparrow\uparrow b = \underbrace{a \uparrow\uparrow (a \uparrow\upar
 por ejemplo:
 $$3 \uparrow \uparrow \uparrow 4 = 3 \uparrow \uparrow 3 \uparrow \uparrow 3 \uparrow \uparrow 3$$
 Las operaciones se resuelven de derecha a izquierda
-$$3 \uparrow \uparrow \uparrow 4 = 3 \uparrow \uparrow 3 \uparrow \uparrow \underbrace{ (3 \uparrow \uparrow 3)}_{\text{primera}} = 3 \uparrow \uparrow (3 \uparrow \uparrow 7.625.597.282.987)$$
+$$3 \uparrow \uparrow \uparrow 4 = 3 \uparrow \uparrow 3 \uparrow \uparrow \underbrace{ (3 \uparrow \uparrow 3)}_{\text{primera}} = 3 \uparrow \uparrow (3 \uparrow \uparrow 7\,625\,597\,282\,987)$$
 **Hexación ($H_6$):** $a \uparrow\uparrow\uparrow\uparrow b$
 Es una "pentación iterada".
 
@@ -2613,8 +2607,8 @@ La demostración del teorema consta de dos partes:
 
 4. **Base para estructuras algebraicas:** La factorización única es una propiedad que se generaliza a otras estructuras algebraicas (dominios de factorización única, anillos).
 
-**Observación histórica:**
-Aunque el teorema parece "obvio" intuitivamente, su demostración rigurosa requiere el **Lema de Euclides** y técnicas de inducción. Fue formulado explícitamente por Carl Friedrich Gauss en su obra *Disquisitiones Arithmeticae* (1801), aunque sus principios eran conocidos desde la antigüedad griega.
+> **Observación histórica:**
+> Aunque el teorema parece "obvio" intuitivamente, su demostración rigurosa requiere el **Lema de Euclides** y técnicas de inducción. Fue formulado explícitamente por Carl Friedrich Gauss en su obra *Disquisitiones Arithmeticae* (1801), aunque sus principios eran conocidos desde la antigüedad griega.
 
 **Ejemplo de aplicación (simplificación de radicales):**
 $$\sqrt{180} = \sqrt{2^2 \cdot 3^2 \cdot 5} = \sqrt{2^2} \cdot \sqrt{3^2} \cdot \sqrt{5} = 2 \cdot 3 \cdot \sqrt{5} = 6\sqrt{5}$$
@@ -2654,8 +2648,8 @@ graph TD
 | Naturales | $\mathbb{N}$ | Contar objetos | $\aleph_0$ | 1, 2, 3, 42 |
 | Enteros | $\mathbb{Z}$ | Resta siempre definida | $\aleph_0$ | -5, 0, 17 |
 | Racionales | $\mathbb{Q}$ | División siempre definida (excepto por 0) | $\aleph_0$ | $\frac{3}{4}$, $-\frac{7}{2}$, $0.25$ |
-| Irracionales | $\mathbb{I}$ | Raíces, π, e | $\aleph_1$ | $\sqrt{2}$, $\pi$, $e$ |
-| Reales | $\mathbb{R}$ | Completitud (límites existen) | $\aleph_1$ | Todos los anteriores |
+| Irracionales | $\mathbb{I}$ | Raíces, π, e | $\mathfrak{c}$ | $\sqrt{2}$, $\pi$, $e$ |
+| Reales | $\mathbb{R}$ | Completitud (límites existen) | $\mathfrak{c}$ | Todos los anteriores |
 
 ### 12.3 Propiedades fundamentales
 
@@ -2718,7 +2712,7 @@ Esta "escalera" de conjuntos numéricos es el **fundamento** sobre el cual se co
 
 **Cardinalidades infinitas:**
 - $|\mathbb{N}| = |\mathbb{Z}| = |\mathbb{Q}| = \aleph_0$ (numerable)
-- $|\mathbb{R}| = \aleph_1 > \aleph_0$ (no numerable)
+- $|\mathbb{R}| = \mathfrak{c} > \aleph_0$ (no numerable)
 
 **Axiomas de $\mathbb{R}$:**
 - Axiomas de cuerpo (suma, multiplicación)
