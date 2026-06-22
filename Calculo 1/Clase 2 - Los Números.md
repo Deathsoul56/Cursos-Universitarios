@@ -8,195 +8,195 @@ En esta clase se construyen los sistemas numéricos fundamentales —naturales, 
 
 Pensemos en una colección de objetos bien definidos: los colores primarios, los números pares, o los puntos de una recta. En matemáticas, a esas colecciones se las llama **conjuntos**, y a cada objeto individual se lo llama **elemento**. Esta noción, propuesta por Georg Cantor en 1874, es la base de toda la matemática moderna.
 
-Sea $A$ el conjunto de los colores primarios, entonces:
-$$A = \{\text{rojo}, \text{azul}, \text{amarillo}\}$$
+**Definición 1.1 (Conjunto y elemento):**
+Un **conjunto** es una colección bien definida de objetos, llamados **elementos**. Si $x$ es un elemento del conjunto $A$, se escribe $x \in A$ (se lee "$x$ pertenece a $A$"); en caso contrario, se escribe $x \notin A$.
 
-> **Nota:** Los conjuntos se denotan con llaves $\{\}$. Además, los elementos de un conjunto no se repiten: por ejemplo, $\{2, 2, 3\} = \{2, 3\}$.
-
-**Notación básica:**
-- Si $x$ es elemento del conjunto $A$, escribimos $x \in A$ (se lee "x pertenece a A")
-- Si $x$ no es elemento de $A$, escribimos $x \notin A$
+> **Nota:** En este curso trabajaremos con conjuntos "concretos" (números, puntos, funciones). La definición formal y axiomática de conjunto se desarrolla en la teoría de conjuntos de Zermelo-Fraenkel (ZFC) y se estudia en cursos avanzados de lógica.
 
 **Ejemplo 1.1:**
-- $A = \{1, 2, 3, 4, 5\}$ es el conjunto de los primeros cinco números naturales
-- $3 \in A$ pero $7 \notin A$
-- $B = \{a, e, i, o, u\}$ es el conjunto de las vocales
+Sea $A = \{1, 2, 3, 4, 5\}$ el conjunto de los primeros cinco números naturales. Entonces $3 \in A$ pero $7 \notin A$. Sea $B = \{a, e, i, o, u\}$ el conjunto de las vocales; entonces $a \in B$ pero $b \notin B$.
 
+> **Observación:** Los elementos de un conjunto no se repiten ni tienen orden prefijado. Por ejemplo, $\{2, 2, 3\} = \{2, 3\}$ y $\{1, 2, 3\} = \{3, 2, 1\}$.
 ### 1.2 Formas de especificar un conjunto
 
-Existen dos formas estándar de definir un conjunto:
+A menudo necesitamos describir conjuntos que tienen muchos elementos o incluso infinitos. Listar uno por uno no siempre es práctico, así que disponemos de distintas formas de especificar qué elementos pertenecen a un conjunto.
 
-**a) Notación por extensión (o enumeración):**
-Listar explícitamente todos los elementos entre llaves.
-$$A = \{2, 4, 6, 8\}$$
+**Definición 1.2 (Notación por extensión):**
+Un conjunto está dado **por extensión** cuando se enumeran todos sus elementos entre llaves:
+$$A = \{2, 4, 6, 8\}.$$
 
-**b) Notación por comprensión (o construcción):**
-Especificar una propiedad que caracteriza a los elementos.
-$$A = \{x \in \mathbb{N} : x \text{ es par y } x \leq 8\}$$
-Se lee: "A es el conjunto de todos los x en los naturales tales que x es par y x es menor o igual a 8"
+**Definición 1.3 (Notación por comprensión):**
+Un conjunto está dado **por comprensión** cuando se indica una propiedad $P(x)$ que caracteriza a sus elementos dentro de un universo $U$:
+$$A = \{x \in U : P(x)\}.$$
+Se lee: "$A$ es el conjunto de todos los $x$ en $U$ tales que $P(x)$ se cumple".
 
-**c) Representación gráfica: diagramas de Venn**
+**Ejemplo 1.2:**
+- Por extensión: $V = \{a, e, i, o, u\}$.
+- Por comprensión: $P = \{x \in \mathbb{N} : x \text{ es par y } x \leq 8\} = \{2, 4, 6, 8\}$.
 
-Además de las notaciones algebraicas, los conjuntos pueden representarse gráficamente mediante **diagramas de Venn**. En estos diagramas, cada conjunto se dibuja como una curva cerrada (habitualmente un círculo o una elipse) y los elementos se representan como puntos en su interior. La intersección entre conjuntos aparece como la región común a ambas curvas, y la inclusión como una curva dentro de otra. Esta representación es especialmente útil para visualizar relaciones e ilustrar operaciones entre pocos conjuntos.
+**Representación gráfica: diagramas de Venn**
+Además de las notaciones algebraicas, los conjuntos pueden representarse gráficamente mediante **diagramas de Venn**. En estos diagramas cada conjunto se dibuja como una curva cerrada y los elementos como puntos en su interior. La intersección aparece como la región común y la inclusión como una curva dentro de otra.
+
 ![[diagrama_venn_A.png]]
 *Figura 1.2.1: Diagrama de Venn del conjunto $A = \{2, 4, 6, 8\}$ dentro del universo $U = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}$. Los elementos dentro de la elipse magenta pertenecen a $A$; los elementos fuera de la elipse pero dentro del rectángulo pertenecen a $U$ pero no a $A$.*
 
-> **Observación:** La notación por comprensión tiene la forma general:
-$$\{x \in U : P(x)\}$$
-donde $U$ es un "universo" de referencia y $P(x)$ (se lee P de x) es una propiedad o predicado que cumple $x$.
+**Aplicaciones:**
+La notación por comprensión es la base de los lenguajes de consulta en bases de datos (como SQL) y de la especificación de propiedades en lógica y programación. Los diagramas de Venn se usan en probabilidad para visualizar eventos y sus intersecciones.
+
+> **Observación:** La notación por comprensión tiene la forma general $\{x \in U : P(x)\}$, donde $U$ es un "universo" de referencia y $P(x)$ es un predicado. Siempre debe quedar claro cuál es el universo; de lo contrario la descripción puede ser ambigua.
 
 ### 1.3 Operaciones entre conjuntos
 
-Sean $A$ y $B$ dos conjuntos. Definimos:
+Dados dos conjuntos, es natural combinarlos o compararlos: reunir todos sus elementos, quedarnos solo con los comunes, o eliminar los elementos de uno que aparecen en otro. Estas operaciones son el lenguaje con el que se expresan relaciones entre colecciones.
 
-**Definición 1.1 (Unión):**
-$$A \cup B = \{x : x \in A \text{ o } x \in B\}$$
-*Se lee A unión B*
-La unión contiene todos los elementos que están en $A$ **o** en $B$ (o en ambos).
+**Definición 1.4 (Unión):**
+La **unión** de $A$ y $B$ es el conjunto de elementos que pertenecen a $A$ **o** a $B$ (o a ambos):
+$$A \cup B = \{x : x \in A \text{ o } x \in B\}.$$
+*Se lee "$A$ unión $B$".*
 
-**Definición 1.2 (Intersección):**
-$$A \cap B = \{x : x \in A \text{ y } x \in B\}$$
-*Se lee A intersección B*
-La intersección contiene solo los elementos que están simultáneamente en $A$ **y** en $B$.
+**Definición 1.5 (Intersección):**
+La **intersección** de $A$ y $B$ es el conjunto de elementos que pertenecen a $A$ **y** a $B$ simultáneamente:
+$$A \cap B = \{x : x \in A \text{ y } x \in B\}.$$
+*Se lee "$A$ intersección $B$".*
 
-**Definición 1.3 (Diferencia o resta):**
-$$A \setminus B = \{x : x \in A \text{ y } x \notin B\}$$
-La diferencia contiene los elementos de $A$ que **no** están en $B$.
+**Definición 1.6 (Diferencia):**
+La **diferencia** $A \setminus B$ es el conjunto de elementos de $A$ que **no** están en $B$:
+$$A \setminus B = \{x : x \in A \text{ y } x \notin B\}.$$
+*Se lee "$A$ menos $B$".*
 
-**Ejemplo 1.2:**
-Si $A = \{1, 2, 3, 4\}$ y $B = \{3, 4, 5, 6\}$, entonces:
-- $A \cup B = \{1, 2, 3, 4, 5, 6\}$
-- $A \cap B = \{3, 4\}$
-- $A \setminus B = \{1, 2\}$
-- $B \setminus A = \{5, 6\}$
+**Ejemplo 1.3:**
+Sean $A = \{1, 2, 3, 4\}$ y $B = \{3, 4, 5, 6\}$. Entonces:
+- $A \cup B = \{1, 2, 3, 4, 5, 6\}$,
+- $A \cap B = \{3, 4\}$,
+- $A \setminus B = \{1, 2\}$,
+- $B \setminus A = \{5, 6\}$.
+
+**Aplicaciones:**
+Las operaciones entre conjuntos modelan situaciones cotidianas y técnicas: la unión describe la combinación de listas de clientes o genes; la intersección identifica características compartidas entre grupos; la diferencia filtra elementos excluyendo ciertos criterios. En probabilidad, estas operaciones corresponden a eventos "o", "y" y "no".
+
+> **Observación:** Dos conjuntos $A$ y $B$ se dicen **disjuntos** cuando $A \cap B = \emptyset$, es decir, cuando no tienen elementos en común.
 
 ### 1.4 La paradoja de Russell y los límites de la intuición
 
-> **Advertencia importante:** La noción intuitiva de conjunto tiene limitaciones profundas. Bertrand Russell descubrió en 1901 una paradoja que muestra que no podemos definir conjuntos de manera completamente libre.
+La noción intuitiva de conjunto parece suficiente para trabajar con colecciones de números o puntos, pero permite formar expresiones como "el conjunto de todos los conjuntos". A principios del siglo XX, Bertrand Russell descubrió que esta libertad conduce a contradicciones lógicas. Comprender este límite justifica por qué la matemática moderna requiere axiomas precisos para hablar de conjuntos.
 
 **La paradoja de Russell:**
 Consideremos el conjunto $R$ definido como:
-$$R = \{x : x \text{ es un conjunto y } x \notin x\}$$
+$$R = \{x : x \text{ es un conjunto y } x \notin x\}.$$
 Es decir, $R$ es el conjunto de todos los conjuntos que **no se contienen a sí mismos**.
 
 Ahora preguntamos: ¿Es $R \in R$?
-- Si $R \in R$, entonces por definición de $R$, debe cumplir $R \notin R$. **Contradicción**.
+- Si $R \in R$, entonces por definición de $R$, debe cumplirse $R \notin R$. **Contradicción**.
 - Si $R \notin R$, entonces cumple la condición para estar en $R$, luego $R \in R$. **Contradicción**.
 
 **Conclusión:** La noción "ingenua" de conjunto conduce a contradicciones lógicas. Por ello, en el siglo XX se desarrolló la **Teoría Axiomática de Conjuntos** (Zermelo-Fraenkel, ZFC), que establece reglas precisas sobre qué colecciones son conjuntos válidos.
 
-**Para este curso:** Trabajaremos con conjuntos "naturales" (números, funciones, puntos geométricos) que no presentan estas paradojas. Las sutilezas formales se estudiarán en cursos avanzados de Lógica Matemática o Teoría de Conjuntos.
+> **Nota:** Para este curso trabajaremos con conjuntos "naturales" (números, funciones, puntos geométricos) que no presentan estas paradojas. Las sutilezas formales se estudiarán en cursos avanzados de Lógica Matemática o Teoría de Conjuntos.
 
 ### 1.5 El conjunto vacío
 
-**Definición 1.4 (Conjunto vacío):**
-El **conjunto vacío**, denotado por $\emptyset$ o $\{\}$, es el conjunto que **no contiene ningún elemento**.
+Entre todas las colecciones posibles, hay una que resulta especial: la colección que no contiene ningún elemento. Aunque pueda parecer anodina a primera vista, el conjunto vacío es indispensable: actúa como elemento neutro para la unión y como punto de partida para construir los números naturales.
 
-**Formalmente:**
-$$\emptyset = \{\} \quad \text{tal que} \quad \forall x, \, x \notin \emptyset$$
+**Definición 1.7 (Conjunto vacío):**
+El **conjunto vacío**, denotado por $\emptyset$ o $\{\}$, es el único conjunto que no contiene elementos. Formalmente:
+$$\emptyset = \{\} \quad \text{tal que} \quad \forall x, \, x \notin \emptyset.$$
 
-$\forall x$ *se lee ¨"Para todo x"*
+> **Nota:** El símbolo $\forall$ se lee "para todo". La condición anterior afirma que ningún objeto $x$ pertenece a $\emptyset$.
 
 **Propiedades fundamentales:**
 
-1. **Unicidad:** Existe exactamente un conjunto vacío. Si $A$ y $B$ son dos conjuntos sin elementos, entonces $A = B = \emptyset$.
+1. **Unicidad.** Existe exactamente un conjunto vacío. Si $A$ y $B$ son dos conjuntos sin elementos, entonces $A = B = \emptyset$.
 
-2. **Subconjunto universal:** El conjunto vacío es subconjunto de cualquier conjunto:
-   $$\forall A, \quad \emptyset \subseteq A$$
+2. **Subconjunto universal.** El conjunto vacío es subconjunto de cualquier conjunto:
+   $$\forall A, \quad \emptyset \subseteq A.$$
+   *Se lee "el conjunto vacío es subconjunto de $A$".*
    
-   $\emptyset \subseteq A$ *Se lee El conjunto vacío es subconjunto de A*
-   
-   **Justificación:** La implicación "$x \in \emptyset \Rightarrow x \in A$" es **vacuamente verdadera** (verdadera por vacuidad), ya que no existe ningún $x \in \emptyset$ que pueda contradecirla.
+   **Justificación:** La implicación "$x \in \emptyset \Rightarrow x \in A$" es **vacuamente verdadera**, ya que no existe ningún $x \in \emptyset$ que pueda contradecirla.
 
 3. **Unión e intersección:**
-   - $A \cup \emptyset = A$ (el vacío es neutro para la unión)
-   - $A \cap \emptyset = \emptyset$ (la intersección con el vacío es siempre vacía)
-   - $A \setminus \emptyset = A$
-   - $\emptyset \setminus A = \emptyset$
+   - $A \cup \emptyset = A$ (el vacío es neutro para la unión),
+   - $A \cap \emptyset = \emptyset$ (la intersección con el vacío es siempre vacía),
+   - $A \setminus \emptyset = A$,
+   - $\emptyset \setminus A = \emptyset$.
 
-> **Observación filosófica:**
-> El conjunto vacío puede parecer abstracto o incluso paradójico ("¿cómo puede existir un conjunto de nada?"), pero es absolutamente fundamental en matemáticas. Es el "ladrillo" más básico desde el cual se construyen todos los números (ver Sección 4). Así como el cero es esencial en aritmética, el conjunto vacío es esencial en teoría de conjuntos.
+**Ejemplo 1.4:**
+- $\mathcal{P}(\emptyset) = \{\emptyset\}$ (el conjunto potencia del vacío tiene un elemento).
+- Si $A = \{1, 2, 3\}$, entonces $A \cap \emptyset = \emptyset$ y $A \cup \emptyset = \{1, 2, 3\}$.
+
+> **Observación filosófica:** El conjunto vacío puede parecer abstracto o incluso paradójico ("¿cómo puede existir un conjunto de nada?"), pero es absolutamente fundamental en matemáticas. Es el "ladrillo" más básico desde el cual se construyen todos los números (ver Sección 4). Así como el cero es esencial en aritmética, el conjunto vacío es esencial en teoría de conjuntos.
 
 > **Analogía:** El conjunto vacío puede imaginarse como una caja vacía: la caja existe aunque no contenga nada. El conjunto vacío es "algo" (un conjunto válido), pero ese algo no contiene elementos.
 
 > **Notación importante:** No confundir:
-> - $\emptyset$ (el conjunto vacío, que no tiene elementos)
-> - $\{\emptyset\}$ (el conjunto que contiene al conjunto vacío como único elemento, por lo tanto tiene 1 elemento)
-> - $\{\{\emptyset\}\}$ (el conjunto que contiene al conjunto $\{\emptyset\}$, tiene 1 elemento)
-
-Estas distinciones serán cruciales en la construcción de von Neumann de los números naturales.
+> - $\emptyset$ (el conjunto vacío, que no tiene elementos),
+> - $\{\emptyset\}$ (el conjunto que contiene al conjunto vacío como único elemento, por lo tanto tiene 1 elemento),
+> - $\{\{\emptyset\}\}$ (el conjunto que contiene al conjunto $\{\emptyset\}$, tiene 1 elemento).
+>
+> Estas distinciones serán cruciales en la construcción de von Neumann de los números naturales.
 
 ### 1.6 Cardinalidad
 
-**Definición 1.5 (Cardinalidad):**
-La **cardinalidad** de un conjunto finito $A$, denotada $|A|$ o $\#A$ o $\text{card}(A)$, es el **número de elementos** que contiene.
+Una de las primeras preguntas que surge ante un conjunto es "¿cuántos elementos tiene?". La cardinalidad responde esa pregunta de manera precisa y permite comparar tamaños incluso cuando los conjuntos son infinitos.
 
-**Ejemplos:**
-- $|\{2, 4, 6\}| = 3$
-- $|\{a, b, c, d, e\}| = 5$
-- $|\emptyset| = 0$ (el conjunto vacío no tiene elementos)
+**Definición 1.8 (Cardinalidad):**
+La **cardinalidad** de un conjunto finito $A$, denotada $|A|$, $\#A$ o $\operatorname{card}(A)$, es el **número de elementos** que contiene.
+
+**Ejemplo 1.5:**
+- $|\{2, 4, 6\}| = 3$.
+- $|\{a, b, c, d, e\}| = 5$.
+- $|\emptyset| = 0$ (el conjunto vacío no tiene elementos).
 
 > **Observación:** Para conjuntos infinitos, la noción de cardinalidad es más sutil y se basa en la idea de **biyecciones** entre conjuntos (ver Sección 8).
 
 ### 1.7 Conjunto potencia
 
-**Definición 1.6 (Conjunto potencia):**
+Dado un conjunto, a menudo interesa estudiar todas las subcolecciones que se pueden formar con sus elementos. El conjunto de todos esos subconjuntos recibe el nombre de **conjunto potencia** y aparece de manera natural en combinatoria, lógica y teoría de la computación.
+
+**Definición 1.9 (Conjunto potencia):**
 Dado un conjunto $A$, el **conjunto potencia** de $A$, denotado $\mathcal{P}(A)$ o $2^A$, es el conjunto de **todos los subconjuntos** de $A$:
-$$\mathcal{P}(A) = \{B : B \subseteq A\}$$
+$$\mathcal{P}(A) = \{B : B \subseteq A\}.$$
 
-**Ejemplo 1.3:** 
+**Ejemplo 1.6:**
 Si $A = \{1, 2\}$, entonces:
-$$\mathcal{P}(A) = \{\emptyset, \{1\}, \{2\}, \{1,2\}\}$$
+$$\mathcal{P}(A) = \{\emptyset, \{1\}, \{2\}, \{1,2\}\}.$$
+Se observa que $|\mathcal{P}(A)| = 4$.
 
-Se observa que $\mathcal{P}(A)$ contiene **4 elementos**: el conjunto vacío, los dos conjuntos unitarios, y el conjunto completo $A$.
-
-**Ejemplo 1.4:**
+**Ejemplo 1.7:**
 Si $A = \{a, b, c\}$, entonces:
-$$\mathcal{P}(A) = \{\emptyset, \{a\}, \{b\}, \{c\}, \{a,b\}, \{a,c\}, \{b,c\}, \{a,b,c\}\}$$
-
-En este caso, $|\mathcal{P}(A)| = 8$.
+$$\mathcal{P}(A) = \{\emptyset, \{a\}, \{b\}, \{c\}, \{a,b\}, \{a,c\}, \{b,c\}, \{a,b,c\}\},$$
+y $|\mathcal{P}(A)| = 8$.
 
 **Caso especial - El conjunto vacío:**
-$$\mathcal{P}(\emptyset) = \{\emptyset\}$$
-
-Nótese que el conjunto potencia del vacío **no es vacío**: contiene un elemento (el conjunto vacío mismo).
+$$\mathcal{P}(\emptyset) = \{\emptyset\}.$$
+El conjunto potencia del vacío **no es vacío**: contiene un elemento (el conjunto vacío mismo).
 
 **Teorema 1.1 (Cardinalidad del conjunto potencia):**
 Si $A$ es un conjunto finito con $|A| = n$, entonces:
-$$|\mathcal{P}(A)| = 2^n$$
+$$|\mathcal{P}(A)| = 2^n.$$
 
 **Demostración (idea intuitiva):**
-Para construir un subconjunto de $A$, debemos decidir, para cada elemento de $A$, si lo incluimos o no. Son 2 opciones por cada uno de los $n$ elementos, lo que da $2 \times 2 \times ... \times 2 = 2^n$ posibilidades. $\square$
+Para construir un subconjunto de $A$, debemos decidir, para cada elemento de $A$, si lo incluimos o no. Son 2 opciones por cada uno de los $n$ elementos, lo que da $2 \times 2 \times \cdots \times 2 = 2^n$ posibilidades. $\square$
 
-**Justificación de la notación $2^A$:** La notación $2^A$ para el conjunto potencia proviene precisamente de que $|2^A| = 2^{|A|}$ cuando $A$ es finito.
+**Ejemplo 1.8 (Crecimiento exponencial):**
+- $|\emptyset| = 0$, $|\mathcal{P}(\emptyset)| = 2^0 = 1$.
+- $|\{a\}| = 1$, $|\mathcal{P}(\{a\})| = 2^1 = 2$.
+- $|\{a,b\}| = 2$, $|\mathcal{P}(\{a,b\})| = 2^2 = 4$.
+- $|\{a,b,c\}| = 3$, $|\mathcal{P}(\{a,b,c\})| = 2^3 = 8$.
+- $|\{a,b,c,d\}| = 4$, $|\mathcal{P}(\{a,b,c,d\})| = 2^4 = 16$.
 
-**Propiedades importantes:**
-
-1. **Pertenencia vs inclusión:**
-   - $\emptyset \in \mathcal{P}(A)$ (el vacío es elemento del conjunto potencia)
-   - $\emptyset \subseteq A$ (el vacío es subconjunto de $A$)
-   - $A \in \mathcal{P}(A)$ (todo conjunto es subconjunto de sí mismo, luego es elemento de su potencia)
-
-2. **Jerarquía de cardinalidades:**
-   $$|A| < |\mathcal{P}(A)|$$
-   
-   Para conjuntos finitos: $n < 2^n$ para todo $n \geq 0$.
-
-**Ejemplo 1.5 (Crecimiento exponencial):**
-- $|\emptyset| = 0$, $|\mathcal{P}(\emptyset)| = 2^0 = 1$
-- $|\{a\}| = 1$, $|\mathcal{P}(\{a\})| = 2^1 = 2$
-- $|\{a,b\}| = 2$, $|\mathcal{P}(\{a,b\})| = 2^2 = 4$
-- $|\{a,b,c\}| = 3$, $|\mathcal{P}(\{a,b,c\})| = 2^3 = 8$
-- $|\{a,b,c,d\}| = 4$, $|\mathcal{P}(\{a,b,c,d\})| = 2^4 = 16$
+**Aplicaciones:**
+El conjunto potencia es central en combinatoria (contar subconjuntos), en lógica proposicional (cada subconjunto de variables puede interpretarse como una asignación de valores de verdad) y en teoría de la computación (autómatas y lenguajes formales).
 
 **Teorema de Cantor (1891):**
 Para **cualquier** conjunto $A$ (finito o infinito), no existe ninguna función sobreyectiva de $A$ a $\mathcal{P}(A)$. En particular:
-$$|A| < |\mathcal{P}(A)|$$
+$$|A| < |\mathcal{P}(A)|.$$
 
 Este resultado implica que existe una **jerarquía infinita de infinitos**:
-$$|\mathbb{N}| < |\mathcal{P}(\mathbb{N})| < |\mathcal{P}(\mathcal{P}(\mathbb{N}))| < |\mathcal{P}(\mathcal{P}(\mathcal{P}(\mathbb{N})))| < ...$$
+$$|\mathbb{N}| < |\mathcal{P}(\mathbb{N})| < |\mathcal{P}(\mathcal{P}(\mathbb{N}))| < \cdots$$
 
-> **Observación profunda:** El teorema de Cantor muestra que **no existe un "infinito más grande"**: dado cualquier conjunto infinito, siempre podemos construir uno más grande (su conjunto potencia). Esta es una de las ideas más profundas y hermosas de las matemáticas modernas.
+> **Observación profunda:** El teorema de Cantor muestra que, dado cualquier conjunto infinito, siempre se puede construir uno de cardinalidad estrictamente mayor (su conjunto potencia). Esta idea es una de las más importantes de las matemáticas modernas.
+
+> **Observación:** La notación $2^A$ proviene de que $|2^A| = 2^{|A|}$ cuando $A$ es finito. Además, se tiene siempre $|A| < |\mathcal{P}(A)|$, de modo que $n < 2^n$ para todo $n \geq 0$.
 
 ---
 
@@ -1463,9 +1463,36 @@ $$\frac{7}{12} = 0.58\overline{3} = 0.58333...$$
 **Teorema 5.1 (Caracterización decimal de racionales):**
 Un número real tiene expansión decimal **exacta, periódica pura o semiperiódica** si y solo si es un **número racional**.
 
-**Demostración (idea):** 
-- ($\Rightarrow$) Si un número tiene expansión decimal periódica, puede expresarse como fracción usando series geométricas.
-- ($\Leftarrow$) Si un número es racional $\frac{p}{q}$, el algoritmo de división genera restos que deben repetirse (hay máximo $q$ restos posibles), lo que garantiza periodicidad.
+**Demostración:**
+
+*($\Rightarrow$) Toda expansión decimal exacta, periódica pura o semiperiódica es un número racional.*
+
+Sea $x$ un número real con una de estas expansiones. Separamos la parte entera, que es un entero, y analizamos la parte fraccionaria.
+
+1. **Decimal exacta:** Si la parte decimal termina después de $m$ cifras, digamos $0.a_1 a_2 \dots a_m$, entonces:
+$$x = N + \frac{A}{10^m},$$
+donde $N$ es la parte entera y $A = a_1 a_2 \dots a_m$ es el entero formado por las cifras decimales. Como $N$ y $A$ son enteros, $x$ es racional.
+
+2. **Decimal periódico puro:** Si $x = N + 0.\overline{b_1 b_2 \dots b_k}$, sea $B$ el entero formado por el período $b_1 b_2 \dots b_k$. Multiplicando por $10^k$ se obtiene:
+$$10^k(x - N) = B + 0.\overline{b_1 b_2 \dots b_k} = B + (x - N).$$
+Por tanto $(10^k - 1)(x - N) = B$, de donde:
+$$x = N + \frac{B}{10^k - 1},$$
+que es racional.
+
+3. **Decimal semiperiódico:** Si $x = N.a_1 a_2 \dots a_m \overline{b_1 b_2 \dots b_k}$, multiplicamos por $10^m$ para dejar el período justo después del punto decimal:
+$$10^m(x - N) = A + 0.\overline{b_1 b_2 \dots b_k},$$
+donde $A$ es el entero formado por $a_1 a_2 \dots a_m$. La parte periódica es racional por el caso anterior, luego $x$ es racional.
+
+*($\Leftarrow$) Todo número racional tiene expansión decimal exacta, periódica pura o semiperiódica.*
+
+Sea $x = \dfrac{p}{q}$ con $p \in \mathbb{Z}$, $q \in \mathbb{Z}^+$ y la fracción reducida. Al efectuar la división de $p$ entre $q$, en cada paso se obtiene un resto $r_i$ que cumple $0 \leq r_i < q$. Como solo existen $q$ restos posibles, después de a lo más $q$ pasos algún resto debe repetirse (principio del palomar). Una vez que un resto se repite, el proceso de división reproduce las mismas cifras, por lo que la expansión decimal se vuelve periódica a partir de ese momento.
+
+Más aún, escribiendo $q = 2^a \cdot 5^b \cdot q'$ con $\gcd(q', 10) = 1$:
+- si $q' = 1$, el decimal es exacto;
+- si $a = b = 0$, el decimal es periódico puro;
+- en cualquier otro caso, el decimal es semiperiódico.
+
+En todos los casos la expansión decimal es de uno de los tres tipos permitidos. $\blacksquare$
 
 **Corolario:** Los números con expansión decimal **infinita no periódica** son **irracionales** (como $\pi$, $e$, $\sqrt{2}$).
 #### 5.3.5 Conversión de decimal periódico a fracción
@@ -2574,7 +2601,7 @@ donde $p_1 < p_2 < \cdots < p_k$ (ordenados de menor a mayor).
 4. $2024 = 2^3 \cdot 11 \cdot 23$
 5. $17$ es primo, por lo tanto $17 = 17^1$ (ya está en su forma prima)
 
-**Intuición de la demostración:**
+**Demostración (idea intuitiva):**
 
 La demostración del teorema consta de dos partes:
 
@@ -2593,6 +2620,8 @@ La demostración del teorema consta de dos partes:
    - Como $q_i$ es primo, esto implica $p_1 = q_i$
    - Cancelamos $p_1 = q_i$ y aplicamos el mismo argumento al número resultante
    - Por inducción, todas las factorizaciones son idénticas (salvo el orden)
+
+> **Nota:** La demostración formal completa del Teorema Fundamental de la Aritmética se desarrollará en el curso de **Teoría de Números**, donde se establecerán rigurosamente el Lema de Euclides y las técnicas de inducción necesarias.
 
 **Consecuencias importantes:**
 
