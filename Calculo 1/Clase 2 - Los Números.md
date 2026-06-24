@@ -406,67 +406,63 @@ El **alfabeto griego** es una herramienta indispensable en matemáticas, ciencia
 
 ## 3. Construcción de los números naturales
 
+Después de establecer el lenguaje de conjuntos, podemos construir los números naturales sin apelar a la intuición de "contar". La idea es partir de un objeto básico —el conjunto vacío— y definir cada número como el conjunto de todos los anteriores. Este proceso, desarrollado por John von Neumann en 1923, muestra que la aritmética puede fundarse únicamente en teoría de conjuntos.
+
 ### 3.1 El conjunto vacío y la construcción de von Neumann
 
-Los números pueden construirse rigurosamente usando **solo** teoría de conjuntos. La construcción más elegante es la de John von Neumann (1923).
-
-**Punto de partida:** El conjunto vacío $\emptyset = \{\}$ (el conjunto sin elementos)
-
 **Definición 3.1 (Números naturales según von Neumann):**
+Partiendo del conjunto vacío $\emptyset$, se define recursivamente:
+$$0 := \emptyset = \{\},$$
+$$1 := \{0\} = \{\emptyset\},$$
+$$2 := \{0, 1\} = \{\emptyset, \{\emptyset\}\},$$
+$$3 := \{0, 1, 2\},$$
+y en general:
+$$n := \{0, 1, 2, \dots, n-1\}.$$
 
-Definimos:
-$$0 := \emptyset = \{\}$$
-$$1 := \{0\} = \{\emptyset\} = \{\quad \{\} \quad \}$$
-$$2 := \{0, 1\} = \{\emptyset, \{\emptyset\}\} = \{\quad \{\}, \{\{\}\} \quad \}$$
-$$3 := \{0, 1, 2\} = \{ \quad \emptyset,\{\emptyset\},\{\emptyset,\{\emptyset\}\} \quad \} =\{ \quad \{\}, \{ \{\} \}, \{ \{\}, \{ \{\} \} \} \quad \}$$
-$$4 := \{0,1,2,3\} = \{\emptyset,\{\emptyset\},\{\emptyset,\{\emptyset\}\},\{\emptyset,\{\emptyset\},\{\emptyset,\{\emptyset\}\}\}\}​ = \{\{\}, \{ \{\} \}, \{ \{\}, \{ \{\} \} \}, \{ \{\}, \{ \{\} \}, \{ \{\}, \{ \{\} \} \} \}\}$$
-$$n := \{0, 1, 2, ..., n-1\}$$
+En esta construcción, cada número natural $n$ es el conjunto de todos los números naturales menores que $n$. Notamos que $|n| = n$; es decir, la cardinalidad del conjunto coincide con el número mismo.
 
-> **Observación clave:** En esta construcción, cada número natural $n$ es el conjunto de todos los números naturales **menores** que $n$. Además, $|n| = n$ (la cardinalidad del conjunto coincide con el número mismo).
+**Definición 3.2 (Función sucesor):**
+La función sucesor $S$ se define como:
+$$S(n) = n \cup \{n\}.$$
+De esta manera, $S(n)$ representa al siguiente número natural, es decir, $n + 1$.
 
-**Función sucesor:**
-$$S(n) = n \cup \{n\} = n + 1$$
+**Ejemplo 3.1:**
+$$S(2) = 2 \cup \{2\} = \{0, 1\} \cup \{2\} = \{0, 1, 2\} = 3.$$
 
-Por ejemplo:
-$$S(2) = 2 \cup \{2\} = \{0, 1\} \cup \{2\} = \{0, 1, 2\} = 3$$
+**Definición 3.3 (Conjunto de los números naturales):**
+$$\mathbb{N} = \{0, 1, 2, 3, 4, \dots\}.$$
 
-**Definición 3.2 (Conjunto de los números naturales):**
-$$\mathbb{N} = \{0, 1, 2, 3, 4, ...\}$$
-
-**Convención para este curso:**
-- $\mathbb{N}^{*} = \{1, 2, 3, 4, ...\}$ (naturales **sin** cero, también denotado $\mathbb{N}^{+}$)
-- $\mathbb{N} = \{0, 1, 2, 3, ...\}$ (naturales **con** cero, también denotado $\mathbb{N}_0$ o $\mathbb{W}$)
-
-> **Nota:** Diferentes textos usan convenciones distintas: algunos incluyen el 0 en $\mathbb{N}$ y otros no. En este curso se adopta $\mathbb{N} = \{0, 1, 2, \dots\}$, pero lo esencial es declarar la convención al inicio de cada desarrollo. El debate sobre el 0 no tiene una respuesta universal; depende del contexto.
+> **Convención para este curso:**
+> - $\mathbb{N}^{*} = \{1, 2, 3, 4, \dots\}$ (naturales **sin** cero, también denotado $\mathbb{N}^{+}$).
+> - $\mathbb{N} = \{0, 1, 2, 3, \dots\}$ (naturales **con** cero, también denotado $\mathbb{N}_0$).
+>
+> Diferentes textos usan convenciones distintas; lo esencial es declarar la convención al inicio de cada desarrollo.
 
 ### 3.2 La recta numérica de los naturales
 
-Podemos visualizar $\mathbb{N}$ como puntos discretos en una línea:
+La recta numérica permite visualizar $\mathbb{N}$ como puntos discretos sobre una línea. Esta representación es útil para entender el orden y la noción de "siguiente".
+
 ![[recta_numeros_naturales.png]]
+
 **Características:**
-- Los números naturales tienen un **primer elemento** (el 0)
-- No tienen un **último elemento** (son infinitos)
-- Están **bien ordenados**: entre dos naturales consecutivos no hay otro natural
-- Son **discretos**: no hay continuidad
-- existe un orden en la recta, por ejemplo $5>3$, decimos que es un conjunto ordenado
-### 3.3 Operaciones fundamentales en $\mathbb{N}$
+- $\mathbb{N}$ tiene un primer elemento, el $0$.
+- No tiene último elemento: es infinito.
+- Está bien ordenado: entre dos naturales consecutivos no hay otro natural.
+- Es discreto: no hay continuidad entre sus elementos.
+- Existe un orden natural; por ejemplo, $5 > 3$, por lo que $\mathbb{N}$ es un conjunto ordenado.
 
-Una vez construidos los números naturales, definimos las operaciones básicas de manera rigurosa.
+### 3.3 La suma en $\mathbb{N}$
 
-#### 3.3.1 La suma en $\mathbb{N}$
+Una vez construidos los números, definimos la suma de manera recursiva a partir de la función sucesor. Esta definición captura la idea intuitiva de "seguir contando".
 
-**Definición 3.3 (Suma de números naturales):**
-La suma de números naturales se define **recursivamente** usando la función sucesor $S(n)$:
-
+**Definición 3.4 (Suma de números naturales):**
 Para cualesquiera $m, n \in \mathbb{N}$:
-1. **Caso base:** $m + 0 = m$
-2. **Caso recursivo:** $m + S(n) = S(m + n)$
+1. **Caso base:** $m + 0 = m$.
+2. **Caso recursivo:** $m + S(n) = S(m + n)$.
 
-> **Interpretación:** Para sumar $m + n$, aplicamos la función sucesor $n$ veces al número $m$.
+> **Nota:** La definición anterior afirma que sumar $m + n$ equivale a aplicar la función sucesor $n$ veces al número $m$.
 
-**Ejemplo 3.1 (Calculando $2 + 3$):**
-
-Usando la definición recursiva:
+**Ejemplo 3.2 (Calculando $2 + 3$):**
 $$\begin{align}
 2 + 3 &= 2 + S(2) \\
 &= S(2 + 2) \\
@@ -477,111 +473,99 @@ $$\begin{align}
 &= S(S(S(2))) \\
 &= S(S(3)) \\
 &= S(4) \\
-&= 5
+&= 5.
 \end{align}$$
 
-**Propiedades de la suma en $\mathbb{N}$:**
+**Proposición 3.1 (Propiedades de la suma):**
+La suma en $\mathbb{N}$ satisface:
+1. **Cerradura:** $\forall m, n \in \mathbb{N},\; m + n \in \mathbb{N}$.
+2. **Asociatividad:** $\forall m, n, p \in \mathbb{N},\; (m + n) + p = m + (n + p)$.
+3. **Conmutatividad:** $\forall m, n \in \mathbb{N},\; m + n = n + m$.
+4. **Elemento neutro:** $\forall m \in \mathbb{N},\; m + 0 = 0 + m = m$.
+5. **Ley de cancelación:** $\forall m, n, p \in \mathbb{N},\; m + p = n + p \Rightarrow m = n$.
 
-**Proposición 3.1:** La suma en $\mathbb{N}$ satisface las siguientes propiedades:
+> **Nota:** Estas propiedades se demuestran por inducción matemática, técnica que se estudia en detalle en el curso de Álgebra I.
 
-1. **Cerradura:** $\forall m, n \in \mathbb{N}, \quad m + n \in \mathbb{N}$
-2. **Asociatividad:** $\forall m, n, p \in \mathbb{N}, \quad (m + n) + p = m + (n + p)$
-3. **Conmutatividad:** $\forall m, n \in \mathbb{N}, \quad m + n = n + m$
-4. **Elemento neutro:** $\forall m \in \mathbb{N}, \quad m + 0 = 0 + m = m$
-5. **Ley de cancelación:** $\forall m, n, p \in \mathbb{N}, \quad m + p = n + p \Rightarrow m = n$
+### 3.4 La resta en $\mathbb{N}$: una operación parcial
 
-> **Observación:** Estas propiedades se demuestran por **inducción matemática** sobre los números naturales, técnica que estudiaremos en detalle en el curso de Algebra I.
-#### 3.3.2 La resta en $\mathbb{N}$: Operación parcial
+En los naturales no siempre es posible restar: no existe un natural $k$ tal que $5 + k = 3$. Esta limitación es importante porque motiva la ampliación a los enteros.
 
-**Definición 3.4 (Resta en $\mathbb{N}$):**
-Dados $m, n \in \mathbb{N}$, decimos que $m - n$ **existe en $\mathbb{N}$** si y solo si existe $k \in \mathbb{N}$ tal que:
-$$n + k = m$$
+**Definición 3.5 (Resta en $\mathbb{N}$):**
+Dados $m, n \in \mathbb{N}$, decimos que $m - n$ existe en $\mathbb{N}$ si y solo si existe $k \in \mathbb{N}$ tal que:
+$$n + k = m.$$
 En ese caso, escribimos $k = m - n$.
 
-> **Observación crítica:** La resta en $\mathbb{N}$ es una **operación parcial**: no siempre está definida.
-
-**Ejemplo 3.2:**
-- $12 - 2 = 10$ está definida en $\mathbb{N}$, porque $2 + 10 = 12$
-- $7 - 4 = 3$ está definida en $\mathbb{N}$, porque $4 + 3 = 7$
-- $5 - 3 = 2$ está definida en $\mathbb{N}$, porque $3 + 2 = 5$
-- $3 - 5$ **no está definida** en $\mathbb{N}$, porque no existe $k \in \mathbb{N}$ tal que $5 + k = 3$
+**Ejemplo 3.3:**
+- $12 - 2 = 10$ está definida en $\mathbb{N}$, porque $2 + 10 = 12$.
+- $7 - 4 = 3$ está definida en $\mathbb{N}$, porque $4 + 3 = 7$.
+- $3 - 5$ no está definida en $\mathbb{N}$, porque no existe $k \in \mathbb{N}$ tal que $5 + k = 3$.
 
 **Condición necesaria y suficiente:**
-$$m - n \in \mathbb{N} \quad \Leftrightarrow \quad m \geq n$$
+$$m - n \in \mathbb{N} \quad \Longleftrightarrow \quad m \geq n.$$
 
-**El problema de la resta:** Como la resta no siempre está definida en $\mathbb{N}$, necesitamos **ampliar** este sistema numérico. Esta limitación motiva la construcción de los números enteros $\mathbb{Z}$ (ver Sección 4).
+> **Observación:** Cuando escribimos $m - n$ en $\mathbb{N}$, asumimos implícitamente que $m \geq n$. Ecuaciones como $5 + x = 3$ no tienen solución en $\mathbb{N}$; se resolverán al ampliar a $\mathbb{Z}$.
 
-> **Notación para este curso:**
-> - Cuando escribimos $m - n$ en el contexto de $\mathbb{N}$, asumimos implícitamente que $m \geq n$
-> - Ecuaciones como "$5 + x = 3$" no tienen solución en $\mathbb{N}$, lo cual veremos resuelto en $\mathbb{Z}$
-#### 3.3.3 La multiplicación en $\mathbb{N}$
+### 3.5 La multiplicación en $\mathbb{N}$
 
-Aunque no es el foco principal de esta sección, mencionamos brevemente la multiplicación para completitud.
+La multiplicación se introduce como suma repetida, lo que permite definirla recursivamente a partir de la suma.
 
-**Definición 3.5 (Multiplicación en $\mathbb{N}$):**
-La multiplicación se define recursivamente como **suma repetida**:
-$$m \cdot n = \underbrace{m + m + m + \cdots + m}_{n \text{ veces}}$$
-formalmente tendremos:
-
+**Definición 3.6 (Multiplicación de números naturales):**
 Para cualesquiera $m, n \in \mathbb{N}$:
-1. **Caso base:** $m \cdot 0 = 0$
-2. **Caso recursivo:** $m \cdot S(n) = m \cdot n + m$
+1. **Caso base:** $m \cdot 0 = 0$.
+2. **Caso recursivo:** $m \cdot S(n) = m \cdot n + m$.
 
-> **Interpretación:** $m \cdot n$ significa "sumar $m$ consigo mismo $n$ veces".
+Equivalentemente, $m \cdot n = \underbrace{m + m + \cdots + m}_{n \text{ veces}}$.
 
-**Ejemplo 3.3 (Calculando $3 \times 4$):**
-
-Usando la definición recursiva:
+**Ejemplo 3.4 (Calculando $3 \times 4$):**
 $$\begin{align}
 3 \cdot 4 &= 3 \cdot S(3) \\
 &= 3 \cdot 3 + 3 \\
 &= (3 \cdot S(2)) + 3 \\
 &= (3 \cdot 2 + 3) + 3 \\
-&= ((3 \cdot S(1)) + 3) + 3 \\
-&= ((3 \cdot 1 + 3) + 3) + 3 \\
-&= (((3 \cdot S(0)) + 3) + 3) + 3 \\
-&= (((3 \cdot 0 + 3) + 3) + 3) + 3 \\
-&= (((0 + 3) + 3) + 3) + 3 \\
-&= ((3 + 3) + 3) + 3 \\
-&= (6 + 3) + 3 \\
-&= 9 + 3 \\
-&= 12
+&= \cdots \\
+&= 12.
 \end{align}$$
 
-**Propiedades de la multiplicación en $\mathbb{N}$:**
+**Proposición 3.2 (Propiedades de la multiplicación):**
+La multiplicación en $\mathbb{N}$ satisface:
+1. **Cerradura:** $\forall m, n \in \mathbb{N},\; m \cdot n \in \mathbb{N}$.
+2. **Asociatividad:** $\forall m, n, p \in \mathbb{N},\; (m \cdot n) \cdot p = m \cdot (n \cdot p)$.
+3. **Conmutatividad:** $\forall m, n \in \mathbb{N},\; m \cdot n = n \cdot m$.
+4. **Elemento neutro:** $\forall m \in \mathbb{N},\; m \cdot 1 = 1 \cdot m = m$.
+5. **Distributividad:** $\forall m, n, p \in \mathbb{N},\; m \cdot (n + p) = m \cdot n + m \cdot p$.
+6. **Ley de cancelación:** $\forall m, n, p \in \mathbb{N},\; m \cdot p = n \cdot p \land p \neq 0 \Rightarrow m = n$.
+7. **Absorción del cero:** $\forall m \in \mathbb{N},\; m \cdot 0 = 0 \cdot m = 0$.
 
-**Proposición 3.2:** La multiplicación en $\mathbb{N}$ satisface las siguientes propiedades:
+> **Nota:** Estas propiedades se demuestran por inducción. La distributividad conecta suma y multiplicación y es fundamental para todo el álgebra posterior.
 
-1. **Cerradura:** $\forall m, n \in \mathbb{N}, \quad m \cdot n \in \mathbb{N}$
-2. **Asociatividad:** $\forall m, n, p \in \mathbb{N}, \quad (m \cdot n) \cdot p = m \cdot (n \cdot p)$
-3. **Conmutatividad:** $\forall m, n \in \mathbb{N}, \quad m \cdot n = n \cdot m$
-4. **Elemento neutro:** $\forall m \in \mathbb{N}, \quad m \cdot 1 = 1 \cdot m = m$
-5. **Distributividad (respecto a la suma):** $\forall m, n, p \in \mathbb{N}, \quad m \cdot (n + p) = m \cdot n + m \cdot p$
-6. **Ley de cancelación:** $\forall m, n, p \in \mathbb{N}, \quad m \cdot p = n \cdot p \land p \neq 0 \Rightarrow m = n$
-7. **Absorción del cero:** $\forall m \in \mathbb{N}, \quad m \cdot 0 = 0 \cdot m = 0$
+### 3.6 Múltiplos en $\mathbb{N}$
 
-> **Observación:** Estas propiedades también se demuestran por inducción matemática. La propiedad distributiva es especialmente importante, ya que conecta las dos operaciones fundamentales (suma y multiplicación).
+La noción de múltiplo surge directamente de la multiplicación y será esencial para estudiar divisibilidad, MCD y MCM.
 
-**Concepto de Múltiplo:**
+**Definición 3.7 (Múltiplo):**
+Dados $a, b \in \mathbb{N}$, decimos que $b$ es un **múltiplo** de $a$ si existe $k \in \mathbb{N}$ tal que:
+$$b = a \cdot k.$$
+También se dice que $a$ es un **factor** de $b$ o que $b$ es divisible por $a$.
 
-**Definición 3.6 (Múltiplo):**
-Dados dos números naturales $a, b \in \mathbb{N}$, decimos que $b$ es un **múltiplo** de $a$ si existe un número natural $k \in \mathbb{N}$ tal que:
-$$b = a \cdot k$$
-
-Esto también se suele expresar diciendo que "$a$ es un factor de $b$" o que "$b$ es divisible por $a$".
+**Ejemplo 3.5:**
+- $12$ es múltiplo de $3$, pues $12 = 3 \cdot 4$.
+- $20$ es múltiplo de $5$, pues $20 = 5 \cdot 4$.
+- $0$ es múltiplo de cualquier $a$, pues $0 = a \cdot 0$.
 
 **Conjunto de múltiplos:**
-El conjunto de todos los múltiplos de un número $a$ se denota frecuentemente como $M(a)$ o $a\mathbb{N}$:
-$$M(a) = \{a \cdot k : k \in \mathbb{N}\} = \{0, a, 2a, 3a, \dots\}$$
+El conjunto de todos los múltiplos de $a \in \mathbb{N}$ se denota:
+$$M(a) = \{a \cdot k : k \in \mathbb{N}\} = \{0, a, 2a, 3a, \dots\}.$$
 
-**Ejemplos:**
-- $M(2) = \{0, 2, 4, 6, 8, \dots\}$ (Números pares)
-- $M(3) = \{0, 3, 6, 9, 12, \dots\}$
-- $M(5) = \{0, 5, 10, 15, 20, \dots\}$
-- $M(0) = \{0\}$ (El único múltiplo de 0 es $0$, pues $0 \cdot k = 0$)
-- $M(1) = \mathbb{N}$ (Todos los números naturales son múltiplos de 1)
+**Ejemplo 3.6:**
+- $M(2) = \{0, 2, 4, 6, 8, \dots\}$ (números pares).
+- $M(3) = \{0, 3, 6, 9, 12, \dots\}$.
+- $M(1) = \mathbb{N}$.
 
----
+> **Observación:** El estudio de múltiplos y divisores se extiende en la Sección 4 al conjunto de los números enteros, donde la divisibilidad adquiere mayor simetría.
+
+**Aplicaciones:**
+La construcción recursiva de los naturales y sus operaciones es la base de la aritmética computacional: los procesadores implementan suma y multiplicación mediante operaciones iteradas sobre representaciones binarias. Los múltiplos y la divisibilidad aparecen en criptografía (RSA), teoría de números y algoritmos de sincronización.
+
 
 ## 4. Los números enteros: $\mathbb{Z}$
 
