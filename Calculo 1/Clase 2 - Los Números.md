@@ -535,768 +535,294 @@ La construcción recursiva de los naturales y sus operaciones es la base de la a
 
 ## 4. Los números enteros: $\mathbb{Z}$
 
-### 4.1 Motivación: El problema de la resta
+### 4.1 Motivación: la resta en los naturales
 
-Consideremos la ecuación:
-$$5 + x = 3$$
+Pensemos en la ecuación $5 + x = 3$. En $\mathbb{N}$, dicha ecuación no tiene solución, pues la resta $3 - 5$ no está definida. Los números naturales permiten contar y sumar libremente, pero no restar en todas las situaciones. Para que toda ecuación de la forma $a + x = b$ posea una solución, se extiende $\mathbb{N}$ a un conjunto que incluya los números negativos.
 
-En $\mathbb{N}$, esta ecuación **no tiene solución**, porque $x = 3 - 5 = -2 \notin \mathbb{N}$.
+> **Nota histórica:** Los números negativos fueron rechazados durante siglos en Europa, mientras que en la India Brahmagupta ya los manipulaba sistemáticamente en el siglo VII. No se aceptaron plenamente en Occidente hasta el Renacimiento, con trabajos de Cardano y Descartes.
 
-
-**Problema general:** La operación de **resta** no está siempre definida en $\mathbb{N}$:
-$$a - b \in \mathbb{N} \quad \text{solo si} \quad a \geq b$$
-
-Para resolver este problema, **ampliamos** $\mathbb{N}$ a un conjunto más grande que incluya "números negativos".
-
-### 4.2 Definición y operaciones
-
-**Definición 4.1 (Números enteros):**
-$$\mathbb{Z} = \{..., -3, -2, -1, 0, 1, 2, 3, ...\}$$
-
+**Definición 4.1 (Conjunto de los números enteros):**
+El conjunto de los **números enteros** es
+$$\mathbb{Z} = \{ \dots, -3, -2, -1, 0, 1, 2, 3, \dots \}.$$
 El símbolo $\mathbb{Z}$ proviene del alemán *Zahlen* (números).
 
-**Subconjuntos importantes de $\mathbb{Z}$:**
+Se distinguen los siguientes subconjuntos:
+- **Enteros positivos:** $\mathbb{Z}^+ = \{1, 2, 3, \dots\} = \mathbb{N}^*$.
+- **Enteros negativos:** $\mathbb{Z}^- = \{\dots, -3, -2, -1\}$.
+- **Enteros no negativos:** $\mathbb{Z}_{\geq 0} = \{0, 1, 2, 3, \dots\} = \mathbb{N}$.
 
-Podemos definir varios subconjuntos útiles de los enteros:
+> **Observación:** En este proyecto se utiliza $\mathbb{N} = \{0, 1, 2, \dots\}$. Por tanto, $\mathbb{Z}^+ = \mathbb{N} \setminus \{0\} = \mathbb{N}^*$, y $\mathbb{Z} = \mathbb{Z}^- \cup \{0\} \cup \mathbb{Z}^+$ es una unión disjunta.
 
-- **Enteros positivos:** $\mathbb{Z}^+ = \{1, 2, 3, 4, ...\}$ (también denotado $\mathbb{Z}_{>0}$)
-- **Enteros negativos:** $\mathbb{Z}^- = \{..., -4, -3, -2, -1\}$ (también denotado $\mathbb{Z}_{<0}$)
-- **Enteros no negativos:** $\mathbb{Z}_{\geq 0} = \{0, 1, 2, 3, ...\} = \mathbb{N}$ (incluye el cero)
-- **Enteros no positivos:** $\mathbb{Z}_{\leq 0} = \{..., -3, -2, -1, 0\}$ (incluye el cero)
+**Ejemplo 4.1:**
+Se tiene que $-7 \in \mathbb{Z}$ pero $-7 \notin \mathbb{N}$; $0 \in \mathbb{Z} \cap \mathbb{N}$; y $\dfrac{1}{2} \notin \mathbb{Z}$.
 
-> **Observación:** Note que:
-> - $\mathbb{Z}^+ = \mathbb{N} \setminus \{0\}$ (los positivos son los naturales sin el cero)
-> - $\mathbb{Z} = \mathbb{Z}^- \cup \{0\} \cup \mathbb{Z}^+$ (unión disjunta)
-> - $\mathbb{Z}_{\geq 0} = \mathbb{N}$ bajo nuestra convención
+**Aplicaciones:**
+Los enteros modelan situaciones con dos direcciones opuestas: temperaturas bajo cero, saldos deudores, desplazamientos hacia la izquierda en la recta numérica y diferencias de tiempo. Sin ellos, la resta general no estaría definida.
 
-**Definición formal:**
+### 4.2 Construcción formal por clases de equivalencia (opcional)
 
-Primero recordemos el concepto general de **producto cartesiano**:
-Dados dos conjuntos $A$ y $B$, el producto cartesiano $A \times B$ es el conjunto de todos los pares ordenados $(a, b)$ donde $a \in A$ y $b \in B$:
-$$A \times B = \{(a, b) : a \in A \land b \in B\}$$
+La descripción $\mathbb{Z} = \{\dots, -2, -1, 0, 1, 2, \dots\}$ es intuitiva, pero no explica por qué $-3$ es un objeto matemático legítimo ni cómo se suman los negativos. Una construcción rigurosa parte exclusivamente de los números naturales.
 
-Para construir los enteros, utilizamos el producto cartesiano de los naturales consigo mismo:
-$$\mathbb{N} \times \mathbb{N} = \{(a, b) : a \in \mathbb{N}, b \in \mathbb{N}\}$$
+**Definición 4.2 (Construcción de los enteros):**
+Se define $\mathbb{Z}$ como el conjunto de clases de equivalencia del producto cartesiano $\mathbb{N} \times \mathbb{N}$ bajo la relación
+$$(a,b) \sim (c,d) \quad \Longleftrightarrow \quad a + d = b + c,$$
+donde el par $(a,b)$ representa intuitivamente la diferencia $a - b$.
 
-Luego, $\mathbb{Z}$ se define como el conjunto de **clases de equivalencia** sobre $\mathbb{N} \times \mathbb{N}$, bajo la relación:
-$$(a, b) \sim (c, d) \quad \Leftrightarrow \quad a + d = b + c$$
-El par $(a, b)$ representa intuitivamente "a - b". Por ejemplo:
-- $(5, 2)$ representa $5 - 2 = 3$
-- $(12,9)$ representa $12 - 9 = 3$
-- $(2, 5)$ representa $2 - 5 = -3$
+La suma y el producto se definen sobre las clases mediante representantes:
+$$[(a,b)] + [(c,d)] = [(a+c, b+d)],$$
+$$[(a,b)] \cdot [(c,d)] = [(ac + bd, ad + bc)].$$
 
-Aquí podemos ver las múltiples representaciones $(5,2) \sim (12,9) \to 5+9=2+12 \to 14=14 \checkmark$
-Por esto los números en $\mathbb{Z}$ no tienen una representación **unívoca**
-* $(4,6)=(7,9)=-2$
+Se verifica que estas operaciones no dependen de los representantes elegidos. La clase $[(0,0)]$ actúa como cero, y $[(b,a)]$ es el inverso aditivo de $[(a,b)]$.
 
-En el conjunto $\mathbb{Z}$ podemos definir el elemento inverso de la suma
-* $a+e=e+a=0$ implica $e$ es el elemento inverso para la suma de $a$
+> **Nota:** Esta construcción muestra que los enteros negativos no son símbolos arbitrarios, sino pares ordenados de naturales identificados mediante una relación de equivalencia. Puede omitirse en una primera lectura sin pérdida de continuidad.
 
-**Operaciones en $\mathbb{Z}$:**
+### 4.3 Operaciones en $\mathbb{Z}$
 
-**Definición 4.2 (Suma en $\mathbb{Z}$):**
-$$m + n := [(a+c, b+d)]$$
-donde $m = [(a,b)]$ y $n = [(c,d)]$.
+Una vez construido $\mathbb{Z}$, las operaciones se extienden de $\mathbb{N}$ conservando las propiedades algebraicas deseables: asociatividad, conmutatividad y distributividad.
 
-**Explicación:** Si interpretamos $(a,b)$ como $a-b$, esto equivale a decir:
-$$(a-b) + (c-d) = (a+c) - (b+d)$$
-Esta operación está **bien definida**: no depende de los representantes elegidos para las clases de equivalencia.
+**Definición 4.3 (Suma y resta en $\mathbb{Z}$):**
+Dados $m, n \in \mathbb{Z}$, la **suma** $m + n$ extiende la suma en $\mathbb{N}$ y satisface $m + (-m) = 0$ para todo $m \in \mathbb{Z}$. La **resta** se define como
+$$m - n := m + (-n),$$
+donde $-n$ es el **inverso aditivo** de $n$, es decir, el único entero tal que $n + (-n) = 0$.
 
-**Definición 4.3 (Resta en $\mathbb{Z}$):**
-$$a - b := a + (-b)$$
-donde $-b$ es el **inverso aditivo** de $b$ (el número que cumple $b + (-b) = 0$).
-
-**Propiedad fundamental:** En $\mathbb{Z}$, la resta **siempre** está definida:
-$$\forall a, b \in \mathbb{Z}, \quad \exists! \, c \in \mathbb{Z} : a - b = c$$
 **Definición 4.4 (Multiplicación en $\mathbb{Z}$):**
-La multiplicación de enteros se define recursivamente a partir de la suma. Para $a, b \in \mathbb{Z}$:
+Dados $m, n \in \mathbb{Z}$, el producto $m \cdot n$ se define de modo que:
+- si $n > 0$, entonces $m \cdot n = \underbrace{m + m + \dots + m}_{n \text{ veces}}$;
+- $m \cdot 0 = 0$;
+- si $n < 0$, entonces $m \cdot n = -(m \cdot |n|)$.
 
-**Caso 1:** Si $b > 0$ (entero positivo):
-$$a \cdot b = \underbrace{a + a + \dots + a}_{b \text{ veces}}$$
-**Caso 2:** Si $b = 0$:
-$$a \cdot 0 = 0$$
-Esta definición es consistente con la propiedad de que multiplicar cualquier número por cero anula el resultado.
+**Proposición 4.1 (Propiedades algebraicas de $\mathbb{Z}$):**
+Para cualesquiera $a, b, c \in \mathbb{Z}$ se cumple:
+1. **Cerradura:** $a + b \in \mathbb{Z}$ y $a \cdot b \in \mathbb{Z}$.
+2. **Asociatividad:** $(a + b) + c = a + (b + c)$ y $(a \cdot b) \cdot c = a \cdot (b \cdot c)$.
+3. **Conmutatividad:** $a + b = b + a$ y $a \cdot b = b \cdot a$.
+4. **Elementos neutros:** $a + 0 = a$ y $a \cdot 1 = a$.
+5. **Inverso aditivo:** existe $-a \in \mathbb{Z}$ tal que $a + (-a) = 0$.
+6. **Distributividad:** $a \cdot (b + c) = a \cdot b + a \cdot c$.
+7. **Producto nulo:** $a \cdot b = 0 \Longleftrightarrow a = 0$ o $b = 0$.
 
-**Caso 3:** Si $b < 0$ (entero negativo):
-$$a \cdot b = -(a \cdot |b|)$$
-Es decir, multiplicamos $a$ por el valor absoluto de $b$ y luego cambiamos el signo del resultado.
+> **Observación:** $(\mathbb{Z}, +, \cdot)$ es un **anillo conmutativo con unidad**. No es un cuerpo, porque la mayoría de los enteros no tienen inverso multiplicativo en $\mathbb{Z}$; por ejemplo, no existe $x \in \mathbb{Z}$ tal que $2x = 1$.
 
-**Interpretación geométrica:**
-- **Caso positivo-positivo:** $3 \cdot 4 = 12$ significa "3 sumado 4 veces" o "4 sumado 3 veces"
-- **Caso positivo-negativo:** $4 \cdot (-3) = -12$ significa "avanzar 4 unidades en dirección negativa, 3 veces"
-- **Caso negativo-negativo:** $(-3) \cdot (-2) = 6$ se interpreta como "revertir el movimiento negativo"
+> **Nota:** Las demostraciones de estas propiedades a partir de la construcción por clases de equivalencia de la Definición 4.2 se desarrollan en cursos de álgebra abstracta. Aquí se aceptan como consecuencia de dicha construcción y de la extensión natural de las operaciones en $\mathbb{N}$.
 
-**Ejemplos detallados:**
+**Ejemplo 4.2:**
+Calcular $(-3) \cdot (-5)$ y $4 \cdot (-2)$:
+$$(-3) \cdot (-5) = -(3 \cdot (-5)) = -(-(3 \cdot 5)) = 15,$$
+$$4 \cdot (-2) = -(4 \cdot 2) = -8.$$
 
-1. **Ambos positivos:**
-   $$3 \cdot 4 = 3 + 3 + 3 + 3 = 12$$
-
-2. **Primer factor negativo, segundo positivo:**
-   $$(-2) \cdot 5 = (-2) + (-2) + (-2) + (-2) + (-2) = -10$$
-
-3. **Primer factor positivo, segundo negativo:**
-   $$4 \cdot (-3) = -(4 \cdot 3) = -(4 + 4 + 4) = -12$$
-
-4. **Ambos negativos (regla de signos):**
-   $$(-3) \cdot (-2) = -[(-3) \cdot 2] = -[(-3) + (-3)] = -(-6) = 6$$
-
-**Justificación de "menos por menos igual a más":**
-La regla "negativo por negativo da positivo" no es arbitraria, sino que se deriva de las propiedades algebraicas requeridas para que $\mathbb{Z}$ sea consistente.
-
-**Demostración informal:**
-Queremos que la propiedad distributiva se mantenga. Consideremos:
-$$0 = 0 \cdot a = [b + (-b)] \cdot a = b \cdot a + (-b) \cdot a$$
-
-Si $b > 0$ y $a > 0$, sabemos que $b \cdot a > 0$. Para que la suma sea cero:
-$$(-b) \cdot a = -(b \cdot a) < 0$$
-Ahora, consideremos:
-$$0 = a \cdot 0 = a \cdot [b + (-b)] = a \cdot b + a \cdot (-b)$$
-Si $a < 0$ y $b < 0$, entonces $a \cdot (-b) = -a \cdot b$ (por el caso anterior). Así:
-$$a \cdot b + (- a \cdot b) = 0$$
-Pero $-a > 0$ y $b < 0$, entonces $-a \cdot b < 0$, lo que implica que $a \cdot b > 0$.
-Por lo tanto: $(-) \cdot (-) = (+)$.
-
-**Proposición 4.1 (Propiedades de la Multiplicación en $\mathbb{Z}$):**
-La multiplicación en $\mathbb{Z}$ satisface las siguientes propiedades para cualesquiera $a, b, c \in \mathbb{Z}$:
-
-1. **Cerradura:** $a \cdot b \in \mathbb{Z}$
-   (El producto de dos enteros es siempre un entero)
-
-2. **Asociatividad:** $(a \cdot b) \cdot c = a \cdot (b \cdot c)$
-   (El orden de agrupación no altera el resultado)
-
-3. **Conmutatividad:** $a \cdot b = b \cdot a$
-   (El orden de los factores no altera el producto)
-
-4. **Elemento neutro (identidad multiplicativa):** $\exists \, 1 \in \mathbb{Z}$ tal que:
-   $$a \cdot 1 = 1 \cdot a = a, \quad \forall a \in \mathbb{Z}$$
-
-5. **Distributividad respecto a la suma:** 
-   $$a \cdot (b + c) = a \cdot b + a \cdot c$$
-   $$(a + b) \cdot c = a \cdot c + b \cdot c$$
-
-6. **Propiedad del producto nulo:** 
-   $$a \cdot b = 0 \Leftrightarrow a = 0 \text{ o } b = 0$$
-   (Si el producto es cero, al menos uno de los factores debe ser cero)
-
-> **Observación importante:** A diferencia de $\mathbb{Q}$ o $\mathbb{R}$, en $\mathbb{Z}$ **no todo elemento tiene inverso multiplicativo**. Por ejemplo:
-> - No existe $x \in \mathbb{Z}$ tal que $2 \cdot x = 1$ (porque $x = \frac{1}{2} \notin \mathbb{Z}$)
-> - Solo $1$ y $-1$ tienen inversos multiplicativos en $\mathbb{Z}$
-
-Esta limitación motiva la construcción del conjunto $\mathbb{Q}$ de los números racionales (Sección 5).
-
-**Tabla de signos (regla de los signos):**
+La regla de los signos se resume en la siguiente tabla:
 
 | $a$ | $b$ | $a \cdot b$ |
-|:---:|:---:|:----------:|
+|:---:|:---:|:-----------:|
 | $+$ | $+$ | $+$ |
 | $+$ | $-$ | $-$ |
 | $-$ | $+$ | $-$ |
 | $-$ | $-$ | $+$ |
 
-**Ejemplos adicionales:**
-- $7 \cdot 8 = 56$
-- $(-5) \cdot 6 = -30$
-- $9 \cdot (-4) = -36$
-- $(-7) \cdot (-3) = 21$
-- $0 \cdot 100 = 0$
-- $(-1) \cdot 15 = -15$ (multiplicar por $-1$ invierte el signo)
+### 4.4 Divisibilidad y conjunto de divisores
 
-### 4.3 División en $\mathbb{Z}$
+En $\mathbb{Z}$ no siempre es posible dividir: $7 \div 2$ no produce un entero. La divisibilidad captura exactamente cuándo sí es posible efectuar la división dentro de $\mathbb{Z}$.
 
 **Definición 4.5 (Divisibilidad):**
-Sean $a, b \in \mathbb{Z}$ con $b \neq 0$. Decimos que **$b$ divide a $a$**, y escribimos $b \mid a$, si existe $c \in \mathbb{Z}$ tal que:
-$$b \mid a \to a = b \cdot c$$
-En ese caso, decimos que:
-- $b$ es un **divisor** de $a$
-- $a$ es un **múltiplo** de $b$
-- $a$ es **divisible** por $b$
+Sean $a, b \in \mathbb{Z}$ con $b \neq 0$. Se dice que $b$ **divide** a $a$, y se escribe $b \mid a$, si existe $c \in \mathbb{Z}$ tal que
+$$a = b \cdot c.$$
+En tal caso, $b$ es un **divisor** de $a$, y $a$ es un **múltiplo** de $b$. Si $b$ no divide a $a$, se escribe $b \nmid a$.
 
-**Ejemplos 4.1:**
-- $3 \mid 12$ porque $12 = 3 \cdot 4$
-- $5 \mid 20$ porque $20 = 5 \cdot 4$
-- $7 \mid 49$ porque $49 = 7 \cdot 7$
-- $2 \mid 0$ porque $0 = 2 \cdot 0$ (cualquier entero divide a cero)
-- $6 \nmid 15$ (6 no divide a 15, porque no existe $c \in \mathbb{Z}$ tal que $15 = 6 \cdot c$)
+**Proposición 4.2 (Propiedades de la divisibilidad):**
+Para cualesquiera $a, b, c \in \mathbb{Z}$ (con los divisores no nulos cuando se requiera):
+1. $a \mid a$ para todo $a \in \mathbb{Z} \setminus \{0\}$.
+2. Si $a \mid b$ y $b \mid c$, entonces $a \mid c$.
+3. $1 \mid a$ y $a \mid 0$ para todo $a \in \mathbb{Z} \setminus \{0\}$.
+4. Si $a \mid b$ y $a \mid c$, entonces $a \mid (b + c)$ y $a \mid (b - c)$.
 
-**Propiedades básicas de la divisibilidad:**
+**Demostración:**
+Se prueba la propiedad 4 como ejemplo. Si $a \mid b$ y $a \mid c$, existen $k, \ell \in \mathbb{Z}$ tales que $b = ak$ y $c = a\ell$. Entonces
+$$b + c = ak + a\ell = a(k + \ell),$$
+y $k + \ell \in \mathbb{Z}$, luego $a \mid (b + c)$. Análogamente, $b - c = a(k - \ell)$, por lo que $a \mid (b - c)$. $\blacksquare$
 
-1. **Reflexividad:** $\forall a \in \mathbb{Z} \setminus \{0\}, \quad a \mid a$
-2. **Transitividad:** Si $a \mid b$ y $b \mid c$, entonces $a \mid c$
-3. $1 \mid a$ para todo $a \in \mathbb{Z}$
-4. $a \mid 0$ para todo $a \in \mathbb{Z} \setminus \{0\}$
-5. Si $a \mid b$ y $a \mid c$, entonces $a \mid (b + c)$ y $a \mid (b - c)$
+**Definición 4.6 (Conjunto de divisores positivos):**
+Dado $n \in \mathbb{Z} \setminus \{0\}$, su conjunto de divisores positivos es
+$$D(n) = \{ d \in \mathbb{N}^* : d \mid n \}.$$
 
-> **Observación importante:** A diferencia de $\mathbb{N}$ o $\mathbb{Q}$, en $\mathbb{Z}$ la división **no siempre produce un resultado entero**. Por ejemplo:
-> - $7 \div 2 = 3.5 \notin \mathbb{Z}$
-> - $10 \div 3 = 3.333... \notin \mathbb{Z}$
+**Definición 4.7 (Número primo):**
+Un entero $p > 1$ es **primo** si sus únicos divisores positivos son $1$ y $p$, es decir, $D(p) = \{1, p\}$. Un entero mayor que $1$ que no es primo se llama **compuesto**.
 
-Esto motiva la necesidad de los números racionales (Sección 5).
+> **Observación:** El número $1$ no es primo ni compuesto. Todo entero no nulo divide a $0$, pues $0 = a \cdot 0$.
 
-### 4.4 División con resto (División euclidiana)
+**Ejemplo 4.3:**
+- $3 \mid 12$ porque $12 = 3 \cdot 4$.
+- $6 \nmid 15$ pues no existe $c \in \mathbb{Z}$ tal que $15 = 6c$.
+- $D(12) = \{1, 2, 3, 4, 6, 12\}$.
+- $D(7) = \{1, 7\}$, por lo que $7$ es primo.
 
-**Teorema 4.1 (Algoritmo de la división o división euclidiana):**
-Dados $a, b \in \mathbb{Z}$ con $b > 0$, existen **únicos** enteros $q$ (cociente) y $r$ (resto o residuo) tales que:
-$$a = b \cdot q + r \quad \text{con} \quad 0 \leq r < b$$
+### 4.5 División euclidiana
+
+Aunque la división exacta no siempre es posible, sí se puede dividir con resto. Este resultado es la base del algoritmo de Euclides y de la aritmética modular.
+
+> **Nota histórica:** La división con resto aparece ya en los *Elementos* de Euclides (c. 300 a.C.), donde se utiliza como herramienta fundamental para estudiar la divisibilidad.
+
+**Teorema 4.1 (División euclidiana):**
+Dados $a, b \in \mathbb{Z}$ con $b > 0$, existen únicos enteros $q$ (cociente) y $r$ (resto) tales que
+$$a = b \cdot q + r \quad \text{con} \quad 0 \leq r < b.$$
 
 **Demostración:**
 
-*Existencia.* Consideremos el conjunto $S = \{a - bq : q \in \mathbb{Z}\} \cap \mathbb{N}_0$. Como $b > 0$, tomando $q$ suficientemente negativo se tiene $a - bq \geq 0$, por lo que $S$ es no vacío. Por el principio del buen orden, $S$ tiene un mínimo $r = a - bq_0$ con $q_0 \in \mathbb{Z}$. Se cumple $r \geq 0$ por construcción. Si $r \geq b$, entonces:
-$$a - b(q_0 + 1) = r - b \geq 0$$
-sería un elemento de $S$ estrictamente menor que $r$, lo cual contradice la minimalidad de $r$. Por lo tanto $r < b$.
+*Existencia.* Sea $S = \{ a - bq : q \in \mathbb{Z} \} \cap \mathbb{N}$. Como $b > 0$, eligiendo $q$ suficientemente negativo se tiene $a - bq \geq 0$, así que $S$ es no vacío. Por el principio del buen orden, $S$ posee un mínimo $r = a - bq_0$ para algún $q_0 \in \mathbb{Z}$. Entonces $r \geq 0$. Si $r \geq b$, se tendría
+$$a - b(q_0 + 1) = r - b \geq 0,$$
+lo cual contradice la minimalidad de $r$. Por tanto $r < b$.
 
-*Unicidad.* Supongamos que $a = bq + r = bq' + r'$ con $0 \leq r, r' < b$. Restando se obtiene:
+*Unicidad.* Supongamos que $a = bq + r = bq' + r'$ con $0 \leq r, r' < b$. Restando,
 $$b(q - q') = r' - r.$$
-Como $-b < r' - r < b$, el único múltiplo de $b$ en ese intervalo es $0$. Luego $r' = r$ y, como $b \neq 0$, se tiene $q' = q$. $\blacksquare$
+Como $-b < r' - r < b$, el único múltiplo de $b$ en ese intervalo es $0$. Luego $r' = r$ y, puesto que $b \neq 0$, se deduce $q' = q$. $\blacksquare$
 
-**Ejemplos 4.2:**
-- $17 = 5 \cdot 3 + 2$ (dividendo 17, divisor 5, cociente 3, resto 2)
-- $23 = 7 \cdot 3 + 2$ (dividendo 23, divisor 7, cociente 3, resto 2)
-- $50 = 8 \cdot 6 + 2$
-- $14 = 4 \cdot 3 + 2$
-- $15 = 3 \cdot 5 + 0$ (resto cero: 3 divide exactamente a 15)
+**Ejemplo 4.4:**
+- $17 = 5 \cdot 3 + 2$, de modo que $q = 3$ y $r = 2$.
+- $-17 = 5 \cdot (-4) + 3$, pues se exige $0 \leq r < 5$; no se admite $-17 = 5 \cdot (-3) + (-2)$.
 
-> **Interpretación:** Si dividimos $a$ entre $b$, obtenemos un cociente $q$ y un resto $r$ que es siempre menor que el divisor $b$.
+### 4.6 Aritmética modular
 
-**Subsección 4.4.1: La operación módulo**
+La división euclidiana asigna a cada entero un resto respecto de un divisor fijo. Ese resto es la piedra angular de la aritmética modular.
 
-**Definición 4.6 (Operación módulo):**
-Dados $a, b \in \mathbb{Z}$ con $b > 0$, definimos **$a$ módulo $b$**, denotado $a \bmod b$ o $a \mod b$, como el **resto** $r$ de la división euclidiana de $a$ entre $b$:
-$$a \bmod b = r \quad \text{donde} \quad a = b \cdot q + r \quad \text{con} \quad 0 \leq r < b$$
-**Notación alternativa:** En algunos contextos se escribe $a \equiv r \pmod{b}$ (se lee "$a$ es congruente con $r$ módulo $b$").
+**Definición 4.8 (Operación módulo):**
+Dados $a, b \in \mathbb{Z}$ con $b > 0$, el **módulo** de $a$ respecto de $b$, denotado $a \bmod b$, es el único resto $r$ de la división euclidiana de $a$ entre $b$:
+$$a \bmod b = r \quad \text{donde} \quad a = bq + r, \quad 0 \leq r < b.$$
+La notación $a \equiv c \pmod{b}$ indica que $a \bmod b = c \bmod b$.
 
-**Ejemplos 4.2.1:**
-- $17 \bmod 5 = 2$ (porque $17 = 5 \cdot 3 + 2$)
-- $23 \bmod 7 = 2$ (porque $23 = 7 \cdot 3 + 2$)
-- $50 \bmod 8 = 2$ (porque $50 = 8 \cdot 6 + 2$)
-- $15 \bmod 3 = 0$ (porque $15 = 3 \cdot 5 + 0$)
-- $7 \bmod 2 = 1$ (porque $7 = 2 \cdot 3 + 1$)
-- $6 \bmod 4 = 2$ (porque $6 = 4 \cdot 1 + 2$)
-- $20 \bmod 6 = 2$ (porque $20 = 6 \cdot 3 + 2$)
+**Proposición 4.3 (Propiedades del módulo):**
+Para cualesquiera $a, c \in \mathbb{Z}$ y $b > 0$ se cumple:
+1. $0 \leq a \bmod b < b$.
+2. $a \bmod b = 0 \Longleftrightarrow b \mid a$.
+3. $(a + c) \bmod b = \bigl((a \bmod b) + (c \bmod b)\bigr) \bmod b$.
+4. $(a \cdot c) \bmod b = \bigl((a \bmod b) \cdot (c \bmod b)\bigr) \bmod b$.
 
-> **Interpretación intuitiva:** $a \bmod b$ responde a la pregunta: "¿Cuál es el resto cuando divido $a$ entre $b$?"
+**Demostración:**
+Las dos primeras propiedades se siguen directamente de la Definición 4.8 y del Teorema 4.1. Para la tercera, escribamos $a = bq_1 + r_1$ y $c = bq_2 + r_2$ con $0 \leq r_1, r_2 < b$. Entonces
+$$a + c = b(q_1 + q_2) + (r_1 + r_2).$$
+Si $r_1 + r_2 < b$, el resto de $a + c$ al dividir por $b$ es $r_1 + r_2$; si $r_1 + r_2 \geq b$, se le resta $b$ el número necesario de veces. En ambos casos el resultado coincide con $(r_1 + r_2) \bmod b$, que es la propiedad enunciada. La demostración para el producto es análoga, pues
+$$a \cdot c = b^2 q_1 q_2 + b(q_1 r_2 + q_2 r_1) + r_1 r_2,$$
+y el resto de $a \cdot c$ respecto de $b$ es el mismo que el de $r_1 r_2$. $\blacksquare$
 
-**Propiedades básicas del módulo:**
-1. $0 \leq a \bmod b < b$ para todo $a \in \mathbb{Z}$, $b > 0$
-2. $a \bmod b = 0 \Leftrightarrow b \mid a$ (el resto es cero si y solo si $b$ divide a $a$)
-3. $(a + b) \bmod b = a \bmod b$
-4. $(a + c) \bmod b = [(a \bmod b) + (c \bmod b)] \bmod b$
-5. $(a \cdot c) \bmod b = [(a \bmod b) \cdot (c \bmod b)] \bmod b$
+**Ejemplo 4.5:**
+- $23 \bmod 7 = 2$ porque $23 = 7 \cdot 3 + 2$.
+- $101 \bmod 7 = 3$ porque $101 = 7 \cdot 14 + 3$.
+- $(17 + 8) \bmod 5 = 25 \bmod 5 = 0$, y también $(2 + 3) \bmod 5 = 0$.
 
-**Aplicaciones de la aritmética modular:**
+**Aplicaciones:**
+La aritmética modular aparece en criptografía (RSA, curvas elípticas), en el diseño de funciones hash, en la generación de números pseudoaleatorios, en la corrección de errores y en la programación de calendarios y relojes. Por ejemplo, las $15:00$ horas equivalen a las $3:00$ PM porque $15 \bmod 12 = 3$.
 
-La operación módulo es fundamental en:
-- **Criptografía**: sistemas RSA, cifrado de datos
-- **Computación**: hash tables, algoritmos de distribución
-- **Teoría de números**: congruencias, teorema de Fermat
-- **Calendarios**: determinar el día de la semana
-- **Relojes**: las 15:00 horas son las 3:00 PM (15 mod 12 = 3)
+### 4.7 Máximo común divisor y mínimo común múltiplo
 
-**Ejemplo 4.2.2 (Aplicación práctica):**
-Si hoy es lunes (día 1) y queremos saber qué día será dentro de 100 días:
-$$(1 + 100) \bmod 7 = 101 \bmod 7 = 3$$
-Por lo tanto, será miércoles (día 3).
+El divisor común más grande de dos enteros y el múltiplo común más pequeño son dos cantidades fundamentales en la teoría de números.
 
-> **Observación sobre notación:** En programación, el operador módulo se denota típicamente como `%` (por ejemplo, en Python, C, Java: `17 % 5` devuelve `2`).
+> **Nota histórica:** El algoritmo de Euclides para calcular el máximo común divisor es uno de los algoritmos más antiguos conocidos y aparece en el Libro VII de los *Elementos* de Euclides.
 
-### 4.4.2 Conjunto de divisores
+**Definición 4.9 (Máximo común divisor):**
+Dados $a, b \in \mathbb{Z}$ no ambos nulos, el **máximo común divisor** de $a$ y $b$ es
+$$\gcd(a,b) = \max\{ d \in \mathbb{N}^* : d \mid a \text{ y } d \mid b \}.$$
+Equivalentemente, $\gcd(a,b) = \max\bigl(D(a) \cap D(b)\bigr)$.
 
-**Definición (Conjunto de divisores):**
-Dado un número entero $n$, el **conjunto de divisores** de $n$, denotado como $D(n)$, es el conjunto formado por todos los números enteros que dividen a $n$ exactamente (es decir, el resto de la división es cero).
+**Definición 4.10 (Números coprimos):**
+Dos enteros $a$ y $b$ son **coprimos** (o primos relativos) si $\gcd(a,b) = 1$.
 
-En el contexto de aritmética elemental y cálculo del máximo común divisor (MCD), usualmente nos referimos a los **divisores positivos**:
-$$D(n) = \{d \in \mathbb{N}^* : n \bmod d = 0\}$$
-
-**Ejemplos:**
-- $D(6) = \{1, 2, 3, 6\}$
-- $D(12) = \{1, 2, 3, 4, 6, 12\}$
-- $D(15) = \{1, 3, 5, 15\}$
-- $D(7) = \{1, 7\}$ (Número primo)
-- $D(1) = \{1\}$
-
-**Definición:** Un número entero $p > 1$ es **primo** si y solo si su conjunto de divisores positivos tiene exactamente dos elementos: $D(p) = \{1, p\}$.
-
-### 4.5 Máximo común divisor (MCD)
-
-**Definición 4.7 (Máximo común divisor):**
-
-**Formalmente:**
-$$\gcd(a, b) = \max\{d \in \mathbb{N} : d \mid a \land d \mid b\}$$
-**Definición alternativa (usando conjuntos):**
-Si definimos $D(a)$ y $D(b)$ como los conjuntos de divisores positivos de $a$ y $b$ respectivamente, entonces el MCD es el mayor elemento de la intersección de estos conjuntos:
-$$\gcd(a, b) = \max(D(a) \cap D(b))$$
-
-**Ejemplos 4.3:**
-- $\gcd(12, 18) = 6$ (los divisores comunes son 1, 2, 3, 6; el mayor es 6)
-- $\gcd(15, 25) = 5$ (los divisores comunes son 1, 5; el mayor es 5)
-- $\gcd(14, 21) = 7$
-- $\gcd(8, 12) = 4$
-- $\gcd(7, 11) = 1$ (7 y 11 son **coprimos** o **primos relativos**)
-- $\gcd(0, 5) = 5$ (todo número divide a 0)
-
-**Definición 4.8 (Números coprimos):**
-Dos números $a$ y $b$ son **coprimos** (o **primos relativos**) si $\gcd(a, b) = 1$.
-
-**Ejemplos de coprimos:**
-- 8 y 15 son coprimos: $\gcd(8, 15) = 1$
-- 9 y 16 son coprimos: $\gcd(9, 16) = 1$
-- 21 y 25 son coprimos: $\gcd(21, 25) = 1$
-
-**Algoritmo de Euclides para calcular el MCD:**
-
-El **algoritmo de Euclides** es un método eficiente para calcular el MCD basado en divisiones sucesivas:
+**Ejemplo 4.6:**
+- $\gcd(12, 18) = 6$ pues $D(12) \cap D(18) = \{1, 2, 3, 6\}$.
+- $\gcd(7, 11) = 1$, por lo que $7$ y $11$ son coprimos.
+- $\gcd(0, 5) = 5$ porque todo entero positivo divide a $0$.
 
 **Teorema 4.2 (Algoritmo de Euclides):**
-Si $a = b \cdot q + r$ con $0 \leq r < b$, entonces:
-$$\gcd(a, b) = \gcd(b, r)$$
+Sean $a, b \in \mathbb{Z}$ con $b > 0$. Si $a = bq + r$ con $0 \leq r < b$, entonces
+$$\gcd(a,b) = \gcd(b,r).$$
 
 **Demostración:**
+Sea $d = \gcd(a,b)$. Entonces $d \mid a$ y $d \mid b$, de modo que $d \mid (a - bq) = r$. Así $d$ es divisor común de $b$ y $r$, luego $d \leq \gcd(b,r)$.
 
-Sea $d = \gcd(a, b)$. Entonces $d \mid a$ y $d \mid b$, de modo que $d \mid (a - bq) = r$. Por tanto $d$ es un divisor común de $b$ y $r$, luego $d \leq \gcd(b, r)$.
+Recíprocamente, sea $d' = \gcd(b,r)$. Entonces $d' \mid b$ y $d' \mid r$, por lo que $d' \mid (bq + r) = a$. Luego $d'$ es divisor común de $a$ y $b$, de donde $d' \leq \gcd(a,b)$.
 
-Recíprocamente, sea $d' = \gcd(b, r)$. Entonces $d' \mid b$ y $d' \mid r$, por lo que $d' \mid (bq + r) = a$. Así $d'$ es un divisor común de $a$ y $b$, de donde $d' \leq \gcd(a, b)$.
+De ambas desigualdades se concluye que $\gcd(a,b) = \gcd(b,r)$. $\blacksquare$
 
-De ambas desigualdades se concluye que $\gcd(a, b) = \gcd(b, r)$. $\blacksquare$
-
-**Procedimiento:**
-1. Dividir $a$ entre $b$ obteniendo resto $r$
-2. Reemplazar $a$ por $b$ y $b$ por $r$
-3. Repetir hasta que el resto sea 0
-4. El último divisor no nulo es el MCD
-
-**Ejemplo 4.4 (Calculando $\gcd(48, 18)$ con el algoritmo de Euclides):**
-
-$$48 = 18 \cdot 2 + 12$$
-$$18 = 12 \cdot 1 + 6$$
-$$12 = 6 \cdot 2 + 0$$
-
-Por lo tanto, $\gcd(48, 18) = 6$.
-
-**Propiedades del MCD:**
-
-1. **Conmutatividad:** $\gcd(a, b) = \gcd(b, a)$
-2. **Asociatividad:** $\gcd(\gcd(a, b), c) = \gcd(a, \gcd(b, c))$
-3. $\gcd(a, 0) = |a|$ para $a \neq 0$
-4. $\gcd(a, 1) = 1$ para todo $a$
-5. Si $d = \gcd(a, b)$, entonces $\gcd\left(\frac{a}{d}, \frac{b}{d}\right) = 1$
-
-### 4.6 Mínimo común múltiplo (MCM)
-
-**Definición 4.9 (Mínimo común múltiplo):**
-Dados $a, b \in \mathbb{Z}^+$ (enteros positivos), el **mínimo común múltiplo** de $a$ y $b$, denotado $\text{lcm}(a, b)$ (por el ingles *least common multiple*) o $\text{mcm}(a,b)$, es el menor entero positivo que es múltiplo tanto de $a$ como de $b$.
-
-**Formalmente:**
-$$\text{lcm}(a, b) = \min\{m \in \mathbb{N}^* : a \mid m \land b \mid m\}$$
-**Definición alternativa (usando conjuntos):**
-Si $M(a)$ y $M(b)$ son los conjuntos de múltiplos de $a$ y $b$ respectivamente, el MCM es el menor elemento de la intersección de estos conjuntos (excluyendo el cero):
-$$\text{lcm}(a, b) = \min((M(a) \cap M(b)) \setminus \{0\})$$
-
-**Ejemplos 4.5:**
-- $\text{lcm}(4, 6) = 12$ (múltiplos de 4: 4, 8, 12, 16, ...; múltiplos de 6: 6, 12, 18, ...; el menor común es 12)
-- $\text{lcm}(3, 5) = 15$
-- $\text{lcm}(6, 8) = 24$
-- $\text{lcm}(12, 18) = 36$
-- $\text{lcm}(7, 11) = 77$ (cuando son coprimos, $\text{lcm}(a,b) = a \cdot b$)
-
-**Relación entre MCD y MCM:**
-
-**Teorema 4.3 (Relación fundamental entre MCD y MCM):**
-Para cualesquiera $a, b \in \mathbb{Z}^+$:
-$$\gcd(a, b) \cdot \text{lcm}(a, b) = a \cdot b$$
-
-O equivalentemente:
-$$\text{lcm}(a, b) = \frac{a \cdot b}{\gcd(a, b)}$$
-
-**Demostración (idea):** Todo múltiplo común de $a$ y $b$ contiene todos los factores primos de ambos números. El MCM contiene cada factor primo con la mayor potencia que aparece en $a$ o $b$. El MCD contiene cada factor primo con la menor potencia. El producto de ambos da exactamente $a \cdot b$. $\square$
-
-**Ejemplo 4.6 (Usando la fórmula):**
-Calcular $\text{lcm}(48, 18)$:
-
-Ya sabemos que $\gcd(48, 18) = 6$ (del Ejemplo 4.4), entonces:
-$$\text{lcm}(48, 18) = \frac{48 \cdot 18}{6} = \frac{864}{6} = 144$$
-Verificación: $144 = 48 \cdot 3 = 18 \cdot 8$ ✓
-
-**Propiedades del MCM:**
-
-1. **Conmutatividad:** $\text{lcm}(a, b) = \text{lcm}(b, a)$
-2. **Asociatividad:** $\text{lcm}(\text{lcm}(a, b), c) = \text{lcm}(a, \text{lcm}(b, c))$
-3. $\text{lcm}(a, 1) = a$ para todo $a$
-4. Si $a \mid b$, entonces $\text{lcm}(a, b) = b$
-5. Si $\gcd(a, b) = 1$, entonces $\text{lcm}(a, b) = a \cdot b$
-
-**Aplicaciones prácticas:**
-
-El MCD se usa para:
-- Simplificar fracciones: $\frac{48}{18} = \frac{48/6}{18/6} = \frac{8}{3}$
-- Resolver problemas de reparto equitativo
-
-El MCM se usa para:
-- Sumar fracciones con denominadores distintos
-- Problemas de sincronización y periodicidad
-
-### 4.7 Fracciones: Representación de números racionales
-
-Los números enteros son suficientes para contar objetos completos, pero no para expresar partes, divisiones o proporciones. Por ejemplo: "la mitad de una pizza", "dos tercios de una hora", "tres cuartos de litro". Las **fracciones** resuelven esta limitación.
-
-#### 4.7.1 Definición y partes de una fracción
-
-**Definición 4.10 (Fracción):**
-Una **fracción** es una expresión de la forma $\frac{a}{b}$ donde:
-- $a \in \mathbb{Z}$ es el **numerador** (indica cuántas partes se toman)
-- $b \in \mathbb{Z} \setminus \{0\}$ es el **denominador** (indica en cuántas partes se divide el total)
-- $b \neq 0$ (la división por cero no está definida)
-
-**Notación:** $\frac{a}{b}$ se lee "$a$ sobre $b$" o "$a$ dividido por $b$"
-
-**Partes de una fracción:**
-![[fraccion.png]]
-**Interpretación geométrica:**
-$\frac{3}{4}$ significa: "dividir un todo en 4 partes iguales y tomar 3 de ellas"
-
-```
-  Entero dividido en 4 partes:
-  ┌───┬───┬───┬───┐
-  │///│///│///│   │  ← 3 partes sombreadas de 4
-  └───┴───┴───┴───┘
-     3/4 del total
-```
-
-**Tipos de fracciones:**
-
-1. **Fracción unitaria:** Es aquella cuyo numerador es igual a $1$ ($a = 1$, con $|b| > 1$). Representa una unidad del total de partes divididas.
-   - Ejemplo: $\frac{1}{2}$, $\frac{1}{5}$, $-\frac{1}{10}$
-
-2. **Fracción propia:** $|a| < |b|$ (el numerador es estrictamente menor que el denominador en valor absoluto).
-   - Ejemplo: $\frac{3}{4}$, $\frac{2}{5}$, $\frac{7}{10}$
-   - Representa un valor estrictamente **menor que 1**
-
-3. **Fracción impropia:** $|a| \geq |b|$ (el numerador es mayor o igual que el denominador en valor absoluto).
-   - Ejemplo: $\frac{7}{4}$, $\frac{5}{3}$
-   - Representa un valor **mayor o igual a 1**
-
-4. **Fracción entera (o aparente):** Es el caso particular de la fracción impropia donde el numerador es un múltiplo del denominador. En particular, si el numerador es igual al denominador ($a = b$), representa exactamente la unidad ($1$).
-   - Ejemplo: $\frac{5}{5} = 1$, $\frac{8}{8} = 1$, $\frac{6}{6} = 1$
-
-5. **Número mixto:** Combinación de un número entero y una fracción propia.
-   - Ejemplo: $2\frac{1}{3}$ (dos enteros y un tercio)
-   - Equivalente a fracción impropia: $2\frac{1}{3} = \frac{7}{3}$
-   - Ejemplo: $2\frac{1}{3}$ (dos enteros y un tercio)
-   - Equivalente a fracción impropia: $2\frac{1}{3} = \frac{7}{3}$
-
-**Conversión entre número mixto y fracción impropia:**
-
-$$a\frac{b}{c} = \frac{a \cdot c + b}{c}$$
-
-**Ejemplo:**
-$$3\frac{2}{5} = \frac{3 \cdot 5 + 2}{5} = \frac{17}{5}$$
-
-Inversamente:
-$$\frac{17}{5} = \frac{15 + 2}{5} = \frac{15}{5} + \frac{2}{5} = 3 + \frac{2}{5} = 3\frac{2}{5}$$
-
-#### 4.7.2 Fracciones equivalentes
-
-**Definición 4.11 (Fracciones equivalentes):**
-Dos fracciones $\frac{a}{b}$ y $\frac{c}{d}$ son **equivalentes** si representan el mismo valor:
-
-$$\frac{a}{b} = \frac{c}{d} \quad \Leftrightarrow \quad a \cdot d = b \cdot c$$
-
-**Proposición 4.2 (Propiedad fundamental de las fracciones):**
-Multiplicar o dividir el numerador y el denominador por el mismo número no nulo **no cambia el valor** de la fracción:
-
-$$\frac{a}{b} = \frac{a \cdot k}{b \cdot k} \quad \text{para todo } k \neq 0$$
-
-**Ejemplo:**
-$$\frac{2}{3} = \frac{2 \cdot 2}{3 \cdot 2} = \frac{4}{6} = \frac{2 \cdot 3}{3 \cdot 3} = \frac{6}{9} = \frac{2 \cdot 5}{3 \cdot 5} = \frac{10}{15}$$
-
-Todas estas fracciones son equivalentes y representan "dos tercios".
-
-**Simplificación de fracciones:**
-
-Para **simplificar** una fracción, dividimos numerador y denominador por su $\gcd$:
-
-$$\frac{a}{b} = \frac{a/\gcd(a,b)}{b/\gcd(a,b)}$$
-
-**Definición 4.12 (Fracción irreducible):**
-Una fracción $\frac{a}{b}$ está en su **forma irreducible** o **más simple** si $\gcd(a, b) = 1$ (numerador y denominador son coprimos).
-
-**Ejemplo (Simplificación):**
-Simplifique $\frac{48}{60}$:
-
-$$\gcd(48, 60) = 12$$
-$$\frac{48}{60} = \frac{48 \div 12}{60 \div 12} = \frac{4}{5}$$
-
-La fracción $\frac{4}{5}$ es irreducible porque $\gcd(4, 5) = 1$.
-
-#### 4.7.3 Operaciones con fracciones
-
-**Suma y resta de fracciones:**
-
-**Caso 1: Mismo denominador**
-
-Si las fracciones tienen el **mismo denominador**, sumamos o restamos los numeradores:
-
-$$\frac{a}{c} + \frac{b}{c} = \frac{a + b}{c}$$
-$$\frac{a}{c} - \frac{b}{c} = \frac{a - b}{c}$$
-
-**Ejemplo:**
-$$\frac{3}{7} + \frac{2}{7} = \frac{3 + 2}{7} = \frac{5}{7}$$
-$$\frac{5}{8} - \frac{3}{8} = \frac{5 - 3}{8} = \frac{2}{8} = \frac{1}{4}$$
-
-**Caso 2: Denominadores diferentes**
-
-Si los denominadores son **diferentes**, primero encontramos un **denominador común** (preferiblemente el MCM):
-
-$$\frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd}$$
-
-O usando el MCM:
-$$\frac{a}{b} + \frac{c}{d} = \frac{a \cdot (\text{lcm}/b) + c \cdot (\text{lcm}/d)}{\text{lcm}(b, d)}$$
-
-**Ejemplo:**
-Sumar $\frac{2}{3} + \frac{1}{4}$:
-
-**Método 1** (producto de denominadores):
-$$\frac{2}{3} + \frac{1}{4} = \frac{2 \cdot 4 + 1 \cdot 3}{3 \cdot 4} = \frac{8 + 3}{12} = \frac{11}{12}$$
-
-**Método 2** (MCM):
-$$\text{lcm}(3, 4) = 12$$
-$$\frac{2}{3} = \frac{2 \cdot 4}{3 \cdot 4} = \frac{8}{12}, \quad \frac{1}{4} = \frac{1 \cdot 3}{4 \cdot 3} = \frac{3}{12}$$
-$$\frac{2}{3} + \frac{1}{4} = \frac{8}{12} + \frac{3}{12} = \frac{11}{12}$$
-
-**Ejemplo (Resta):**
-$$\frac{5}{6} - \frac{1}{4} = \frac{5 \cdot 4 - 1 \cdot 6}{6 \cdot 4} = \frac{20 - 6}{24} = \frac{14}{24} = \frac{7}{12}$$
-
-**Multiplicación de fracciones:**
-
-Para multiplicar fracciones, multiplicamos **numeradores entre sí** y **denominadores entre sí**:
-
-$$\frac{a}{b} \cdot \frac{c}{d} = \frac{a \cdot c}{b \cdot d}$$
-
-**Ejemplo:**
-$$\frac{2}{3} \cdot \frac{4}{5} = \frac{2 \cdot 4}{3 \cdot 5} = \frac{8}{15}$$
-
-**Simplificación antes de multiplicar** (método más eficiente):
-
-Podemos simplificar **cruzado** antes de multiplicar:
-
-$$\frac{6}{8} \cdot \frac{4}{9} = \frac{6}{8} \cdot \frac{4}{9} = \frac{\cancel{6}^2}{\cancel{8}_2} \cdot \frac{\cancel{4}^1}{\cancel{9}_3} = \frac{2 \cdot 1}{2 \cdot 3} = \frac{2}{6} = \frac{1}{3}$$
-
-O directamente:
-$$\frac{6 \cdot 4}{8 \cdot 9} = \frac{24}{72} = \frac{1}{3}$$
-
-**División de fracciones:**
-
-Para dividir fracciones, multiplicamos por el **recíproco** (o inverso) del divisor:
-
-$$\frac{a}{b} \div \frac{c}{d} = \frac{a}{b} \cdot \frac{d}{c} = \frac{a \cdot d}{b \cdot c}$$
-
-**Regla mnemotécnica:** "Multiplicar por el recíproco" o "invertir y multiplicar"
-
-**Fracciones compuestas (o complejas):**
-Una fracción compuesta es una fracción que contiene una o más fracciones en su numerador, en su denominador o en ambos. Su forma general se expresa como una división de fracciones:
-
-$$\dfrac{\dfrac{a}{b}}{\dfrac{c}{d}}$$
-
-Para simplificar una fracción compuesta, se aplica la regla de los extremos y medios (conocida coloquialmente en algunas regiones como el "método de la doble C" o "método de la oreja"), multiplicando los términos extremos para obtener el nuevo numerador y los términos medios para obtener el nuevo denominador:
-
-$$\dfrac{\dfrac{a}{b}}{\dfrac{c}{d}} = \dfrac{a \cdot d}{b \cdot c}$$
-
-**Ejemplo:**
-$$\dfrac{\dfrac{2}{3}}{\dfrac{4}{5}} = \dfrac{2 \cdot 5}{3 \cdot 4} = \dfrac{10}{12} = \dfrac{5}{6}$$
-
-**Ejemplo:**
-$$\frac{2}{3} \div \frac{4}{5} = \frac{2}{3} \cdot \frac{5}{4} = \frac{2 \cdot 5}{3 \cdot 4} = \frac{10}{12} = \frac{5}{6}$$
-
-**Ejemplo:**
-$$\frac{7}{8} \div \frac{3}{2} = \frac{7}{8} \cdot \frac{2}{3} = \frac{7 \cdot 2}{8 \cdot 3} = \frac{14}{24} = \frac{7}{12}$$
-
-#### 4.7.4 Propiedades de las operaciones con fracciones
-
-**Proposición 4.3 (Propiedades algebraicas):**
-
-Para cualesquiera fracciones $\frac{a}{b}, \frac{c}{d}, \frac{e}{f}$ (con denominadores no nulos):
-
-**Suma:**
-1. **Conmutativa:** $\frac{a}{b} + \frac{c}{d} = \frac{c}{d} + \frac{a}{b}$
-2. **Asociativa:** $\left(\frac{a}{b} + \frac{c}{d}\right) + \frac{e}{f} = \frac{a}{b} + \left(\frac{c}{d} + \frac{e}{f}\right)$
-3. **Elemento neutro:** $\frac{a}{b} + 0 = \frac{a}{b}$ (donde $0 = \frac{0}{1}$)
-4. **Elemento inverso:** $\frac{a}{b} + \left(-\frac{a}{b}\right) = 0$
-
-**Multiplicación:**
-1. **Conmutativa:** $\frac{a}{b} \cdot \frac{c}{d} = \frac{c}{d} \cdot \frac{a}{b}$
-2. **Asociativa:** $\left(\frac{a}{b} \cdot \frac{c}{d}\right) \cdot \frac{e}{f} = \frac{a}{b} \cdot \left(\frac{c}{d} \cdot \frac{e}{f}\right)$
-3. **Elemento neutro:** $\frac{a}{b} \cdot 1 = \frac{a}{b}$ (donde $1 = \frac{b}{b}$)
-4. **Elemento inverso (recíproco):** $\frac{a}{b} \cdot \frac{b}{a} = 1$ (si $a \neq 0$)
-
-**Distributiva:**
-$$\frac{a}{b} \cdot \left(\frac{c}{d} + \frac{e}{f}\right) = \frac{a}{b} \cdot \frac{c}{d} + \frac{a}{b} \cdot \frac{e}{f}$$
-
-**Ejemplo de distributiva:**
-$$\frac{2}{3} \cdot \left(\frac{1}{4} + \frac{1}{2}\right) = \frac{2}{3} \cdot \frac{3}{4} = \frac{6}{12} = \frac{1}{2}$$
-
-Verificación:
-$$\frac{2}{3} \cdot \frac{1}{4} + \frac{2}{3} \cdot \frac{1}{2} = \frac{2}{12} + \frac{2}{6} = \frac{1}{6} + \frac{1}{3} = \frac{1}{6} + \frac{2}{6} = \frac{3}{6} = \frac{1}{2}$$ ✓
-
-#### 4.7.5 Comparación de fracciones
-
-**Método 1: Denominador común**
-
-Convertimos a fracciones con el mismo denominador y comparamos numeradores:
-
-$$\frac{a}{b} < \frac{c}{d} \quad \Leftrightarrow \quad ad < bc \quad \text{(si } b, d > 0\text{)}$$
-
-**Ejemplo:**
-¿Cuál es mayor: $\frac{3}{4}$ o $\frac{5}{7}$?
-
-Productos cruzados:
-$$3 \cdot 7 = 21, \quad 4 \cdot 5 = 20$$
-$$21 > 20 \quad \Rightarrow \quad \frac{3}{4} > \frac{5}{7}$$
-
-**Método 2: Convertir a decimal**
-
-$$\frac{3}{4} = 0.75, \quad \frac{5}{7} \approx 0.714$$
-$$0.75 > 0.714 \quad \Rightarrow \quad \frac{3}{4} > \frac{5}{7}$$
-
-**Ordenamiento de fracciones:**
-
-**Ejemplo:**
-Ordene de menor a mayor: $\frac{2}{3}, \frac{3}{5}, \frac{5}{8}$
-
-MCM$(3, 5, 8) = 120$:
-
-$$\frac{2}{3} = \frac{80}{120}, \quad \frac{3}{5} = \frac{72}{120}, \quad \frac{5}{8} = \frac{75}{120}$$
-
-$$72 < 75 < 80 \quad \Rightarrow \quad \frac{3}{5} < \frac{5}{8} < \frac{2}{3}$$
-
-> **Observación importante:** Las fracciones forman un conjunto **denso** en la recta numérica: entre dos fracciones cualesquiera, siempre existe otra fracción.
-
-**Ejemplo de densidad:**
-Entre $\frac{1}{2}$ y $\frac{1}{3}$ está el promedio:
-$$\frac{\frac{1}{2} + \frac{1}{3}}{2} = \frac{\frac{5}{6}}{2} = \frac{5}{12}$$
-
-Verificación: $\frac{1}{3} < \frac{5}{12} < \frac{1}{2}$ (comprobado con denominador común 12: $\frac{4}{12} < \frac{5}{12} < \frac{6}{12}$) ✓
-
-**Relación con los números racionales:**
-
-Las fracciones son la representación concreta del conjunto de los **números racionales** $\mathbb{Q}$, que se estudiará formalmente en la sección 6. Todo número racional puede expresarse como fracción $\frac{a}{b}$ con $a, b \in \mathbb{Z}$ y $b \neq 0$.
-
-#### 4.7.6 Fracciones continuas (opcional)
-
-Una fracción continua es una forma de representar números reales (tanto racionales como irracionales) mediante una fracción que se anida de forma infinita (o finita) en su propio denominador. Se expresa de la forma general:
-
-$$a_0 + \dfrac{1}{a_1 + \dfrac{1}{a_2 + \dfrac{1}{a_3 + \dots}}}$$
-
-donde $a_0$ es un número entero y $a_1, a_2, a_3, \dots$ son enteros positivos llamados cocientes parciales.
-
-**Fracciones continuas finitas (Números Racionales):**
-Si el proceso de anidamiento se detiene después de un número finito de pasos, la expresión representa siempre un número racional. Toda fracción simple se puede convertir en una fracción continua finita.
-
-**Ejemplo:**
-Convertir $\frac{7}{3}$ a fracción continua:
-$$\dfrac{7}{3} = 2 + \dfrac{1}{3}$$
-
-O el caso de $\frac{9}{7}$:
-$$\dfrac{9}{7} = 1 + \dfrac{2}{7} = 1 + \dfrac{1}{\dfrac{7}{2}} = 1 + \dfrac{1}{3 + \dfrac{1}{2}}$$
-
-**Fracciones continuas infinitas (Números Irracionales):**
-Si el anidamiento se prolonga de manera infinita, la expresión converge a un número irracional. Una de las fracciones continuas infinitas más célebres de la historia de la matemática es la siguiente fracción periódica:
-
-$$1 + \dfrac{1}{1 + \dfrac{1}{1 + \dfrac{1}{1 + \dots}}}$$
-
-Para hallar a qué valor numérico equivale esta expresión, definamos el valor límite de la fracción continua infinita como $x$. Dado que el denominador de la primera fracción contiene exactamente la misma estructura anidada de forma infinita, podemos sustituir todo ese denominador por la misma variable $x$:
-
-$$x = 1 + \dfrac{1}{x}$$
-
-Para resolver esta ecuación, multiplicamos todos los miembros por $x$ (con $x \neq 0$):
+**Ejemplo 4.7 (Cálculo de $\gcd(48, 18)$):**
+Aplicando divisiones sucesivas:
 $$\begin{align}
-x^2 &= x + 1 \\[6pt]
-x^2 - x - 1 &= 0
+48 &= 18 \cdot 2 + 12, \\
+18 &= 12 \cdot 1 + 6, \\
+12 &= 6 \cdot 2 + 0.
 \end{align}$$
+El último resto no nulo es $6$, por lo que $\gcd(48, 18) = 6$.
 
-Aplicamos la fórmula general para ecuaciones cuadráticas para resolver $x^2 - x - 1 = 0$:
-$$x = \dfrac{-(-1) \pm \sqrt{(-1)^2 - 4(1)(-1)}}{2(1)} = \dfrac{1 \pm \sqrt{1 + 4}}{2} = \dfrac{1 \pm \sqrt{5}}{2}$$
+**Definición 4.11 (Mínimo común múltiplo):**
+Dados $a, b \in \mathbb{Z} \setminus \{0\}$, el **mínimo común múltiplo** de $a$ y $b$ es
+$$\operatorname{lcm}(a,b) = \min\{ m \in \mathbb{N}^* : a \mid m \text{ y } b \mid m \}.$$
 
-Dado que la fracción continua está constituida únicamente por sumas de enteros positivos, el valor de la expresión debe ser estrictamente positivo ($x > 0$). Por lo tanto, descartamos la raíz negativa y nos quedamos con el valor positivo:
-$$x = \dfrac{1 + \sqrt{5}}{2} \approx 1.61803398\dots$$
+**Teorema 4.3 (Relación entre MCD y MCM):**
+Para cualesquiera $a, b \in \mathbb{Z}^+$ se cumple
+$$\gcd(a,b) \cdot \operatorname{lcm}(a,b) = a \cdot b.$$
 
-Este número irracional extraordinario es el **número áureo** o la **proporción divina**, denotado tradicionalmente por la letra griega $\phi$ (fi). Este resultado revela una hermosa conexión profunda entre la aritmética de las fracciones y la geometría del crecimiento natural.
+**Demostración:**
+Sea $d = \gcd(a,b)$. Entonces $a = d a_1$ y $b = d b_1$ con $\gcd(a_1, b_1) = 1$. Sea $m = d a_1 b_1$. Se verifica que $a \mid m$ y $b \mid m$, así que $\operatorname{lcm}(a,b) \leq m$.
 
-### 4.8 Valor absoluto: Distancia al origen
+Recíprocamente, sea $M$ un múltiplo común positivo de $a$ y $b$. Entonces $M = a k = b \ell$ para algunos $k, \ell \in \mathbb{Z}^+$. Sustituyendo,
+$$d a_1 k = d b_1 \ell \quad \Longrightarrow \quad a_1 k = b_1 \ell.$$
+Como $\gcd(a_1, b_1) = 1$, se tiene $a_1 \mid \ell$, luego $\ell = a_1 t$ para algún $t \in \mathbb{Z}^+$. Por tanto
+$$M = b \ell = d b_1 a_1 t = m \cdot t \geq m.$$
+Así, $m$ es el menor múltiplo común positivo, es decir, $\operatorname{lcm}(a,b) = d a_1 b_1$. Finalmente,
+$$\gcd(a,b) \cdot \operatorname{lcm}(a,b) = d \cdot (d a_1 b_1) = (d a_1)(d b_1) = a \cdot b. \quad \blacksquare$$
 
-**Definición 4.13 (Valor absoluto):**
-El **valor absoluto** de un número entero $a \in \mathbb{Z}$, denotado $|a|$, es su **distancia al origen** (al cero) en la recta numérica.
+**Ejemplo 4.8:**
+Como $\gcd(48, 18) = 6$, se tiene
+$$\operatorname{lcm}(48, 18) = \frac{48 \cdot 18}{6} = 144.$$
+En efecto, $144 = 48 \cdot 3 = 18 \cdot 8$.
 
-**Definición formal:**
+> **Observación:** Para calcular el mínimo común múltiplo de más de dos enteros se aplica la propiedad asociativa: $\operatorname{lcm}(a,b,c) = \operatorname{lcm}(\operatorname{lcm}(a,b),c)$, y análogamente para el máximo común divisor.
+
+### 4.8 Valor absoluto
+
+El valor absoluto mide la distancia de un entero al origen, independientemente de su signo. Es una herramienta central para definir distancia y convergencia.
+
+**Definición 4.12 (Valor absoluto):**
+El **valor absoluto** de $a \in \mathbb{Z}$ se define como
 $$|a| = \begin{cases}
-a & \text{si } a \geq 0 \\
--a & \text{si } a < 0
+a & \text{si } a \geq 0, \\
+-a & \text{si } a < 0.
 \end{cases}$$
 
-**Interpretación geométrica:** $|a|$ mide **cuánto dista** el número $a$ del cero, sin importar la dirección (positiva o negativa).
+**Ejemplo 4.9:**
+$|5| = 5$, $|-5| = 5$, $|0| = 0$ y $|-12| = 12$.
 
-**Ejemplos 4.7:**
-- $|5| = 5$ (el 5 está a 5 unidades del origen)
-- $|-5| = 5$ (el -5 está a 5 unidades del origen)
-- $|0| = 0$ (el origen está a distancia 0 de sí mismo)
-- $|-12| = 12$
-- $|7| = 7$
-- $|-100| = 100$
+**Proposición 4.4 (Propiedades del valor absoluto):**
+Para cualesquiera $a, b \in \mathbb{Z}$ se cumple:
+1. $|a| \geq 0$, y $|a| = 0 \Longleftrightarrow a = 0$.
+2. $|-a| = |a|$.
+3. $|a \cdot b| = |a| \cdot |b|$.
+4. $|a + b| \leq |a| + |b|$ (desigualdad triangular).
 
-**Visualización en la recta:**
-```
-      5 unidades  ←  ●  →  5 unidades
-  ← ───────────────  0  ───────────────  →
-                   -5              5
-```
+> **Nota:** Las tres primeras propiedades se verifican directamente separando los casos $a \geq 0$ y $a < 0$ en la definición de valor absoluto.
 
-Observe que $|-5|$ y $|5|$ son iguales porque ambos números están a la **misma distancia** del origen, aunque en direcciones opuestas.
+**Demostración (desigualdad triangular):
+Se analizan los signos de $a$ y $b$. Si ambos tienen el mismo signo o alguno es cero, entonces $|a+b| = |a| + |b|$. Si tienen signos opuestos, la suma se cancela parcialmente y $|a+b| < |a| + |b|$. En todos los casos se cumple $|a+b| \leq |a| + |b|$. $\blacksquare$
 
-**Propiedades fundamentales del valor absoluto:**
+### 4.9 De enteros a fracciones
 
-1. **No negatividad:** $|a| \geq 0$ para todo $a \in \mathbb{Z}$, y $|a| = 0 \Leftrightarrow a = 0$
+Los enteros permiten contar objetos enteros, pero no expresar partes de un todo. Una **fracción** es la representación natural de una cantidad que resulta de dividir una unidad en partes iguales.
 
-2. **Simetría:** $|-a| = |a|$ para todo $a \in \mathbb{Z}$
+**Definición 4.13 (Fracción):**
+Una **fracción** es una expresión de la forma
+$$\frac{a}{b},$$
+donde $a \in \mathbb{Z}$ es el **numerador**, $b \in \mathbb{Z} \setminus \{0\}$ es el **denominador**, y $b$ indica en cuántas partes iguales se divide la unidad.
 
-3. **Multiplicatividad:** $|a \cdot b| = |a| \cdot |b|$ para todo $a, b \in \mathbb{Z}$
+**Definición 4.14 (Fracciones equivalentes):**
+Dos fracciones $\frac{a}{b}$ y $\frac{c}{d}$ son **equivalentes** si
+$$\frac{a}{b} = \frac{c}{d} \quad \Longleftrightarrow \quad a \cdot d = b \cdot c.$$
+Equivalentemente, $\frac{a}{b} = \frac{a \cdot k}{b \cdot k}$ para todo $k \in \mathbb{Z} \setminus \{0\}$.
 
-4. **Desigualdad triangular:** $|a + b| \leq |a| + |b|$ para todo $a, b \in \mathbb{Z}$
+**Definición 4.15 (Fracción irreducible):**
+Una fracción $\frac{a}{b}$ está en **forma irreducible** si $\gcd(a,b) = 1$.
 
-5. **Identidad:** $|a| = \max\{a, -a\}$
+**Ejemplo 4.10:**
+La fracción $\frac{48}{60}$ se simplifica dividiendo numerador y denominador por $\gcd(48, 60) = 12$:
+$$\frac{48}{60} = \frac{48 \div 12}{60 \div 12} = \frac{4}{5}.$$
+Como $\gcd(4,5) = 1$, la fracción $\frac{4}{5}$ es irreducible.
 
-**Ejemplo 4.8 (Desigualdad triangular):**
-- $|3 + 5| = |8| = 8$ y $|3| + |5| = 3 + 5 = 8$, entonces $|3 + 5| = |3| + |5|$ ✓
-- $|3 + (-5)| = |-2| = 2$ y $|3| + |-5| = 3 + 5 = 8$, entonces $|3 + (-5)| < |3| + |-5|$ ✓
-- $|(-4) + (-3)| = |-7| = 7$ y $|-4| + |-3| = 4 + 3 = 7$, entonces $|(-4) + (-3)| = |-4| + |-3|$ ✓
-
-**Distancia entre dos puntos:**
-
-El valor absoluto también nos permite definir la **distancia entre dos números** cualesquiera en la recta:
-
-**Definición 4.14 (Distancia en $\mathbb{Z}$):**
-La **distancia** entre dos números $a, b \in \mathbb{Z}$ es:
-$$d(a, b) = |a - b| = |b - a|$$
-
-**Ejemplos 4.9:**
-- Distancia entre 3 y 7: $d(3, 7) = |3 - 7| = |-4| = 4$
-- Distancia entre -2 y 5: $d(-2, 5) = |-2 - 5| = |-7| = 7$
-- Distancia entre -8 y -3: $d(-8, -3) = |-8 - (-3)| = |-5| = 5$
-
-> **Interpretación:** La distancia entre dos números es el número de "pasos" que debemos dar en la recta para ir de uno al otro.
-
-> **Observación importante:** El concepto de valor absoluto como distancia se extiende naturalmente a los números reales (Sección 6) y es fundamental para definir límites, continuidad y convergencia en Cálculo.
-
-### 4.9 La recta de los enteros
-
-```
-  ← ... ●        ●        ●        ●        ●        ●        ●        ●  ...  →
-       -3       -2       -1        0        1        2        3        4
-```
-
-**Características:**
-- Los enteros no tienen ni primer ni último elemento
-- Son **simétricos** respecto al cero
-- $\mathbb{N} \subset \mathbb{Z}$ (los naturales están "incrustados" en los enteros)
-- Siguen siendo **discretos**
-- Es un conjunto ordenado
+> **Nota:** El estudio completo de las fracciones —suma, resta, multiplicación, división, comparación y representación decimal— se desarrolla en la Sección 5, dedicada a los números racionales $\mathbb{Q}$.
 
 ---
 
