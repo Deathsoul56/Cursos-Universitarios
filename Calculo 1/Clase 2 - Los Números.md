@@ -1014,202 +1014,57 @@ La densidad de $\mathbb{Q}$ es esencial en el análisis: permite aproximar cualq
 
 ## 6. Los números irracionales y reales
 
-### 6.1 Otras operaciones: Potencias, raíces y logaritmos
+### 6.1 El problema de la raíz: irracionales
 
-Antes de continuar, definimos operaciones adicionales:
+Pensemos en la ecuación $x^2 = 2$. En $\mathbb{Q}$ no tiene solución: no existe una fracción cuyo cuadrado sea $2$. Esto muestra que los racionales, aunque densos, no cubren todos los puntos de la recta. Para llenar esos huecos se necesitan los números irracionales.
 
-**Definición 6.1 (Potenciación):**
-$$a^n = \underbrace{a \cdot a \cdot ... \cdot a}_{n \text{ veces}}, \quad n \in \mathbb{N}$$
-Con las extensiones:
-- $a^0 = 1$ para $a \neq 0$
-- $a^{-n} = \frac{1}{a^n}$ para $a \neq 0$
-- $a^{m/n} = \sqrt[n]{a^m} = (\sqrt[n]{a})^m$ para $a > 0$
+> **Nota histórica:** Los pitagóricos descubrieron la inconmensurabilidad de la diagonal del cuadrado con su lado, un resultado que contradecía su creencia de que todo era número racional. La prueba clásica de la irracionalidad de $\sqrt{2}$ se atribuye a Hipaso de Metaponto.
 
-**Propiedades de la potenciación:**
-
-Para cualesquiera $a, b > 0$ y $m, n \in \mathbb{R}$:
-
-1. **Producto de potencias de igual base:** $a^m \cdot a^n = a^{m+n}$
-2. **Cociente de potencias de igual base:** $\frac{a^m}{a^n} = a^{m-n}$
-3. **Potencia de una potencia:** $(a^m)^n = a^{m \cdot n}$
-4. **Potencia de un producto:** $(a \cdot b)^n = a^n \cdot b^n$
-5. **Potencia de un cociente:** $\left(\frac{a}{b}\right)^n = \frac{a^n}{b^n}$
-6. **Identidad:** $a^1 = a$
-
-**Ejemplos:**
-- $2^3 \cdot 2^4 = 2^{3+4} = 2^7 = 128$
-- $\frac{5^6}{5^2} = 5^{6-2} = 5^4 = 625$
-- $(3^2)^3 = 3^{2 \cdot 3} = 3^6 = 729$
-- $(2 \cdot 3)^2 = 2^2 \cdot 3^2 = 4 \cdot 9 = 36$
-
-**Definición 6.2 (Raíz n-ésima):**
-La **raíz n-ésima** de $a$ (con $n \in \mathbb{N}$, $n \geq 2$) es el número $x$ tal que:
-$$x^n = a$$
-Se denota $x = \sqrt[n]{a}$ o $x = a^{1/n}$.
-
-**Casos particulares:**
-- $n = 2$: **raíz cuadrada** $\sqrt{a} = \sqrt[2]{a}$
-- $n = 3$: **raíz cúbica** $\sqrt[3]{a}$
-
-> **Observaciones importantes:**
->
-> 1. Para $n$ **par** y $a \geq 0$: existe una única raíz **no negativa** (raíz principal)
->    - $\sqrt{16} = 4$ (tomamos la raíz positiva)
->    - $\sqrt{9} = 3$
->
-> 2. Para $n$ **impar**: existe una única raíz real para todo $a \in \mathbb{R}$
->    - $\sqrt[3]{-8} = -2$ (las raíces impares pueden ser negativas)
->    - $\sqrt[3]{27} = 3$
->
-> 3. Para $n$ par y $a < 0$: **no existe raíz real** (se necesitan números complejos)
->    - $\sqrt{-4} \notin \mathbb{R}$ (no existe raíz cuadrada real de un número negativo)
-
-**Propiedades de las raíces:**
-
-Para $a, b \geq 0$ y $m, n \in \mathbb{N}$ con $n, m \geq 2$:
-
-1. **Producto de raíces:** $\sqrt[n]{a} \cdot \sqrt[n]{b} = \sqrt[n]{a \cdot b}$
-2. **Cociente de raíces:** $\frac{\sqrt[n]{a}}{\sqrt[n]{b}} = \sqrt[n]{\frac{a}{b}}$ (con $b \neq 0$)
-3. **Raíz de una raíz:** $\sqrt[m]{\sqrt[n]{a}} = \sqrt[m \cdot n]{a}$
-4. **Raíz de una potencia:** $\sqrt[n]{a^m} = (\sqrt[n]{a})^m = a^{m/n}$
-5. **Identidad:** $\sqrt[n]{a^n} = a$ (para $a \geq 0$ cuando $n$ es par)
-
-**Ejemplos:**
-- $\sqrt{4} \cdot \sqrt{9} = \sqrt{4 \cdot 9} = \sqrt{36} = 6$
-- $\frac{\sqrt{50}}{\sqrt{2}} = \sqrt{\frac{50}{2}} = \sqrt{25} = 5$
-- $\sqrt{\sqrt{16}} = \sqrt[4]{16} = 2$
-- $\sqrt[3]{8^2} = (\sqrt[3]{8})^2 = 2^2 = 4$
-
-**Definición 6.3 (Logaritmo):**
-El **logaritmo en base $b$** de $a$ (con $b > 0$, $b \neq 1$, $a > 0$) es el número $x$ tal que:
-$$x = \log_b(a) \iff b^x = a$$
-Se denota $x = \log_b(a)$ a la operación de logaritmo.
-
-> **Interpretación:** El logaritmo responde a la pregunta: "¿A qué potencia debo elevar $b$ para obtener $a$?"
-
-**Bases especiales y notación:**
-
-1. **Logaritmo decimal (base 10):**
-   $$\log_{10}(a) = \log(a)$$
-   Cuando no se indica la base, se asume base 10. Usado en ciencias e ingeniería.
-
-2. **Logaritmo natural (base $e$):**
-   $$\log_e(a) = \ln(a)$$
-   Donde $e = 2.71828...$ (número de Euler). Es el logaritmo más importante en matemáticas y cálculo.
-
-3. **Logaritmo binario (base 2):**
-   $$\log_2(a)$$
-   Usado en ciencias de la computación e informática.
-
-**Ejemplos básicos:**
-- $\log_{10}(100) = \log(100) = 2$ porque $10^2 = 100$
-- $\log_{10}(1000) = 3$ porque $10^3 = 1000$
-- $\log_2(8) = 3$ porque $2^3 = 8$
-- $\log_2(16) = 4$ porque $2^4 = 16$
-- $\ln(e) = 1$ porque $e^1 = e$
-- $\ln(e^3) = 3$ porque $e^3 = e^3$
-- $\ln(1) = 0$ porque $e^0 = 1$
-- $\log(1) = 0$ porque $10^0 = 1$
-
-**Propiedades fundamentales de los logaritmos:**
-
-Para cualesquiera $a, b > 0$ y $c \in \mathbb{R}$ (en cualquier base):
-
-1. **Logaritmo de un producto:** $\log_b(a \cdot c) = \log_b(a) + \log_b(c)$   
-2. **Logaritmo de un cociente:** $\log_b\left(\frac{a}{c}\right) = \log_b(a) - \log_b(c)$   
-3. **Logaritmo de una potencia:** $\log_b(a^c) = c \cdot \log_b(a)$   
-4. **Identidad:** $\log_b(b) = 1$ y $\log_b(1) = 0$   
-5. **Cambio de base:** $\log_b(a) = \frac{\log_c(a)}{\log_c(b)}$ (para cualquier base $c > 0$, $c \neq 1$)   
-6. **Inversa de la exponencial:** $b^{\log_b(a)} = a$ y $\log_b(b^a) = a$
-
-**Casos particulares importantes:**
-$$\log_b(a) = \frac{\ln(a)}{\ln(b)} = \frac{\log(a)}{\log(b)}$$
-
-Esta fórmula permite convertir logaritmos de una base a otra.
-
-**Ejemplos de aplicación de propiedades:**
-
-- $\log(100 \cdot 10) = \log(100) + \log(10) = 2 + 1 = 3$
-- $\log\left(\frac{1000}{10}\right) = \log(1000) - \log(10) = 3 - 1 = 2$
-- $\log(10^5) = 5 \cdot \log(10) = 5 \cdot 1 = 5$
-- $\ln(e^7) = 7 \cdot \ln(e) = 7 \cdot 1 = 7$
-- $\log_2(32) = \log_2(2^5) = 5$
-
-**Cambio de base (ejemplo):**
-$$\log_2(10) = \frac{\log_{10}(10)}{\log_{10}(2)} = \frac{1}{\log_{10}(2)} \approx \frac{1}{0.301} \approx 3.32$$
-
-O usando logaritmo natural:
-$$\log_2(10) = \frac{\ln(10)}{\ln(2)} \approx \frac{2.303}{0.693} \approx 3.32$$
-
-**Relación entre las tres operaciones:**
-
-Las operaciones de potenciación, radicación y logaritmos están íntimamente relacionadas:
-
-$$a^n = b \quad \Leftrightarrow \quad a = \sqrt[n]{b} \quad \Leftrightarrow \quad n = \log_a(b)$$
-
-**Aplicaciones:**
-- **Potencias**: crecimiento exponencial, interés compuesto, desintegración radiactiva
-- **Raíces**: ecuaciones algebraicas, geometría (cálculo de lados)
-- **Logaritmos**: escalas (pH, decibeles, Richter), cálculo de tiempos de duplicación, complejidad algorítmica
-
-### 6.2 El problema con la raíz: Números irracionales
-
-**Problema fundamental:** La ecuación $x^2 = 2$ **no tiene solución** en $\mathbb{Q}$.
-
-**Teorema 6.1 ($\sqrt{2}$ es irracional):**
-No existe ningún número racional $r \in \mathbb{Q}$ tal que $r^2 = 2$.
+**Teorema 6.1 (Irracionalidad de $\sqrt{2}$):**
+No existe $r \in \mathbb{Q}$ tal que $r^2 = 2$.
 
 **Demostración (por contradicción):**
-Supongamos que existe $r = \frac{p}{q} \in \mathbb{Q}$ con $\gcd(p,q) = 1$ tal que $r^2 = 2$.
+Supongamos que $r = \frac{p}{q} \in \mathbb{Q}$ en forma irreducible cumple $r^2 = 2$. Entonces $p^2 = 2q^2$, luego $p^2$ es par y, por tanto, $p$ es par. Escribiendo $p = 2k$ para algún $k \in \mathbb{Z}$ se obtiene
+$$(2k)^2 = 2q^2 \quad \Longrightarrow \quad 4k^2 = 2q^2 \quad \Longrightarrow \quad q^2 = 2k^2,$$
+de modo que $q^2$ es par y, en consecuencia, $q$ también es par. Pero si $p$ y $q$ son ambos pares, entonces $\gcd(p,q) \geq 2$, lo cual contradice la hipótesis de que la fracción es irreducible. Por lo tanto, $\sqrt{2} \notin \mathbb{Q}$. $\blacksquare$
 
-Entonces:
-$$\left(\frac{p}{q}\right)^2 = 2 \quad \Rightarrow \quad p^2 = 2q^2$$
+**Definición 6.1 (Números irracionales):**
+Un número real $x$ es **irracional** si $x \notin \mathbb{Q}$. El conjunto de los números irracionales se denota
+$$\mathbb{I} = \mathbb{R} \setminus \mathbb{Q}.$$
 
-Esto implica que $p^2$ es par, luego $p$ es par (si $p$ fuera impar, $p^2$ sería impar). Escribamos $p = 2k$ para algún $k \in \mathbb{Z}$.
+**Ejemplo 6.1:**
+- $\sqrt{2}, \sqrt{3}, \sqrt{5}$ son irracionales.
+- $\pi$, $e$ y $\phi = \frac{1 + \sqrt{5}}{2}$ son irracionales.
+- El número $0{,}1010010001\dots$, con bloques crecientes de ceros entre unos, es irracional.
 
-Sustituyendo:
-$$(2k)^2 = 2q^2 \quad \Rightarrow \quad 4k^2 = 2q^2 \quad \Rightarrow \quad 2k^2 = q^2$$
+> **Observación:** La definición formal de $\mathbb{I}$ requiere la noción de número real. Una construcción rigurosa de $\mathbb{R}$ se estudia en cursos de Análisis Real.
 
-Luego $q^2$ es par, por lo tanto $q$ es par.
+### 6.2 Los números reales
 
-Pero si $p$ y $q$ son ambos pares, entonces $\gcd(p,q) \geq 2$, lo cual **contradice** nuestra suposición de que $\gcd(p,q) = 1$.
+La necesidad de completar $\mathbb{Q}$ con todos los límites posibles conduce a los números reales. Este conjunto permite resolver ecuaciones como $x^2 = 2$ y garantiza que toda sucesión convergente tenga límite.
 
-Por lo tanto, $\sqrt{2} \notin \mathbb{Q}$. $\square$
+> **Nota histórica:** Las construcciones rigurosas de $\mathbb{R}$ mediante cortaduras de Dedekind y sucesiones de Cauchy fueron publicadas por Richard Dedekind y Georg Cantor en 1872.
 
-**Definición 6.4 (Números irracionales):**
-$$\mathbb{I} = \{x \in \mathbb{R} : x \notin \mathbb{Q}\}$$
+**Definición 6.2 (Números reales):**
+El conjunto de los **números reales** $\mathbb{R}$ es la completación de $\mathbb{Q}$ que contiene a todos los racionales e irracionales:
+$$\mathbb{R} = \mathbb{Q} \cup \mathbb{I}.$$
+Geométricamente, $\mathbb{R}$ corresponde a todos los puntos de la recta numérica.
 
-**Nota**: esta definición requiere del conjunto de los números reales que serán definidos en la siguiente sección. La definición formal del conjunto de los números irracionales $\mathbb{I}$ como la de los números reales $\mathbb{R}$ son bastante complejas y se verán con mayor profundidad en el curso de **Análisis Real**
+**Teorema 6.2 (Propiedades fundamentales de $\mathbb{R}$):**
+El conjunto $(\mathbb{R}, +, \cdot, \leq)$ es un **cuerpo ordenado completo**. En particular:
+1. **Cuerpo:** satisface los axiomas de cuerpo respecto de la suma y el producto.
+2. **Ordenado:** la relación $\leq$ es total y compatible con las operaciones.
+3. **Completo:** toda sucesión de Cauchy converge en $\mathbb{R}$.
 
-Otra definición es **Por oposición a ℚ** :
-$$\mathbb{I} = \{x : x \quad es\quad una\quad expresión\quad decimal\quad infinita\quad no\quad periódica\}$$
-o también
-$$\mathbb{I} = \{x : x \quad \text{todo número que no se puede expresar de la forma:} \quad P/Q \}$$
-Es decir, los números irracionales son aquellos que **no pueden expresarse como fracción** de dos enteros. 
-Ambas definiciones son un tanto vagas, pero para definir correctamente a los números irracionales necesitaremos herramientas mas avanzadas, por lo cual quedara para un curso de Análisis Real la definición totalmente formal
+> **Nota:** La demostración detallada de estas propiedades a partir de las construcciones de Dedekind o de Cauchy se desarrolla en cursos de Análisis Real.
 
-**Ejemplos de irracionales:**
-- $\sqrt{2}, \sqrt{3}, \sqrt{5}, ..., \sqrt{n}$ (para $n$ no cuadrado perfecto)
-- $\pi = 3.14159...$
-- $e = 2.71828...$
-- $\phi = \frac{1+\sqrt{5}}{2} = 1.618...$ (razón áurea)
+**Ejemplo 6.2:**
+- $-\pi \in \mathbb{R}$, $\frac{2}{3} \in \mathbb{R}$ y $\sqrt{7} \in \mathbb{R}$.
+- La ecuación $x^2 = 2$ tiene soluciones $x = \pm \sqrt{2}$ en $\mathbb{R}$.
 
-### 6.3 Los números reales: $\mathbb{R}$
+### 6.3 La recta real
 
-**Definición intuitiva 6.5:**
-Los **números reales** $\mathbb{R}$ son la unión de los racionales y los irracionales:
-$$\mathbb{R} = \mathbb{Q} \cup \mathbb{I}$$
-
-Geométricamente, $\mathbb{R}$ corresponde a **todos los puntos** de la recta numérica, sin dejar ningún "hueco".
-
-> **Nota sobre la formalidad:**
-> La construcción rigurosa de $\mathbb{R}$ es técnicamente compleja y se realiza mediante:
-> 1. **Cortaduras de Dedekind** (Richard Dedekind, 1872)
-> 2. **Sucesiones de Cauchy** (Georg Cantor, 1872)
-
-Estas construcciones garantizan que $\mathbb{R}$ sea **completo**: toda sucesión de Cauchy converge a un elemento de $\mathbb{R}$. Los detalles se estudiarán en el curso de **Análisis Real**.
-
-### 6.4 La recta real
+La representación geométrica de $\mathbb{R}$ es la recta numérica, donde cada punto corresponde a un único número real y viceversa.
 
 ```
   ← ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  →
@@ -1217,10 +1072,47 @@ Estas construcciones garantizan que $\mathbb{R}$ sea **completo**: toda sucesió
 ```
 
 **Características de $\mathbb{R}$:**
-- Es **continuo**: no tiene "huecos"
-- Es **denso en sí mismo**: entre dos reales distintos hay infinitos reales
-- Es **completo**: toda sucesión convergente de reales tiene límite en $\mathbb{R}$
-- Es **no numerable**: tiene cardinalidad $\mathfrak{c} = 2^{\aleph_0} > \aleph_0$ (ver Sección 8)
+- Es **continuo**: no tiene huecos.
+- Es **denso en sí mismo**: entre dos reales distintos hay infinitos reales.
+- Es **completo**: toda sucesión convergente de reales tiene límite en $\mathbb{R}$.
+- Es **no numerable**: $|\mathbb{R}| = \mathfrak{c} = 2^{\aleph_0} > \aleph_0$ (ver Sección 8).
+
+> **Observación:** La cardinalidad del continuo se demuestra rigurosamente en el Teorema 8.1.
+
+### 6.4 Operaciones con potencias, raíces y logaritmos (opcional)
+
+Las operaciones de potenciación, radicación y logaritmo son centrales en el cálculo. Aunque se estudian con profundidad en clases posteriores, conviene recordar sus definiciones y propiedades básicas.
+
+**Definición 6.3 (Potenciación):**
+Para $a \in \mathbb{R}$ y $n \in \mathbb{N}$,
+$$a^n = \underbrace{a \cdot a \cdot \dots \cdot a}_{n \text{ veces}}.$$
+Se extiende con $a^0 = 1$ para $a \neq 0$ y $a^{-n} = \frac{1}{a^n}$ para $a \neq 0$.
+
+**Definición 6.4 (Raíz n-ésima):**
+Dados $a \geq 0$ y $n \in \mathbb{N}$, $n \geq 2$, la **raíz n-ésima** de $a$ es el único número $x \geq 0$ tal que $x^n = a$, denotado $\sqrt[n]{a}$.
+
+**Definición 6.5 (Logaritmo):**
+Dados $b > 0$, $b \neq 1$ y $a > 0$, el **logaritmo en base $b$** de $a$ es el único $x \in \mathbb{R}$ tal que $b^x = a$, denotado $\log_b(a)$.
+
+**Proposición 6.1 (Propiedades básicas):**
+Para $a, b > 0$ y exponentes reales donde estén definidas las expresiones se cumple:
+1. $a^m \cdot a^n = a^{m+n}$.
+2. $(a^m)^n = a^{mn}$.
+3. $\sqrt[n]{a} \cdot \sqrt[n]{b} = \sqrt[n]{ab}$.
+4. $\log_b(ac) = \log_b(a) + \log_b(c)$.
+5. $\log_b(a^c) = c \log_b(a)$.
+6. $\log_b(a) = \frac{\log_c(a)}{\log_c(b)}$ para $c > 0$, $c \neq 1$.
+
+> **Nota:** Las demostraciones rigurosas de estas propiedades, especialmente para exponentes reales arbitrarios, requieren la construcción de la función exponencial y se tratan en clases posteriores.
+
+**Ejemplo 6.3:**
+- $2^3 \cdot 2^4 = 2^7 = 128$.
+- $\sqrt{4} \cdot \sqrt{9} = \sqrt{36} = 6$.
+- $\log_2(32) = 5$ porque $2^5 = 32$.
+- $\ln(e^7) = 7$.
+
+**Aplicaciones:**
+Las potencias modelan crecimiento exponencial y decaimiento radiactivo; las raíces aparecen en geometría y ecuaciones algebraicas; los logaritmos se usan en escalas logarítmicas (pH, decibeles, magnitud de Richter), complejidad algorítmica y cálculo de tiempos de duplicación.
 
 ---
 
