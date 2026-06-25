@@ -1256,153 +1256,158 @@ Asimismo, el círculo unitario y la recta real tienen la misma cardinalidad, com
 
 ## 9. Axiomas de los números reales
 
-Los números reales no solo son un conjunto, sino una **estructura algebraica** con operaciones (suma y multiplicación) y una relación de orden ($\leq$). Estas propiedades se formalizan mediante **axiomas**.
+Los números reales no son solo un conjunto: son una estructura algebraica con dos operaciones y una relación de orden. Los axiomas recogen las propiedades básicas que se aceptan sin demostración y de las cuales se derivan todas las demás propiedades del cálculo.
 
-**Contexto histórico:** Antes de estudiar los axiomas de $\mathbb{R}$, es importante reconocer que cada sistema numérico tiene sus propios axiomas fundacionales. Los **Axiomas de Peano** (formulados por Giuseppe Peano en 1889) son los axiomas que definen rigurosamente los números naturales $\mathbb{N}$, y son la base sobre la cual se construyen todos los demás sistemas numéricos.
+> **Nota histórica:** La axiomatización moderna de los números reales como cuerpo ordenado completo se consolidó a finales del siglo XIX con los trabajos de Richard Dedekind, Georg Cantor y David Hilbert.
 
-**Los cinco Axiomas de Peano para $\mathbb{N}$:**
+### 9.1 Axiomas de Peano
 
-1. $0 \in \mathbb{N}$ (existe un primer número natural)
-2. Todo número natural $n$ tiene un **sucesor** $S(n) \in \mathbb{N}$
-3. $0$ no es sucesor de ningún número natural ($\forall n \in \mathbb{N}, \, S(n) \neq 0$)
-4. La función sucesor es **inyectiva**: $S(n) = S(m) \Rightarrow n = m$
-5. **Principio de inducción**: Si $P(0)$ es verdadero, y $P(n) \Rightarrow P(S(n))$ para todo $n$, entonces $P(n)$ es verdadero para todo $n \in \mathbb{N}$
+Antes de caracterizar $\mathbb{R}$, conviene recordar los axiomas que fundamentan a los números naturales, pues de ellos se construyen los demás sistemas numéricos.
 
-**Jerarquía de construcción:**
-```
-Axiomas de Peano → ℕ (naturales)
-      ↓
-   ℕ → ℤ (enteros, como pares de naturales)
-      ↓
-   ℤ → ℚ (racionales, como cocientes de enteros)
-      ↓
-   ℚ → ℝ (reales, mediante completitud)
-```
+**Definición 9.1 (Sistema de Peano):**
+Un **sistema de Peano** es un conjunto $\mathbb{N}$ con un elemento distinguido $0 \in \mathbb{N}$ y una función sucesor $S: \mathbb{N} \to \mathbb{N}$ que satisfacen los siguientes postulados.
 
-Cada sistema se construye formalmente a partir del anterior. Los axiomas que veremos a continuación caracterizan a $\mathbb{R}$ como un **cuerpo ordenado completo**.
+**Postulado 9.1:** $0 \in \mathbb{N}$.
 
-### 9.1 Axiomas de cuerpo
+**Postulado 9.2:** Para todo $n \in \mathbb{N}$, $S(n) \in \mathbb{N}$.
 
-**Definición 9.1 (Cuerpo):**
-Un **cuerpo** es un conjunto $F$ con dos operaciones binarias $+$ (suma) y $\cdot$ (multiplicación) que satisfacen:
+**Postulado 9.3:** Para todo $n \in \mathbb{N}$, $S(n) \neq 0$.
+
+**Postulado 9.4:** Si $S(n) = S(m)$, entonces $n = m$.
+
+**Postulado 9.5 (Inducción):** Si $P(0)$ es verdadero y $P(n) \Rightarrow P(S(n))$ para todo $n \in \mathbb{N}$, entonces $P(n)$ es verdadero para todo $n \in \mathbb{N}$.
+
+> **Observación:** A partir de estos postulados se definen la suma, el producto y el orden en $\mathbb{N}$, y de ellos se construyen sucesivamente $\mathbb{Z}$, $\mathbb{Q}$ y $\mathbb{R}$.
+
+### 9.2 Axiomas de cuerpo
+
+Un cuerpo es una estructura algebraica en la que las operaciones de suma y multiplicación se comportan de manera similar a las de los números racionales y reales.
+
+**Definición 9.2 (Cuerpo):**
+Un **cuerpo** es un conjunto $F$ con dos operaciones binarias $+$ y $\cdot$ que satisfacen los postulados siguientes.
 
 **Axiomas de la suma:**
-1. **Cerradura**: $\forall a, b \in F, \quad a + b \in F$
-2. **Asociatividad**: $\forall a, b, c \in F, \quad (a + b) + c = a + (b + c)$
-3. **Elemento neutro**: $\exists \, 0 \in F : \forall a \in F, \quad a + 0 = a$
-4. **Elemento inverso**: $\forall a \in F, \, \exists \, (-a) \in F : a + (-a) = 0$
-5. **Conmutatividad**: $\forall a, b \in F, \quad a + b = b + a$
+
+**Postulado 9.6 (Cerradura):** Para cualesquiera $a, b \in F$ se cumple $a + b \in F$.
+
+**Postulado 9.7 (Asociatividad):** Para cualesquiera $a, b, c \in F$ se cumple $(a + b) + c = a + (b + c)$.
+
+**Postulado 9.8 (Elemento neutro):** Existe $0 \in F$ tal que $a + 0 = a$ para todo $a \in F$.
+
+**Postulado 9.9 (Inverso aditivo):** Para cada $a \in F$ existe $(-a) \in F$ tal que $a + (-a) = 0$.
+
+**Postulado 9.10 (Conmutatividad):** Para cualesquiera $a, b \in F$ se cumple $a + b = b + a$.
 
 **Axiomas de la multiplicación:**
-6. **Cerradura**: $\forall a, b \in F, \quad a \cdot b \in F$
-7. **Asociatividad**: $\forall a, b, c \in F, \quad (a \cdot b) \cdot c = a \cdot (b \cdot c)$
-8. **Elemento neutro**: $\exists \, 1 \in F : \forall a \in F, \quad a \cdot 1 = a$ (con $1 \neq 0$)
-9. **Elemento inverso**: $\forall a \in F \setminus \{0\}, \, \exists \, a^{-1} \in F : a \cdot a^{-1} = 1$
-10. **Conmutatividad**: $\forall a, b \in F, \quad a \cdot b = b \cdot a$
+
+**Postulado 9.11 (Cerradura):** Para cualesquiera $a, b \in F$ se cumple $a \cdot b \in F$.
+
+**Postulado 9.12 (Asociatividad):** Para cualesquiera $a, b, c \in F$ se cumple $(a \cdot b) \cdot c = a \cdot (b \cdot c)$.
+
+**Postulado 9.13 (Elemento neutro):** Existe $1 \in F$, con $1 \neq 0$, tal que $a \cdot 1 = a$ para todo $a \in F$.
+
+**Postulado 9.14 (Inverso multiplicativo):** Para cada $a \in F \setminus \{0\}$ existe $a^{-1} \in F$ tal que $a \cdot a^{-1} = 1$.
+
+**Postulado 9.15 (Conmutatividad):** Para cualesquiera $a, b \in F$ se cumple $a \cdot b = b \cdot a$.
 
 **Axioma distributivo:**
-11. **Distributividad**: $\forall a, b, c \in F, \quad a \cdot (b + c) = (a \cdot b) + (a \cdot c)$
 
-**Ejemplo:** $\mathbb{Q}$ y $\mathbb{R}$ son cuerpos. $\mathbb{Z}$ **no** es cuerpo (no todo entero no nulo tiene inverso multiplicativo en $\mathbb{Z}$).
+**Postulado 9.16 (Distributividad):** Para cualesquiera $a, b, c \in F$ se cumple $a \cdot (b + c) = a \cdot b + a \cdot c$.
 
-### 9.2 Axiomas de orden
+**Ejemplo 9.1:**
+- $\mathbb{Q}$ y $\mathbb{R}$ son cuerpos.
+- $\mathbb{Z}$ no es cuerpo, pues $2 \in \mathbb{Z}$ pero su inverso multiplicativo $\frac{1}{2} \notin \mathbb{Z}$.
 
-**Definición 9.2 (Cuerpo ordenado):**
-Un cuerpo $F$ es **ordenado** si existe una relación $\leq$ que satisface:
+### 9.3 Axiomas de orden
 
-**Axiomas del orden:**
-12. **Tricotomía**: $\forall a, b \in F$, exactamente una de las siguientes es verdadera: $a < b$, $a = b$, o $a > b$
-13. **Transitividad**: $\forall a, b, c \in F, \quad a \leq b \land b \leq c \Rightarrow a \leq c$
-14. **Compatibilidad con la suma**: $\forall a, b, c \in F, \quad a \leq b \Rightarrow a + c \leq b + c$
-15. **Compatibilidad con la multiplicación**: $\forall a, b, c \in F, \quad a \leq b \land c \geq 0 \Rightarrow a \cdot c \leq b \cdot c$
+Un cuerpo ordenado es un cuerpo equipado con una relación de orden total compatible con las operaciones.
 
-### 9.3 Axioma de completitud
+**Definición 9.3 (Cuerpo ordenado):**
+Un cuerpo $F$ es **ordenado** si existe una relación $\leq$ en $F$ que satisface los siguientes postulados.
 
-El axioma que distingue $\mathbb{R}$ de $\mathbb{Q}$:
+**Postulado 9.17 (Tricotomía):** Para cualesquiera $a, b \in F$, exactamente una de las siguientes afirmaciones es verdadera: $a < b$, $a = b$ o $a > b$.
 
-**Axioma 16 (Completitud o del supremo):**
-Todo subconjunto no vacío de $\mathbb{R}$ que está **acotado superiormente** tiene un **supremo** (mínima cota superior) en $\mathbb{R}$.
+**Postulado 9.18 (Transitividad):** Si $a \leq b$ y $b \leq c$, entonces $a \leq c$.
 
-> **Interpretación:** Este axioma garantiza que $\mathbb{R}$ "no tiene huecos". Es el axioma que falta en $\mathbb{Q}$ y que se necesita para hacer Cálculo (límites, continuidad, convergencia).
+**Postulado 9.19 (Compatibilidad con la suma):** Si $a \leq b$, entonces $a + c \leq b + c$ para todo $c \in F$.
+
+**Postulado 9.20 (Compatibilidad con la multiplicación):** Si $a \leq b$ y $c \geq 0$, entonces $a \cdot c \leq b \cdot c$.
+
+> **Observación:** De estos postulados se deducen las reglas usuales de manipulación de desigualdades.
+
+### 9.4 Axioma de completitud
+
+El axioma de completitud es el que distingue a $\mathbb{R}$ de $\mathbb{Q}$ y hace posible el análisis matemático.
+
+**Definición 9.4 (Cota superior y supremo):**
+Sea $A \subseteq \mathbb{R}$ no vacío. Un número $M \in \mathbb{R}$ es una **cota superior** de $A$ si $a \leq M$ para todo $a \in A$. El **supremo** de $A$, denotado $\sup A$, es la menor de las cotas superiores de $A$.
+
+**Postulado 9.21 (Completitud):**
+Todo subconjunto no vacío de $\mathbb{R}$ acotado superiormente tiene supremo en $\mathbb{R}$.
+
+> **Observación:** Este postulado garantiza que $\mathbb{R}$ no tiene huecos y es indispensable para definir límites, continuidad y convergencia en el cálculo.
+
+**Ejemplo 9.2:**
+- El conjunto $A = \{x \in \mathbb{Q} : x^2 < 2\}$ está acotado superiormente en $\mathbb{Q}$ (por ejemplo, por $2$), pero no tiene supremo en $\mathbb{Q}$; su supremo en $\mathbb{R}$ es $\sqrt{2}$.
+- El intervalo $[0, 1)$ tiene supremo $1$ en $\mathbb{R}$.
+
+### 9.5 Caracterización de los números reales
+
+**Definición 9.5 (Números reales):**
+El conjunto $\mathbb{R}$ es el único cuerpo ordenado completo, es decir, el único conjunto que satisface los Postulados 9.6–9.21.
+
+> **Observación:** La unicidad se entiende salvo isomorfismo ordenado. La existencia se construye mediante cortaduras de Dedekind o sucesiones de Cauchy.
 
 ---
 
 ## 10. Demostraciones elementales con los axiomas
 
-### 10.1 Demostración: $1 + 0 = 1$
+Los axiomas de cuerpo y orden permiten demostrar propiedades aparentemente evidentes. Estas demostraciones muestran cómo se deducen resultados concretos a partir de los postulados establecidos en la sección anterior.
 
-**Proposición 10.1:** $\forall a \in \mathbb{R}, \quad a + 0 = a$
+### 10.1 Elemento neutro de la suma
 
-**Demostración:**
-Por el **Axioma 3** (elemento neutro de la suma), sabemos que existe un elemento $0 \in \mathbb{R}$ tal que:
-$$\forall a \in \mathbb{R}, \quad a + 0 = a$$
-
-En particular, para $a = 1$:
-$$1 + 0 = 1$$
-
-Esto es **inmediato del axioma**. $\square$
-
-> **Nota:** Esta es una aplicación directa del axioma, no requiere deducción adicional.
-
-### 10.2 Demostración: $1 + 1 = 2$
-
-**Proposición 10.2:** $1 + 1 = 2$
+**Proposición 10.1:**
+Para todo $a \in \mathbb{R}$ se cumple $a + 0 = a$.
 
 **Demostración:**
-En la construcción de von Neumann (Sección 4), definimos:
-$$2 := S(1) = 1 \cup \{1\}$$
+Es una aplicación directa del Postulado 9.8 (elemento neutro de la suma). En particular, para $a = 1$ se tiene $1 + 0 = 1$. $\blacksquare$
 
-En términos aritméticos, el **sucesor** de 1 es precisamente lo que llamamos 2. Y por la definición de suma en $\mathbb{N}$:
-$$1 + 1 := S(1) = 2$$
+### 10.2 Definición de $2$
 
-Por lo tanto, $1 + 1 = 2$ por **definición**. $\square$
-
-> **Observación filosófica:** Esta "demostración" puede parecer inmediata, pero formaliza precisamente qué significa "2". Bertrand Russell y Alfred North Whitehead dedicaron cientos de páginas en *Principia Mathematica* (1910-1913) para probar rigurosamente que $1 + 1 = 2$ desde los fundamentos de la lógica.
-
-### 10.3 Demostración: Ley de cancelación de la suma
-
-**Proposición 10.3 (Ley de cancelación):** Si $a + b = a + c$, entonces $b = c$.
+**Proposición 10.2:**
+$1 + 1 = 2$.
 
 **Demostración:**
-Supongamos que $a + b = a + c$, donde $a, b, c \in \mathbb{R}$.
+En la construcción de Peano, $2$ se define como el sucesor de $1$, es decir, $2 := S(1)$. La operación suma se define de modo que $1 + 1 := S(1)$. Por tanto, $1 + 1 = 2$ por definición. $\blacksquare$
 
-Por el **Axioma 4** (existencia del inverso aditivo), existe $(-a) \in \mathbb{R}$ tal que:
-$$a + (-a) = 0$$
+> **Nota histórica:** Bertrand Russell y Alfred North Whitehead dedicaron cientos de páginas en *Principia Mathematica* (1910-1913) a derivar $1 + 1 = 2$ desde fundamentos lógicos.
 
-Sumamos $(-a)$ a ambos lados de la ecuación $a + b = a + c$:
-$$(-a) + (a + b) = (-a) + (a + c)$$
+### 10.3 Ley de cancelación de la suma
 
-Por el **Axioma 2** (asociatividad de la suma), podemos reagrupar:
-$$\big((-a) + a\big) + b = \big((-a) + a\big) + c$$
-
-Por el **Axioma 5** (conmutatividad de la suma), $(-a) + a = a + (-a) = 0$:
-$$0 + b = 0 + c$$
-
-Por el **Axioma 3** (elemento neutro de la suma), $0 + b = b$ y $0 + c = c$:
-$$b = c$$
-
-Por lo tanto, hemos demostrado que $a + b = a + c \Rightarrow b = c$. $\square$
-
-**Importancia:** Esta propiedad nos permite "cancelar" términos iguales en ambos lados de una ecuación, una técnica fundamental en la resolución de ecuaciones algebraicas.
-
-**Ejemplo de aplicación:**
-Si $5 + x = 5 + 3$, entonces por la ley de cancelación, $x = 3$.
-
-### 10.4 Demostración: $\sqrt{2} \in \mathbb{I}$
-
-Ya demostramos en el **Teorema 6.1** que $\sqrt{2} \notin \mathbb{Q}$.
-
-**Proposición 10.4:** $\sqrt{2} \in \mathbb{I}$
+**Proposición 10.3 (Ley de cancelación):**
+Si $a + b = a + c$, entonces $b = c$.
 
 **Demostración:**
-Por definición (Def. 6.4):
-$$\mathbb{I} = \mathbb{R} \setminus \mathbb{Q}$$
+Supongamos que $a + b = a + c$. Sumando el inverso aditivo $-a$ a ambos lados (Postulado 9.9) se obtiene
+$$(-a) + (a + b) = (-a) + (a + c).$$
+Por asociatividad (Postulado 9.7),
+$$\big((-a) + a\big) + b = \big((-a) + a\big) + c.$$
+Por conmutatividad (Postulado 9.10) e inverso aditivo, $(-a) + a = 0$:
+$$0 + b = 0 + c.$$
+Finalmente, por el elemento neutro (Postulado 9.8), $b = c$. $\blacksquare$
 
-Sabemos que:
-1. Existe $x \in \mathbb{R}$ tal que $x^2 = 2$ (por el axioma de completitud de $\mathbb{R}$)
-2. $x \notin \mathbb{Q}$ (por el Teorema 6.1)
+**Ejemplo 10.1:**
+Si $5 + x = 5 + 3$, entonces por la ley de cancelación se tiene $x = 3$.
 
-Por lo tanto, $x = \sqrt{2} \in \mathbb{R} \setminus \mathbb{Q} = \mathbb{I}$. $\square$
+### 10.4 El número $\sqrt{2}$ es irracional
+
+**Proposición 10.4:**
+$\sqrt{2} \in \mathbb{I}$.
+
+**Demostración:**
+Por el Teorema 6.1 se sabe que $\sqrt{2} \notin \mathbb{Q}$. Como $\sqrt{2} \in \mathbb{R}$ y $\mathbb{I} = \mathbb{R} \setminus \mathbb{Q}$ (Definición 6.1), se concluye que $\sqrt{2} \in \mathbb{I}$. $\blacksquare$
+
+---
 
 ## 11. Temas Varios de Números Reales
 
