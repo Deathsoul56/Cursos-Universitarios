@@ -1116,270 +1116,141 @@ Las potencias modelan crecimiento exponencial y decaimiento radiactivo; las raí
 
 ---
 
-## 7. Conjuntos infinitos y cardinalidades infinitas [Opcional]
+## 7. Conjuntos infinitos y cardinalidad [Opcional]
 
-### 7.1 Concepto de infinito
+### 7.1 La noción de infinito
 
-**Definición intuitiva:** Un conjunto es **infinito** si no es finito, es decir, si no podemos asignarle un número natural como cardinalidad.
+Muchos conjuntos de interés en matemáticas no pueden contarse con un número natural: los naturales mismos, los enteros, los racionales. La teoría de cardinalidad, desarrollada por Georg Cantor en el siglo XIX, permite comparar el tamaño de conjuntos infinitos de manera rigurosa.
 
-**Ejemplos de conjuntos infinitos:**
-- $\mathbb{N} = \{0, 1, 2, 3, 4, ...\}$ (números naturales)
-- $\mathbb{N}^{*} = \{1, 2, 3, 4, ...\}$ (números naturales sin el cero)
-- $\mathbb{Z} = \{..., -2, -1, 0, 1, 2, ...\}$ (números enteros)
-- $\mathbb{Q}$ (números racionales)
-- $\mathbb{R}$ (números reales)
+> **Nota histórica:** Cantor introdujo la noción de cardinalidad y los números cardinales transfinitos en una serie de artículos entre 1874 y 1897, sentando las bases de la teoría moderna de conjuntos.
 
-### 7.2 Cardinalidad numerable: $\aleph_0$ (Aleph cero)
+**Definición 7.1 (Conjunto infinito):**
+Un conjunto $A$ es **finito** si existe $n \in \mathbb{N}$ y una biyección entre $A$ y $\{0, 1, \dots, n-1\}$. Un conjunto es **infinito** si no es finito.
 
-**Definición 7.1 (Conjunto numerable):**
-Un conjunto infinito $A$ es **numerable** (o **contable**) si existe una biyección entre $A$ y $\mathbb{N}$. En otras palabras, si podemos "listar" sus elementos en una secuencia:
-$$A = \{a_1, a_2, a_3, ...\}$$
-La **cardinalidad** de un conjunto numerable se denota $\aleph_0$ (aleph cero, primera letra del alfabeto hebreo).
+**Ejemplo 7.1:**
+- $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$ y $\mathbb{R}$ son conjuntos infinitos.
+- El conjunto de los números pares $\{2, 4, 6, \dots\}$ es infinito.
 
-> **Observación:** El concepto de **biyecciones** se estudiaría mas en profundidad en la [[Clase 9 - Funciones Parte 2]].
+### 7.2 Conjuntos numerables
 
-**Propiedad fundamental:** $|\mathbb{N}| = |\mathbb{Z}| = |\mathbb{Q}| = \aleph_0$
+Dos conjuntos tienen la misma cardinalidad cuando sus elementos pueden emparejarse mediante una biyección. Esta idea permite comparar conjuntos infinitos sin recurrir al conteo finito.
 
-#### 7.2.1 El Hotel de Hilbert: El infinito materializado
+**Definición 7.2 (Conjunto numerable):**
+Un conjunto infinito $A$ es **numerable** si existe una biyección $f: A \to \mathbb{N}$. Su cardinalidad se denota $\aleph_0$.
 
-El matemático alemán David Hilbert (1862-1943) propuso una paradoja que ilustra las propiedades contraintuitivas de los conjuntos infinitos:
+**Ejemplo 7.2:**
+- $\mathbb{N}$ es numerable mediante la función identidad.
+- Todo conjunto finito no es numerable en este sentido; la notación $\aleph_0$ se reserva para los conjuntos infinitos numerables.
 
-**La paradoja del Hotel de Hilbert:**
+### 7.3 Los enteros son numerables
 
-Imaginemos un hotel con **infinitas habitaciones** numeradas: 1, 2, 3, 4, 5, ... hasta el infinito.
+Aunque $\mathbb{Z}$ incluye los enteros negativos, puede listarse siguiendo un patrón que alterna signos.
 
-**Escenario 1: Llega un nuevo huésped, pero el hotel está lleno**
-
-- **Situación:** Todas las infinitas habitaciones están ocupadas
-- **Problema:** Llega un nuevo huésped y pide una habitación
-- **Solución:** El recepcionista pide a cada huésped que se mueva a la habitación siguiente:
-  - Huésped de habitación 1 → habitación 2
-  - Huésped de habitación 2 → habitación 3
-  - Huésped de habitación $n$ → habitación $n+1$
-- **Resultado:** ¡La habitación 1 queda libre para el nuevo huésped!
-
-> **Interpretación matemática:** Esto demuestra que $\aleph_0 + 1 = \aleph_0$
-
-**Escenario 2: Llegan infinitos nuevos huéspedes**
-
-- **Situación:** El hotel está lleno (infinitas habitaciones ocupadas)
-- **Problema:** Llega un autobús con **infinitos** nuevos huéspedes
-- **Solución:** El recepcionista pide a cada huésped actual que se mueva al **doble** de su número de habitación:
-  - Huésped de habitación 1 → habitación 2
-  - Huésped de habitación 2 → habitación 4
-  - Huésped de habitación 3 → habitación 6
-  - Huésped de habitación $n$ → habitación $2n$
-- **Resultado:** ¡Todas las habitaciones **impares** quedan libres! (1, 3, 5, 7, ...)
-- Los infinitos nuevos huéspedes ocupan las habitaciones 1, 3, 5, 7, ...
-
-> **Interpretación matemática:** Esto demuestra que $\aleph_0 + \aleph_0 = \aleph_0$ y $2 \cdot \aleph_0 = \aleph_0$
-
-**Escenario 3: Llegan infinitos autobuses con infinitos huéspedes cada uno**
-
-- **Situación:** El hotel está lleno
-- **Problema:** Llegan **infinitos** autobuses, cada uno con **infinitos** huéspedes
-- **Solución:** Usar la enumeración de Cantor (ver subsección sobre $\mathbb{Q}$)
-- **Resultado:** ¡Todos pueden ser acomodados!
-
-> **Interpretación matemática:** Esto demuestra que $\aleph_0 \cdot \aleph_0 = \aleph_0$
-
-#### 7.2.2 Paradojas del infinito: Aritmética de $\aleph_0$
-
-El infinito no se comporta como los números finitos. Las siguientes ecuaciones son **verdaderas**:
-
-1. **Suma con constante:** $\aleph_0 + 1 = \aleph_0$
-   - Agregar un elemento a un conjunto infinito no cambia su cardinalidad
-1. **Suma con finitos:** $\aleph_0 + n = \aleph_0$ para cualquier $n \in \mathbb{N}$
-   - Agregar un número finito de elementos no cambia la cardinalidad
-1. **Suma de infinitos:** $\aleph_0 + \aleph_0 = \aleph_0$
-   - La unión de dos conjuntos numerables es numerable
-1. **Producto por constante:** $2 \cdot \aleph_0 = \aleph_0$
-   - "El doble del infinito es infinito"
-1. **Producto de infinitos:** $\aleph_0 \cdot \aleph_0 = \aleph_0$
-   - El producto cartesiano de dos conjuntos numerables es numerable
-1. **Potencia finita:** $\aleph_0^n = \aleph_0$ para $n \in \mathbb{N}$ finito
-   - $\mathbb{N}^2$, $\mathbb{N}^3$, etc., son numerables
-
-> **Advertencia:** Estas propiedades **NO** se cumplen para operaciones como $2^{\aleph_0}$, que es **estrictamente mayor** que $\aleph_0$ (ver Teorema de Cantor sobre el conjunto potencia).
-
-#### 7.2.3 Demostración: $|\mathbb{Z}| = |\mathbb{N}|$
-
-Demostraremos que el conjunto de los enteros tiene la misma cardinalidad que los naturales construyendo una **biyección explícita**.
-
-**Teorema 7.1:** $|\mathbb{Z}| = |\mathbb{N}| = \aleph_0$
+**Teorema 7.1 ($|\mathbb{Z}| = \aleph_0$):**
+Existe una biyección entre $\mathbb{Z}$ y $\mathbb{N}$.
 
 **Demostración:**
-
-Debemos construir una función $f: \mathbb{N} \to \mathbb{Z}$ que sea **biyectiva** (inyectiva y sobreyectiva).
-
-**Idea:** Alternamos entre números positivos y negativos, "emparejando" cada entero con un natural único.
-
-**Definición de la biyección:**
+Definimos $f: \mathbb{N} \to \mathbb{Z}$ mediante
 $$f(n) = \begin{cases}
-0 & \text{si } n = 0 \\
-\frac{n}{2} & \text{si } n > 0 \text{ y } n \text{ es par} \\
--\frac{n+1}{2} & \text{si } n > 0 \text{ y } n \text{ es impar}
+0 & \text{si } n = 0, \\
+\dfrac{n}{2} & \text{si } n > 0 \text{ es par}, \\
+-\dfrac{n+1}{2} & \text{si } n > 0 \text{ es impar}.
 \end{cases}$$
 
-O de manera más compacta:
-$$f(n) = \begin{cases}
-\frac{n}{2} & \text{si } n \text{ es par} \\
--\frac{n+1}{2} & \text{si } n \text{ es impar}
-\end{cases}$$
+Esta función asigna $0 \mapsto 0$, $1 \mapsto -1$, $2 \mapsto 1$, $3 \mapsto -2$, $4 \mapsto 2$, y así sucesivamente.
 
-**Tabla de correspondencia:**
+Para verificar que $f$ es inyectiva, notemos que los naturales pares se envían a enteros no negativos y los impares a enteros negativos; dentro de cada grupo la asignación es claramente inyectiva. Para la sobreyectividad, dado $z \in \mathbb{Z}$, si $z = 0$ se toma $n = 0$; si $z > 0$ se toma $n = 2z$; si $z < 0$ se toma $n = -2z - 1$. Así, $f$ es biyectiva. $\blacksquare$
 
-| $n$ (natural) | $f(n)$ (entero) | Visualización |
-|:-------------:|:---------------:|:-------------:|
-| 0 | 0 | $0 \leftrightarrow 0$ |
-| 1 | -1 | $1 \leftrightarrow -1$ |
-| 2 | 1 | $2 \leftrightarrow 1$ |
-| 3 | -2 | $3 \leftrightarrow -2$ |
-| 4 | 2 | $4 \leftrightarrow 2$ |
-| 5 | -3 | $5 \leftrightarrow -3$ |
-| 6 | 3 | $6 \leftrightarrow 3$ |
-| 7 | -4 | $7 \leftrightarrow -4$ |
-| 8 | 4 | $8 \leftrightarrow 4$ |
-| ... | ... | ... |
+### 7.4 Los racionales son numerables
 
-**Representación en la recta:**
-```
-Naturales:     0   1   2   3   4   5   6   7   8   9  ...
-               ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓
-Enteros:       0  -1   1  -2   2  -3   3  -4   4  -5  ...
-```
+El resultado más destacado es que $\mathbb{Q}$, aunque denso en la recta real, también es numerable.
 
-**Verificación:**
+**Teorema 7.2 ($|\mathbb{Q}| = \aleph_0$):**
+Existe una biyección entre $\mathbb{Q}$ y $\mathbb{N}$.
 
-1. **Inyectividad:** Si $f(n_1) = f(n_2)$, entonces $n_1 = n_2$.
-   - Números pares mapean a positivos, impares a negativos
-   - Dentro de cada caso, la correspondencia es única
-
-2. **Sobreyectividad:** Para cada $z \in \mathbb{Z}$, existe $n \in \mathbb{N}$ tal que $f(n) = z$.
-   - Si $z = 0$, entonces $n = 0$
-   - Si $z > 0$, entonces $n = 2z$ (par)
-   - Si $z < 0$, entonces $n = -2z - 1$ (impar)
-
-Por lo tanto, $f$ es biyectiva, y $|\mathbb{Z}| = |\mathbb{N}| = \aleph_0$. $\square$
-
-> **Observación profunda:** Aunque $\mathbb{Z}$ parece "dos veces más grande" que $\mathbb{N}$ (tiene negativos y positivos), podemos **emparejar** perfectamente cada entero con un natural único. Esto es la esencia de la equipotencia: dos conjuntos tienen la misma cardinalidad si sus elementos pueden ponerse en correspondencia uno a uno.
-#### 7.2.4 Los racionales son numerables: El método diagonal de Cantor
-
-**Teorema 7.2:** $|\mathbb{Q}| = |\mathbb{N}| = \aleph_0$
-
-**Demostración (Enumeración diagonal de Cantor):**
-
-Georg Cantor demostró que los racionales positivos pueden "listarse" usando un método ingenioso.
-
-**Paso 1:** Organizamos los racionales positivos en una **tabla infinita** donde:
-- La fila $n$ tiene denominador $n$
-- La columna $m$ tiene numerador $m$
+**Demostración (enumeración diagonal de Cantor):**
+Basta construir una enumeración de $\mathbb{Q}$. Organizamos los racionales positivos en una tabla infinita donde la fila $q$ y la columna $p$ contienen $\frac{p}{q}$:
 
 ```
-      1      2      3      4      5      6     ...
-    ┌────────────────────────────────────────────
- 1  │ 1/1    2/1    3/1    4/1    5/1    6/1   ...
-    │
- 2  │ 1/2    2/2    3/2    4/2    5/2    6/2   ...
-    │
- 3  │ 1/3    2/3    3/3    4/3    5/3    6/3   ...
-    │
- 4  │ 1/4    2/4    3/4    4/4    5/4    6/4   ...
-    │
- 5  │ 1/5    2/5    3/5    4/5    5/5    6/5   ...
-    │
-...  ...    ...    ...    ...    ...    ...
+      1      2      3      4      ...
+ 1  1/1    2/1    3/1    4/1    ...
+ 2  1/2    2/2    3/2    4/2    ...
+ 3  1/3    2/3    3/3    4/3    ...
+ ...
 ```
 
-> **Observación:** Cada racional positivo $\frac{p}{q}$ aparece en la posición (fila $q$, columna $p$).
+Recorriendo la tabla por diagonales en zigzag y omitiendo las fracciones repetidas, se obtiene una lista de todos los racionales positivos. Intercalando el cero y los racionales negativos se construye una enumeración completa de $\mathbb{Q}$. Por tanto, $|\mathbb{Q}| = \aleph_0$. $\blacksquare$
 
-**Paso 2:** Recorremos la tabla en **diagonal**, siguiendo este patrón en zigzag:
+> **Observación:** El argumento diagonal convierte una tabla bidimensional infinita en una secuencia unidimensional. La misma idea subyace a la demostración de que $\mathbb{R}$ no es numerable, aunque con conclusión opuesta.
 
-```
-      1      2      3      4      5      6
-    ┌────────────────────────────────────
- 1  │ 1/1 →  2/1    3/1 →  4/1    5/1 → ...
-    │  ↓      ↗      ↓      ↗      ↓
- 2  │ 1/2    2/2 →  3/2    4/2 →  5/2  ...
-    │  ↓      ↗      ↓      ↗
- 3  │ 1/3    2/3    3/3 →  4/3    5/3  ...
-    │  ↓      ↗      ↓
- 4  │ 1/4    2/4    3/4    4/4    5/4  ...
-    │  ↓      ↗
- 5  │ 1/5    2/5    3/5    4/5    5/5  ...
-```
+### 7.5 El hotel de Hilbert
 
-**Paso 3:** Enumeración resultante (omitiendo repetidos como $\frac{2}{2} = \frac{1}{1}$):
-$$\mathbb{Q}^+ = \left\{\frac{1}{1}, \frac{2}{1}, \frac{1}{2}, \frac{1}{3}, \frac{3}{1}, \frac{4}{1}, \frac{3}{2}, \frac{2}{3}, \frac{1}{4}, \frac{1}{5}, ...\right\}$$
+David Hilbert propuso una analogía que ilustra las propiedades de los conjuntos infinitos numerables.
 
-**Paso 4:** Para incluir racionales negativos y cero, intercalamos:
-$$\mathbb{Q} = \left\{0, \frac{1}{1}, -\frac{1}{1}, \frac{2}{1}, -\frac{2}{1}, \frac{1}{2}, -\frac{1}{2}, \frac{1}{3}, -\frac{1}{3}, ...\right\}$$
+> **Escenario 1:** Un hotel con infinitas habitaciones numeradas $1, 2, 3, \dots$ está lleno. Si llega un nuevo huésped, basta pedir a cada huésped que se mude a la habitación siguiente: el de la habitación $n$ pasa a la $n+1$. La habitación $1$ queda libre. Esto refleja que $\aleph_0 + 1 = \aleph_0$.
 
-Por lo tanto, $\mathbb{Q}$ puede ser listado en una secuencia, lo que significa que $|\mathbb{Q}| = \aleph_0$. $\square$
+> **Escenario 2:** Si llegan infinitos nuevos huéspedes, cada huéspede actual se muda a la habitación $2n$, dejando libres las impares. Esto muestra que $\aleph_0 + \aleph_0 = \aleph_0$.
 
-> **Observación crucial:** Este método **diagonal** permite convertir una tabla bidimensional (infinita × infinita) en una lista unidimensional (secuencia). Es uno de los resultados más sorprendentes de Cantor: aunque hay "infinitos infinitos" de racionales, podemos contarlos uno por uno.
+> **Escenario 3:** Si llegan infinitos autobuses con infinitos pasajeros cada uno, se puede acomodar a todos usando una enumeración de pares de naturales, lo que ilustra que $\aleph_0 \cdot \aleph_0 = \aleph_0$.
 
-> **Nota histórica:** Cantor usó una técnica similar (el **argumento diagonal**) para demostrar lo contrario sobre $\mathbb{R}$: que los reales **no** son numerables (ver Sección 8.1). Ambos métodos diagonales son fundamentales en teoría de conjuntos.
+### 7.6 Aritmética básica de $\aleph_0$
+
+Las operaciones con el infinito numerable producen resultados que difieren de la aritmética finita.
+
+**Proposición 7.1 (Aritmética de $\aleph_0$):**
+Para cualquier $n \in \mathbb{N}$ finito se cumple:
+1. $\aleph_0 + n = \aleph_0$.
+2. $\aleph_0 + \aleph_0 = \aleph_0$.
+3. $n \cdot \aleph_0 = \aleph_0$.
+4. $\aleph_0 \cdot \aleph_0 = \aleph_0$.
+5. $\aleph_0^n = \aleph_0$ para todo $n \in \mathbb{N}$.
+
+> **Advertencia:** Estas identidades no se extienden a la potencia $2^{\aleph_0}$, que es estrictamente mayor que $\aleph_0$, como se demuestra en la Sección 8.
 
 ---
 
-## 8. Cardinalidades infinitas: $\aleph_0$ y $\aleph_1$ (Opcional)
+## 8. Cardinalidad del continuo [Opcional]
 
-### 8.1 Cardinalidad de los reales
+### 8.1 Los reales no son numerables
 
-**Teorema 8.1 (Teorema de Cantor, 1874):**
-El conjunto $\mathbb{R}$ **no es numerable**: no existe ninguna biyección entre $\mathbb{N}$ y $\mathbb{R}$.
+Cantor demostró que, a pesar de que $\mathbb{Q}$ es numerable, $\mathbb{R}$ tiene una cardinalidad estrictamente mayor.
 
-**Idea de la demostración (Argumento diagonal de Cantor):**
-Supongamos que $\mathbb{R}$ es numerable. Entonces podemos listar todos los reales en $[0,1]$ como una secuencia infinita:
-$$r_1 = 0.a_{11}a_{12}a_{13}...$$
-$$r_2 = 0.a_{21}a_{22}a_{23}...$$
-$$r_3 = 0.a_{31}a_{32}a_{33}...$$
-$$...$$
+**Teorema 8.1 (Teorema de Cantor):**
+El conjunto $\mathbb{R}$ no es numerable.
 
-Construimos un nuevo número $r = 0.b_1b_2b_3...$ donde cada dígito $b_i$ es diferente de $a_{ii}$ (el i-ésimo dígito de $r_i$). Por ejemplo, si $a_{ii} = 5$, tomamos $b_i = 6$.
+**Demostración (argumento diagonal):**
+Supongamos, por contradicción, que existe una biyección entre $\mathbb{N}$ y $[0,1]$. Entonces podemos listar todos los números de $[0,1]$ como
+$$r_1 = 0.a_{11} a_{12} a_{13} \dots,$$
+$$r_2 = 0.a_{21} a_{22} a_{23} \dots,$$
+$$r_3 = 0.a_{31} a_{32} a_{33} \dots,$$
+$$\vdots$$
+Definimos $r = 0.b_1 b_2 b_3 \dots$ eligiendo cada dígito $b_i$ de modo que $b_i \neq a_{ii}$ y $b_i \neq 9$ para evitar ambigüedades decimales. Entonces $r \in [0,1]$ difiere de $r_i$ en el $i$-ésimo dígito, así que $r$ no aparece en la lista. Esto contradice la suposición de que la lista era exhaustiva. Por tanto, $\mathbb{R}$ no es numerable. $\blacksquare$
 
-Entonces $r$ es distinto de **todos** los números en la lista (difiere de $r_i$ en el i-ésimo dígito), lo cual contradice que la lista contenía todos los reales. $\square$
+### 8.2 La cardinalidad del continuo
 
 **Definición 8.1 (Cardinalidad del continuo):**
-La cardinalidad de $\mathbb{R}$ se denota $\mathfrak{c}$ (letra gótica "c" de *continuo*) y se cumple $\mathfrak{c} = 2^{\aleph_0}$. La notación $\aleph_1$ se reserva para el siguiente cardinal infinito después de $\aleph_0$; la igualdad $\mathfrak{c} = \aleph_1$ es la **Hipótesis del Continuo**, independiente de ZFC.
+La cardinalidad de $\mathbb{R}$ se denota $\mathfrak{c}$ y se cumple $\mathfrak{c} = 2^{\aleph_0}$.
 
-**Jerarquía de infinitos:**
-$$|\mathbb{N}| = \aleph_0 < |\mathbb{R}| = \mathfrak{c} = 2^{\aleph_0}$$
+> **Observación:** La igualdad $\mathfrak{c} = \aleph_1$, conocida como Hipótesis del Continuo, afirma que no hay cardinales entre $\aleph_0$ y $\mathfrak{c}$. Kurt Gödel y Paul Cohen demostraron que esta hipótesis es independiente de los axiomas de ZFC: no puede demostrarse ni refutarse dentro del sistema axiomático estándar.
 
-> **Observación profunda:** Existen "tamaños" de infinito. El infinito de los reales es **estrictamente mayor** que el infinito de los naturales. Cantor demostró que existe una jerarquía infinita de cardinalidades:
-> $$\aleph_0 < \aleph_1 < \aleph_2 < \aleph_3 < ...$$
+**Ejemplo 8.1:**
+- $|\mathbb{N}| = |\mathbb{Z}| = |\mathbb{Q}| = \aleph_0$.
+- $|\mathbb{R}| = \mathfrak{c} = 2^{\aleph_0} > \aleph_0$.
 
-### 8.2 Paradojas de conjuntos infinitos
+### 8.3 Biyecciones entre intervalos y la recta
 
-**Propiedad sorprendente:** Los conjuntos infinitos pueden tener la **misma cardinalidad** que algunos de sus subconjuntos propios. Por ejemplo:
-$$|\mathbb{N}| = |\{2, 4, 6, 8, ...\}| = \aleph_0$$
-(los números pares tienen "la misma cantidad" de elementos que todos los naturales)
+**Teorema 8.2:**
+El intervalo abierto $(0,1)$ tiene la misma cardinalidad que $\mathbb{R}$.
 
-De hecho:
-$$|\mathbb{N}| = |\mathbb{Z}| = |\mathbb{Q}| = \aleph_0$$
+**Demostración:**
+La función $f: (0,1) \to \mathbb{R}$ definida por
+$$f(x) = \tan\left(\pi\left(x - \frac{1}{2}\right)\right)$$
+es biyectiva: es continua, estrictamente creciente, y sus límites en los extremos son $-\infty$ y $+\infty$. Por tanto, $|(0,1)| = |\mathbb{R}| = \mathfrak{c}$. $\blacksquare$
 
-Pero:
-$$|\mathbb{R}| = \mathfrak{c} > \aleph_0$$
+**Ejemplo 8.2:**
+Asimismo, el círculo unitario y la recta real tienen la misma cardinalidad, como se muestra mediante la proyección estereográfica.
 
-**Mención al problema del continuo:** La **Hipótesis del Continuo** de Cantor afirma que no existe ningún conjunto cuya cardinalidad esté **estrictamente entre** $\aleph_0$ y $2^{\aleph_0}$, o equivalentemente, que $\mathfrak{c} = \aleph_1$. Kurt Gödel (1940) y Paul Cohen (1963) demostraron que esta hipótesis es **independiente** de los axiomas de la teoría de conjuntos (ZFC): no se puede demostrar ni refutar dentro del sistema axiomático estándar.
-
-### 8.3 Biyecciones sorprendentes
-
-**Propiedad 8.1:** El intervalo $[0, 1]$ tiene la **misma cardinalidad** que toda la recta real $(-\infty, \infty)$.
-
-**Demostración (construcción de biyección):**
-Consideremos la función:
-$$f: (0,1) \to \mathbb{R}, \quad f(x) = \tan\left(\pi\left(x - \frac{1}{2}\right)\right)$$
-
-Esta función es una biyección (se puede verificar que es inyectiva y sobreyectiva). Por lo tanto:
-$$|(0,1)| = |\mathbb{R}| = \mathfrak{c}$$
-
-> **Interpretación:** En un segmento de longitud 1 hay "tantos puntos" como en toda la recta infinita. ¡El infinito tiene propiedades contraintuitivas!
-
-**Propiedad 8.2:** El círculo unitario tiene la misma cardinalidad que la recta real.
-
-**Idea:** Podemos proyectar estereográficamente el círculo sobre la recta, estableciendo una biyección.
+> **Observación:** Estos ejemplos muestran que la noción de cardinalidad no respeta la intuición geométrica de longitud o tamaño: un segmento finito contiene tantos puntos como toda la recta.
 
 ---
 
