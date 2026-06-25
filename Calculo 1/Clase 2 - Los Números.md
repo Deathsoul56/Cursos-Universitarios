@@ -202,13 +202,15 @@ $$|\mathbb{N}| < |\mathcal{P}(\mathbb{N})| < |\mathcal{P}(\mathcal{P}(\mathbb{N}
 
 ## 2. Símbolos lógicos y lenguaje matemático
 
-Para expresar ideas matemáticas con precisión, usamos símbolos lógicos estándar:
+Las matemáticas usan un lenguaje simbólico para expresar ideas con precisión, brevedad y universalidad. Aprender a leer estos símbolos es tan importante como aprender a leer ecuaciones: permite traducir definiciones, teoremas y demostraciones de manera inequívoca.
 
 ### 2.1 Símbolos lógicos y de conjuntos
 
+Los símbolos lógicos y de pertenencia aparecen en casi toda definición y teorema. La siguiente tabla resume los más frecuentes.
+
 |      Símbolo      | Significado                   | Ejemplo                              | Lectura                                                       |
 | :---------------: | :---------------------------- | :----------------------------------- | :------------------------------------------------------------ |
-|     $\forall$     | Para todo, para cada          | $\forall x \in \mathbb{N}, x \geq 1$ | "Para todo x natural, x es mayor o igual a 1"                 |
+|     $\forall$     | Para todo, para cada          | $\forall x \in \mathbb{N}, x \geq 0$ | "Para todo x natural, x es mayor o igual a 0"                 |
 |     $\exists$     | Existe (al menos uno)         | $\exists x \in \mathbb{R}: x^2 = 2$  | "Existe un real x tal que x² = 2"                             |
 |   $\exists!$      | Existe único                  | $\exists! x \in \mathbb{R}: x^2 = 4 \land x > 0$ | "Existe un único real positivo x tal que x² = 4" |
 |    $\nexists$     | No existe                     | $\nexists x \in \mathbb{Q}: x^2 = 2$ | "No existe un racional x tal que x² = 2"                      |
@@ -226,6 +228,8 @@ Para expresar ideas matemáticas con precisión, usamos símbolos lógicos está
 |    $\supseteq$    | Superconjunto (puede ser igual) | $B \supseteq A$                    | "B contiene a A (posiblemente B = A)"                         |
 
 ### 2.2 Símbolos de orden y comparación
+
+Para comparar cantidades y expresar relaciones de igualdad o desigualdad se usan los siguientes símbolos.
 
 |  Símbolo   | Significado                      | Ejemplo                  | Lectura                               |
 | :--------: | :------------------------------- | :----------------------- | :------------------------------------ |
@@ -247,58 +251,43 @@ Para expresar ideas matemáticas con precisión, usamos símbolos lógicos está
 
 ### 2.3 Terminología matemática fundamental
 
-En matemáticas, clasificamos afirmaciones según su papel y nivel de importancia:
+En matemáticas se clasifican las afirmaciones según su papel y su importancia relativa. Conocer esta terminología ayuda a entender qué se está afirmando y qué tipo de justificación se espera.
 
 **Definición 2.1 (Axioma):**
-Un **axioma** (o **postulado**) es una proposición que se acepta como **verdadera sin demostración**. Son los fundamentos sobre los cuales se construye una teoría matemática.
+Un **axioma** (o **postulado**) es una proposición que se acepta como verdadera sin demostración y que sirve de fundamento para una teoría matemática.
 
-**Ejemplos:**
-- "Dos puntos determinan una única recta" (axioma de geometría euclidiana)
-- Los axiomas de Peano para los números naturales
-- Los axiomas de cuerpo para $\mathbb{R}$ (ver Sección 9)
+**Ejemplo 2.1:**
+- "Dos puntos determinan una única recta" (axioma de geometría euclidiana).
+- Los axiomas de Peano para los números naturales.
+- Los axiomas de cuerpo para $\mathbb{R}$ (ver Sección 9).
 
 **Definición 2.2 (Teorema):**
-Un **teorema** es una proposición matemática **importante** que ha sido **demostrada** a partir de axiomas y teoremas previos. Representa un resultado fundamental o de gran utilidad.
+Un **teorema** es una proposición matemática importante que ha sido demostrada a partir de axiomas y resultados previos.
 
-**Características:**
-- Requiere demostración rigurosa
-- Tiene importancia teórica o práctica significativa
-- Suele nombrarse según su autor o tema (Teorema de Pitágoras, Teorema de Cantor)
-
-**Ejemplos en este documento:**
-- Teorema 5.2: Caracterización decimal de racionales
-- Teorema 7.1: $|\mathbb{Z}| = |\mathbb{N}|$
-- Teorema 8.1: Los reales no son numerables (Teorema de Cantor)
+**Ejemplo 2.2:**
+- Teorema 5.1: Caracterización decimal de racionales.
+- Teorema 7.1: $|\mathbb{Z}| = |\mathbb{N}|$.
+- Teorema 8.1: Los reales no son numerables (Teorema de Cantor).
 
 **Definición 2.3 (Lema):**
-Un **lema** es una proposición **auxiliar** que se demuestra principalmente para facilitar la demostración de un teorema más importante. Es un "resultado intermedio".
+Un **lema** es una proposición auxiliar que se demuestra para facilitar la demostración de un teorema más importante.
 
-**Características:**
-- Tiene demostración propia
-- Su importancia radica en ser un paso hacia un resultado mayor
-- Algunos lemas resultan ser tan útiles que adquieren importancia propia
-
-**Ejemplo famoso:**
-- Lema de Zorn (teoría de conjuntos)
-- Lema de Fatou (análisis matemático)
+**Ejemplo 2.3:**
+- Lema de Euclides: si un primo divide un producto, divide algún factor.
+- Lema de Zorn (teoría de conjuntos).
 
 **Definición 2.4 (Corolario):**
-Un **corolario** es una proposición que se deduce de manera **directa y casi inmediata** de un teorema o proposición anterior. Es una "consecuencia fácil".
+Un **corolario** es una proposición que se deduce de manera directa de un teorema o proposición anterior.
 
-**Características:**
-- Su demostración es breve y suele ser inmediata
-- Deriva naturalmente de un resultado previo
-- Puede ser muy útil en aplicaciones
-
-**Ejemplo en este documento:**
-- Corolario del Teorema 5.2: Los números con expansión decimal infinita no periódica son irracionales
+**Ejemplo 2.4:**
+- Corolario del Teorema 5.1: Los números con expansión decimal infinita no periódica son irracionales.
 
 **Definición 2.5 (Proposición):**
-Una **proposición** es un resultado matemático demostrado, pero de menor importancia o generalidad que un teorema. Se usa cuando el resultado es útil pero no suficientemente fundamental para llamarse teorema.
+Una **proposición** es un resultado matemático demostrado, pero de menor importancia o generalidad que un teorema.
 
-**Ejemplos en este documento:**
-- Proposición 3.1: Propiedades de la suma en $\mathbb{N}$
-- Proposición 10.1: $1 + 0 = 1$
+**Ejemplo 2.5:**
+- Proposición 3.1: Propiedades de la suma en $\mathbb{N}$.
+- Proposición 10.1: $1 + 0 = 1$.
 
 **Jerarquía conceptual:**
 ```
@@ -311,48 +300,25 @@ Proposición (resultado menor)
 
 > **Observación:** En la práctica, la distinción entre teorema, proposición y lema no siempre es estricta. Lo que un autor llama "proposición" otro podría llamar "teorema" si lo considera suficientemente importante. Sin embargo, los axiomas y corolarios tienen roles más precisamente definidos.
 
-### 2.6 El alfabeto griego: aliado esencial de las matemáticas
+### 2.4 El alfabeto griego
 
-**¿Por qué las letras griegas en matemáticas?**
+El alfabeto latino solo ofrece 26 letras, una cantidad insuficiente para nombrar la diversidad de variables, parámetros, funciones y constantes que aparecen en matemáticas. El alfabeto griego aporta 24 símbolos más, muchos de los cuales adquirieron significados casi universales gracias al trabajo de Leonhard Euler en el siglo XVIII. Por esta razón, resulta indispensable reconocer su pronunciación y sus usos más frecuentes.
 
-El **alfabeto griego** es una herramienta indispensable en matemáticas, ciencias e ingeniería. Su uso extendido se debe a varias razones históricas y prácticas:
+**Distinción conceptual:**
+- Letras latinas ($x, y, z$): típicamente variables o coordenadas.
+- Letras griegas ($\alpha, \beta, \theta$): ángulos, parámetros, funciones especiales.
 
-1. **Expansión del vocabulario simbólico:** El alfabeto latino tiene solo 26 letras, insuficientes para representar la vasta cantidad de variables, constantes, parámetros y funciones que requieren las matemáticas modernas. El alfabeto griego proporciona 24 símbolos adicionales (48 si contamos mayúsculas y minúsculas distintas).
+**Convenciones universales:**
+- $\pi$: razón entre la circunferencia y el diámetro, $\pi\approx 3{,}14159\ldots$
+- $\Sigma$ (sigma mayúscula): suma de una serie.
+- $\Delta$ (delta mayúscula): diferencia o cambio.
+- $\epsilon$ (épsilon): cantidad arbitrariamente pequeña, típica en límites.
+- $\theta, \phi$: ángulos en trigonometría.
+- $\lambda$: valores propios, longitud de onda.
+- $\mu$: media de una distribución, coeficiente de fricción.
+- $\sigma$: desviación estándar.
 
-2. **Distinción conceptual:** Las letras griegas permiten diferenciar tipos de objetos matemáticos:
-   - Letras latinas ($x, y, z$): típicamente variables o coordenadas
-   - Letras griegas ($\alpha, \beta, \theta$): ángulos, parámetros, funciones especiales
-   - Esto ayuda a la legibilidad y comprensión inmediata del tipo de objeto
-
-3. **Convenciones universales:** Ciertas letras griegas tienen significados casi universales en matemáticas:
-   - $\pi$ (pi): razón circunferencia/diámetro ≈ 3.14159...
-   - $\Sigma$ (sigma mayúscula): suma de una serie
-   - $\Delta$ (delta mayúscula): diferencia o cambio
-   - $\epsilon$ (épsilon): número infinitesimal, típicamente en límites
-   - $\theta, \phi$ (theta, phi): ángulos en trigonometría
-   - $\lambda$ (lambda): valores propios, longitud de onda
-   - $\mu$ (mu): media de una distribución, coeficiente de fricción
-   - $\sigma$ (sigma minúscula): desviación estándar
-
-**Historia del uso de letras griegas en matemáticas:**
-
-- **Antigüedad:** Los matemáticos griegos (Euclides, Pitágoras, Arquímedes) usaban su propio alfabeto naturalmente para notación geométrica y numérica.
-
-- **Edad Media:** Durante siglos, las matemáticas se escribieron principalmente en latín. El álgebra árabe introdujo notaciones alfanuméricas, pero sin letras griegas.
-
-- **Siglo XVI-XVII:** Con el Renacimiento y la recuperación de textos griegos clásicos, las letras griegas comenzaron a reaparecer en textos matemáticos europeos.
-
-- **Siglo XVIII:** Leonhard Euler popularizó masivamente el uso de letras griegas en sus obras. Él estableció muchas de las convenciones que usamos hoy, incluyendo:
-  - $\pi$ para la constante del círculo (1737)
-  - $e$ para la base del logaritmo natural (letra latina, pero Euler la consagró)
-  - $\Sigma$ para sumatorias
-  - $i$ para la unidad imaginaria
-
-- **Siglos XIX-XX:** La notación griega se estandarizó completamente con el desarrollo de:
-  - Análisis matemático (límites, derivadas, integrales)
-  - Física teórica (mecánica, termodinámica, relatividad, mecánica cuántica)
-  - Estadística y probabilidad
-  - Teoría de conjuntos (Cantor usó $\aleph$ - alef hebrea - para cardinales infinitos)
+> **Nota histórica:** Leonhard Euler popularizó muchas de estas convenciones en el siglo XVIII, como $\pi$ para la constante circular (1737) y $\Sigma$ para sumatorias. Durante los siglos XIX y XX la notación griega se estandarizó en el análisis matemático, la física teórica, la estadística y la probabilidad.
 
 **El alfabeto griego completo:**
 
@@ -400,7 +366,7 @@ El **alfabeto griego** es una herramienta indispensable en matemáticas, ciencia
 >    - Mayúsculas: $\Gamma, \Delta, \Theta, \Lambda, \Xi, \Pi, \Sigma, \Phi, \Psi, \Omega$
 >    - Minúsculas: $\alpha, \beta, \gamma, \delta, \epsilon, \zeta, \theta, \lambda, \mu, \pi, \rho, \sigma, \tau, \phi, \omega$
 
-> **Recomendación práctica:** Al estudiar matemáticas, es recomendable familiarizarse con la pronunciación y escritura de las letras griegas. Son tan fundamentales como los números arábigos, y saber leerlas y escribirlas correctamente es esencial para la comunicación matemática efectiva.
+> **Recomendación práctica:** Es recomendable familiarizarse con la pronunciación y escritura de las letras griegas, ya que resultan imprescindibles para la lectura y la comunicación matemática efectivas.
 
 ---
 
