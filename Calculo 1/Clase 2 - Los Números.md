@@ -828,116 +828,106 @@ Como $\gcd(4,5) = 1$, la fracción $\frac{4}{5}$ es irreducible.
 
 ## 5. Los números racionales: $\mathbb{Q}$
 
-### 5.1 Motivación: El problema de la división
+### 5.1 Motivación y definición
 
-**Definición 5.1 (División):**
-Decimos que $a$ es divisible por $b$ (con $b \neq 0$) si:
-$$\exists c \in \mathbb{Z} : a = b \cdot c$$
-Y escribimos $c = a \div b$ o $c = \frac{a}{b}$.
+En $\mathbb{Z}$ la ecuación $2x = 3$ no tiene solución, pues no existe un entero cuyo producto por $2$ sea $3$. La división exacta no siempre es posible en los enteros; para resolver ecuaciones de la forma $bx = a$ con $b \neq 0$ sin restricciones, se amplía $\mathbb{Z}$ al conjunto de los números racionales.
 
-por ejemplo
-$$12=3\cdot4 \Rightarrow 12\div4=3$$
+> **Nota histórica:** Los egipcios ya usaban fracciones unitarias; la notación moderna $\frac{a}{b}$ se consolidó en la India y en el mundo árabe medieval. El conjunto $\mathbb{Q}$ se formalizó en el siglo XIX con la aritmetización del análisis.
 
-**El problema:** La ecuación $2 \cdot x = 3$ **no tiene solución** en $\mathbb{Z}$, porque $\frac{3}{2} \notin \mathbb{Z}$.
-
-**Problema general:** La división no siempre está definida en $\mathbb{Z}$:
-$$\frac{a}{b} \in \mathbb{Z} \quad \text{solo si } b \mid a \quad \text{($b$ divide a $a$)}$$
-
-Para resolver este problema, **ampliamos** $\mathbb{Z}$ a $\mathbb{Q}$.
-### 5.2 Definición y propiedades
-
-**Definición 5.2 (Números racionales):**
-$$\mathbb{Q} = \left\{\frac{p}{q} : p,q \in \mathbb{Z}, q \neq 0\right\}$$
+**Definición 5.1 (Números racionales):**
+El conjunto de los **números racionales** es
+$$\mathbb{Q} = \left\{ \frac{p}{q} : p, q \in \mathbb{Z},\ q \neq 0 \right\}.$$
 El símbolo $\mathbb{Q}$ proviene del inglés *quotient* (cociente).
 
-> **Interpretación:** Un número racional es una **fracción** $\frac{p}{q}$ donde $p$ es un entero (numerador) y $q$ es un natural (denominador).
-> Cuando tenemos el caso donde $\gcd(p,q)=1$ decimos que el numero ${p}/{q}$ es una fracción irreducible.
+Un racional $\frac{p}{q}$ está en **forma irreducible** si $\gcd(p,q) = 1$ y $q > 0$.
 
-Si tenemos la fracción ${p'}/{q'}$ y además $\gcd(p',q')=k$ podemos reducir esta fracción a otra fracción irreducible de la siguiente manera:
-$$\frac{p'}{q'} \cdot 1 = \frac{p'}{q'} \cdot \frac{k}{k}=\frac{p}{q} \quad \text{con} \quad p = \frac{p'}{k} ,\quad q=\frac{q'}{k}$$
-Decimos que $p/q$ es la forma canónica o irreducible de $p'/q'$
+**Ejemplo 5.1:**
+- $\frac{1}{2},\ -\frac{3}{4},\ \frac{7}{5},\ \frac{0}{1} = 0,\ \frac{5}{1} = 5$ son números racionales.
+- $\frac{2}{4}$ no está en forma irreducible; simplificando se obtiene $\frac{1}{2}$.
 
-expresada en **forma irreducible** (simplificada).
+> **Observación:** Todo entero es racional, pues $n = \frac{n}{1}$. Por tanto, $\mathbb{Z} \subset \mathbb{Q}$.
 
-**Ejemplos:**
-- $\frac{1}{2}, \frac{-3}{4}, \frac{7}{5}, \frac{0}{1} = 0, \frac{5}{1} = 5$
-- $\frac{2}{4}$ no está en forma estándar; se simplifica a $\frac{1}{2}$
+### 5.2 Operaciones con fracciones
 
-**Propiedad fundamental:** En $\mathbb{Q}$, la división **siempre** está definida (excepto por cero):
-$$\forall a \in \mathbb{Q}, \forall b \in \mathbb{Q} \setminus \{0\}, \quad \exists! \, c \in \mathbb{Q} : a \div b = c$$
+Las fracciones representan partes de una unidad, y las operaciones entre ellas extienden las operaciones entre enteros.
 
-### 5.3 Representación decimal de números racionales
+**Definición 5.2 (Operaciones con fracciones):**
+Dadas fracciones $\frac{a}{b}, \frac{c}{d} \in \mathbb{Q}$ con $b, d \neq 0$:
+- **Suma y resta:** $\dfrac{a}{b} \pm \dfrac{c}{d} = \dfrac{ad \pm bc}{bd}$.
+- **Multiplicación:** $\dfrac{a}{b} \cdot \dfrac{c}{d} = \dfrac{ac}{bd}$.
+- **División:** $\dfrac{a}{b} \div \dfrac{c}{d} = \dfrac{a}{b} \cdot \dfrac{d}{c} = \dfrac{ad}{bc}$, siempre que $c \neq 0$.
 
-Todo número racional puede expresarse como una **expansión decimal** mediante la división del numerador entre el denominador. Existen tres tipos de representaciones:
+> **Observación:** Para sumar fracciones conviene usar el mínimo común múltiplo de los denominadores, aunque la fórmula anterior siempre es válida.
 
-#### 5.3.1 Decimal exacto (o finito)
+**Ejemplo 5.2:**
+- $\dfrac{2}{3} + \dfrac{1}{4} = \dfrac{8 + 3}{12} = \dfrac{11}{12}$.
+- $\dfrac{5}{6} - \dfrac{1}{2} = \dfrac{5 - 3}{6} = \dfrac{2}{6} = \dfrac{1}{3}$.
+- $\dfrac{3}{5} \cdot \dfrac{10}{9} = \dfrac{30}{45} = \dfrac{2}{3}$.
+- $\dfrac{4}{7} \div \dfrac{2}{5} = \dfrac{4}{7} \cdot \dfrac{5}{2} = \dfrac{20}{14} = \dfrac{10}{7}$.
+
+**Proposición 5.1 (Propiedades algebraicas de $\mathbb{Q}$):**
+El conjunto $(\mathbb{Q}, +, \cdot)$ es un **cuerpo ordenado**. En particular, para cualesquiera $x, y, z \in \mathbb{Q}$ se cumplen:
+1. **Cerradura, asociatividad y conmutatividad** de la suma y el producto.
+2. **Elementos neutros:** $x + 0 = x$ y $x \cdot 1 = x$.
+3. **Inverso aditivo y multiplicativo:** existe $-x \in \mathbb{Q}$ y, si $x \neq 0$, existe $x^{-1} \in \mathbb{Q}$.
+4. **Distributividad:** $x \cdot (y + z) = x \cdot y + x \cdot z$.
+
+> **Nota:** La verificación formal de que $(\mathbb{Q}, +, \cdot)$ es un cuerpo se obtiene a partir de la Definición 5.2; el desarrollo detallado corresponde a cursos de álgebra abstracta.
+
+### 5.3 Decimales exactos
+
+La representación decimal de un racional se obtiene al dividir numerador entre denominador. El primer caso es aquel en que el proceso termina.
 
 **Definición 5.3 (Decimal exacto):**
-Un número racional tiene **representación decimal exacta** si al dividir el numerador entre el denominador, el proceso termina (resto cero) después de un número finito de dígitos.
+Un número racional $\frac{p}{q}$ en forma irreducible tiene **representación decimal exacta** si al dividir $p$ entre $q$ se obtiene resto cero después de un número finito de pasos.
 
-**Caracterización:** Un número racional $\frac{p}{q}$ (en forma irreducible) tiene representación decimal exacta **si y solo si** el denominador $q$ tiene únicamente factores primos 2 y/o 5.
+**Proposición 5.2 (Caracterización de decimales exactos):**
+Un racional $\frac{p}{q}$ en forma irreducible tiene expansión decimal exacta si y solo si $q = 2^a 5^b$ para algunos $a, b \in \mathbb{N}_0$.
 
-**Formalmente:** $\frac{p}{q}$ es decimal exacto $\Leftrightarrow q = 2^a \cdot 5^b$ para algunos $a, b \in \mathbb{N}_0$
+**Demostración (idea intuitiva):**
+Si $q = 2^a 5^b$, multiplicando numerador y denominador por la potencia adecuada de $2$ o $5$ se obtiene una fracción con denominador $10^n$, que se escribe directamente como un decimal finito. Recíprocamente, si el decimal termina, el número es de la forma $\frac{N}{10^n}$; al reducir, el denominador solo puede contener factores $2$ y $5$. $\square$
 
-**Ejemplos 5.1:**
-- $\frac{1}{2} = 0.5$ (denominador: $2^1$)
-- $\frac{3}{4} = 0.75$ (denominador: $2^2 = 4$)
-- $\frac{7}{8} = 0.875$ (denominador: $2^3 = 8$)
-- $\frac{13}{20} = 0.65$ (denominador: $2^2 \cdot 5 = 20$)
-- $\frac{3}{5} = 0.6$ (denominador: $5^1$)
-- $\frac{17}{25} = 0.68$ (denominador: $5^2 = 25$)
-- $\frac{23}{40} = 0.575$ (denominador: $2^3 \cdot 5 = 40$)
+**Ejemplo 5.3:**
+- $\frac{1}{2} = 0.5$ (denominador $2$).
+- $\frac{13}{20} = 0.65$ (denominador $2^2 \cdot 5$).
+- $\frac{7}{25} = 0.28$ (denominador $5^2$).
 
-#### 5.3.2 Decimal periódico puro
+### 5.4 Decimales periódicos puros
+
+Cuando el denominador no contiene factores $2$ ni $5$, la expansión decimal no termina pero repite un bloque indefinidamente.
 
 **Definición 5.4 (Decimal periódico puro):**
-Un número racional tiene **representación decimal periódica pura** si, después del punto decimal, existe un bloque de dígitos que se repite indefinidamente, **sin ningún dígito no periódico** antes del período.
+Un número racional tiene **expansión decimal periódica pura** si, después del punto decimal, existe un bloque de dígitos que se repite indefinidamente sin dígitos no periódicos previos.
 
-**Notación:** La parte que se repite (período) se indica con una barra superior:
-$$\frac{1}{3} = 0.\overline{3} = 0.333...$$
-$$\frac{2}{11} = 0.\overline{18} = 0.181818...$$
+**Proposición 5.3 (Caracterización de decimales periódicos puros):**
+Un racional $\frac{p}{q}$ en forma irreducible es periódico puro si y solo si $\gcd(q, 10) = 1$.
 
-**Caracterización:** Un número racional $\frac{p}{q}$ (en forma irreducible) es periódico puro **si y solo si** el denominador $q$ **no contiene** los factores primos 2 ni 5.
+**Ejemplo 5.4:**
+- $\frac{1}{3} = 0.\overline{3}$.
+- $\frac{2}{11} = 0.\overline{18}$.
+- $\frac{1}{7} = 0.\overline{142857}$ (período de longitud $6$).
 
-**Formalmente:** $\frac{p}{q}$ es periódico puro $\Leftrightarrow \gcd(q, 10) = 1$
+### 5.5 Decimales semiperiódicos
 
-**Ejemplos 5.2:**
-- $\frac{1}{3} = 0.\overline{3}$ (período: 3)
-- $\frac{2}{3} = 0.\overline{6}$ (período: 6)
-- $\frac{1}{9} = 0.\overline{1}$ (período: 1)
-- $\frac{5}{9} = 0.\overline{5}$ (período: 5)
-- $\frac{2}{11} = 0.\overline{18}$ (período: 18)
-- $\frac{1}{7} = 0.\overline{142857}$ (período: 142857, longitud 6)
-- $\frac{5}{11} = 0.\overline{45}$ (período: 45)
-- $\frac{4}{9} = 0.\overline{4}$ (período: 4)
-
-> **Observación:** La longitud del período puede variar. Por ejemplo, $\frac{1}{7}$ tiene período de longitud 6, mientras que $\frac{1}{3}$ tiene período de longitud 1.
-
-#### 5.3.3 Decimal semiperiódico (o periódico mixto)
+El caso intermedio ocurre cuando el denominador contiene factores $2$ o $5$ junto con otros primos.
 
 **Definición 5.5 (Decimal semiperiódico):**
-Un número racional tiene **representación decimal semiperiódica** (o **periódica mixta**) si tiene una parte no periódica (antiperíodo) seguida de una parte periódica.
+Un número racional tiene **expansión decimal semiperiódica** (o periódica mixta) si presenta una parte no periódica (antiperíodo) seguida de una parte periódica.
 
-**Notación:** Se indica la parte no periódica seguida de la parte periódica con barra:
-$$\frac{5}{6} = 0.8\overline{3} = 0.8333...$$
-$$\frac{7}{12} = 0.58\overline{3} = 0.58333...$$
+**Proposición 5.4 (Caracterización de decimales semiperiódicos):**
+Un racional $\frac{p}{q}$ en forma irreducible es semiperiódico si y solo si $q$ tiene factores primos $2$ o $5$ y, además, al menos un factor primo distinto de $2$ y $5$.
 
-**Caracterización:** Un número racional $\frac{p}{q}$ (en forma irreducible) es semiperiódico **si y solo si** el denominador $q$ contiene factores primos 2 y/o 5, **y además** otros factores primos distintos.
+**Ejemplo 5.5:**
+- $\frac{1}{6} = 0.1\overline{6}$ (denominador $2 \cdot 3$).
+- $\frac{7}{12} = 0.58\overline{3}$ (denominador $2^2 \cdot 3$).
+- $\frac{11}{30} = 0.3\overline{6}$ (denominador $2 \cdot 3 \cdot 5$).
 
-**Formalmente:** $\frac{p}{q}$ es semiperiódico $\Leftrightarrow 1 < \gcd(q, 10) < q$
+### 5.6 Teorema de caracterización decimal
 
-**Ejemplos 5.3:**
-- $\frac{1}{6} = 0.1\overline{6}$ (antiperíodo: 1, período: 6) — denominador: $2 \cdot 3 = 6$
-- $\frac{5}{6} = 0.8\overline{3}$ (antiperíodo: 8, período: 3) — denominador: $2 \cdot 3 = 6$
-- $\frac{7}{12} = 0.58\overline{3}$ (antiperíodo: 58, período: 3) — denominador: $2^2 \cdot 3 = 12$
-- $\frac{11}{30} = 0.3\overline{6}$ (antiperíodo: 3, período: 6) — denominador: $2 \cdot 3 \cdot 5 = 30$
-- $\frac{13}{60} = 0.21\overline{6}$ (antiperíodo: 21, período: 6) — denominador: $2^2 \cdot 3 \cdot 5 = 60$
+El siguiente resultado resume los tres casos anteriores y caracteriza a los racionales mediante su expansión decimal.
 
-> **Observación:** La longitud del antiperíodo está determinada por las potencias de 2 y 5 en el denominador.
-#### 5.3.4 Teorema de caracterización
-
-**Teorema 5.1 (Caracterización decimal de racionales):**
-Un número real tiene expansión decimal **exacta, periódica pura o semiperiódica** si y solo si es un **número racional**.
+**Teorema 5.1 (Caracterización decimal de los racionales):**
+Un número real es racional si y solo si su expansión decimal es exacta, periódica pura o semiperiódica.
 
 **Demostración:**
 
@@ -961,7 +951,7 @@ donde $A$ es el entero formado por $a_1 a_2 \dots a_m$. La parte periódica es r
 
 *($\Leftarrow$) Todo número racional tiene expansión decimal exacta, periódica pura o semiperiódica.*
 
-Sea $x = \dfrac{p}{q}$ con $p \in \mathbb{Z}$, $q \in \mathbb{Z}^+$ y la fracción reducida. Al efectuar la división de $p$ entre $q$, en cada paso se obtiene un resto $r_i$ que cumple $0 \leq r_i < q$. Como solo existen $q$ restos posibles, después de a lo más $q$ pasos algún resto debe repetirse (principio del palomar). Una vez que un resto se repite, el proceso de división reproduce las mismas cifras, por lo que la expansión decimal se vuelve periódica a partir de ese momento.
+Sea $x = \frac{p}{q}$ con $p \in \mathbb{Z}$, $q \in \mathbb{Z}^+$ y la fracción reducida. Al efectuar la división de $p$ entre $q$, en cada paso se obtiene un resto $r_i$ que cumple $0 \leq r_i < q$. Como solo existen $q$ restos posibles, después de a lo más $q$ pasos algún resto debe repetirse (principio del palomar). Una vez que un resto se repite, el proceso de división reproduce las mismas cifras, por lo que la expansión decimal se vuelve periódica a partir de ese momento.
 
 Más aún, escribiendo $q = 2^a \cdot 5^b \cdot q'$ con $\gcd(q', 10) = 1$:
 - si $q' = 1$, el decimal es exacto;
@@ -970,72 +960,55 @@ Más aún, escribiendo $q = 2^a \cdot 5^b \cdot q'$ con $\gcd(q', 10) = 1$:
 
 En todos los casos la expansión decimal es de uno de los tres tipos permitidos. $\blacksquare$
 
-**Corolario:** Los números con expansión decimal **infinita no periódica** son **irracionales** (como $\pi$, $e$, $\sqrt{2}$).
-#### 5.3.5 Conversión de decimal periódico a fracción
+**Corolario 5.1:**
+Los números reales con expansión decimal infinita no periódica son irracionales.
 
-**Método general:** Para convertir un decimal periódico o semiperiódico a fracción:
+> **Observación:** Este corolario explica por qué $\sqrt{2}$, $\pi$ o $e$ no pueden expresarse como cociente de enteros.
 
-**Ejemplo 5.4 (Periódico puro):**
-Convertir $0.\overline{36}$ a fracción:
+### 5.7 Conversión de decimales periódicos a fracciones
 
-Sea $x = 0.\overline{36} = 0.363636...$
+La técnica consiste en multiplicar por potencias de $10$ para alinear el período y luego restar.
 
-Multiplicamos por $10^2 = 100$ (potencia igual a la longitud del período):
-$$100x = 36.363636...$$
+**Ejemplo 5.6 (Periódico puro):**
+Sea $x = 0.\overline{36}$. Multiplicando por $100$:
+$$100x = 36.\overline{36}.$$
+Restando $x$:
+$$99x = 36 \quad \Longrightarrow \quad x = \frac{36}{99} = \frac{4}{11}.$$
 
-Restamos:
-$$100x - x = 36.363636... - 0.363636...$$
-$$99x = 36$$
-$$x = \frac{36}{99} = \frac{4}{11}$$
+**Ejemplo 5.7 (Semiperiódico):**
+Sea $x = 0.58\overline{3}$. Entonces
+$$10x = 5.8\overline{3}, \qquad 100x = 58.\overline{3}.$$
+Restando:
+$$90x = 52.5 = \frac{105}{2} \quad \Longrightarrow \quad x = \frac{105}{180} = \frac{7}{12}.$$
 
-**Ejemplo 5.5 (Semiperiódico):**
-Convertir $0.58\overline{3}$ a fracción:
+**Proposición 5.5 (Fórmulas generales):**
+- Para un periódico puro $0.\overline{a_1 a_2 \dots a_n}$:
+  $$0.\overline{a_1 a_2 \dots a_n} = \frac{a_1 a_2 \dots a_n}{\underbrace{99\dots9}_{n \text{ veces}}}.$$
+- Para un semiperiódico $0.b_1 b_2 \dots b_m \overline{a_1 a_2 \dots a_n}$:
+  $$0.b_1 b_2 \dots b_m \overline{a_1 a_2 \dots a_n} = \frac{b_1 b_2 \dots b_m a_1 a_2 \dots a_n - b_1 b_2 \dots b_m}{\underbrace{99\dots9}_{n \text{ veces}}\underbrace{00\dots0}_{m \text{ veces}}},$$
+donde $b_1 b_2 \dots b_m a_1 a_2 \dots a_n$ denota el entero formado por todos esos dígitos.
 
-Sea $x = 0.58\overline{3} = 0.58333...$
+> **Advertencia:** En la fórmula semiperiódica, $b_1 \dots b_m a_1 \dots a_n$ denota el entero formado por todos esos dígitos, no un producto.
 
-Multiplicamos por $10^1 = 10$ (potencia igual a la longitud del antiperíodo):
-$$10x = 5.8333...$$
+### 5.8 Densidad de los racionales
 
-Multiplicamos por $10^2 = 100$ (potencia igual a longitud antiperíodo + período):
-$$100x = 58.333...$$
-
-Restamos:
-$$100x - 10x = 58.333... - 5.833...$$
-$$90x = 52.5$$
-$$x = \frac{52.5}{90} = \frac{525}{900} = \frac{7}{12}$$
-
-**Fórmula directa para decimales periódicos:**
-
-Para $0.\overline{a_1a_2...a_n}$ (periódico puro con período de longitud $n$):
-$$0.\overline{a_1a_2...a_n} = \frac{a_1a_2...a_n}{\underbrace{99...9}_{n \text{ nueves}}}$$
-
-Para $0.b_1b_2...\overline{a_1a_2...a_n}$ (semiperiódico):
-$$0.b_1b_2...\overline{a_1a_2...a_n} = \frac{b_1b_2...a_1a_2...a_n - b_1b_2...}{\underbrace{99...9}_{n \text{ nueves}}\underbrace{00...0}_{m \text{ ceros}}}$$
-donde $m$ es la longitud del antiperíodo.
-
-**Ejemplos usando fórmulas:**
-- $0.\overline{7} = \frac{7}{9}$
-- $0.\overline{15} = \frac{15}{99} = \frac{5}{33}$
-- $0.2\overline{4} = \frac{24-2}{90} = \frac{22}{90} = \frac{11}{45}$
-
-### 5.4 Densidad de los racionales
+A diferencia de los enteros, entre dos racionales distintos siempre hay otro racional; de hecho, hay infinitos.
 
 **Teorema 5.2 (Densidad de $\mathbb{Q}$):**
-Entre cualesquiera dos números racionales distintos, existe otro número racional:
-$$\forall a, b \in \mathbb{Q}, \, a < b \quad \Rightarrow \quad \exists r \in \mathbb{Q} : a < r < b$$
+Para cualesquiera $a, b \in \mathbb{Q}$ con $a < b$, existe $r \in \mathbb{Q}$ tal que $a < r < b$.
 
-**Demostración:** Basta tomar $r = \frac{a+b}{2}$ (el promedio).
+**Demostración:**
+Basta tomar $r = \frac{a + b}{2}$. Como $a < b$, se tiene $a < \frac{a + b}{2} < b$, y la suma y la división por $2$ cierran en $\mathbb{Q}$. $\blacksquare$
 
-**Consecuencia:** Entre dos racionales hay **infinitos** racionales. Esto contrasta radicalmente con los naturales o enteros.
+**Ejemplo 5.8:**
+Entre $\frac{1}{4}$ y $\frac{1}{2}$ se tiene $r = \frac{3}{8}$, pues
+$$\frac{1}{4} = \frac{2}{8} < \frac{3}{8} < \frac{4}{8} = \frac{1}{2}.$$
+Reiterando el proceso se obtienen infinitos racionales en ese intervalo.
 
-**Visualización en la recta:**
-```
-  ●  ●●  ●  ●●●  ●  ●●  ●●●  ●  ●●  ●●●●  ●  ●●  ●●●  ●  ●●  ●  
-  ← -------------------------------------------------------  →
-          -1              0              1              2
-```
+**Aplicaciones:**
+La densidad de $\mathbb{Q}$ es esencial en el análisis: permite aproximar cualquier número real por racionales. Este hecho fundamenta métodos numéricos, aproximaciones decimales y la construcción de los números reales mediante cortaduras de Dedekind o sucesiones de Cauchy.
 
-Los racionales son **densos**: aparentemente "llenan" la recta. Pero, sorprendentemente, aún dejan "huecos" (ver siguiente sección).
+> **Observación:** Aunque los racionales son densos en la recta, no la llenan por completo: existen números irracionales como $\sqrt{2}$, lo cual se estudia en la Sección 6.
 
 ---
 
