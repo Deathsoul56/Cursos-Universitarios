@@ -1409,457 +1409,266 @@ Por el Teorema 6.1 se sabe que $\sqrt{2} \notin \mathbb{Q}$. Como $\sqrt{2} \in 
 
 ---
 
-## 11. Temas Varios de Números Reales
+## 11. Temas varios de números reales
 
-Además de las operaciones fundamentales de suma, multiplicación, resta, división y potenciación, existen otras operaciones y funciones importantes definidas sobre los números reales.
+Además de las operaciones y conjuntos estudiados, existen funciones y técnicas elementales que aparecen con frecuencia en el trabajo matemático cotidiano. Esta sección recoge algunas de ellas, organizadas como material de referencia.
 
-### 11.1 Función Sucesor y Antecesor
+### 11.1 Funciones sucesor y antecesor
 
-**Definición 11.1 (Función Sucesor):**
-La función sucesor $S: \mathbb{R} \to \mathbb{R}$ se define como:
-$$S(n) = n + 1$$
+La idea de "siguiente" y "anterior" se formaliza mediante dos funciones sencillas que resultan útiles en la construcción de los números naturales y en los razonamientos por inducción.
 
-Esta función asigna a cada número su siguiente número sumándole la unidad. Es fundamental en la construcción axiomática de los números naturales (Axiomas de Peano).
+**Definición 11.1 (Función sucesor):**
+La función sucesor $S: \mathbb{R} \to \mathbb{R}$ se define por
+$$S(n) = n + 1.$$
 
-**Ejemplos:**
-- $S(5) = 6$
-- $S(-3) = -2$
-- $S(0) = 1$
+**Definición 11.2 (Función antecesor):**
+La función antecesor $A: \mathbb{R} \to \mathbb{R}$ se define por
+$$A(n) = n - 1.$$
 
-**Definición 11.2 (Función Antecesor):**
-La función antecesor $A: \mathbb{R} \to \mathbb{R}$ se define como:
-$$A(n) = n - 1$$
-Esta función asigna a cada número su antecesor restándole la unidad. Es la operación inversa del sucesor.
+**Ejemplo 11.1:**
+- $S(5) = 6$, $S(-3) = -2$, $S(0) = 1$.
+- $A(5) = 4$, $A(0) = -1$, $A(-3) = -4$.
 
-**Ejemplos:**
-- $A(5) = 4$
-- $A(0) = -1$
-- $A(-3) = -4$
+**Proposición 11.1:**
+Para todo $n \in \mathbb{R}$ se cumple
+$$A(S(n)) = S(A(n)) = n.$$
 
-**Propiedad:**
-Para todo $n \in \mathbb{R}$: $A(S(n)) = S(A(n)) = n$
+**Demostración:**
+En efecto,
+$$A(S(n)) = A(n + 1) = (n + 1) - 1 = n,$$
+y análogamente $S(A(n)) = S(n - 1) = (n - 1) + 1 = n$. $\blacksquare$
 
 ### 11.2 Factorial
 
+El factorial cuenta el número de formas de ordenar un conjunto finito y aparece de manera central en combinatoria, probabilidad y desarrollos en series.
+
 **Definición 11.3 (Factorial):**
-El factorial de un número natural $n$, denotado $n!$, se define recursivamente como:
+El factorial de $n \in \mathbb{N}$ se define recursivamente por
 $$n! = \begin{cases}
-1 & \text{si } n = 0 \\
-n \cdot (n-1)! & \text{si } n \in \mathbb{N}
+1 & \text{si } n = 0, \\
+n \cdot (n-1)! & \text{si } n \geq 1.
 \end{cases}$$
 
-Equivalentemente, de forma explícita:
-$$n! = n \times (n-1) \times (n-2) \times \dots \times 2 \times 1$$
+**Ejemplo 11.2:**
+- $0! = 1$, $1! = 1$, $2! = 2$, $3! = 6$, $4! = 24$, $5! = 120$.
+- $10! = 3\,628\,800$.
 
-**Ejemplos:**
-- $0! = 1$ (por definición)
-- $1! = 1$
-- $2! = 2 \times 1 = 2$
-- $3! = 3 \times 2 \times 1 = 6$
-- $4! = 4 \times 3 \times 2 \times 1 = 24$
-- $5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$
-- $10! = 3,628,800$
-
-**Propiedades:**
-1. $n! = n \cdot (n-1)!$ (recursividad)
-2. $\frac{n!}{(n-1)!} = n$
-3. El factorial crece extremadamente rápido (más rápido que cualquier polinomio o exponencial simple)
+**Proposición 11.2 (Propiedades del factorial):**
+Para $n \in \mathbb{N}$ con $n \geq 1$ se cumple:
+1. $n! = n \cdot (n-1)!$.
+2. $\dfrac{n!}{(n-1)!} = n$.
 
 **Aplicaciones:**
-- Conteo de permutaciones: El número de formas de ordenar $n$ objetos distintos es $n!$
-- Combinatoria y teoría de probabilidades
-- Desarrollo en series de Taylor
-- Coeficientes binomiales: $\binom{n}{k} = \frac{n!}{k!(n-k)!}$
+- El número de permutaciones de $n$ objetos distintos es $n!$.
+- Los coeficientes binomiales se expresan como $\displaystyle\binom{n}{k} = \frac{n!}{k!(n-k)!}$.
+- Aparece en los desarrollos en series de Taylor.
 
-> **Observación:**
-> Aunque el factorial se define originalmente sobre los naturales, puede extenderse a los números reales positivos mediante la **función Gamma**: $\Gamma(n+1) = n!$ para $n \in \mathbb{N}_0$.
+> **Observación:** El factorial puede extenderse a los números reales positivos mediante la función Gamma, que satisface $\Gamma(n+1) = n!$ para todo $n \in \mathbb{N}_0$.
 
 ### 11.3 Números pares e impares
 
+La divisibilidad por $2$ clasifica a los enteros en dos clases disjuntas. Esta distinción simplifica muchas demostraciones y algoritmos elementales.
+
 **Definición 11.4 (Número par):**
-Un número entero $n$ es **par** si es divisible por $2$, es decir:
-$$n \text{ es par} \quad \Leftrightarrow \quad \exists k \in \mathbb{Z}, \, n = 2k$$
-
-**Equivalentemente:** $n$ es par si y solo si $2 \mid n$ (o $n \bmod 2 = 0$).
-
-**Ejemplos de números pares:**
-$$..., -6, -4, -2, 0, 2, 4, 6, 8, 10, ...$$
+Un entero $n$ es **par** si existe $k \in \mathbb{Z}$ tal que $n = 2k$.
 
 **Definición 11.5 (Número impar):**
-Un número entero $n$ es **impar** si **no** es divisible por $2$, es decir:
-$$n \text{ es impar} \quad \Leftrightarrow \quad \exists k \in \mathbb{Z}, \, n = 2k + 1$$
+Un entero $n$ es **impar** si existe $k \in \mathbb{Z}$ tal que $n = 2k + 1$.
 
-**Equivalentemente:** $n$ es impar si y solo si $2 \nmid n$ (o $n \bmod 2 = 1$).
+**Ejemplo 11.3:**
+- Pares: $\dots, -6, -4, -2, 0, 2, 4, 6, \dots$
+- Impares: $\dots, -5, -3, -1, 1, 3, 5, \dots$
 
-**Ejemplos de números impares:**
-$$..., -5, -3, -1, 1, 3, 5, 7, 9, 11, ...$$
+**Proposición 11.3 (Partición de $\mathbb{Z}$):**
+Todo entero es par o impar, pero no ambos.
 
-**Proposición 11.1 (Partición de $\mathbb{Z}$):**
-Todo número entero es **par o impar**, pero no ambos. Formalmente:
-$$\mathbb{Z} = \{\text{pares}\} \cup \{\text{impares}\} \quad \text{y} \quad \{\text{pares}\} \cap \{\text{impares}\} = \emptyset$$
+**Demostración:**
+Dado $n \in \mathbb{Z}$, el Teorema 4.1 con divisor $2$ garantiza la existencia de únicos $q, r \in \mathbb{Z}$ con $0 \leq r < 2$ tales que $n = 2q + r$. Si $r = 0$, entonces $n$ es par; si $r = 1$, entonces $n$ es impar. La unicidad de $r$ impide que $n$ pertenezca a ambas clases. $\blacksquare$
 
-**Propiedades de paridad:**
+**Proposición 11.4 (Reglas de paridad):**
+Sean $m, n \in \mathbb{Z}$.
+1. par + par = par.
+2. impar + impar = par.
+3. par + impar = impar.
+4. par $\times$ par = par.
+5. impar $\times$ impar = impar.
+6. par $\times$ impar = par.
 
-1. **Suma de pares:** par + par = par
-   - **Demostración:** Sean $n = 2a$ y $m = 2b$ con $a, b \in \mathbb{Z}$. Entonces $n + m = 2(a + b)$, que es de la forma $2k$ con $k \in \mathbb{Z}$. Por tanto, $n + m$ es par. $\square$
+**Demostración:**
+Se escriben $m$ y $n$ en la forma $2a$ o $2a+1$ según su paridad y se opera. Por ejemplo, si $m = 2a$ es par y $n = 2b+1$ es impar, entonces
+$$m + n = 2a + 2b + 1 = 2(a+b) + 1,$$
+que es impar. Los demás casos se verifican de forma análoga. $\blacksquare$
 
-2. **Suma de impares:** impar + impar = par
-   - **Demostración:** Sean $n = 2a + 1$ y $m = 2b + 1$ con $a, b \in \mathbb{Z}$. Entonces $n + m = 2(a + b + 1)$, que es de la forma $2k$ con $k \in \mathbb{Z}$. Por tanto, $n + m$ es par. $\square$
-
-3. **Suma de par e impar:** par + impar = impar
-   - **Demostración:** Sean $n = 2a$ par y $m = 2b + 1$ impar con $a, b \in \mathbb{Z}$. Entonces $n + m = 2(a + b) + 1$, que es de la forma $2k + 1$ con $k \in \mathbb{Z}$. Por tanto, $n + m$ es impar. $\square$
-
-4. **Producto de pares:** par × par = par
-   - **Demostración:** Sean $n = 2a$ y $m = 2b$ con $a, b \in \mathbb{Z}$. Entonces $n \cdot m = 2(2ab)$, que es de la forma $2k$ con $k \in \mathbb{Z}$. Por tanto, $n \cdot m$ es par. $\square$
-
-5. **Producto de impares:** impar × impar = impar
-   - **Demostración:** Sean $n = 2a + 1$ y $m = 2b + 1$ con $a, b \in \mathbb{Z}$. Entonces $n \cdot m = 4ab + 2a + 2b + 1 = 2(2ab + a + b) + 1$, que es de la forma $2k + 1$ con $k \in \mathbb{Z}$. Por tanto, $n \cdot m$ es impar. $\square$
-
-6. **Producto de par e impar:** par × impar = par
-   - **Demostración:** Sean $n = 2a$ par y $m = 2b + 1$ impar con $a, b \in \mathbb{Z}$. Entonces $n \cdot m = 2\bigl(a(2b + 1)\bigr)$, que es de la forma $2k$ con $k \in \mathbb{Z}$. Por tanto, $n \cdot m$ es par. $\square$
-
-**Tabla de paridad:**
-
-| Operación | Resultado |
-|:----------|:----------|
-| par + par | par |
-| par + impar | impar |
-| impar + impar | par |
-| par × par | par |
-| par × impar | par |
-| impar × impar | impar |
+**Ejemplo 11.4:**
+- $14 + 22 = 36$ es par.
+- $7 + 13 = 20$ es par.
+- $4 + 9 = 13$ es impar.
+- $6 \cdot 5 = 30$ es par.
+- $3 \cdot 7 = 21$ es impar.
 
 ### 11.4 Criterios de divisibilidad
 
-Los **criterios de divisibilidad** son reglas que permiten determinar si un número es divisible por otro sin necesidad de realizar la división completa. Son especialmente útiles con números grandes.
+Los criterios de divisibilidad permiten decidir, mediante reglas sencillas sobre los dígitos de un número, si es divisible por otro sin efectuar la división completa.
 
-**Criterio de divisibilidad por 2:**
+**Proposición 11.5 (Divisibilidad por 2):**
+Un entero es divisible por $2$ si y solo si su última cifra es par.
 
-**Proposición 11.2:** Un número entero es divisible por $2$ si y solo si su última cifra es par; es decir, termina en $0, 2, 4, 6$ u $8$.
+**Demostración:**
+Escribamos $n = 10a + b$, donde $b$ es la última cifra. Como $10a = 2(5a)$, se tiene $n = 2(5a) + b$, de modo que $2 \mid n$ si y solo si $2 \mid b$. $\blacksquare$
 
-**Demostración:** Todo número puede escribirse como:
-$$n = 10a + b$$
-donde $a$ representa las cifras excepto la última, y $b$ es la última cifra.
+**Ejemplo 11.5:**
+- $3458$ es divisible por $2$ porque termina en $8$.
+- $1237$ no es divisible por $2$ porque termina en $7$.
 
-Como $10 = 2 \times 5$, tenemos $10a = 2(5a)$, que es siempre par. Por lo tanto:
-$$n = 10a + b = 2(5a) + b$$
-$n$ es par si y solo si $b$ es par, es decir, $b \in \{0, 2, 4, 6, 8\}$. $\square$
+**Proposición 11.6 (Divisibilidad por 3):**
+Un entero es divisible por $3$ si y solo si la suma de sus cifras es divisible por $3$.
 
-**Ejemplos:**
-- $3458$ es divisible por $2$ porque termina en $8$ ✓
-- $1237$ no es divisible por $2$ porque termina en $7$ ✗
+**Demostración:**
+Si $n = a_k 10^k + a_{k-1} 10^{k-1} + \dots + a_1 10 + a_0$, como $10 \equiv 1 \pmod{3}$, se tiene $10^j \equiv 1 \pmod{3}$ para todo $j$. Por tanto,
+$$n \equiv a_k + a_{k-1} + \dots + a_1 + a_0 \pmod{3},$$
+y la conclusión se sigue. $\blacksquare$
 
-**Criterio de divisibilidad por 3:**
+**Ejemplo 11.6:**
+- $12345$: suma de cifras $1+2+3+4+5 = 15$, divisible por $3$, luego $3 \mid 12345$.
+- $7891$: suma $7+8+9+1 = 25$, no divisible por $3$, luego $3 \nmid 7891$.
 
-**Proposición 11.3:** Un número es divisible por $3$ si y solo si la **suma de sus cifras** es divisible por $3$.
+**Proposición 11.7 (Divisibilidad por 4):**
+Un entero es divisible por $4$ si y solo si el número formado por sus dos últimas cifras es divisible por $4$.
 
-**Demostración:** Consideremos el número en notación decimal:
-$$n = a_k \cdot 10^k + a_{k-1} \cdot 10^{k-1} + \cdots + a_1 \cdot 10 + a_0$$
+**Demostración:**
+Escribamos $n = 100a + b$, donde $0 \leq b < 100$ representa las dos últimas cifras. Como $100 = 4 \cdot 25$, se tiene $n = 4(25a) + b$, luego $4 \mid n$ si y solo si $4 \mid b$. $\blacksquare$
 
-Observemos que $10 \equiv 1 \pmod{3}$ (porque $10 = 3 \times 3 + 1$).
+**Ejemplo 11.7:**
+- $3528$ termina en $28 = 4 \cdot 7$, así que $4 \mid 3528$.
+- $4567$ termina en $67$, y $4 \nmid 67$, así que $4 \nmid 4567$.
 
-Por lo tanto:
-$$10^j \equiv 1^j \equiv 1 \pmod{3} \quad \text{para todo } j$$
+**Proposición 11.8 (Divisibilidad por 5):**
+Un entero es divisible por $5$ si y solo si su última cifra es $0$ o $5$.
 
-Entonces:
-$$n \equiv a_k \cdot 1 + a_{k-1} \cdot 1 + \cdots + a_1 \cdot 1 + a_0 \pmod{3}$$
-$$n \equiv a_k + a_{k-1} + \cdots + a_1 + a_0 \pmod{3}$$
+**Demostración:**
+Escribiendo $n = 10a + b$, como $10a = 5(2a)$, se tiene $5 \mid n$ si y solo si $5 \mid b$. Los únicos dígitos divisibles por $5$ son $0$ y $5$. $\blacksquare$
 
-Por lo tanto, $3 \mid n$ si y solo si $3 \mid (a_k + a_{k-1} + \cdots + a_1 + a_0)$. $\square$
+**Ejemplo 11.8:**
+- $2345$ termina en $5$, luego $5 \mid 2345$.
+- $8932$ termina en $2$, luego $5 \nmid 8932$.
 
-**Ejemplos:**
-- $12345$: suma de cifras = $1+2+3+4+5 = 15$, y $3 \mid 15$ ✓ → $3 \mid 12345$
-- $7891$: suma de cifras = $7+8+9+1 = 25$, y $3 \nmid 25$ ✗ → $3 \nmid 7891$
+**Proposición 11.9 (Divisibilidad por 6):**
+Un entero es divisible por $6$ si y solo si es divisible por $2$ y por $3$.
 
-**Criterio de divisibilidad por 4:**
+**Demostración:**
+Como $6 = 2 \cdot 3$ y $\gcd(2,3) = 1$, la divisibilidad por $6$ equivale a la divisibilidad simultánea por $2$ y por $3$. $\blacksquare$
 
-**Proposición 11.4:** Un número es divisible por $4$ si y solo si sus **dos últimas cifras** forman un número divisible por $4$.
+**Ejemplo 11.9:**
+- $1236$ termina en $6$ (divisible por $2$) y la suma de sus cifras es $12$ (divisible por $3$), así que $6 \mid 1236$.
 
-**Demostración:** Todo número puede escribirse como:
-$$n = 100a + b$$
-donde $b$ representa las dos últimas cifras ($0 \leq b < 100$).
+**Proposición 11.10 (Divisibilidad por 8):**
+Un entero es divisible por $8$ si y solo si el número formado por sus tres últimas cifras es divisible por $8$.
 
-Como $100 = 4 \times 25$, tenemos:
-$$n = 4(25a) + b$$
-Por lo tanto, $4 \mid n$ si y solo si $4 \mid b$. $\square$
+**Demostración:**
+Escribamos $n = 1000a + b$, con $0 \leq b < 1000$. Como $1000 = 8 \cdot 125$, se tiene $n = 8(125a) + b$, de donde $8 \mid n$ si y solo si $8 \mid b$. $\blacksquare$
 
-**Ejemplos:**
-- $3528$: las dos últimas cifras son $28$, y $28 = 4 \times 7$ ✓ → $4 \mid 3528$
-- $4567$: las dos últimas cifras son $67$, y $4 \nmid 67$ ✗ → $4 \nmid 4567$
+**Ejemplo 11.10:**
+- $45216$ termina en $216 = 8 \cdot 27$, luego $8 \mid 45216$.
+- $12345$ termina en $345$, y $8 \nmid 345$, luego $8 \nmid 12345$.
 
-**Criterio de divisibilidad por 5:**
+**Proposición 11.11 (Divisibilidad por 9):**
+Un entero es divisible por $9$ si y solo si la suma de sus cifras es divisible por $9$.
 
-**Proposición 11.5:** Un número es divisible por $5$ si y solo si su última cifra es $0$ o $5$.
+**Demostración:**
+La demostración es análoga a la del criterio de $3$, usando que $10 \equiv 1 \pmod{9}$. $\blacksquare$
 
-**Demostración:** Análoga al caso de divisibilidad por $2$:
-$$n = 10a + b$$
-Como $10 = 5 \times 2$, tenemos $10a = 5(2a)$, siempre divisible por $5$. Por lo tanto:
-$$5 \mid n \quad \Leftrightarrow \quad 5 \mid b \quad \Leftrightarrow \quad b \in \{0, 5\}$$
-$\square$
+**Ejemplo 11.11:**
+- $7281$: suma $7+2+8+1 = 18$, divisible por $9$, luego $9 \mid 7281$.
 
-**Ejemplos:**
-- $2345$ termina en $5$ ✓ → $5 \mid 2345$
-- $8932$ termina en $2$ ✗ → $5 \nmid 8932$
+**Proposición 11.12 (Divisibilidad por 10):**
+Un entero es divisible por $10$ si y solo si su última cifra es $0$.
 
-**Criterio de divisibilidad por 6:**
+**Demostración:**
+Escribiendo $n = 10a + b$ con $0 \leq b \leq 9$, se tiene $n \equiv b \pmod{10}$. Por tanto $10 \mid n$ si y solo si $10 \mid b$, lo cual ocurre solo cuando $b = 0$. $\blacksquare$
 
-**Proposición 11.6:** Un número es divisible por $6$ si y solo si es divisible por $2$ **y** por $3$.
+**Proposición 11.13 (Divisibilidad por 11):**
+Un entero es divisible por $11$ si y solo si la suma alternada de sus cifras, empezando por la derecha, es divisible por $11$.
 
-**Demostración:** Como $6 = 2 \times 3$ y $\gcd(2, 3) = 1$, por el teorema fundamental de la aritmética:
-$$6 \mid n \quad \Leftrightarrow \quad (2 \mid n) \land (3 \mid n)$$
-$\square$
+**Demostración:**
+Como $10 \equiv -1 \pmod{11}$, se tiene $10^j \equiv (-1)^j \pmod{11}$. Si $n = a_k 10^k + \dots + a_1 10 + a_0$, entonces
+$$n \equiv a_k(-1)^k + \dots - a_1 + a_0 \pmod{11},$$
+y la conclusión se sigue. $\blacksquare$
 
-**Ejemplo:**
-- $1236$: termina en $6$ (divisible por $2$) ✓, suma de cifras = $12$ (divisible por $3$) ✓ → $6 \mid 1236$
+**Ejemplo 11.12:**
+- $1331$: suma alternada $1 - 3 + 3 - 1 = 0$, divisible por $11$, luego $11 \mid 1331$.
+- $4576$: suma alternada $6 - 7 + 5 - 4 = 0$, luego $11 \mid 4576$.
 
-**Criterio de divisibilidad por 8:**
+**Proposición 11.14 (Divisibilidad por 7):**
+Sea $n = 10a + b$, donde $b$ es la última cifra. Entonces $7 \mid n$ si y solo si $7 \mid (a - 2b)$.
 
-**Proposición 11.7:** Un número es divisible por $8$ si y solo si sus **tres últimas cifras** forman un número divisible por $8$.
+**Demostración:**
+Multiplicando por $2$ se tiene $2n = 20a + 2b$. Como $20 \equiv -1 \pmod{7}$, resulta $2n \equiv -a + 2b \pmod{7}$. Puesto que $\gcd(2,7) = 1$, la congruencia $7 \mid n$ equivale a $7 \mid 2n$, es decir, $-a + 2b \equiv 0 \pmod{7}$, lo cual es equivalente a $a - 2b \equiv 0 \pmod{7}$. $\blacksquare$
 
-**Demostración:** 
-$$n = 1000a + b$$
+**Ejemplo 11.13:**
+- Para $343$: $34 - 2 \cdot 3 = 28$, y $7 \mid 28$, luego $7 \mid 343$.
+- Para $1234$: $123 - 2 \cdot 4 = 115$, y luego $11 - 2 \cdot 5 = 1$; como $7 \nmid 1$, se tiene $7 \nmid 1234$.
 
-Como $1000 = 8 \times 125$:
-$$n = 8(125a) + b$$
+**Proposición 11.15 (Criterios compuestos):**
+Si $n = p \cdot q$ con $\gcd(p,q) = 1$, entonces para todo $m \in \mathbb{Z}$:
+$$n \mid m \quad \Longleftrightarrow \quad (p \mid m) \land (q \mid m).$$
 
-Por lo tanto, $8 \mid n \Leftrightarrow 8 \mid b$. $\square$
+**Ejemplo 11.14:**
+- $15 \mid n$ si y solo si $3 \mid n$ y $5 \mid n$. Por ejemplo, $1275$ termina en $5$ y la suma de sus cifras es $15$, divisible por $3$, así que $15 \mid 1275$.
+- $12 \mid n$ si y solo si $3 \mid n$ y $4 \mid n$.
+- $18 \mid n$ si y solo si $2 \mid n$ y $9 \mid n$.
 
-**Ejemplos:**
-- $45216$: las tres últimas cifras son $216 = 8 \times 27$ ✓ → $8 \mid 45216$
-- $12345$: las tres últimas cifras son $345$, y $8 \nmid 345$ ✗ → $8 \nmid 12345$
+### 11.5 Hiperoperaciones (opcional)
 
-**Criterio de divisibilidad por 9:**
+Más allá de la potenciación, existe una jerarquía infinita de operaciones conocida como **hiperoperaciones**. Así como la multiplicación es suma iterada y la potenciación es multiplicación iterada, se pueden definir operaciones sucesivas de crecimiento cada vez más rápido.
 
-**Proposición 11.8:** Un número es divisible por $9$ si y solo si la **suma de sus cifras** es divisible por $9$.
+**Definición 11.6 (Hiperoperaciones):**
+La sucesión de hiperoperaciones $H_n$, para $n \in \mathbb{N}$, comienza con:
+- $H_0(a,b) = b + 1$ (sucesor),
+- $H_1(a,b) = a + b$ (suma),
+- $H_2(a,b) = a \cdot b$ (multiplicación),
+- $H_3(a,b) = a^b$ (potenciación),
+- $H_4(a,b) = {^{b}a}$ (tetración),
+y continúa de manera recursiva.
 
-**Demostración:** Análoga al criterio de divisibilidad por $3$, pero usando $10 \equiv 1 \pmod{9}$. $\square$
+**Ejemplo 11.15:**
+- ${^{2}3} = 3^3 = 27$.
+- ${^{3}2} = 2^{2^2} = 16$.
+- ${^{4}2} = 2^{2^{2^2}} = 65\,536$.
 
-**Ejemplo:**
-- $7281$: suma = $7+2+8+1 = 18$, y $9 \mid 18$ ✓ → $9 \mid 7281$
+> **Observación:** La tetración y las hiperoperaciones superiores crecen con mucha mayor rapidez que las funciones elementales. Aparecen en contextos especializados de teoría de números, lógica y ciencias de la computación.
 
-**Criterio de divisibilidad por 10:**
+### 11.6 Teorema Fundamental de la Aritmética (opcional)
 
-**Proposición 11.9:** Un número es divisible por $10$ si y solo si su última cifra es $0$.
+El Teorema Fundamental de la Aritmética establece que todo número natural mayor que $1$ se descompone de manera única como producto de números primos. Es uno de los resultados centrales de la teoría de números.
 
-**Demostración:** Escribamos $n = 10a + b$ con $0 \leq b \leq 9$. Como $10 \equiv 0 \pmod{10}$, se tiene $n \equiv b \pmod{10}$. Por tanto $10 \mid n$ si y solo si $10 \mid b$. Pero el único dígito divisible por $10$ es $b = 0$. $\square$
+**Definición 11.7 (Número primo):**
+Un número natural $p > 1$ es **primo** si sus únicos divisores positivos son $1$ y $p$.
 
-**Criterio de divisibilidad por 11:**
-
-**Proposición 11.10:** Un número es divisible por $11$ si y solo si la **suma alternada de sus cifras** (empezando por la derecha) es divisible por $11$.
-
-**Demostración:** Como $10 \equiv -1 \pmod{11}$, tenemos:
-$$10^j \equiv (-1)^j \pmod{11}$$
-
-Por lo tanto, si $n = a_k \cdot 10^k + \cdots + a_1 \cdot 10 + a_0$:
-$$n \equiv a_k(-1)^k + \cdots + a_1(-1) + a_0 \pmod{11}$$
-
-Es decir, $11 \mid n$ si y solo si $11$ divide la suma alternada $a_0 - a_1 + a_2 - a_3 + \cdots$. $\square$
-
-**Ejemplo:**
-- $1331$: suma alternada = $1 - 3 + 3 - 1 = 0$, y $11 \mid 0$ ✓ → $11 \mid 1331$ (de hecho, $1331 = 11^3$)
-- $4576$: suma alternada = $6 - 7 + 5 - 4 = 0$, y $11 \mid 0$ ✓ → $11 \mid 4576$
-
-**Criterio de divisibilidad por 7:**
-
-**Proposición 11.11:** Un número es divisible por $7$ si y solo si la diferencia entre el número sin la última cifra y el doble de la última cifra es divisible por $7$.
-
-**Demostración:** Sea $n = 10a + b$, donde $b$ es la última cifra. Multiplicando por $2$:
-$$2n = 20a + 2b.$$
-Como $20 \equiv -1 \pmod{7}$, se tiene:
-$$2n \equiv -a + 2b \pmod{7}.$$
-Puesto que $\gcd(2, 7) = 1$, la congruencia $7 \mid n$ equivale a $7 \mid 2n$, es decir:
-$$-a + 2b \equiv 0 \pmod{7} \quad \Longleftrightarrow \quad a - 2b \equiv 0 \pmod{7}.$$
-Por lo tanto, $7 \mid n \Leftrightarrow 7 \mid (a - 2b)$. $\square$
-
-**Procedimiento alternativo (iterativo):**
-1. Separar la última cifra
-2. Restar el doble de la última cifra del número restante
-3. Repetir hasta obtener un número pequeño
-4. Verificar si el resultado es divisible por $7$
-
-**Ejemplo:**
-- $343$: $34 - 2(3) = 34 - 6 = 28$, y $7 \mid 28$ ✓ → $7 \mid 343$ (de hecho, $343 = 7^3$)
-- $1001$: $100 - 2(1) = 98$, luego $9 - 2(8) = 9 - 16 = -7$, y $7 \mid (-7)$ ✓ → $7 \mid 1001$
-- $1234$: $123 - 2(4) = 115$, luego $11 - 2(5) = 1$, y $7 \nmid 1$ ✗ → $7 \nmid 1234$
-
-> **Observación sobre criterios compuestos:**
-
-Para algunos números que son **productos de factores coprimos**, el criterio de divisibilidad se reduce a la **conjunción** de los criterios de sus factores.
-
-**Proposición 11.12 (Criterios compuestos):** Si $n = p \cdot q$ con $\gcd(p, q) = 1$, entonces para todo $m \in \mathbb{Z}$:
-$$n \mid m \quad \Leftrightarrow \quad (p \mid m) \land (q \mid m)$$
-
-**Ejemplos:**
-
-1. **Divisibilidad por 15:**
-   - Como $15 = 3 \times 5$ y $\gcd(3, 5) = 1$:
-   - $15 \mid n \Leftrightarrow (3 \mid n) \land (5 \mid n)$
-   - **Criterio:** Un número es divisible por $15$ si termina en $0$ o $5$ (criterio de $5$) **y** la suma de sus cifras es divisible por $3$ (criterio de $3$).
-   - **Ejemplo:** $1275$ → termina en $5$ ✓, suma = $1+2+7+5 = 15$, y $3 \mid 15$ ✓ → $15 \mid 1275$
-
-2. **Divisibilidad por 12:**
-   - Como $12 = 3 \times 4$ y $\gcd(3, 4) = 1$:
-   - $12 \mid n \Leftrightarrow (3 \mid n) \land (4 \mid n)$
-   - **Criterio:** Divisible por $3$ (suma de cifras) **y** por $4$ (últimas dos cifras).
-
-3. **Divisibilidad por 18:**
-   - Como $18 = 2 \times 9$ y $\gcd(2, 9) = 1$:
-   - $18 \mid n \Leftrightarrow (2 \mid n) \land (9 \mid n)$
-   - **Criterio:** Divisible por $2$ (última cifra par) **y** por $9$ (suma de cifras divisible por $9$).
-
-**Tabla resumen de criterios:**
-
-| Divisor | Criterio |
-|:--------|:---------|
-| $2$ | Última cifra es par ($0, 2, 4, 6, 8$) |
-| $3$ | Suma de cifras es divisible por $3$ |
-| $4$ | Últimas dos cifras divisibles por $4$ |
-| $5$ | Última cifra es $0$ o $5$ |
-| $6$ | Divisible por $2$ y por $3$ |
-| $7$ | Restar el doble de la última cifra del resto |
-| $8$ | Últimas tres cifras divisibles por $8$ |
-| $9$ | Suma de cifras es divisible por $9$ |
-| $10$ | Última cifra es $0$ |
-| $11$ | Suma alternada de cifras divisible por $11$ |
-| $12$ | Divisible por $3$ y por $4$ |
-| $15$ | Divisible por $3$ y por $5$ |
-| $18$ | Divisible por $2$ y por $9$ |
-
-### 11.5 Hiperoperaciones (Curiosidad)
-
-Más allá de la potenciación, existe una jerarquía infinita de operaciones matemáticas conocida como **hiperoperaciones**. Así como la multiplicación es una suma iterada y la potenciación es una multiplicación iterada, podemos continuar esta secuencia indefinidamente.
-
-#### 11.5.1 La Secuencia de Operaciones
-
-Las primeras operaciones básicas pueden verse como casos particulares de una jerarquía:
-
-1. **Sucesor ($H_0$):** $S(n) = n + 1$ (operación primitiva)
-2. **Suma ($H_1$):** $a + b$ (aplicar el sucesor $b$ veces a partir de $a$)
-3. **Multiplicación ($H_2$):** $a \times b$ (sumar $a$ consigo mismo $b$ veces)
-4. **Potenciación ($H_3$):** $a^b$ (multiplicar $a$ consigo mismo $b$ veces)
-
-¿Qué sigue?
-
-#### 11.5.2 Tetración ($H_4$)
-
-La **tetración** es la operación que sigue a la potenciación. Se define como una "potenciación iterada".
-
-**Notación:**
-La notación estándar inventada por Rudy Rucker es colocar el exponente a la izquierda y arriba:
-$${^{b}a}$$
-Léase "a tetrado a la b" o "torre de potencias de orden b para a".
-
-**Definición:**
-$${^{b}a} = \underbrace{a^{a^{\cdot^{\cdot^{a}}}}}_{b \text{ veces}}$$
-**Ejemplos:**
-- ${^{2}3} = 3^3 = 27$
-- ${^{3}2} = 2^{2^2} = 2^4 = 16$
-- ${^{3}3} = 3^{3^3} = 3^{27} \approx 7.6 \times 10^{12}$
-- ${^{4}2} = 2^{2^{2^2}} = 2^{16} = 65,536$
-
-El crecimiento de la tetración es increíblemente rápido, mucho más explosivo que la función exponencial.
-#### 11.5.3 Notación de Flecha de Knuth
-
-Para manejar estas operaciones gigantescas, Donald Knuth introdujo en 1976 una notación basada en flechas hacia arriba ($\uparrow$).
-
-- **Multiplicación:** $a \times b = a + a + \dots + a$
-- **Potenciación:** $a \uparrow b = a^b = a \times a \times \dots \times a$
-- **Tetración:** $a \uparrow\uparrow b = {^{b}a} = a \uparrow (a \uparrow (\dots \uparrow a))$ ($b$ veces)
-
-**Ejemplos:**
-- $3 \uparrow\uparrow 2 = 3^3 = 27$
-- $3 \uparrow\uparrow 3 = 3^{3^3} = 3^{27} = 7\,625\,597\,282\,987$ 
-#### 11.5.4 Pentación, Hexación y N-ación
-
-La secuencia continúa indefinidamente añadiendo más flechas.
-
-**Pentación ($H_5$):** $a \uparrow\uparrow\uparrow b$
-Es una "tetración iterada".
-$$a \uparrow\uparrow\uparrow b = \underbrace{a \uparrow\uparrow (a \uparrow\uparrow (\dots \uparrow\uparrow a))}_{b \text{ veces}}$$
-por ejemplo:
-$$3 \uparrow \uparrow \uparrow 4 = 3 \uparrow \uparrow 3 \uparrow \uparrow 3 \uparrow \uparrow 3$$
-Las operaciones se resuelven de derecha a izquierda
-$$3 \uparrow \uparrow \uparrow 4 = 3 \uparrow \uparrow 3 \uparrow \uparrow \underbrace{ (3 \uparrow \uparrow 3)}_{\text{primera}} = 3 \uparrow \uparrow (3 \uparrow \uparrow 7\,625\,597\,282\,987)$$
-**Hexación ($H_6$):** $a \uparrow\uparrow\uparrow\uparrow b$
-Es una "pentación iterada".
-
-**N-ación ($H_n$):**
-En general, la $n$-ésima hiperoperación para $n \geq 4$ se puede expresar con $n-2$ flechas de Knuth.
-
-Estas operaciones generan números inimaginablemente grandes, como el **Número de Graham**, que es tan inmenso que el universo observable es demasiado pequeño para contener su representación decimal escrita dígito por dígito, incluso si cada dígito ocupara un volumen de Planck.
-
-### 11.6 El Teorema Fundamental de la Aritmética (Opcional)
-
-El **Teorema Fundamental de la Aritmética** es uno de los resultados más importantes de la teoría de números y establece una propiedad única de los números naturales: la **factorización única en números primos**.
-
-**Definición previa (Número primo):**
-Un número natural $p > 1$ es **primo** si sus únicos divisores positivos son $1$ y $p$ mismo. Es decir:
-$$p \text{ es primo} \quad \Leftrightarrow \quad \forall d \in \mathbb{N}, \, d \mid p \Rightarrow d = 1 \text{ o } d = p$$
-
-**Ejemplos de números primos:** $2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, ...$
-
-**Definición (Número compuesto):**
-Un número natural $n > 1$ es **compuesto** si **no** es primo, es decir, si tiene al menos un divisor distinto de $1$ y de sí mismo.
-
-**Ejemplos de números compuestos:** $4, 6, 8, 9, 10, 12, 14, 15, 16, 18, 20, ...$
+**Definición 11.8 (Número compuesto):**
+Un número natural $n > 1$ es **compuesto** si no es primo.
 
 **Teorema 11.1 (Teorema Fundamental de la Aritmética):**
-Todo número natural $n > 1$ puede expresarse como **producto de números primos** de forma **única** (salvo el orden de los factores).
-
-**Formalmente:** Para todo $n \in \mathbb{N}$ con $n > 1$, existen primos únicos $p_1, p_2, \dots, p_k$ y exponentes únicos $e_1, e_2, \dots, e_k \in \mathbb{N}$ tales que:
-$$n = p_1^{e_1} \cdot p_2^{e_2} \cdot \ldots \cdot p_k^{e_k}$$
-donde $p_1 < p_2 < \cdots < p_k$ (ordenados de menor a mayor).
-
-**Ejemplos:**
-
-1. $60 = 2^2 \cdot 3 \cdot 5$ (factorización única)
-2. $100 = 2^2 \cdot 5^2$
-3. $1001 = 7 \cdot 11 \cdot 13$
-4. $2024 = 2^3 \cdot 11 \cdot 23$
-5. $17$ es primo, por lo tanto $17 = 17^1$ (ya está en su forma prima)
+Todo número natural $n > 1$ puede escribirse de manera única, salvo el orden de los factores, como
+$$n = p_1^{e_1} p_2^{e_2} \cdots p_k^{e_k},$$
+donde $p_1 < p_2 < \dots < p_k$ son primos y $e_i \in \mathbb{N}^*$.
 
 **Demostración (idea intuitiva):**
+La demostración consta de dos partes:
+1. **Existencia:** si $n$ es primo, ya está factorizado; si es compuesto, $n = a \cdot b$ con $1 < a,b < n$ y se repite el proceso. Como los factores decrecen, el proceso termina en factores primos.
+2. **Unicidad:** suponiendo dos factorizaciones $p_1 \cdots p_r = q_1 \cdots q_s$, el Lema de Euclides implica que $p_1$ divide algún $q_i$; como $q_i$ es primo, $p_1 = q_i$. Cancelando y repitiendo se obtiene que las factorizaciones coinciden salvo orden.
 
-La demostración del teorema consta de dos partes:
+> **Nota:** La demostración completa y rigurosa se desarrolla en cursos de Teoría de Números, donde se prueba formalmente el Lema de Euclides.
 
-1. **Existencia (todo número se puede factorizar):**
-   - Si $n$ es primo, ya está factorizado
-   - Si $n$ es compuesto, entonces $n = a \cdot b$ con $1 < a, b < n$
-   - Aplicamos el mismo proceso recursivamente a $a$ y $b$
-   - Como los factores son cada vez más pequeños, el proceso **termina** (descenso infinito imposible)
-   - Eventualmente todos los factores son primos
+**Ejemplo 11.16:**
+- $60 = 2^2 \cdot 3 \cdot 5$.
+- $100 = 2^2 \cdot 5^2$.
+- $1001 = 7 \cdot 11 \cdot 13$.
+- $2024 = 2^3 \cdot 11 \cdot 23$.
 
-2. **Unicidad (la factorización es única):**
-   - Supongamos que existe $n$ con dos factorizaciones distintas:
-     $$n = p_1 \cdot p_2 \cdots p_r = q_1 \cdot q_2 \cdots q_s$$
-   - Dado que $p_1 \mid n$, entonces $p_1$ divide al producto $q_1 \cdot q_2 \cdots q_s$
-   - Por el **Lema de Euclides** (si un primo divide un producto, divide al menos uno de los factores), $p_1$ debe dividir a algún $q_i$
-   - Como $q_i$ es primo, esto implica $p_1 = q_i$
-   - Cancelamos $p_1 = q_i$ y aplicamos el mismo argumento al número resultante
-   - Por inducción, todas las factorizaciones son idénticas (salvo el orden)
-
-> **Nota:** La demostración formal completa del Teorema Fundamental de la Aritmética se desarrollará en el curso de **Teoría de Números**, donde se establecerán rigurosamente el Lema de Euclides y las técnicas de inducción necesarias.
-
-**Consecuencias importantes:**
-
-1. **Los primos son los "átomos" de los números:** Así como la materia se compone de átomos, los números naturales se componen de primos.
-
-2. **Algoritmos de factorización:** Este teorema garantiza que siempre podemos descomponer un número en factores primos únicos, lo cual es fundamental en:
-   - Criptografía (RSA, cifrado de clave pública)
-   - Cálculo de MCD y MCM mediante factorización prima
-   - Teoría de números computacional
-
-3. **Infinitud de los primos:** Existen infinitos números primos (demostrado por Euclides hace más de 2000 años).
-
-4. **Base para estructuras algebraicas:** La factorización única es una propiedad que se generaliza a otras estructuras algebraicas (dominios de factorización única, anillos).
-
-> **Observación histórica:**
-> Aunque el teorema parece "obvio" intuitivamente, su demostración rigurosa requiere el **Lema de Euclides** y técnicas de inducción. Fue formulado explícitamente por Carl Friedrich Gauss en su obra *Disquisitiones Arithmeticae* (1801), aunque sus principios eran conocidos desde la antigüedad griega.
-
-**Ejemplo de aplicación (simplificación de radicales):**
-$$\sqrt{180} = \sqrt{2^2 \cdot 3^2 \cdot 5} = \sqrt{2^2} \cdot \sqrt{3^2} \cdot \sqrt{5} = 2 \cdot 3 \cdot \sqrt{5} = 6\sqrt{5}$$
-
-La factorización única nos permite identificar exactamente qué factores pueden "salir" de la raíz.
+**Aplicaciones:**
+- Simplificación de radicales: $\sqrt{180} = \sqrt{2^2 \cdot 3^2 \cdot 5} = 6\sqrt{5}$.
+- Cálculo de MCD y MCM mediante factorización prima.
+- Fundamento de la criptografía RSA.
 
 ---
 
