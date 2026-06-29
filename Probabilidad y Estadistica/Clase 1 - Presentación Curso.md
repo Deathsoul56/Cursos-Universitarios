@@ -3,7 +3,6 @@
 Este curso introduce los fundamentos de la probabilidad y la estadística matemática desde una perspectiva rigurosa, comenzando por la descripción de datos y llegando hasta la inferencia estadística y la regresión. El objetivo es construir una comprensión sólida tanto de la teoría como de su uso en contextos científicos e ingenieriles.
 
 ---
-
 ## 1. Descripción del curso
 
 La probabilidad y la estadística proporcionan el lenguaje matemático para modelar la incertidumbre y tomar decisiones con datos. A diferencia de otras ramas de las matemáticas que parten de situaciones deterministas, aquí se estudia cómo extraer conclusiones válidas bajo variabilidad e información incompleta.
@@ -13,7 +12,6 @@ El curso se organiza en cuatro grandes bloques. Primero, se desarrollan las herr
 A lo largo del curso se enfatiza el rigor matemático, pero también la interpretación de los resultados. Se busca que cada definición y cada teorema estén acompañados de ejemplos concretos que muestren su utilidad en situaciones reales.
 
 ---
-
 ## 2. Objetivos de aprendizaje
 
 Al finalizar el curso, se espera que el estudiante sea capaz de:
@@ -30,7 +28,6 @@ Al finalizar el curso, se espera que el estudiante sea capaz de:
 10. Utilizar software estadístico (R o Python) para analizar datos reales.
 
 ---
-
 ## 3. Prerrequisitos
 
 ### Conocimientos matemáticos
@@ -51,7 +48,6 @@ Al finalizar el curso, se espera que el estudiante sea capaz de:
 - **Recursos auxiliares:** GeoGebra, Jupyter Notebooks, RStudio.
 
 ---
-
 ## 4. Programa
 
 ### Módulo I. Estadística descriptiva univariada (Semanas 1–3)
@@ -103,7 +99,6 @@ Al finalizar el curso, se espera que el estudiante sea capaz de:
 - Introducción a la regresión lineal múltiple.
 
 ---
-
 ## 5. Bibliografía
 
 ### Textos principales
@@ -161,7 +156,6 @@ Al finalizar el curso, se espera que el estudiante sea capaz de:
 - OpenIntro Statistics: libro gratuito de alta calidad.
 
 ---
-
 ## 6. Conocimientos al finalizar el curso
 
 Al terminar el curso, el estudiante habrá desarrollado las siguientes competencias centrales:
@@ -175,7 +169,6 @@ Al terminar el curso, el estudiante habrá desarrollado las siguientes competenc
 - **Pensamiento estadístico crítico:** cuestionar supuestos, identificar errores comunes y comunicar resultados con rigor.
 
 ---
-
 ## 7. Conexiones interdisciplinarias
 
 - **Ingeniería:** control de calidad, confiabilidad, diseño de experimentos y procesamiento de señales.

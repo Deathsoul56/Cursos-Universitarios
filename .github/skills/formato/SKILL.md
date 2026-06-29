@@ -334,12 +334,26 @@ para definir trabajo, campo eléctrico y potencial gravitacional.
 - Notación consistente: si se define $\theta$ para el ángulo, no cambiar a $\alpha$
 - Fracciones en display: preferir `\dfrac` sobre `\frac` para mayor legibilidad
 
-### Imágenes (formato Obsidian)
+### Imágenes
+
+Las imágenes se almacenan centralmente en la carpeta `Recursos/` y se insertan con **sintaxis Markdown estándar**, usando la ruta relativa desde el archivo Markdown donde se incluyen.
 
 ```markdown
-![[nombre_archivo.png]]
-![[nombre_archivo.png|ancho]]    ← con ancho en píxeles
+![Texto alternativo](../Recursos/nombre_archivo.png)
 ```
+
+**Reglas:**
+
+- No usar la sintaxis wiki de Obsidian `![[...]]` ni `![[...|ancho]]`.
+- La ruta relativa depende de la profundidad del archivo:
+  - Archivo en carpeta de primer nivel (p. ej. `Probabilidad y Estadistica/`): `../Recursos/nombre.png`
+  - Archivo en subcarpeta (p. ej. `Calculo 1/Clases/`): `../../Recursos/nombre.png`
+- El texto alternativo debe ser breve y descriptivo.
+- Si es estrictamente necesario redimensionar, usar HTML estándar:
+  ```markdown
+  <img src="../Recursos/nombre_archivo.png" alt="Texto alternativo" width="400">
+  ```
+- Asegurarse de que el archivo de imagen exista en `Recursos/` antes de referenciarlo.
 
 ### Listas de propiedades numeradas
 
