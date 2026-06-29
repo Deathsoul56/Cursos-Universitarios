@@ -488,7 +488,7 @@ O, en forma compacta:
 Consideremos datos agrupados en 5 intervalos con $N = 21$:
 
 
-| Intervalo $I_i$ | Marca $m_i$ | $n_i$ | $N_i$ |  $f_i$  | $F_i$ (%) |
+| Intervalo$I_i$ | Marca$m_i$ | $n_i$ | $N_i$ |  $f_i$  | $F_i$ (%) |
 | :--------------: | :----------: | :------: | :-----: | :--------: | :---------: |
 |    $[0, 4)$    |     2     |   3   |   3   |  14.29%  |  14.29%  |
 |    $[4, 8)$    |     6     |   5   |   8   |  23.81%  |  38.10%  |
@@ -516,6 +516,9 @@ La elección del número de intervalos $k$ implica un equilibrio:
 - **Pocos intervalos** ($k$ pequeño): mayor simplicidad, pero pérdida excesiva de información.
 - **Muchos intervalos** ($k$ grande): más detalle, pero tabla poco manejable y posible ruido.
 
+> **Observación — ¿qué se entiende por ruido aquí?**
+> En este contexto, **ruido** se refiere a la variabilidad aparente que proviene de contar muy pocas observaciones en cada intervalo, en lugar de reflejar un patrón real de la distribución. Si se elige un número excesivo de intervalos para un tamaño de conjunto $N$ modesto, algunos intervalos pueden quedar vacíos o contener una sola observación, produciendo saltos irregulares en la tabla o en el histograma que no representan una característica genuina de la población, sino fluctuaciones del azar muestral. Por eso, aumentar $k$ indefinidamente no siempre mejora la descripción de los datos.
+
 **Definición 3.1 (Rango o recorrido):**
 El **rango** (o **amplitud total**) de los datos es:
 
@@ -525,6 +528,13 @@ R = x_{\max} - x_{\min}
 $$
 
 donde $x_{\max} = \max\{x_1, \ldots, x_N\}$ y $x_{\min} = \min\{x_1, \ldots, x_N\}$.
+
+Usando la notación de estadísticos de orden introducida en la Definición 1.2, el rango también puede escribirse como:
+
+$$
+R = x_{(N)} - x_{(1)}
+
+$$
 
 **Definición 3.2 (Amplitud de clase uniforme):**
 Si se decide usar amplitud constante $a$ para todos los intervalos, entonces:
@@ -625,7 +635,7 @@ $$
 
 Existen reglas más sofisticadas para determinar $k$, especialmente cuando los datos no provienen de una distribución normal:
 
-- **Regla de Freedman-Diaconis:** la amplitud se calcula como $\dfrac{2 \cdot \text{IQR}}{N^{1/3}}$.
+- **Regla de Freedman-Diaconis:** la amplitud se calcula como $\dfrac{2 \cdot \text{IQR}}{N^{1/3}}$, donde $\text{IQR} = Q_3 - Q_1$ es el **rango intercuartílico** (diferencia entre el tercer cuartil $Q_3$ y el primer cuartil $Q_1$).
 - **Regla de Scott:** la amplitud se calcula como $\dfrac{3.49 \cdot S}{N^{1/3}}$, donde $S$ es la desviación estándar muestral.
 
 Estas reglas son más robustas para distribuciones no normales, pero requieren calcular estadísticos previos.
@@ -764,7 +774,7 @@ Con $c_1 = 0.03$ y $a = 0.50$:
 
 ---
 
-## 4. Conexión con la función de distribución empírica
+## 4. Conexión con la función de distribución empírica (Opcional)
 
 La frecuencia relativa acumulada $F_i$ es una aproximación discreta de la **función de distribución empírica** (FDE), definida formalmente como:
 
