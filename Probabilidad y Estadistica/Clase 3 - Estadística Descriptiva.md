@@ -10,12 +10,12 @@ Antes de calcular medias, varianzas o construir modelos probabilísticos, es nec
 
 ### 1.1 Datos en bruto
 
-Antes de hablar de datos, conviene recordar de dónde provienen. En estadística, una **población** es el conjunto total de unidades sobre las cuales se desea estudiar una característica. La población en sí no es una lista de números: es un conjunto de personas, objetos, eventos o mediciones, ejemplo si nos interesa estudiar las notas de alumnos universitarios nuestra poblacion seran los propios alumnos y deberemos obtener sus notas ya sean consultando a la universiadad o a loa propios alumnos. Para obtener datos, debemos **observar** o **medir** esa característica en cada unidad de análisis mediante censos, encuestas, experimentos, registros automáticos u otros instrumentos de recolección. Solo después de esa observación surge la lista numérica con la que trabaja la estadística descriptiva.
+Antes de hablar de datos, conviene recordar su origen. En estadística, una **población** es el conjunto total de unidades sobre las cuales se desea estudiar una característica. La población en sí no es una lista de números, sino un conjunto de personas, objetos, eventos o mediciones; por ejemplo, si se desea estudiar las calificaciones de estudiantes universitarios, la población correspondiente estará constituida por los propios estudiantes, y sus calificaciones se obtendrán consultando los registros de la universidad o mediante encuestas a los mismos alumnos. Para obtener datos, se debe **observar** o **medir** esa característica en cada unidad de análisis mediante censos, encuestas, experimentos, registros automáticos u otros instrumentos de recolección. Solo después de esa observación surge la lista numérica con la que trabaja la estadística descriptiva.
 
 **Definición 1.1 (Población):**
-Sea $\Omega$ el conjunto total de unidades de análisis sobre las cuales se desea estudiar una característica. A $\Omega$ se le denomina **población**, y a cada uno de sus elementos $\omega_i \in \Omega$ (con $i \in \{1,..,N\}$) se le denomina **unidad estadística**. El número total de unidades se denota por $N = |\Omega|$.
+Sea $\Omega$ el conjunto total de unidades de análisis sobre las cuales se desea estudiar una característica. A $\Omega$ se le denomina **población**, y a cada uno de sus elementos $\omega_i \in \Omega$ (con $i \in \{1, \ldots, N\}$) se le denomina **unidad estadística**. El número total de unidades se denota por $N = |\Omega|$.
 
-> **Observación:** una población no es un conjunto de números, sino de objetos, personas, eventos o mediciones. Los datos numéricos se obtienen aplicando una variable estadística $X: \Omega \to \mathbb{R}$ a cada unidad.
+> **Observación:** Una población no es un conjunto de números, sino de objetos, personas, eventos o mediciones. Los datos numéricos se obtienen aplicando una variable estadística $X: \Omega \to \mathbb{R}$ a cada unidad.
 
 Cuando se recolectan observaciones, los datos aparecen inicialmente como una lista sin procesar. A esta lista se le denomina **datos en bruto** o **datos a granel**. Formalizar este objeto es el punto de partida para cualquier resumen posterior.
 
@@ -23,7 +23,7 @@ Cuando se recolectan observaciones, los datos aparecen inicialmente como una lis
 Sea $\Omega$ una población finita con $|\Omega| = N$, cuyos elementos se indexan como:
 
 $$
-\Omega = (\omega_1, \omega_2, \ldots, \omega_N)
+\Omega = \{\omega_1, \omega_2, \ldots, \omega_N\}
 
 $$
 
@@ -34,7 +34,7 @@ $$
 
 $$
 
-donde $x_i = X(\omega_i)$ para cada $\omega_i \in \Omega$. Esta forma de presentar datos se conoce como **datos no agrupados** pues contamos con todos los datos sueltos
+donde $x_i = X(\omega_i)$ para cada $\omega_i \in \Omega$. Esta forma de presentar datos se conoce como **datos no agrupados**, pues se dispone de todas las observaciones individuales.
 
 ![Poblacion-Variable](../Recursos/Poblacion-Variable.png)
 
@@ -84,7 +84,7 @@ A los valores $x_{(1)}, x_{(2)}, \ldots, x_{(N)}$ se les denomina **estadístico
 > Por esta razón, en estadística se prefiere la notación $x_{(i)}$ o $X_{(i)}$. En otros campos, especialmente en ciencias de la computación, se encuentran notaciones como $\text{2nd-min}(\mathbf{x})$, $\text{ksmallest}(\mathbf{x}, k)$, o descripciones del tipo "$X_{(2)}$ es el segundo mínimo de $X$". No hay una notación única universal; cada texto elige la convención que mejor se adapta a su contexto.
 
 **Ejemplo 1.1:**
-Si registramos la cantidad de panes consumidos diariamente por 14 personas, los datos en bruto son:
+Si se registra la cantidad de panes consumidos diariamente por 14 personas, los datos en bruto son:
 
 $$
 \mathbf{x} = (2, 2, 2, 5, 5, 5, 5, 5, 5, 5, 7, 7, 7, 7)
@@ -136,7 +136,7 @@ $$
 
 donde $\mathbb{I}_{\{v_i\}}$ es la función indicadora del conjunto $\{v_i\}$.
 
-> **Nota:** recordemos que la función indicadora de un conjunto $A$ se define como:
+> **Nota:** La función indicadora de un conjunto $A$ se define como:
 >
 > $$
 > \mathbb{I}_A(x) = \begin{cases} 1 & \text{si } x \in A, \\ 0 & \text{si } x \notin A. \end{cases}
@@ -161,7 +161,7 @@ $$
 
 1. Cada término $\mathbb{I}_{\{v_i\}}(x_j)$ vale $0$ o $1$. Por tanto, $n_i$ es una suma finita de ceros y unos, lo que implica que $n_i$ es un entero no negativo. Es decir, $n_i \in \mathbb{N} \cup \{0\}$.
 2. Si $v_i \in \text{Rec}(X)$, entonces existe al menos un índice $j \in \{1, \ldots, N\}$ tal que $x_j = v_i$. Por definición de la función indicadora, $\mathbb{I}_{\{v_i\}}(x_j) = 1$. Como todos los demás términos de la suma son no negativos, se cumple que $n_i \geq 1$.
-3. Para la propiedad de exhaustividad, intercambiamos el orden de las sumas:
+3. Para verificar la propiedad de exhaustividad, se intercambia el orden de las sumatorias:
 
 $$
 \sum_{i=1}^{k} n_i = \sum_{i=1}^{k} \sum_{j=1}^{N} \mathbb{I}_{\{v_i\}}(x_j) = \sum_{j=1}^{N} \sum_{i=1}^{k} \mathbb{I}_{\{v_i\}}(x_j)
@@ -199,7 +199,7 @@ $$
 3. $f_i$ puede interpretarse como la probabilidad empírica $\mathbb{P}(X = v_i)$. Esta interpretación cobrará sentido riguroso cuando se desarrolle la teoría de la probabilidad.
 
 **Demostración:**
-Recordemos que $f_i = \dfrac{n_i}{N}$, donde $N$ es el número total de observaciones.
+Por definición, $f_i = \dfrac{n_i}{N}$, donde $N$ es el número total de observaciones.
 
 1. Como $n_i$ cuenta el número de observaciones iguales a $v_i$, se cumple $0 \leq n_i \leq N$. Si $v_i \in \text{Rec}(X)$, entonces $n_i \geq 1$ por la propiedad correspondiente de la frecuencia absoluta. Dividiendo entre $N > 0$:
 
@@ -208,7 +208,7 @@ $$
 
 $$
 
-2. Para la normalización, usamos la propiedad de exhaustividad de las frecuencias absolutas:
+2. Para la normalización, se utiliza la propiedad de exhaustividad de las frecuencias absolutas:
 
 $$
 \sum_{i=1}^{k} f_i = \sum_{i=1}^{k} \dfrac{n_i}{N} = \dfrac{1}{N} \sum_{i=1}^{k} n_i = \dfrac{1}{N} \cdot N = 1
@@ -236,11 +236,15 @@ $$
 
 **Propiedades:**
 
-1. $(N_i)_{i=1}^{k}$ es una sucesión creciente con $N_k = N$.
-2. $(F_i)_{i=1}^{k}$ es una sucesión creciente con $F_k = 1$.
-3. Relación recursiva: $N_i = N_{i-1} + n_i$ para $i \geq 2$, con $N_1 = n_1$.
-4. Relación recursiva: $F_i = F_{i-1} + f_i$ para $i \geq 2$, con $F_1 = f_1$.
+1. $(N_i)_{i=1}^{k}$ es una sucesión estrictamente creciente con $N_k = N$.
+2. $(F_i)_{i=1}^{k}$ es una sucesión estrictamente creciente con $F_k = 1$.
+3. Relación recursiva: $N_i = N_{i-1} + n_i$ para todo $i \geq 2$, con $N_1 = n_1$.
+4. Relación recursiva: $F_i = F_{i-1} + f_i$ para todo $i \geq 2$, con $F_1 = f_1$.
 5. $F_i$ aproxima la función de distribución empírica $F_N(v_i) = \mathbb{P}(X \leq v_i)$. Esta conexión se desarrollará formalmente en la Sección 4.
+
+**Aplicaciones:**
+
+Las distribuciones de frecuencias son la base fundamental de la visualización de datos y el análisis exploratorio moderno. En ciencias de la computación y bases de datos, se utilizan para construir **histogramas de consulta**, los cuales estiman la selectividad de los operadores de filtrado en motores SQL para optimizar planes de ejecución de consultas. En el ámbito del aprendizaje automático (Machine Learning), las frecuencias acumuladas se emplean para el cálculo de rangos porcentuales y la detección de sesgos en los conjuntos de datos de entrenamiento.
 
 **Teorema 1.1 (Relación recursiva de las frecuencias acumuladas):**
 Para toda distribución de frecuencias sin agrupar se cumple:
@@ -423,7 +427,7 @@ Consideremos los intervalos $[0, 4)$, $[4, 8)$, $[8, 12)$, $[12, 16)$ y $[16, 20
 Las definiciones de frecuencia se extienden naturalmente a datos agrupados, sustituyendo la condición $x_j = v_i$ por la condición $x_j \in I_i$.
 
 **Definición 2.5 (Frecuencias para intervalos):**
-Sea $I_i = [c_i, c_{i+1})$ un intervalo de clase. Se definen:
+Sea $I_i = [c_i, c_{i+1})$ un intervalo de clase para $i \in \{1, \ldots, k\}$. Se definen:
 
 a) **Frecuencia absoluta del intervalo $I_i$:**
 
@@ -454,6 +458,10 @@ F_i = \sum_{j=1}^{i} f_j = \dfrac{N_i}{N}
 $$
 
 Las propiedades de normalización y exhaustividad se mantienen: $\sum_{i=1}^{k} n_i = N$ y $\sum_{i=1}^{k} f_i = 1$.
+
+**Aplicaciones:**
+
+El agrupamiento en intervalos (binning) es una técnica crucial en el preprocesamiento de datos para modelos de clasificación en inteligencia artificial, permitiendo transformar variables continuas ruidosas en variables categóricas discretas más estables. En procesamiento digital de señales e imágenes, el agrupamiento es la base del cálculo del histograma de una imagen, utilizado para algoritmos de **ecualización de histograma** que mejoran el contraste visual de fotografías e imágenes médicas (como radiografías y tomografías).
 
 > **Observación:** Al agrupar datos en intervalos se pierde información individual. Por ejemplo, si dos observaciones 1.10 y 1.45 caen en $[1.03, 1.53)$, solo se sabe que están en ese intervalo, no sus valores exactos. Esta pérdida afecta el cálculo posterior de estadísticos como la media o la varianza, que se aproximan usando las marcas de clase.
 
@@ -698,7 +706,10 @@ El proceso completo puede resumirse en el siguiente diagrama de flujo:
 
 ### 3.5 Ejemplo completo de agrupación
 
-**Problema:** Construir la tabla de datos agrupados para las siguientes 50 mediciones:
+A continuación se presenta un caso práctico detallado para consolidar los criterios de agrupación expuestos.
+
+**Ejemplo 3.3 (Agrupación de un conjunto de datos continuo):**
+Construir la tabla de distribución de frecuencias agrupadas para las siguientes 50 mediciones continuas:
 
 ```
 0.03, 0.03, 0.04, 0.05, 0.07, 0.11, 0.12, 0.14, 0.22, 0.22, 0.23, 0.24, 0.29, 0.29, 0.31, 0.33, 0.36, 0.47, 0.51, 0.60, 0.61, 0.73, 0.85, 0.86, 0.86, 0.93, 0.97, 0.99, 1.05, 1.06, 1.11, 1.14, 1.18, 1.21, 1.35, 1.40, 1.44, 1.71, 1.79, 1.88, 1.91, 1.93, 1.96, 2.21, 2.34, 2.63, 2.66, 2.93, 3.20, 3.53
@@ -729,7 +740,7 @@ k \approx \lceil 1 + 3.322 \log_{10}(50) \rceil = \lceil 6.641 \rceil = 7
 
 $$
 
-Ambas reglas dan resultados ligeramente diferentes ($k = 8$ vs. $k = 7$). Esto es normal y refleja el carácter heurístico de la elección. Elegiremos $k = 7$ por simplicidad.
+Ambas reglas dan resultados ligeramente diferentes ($k = 8$ vs. $k = 7$). Esto es normal y refleja el carácter heurístico de la elección. Se elige $k = 7$ por simplicidad.
 
 **Paso 3: Amplitud de clase**
 
@@ -738,7 +749,7 @@ a = \dfrac{R}{k} = \dfrac{3.50}{7} = 0.50
 
 $$
 
-Este es un valor conveniente, por lo que no necesitamos ajustar.
+Este es un valor conveniente, por lo que no se requiere realizar ningún ajuste adicional.
 
 **Paso 4: Límites de clase**
 Con $c_1 = 0.03$ y $a = 0.50$:
@@ -776,24 +787,26 @@ Con $c_1 = 0.03$ y $a = 0.50$:
 
 ## 4. Conexión con la función de distribución empírica (Opcional)
 
-La frecuencia relativa acumulada $F_i$ es una aproximación discreta de la **función de distribución empírica** (FDE), definida formalmente como:
+La frecuencia relativa acumulada $F_i$ es una aproximación discreta de la **función de distribución empírica** (FDE).
 
-$$
-F_N(x) = \dfrac{1}{N} \sum_{i=1}^{N} \mathbb{I}_{(-\infty, x]}(x_i)
-
-$$
+**Definición 4.1 (Función de distribución empírica):**
+Dado un conjunto de datos observados $\mathbf{x} = (x_1, x_2, \ldots, x_N)$, la **función de distribución empírica** (FDE), denotada por $F_N(x)$, es la función real definida para todo $x \in \mathbb{R}$ como:
+$$F_N(x) = \dfrac{1}{N} \sum_{i=1}^{N} \mathbb{I}_{(-\infty, x]}(x_i)$$
+donde $\mathbb{I}_{(-\infty, x]}(x_i)$ es la función indicadora del intervalo $(-\infty, x]$, la cual toma el valor $1$ si $x_i \leq x$ y $0$ en caso contrario.
 
 **Teorema 4.1 (Glivenko-Cantelli):**
-Sea $F(x)$ la verdadera función de distribución poblacional. Entonces:
+Si los datos observados $\mathbf{x} = (x_1, x_2, \ldots, x_N)$ corresponden a realizaciones de variables aleatorias independientes e idénticamente distribuidas (i.i.d.) con función de distribución acumulada común $F(x)$, entonces la función de distribución empírica $F_N(x)$ converge uniformemente a $F(x)$ casi seguramente (c.s.) cuando $N \to \infty$, es decir:
+$$\sup_{x \in \mathbb{R}} |F_N(x) - F(x)| \xrightarrow{N \to \infty} 0 \quad \text{c.s.}$$
 
-$$
-\sup_{x \in \mathbb{R}} |F_N(x) - F(x)| \xrightarrow{N \to \infty} 0 \quad \text{c.s.}
+**Demostración:** La demostración requiere herramientas de convergencia casi segura y teoría de la medida, por lo que se omite en este curso y se pospone para asignaturas avanzadas de teoría de la probabilidad.
 
-$$
+> **Observación:** El teorema de Glivenko-Cantelli garantiza que, con muestras grandes, la distribución empírica se aproxima a la distribución poblacional teórica. Este resultado justifica el uso de tablas de frecuencias como estimadores de la distribución subyacente de la población.
 
-**Demostración:** La demostración requiere herramientas de convergencia casi segura y teoría de la medida, por lo que se omite en este curso introductorio y se demostrará en cursos avanzados de probabilidad.
+**Aplicaciones:**
 
-> **Observación:** El teorema de Glivenko-Cantelli garantiza que, con muestras grandes, la distribución empírica se aproxima a la distribución poblacional. Este resultado justifica el uso de tablas de frecuencias como estimadores de la distribución subyacente.
+La función de distribución empírica y el teorema de Glivenko-Cantelli sustentan la validez de los métodos no paramétricos en estadística. Entre sus aplicaciones principales se encuentran:
+- **Prueba de Kolmogorov-Smirnov:** Utiliza la distancia máxima $\sup |F_N(x) - F_0(x)|$ para determinar de manera formal si una muestra proviene de una distribución teórica propuesta $F_0(x)$.
+- **Métodos de Remuestreo (Bootstrapping):** En ciencia de datos, el bootstrap consiste en simular nuevas muestras muestreando directamente con reemplazo de la muestra original. Esto equivale matemáticamente a simular observaciones a partir de la FDE $F_N(x)$, permitiendo estimar intervalos de confianza para parámetros complejos sin asumir normalidad.
 
 ---
 
@@ -807,7 +820,7 @@ Al agrupar datos se pierde información individual. Esta pérdida afecta:
 - La identificación de valores atípicos.
 - El análisis detallado de la distribución.
 
-**Regla general:** se agrupan datos solo cuando:
+**Regla general:** Se agrupan datos solo cuando:
 
 1. La muestra es grande ($N > 30$).
 2. La variable es continua o tiene muchos valores distintos.
@@ -867,7 +880,7 @@ graph TD
 
 | Concepto                  | Símbolo | Definición                     | Propiedad clave         |
 | :-------------------------- | :--------: | :-------------------------------- | :------------------------ |
-| Frecuencia absoluta       |  $n_i$  | Número de datos en la clase$i$ | $\sum n_i = N$          |
+| Frecuencia absoluta       |  $n_i$  | Número de datos en la clase $i$ | $\sum n_i = N$          |
 | Frecuencia relativa       |  $f_i$  | $n_i / N$                       | $\sum f_i = 1$          |
 | Frecuencia acum. absoluta |  $N_i$  | $\sum_{j=1}^{i} n_j$            | $N_k = N$               |
 | Frecuencia acum. relativa |  $F_i$  | $\sum_{j=1}^{i} f_j$            | $F_k = 1$               |
@@ -881,7 +894,7 @@ graph TD
 
 ### Ejercicio 7.1
 
-Dado el conjunto de datos $\{12, 15, 15, 18, 20, 20, 20, 22, 25, 30\}$, construye una tabla de frecuencias sin agrupar.
+Dado el conjunto de datos $\{12, 15, 15, 18, 20, 20, 20, 22, 25, 30\}$, construir una tabla de frecuencias sin agrupar.
 
 ### Ejercicio 7.2
 
@@ -891,13 +904,13 @@ Para los siguientes 40 datos (tiempos de espera en minutos):
 2.3, 4.5, 6.7, 3.2, 5.8, 7.1, 4.9, 6.2, 5.5, 4.1, 3.7, 5.2, 6.8, 4.4, 5.9, 7.3, 4.8, 6.1, 5.4, 4.3, 3.9, 5.1, 6.9, 4.6, 6.0, 7.5, 5.0, 6.5, 5.7, 4.7, 3.5, 5.3, 7.0, 4.2, 6.3, 7.2, 5.6, 6.6, 6.4, 3.8
 ```
 
-a) Calcula el rango $R$.
-b) Determina $k$ usando la regla de Sturges.
-c) Construye la tabla de frecuencias con intervalos de amplitud constante.
+a) Calcular el rango $R$.
+b) Determinar el número de intervalos $k$ utilizando la regla de Sturges.
+c) Construir la tabla de frecuencias con intervalos de amplitud constante.
 
 ### Ejercicio 7.3
 
-Demuestra que para cualquier tabla de frecuencias se cumple:
+Demostrar formalmente que para cualquier distribución de frecuencias se cumple la siguiente igualdad:
 
 $$
 \sum_{i=1}^{k} n_i f_i = N \sum_{i=1}^{k} f_i^2
@@ -906,7 +919,7 @@ $$
 
 ### Ejercicio 7.4 (Conceptual)
 
-Explica por qué la regla de Sturges puede ser inadecuada para distribuciones bimodales y propón una alternativa.
+Explicar por qué la regla de Sturges puede resultar inadecuada para el análisis de distribuciones bimodales y proponer una alternativa heurística robusta para abordar estos casos.
 
 ---
 
