@@ -37,7 +37,7 @@ Se lee: "$A$ es el conjunto de todos los $x$ en $U$ tales que $P(x)$ se cumple".
 **Representación gráfica: diagramas de Venn**
 Además de las notaciones algebraicas, los conjuntos pueden representarse gráficamente mediante **diagramas de Venn**. En estos diagramas cada conjunto se dibuja como una curva cerrada y los elementos como puntos en su interior. La intersección aparece como la región común y la inclusión como una curva dentro de otra.
 
-![[diagrama_venn_A.png]]
+![Diagrama de Venn del conjunto A](../Recursos/diagrama_venn_A.png)
 *Figura 1.2.1: Diagrama de Venn del conjunto $A = \{2, 4, 6, 8\}$ dentro del universo $U = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}$. Los elementos dentro de la elipse magenta pertenecen a $A$; los elementos fuera de la elipse pero dentro del rectángulo pertenecen a $U$ pero no a $A$.*
 
 **Aplicaciones:**
@@ -408,7 +408,7 @@ $$\mathbb{N} = \{0, 1, 2, 3, 4, \dots\}.$$
 
 La recta numérica permite visualizar $\mathbb{N}$ como puntos discretos sobre una línea. Esta representación es útil para entender el orden y la noción de "siguiente".
 
-![[recta_numeros_naturales.png]]
+![Recta numérica de los números naturales](../Recursos/recta_numeros_naturales.png)
 
 **Características:**
 - $\mathbb{N}$ tiene un primer elemento, el $0$.
