@@ -44,6 +44,7 @@ una o dos oraciones qué se estudiará en la clase y cuáles son los objetivos c
 - El resumen ejecutivo se escribe **al final**, cuando toda la clase está lista.
 - No debe anticipar secciones que aún no existen ni prometer contenido que no se cubrirá.
 - Debe ser conciso y servir como guía de lectura.
+- Al final de cada clase se incluye el pie `**Fin de la Clase N: Título**`, precedido por un separador `---`, donde `N` es el número de la clase y `Título` es su nombre corto.
 
 **Ejemplo:**
 
@@ -349,6 +350,7 @@ Las imágenes se almacenan centralmente en la carpeta `Recursos/` y se insertan 
   - Archivo en carpeta de primer nivel (p. ej. `Probabilidad y Estadistica/`): `../Recursos/nombre.png`
   - Archivo en subcarpeta (p. ej. `Calculo 1/Clases/`): `../../Recursos/nombre.png`
 - El texto alternativo debe ser breve y descriptivo.
+- **No usar rótulos, pies de foto ni numeración de figuras** (por ejemplo, `*Figura 1.1 — ...*`). Estos apuntes son un cuaderno de alumno, no un libro de texto. Si la imagen necesita explicación, integrarla en el párrafo anterior o posterior.
 - Si es estrictamente necesario redimensionar, usar HTML estándar:
   ```markdown
   <img src="../Recursos/nombre_archivo.png" alt="Texto alternativo" width="400">

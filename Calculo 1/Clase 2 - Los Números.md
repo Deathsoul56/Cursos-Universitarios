@@ -38,7 +38,6 @@ Se lee: "$A$ es el conjunto de todos los $x$ en $U$ tales que $P(x)$ se cumple".
 Además de las notaciones algebraicas, los conjuntos pueden representarse gráficamente mediante **diagramas de Venn**. En estos diagramas cada conjunto se dibuja como una curva cerrada y los elementos como puntos en su interior. La intersección aparece como la región común y la inclusión como una curva dentro de otra.
 
 ![Diagrama de Venn del conjunto A](../Recursos/diagrama_venn_A.png)
-*Figura 1.2.1: Diagrama de Venn del conjunto $A = \{2, 4, 6, 8\}$ dentro del universo $U = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}$. Los elementos dentro de la elipse magenta pertenecen a $A$; los elementos fuera de la elipse pero dentro del rectángulo pertenecen a $U$ pero no a $A$.*
 
 **Aplicaciones:**
 La notación por comprensión es la base de los lenguajes de consulta en bases de datos (como SQL) y de la especificación de propiedades en lógica y programación. Los diagramas de Venn se usan en probabilidad para visualizar eventos y sus intersecciones.
@@ -1674,51 +1673,74 @@ La demostración consta de dos partes:
 
 ## 12. Jerarquía de los sistemas numéricos
 
-### 12.1 Diagrama de inclusión
+### 12.1 Cadenas de inclusiones
 
-```mermaid
-graph TD
-    N[ℕ: Naturales<br/>1, 2, 3, ...]
-    Z[ℤ: Enteros<br/>..., -2, -1, 0, 1, 2, ...]
-    Q[ℚ: Racionales<br/>p/q con p∈ℤ, q∈ℕ]
-    I[𝕀: Irracionales<br/>√2, π, e, ...]
-    R[ℝ: Reales<br/>Todos los puntos de la recta]
-    
-    N -->|Agregar negativos| Z
-    Z -->|Agregar fracciones| Q
-    Q -->|Agregar irracionales| R
-    I -->|Unión con ℚ| R
-    
-    style N fill:#e1f5ff,stroke:#333,stroke-width:2px
-    style Z fill:#fff4e1,stroke:#333,stroke-width:2px
-    style Q fill:#e1ffe1,stroke:#333,stroke-width:2px
-    style I fill:#ffe1f5,stroke:#333,stroke-width:2px
-    style R fill:#f5e1ff,stroke:#333,stroke-width:3px
-```
+Hasta este punto cada conjunto numérico apareció como respuesta a una pregunta concreta: contar objetos, restar sin restricciones, dividir resultados, medir longitudes que no son fracción. Sin embargo, esos conjuntos no son independientes: cada uno se anida dentro del siguiente, formando una cadena que va de lo discreto a lo continuo. Entender esa jerarquía permite ver por qué algunas propiedades se heredan al ampliar un sistema y por qué otras desaparecen, y explica por qué el Cálculo exige trabajar en $\mathbb{R}$ y no en $\mathbb{Q}$.
 
-### 12.2 Tabla comparativa
+> **Nota histórica:** La idea de que los números forman una sucesión de extensiones fue consolidada en el siglo XIX. Richard Dedekind y Georg Cantor dieron construcciones rigurosas de $\mathbb{R}$ a partir de $\mathbb{Q}$ —Dedekind por medio de cortaduras y Cantor por medio de sucesiones de Cauchy—, mostrando que la completitud no es un acto de fe geométrica sino una propiedad algebraica construible. Cantor, además, demostró que la cardinalidad de $\mathbb{R}$ supera la de $\mathbb{Q}$.
+
+**Definición 12.1 (Jerarquía numérica):** Se denomina jerarquía de los sistemas numéricos a la familia de conjuntos
+$$\mathbb{N},\ \mathbb{Z},\ \mathbb{Q},\ \mathbb{I},\ \mathbb{R}$$
+junto con las inclusiones
+$$\mathbb{N}\subseteq\mathbb{Z}\subseteq\mathbb{Q}\subseteq\mathbb{R},\qquad \mathbb{I}=\mathbb{R}\setminus\mathbb{Q}.$$
+
+Cada inclusión es estricta:
+- $1\in\mathbb{N}$ pero $-1\notin\mathbb{N}$, por lo tanto $\mathbb{N}\subsetneq\mathbb{Z}$.
+- $\dfrac{1}{2}\in\mathbb{Q}$ pero $\dfrac{1}{2}\notin\mathbb{Z}$, por lo tanto $\mathbb{Z}\subsetneq\mathbb{Q}$.
+- $\sqrt{2}\in\mathbb{I}\subset\mathbb{R}$ pero $\sqrt{2}\notin\mathbb{Q}$, por lo tanto $\mathbb{Q}\subsetneq\mathbb{R}$.
+
+**Ejemplo 12.1:** Los números $-3$, $\dfrac{2}{5}$, $\sqrt{7}$ y $\pi$ ilustran las inclusiones estrictas anteriores:
+- $-3\in\mathbb{Z}$ pero $-3\notin\mathbb{N}$;
+- $\dfrac{2}{5}\in\mathbb{Q}$ pero $\dfrac{2}{5}\notin\mathbb{Z}$;
+- $\sqrt{7},\pi\in\mathbb{I}\subset\mathbb{R}$ pero $\sqrt{7},\pi\notin\mathbb{Q}$.
+
+### 12.2 Diagrama de inclusión
+
+El siguiente diagrama resume la construcción: los naturales se extienden a enteros agregando negativos, los enteros a racionales agregando fracciones, y los racionales a reales agregando irracionales.
+
+![Jerarquía de los sistemas numéricos](../Recursos/jerarquia_numericos.png)
+
+### 12.3 Resumen comparativo
 
 | Conjunto | Notación | Problema que resuelve | Cardinalidad | Ejemplo |
 |:---------|:---------|:---------------------|:-------------|:--------|
-| Naturales | $\mathbb{N}$ | Contar objetos | $\aleph_0$ | 1, 2, 3, 42 |
-| Enteros | $\mathbb{Z}$ | Resta siempre definida | $\aleph_0$ | -5, 0, 17 |
-| Racionales | $\mathbb{Q}$ | División siempre definida (excepto por 0) | $\aleph_0$ | $\frac{3}{4}$, $-\frac{7}{2}$, $0.25$ |
-| Irracionales | $\mathbb{I}$ | Raíces, π, e | $\mathfrak{c}$ | $\sqrt{2}$, $\pi$, $e$ |
-| Reales | $\mathbb{R}$ | Completitud (límites existen) | $\mathfrak{c}$ | Todos los anteriores |
+| Naturales | $\mathbb{N}$ | Contar objetos | $\aleph_0$ | $1,\ 2,\ 3,\ 42$ |
+| Enteros | $\mathbb{Z}$ | Resta siempre definida | $\aleph_0$ | $-5,\ 0,\ 17$ |
+| Racionales | $\mathbb{Q}$ | División siempre definida (excepto por 0) | $\aleph_0$ | $\dfrac{3}{4},\ -\dfrac{7}{2},\ 0.25$ |
+| Irracionales | $\mathbb{I}$ | Medir longitudes no fraccionarias | $\mathfrak{c}$ | $\sqrt{2},\ \pi,\ e$ |
+| Reales | $\mathbb{R}$ | Completitud (existencia de límites) | $\mathfrak{c}$ | Todos los anteriores |
 
-### 12.3 Propiedades fundamentales
+### 12.4 Propiedades fundamentales
+
+**Definición 12.2 (Cerradura):** Sea $A\subseteq\mathbb{R}$ no vacío y $*:A\times A\to\mathbb{R}$ una operación. Se dice que $A$ es cerrado bajo $*$ si
+$$\forall x,y\in A,\quad x*y\in A.$$
+
+La siguiente tabla resume las propiedades de cada sistema.
 
 | Propiedad | $\mathbb{N}$ | $\mathbb{Z}$ | $\mathbb{Q}$ | $\mathbb{R}$ |
 |:----------|:------------:|:------------:|:------------:|:------------:|
-| Cerrado bajo suma | ✓ | ✓ | ✓ | ✓ |
-| Cerrado bajo resta | ✗ | ✓ | ✓ | ✓ |
-| Cerrado bajo multiplicación | ✓ | ✓ | ✓ | ✓ |
-| Cerrado bajo división (excepto por 0) | ✗ | ✗ | ✓ | ✓ |
-| Es un cuerpo | ✗ | ✗ | ✓ | ✓ |
-| Es ordenado | ✓ | ✓ | ✓ | ✓ |
-| Es completo | ✗ | ✗ | ✗ | ✓ |
-| Es discreto | ✓ | ✓ | ✗ | ✗ |
-| Es denso | ✗ | ✗ | ✓ | ✓ |
+| Cerrado bajo suma | Sí | Sí | Sí | Sí |
+| Cerrado bajo resta | No | Sí | Sí | Sí |
+| Cerrado bajo multiplicación | Sí | Sí | Sí | Sí |
+| Cerrado bajo división (excepto por 0) | No | No | Sí | Sí |
+| Es un cuerpo ordenado | No | No | Sí | Sí |
+| Es completo | No | No | No | Sí |
+| Es discreto | Sí | Sí | No | No |
+| Es denso | No | No | Sí | Sí |
+
+**Teorema 12.1 (Caracterización de $\mathbb{R}$):** El conjunto $(\mathbb{R},+\,,\cdot\,,\le)$ es el único, salvo isomorfismo ordenado, cuerpo ordenado completo.
+
+**Demostración:** La construcción de $\mathbb{R}$ a partir de $\mathbb{Q}$ mediante cortaduras de Dedekind produce un cuerpo ordenado completo. La unicidad, salvo isomorfismo ordenado, se establece demostrando que cualquier cuerpo ordenado completo contiene una copia isomorfa de $\mathbb{Q}$ y que la propiedad de completitud fuerza a que dicha copia sea densa y a que el cuerpo completo sea isomorfo a la construcción de Dedekind. Los detalles completos se desarrollan en un curso de Análisis Real. $\square$
+
+### 12.5 Aplicaciones
+
+La jerarquía explica la transición entre la aritmética elemental y el Cálculo. Los problemas de conteo y división se resuelven en $\mathbb{N}$ y $\mathbb{Q}$, pero los conceptos de límite, continuidad y derivada requieren que las sucesiones converjan dentro del sistema en el que se trabaja. Esa propiedad es la completitud, que solo posee $\mathbb{R}$ entre los conjuntos de la tabla anterior. De ahí que el Análisis Matemático estudie funciones $f:\mathbb{R}\to\mathbb{R}$ y no $f:\mathbb{Q}\to\mathbb{Q}$.
+
+### 12.6 Observaciones
+
+- La notación $\mathbb{I}$ para los irracionales no es universal; muchos textos escriben $\mathbb{R}\setminus\mathbb{Q}$.
+- Ser denso no implica ser completo: $\mathbb{Q}$ es denso pero carece de límites de sucesiones cuyo límite es irracional.
+- La cardinalidad cambia al pasar de $\mathbb{Q}$ a $\mathbb{R}$, aunque la inclusión $\mathbb{Q}\subset\mathbb{R}$ no lo sugiera visualmente.
 
 ---
 
@@ -1734,9 +1756,9 @@ El Cálculo se fundamenta en conceptos como:
 
 Todos estos conceptos requieren la **completitud** de $\mathbb{R}$. En $\mathbb{Q}$, muchas sucesiones "deberían" converger pero no lo hacen (porque su límite es irracional).
 
-**Ejemplo:** La sucesión en $\mathbb{Q}$:
-$$1, \quad 1.4, \quad 1.41, \quad 1.414, \quad 1.4142, \quad ...$$
-(aproximaciones decimales de $\sqrt{2}$) "debería" converger, pero no tiene límite en $\mathbb{Q}$. En $\mathbb{R}$, converge a $\sqrt{2}$.
+**Ejemplo 13.1:** La sucesión en $\mathbb{Q}$:
+$$1, \quad 1.4, \quad 1.41, \quad 1.414, \quad 1.4142, \quad \dots$$
+formada por aproximaciones decimales de $\sqrt{2}$, converge en $\mathbb{R}$ a $\sqrt{2}$, pero no posee límite en $\mathbb{Q}$. Esto muestra que la completitud de $\mathbb{R}$ no es una propiedad meramente descriptiva: es la condición que permite que las sucesiones cuyo límite debería existir efectivamente converjan dentro del sistema numérico.
 
 ### 13.2 La belleza de la estructura matemática
 
@@ -1777,7 +1799,7 @@ Esta "escalera" de conjuntos numéricos es el **fundamento** sobre el cual se co
 ---
 ## 15. Ejercicios resueltos
 
-### Ejercicio 1:
+### Ejercicio 15.1
 Demostrar formalmente que la suma de dos números racionales es siempre un número racional.
 
 **Solución:**
@@ -1801,7 +1823,7 @@ Por lo tanto, la expresión final es el cociente de dos enteros con denominador 
 
 **Respuesta final:** Se demuestra que la suma de dos racionales pertenece siempre a $\mathbb{Q}$. $\blacksquare$
 
-### Ejercicio 2:
+### Ejercicio 15.2
 Determinar si el número $45,312$ es divisible por $3$, $4$ y $9$, aplicando los criterios de divisibilidad estudiados.
 
 **Solución:**
@@ -1824,7 +1846,7 @@ Dado que $15$ no es divisible por $9$, el número $45,312$ no es divisible por $
 
 **Respuesta final:** El número $45,312$ es divisible por $3$ y por $4$, pero no es divisible por $9$.
 
-### Ejercicio 3:
+### Ejercicio 15.3
 Demostrar que para dos cualesquiera números reales $a$ y $b$ se cumple que $a \cdot (-b) = -(ab)$.
 
 **Solución:**
@@ -1855,22 +1877,23 @@ Dado que sumarle $a \cdot (-b)$ a $ab$ da como resultado $0$, queda certificado 
 ---
 ## 16. Ejercicios propuestos
 
-**Ejercicio 1:** Demuestra que $\mathbb{Z}$ tiene la misma cardinalidad que $\mathbb{N}$ construyendo explícitamente una biyección entre ellos.
+### Ejercicio 16.1
+Demostrar que $\mathbb{Z}$ tiene la misma cardinalidad que $\mathbb{N}$ construyendo explícitamente una biyección entre ellos.
 
-**Ejercicio 2:** Prueba que $\sqrt{3} \notin \mathbb{Q}$ usando un argumento similar al del Teorema 7.1.
+### Ejercicio 16.2
+Probar que $\sqrt{3} \notin \mathbb{Q}$ usando un argumento similar al del Teorema 7.1.
 
-**Ejercicio 3:** Usando los axiomas de cuerpo, demuestra que:
+### Ejercicio 16.3
+Usando los axiomas de cuerpo, demostrar que:
 a) $\forall a \in \mathbb{R}, \quad a \cdot 0 = 0$  
 b) $\forall a \in \mathbb{R}, \quad (-1) \cdot a = -a$
 
-**Ejercicio 4:** Explica con tus palabras por qué $\mathbb{Q}$ es denso pero no completo.
+### Ejercicio 16.4
+Explicar por qué $\mathbb{Q}$ es denso pero no completo.
 
-**Ejercicio 5 (Desafío):** Investiga la **construcción por cortaduras de Dedekind** de $\mathbb{R}$ y explica la idea central en un párrafo.
+### Ejercicio 16.5
+Investigar la construcción por cortaduras de Dedekind de $\mathbb{R}$ y explicar la idea central en un párrafo.
 
 ---
 
-**Referencias recomendadas:**
-- Rudin, W. (1976). *Principles of Mathematical Analysis* (3rd ed.). McGraw-Hill.
-- Spivak, M. (2008). *Calculus* (4th ed.). Publish or Perish.
-- Apostol, T. M. (1967). *Calculus, Volume I* (2nd ed.). Wiley.
-- Stewart, J. (2015). *Calculus: Early Transcendentals* (8th ed.). Cengage Learning.
+**Fin de la Clase 2: Los Números**
