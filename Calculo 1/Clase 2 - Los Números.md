@@ -501,7 +501,7 @@ La multiplicación en $\mathbb{N}$ satisface:
 6. **Ley de cancelación:** $\forall m, n, p \in \mathbb{N},\; m \cdot p = n \cdot p \land p \neq 0 \Rightarrow m = n$.
 7. **Absorción del cero:** $\forall m \in \mathbb{N},\; m \cdot 0 = 0 \cdot m = 0$.
 
-> **Nota:** Estas propiedades se demuestran por inducción. La distributividad conecta suma y multiplicación y es fundamental para todo el álgebra posterior.
+> **Nota:** Estas propiedades se demuestran por inducción matemática a partir de la Definición 3.6; el desarrollo detallado se verá en el curso de Álgebra I.
 
 ### 3.6 Múltiplos en $\mathbb{N}$
 
@@ -901,6 +901,16 @@ Un número racional tiene **expansión decimal periódica pura** si, después de
 **Proposición 5.3 (Caracterización de decimales periódicos puros):**
 Un racional $\frac{p}{q}$ en forma irreducible es periódico puro si y solo si $\gcd(q, 10) = 1$.
 
+**Demostración:**
+
+$(\Rightarrow)$ Supongamos que $\frac{p}{q}=0.\overline{a_1 a_2 \dots a_k}$ con $q>0$ y $\gcd(p,q)=1$. Sea $N$ el entero cuya expansión decimal es $a_1 a_2 \dots a_k$. Entonces
+$$\frac{p}{q}=\frac{N}{10^k-1}.$$
+Como $\frac{p}{q}$ está en forma irreducible, $q$ divide a $10^k-1$. Por tanto, ningún primo que divida a $q$ puede dividir a $10$, de donde $\gcd(q,10)=1$.
+
+$(\Leftarrow)$ Supongamos que $\gcd(q,10)=1$. Escribamos $\frac{p}{q}=a+\frac{r}{q}$, donde $a\in\mathbb{Z}$ y $0\le r<q$. Basta probar que la parte fraccionaria $\frac{r}{q}$ es periódica pura; si $r=0$ el decimal es exacto, lo cual se puede ver como un caso límite de período cero.
+
+Al realizar la división de $r$ entre $q$, los restos sucesivos $r_i$ se definen por $r_0=r$ y $r_{i+1}\equiv 10r_i \pmod{q}$. Como $\gcd(q,10)=1$, la multiplicación por $10$ es una biyección de los restos no nulos módulo $q$. En consecuencia, la sucesión de restos es periódica desde el primer término, y los dígitos decimales generados también lo son. Así, la expansión decimal de $\frac{r}{q}$ carece de antiperíodo, es decir, es periódica pura. $\blacksquare$
+
 **Ejemplo 5.4:**
 - $\frac{1}{3} = 0.\overline{3}$.
 - $\frac{2}{11} = 0.\overline{18}$.
@@ -1065,10 +1075,7 @@ El conjunto $(\mathbb{R}, +, \cdot, \leq)$ es un **cuerpo ordenado completo**. E
 
 La representación geométrica de $\mathbb{R}$ es la recta numérica, donde cada punto corresponde a un único número real y viceversa.
 
-```
-  ← ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  →
-                      -π    -√2   -1    0    1   √2    e    π
-```
+![Recta real con puntos racionales e irracionales](../Recursos/recta_real.png)
 
 **Características de $\mathbb{R}$:**
 - Es **continuo**: no tiene huecos.
@@ -1168,15 +1175,9 @@ El resultado más destacado es que $\mathbb{Q}$, aunque denso en la recta real, 
 Existe una biyección entre $\mathbb{Q}$ y $\mathbb{N}$.
 
 **Demostración (enumeración diagonal de Cantor):**
-Basta construir una enumeración de $\mathbb{Q}$. Organizamos los racionales positivos en una tabla infinita donde la fila $q$ y la columna $p$ contienen $\frac{p}{q}$:
+Basta construir una enumeración de $\mathbb{Q}$. Organizamos los racionales positivos en una tabla infinita donde la fila $q$ y la columna $p$ contienen $\frac{p}{q}$. El siguiente diagrama muestra el inicio del recorrido diagonal.
 
-```
-      1      2      3      4      ...
- 1  1/1    2/1    3/1    4/1    ...
- 2  1/2    2/2    3/2    4/2    ...
- 3  1/3    2/3    3/3    4/3    ...
- ...
-```
+![Recorrido diagonal de Cantor sobre fracciones positivas](../Recursos/cantor_diagonal_q.png)
 
 Recorriendo la tabla por diagonales en zigzag y omitiendo las fracciones repetidas, se obtiene una lista de todos los racionales positivos. Intercalando el cero y los racionales negativos se construye una enumeración completa de $\mathbb{Q}$. Por tanto, $|\mathbb{Q}| = \aleph_0$. $\blacksquare$
 
