@@ -289,13 +289,10 @@ Una **proposición** es un resultado matemático demostrado, pero de menor impor
 - Proposición 10.1: $1 + 0 = 1$.
 
 **Jerarquía conceptual:**
-```
-Axioma (sin demostración, fundamento)
-   ↓
-Lema (auxiliar) → Teorema (resultado principal) → Corolario (consecuencia)
-   ↓                      ↓
-Proposición (resultado menor)
-```
+
+La siguiente imagen resume las relaciones entre los distintos tipos de enunciados.
+
+![Jerarquía conceptual de enunciados matemáticos](../Recursos/jerarquia_conceptual.png)
 
 > **Observación:** En la práctica, la distinción entre teorema, proposición y lema no siempre es estricta. Lo que un autor llama "proposición" otro podría llamar "teorema" si lo considera suficientemente importante. Sin embargo, los axiomas y corolarios tienen roles más precisamente definidos.
 
@@ -926,6 +923,22 @@ Un número racional tiene **expansión decimal semiperiódica** (o periódica mi
 **Proposición 5.4 (Caracterización de decimales semiperiódicos):**
 Un racional $\frac{p}{q}$ en forma irreducible es semiperiódico si y solo si $q$ tiene factores primos $2$ o $5$ y, además, al menos un factor primo distinto de $2$ y $5$.
 
+**Demostración:**
+
+$(\Rightarrow)$ Supongamos que $\frac{p}{q}$ es semiperiódico. Entonces su expansión decimal es de la forma
+$$N.a_1 a_2 \dots a_m \, \overline{b_1 b_2 \dots b_k},$$
+con $m \ge 1$ (existe antiperíodo) y $k \ge 1$. Sea $A$ el entero formado por $a_1 a_2 \dots a_m$ y $B$ el formado por $b_1 b_2 \dots b_k$. Multiplicando por $10^m$ para dejar el período justo después del punto decimal se obtiene
+$$10^m\left(\frac{p}{q}-N\right)=A+0.\overline{b_1 b_2 \dots b_k}=A+\frac{B}{10^k-1}.$$
+Por tanto,
+$$\frac{p}{q}=N+\frac{A}{10^m}+\frac{B}{10^m(10^k-1)}.$$
+Reduciendo a denominador común $10^m(10^k-1)$, el denominador de la fracción resultante divide a $10^m(10^k-1)$. Como $\frac{p}{q}$ está en forma irreducible, $q$ divide a $10^m(10^k-1)$. El factor $10^m$ solo aporta primos $2$ y $5$, mientras que $10^k-1$ es coprimo con $10$. Como $m\ge 1$, $q$ posee factores $2$ o $5$; como la expansión no es exacta, $q$ no puede dividir solo a $10^m$, así que también posee algún factor primo distinto de $2$ y $5$.
+
+$(\Leftarrow)$ Escribamos $q=2^a 5^b q'$, donde $a,b \ge 0$ y $\gcd(q',10)=1$. Por hipótesis, $q'>1$ y $a+b\ge 1$. Sea $m=\max(a,b)$. Multiplicando numerador y denominador por $2^{m-a}5^{m-b}$ se consigue
+$$\frac{p}{q}=\frac{p \cdot 2^{m-a}5^{m-b}}{10^m q'}=\frac{C}{10^m q'}.$$
+Dividimos $C$ entre $q'$: existen $s,r\in\mathbb{Z}$ con $0\le r<q'$ tales que $C=s q'+r$. Entonces
+$$\frac{C}{10^m q'}=\frac{s}{10^m}+\frac{r}{10^m q'}.$$
+Como $\gcd(p,q)=1$ y $q'>1$, se tiene $r\neq 0$; de lo contrario $q'$ dividiría a $C$ y, al ser coprimo con $10$, dividiría a $p$, lo cual es imposible. Como $\gcd(q',10)=1$ y $0<r<q'$, la fracción $\frac{r}{q'}$ es periódica pura por la Proposición 5.3. Dividirla por $10^m$ desplaza la coma decimal $m$ lugares, produciendo un antiperíodo de longitud $m$ seguido de un período. El término $\frac{s}{10^m}$ es un decimal finito que solo modifica los dígitos del antiperíodo. Por tanto, $\frac{p}{q}$ es semiperiódica. $\blacksquare$
+
 **Ejemplo 5.5:**
 - $\frac{1}{6} = 0.1\overline{6}$ (denominador $2 \cdot 3$).
 - $\frac{7}{12} = 0.58\overline{3}$ (denominador $2^2 \cdot 3$).
@@ -1165,7 +1178,9 @@ $$f(n) = \begin{cases}
 
 Esta función asigna $0 \mapsto 0$, $1 \mapsto -1$, $2 \mapsto 1$, $3 \mapsto -2$, $4 \mapsto 2$, y así sucesivamente.
 
-Para verificar que $f$ es inyectiva, notemos que los naturales pares se envían a enteros no negativos y los impares a enteros negativos; dentro de cada grupo la asignación es claramente inyectiva. Para la sobreyectividad, dado $z \in \mathbb{Z}$, si $z = 0$ se toma $n = 0$; si $z > 0$ se toma $n = 2z$; si $z < 0$ se toma $n = -2z - 1$. Así, $f$ es biyectiva. $\blacksquare$
+Para verificar que $f$ es inyectiva, observamos que los naturales pares se envían a enteros no negativos y los impares a enteros negativos; por tanto, un par y un impar no pueden tener la misma imagen. Si $n_1, n_2$ son pares y $f(n_1)=f(n_2)$, entonces $\frac{n_1}{2}=\frac{n_2}{2}$, de donde $n_1=n_2$. Si son impares y $f(n_1)=f(n_2)$, entonces $-\frac{n_1+1}{2}=-\frac{n_2+1}{2}$, de donde $n_1=n_2$. Además, $f(0)=0$ no coincide con la imagen de ningún natural positivo, pues estos se asignan a enteros distintos de cero. Por lo tanto $f$ es inyectiva.
+
+Para la sobreyectividad, dado $z \in \mathbb{Z}$, si $z = 0$ se toma $n = 0$; si $z > 0$ se toma $n = 2z$; si $z < 0$ se toma $n = -2z - 1$. Así, $f$ es biyectiva. $\blacksquare$
 
 ### 7.4 Los racionales son numerables
 
@@ -1458,6 +1473,16 @@ Para $n \in \mathbb{N}$ con $n \geq 1$ se cumple:
 1. $n! = n \cdot (n-1)!$.
 2. $\dfrac{n!}{(n-1)!} = n$.
 
+**Demostración:**
+
+La primera identidad es consecuencia directa de la Definición 11.3: para $n \ge 1$,
+$$n! = n \cdot (n-1) \cdot (n-2) \cdots 2 \cdot 1 = n \cdot \bigl((n-1) \cdot (n-2) \cdots 1\bigr) = n \cdot (n-1)!.$$
+
+Para la segunda identidad, como $(n-1)! \neq 0$ para todo $n \ge 1$, se puede dividir la primera identidad entre $(n-1)!$:
+$$\frac{n!}{(n-1)!} = \frac{n \cdot (n-1)!}{(n-1)!} = n.$$
+
+Por lo tanto ambas propiedades se verifican para todo $n \ge 1$. $\blacksquare$
+
 **Aplicaciones:**
 - El número de permutaciones de $n$ objetos distintos es $n!$.
 - Los coeficientes binomiales se expresan como $\displaystyle\binom{n}{k} = \frac{n!}{k!(n-k)!}$.
@@ -1611,6 +1636,18 @@ Multiplicando por $2$ se tiene $2n = 20a + 2b$. Como $20 \equiv -1 \pmod{7}$, re
 **Proposición 11.15 (Criterios compuestos):**
 Si $n = p \cdot q$ con $\gcd(p,q) = 1$, entonces para todo $m \in \mathbb{Z}$:
 $$n \mid m \quad \Longleftrightarrow \quad (p \mid m) \land (q \mid m).$$
+
+**Demostración:**
+
+$(\Rightarrow)$ Si $n \mid m$, entonces existe $k \in \mathbb{Z}$ tal que $m = n k = p q k$. Por tanto $p \mid m$ y $q \mid m$.
+
+$(\Leftarrow)$ Supongamos que $p \mid m$ y $q \mid m$. Como $\gcd(p,q)=1$, la identidad de Bézout garantiza la existencia de enteros $x,y \in \mathbb{Z}$ tales que
+$$x p + y q = 1.$$
+Multiplicando por $m$ se obtiene
+$$m = m \cdot 1 = m(xp + yq) = x(mp) + y(mq).$$
+Como $q \mid m$, escribimos $m = q b$ con $b \in \mathbb{Z}$; como $p \mid m$, escribimos $m = p a$ con $a \in \mathbb{Z}$. Sustituyendo,
+$$m = x(qb)p + y(pa)q = pq(xb + ya) = n(xb + ya).$$
+Así, $n \mid m$. $\blacksquare$
 
 **Ejemplo 11.14:**
 - $15 \mid n$ si y solo si $3 \mid n$ y $5 \mid n$. Por ejemplo, $1275$ termina en $5$ y la suma de sus cifras es $15$, divisible por $3$, así que $15 \mid 1275$.
