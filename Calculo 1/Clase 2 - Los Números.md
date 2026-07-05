@@ -1171,16 +1171,15 @@ Existe una biyección entre $\mathbb{Z}$ y $\mathbb{N}$.
 **Demostración:**
 Definimos $f: \mathbb{N} \to \mathbb{Z}$ mediante
 $$f(n) = \begin{cases}
-0 & \text{si } n = 0, \\
-\dfrac{n}{2} & \text{si } n > 0 \text{ es par}, \\
--\dfrac{n+1}{2} & \text{si } n > 0 \text{ es impar}.
+\dfrac{n}{2} & \text{si } n \text{ es par}, \\
+-\dfrac{n+1}{2} & \text{si } n \text{ es impar}.
 \end{cases}$$
 
-Esta función asigna $0 \mapsto 0$, $1 \mapsto -1$, $2 \mapsto 1$, $3 \mapsto -2$, $4 \mapsto 2$, y así sucesivamente.
+Como $0$ es par, se tiene $f(0)=0$. La función asigna $1 \mapsto -1$, $2 \mapsto 1$, $3 \mapsto -2$, $4 \mapsto 2$, y así sucesivamente.
 
-Para verificar que $f$ es inyectiva, observamos que los naturales pares se envían a enteros no negativos y los impares a enteros negativos; por tanto, un par y un impar no pueden tener la misma imagen. Si $n_1, n_2$ son pares y $f(n_1)=f(n_2)$, entonces $\frac{n_1}{2}=\frac{n_2}{2}$, de donde $n_1=n_2$. Si son impares y $f(n_1)=f(n_2)$, entonces $-\frac{n_1+1}{2}=-\frac{n_2+1}{2}$, de donde $n_1=n_2$. Además, $f(0)=0$ no coincide con la imagen de ningún natural positivo, pues estos se asignan a enteros distintos de cero. Por lo tanto $f$ es inyectiva.
+Para verificar que $f$ es inyectiva, observamos que los naturales pares se envían a enteros no negativos y los impares a enteros negativos; por tanto, un par y un impar no pueden tener la misma imagen. Si $n_1, n_2$ son pares y $f(n_1)=f(n_2)$, entonces $\frac{n_1}{2}=\frac{n_2}{2}$, de donde $n_1=n_2$. Si son impares y $f(n_1)=f(n_2)$, entonces $-\frac{n_1+1}{2}=-\frac{n_2+1}{2}$, de donde $n_1=n_2$. Por lo tanto $f$ es inyectiva.
 
-Para la sobreyectividad, dado $z \in \mathbb{Z}$, si $z = 0$ se toma $n = 0$; si $z > 0$ se toma $n = 2z$; si $z < 0$ se toma $n = -2z - 1$. Así, $f$ es biyectiva. $\blacksquare$
+Para la sobreyectividad, dado $z \in \mathbb{Z}$, si $z \ge 0$ se toma $n = 2z$, que es par; si $z < 0$ se toma $n = -2z - 1$, que es impar. Así, $f$ es biyectiva. $\blacksquare$
 
 ### 7.4 Los racionales son numerables
 
@@ -1792,7 +1791,7 @@ El Cálculo se fundamenta en conceptos como:
 - **Derivadas**: tasas de cambio instantáneas
 - **Integrales**: áreas bajo curvas
 
-Todos estos conceptos requieren la **completitud** de $\mathbb{R}$. En $\mathbb{Q}$, muchas sucesiones "deberían" converger pero no lo hacen (porque su límite es irracional).
+Todos estos conceptos requieren la **completitud** de $\mathbb{R}$. En $\mathbb{Q}$, muchas sucesiones cuyo límite debería existir no convergen dentro del sistema, pues ese límite es irracional.
 
 **Ejemplo 13.1:** La sucesión en $\mathbb{Q}$:
 $$1, \quad 1.4, \quad 1.41, \quad 1.414, \quad 1.4142, \quad \dots$$
