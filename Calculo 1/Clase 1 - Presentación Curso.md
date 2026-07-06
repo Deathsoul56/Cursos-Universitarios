@@ -87,34 +87,17 @@ Al finalizar el curso, el estudiante será capaz de:
 
 ### Textos principales
 
-1. Stewart, J., Clegg, D. & Watson, S. (2020). *Calculus: Early Transcendentals* (9th ed.). Cengage Learning.
-2. Larson, R. & Edwards, B. H. (2018). *Calculus* (11th ed.). Cengage Learning.
+1. **Stewart, J.** (2015). *Cálculo. Trascendentes tempranas* (8a ed.). Cengage Learning. [Libro accesible y recomendado para comenzar.]
+2. **Spivak, M.** (1994). *Calculus* (3a ed.). Publish or Perish. [Libro guía formal y riguroso.]
+3. **Apostol, T. M.** (1967). *Calculus, Vol. I* (2nd ed.). Wiley. [Segunda opción formal.]
 
-### Textos complementarios
+### Textos secundarios
 
-3. Spivak, M. (2008). *Calculus* (4th ed.). Publish or Perish. [Énfasis en rigor y demostración.]
-4. Apostol, T. M. (1991). *Calculus, Vol. 1* (2nd ed.). John Wiley & Sons. [Énfasis en rigor.]
-5. Anton, H., Bivens, I. & Davis, S. (2016). *Calculus: Early Transcendentals* (11th ed.). John Wiley & Sons.
-6. Courant, R. & John, F. (1999). *Introduction to Calculus and Analysis, Vol. I*. Springer.
-
-### Fundamentos matemáticos
-
-7. Landau, E. (1966). *Foundations of Analysis*. Chelsea Publishing.
-8. Rudin, W. (1976). *Principles of Mathematical Analysis* (3rd ed.). McGraw-Hill. [Nivel avanzado.]
-
-### Recursos en línea
-
-- Khan Academy: módulos de cálculo diferencial.
-- MIT OpenCourseWare: 18.01 Single Variable Calculus.
-- Paul's Online Math Notes (Lamar University).
-- 3Blue1Brown: *Essence of Calculus* (YouTube).
-- WolframAlpha: verificación de cálculos y gráficas.
-
-### Software recomendado
-
-- **Gratuito:** GeoGebra, Desmos, SageMath.
-- **Comercial:** Mathematica, MATLAB, Maple.
-- **Programación:** Python (SymPy, NumPy, Matplotlib).
+4. **Goldstein, L. J., Lay, D. C., Schneider, D. I. & Asmar, N. H.** (2014). *Calculus*. Pearson. [Enfoque teórico con aplicaciones a ingeniería y ciencias.]
+5. **Thomas, G. B.** (2010). *Cálculo* (12a ed.). Pearson. [Referencia amplia y clásica de uso universitario.]
+6. **Larson, R. & Edwards, B. H.** (2009). *Cálculo* (9a ed.). Cengage Learning. [Accesible, con gran cantidad de ejemplos y ejercicios.]
+7. **Purcell, E. J., Varberg, D. & Rigdon, S. E.** (2007). *Cálculo diferencial e integral* (9a ed.). Pearson. [Enfoque clásico, ideal para una introducción amigable.]
+8. **Anton, H., Bivens, I. & Davis, S.** (2012). *Calculus: Early Transcendentals* (10th ed.). Wiley. [Buen equilibrio entre rigor y accesibilidad, con aplicaciones.]
 
 ---
 

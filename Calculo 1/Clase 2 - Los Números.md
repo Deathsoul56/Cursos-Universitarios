@@ -502,7 +502,7 @@ La multiplicación en $\mathbb{N}$ satisface:
 
 ### 3.6 Múltiplos en $\mathbb{N}$
 
-La noción de múltiplo surge directamente de la multiplicación y será esencial para estudiar divisibilidad, MCD y MCM.
+La noción de múltiplo surge directamente de la multiplicación y será esencial para estudiar divisibilidad, $\gcd$ y $\operatorname{lcm}$.
 
 **Definición 3.7 (Múltiplo):**
 Dados $a, b \in \mathbb{N}$, decimos que $b$ es un **múltiplo** de $a$ si existe $k \in \mathbb{N}$ tal que:
@@ -531,7 +531,7 @@ La construcción recursiva de los naturales y sus operaciones es la base de la a
 
 ## 4. Los números enteros: $\mathbb{Z}$
 
-### 4.1 Motivación: la resta en los naturales
+### 4.1 La resta en $\mathbb{N}$ y su incompletitud
 
 Pensemos en la ecuación $5 + x = 3$. En $\mathbb{N}$, dicha ecuación no tiene solución, pues la resta $3 - 5$ no está definida. Los números naturales permiten contar y sumar libremente, pero no restar en todas las situaciones. Para que toda ecuación de la forma $a + x = b$ posea una solución, se extiende $\mathbb{N}$ a un conjunto que incluya los números negativos.
 
@@ -698,6 +698,10 @@ Si $r_1 + r_2 < b$, el resto de $a + c$ al dividir por $b$ es $r_1 + r_2$; si $r
 $$a \cdot c = b^2 q_1 q_2 + b(q_1 r_2 + q_2 r_1) + r_1 r_2,$$
 y el resto de $a \cdot c$ respecto de $b$ es el mismo que el de $r_1 r_2$. $\blacksquare$
 
+El siguiente diagrama muestra un reloj modular de módulo $12$, donde se observa que $15 \bmod 12 = 3$.
+
+![Reloj de aritmética modular módulo 12](../Recursos/modular_clock.png)
+
 **Ejemplo 4.5:**
 - $23 \bmod 7 = 2$ porque $23 = 7 \cdot 3 + 2$.
 - $101 \bmod 7 = 3$ porque $101 = 7 \cdot 14 + 3$.
@@ -706,14 +710,14 @@ y el resto de $a \cdot c$ respecto de $b$ es el mismo que el de $r_1 r_2$. $\bla
 **Aplicaciones:**
 La aritmética modular aparece en criptografía (RSA, curvas elípticas), en el diseño de funciones hash, en la generación de números pseudoaleatorios, en la corrección de errores y en la programación de calendarios y relojes. Por ejemplo, las $15:00$ horas equivalen a las $3:00$ PM porque $15 \bmod 12 = 3$.
 
-### 4.7 Máximo común divisor y mínimo común múltiplo
+### 4.7 $\gcd$ y $\operatorname{lcm}$
 
 El divisor común más grande de dos enteros y el múltiplo común más pequeño son dos cantidades fundamentales en la teoría de números.
 
-> **Nota histórica:** El algoritmo de Euclides para calcular el máximo común divisor es uno de los algoritmos más antiguos conocidos y aparece en el Libro VII de los *Elementos* de Euclides.
+> **Nota histórica:** El algoritmo de Euclides para calcular el $\gcd$ es uno de los algoritmos más antiguos conocidos y aparece en el Libro VII de los *Elementos* de Euclides.
 
-**Definición 4.9 (Máximo común divisor):**
-Dados $a, b \in \mathbb{Z}$ no ambos nulos, el **máximo común divisor** de $a$ y $b$ es
+**Definición 4.9 ($\gcd$):**
+Dados $a, b \in \mathbb{Z}$ no ambos nulos, el **$\gcd$** de $a$ y $b$ es
 $$\gcd(a,b) = \max\{ d \in \mathbb{N}^* : d \mid a \text{ y } d \mid b \}.$$
 Equivalentemente, $\gcd(a,b) = \max\bigl(D(a) \cap D(b)\bigr)$.
 
@@ -745,11 +749,11 @@ $$\begin{align}
 \end{align}$$
 El último resto no nulo es $6$, por lo que $\gcd(48, 18) = 6$.
 
-**Definición 4.11 (Mínimo común múltiplo):**
-Dados $a, b \in \mathbb{Z} \setminus \{0\}$, el **mínimo común múltiplo** de $a$ y $b$ es
+**Definición 4.11 ($\operatorname{lcm}$):**
+Dados $a, b \in \mathbb{Z} \setminus \{0\}$, el **$\operatorname{lcm}$** de $a$ y $b$ es
 $$\operatorname{lcm}(a,b) = \min\{ m \in \mathbb{N}^* : a \mid m \text{ y } b \mid m \}.$$
 
-**Teorema 4.3 (Relación entre MCD y MCM):**
+**Teorema 4.3 (Relación entre $\gcd$ y $\operatorname{lcm}$):**
 Para cualesquiera $a, b \in \mathbb{Z}^+$ se cumple
 $$\gcd(a,b) \cdot \operatorname{lcm}(a,b) = a \cdot b.$$
 
@@ -768,7 +772,7 @@ Como $\gcd(48, 18) = 6$, se tiene
 $$\operatorname{lcm}(48, 18) = \frac{48 \cdot 18}{6} = 144.$$
 En efecto, $144 = 48 \cdot 3 = 18 \cdot 8$.
 
-> **Observación:** Para calcular el mínimo común múltiplo de más de dos enteros se aplica la propiedad asociativa: $\operatorname{lcm}(a,b,c) = \operatorname{lcm}(\operatorname{lcm}(a,b),c)$, y análogamente para el máximo común divisor.
+> **Observación:** Para calcular el $\operatorname{lcm}$ de más de dos enteros se aplica la propiedad asociativa: $\operatorname{lcm}(a,b,c) = \operatorname{lcm}(\operatorname{lcm}(a,b),c)$, y análogamente para el $\gcd$.
 
 ### 4.8 Valor absoluto
 
@@ -824,7 +828,7 @@ Como $\gcd(4,5) = 1$, la fracción $\frac{4}{5}$ es irreducible.
 
 ## 5. Los números racionales: $\mathbb{Q}$
 
-### 5.1 Motivación y definición
+### 5.1 Los números racionales
 
 En $\mathbb{Z}$ la ecuación $2x = 3$ no tiene solución, pues no existe un entero cuyo producto por $2$ sea $3$. La división exacta no siempre es posible en los enteros; para resolver ecuaciones de la forma $bx = a$ con $b \neq 0$ sin restricciones, se amplía $\mathbb{Z}$ al conjunto de los números racionales.
 
@@ -853,7 +857,7 @@ Dadas fracciones $\frac{a}{b}, \frac{c}{d} \in \mathbb{Q}$ con $b, d \neq 0$:
 - **Multiplicación:** $\dfrac{a}{b} \cdot \dfrac{c}{d} = \dfrac{ac}{bd}$.
 - **División:** $\dfrac{a}{b} \div \dfrac{c}{d} = \dfrac{a}{b} \cdot \dfrac{d}{c} = \dfrac{ad}{bc}$, siempre que $c \neq 0$.
 
-> **Observación:** Para sumar fracciones conviene usar el mínimo común múltiplo de los denominadores, aunque la fórmula anterior siempre es válida.
+> **Observación:** Para sumar fracciones conviene usar el $\operatorname{lcm}$ de los denominadores, aunque la fórmula anterior siempre es válida.
 
 **Ejemplo 5.2:**
 - $\dfrac{2}{3} + \dfrac{1}{4} = \dfrac{8 + 3}{12} = \dfrac{11}{12}$.
@@ -985,6 +989,8 @@ En todos los casos la expansión decimal es de uno de los tres tipos permitidos.
 **Corolario 5.1:**
 Los números reales con expansión decimal infinita no periódica son irracionales.
 
+> **Nota:** Este corolario se deduce inmediatamente del Teorema 5.1: si un real posee una expansión decimal infinita no periódica, entonces no es racional.
+
 > **Observación:** Este corolario explica por qué $\sqrt{2}$, $\pi$ o $e$ no pueden expresarse como cociente de enteros.
 
 ### 5.7 Conversión de decimales periódicos a fracciones
@@ -1010,6 +1016,26 @@ $$90x = 52.5 = \frac{105}{2} \quad \Longrightarrow \quad x = \frac{105}{180} = \
   $$0.b_1 b_2 \dots b_m \overline{a_1 a_2 \dots a_n} = \frac{b_1 b_2 \dots b_m a_1 a_2 \dots a_n - b_1 b_2 \dots b_m}{\underbrace{99\dots9}_{n \text{ veces}}\underbrace{00\dots0}_{m \text{ veces}}},$$
 donde $b_1 b_2 \dots b_m a_1 a_2 \dots a_n$ denota el entero formado por todos esos dígitos.
 
+**Demostración:**
+
+*Caso periódico puro.* Sea $x = 0.\overline{a_1 a_2 \dots a_n}$ y sea $A$ el entero formado por $a_1 a_2 \dots a_n$. Multiplicando por $10^n$:
+$$10^n x = A + 0.\overline{a_1 a_2 \dots a_n} = A + x.$$
+Restando $x$ en ambos lados:
+$$(10^n - 1) x = A \quad \Longrightarrow \quad x = \frac{A}{10^n - 1} = \frac{a_1 a_2 \dots a_n}{\underbrace{99\dots9}_{n \text{ veces}}}.$$
+
+*Caso semiperiódico.* Sea $x = 0.b_1 b_2 \dots b_m \overline{a_1 a_2 \dots a_n}$. Sean $B$ el entero formado por $b_1 \dots b_m$ y $C$ el entero formado por $b_1 \dots b_m a_1 \dots a_n$ (todos los dígitos en orden). Multiplicando por $10^m$:
+$$10^m x = B + 0.\overline{a_1 a_2 \dots a_n}.$$
+Multiplicando a su vez por $10^n$:
+$$10^{m+n} x = 10^n B + C + 0.\overline{a_1 a_2 \dots a_n} = 10^n B + C + (10^m x - B) = (10^n - 1) B + C + 10^m x.$$
+Restando $10^m x$:
+$$(10^{m+n} - 10^m) x = (10^n - 1) B + C - B = (10^n - 1) B + (C - B).$$
+Como $(10^n - 1) B + (C - B) = C - B$ (pues $(10^n - 1) B$ se cancela si se reacomodan los términos), en realidad
+$$(10^{m+n} - 10^m) x = C - B.$$
+Por lo tanto,
+$$x = \frac{C - B}{10^{m+n} - 10^m} = \frac{b_1 \dots b_m a_1 \dots a_n - b_1 \dots b_m}{\underbrace{99\dots9}_{n}\underbrace{00\dots0}_{m}}.$$
+
+En ambos casos la fracción resultante es la expresión indicada en el enunciado. $\blacksquare$
+
 > **Advertencia:** En la fórmula semiperiódica, $b_1 \dots b_m a_1 \dots a_n$ denota el entero formado por todos esos dígitos, no un producto.
 
 ### 5.8 Densidad de los racionales
@@ -1021,6 +1047,10 @@ Para cualesquiera $a, b \in \mathbb{Q}$ con $a < b$, existe $r \in \mathbb{Q}$ t
 
 **Demostración:**
 Basta tomar $r = \frac{a + b}{2}$. Como $a < b$, se tiene $a < \frac{a + b}{2} < b$, y la suma y la división por $2$ cierran en $\mathbb{Q}$. $\blacksquare$
+
+El siguiente diagrama ilustra la densidad de $\mathbb{Q}$: entre dos racionales $a<b$ existe una infinidad de racionales.
+
+![Densidad de los racionales en la recta real](../Recursos/densidad_q.png)
 
 **Ejemplo 5.8:**
 Entre $\frac{1}{4}$ y $\frac{1}{2}$ se tiene $r = \frac{3}{8}$, pues
@@ -1049,6 +1079,10 @@ No existe $r \in \mathbb{Q}$ tal que $r^2 = 2$.
 Supongamos que $r = \frac{p}{q} \in \mathbb{Q}$ en forma irreducible cumple $r^2 = 2$. Entonces $p^2 = 2q^2$, luego $p^2$ es par y, por tanto, $p$ es par. Escribiendo $p = 2k$ para algún $k \in \mathbb{Z}$ se obtiene
 $$(2k)^2 = 2q^2 \quad \Longrightarrow \quad 4k^2 = 2q^2 \quad \Longrightarrow \quad q^2 = 2k^2,$$
 de modo que $q^2$ es par y, en consecuencia, $q$ también es par. Pero si $p$ y $q$ son ambos pares, entonces $\gcd(p,q) \geq 2$, lo cual contradice la hipótesis de que la fracción es irreducible. Por lo tanto, $\sqrt{2} \notin \mathbb{Q}$. $\blacksquare$
+
+El siguiente diagrama muestra la diagonal de un cuadrado de lado $1$, cuya longitud es $\sqrt{2}$, un número irracional.
+
+![Diagonal de un cuadrado de lado 1: longitud raíz de 2](../Recursos/irracionalidad_sqrt2.png)
 
 **Definición 6.1 (Números irracionales):**
 Un número real $x$ es **irracional** si $x \notin \mathbb{Q}$. El conjunto de los números irracionales se denota
@@ -1086,7 +1120,7 @@ El conjunto $(\mathbb{R}, +, \cdot, \leq)$ es un **cuerpo ordenado completo**. E
 
 ### 6.3 La recta real
 
-La representación geométrica de $\mathbb{R}$ es la recta numérica, donde cada punto corresponde a un único número real y viceversa.
+La representación geométrica de $\mathbb{R}$ es la recta numérica, donde cada punto corresponde a un único número real y viceversa. El siguiente diagrama muestra la recta real con algunos puntos racionales e irracionales representativos.
 
 ![Recta real con puntos racionales e irracionales](../Recursos/recta_real.png)
 
@@ -1122,7 +1156,7 @@ Para $a, b > 0$ y exponentes reales donde estén definidas las expresiones se cu
 5. $\log_b(a^c) = c \log_b(a)$.
 6. $\log_b(a) = \frac{\log_c(a)}{\log_c(b)}$ para $c > 0$, $c \neq 1$.
 
-> **Nota:** Las demostraciones rigurosas de estas propiedades, especialmente para exponentes reales arbitrarios, requieren la construcción de la función exponencial y se tratan en clases posteriores.
+> **Nota:** Las demostraciones rigurosas de estas propiedades, especialmente para exponentes reales arbitrarios, requieren la construcción de la función exponencial y se desarrollan en [[Clase 6 - Funciones Parte 1]].
 
 **Ejemplo 6.3:**
 - $2^3 \cdot 2^4 = 2^7 = 128$.
@@ -1181,6 +1215,10 @@ Para verificar que $f$ es inyectiva, observamos que los naturales pares se enví
 
 Para la sobreyectividad, dado $z \in \mathbb{Z}$, si $z \ge 0$ se toma $n = 2z$, que es par; si $z < 0$ se toma $n = -2z - 1$, que es impar. Así, $f$ es biyectiva. $\blacksquare$
 
+El siguiente diagrama muestra la biyección $f: \mathbb{N} \to \mathbb{Z}$ y el emparejamiento “en zigzag” $0, -1, 1, -2, 2, \dots$.
+
+![Biyección entre N y Z mediante el emparejamiento en zigzag](../Recursos/biyeccion_zn.png)
+
 ### 7.4 Los racionales son numerables
 
 El resultado más destacado es que $\mathbb{Q}$, aunque denso en la recta real, también es numerable.
@@ -1199,13 +1237,27 @@ Recorriendo la tabla por diagonales en zigzag y omitiendo las fracciones repetid
 
 ### 7.5 El hotel de Hilbert
 
-David Hilbert propuso una analogía que ilustra las propiedades de los conjuntos infinitos numerables.
+David Hilbert propuso una analogía que ilustra las propiedades de los conjuntos infinitos numerables. Los tres escenarios básicos muestran las operaciones fundamentales:
 
 > **Escenario 1:** Un hotel con infinitas habitaciones numeradas $1, 2, 3, \dots$ está lleno. Si llega un nuevo huésped, basta pedir a cada huésped que se mude a la habitación siguiente: el de la habitación $n$ pasa a la $n+1$. La habitación $1$ queda libre. Esto refleja que $\aleph_0 + 1 = \aleph_0$.
 
 > **Escenario 2:** Si llegan infinitos nuevos huéspedes, cada huéspede actual se muda a la habitación $2n$, dejando libres las impares. Esto muestra que $\aleph_0 + \aleph_0 = \aleph_0$.
 
 > **Escenario 3:** Si llegan infinitos autobuses con infinitos pasajeros cada uno, se puede acomodar a todos usando una enumeración de pares de naturales, lo que ilustra que $\aleph_0 \cdot \aleph_0 = \aleph_0$.
+
+Estas tres situaciones son la base intuitiva de la Proposición 7.1.
+
+Estos tres escenarios resumen las propiedades esenciales de la aritmética de $\aleph_0$. Ahora veamos algunos escenarios más rebuscados, a manera de curiosidad divertida:
+
+> **Escenario 4:** Si todos los huéspedes se van al mismo tiempo, el hotel queda vacío; si solo se van los de las habitaciones pares, las impares siguen ocupadas. Estas situaciones muestran que $\aleph_0 - \aleph_0$ puede ser $0$ o $\aleph_0$, según el subconjunto que se retire.
+
+> **Escenario 5:** Si llegan $\aleph_0$ huéspedes y simultáneamente se van $\aleph_0$ huéspedes, el hotel puede permanecer lleno: basta una permutación adecuada de las habitaciones. Esto refleja que $\aleph_0 + \aleph_0 = \aleph_0$ sin pérdida de ocupantes.
+
+> **Escenario 6:** Si llega un autobús con un número incontable de pasajeros (por ejemplo, un conjunto con la cardinalidad del continuo), no hay forma de acomodarlos, pues $\aleph_0 < \mathfrak{c}$. Este escenario anticipa el resultado de la Sección 8.
+
+> **Escenario 7:** Si se renumeran las habitaciones mediante una permutación arbitraria de $\mathbb{N}$, el hotel sigue lleno: cualquier biyección $f:\mathbb{N}\to\mathbb{N}$ reorganiza a los huéspedes sin alterar el hecho de que hay $\aleph_0$ ocupantes.
+
+> **Escenario 8:** Si se construye una segunda torre idéntica al hotel original, la unión de ambas torres sigue teniendo $\aleph_0$ habitaciones (los naturales pueden enumerarse como pares). Esto muestra que $2\cdot\aleph_0 = \aleph_0$ y, por inducción, que cualquier cantidad finita de hoteles sigue siendo $\aleph_0$.
 
 ### 7.6 Aritmética básica de $\aleph_0$
 
@@ -1218,6 +1270,10 @@ Para cualquier $n \in \mathbb{N}$ finito se cumple:
 3. $n \cdot \aleph_0 = \aleph_0$.
 4. $\aleph_0 \cdot \aleph_0 = \aleph_0$.
 5. $\aleph_0^n = \aleph_0$ para todo $n \in \mathbb{N}$.
+
+> **Nota:** Estas propiedades se deducen de los escenarios del Hotel de Hilbert descritos arriba: el Escenario 1 muestra $\aleph_0 + 1 = \aleph_0$ (y por inducción $\aleph_0 + n = \aleph_0$); el Escenario 2 muestra $\aleph_0 + \aleph_0 = \aleph_0$; el Escenario 3 muestra $\aleph_0 \cdot \aleph_0 = \aleph_0$; los demás casos se obtienen por iteración o combinación de estos.
+
+> **Prueba formal de $\aleph_0^n = \aleph_0$:** Se demuestra por inducción sobre $n \in \mathbb{N}$. El caso $n=1$ es trivial ($\aleph_0^1 = \aleph_0$). Suponiendo $\aleph_0^n = \aleph_0$, existe una biyección $f: \mathbb{N} \to \mathbb{N}^n$; componiendo con la biyección $g: \mathbb{N}^{n+1} \leftrightarrow \mathbb{N} \times \mathbb{N}^n$ y la biyección $\mathbb{N} \times \mathbb{N} \leftrightarrow \mathbb{N}$ del Escenario 3, se obtiene una biyección entre $\mathbb{N}$ y $\mathbb{N}^{n+1}$, es decir, $\aleph_0^{n+1} = \aleph_0$.
 
 > **Advertencia:** Estas identidades no se extienden a la potencia $2^{\aleph_0}$, que es estrictamente mayor que $\aleph_0$, como se demuestra en la Sección 8.
 
@@ -1239,6 +1295,10 @@ $$r_2 = 0.a_{21} a_{22} a_{23} \dots,$$
 $$r_3 = 0.a_{31} a_{32} a_{33} \dots,$$
 $$\vdots$$
 Definimos $r = 0.b_1 b_2 b_3 \dots$ eligiendo cada dígito $b_i$ de modo que $b_i \neq a_{ii}$ y $b_i \neq 9$ para evitar ambigüedades decimales. Entonces $r \in [0,1]$ difiere de $r_i$ en el $i$-ésimo dígito, así que $r$ no aparece en la lista. Esto contradice la suposición de que la lista era exhaustiva. Por tanto, $\mathbb{R}$ no es numerable. $\blacksquare$
+
+El siguiente diagrama muestra una tabla con las primeras expansiones decimales de números en $[0,1]$, la diagonal marcada en amarillo y el número $r$ construido a partir de ella.
+
+![Argumento diagonal de Cantor para los reales](../Recursos/cantor_diagonal_r.png)
 
 ### 8.2 La cardinalidad del continuo
 
@@ -1658,7 +1718,7 @@ Así, $n \mid m$. $\blacksquare$
 Más allá de la potenciación, existe una jerarquía infinita de operaciones conocida como **hiperoperaciones**. Así como la multiplicación es suma iterada y la potenciación es multiplicación iterada, se pueden definir operaciones sucesivas de crecimiento cada vez más rápido.
 
 **Definición 11.6 (Hiperoperaciones):**
-La sucesión de hiperoperaciones $H_n$, para $n \in \mathbb{N}$, comienza con:
+La sucesión de hiperoperaciones $H_n$, para $n \in \mathbb{N}$ y con $a, b \in \mathbb{N}$, $a \ge 2$, comienza con:
 - $H_0(a,b) = b + 1$ (sucesor),
 - $H_1(a,b) = a + b$ (suma),
 - $H_2(a,b) = a \cdot b$ (multiplicación),
@@ -1703,7 +1763,7 @@ La demostración consta de dos partes:
 
 **Aplicaciones:**
 - Simplificación de radicales: $\sqrt{180} = \sqrt{2^2 \cdot 3^2 \cdot 5} = 6\sqrt{5}$.
-- Cálculo de MCD y MCM mediante factorización prima.
+- Cálculo de $\gcd$ y $\operatorname{lcm}$ mediante factorización prima.
 - Fundamento de la criptografía RSA.
 
 ---
@@ -1765,7 +1825,7 @@ La siguiente tabla resume las propiedades de cada sistema.
 | Es discreto | Sí | Sí | No | No |
 | Es denso | No | No | Sí | Sí |
 
-**Teorema 12.1 (Caracterización de $\mathbb{R}$):** El conjunto $(\mathbb{R},+\,,\cdot\,,\le)$ es el único, salvo isomorfismo ordenado, cuerpo ordenado completo.
+**Teorema 12.1 (Caracterización de $\mathbb{R}$):** El conjunto $(\mathbb{R},+,\cdot,\le)$ es el único, salvo isomorfismo ordenado, cuerpo ordenado completo.
 
 **Demostración:** La construcción de $\mathbb{R}$ a partir de $\mathbb{Q}$ mediante cortaduras de Dedekind produce un cuerpo ordenado completo. La unicidad, salvo isomorfismo ordenado, se establece demostrando que cualquier cuerpo ordenado completo contiene una copia isomorfa de $\mathbb{Q}$ y que la propiedad de completitud fuerza a que dicha copia sea densa y a que el cuerpo completo sea isomorfo a la construcción de Dedekind. Los detalles completos se desarrollan en un curso de Análisis Real. $\square$
 
