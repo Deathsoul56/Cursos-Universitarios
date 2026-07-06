@@ -70,9 +70,13 @@ con matplotlib.
 
 ### Reglas de uso del color
 
-- **Color por defecto para gráficas solitarias:** púrpura (`#9900ff`). Cuando
-  haya una sola curva o figura central, usar púrpura para ella y para sus
-  títulos y leyendas asociadas.
+- **Color principal: púrpura (`#9900ff`).** Es el color por defecto para
+  curvas y figuras solitarias, y también para sus títulos, leyendas y
+  elementos asociados. **Nunca usar cian como primera opción** si no hay una
+  segunda curva o una comparación explícita que lo justifique.
+- **Cian es un color secundario.** Solo se utiliza cuando hay una segunda
+  curva o serie que se contrasta con la principal (por ejemplo, comparar
+  dominio y codominio, o dos funciones en el mismo gráfico).
 - No usar más de 4–5 colores de acento en una misma figura.
 - Mantener un color por categoría semántica (por ejemplo, púrpura para la
   curva principal, magenta para el dominio, cyan para el codominio, amarillo
@@ -84,6 +88,8 @@ con matplotlib.
   curva es cyan.
 - Los textos en color neon deben llevar un contorno oscuro o un glow para
   mejorar la legibilidad sobre fondo negro.
+- **El título de la figura siempre va centrado horizontalmente** en la parte
+  superior. Su color sigue la regla principal: púrpura por defecto.
 
 ---
 
@@ -230,7 +236,7 @@ NEON_COLORS = ["#9900ff", "#ff00ff", "#00ffff", "#ffff00",
 - Conjunto de partida (dominio): elipse magenta con puntos magenta/rosa.
 - Conjunto de llegada (codominio): elipse cyan con puntos cyan.
 - Flechas de mapeo: amarillas, con punta de flecha.
-- Título del mapeo: centrado arriba, cyan con glow.
+- Título del mapeo: centrado arriba, **púrpura** con glow.
 - Leyenda al pie: color del acente correspondiente.
 
 ### Plano cartesiano

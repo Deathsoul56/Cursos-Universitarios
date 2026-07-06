@@ -44,6 +44,9 @@ Definir una estructura común, concisa y formal para los documentos de presentac
 - Los prerrequisitos deben ser **conocimientos concretos**, no cursos genéricos.
 - El programa debe organizarse por **módulos numerados** (`## N. Módulo ...` o `### Módulo N...`) con subtemas concisos. Puede incluir una indicación temporal aproximada (semanas) si es útil para autoestudio.
 - La bibliografía separa **textos principales** de **complementarios**; se añade una breve nota cuando el texto tiene un enfoque especial (rigor, aplicaciones, nivel avanzado).
+- En la **Clase 1 (presentación del curso)** la bibliografía se organiza en dos subsecciones: `### Textos principales` y `### Textos secundarios`. Cada entrada sigue estrictamente el formato  
+  `**Apellido, N.** (año). *Título* (edición). Editorial. [Comentario breve sobre enfoque o nivel.]`  
+  Todas las entradas, principales y secundarias, deben incluir el comentario entre corchetes al final. El comentario describe el carácter del texto (por ejemplo: "Libro accesible para comenzar.", "Riguroso y formal.", "Enfoque en STEM.", etc.).
 
 ## Convenciones de formato
 

@@ -350,12 +350,28 @@ Las imágenes se almacenan centralmente en la carpeta `Recursos/` y se insertan 
   - Archivo en carpeta de primer nivel (p. ej. `Probabilidad y Estadistica/`): `../Recursos/nombre.png`
   - Archivo en subcarpeta (p. ej. `Calculo 1/Clases/`): `../../Recursos/nombre.png`
 - El texto alternativo debe ser breve y descriptivo.
-- **No usar rótulos, pies de foto ni numeración de figuras** (por ejemplo, `*Figura 1.1 — ...*`). Estos apuntes son un cuaderno de alumno, no un libro de texto. Si la imagen necesita explicación, integrarla en el párrafo anterior o posterior.
+- **No usar rótulos ni numeración de figuras** (por ejemplo, `*Figura 1.1 — ...*`). Estos apuntes son un cuaderno de alumno, no un libro de texto.
+- Se admite una **breve nota explicativa** debajo de la imagen (una línea o dos), sin numeración, cuando aporte información útil; si la imagen necesita más explicación, integrarla en el párrafo anterior o posterior.
 - Si es estrictamente necesario redimensionar, usar HTML estándar:
   ```markdown
   <img src="../Recursos/nombre_archivo.png" alt="Texto alternativo" width="400">
   ```
 - Asegurarse de que el archivo de imagen exista en `Recursos/` antes de referenciarlo.
+
+**Tip de generación — símbolos matemáticos en títulos:**
+Cuando una imagen incluya un título con símbolos como `ℕ`, `ℤ`, `ℚ`, `ℝ` o `𝕀`, usar una fuente matemática (por ejemplo `seguisym.ttf` o `cambmath.ttf`) para esos caracteres. Para alinear el símbolo con el texto normal:
+
+```python
+# texto normal con fuente regular
+draw.text((x0, 20), "Recta de los naturales ", font=title_font, fill=PURPLE)
+
+# símbolo ℕ alineado por línea base
+baseline_y = 20 + title_font.getmetrics()[0]
+sym_x = x0 + draw.textlength("Recta de los naturales ", font=title_font) + 5
+draw.text((sym_x, baseline_y), "ℕ", font=sym_font, fill=PURPLE, anchor='ls')
+```
+
+El truco consiste en fijar la coordenada `y` del símbolo en la línea base del texto principal (obtenida con `font.getmetrics()[0]`) y usar `anchor='ls'` para que `PIL` coloque el símbolo respecto a esa línea base. Así el símbolo queda ópticamente alineado con el resto del texto.
 
 ### Listas de propiedades numeradas
 
