@@ -1,5 +1,7 @@
 # Ecuaciones: Fundamentos Algebraicos
 
+En esta clase se estudian las herramientas algebraicas fundamentales para resolver ecuaciones: jerarquía de operaciones, manipulación de raíces y logaritmos, y los principales tipos de ecuaciones (lineales, cuadráticas, de grado superior, racionales, sistemas y no lineales), con énfasis en el rigor de las demostraciones y las aplicaciones en ciencias e ingeniería.
+
 ## 1. Operaciones combinadas y jerarquía
 
 ### 1.1 Jerarquía de operaciones (Orden de evaluación)
@@ -89,7 +91,7 @@ $$a\sqrt[n]{c} + b\sqrt[n]{c} = (a + b)\sqrt[n]{c}$$
 
 Esta operación es análoga a sumar términos semejantes en álgebra: $2x + 7x = 9x$.
 
-**Ejemplo 2.4 (Suma de raíces semejantes):**
+**Ejemplo 2.2 (Suma de raíces semejantes):**
 
 a) $2\sqrt{5} + 7\sqrt{5} = (2 + 7)\sqrt{5} = 9\sqrt{5}$
 
@@ -97,7 +99,7 @@ b) $8\sqrt{3} - 5\sqrt{3} = (8 - 5)\sqrt{3} = 3\sqrt{3}$
 
 c) $4\sqrt[3]{2} + 6\sqrt[3]{2} - \sqrt[3]{2} = (4 + 6 - 1)\sqrt[3]{2} = 9\sqrt[3]{2}$
 
-**Ejemplo 2.5 (Raíces NO semejantes):**
+**Ejemplo 2.3 (Raíces NO semejantes):**
 
 Las siguientes expresiones **NO** se pueden simplificar combinando términos porque las raíces no son semejantes:
 
@@ -107,7 +109,7 @@ b) $\sqrt{5} + \sqrt[3]{5}$ (diferentes índices)
 
 c) $2\sqrt{7} + 3\sqrt{11}$ (diferentes radicandos)
 
-**Ejemplo 2.6 (Simplificación previa para identificar raíces semejantes):**
+**Ejemplo 2.4 (Simplificación previa para identificar raíces semejantes):**
 
 A veces es necesario **simplificar primero** las raíces para identificar términos semejantes:
 
@@ -121,7 +123,7 @@ $$\sqrt{32} = \sqrt{16 \cdot 2} = 4\sqrt{2}$$
 Ahora todas son semejantes:
 $$2\sqrt{2} + 3\sqrt{2} - 4\sqrt{2} = (2 + 3 - 4)\sqrt{2} = \sqrt{2}$$
 
-**Ejemplo 2.7 (Expresión con múltiples raíces diferentes):**
+**Ejemplo 2.5 (Expresión con múltiples raíces diferentes):**
 
 $$5\sqrt{2} + 3\sqrt{3} + 2\sqrt{2} - \sqrt{3}$$
 
@@ -131,7 +133,7 @@ $$= 7\sqrt{2} + 2\sqrt{3}$$
 
 Esta es la forma más simplificada, ya que $\sqrt{2}$ y $\sqrt{3}$ no son semejantes.
 
-**Observación importante:** No se puede "distribuir" la raíz sobre sumas:
+> **Observación importante:** No se puede "distribuir" la raíz sobre sumas:
 $$\sqrt{a + b} \neq \sqrt{a} + \sqrt{b}$$
 
 Por ejemplo: $\sqrt{9 + 16} = \sqrt{25} = 5$, pero $\sqrt{9} + \sqrt{16} = 3 + 4 = 7 \neq 5$
@@ -149,7 +151,7 @@ Para racionalizar $\frac{a}{\sqrt{b}}$, multiplicamos por $\frac{\sqrt{b}}{\sqrt
 
 $$\frac{a}{\sqrt{b}} = \frac{a}{\sqrt{b}} \cdot \frac{\sqrt{b}}{\sqrt{b}} = \frac{a\sqrt{b}}{b}$$
 
-**Ejemplo 2.8:**
+**Ejemplo 2.6:**
 $$\frac{5}{\sqrt{3}} = \frac{5\sqrt{3}}{3}$$
 
 **Técnica 2: Binomio con raíz en el denominador**
@@ -160,10 +162,10 @@ $$\frac{a}{b + \sqrt{c}} = \frac{a}{b + \sqrt{c}} \cdot \frac{b - \sqrt{c}}{b - 
 
 **Identidad clave:** $(b + \sqrt{c})(b - \sqrt{c}) = b^2 - c$ (diferencia de cuadrados)
 
-**Ejemplo 2.9:**
+**Ejemplo 2.7:**
 $$\frac{1}{2 + \sqrt{3}} = \frac{1}{2 + \sqrt{3}} \cdot \frac{2 - \sqrt{3}}{2 - \sqrt{3}} = \frac{2 - \sqrt{3}}{4 - 3} = 2 - \sqrt{3}$$
 
-**Ejemplo 2.10 (Binomio con dos raíces):**
+**Ejemplo 2.8 (Binomio con dos raíces):**
 $$\frac{6}{\sqrt{5} - \sqrt{2}} = \frac{6(\sqrt{5} + \sqrt{2})}{(\sqrt{5} - \sqrt{2})(\sqrt{5} + \sqrt{2})} = \frac{6(\sqrt{5} + \sqrt{2})}{5 - 2} = \frac{6(\sqrt{5} + \sqrt{2})}{3} = 2(\sqrt{5} + \sqrt{2})$$
 
 #### 2.3.1 Racionalización de raíces cúbicas
@@ -179,7 +181,7 @@ Por lo tanto, multiplicamos por $\frac{\sqrt[3]{b^2}}{\sqrt[3]{b^2}}$:
 
 $$\frac{a}{\sqrt[3]{b}} = \frac{a}{\sqrt[3]{b}} \cdot \frac{\sqrt[3]{b^2}}{\sqrt[3]{b^2}} = \frac{a\sqrt[3]{b^2}}{b}$$
 
-**Ejemplo 2.11:**
+**Ejemplo 2.9:**
 Racionalice $\frac{5}{\sqrt[3]{4}}$:
 
 $$\begin{align}
@@ -188,7 +190,7 @@ $$\begin{align}
 &= \frac{5\sqrt[3]{16}}{4}
 \end{align}$$
 
-**Ejemplo 2.12:**
+**Ejemplo 2.10:**
 Racionalice $\frac{3}{\sqrt[3]{9}}$:
 
 Nota: $\sqrt[3]{9} = \sqrt[3]{3^2}$, entonces necesitamos $\sqrt[3]{3}$ para completar el cubo:
@@ -207,6 +209,7 @@ Para $\frac{a}{c\sqrt[3]{b}}$, multiplicamos por $\frac{\sqrt[3]{b^2}}{\sqrt[3]{
 $$\frac{a}{c\sqrt[3]{b}} = \frac{a\sqrt[3]{b^2}}{cb}$$
 
 **Ejemplo 2.13:**
+**Ejemplo 2.11:**
 Racionalice $\frac{12}{2\sqrt[3]{5}}$:
 
 $$\begin{align}
@@ -227,7 +230,7 @@ $$(\sqrt[3]{a} + \sqrt[3]{b})\left((\sqrt[3]{a})^2 - \sqrt[3]{a}\sqrt[3]{b} + (\
 Por lo tanto, multiplicamos por:
 $$\frac{\sqrt[3]{a^2} - \sqrt[3]{ab} + \sqrt[3]{b^2}}{\sqrt[3]{a^2} - \sqrt[3]{ab} + \sqrt[3]{b^2}}$$
 
-**Ejemplo 2.14:**
+**Ejemplo 2.12:**
 Racionalice $\frac{1}{\sqrt[3]{2} + \sqrt[3]{3}}$:
 
 El factor racionalizante es:
@@ -254,7 +257,7 @@ Para racionalizar $\frac{1}{\sqrt[n]{a}}$, multiplicamos por $\frac{\sqrt[n]{a^{
 
 $$\frac{1}{\sqrt[n]{a}} = \frac{\sqrt[n]{a^{n-1}}}{a}$$
 
-**Ejemplo 2.15:**
+**Ejemplo 2.13:**
 Para racionalizar $\frac{1}{\sqrt[4]{3}}$, necesitamos $\sqrt[4]{3^3}$:
 
 $$\frac{1}{\sqrt[4]{3}} = \frac{1}{\sqrt[4]{3}} \cdot \frac{\sqrt[4]{3^3}}{\sqrt[4]{3^3}} = \frac{\sqrt[4]{27}}{3}$$
@@ -281,7 +284,7 @@ Por otro lado, $\sqrt{a^2}$ es el número no negativo cuyo cuadrado es $a^2$:
 
 En ambos casos, $\sqrt{a^2} = |a|$. $\square$
 
-**Ejemplo 2.10 (Valor absoluto como raíz):**
+**Ejemplo 2.14 (Valor absoluto como raíz):**
 
 a) $|3| = \sqrt{3^2} = \sqrt{9} = 3$
 
@@ -296,14 +299,14 @@ $$\sqrt[n]{a^n} = |a|$$
 Para $n$ impar:
 $$\sqrt[n]{a^n} = a$$
 
-**Ejemplo 2.11:**
+**Ejemplo 2.15:**
 
 - $\sqrt[4]{(-2)^4} = \sqrt[4]{16} = 2 = |-2|$ (exponente par)
 - $\sqrt[3]{(-2)^3} = \sqrt[3]{-8} = -2$ (exponente impar)
 
 #### 2.4.2 Precauciones al aplicar raíces en ecuaciones (complemento sección 5)
 
-**Advertencia crítica:** Al **elevar ambos lados** de una ecuación a una potencia par (especialmente al cuadrado), o al **extraer raíces pares**, pueden **introducirse soluciones extrañas** (falsas) que **no satisfacen** la ecuación original.
+> **Advertencia crítica:** Al **elevar ambos lados** de una ecuación a una potencia par (especialmente al cuadrado), o al **extraer raíces pares**, pueden **introducirse soluciones extrañas** (falsas) que **no satisfacen** la ecuación original.
 
 **Proposición 2.5 (Implicación unidireccional):**
 Si $a = b$, entonces $a^2 = b^2$.
@@ -313,7 +316,7 @@ Si $a = b$, entonces $a^2 = b^2$.
 **Principio fundamental:**
 $$x^2 = c \quad \Rightarrow \quad x = \pm\sqrt{c}$$
 
-**Ejemplo 2.12 (Soluciones extrañas al elevar al cuadrado):**
+**Ejemplo 2.16 (Soluciones extrañas al elevar al cuadrado):**
 
 Resuelva: $\sqrt{x} = -2$
 
@@ -329,7 +332,7 @@ $$\sqrt{4} = 2 \neq -2 \quad \text{¡FALSO!}$$
 
 La "solución" $x = 4$ es **extraña** (introducida al elevar al cuadrado).
 
-**Ejemplo 2.13 (Caso con solución válida y otra extraña):**
+**Ejemplo 2.17 (Caso con solución válida y otra extraña):**
 
 Resuelva: $\sqrt{x + 3} = x - 3$
 
@@ -356,7 +359,7 @@ $$3 = 3 \quad \checkmark \text{ VÁLIDA}$$
 
 **Solución:** $x = 6$ únicamente.
 
-**Ejemplo 2.14 (Ecuación con dos raíces):**
+**Ejemplo 2.18 (Ecuación con dos raíces):**
 
 Resuelva: $\sqrt{x} + \sqrt{x - 5} = 5$
 
@@ -385,7 +388,7 @@ $$\sqrt{9} + \sqrt{9 - 5} = 3 + \sqrt{4} = 3 + 2 = 5 \quad \checkmark$$
 3. **Verificación obligatoria:** SIEMPRE sustituir las soluciones candidatas en la ecuación original
 4. **Descarte:** Eliminar las soluciones que no satisfacen la ecuación original
 
-**Ejemplo 2.15 (Restricciones de dominio):**
+**Ejemplo 2.19 (Restricciones de dominio):**
 
 Para resolver $\sqrt{x - 2} + \sqrt{4 - x} = 3$, primero establecemos:
 
@@ -542,7 +545,7 @@ $$x = -\frac{b}{a}$$
 
 $\square$
 
-**Observación:** Esta fórmula nos dice que:
+> **Observación:** Esta fórmula nos dice que:
 - Toda ecuación lineal tiene **exactamente una solución** (es **compatible determinada**)
 - La solución depende únicamente de los coeficientes $a$ y $b$
 - El proceso de resolución consiste en transformar cualquier ecuación lineal a la forma estándar $ax + b = 0$
@@ -781,7 +784,7 @@ La forma $a(x - h)^2 + k$ es la **forma canónica** o **forma vértice** de una 
 | $x^2 + 5x$ | $\frac{25}{4}$ | $\left(x + \frac{5}{2}\right)^2 - \frac{25}{4}$ |
 | $x^2 - x$ | $\frac{1}{4}$ | $\left(x - \frac{1}{2}\right)^2 - \frac{1}{4}$ |
 
-**Observación:** Esta técnica se generaliza en el método de la demostración de la fórmula cuadrática (ver sección 5.4).
+> **Observación:** Esta técnica se generaliza en el método de la demostración de la fórmula cuadrática (ver sección 5.4).
 
 ### 5.4 Fórmula general (cuadrática)
 
@@ -921,7 +924,7 @@ $$x = \frac{3 \pm \sqrt{-23}}{4} = \frac{3 \pm i\sqrt{23}}{4}$$
 
 $$x_1 = \frac{3 + i\sqrt{23}}{4}, \quad x_2 = \frac{3 - i\sqrt{23}}{4}$$
 
-**Observación importante:**
+> **Observación importante:**
 - En el conjunto de los **números reales** $\mathbb{R}$, estas ecuaciones **no tienen solución**.
 - En el conjunto de los **números complejos** $\mathbb{C}$, toda ecuación cuadrática tiene **exactamente 2 soluciones** (contando las soluciones repetidas o multiplicidad algebraica).
 - Las soluciones complejas siempre aparecen en **pares conjugados** cuando los coeficientes son reales.
@@ -951,7 +954,7 @@ Existe una fórmula general para resolver ecuaciones cúbicas, descubierta en el
 $$t^3 + pt + q = 0$$
 mediante el cambio de variable $x = t - \frac{b}{3a}$.
 
-**Nota:** En la práctica, las ecuaciones cúbicas se resuelven mediante:
+> **Nota:** En la práctica, las ecuaciones cúbicas se resuelven mediante:
 - Factorización (si es posible encontrar una raíz racional)
 - Métodos numéricos (Newton-Raphson, bisección)
 - Software matemático (Wolfram Alpha, MATLAB, Python)
@@ -1031,7 +1034,7 @@ donde $Q(x)$ es un polinomio tal que $Q(r) \neq 0$.
 - Si $m = 3$: $r$ es una **raíz triple**
 - Si $m \geq 2$: $r$ es una **raíz múltiple**
 
-**Ejemplo 6.1.1:**
+**Ejemplo 6.3.1:**
 $$P(x) = (x - 2)^3(x + 1)^2(x - 5)$$
 
 - $x = 2$ es raíz de multiplicidad $3$
@@ -1040,7 +1043,7 @@ $$P(x) = (x - 2)^3(x + 1)^2(x - 5)$$
 
 El polinomio tiene grado $3 + 2 + 1 = 6$, consistente con tener 6 raíces contando multiplicidades.
 
-**Ejemplo 6.1.2:**
+**Ejemplo 6.3.2:**
 $$P(x) = x^2 - 4x + 4 = (x - 2)^2$$
 
 $x = 2$ es una raíz doble (multiplicidad 2).
@@ -1052,7 +1055,7 @@ donde $r_1, r_2, \ldots, r_k \in \mathbb{C}$ son las raíces **distintas** con m
 
 - Si los coeficientes son reales y $z = a + bi$ es raíz de multiplicidad $m$, entonces su conjugado $\overline{z} = a - bi$ también es raíz de multiplicidad $m$.
 
-**Ejemplo 6.1.3:** El polinomio $x^4 + 1$ tiene 4 raíces complejas:
+**Ejemplo 6.3.3:** El polinomio $x^4 + 1$ tiene 4 raíces complejas:
 $$x = \frac{1 \pm i}{\sqrt{2}}, \quad x = \frac{-1 \pm i}{\sqrt{2}}$$
 
 Cada raíz tiene multiplicidad 1 (todas son raíces simples).
@@ -1283,7 +1286,7 @@ $$2\sin(x) = 1$$
 $$\sin(x) = \frac{1}{2}$$
 $$x = \frac{\pi}{6} + 2\pi k \quad \text{o} \quad x = \frac{5\pi}{6} + 2\pi k, \quad k \in \mathbb{Z}$$
 
-**Nota:** Las ecuaciones trigonométricas se estudiarán en profundidad en clases posteriores.
+> **Nota:** Las ecuaciones trigonométricas se estudiarán en profundidad en clases posteriores.
 
 ### 9.2 Sistemas de ecuaciones no lineales
 
@@ -1393,18 +1396,4 @@ x - 3y = -8
 
 ---
 
-## Referencias y lectura adicional
-
-- **Stewart, J.** *Precálculo: Matemáticas para el Cálculo*, 7ª edición (2017)
-- **Larson, R. & Edwards, B.** *Cálculo con Geometría Analítica*, 9ª edición (2010)
-- **Apostol, T.** *Calculus, Volume I*, 2ª edición (1967)
-- **Spivak, M.** *Calculus*, 4ª edición (2008)
-
-**Recursos en línea:**
-- Khan Academy: https://www.khanacademy.org/math/algebra
-- Wolfram MathWorld: https://mathworld.wolfram.com/
-- Brilliant.org: https://brilliant.org/
-
----
-
-*Fin de Clase 3 - Ecuaciones*
+**Fin de la Clase 3: Ecuaciones**
