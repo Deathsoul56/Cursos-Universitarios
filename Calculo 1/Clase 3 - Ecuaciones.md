@@ -44,6 +44,10 @@ $$6 \div [2(1 + 2)] = 6 \div 6 = 1$$
 - $\frac{6}{2}(1+2) = 9$ o
 - $\frac{6}{2(1+2)} = 1$
 
+El siguiente diagrama muestra la jerarquía de operaciones en forma de pirámide: la cúspide (paréntesis) se evalúa primero y la base (suma y resta) al final.
+
+![Jerarquía de operaciones en pirámide](../Recursos/jerarquia_operaciones.png)
+
 ---
 
 ## 2. Manipulación de raíces
@@ -51,9 +55,13 @@ $$6 \div [2(1 + 2)] = 6 \div 6 = 1$$
 ### 2.1 Definición y propiedades básicas
 
 **Definición 2.1 (Raíz n-ésima):**
-Sea $a \in \mathbb{R}$ y $n \in \mathbb{N}$, $n \geq 2$. La **raíz n-ésima** de $a$ es el número $b$ tal que:
+Sean $a \in \mathbb{R}$ y $n \in \mathbb{N}$, $n \geq 2$. La **raíz n-ésima** de $a$ es el número $b$ tal que:
 $$b^n = a$$
-Notación: $b = \sqrt[n]{a}$ o $b = a^{1/n}$
+Notación: $b = \sqrt[n]{a}$ o $b = a^{1/n}$.
+
+**Dominio:**
+- Si $n$ es **par**, se requiere $a \ge 0$ y $b \ge 0$ (raíz principal no negativa).
+- Si $n$ es **impar**, $a$ puede ser cualquier número real y $b$ tiene el mismo signo que $a$.
 
 **Casos especiales:**
 - $n = 2$: raíz cuadrada, $\sqrt{a}$ (se omite el índice)
@@ -68,6 +76,20 @@ Para $a, b \in \mathbb{R}^+$ y $m, n \in \mathbb{N}$:
 3. **Potencia:** $\left(\sqrt[n]{a}\right)^m = \sqrt[n]{a^m} = a^{m/n}$
 4. **Composición:** $\sqrt[m]{\sqrt[n]{a}} = \sqrt[mn]{a}$
 5. **Simplificación:** $\sqrt[n]{a^n} = |a|$ si $n$ es par; $\sqrt[n]{a^n} = a$ si $n$ es impar
+
+**Demostración:**
+
+Por la Definición 2.1, $\sqrt[n]{a}$ es el único número no negativo cuyo $n$-ésimo poder es $a$ (cuando $n$ es par; para $n$ impar se permite $a<0$ y el resultado tiene el mismo signo que $a$).
+
+1. **Producto:** Sea $x = \sqrt[n]{a} \cdot \sqrt[n]{b}$. Entonces $x^n = (\sqrt[n]{a})^n \cdot (\sqrt[n]{b})^n = a \cdot b$. Como $x \ge 0$ y $x^n = ab$, por unicidad $x = \sqrt[n]{ab}$.
+
+2. **Cociente:** Sea $y = \frac{\sqrt[n]{a}}{\sqrt[n]{b}}$. Entonces $y^n = \frac{(\sqrt[n]{a})^n}{(\sqrt[n]{b})^n} = \frac{a}{b}$. Como $y \ge 0$ y $y^n = a/b$, se sigue $y = \sqrt[n]{a/b}$.
+
+3. **Potencia:** Sea $z = \left(\sqrt[n]{a}\right)^m$. Entonces $z^n = \left(\sqrt[n]{a}\right)^{m n} = a^m$. Como $z \ge 0$ y $z^n = a^m$, se sigue $z = \sqrt[n]{a^m}$. La igualdad con $a^{m/n}$ se deduce de las leyes de exponentes.
+
+4. **Composición:** Sea $w = \sqrt[m]{\sqrt[n]{a}}$. Entonces $w^m = \sqrt[n]{a}$, de modo que $(w^m)^n = w^{mn} = a$. Como $w \ge 0$ y $w^{mn} = a$, se sigue $w = \sqrt[mn]{a}$.
+
+5. **Simplificación:** Si $n$ es **par**, entonces $a^n = |a|^n$, de modo que $\sqrt[n]{a^n} = \sqrt[n]{|a|^n} = |a|$ (raíz principal no negativa). Si $n$ es **impar**, entonces $a^n$ tiene el mismo signo que $a$, y la única raíz real $n$-ésima de $a^n$ es $a$ mismo, por lo que $\sqrt[n]{a^n} = a$. $\blacksquare$
 
 **Ejemplo 2.1 (Simplificación de raíces):**
 
@@ -1135,6 +1157,7 @@ $$a_n \pi^n + \dots + a_1 \pi + a_0 = 0$$
 **Definición 7.1 (Ecuación racional):**
 Una ecuación **racional** es aquella que involucra cocientes de polinomios:
 $$\frac{P(x)}{Q(x)} = R(x)$$
+donde $P(x)$, $Q(x)$ y $R(x)$ son polinomios con $Q(x) \neq 0$. El dominio de la ecuación es el conjunto de $x \in \mathbb{R}$ tales que $Q(x) \neq 0$.
 
 **Método de resolución:**
 
@@ -1223,9 +1246,11 @@ Entonces: $x = 7 - 2\left(\frac{16}{7}\right) = \frac{17}{7}$
 
 ---
 
-## 9. Ecuaciones no lineales y sistemas no lineales
+## 9. Ecuaciones no lineales y sistemas no lineales [Demostrativo]
 
-Una ecuaciones no lineal es cualquier tipo de ecuaciones que no tenga la forma de una ecuación lineal $ax + b = 0$. En las secciones anteriores hemos estudiado ecuaciones lineales (Sección 4), cuadráticas (Sección 5), de grado superior (Sección 6), racionales (Sección 7) y sistemas lineales (Sección 8). En esta sección presentamos brevemente las ecuaciones y sistemas que **no son lineales**, es decir, aquellos que involucran potencias, raíces, exponenciales, logaritmos u otras funciones no lineales.
+> **Nota:** Esta sección es **demostrativa** y no forma parte de los temas evaluables del curso. Su propósito es que el alumno se **familiarice con la terminología** y conozca la existencia de ecuaciones y sistemas no lineales, sin entrar en métodos de resolución detallados. Los temas aquí mencionados se estudiarán con profundidad en cursos posteriores (Variable Compleja, Análisis Numérico, etc.).
+
+Una ecuación no lineal es cualquier tipo de ecuación que no tenga la forma de una ecuación lineal $ax + b = 0$. En las secciones anteriores hemos estudiado ecuaciones lineales (Sección 4), cuadráticas (Sección 5), de grado superior (Sección 6), racionales (Sección 7) y sistemas lineales (Sección 8). En esta sección presentamos brevemente las ecuaciones y sistemas que **no son lineales**, es decir, aquellos que involucran potencias, raíces, exponenciales, logaritmos u otras funciones no lineales.
 
 ### 9.1 Ecuaciones no lineales
 
@@ -1246,11 +1271,27 @@ Una **ecuación no lineal** es cualquier ecuación que no puede expresarse en la
 - **Racionales:** $\frac{x + 2}{x - 3} = \frac{5}{2}$ (Sección 7)
 - **Con raíces:** $\sqrt{x + 3} = x - 3$ (Sección 2.4.2)
 
+> **Nota:** Los siguientes son ejemplos de ecuaciones **más exóticas** que ilustran la diversidad del mundo no lineal. No se pretende resolverlas en este curso; se mencionan únicamente para reconocer su forma y los nombres asociados.
+
+**Ejemplos no estudiados (a modo de curiosidad):**
+- **Lemniscata de Bernoulli:** $(x^2 + y^2)^2 = 2(x^2 - y^2)$. En coordenadas polares: $r^2 = \cos(2\theta)$. Esta es la ecuación de una figura con forma de ocho.
+- **Ecuación con valor absoluto:** $|x| + |x - 1| + |x - 2| = 4$. Resolver requiere dividir el dominio en regiones según el signo de cada valor absoluto.
+- **Ecuación con función piso:** $\lfloor x \rfloor + \lfloor 2x \rfloor = 5$. La función piso introduce discontinuidades en cada entero, lo que obliga a probar intervalos.
+- **Ecuación mixta algebraica–trigonométrica:** $x^2 - \cos(x) = 0$. Combina un polinomio con una función trigonométrica; no tiene solución algebraica cerrada.
+- **Ecuación trascendente mixta:** $e^x = x^2 + 1$. Aparecen tanto una exponencial como un polinomio; el número de soluciones se estudia con análisis numérico.
+- **Ecuación con función signo:** $\operatorname{sgn}(x) \cdot x^2 = 3$. La función $\operatorname{sgn}(x)$ vale $1$ si $x>0$, $-1$ si $x<0$ y $0$ si $x=0$, lo que genera dos ramas.
+- **Curva deltoide:** $x^2 y^2 + x^2 + y^2 = 4xy$. Es una ecuación algebraica de cuarto grado en dos variables; aquí se cita solo como ejemplo de ecuación no lineal en más de una variable.
+
 **Características generales:**
 - Pueden tener **múltiples soluciones** o ninguna
-- No siempre admiten fórmulas algebraicas cerradas
-- A menudo requieren métodos numéricos (Newton-Raphson, bisección)
-- La verificación de soluciones es **esencial** (especialmente con raíces y logaritmos)
+- **No existe un método universal** que resuelva toda ecuación no lineal; sin embargo, **algunos tipos sí admiten fórmulas algebraicas** cuando se imponen condiciones especiales, por ejemplo:
+  - **Lineales** ($ax+b=0$): fórmula directa $x=-b/a$.
+  - **Cuadráticas** ($ax^2+bx+c=0$): fórmula general $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$.
+  - **Bicuadráticas** ($ax^4+bx^2+c=0$): sustitución $u=x^2$ que las reduce a una cuadrática.
+  - **Cúbicas y cuárticas:** existen las fórmulas de Cardano-Tartaglia y Ferrari (sección 6), aunque son extremadamente complejas.
+  - **Racionales sin denominador irreducible:** se reducen a polinomiales al multiplicar por el denominador.
+- A menudo requieren **métodos numéricos** (Newton–Raphson, bisección) cuando no se dispone de una fórmula cerrada.
+- La verificación de soluciones es **esencial** (especialmente con raíces y logaritmos).
 
 **Ejemplo 9.1 (Ecuación logarítmica):**
 $$\log_2(x) + \log_2(x - 2) = 3$$
@@ -1342,17 +1383,17 @@ $$y = \log_3(2^x) = x \cdot \frac{\ln(2)}{\ln(3)}$$
 3. **Métodos gráficos:** Encontrar intersecciones de curvas
 4. **Métodos numéricos:** Newton-Raphson multidimensional, gradiente
 
-**Observaciones finales:**
-- Los sistemas no lineales pueden tener **0, 1, 2 o infinitas soluciones**
-- Geométricamente, representan intersecciones de curvas (parábolas, círculos, hipérbolas, etc.)
-- A menudo no tienen soluciones algebraicas cerradas
-- Son fundamentales en física, ingeniería y economía (optimización, equilibrios)
+> **Observaciones finales:**
+> - Los sistemas no lineales pueden tener **0, 1, 2 o infinitas soluciones**.
+> - Geométricamente, representan intersecciones de curvas (parábolas, círculos, hipérbolas, etc.).
+> - A menudo no tienen soluciones algebraicas cerradas.
+> - Son fundamentales en física, ingeniería y economía (optimización, equilibrios).
 
 **Aplicaciones:**
-- **Física:** Trayectorias balísticas, órbitas planetarias
-- **Ingeniería:** Diseño de estructuras, circuitos no lineales
-- **Economía:** Equilibrios de mercado, modelos de crecimiento
-- **Biología:** Modelos de poblaciones, cinética química
+- **Física:** Trayectorias balísticas, órbitas planetarias.
+- **Ingeniería:** Diseño de estructuras, circuitos no lineales.
+- **Economía:** Equilibrios de mercado, modelos de crecimiento.
+- **Biología:** Modelos de poblaciones, cinética química.
 
 ---
 ## 10. Ejercicios propuestos
