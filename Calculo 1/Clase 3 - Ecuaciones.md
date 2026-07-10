@@ -130,7 +130,7 @@ Por la Definición 2.1, $\sqrt[n]{a}$ es el único número no negativo cuyo $n$-
 
 5. **Simplificación:** Si $n$ es **par**, entonces $a^n = |a|^n$, de modo que $\sqrt[n]{a^n} = \sqrt[n]{|a|^n} = |a|$ (raíz principal no negativa). Si $n$ es **impar**, entonces $a^n$ tiene el mismo signo que $a$, y la única raíz real $n$-ésima de $a^n$ es $a$ mismo, por lo que $\sqrt[n]{a^n} = a$. $\blacksquare$
 
-**Ejemplo 2.1 (Simplificación de raíces):**
+**Ejemplo 3.1 (Simplificación de raíces):**
 
 a) Simplifique $\sqrt{72}$:
 $$\sqrt{72} = \sqrt{36 \times 2} = \sqrt{36} \cdot \sqrt{2} = 6\sqrt{2}$$
@@ -152,7 +152,7 @@ $$a\sqrt[n]{c} + b\sqrt[n]{c} = (a + b)\sqrt[n]{c}$$
 
 Esta operación es análoga a sumar términos semejantes en álgebra: $2x + 7x = 9x$.
 
-**Ejemplo 2.2 (Suma de raíces semejantes):**
+**Ejemplo 3.2 (Suma de raíces semejantes):**
 
 a) $2\sqrt{5} + 7\sqrt{5} = (2 + 7)\sqrt{5} = 9\sqrt{5}$
 
@@ -160,7 +160,7 @@ b) $8\sqrt{3} - 5\sqrt{3} = (8 - 5)\sqrt{3} = 3\sqrt{3}$
 
 c) $4\sqrt[3]{2} + 6\sqrt[3]{2} - \sqrt[3]{2} = (4 + 6 - 1)\sqrt[3]{2} = 9\sqrt[3]{2}$
 
-**Ejemplo 2.3 (Raíces NO semejantes):**
+**Ejemplo 3.3 (Raíces NO semejantes):**
 
 Las siguientes expresiones **NO** se pueden simplificar combinando términos porque las raíces no son semejantes:
 
@@ -170,7 +170,7 @@ b) $\sqrt{5} + \sqrt[3]{5}$ (diferentes índices)
 
 c) $2\sqrt{7} + 3\sqrt{11}$ (diferentes radicandos)
 
-**Ejemplo 2.4 (Simplificación previa para identificar raíces semejantes):**
+**Ejemplo 3.4 (Simplificación previa para identificar raíces semejantes):**
 
 A veces es necesario **simplificar primero** las raíces para identificar términos semejantes:
 
@@ -184,7 +184,7 @@ $$\sqrt{32} = \sqrt{16 \cdot 2} = 4\sqrt{2}$$
 Ahora todas son semejantes:
 $$2\sqrt{2} + 3\sqrt{2} - 4\sqrt{2} = (2 + 3 - 4)\sqrt{2} = \sqrt{2}$$
 
-**Ejemplo 2.5 (Expresión con múltiples raíces diferentes):**
+**Ejemplo 3.5 (Expresión con múltiples raíces diferentes):**
 
 $$5\sqrt{2} + 3\sqrt{3} + 2\sqrt{2} - \sqrt{3}$$
 
@@ -212,7 +212,7 @@ Para racionalizar $\frac{a}{\sqrt{b}}$, multiplicamos por $\frac{\sqrt{b}}{\sqrt
 
 $$\frac{a}{\sqrt{b}} = \frac{a}{\sqrt{b}} \cdot \frac{\sqrt{b}}{\sqrt{b}} = \frac{a\sqrt{b}}{b}$$
 
-**Ejemplo 2.6:**
+**Ejemplo 3.6:**
 $$\frac{5}{\sqrt{3}} = \frac{5\sqrt{3}}{3}$$
 
 **Técnica 2: Binomio con raíz en el denominador**
@@ -223,10 +223,10 @@ $$\frac{a}{b + \sqrt{c}} = \frac{a}{b + \sqrt{c}} \cdot \frac{b - \sqrt{c}}{b - 
 
 **Identidad clave:** $(b + \sqrt{c})(b - \sqrt{c}) = b^2 - c$ (diferencia de cuadrados)
 
-**Ejemplo 2.7:**
+**Ejemplo 3.7:**
 $$\frac{1}{2 + \sqrt{3}} = \frac{1}{2 + \sqrt{3}} \cdot \frac{2 - \sqrt{3}}{2 - \sqrt{3}} = \frac{2 - \sqrt{3}}{4 - 3} = 2 - \sqrt{3}$$
 
-**Ejemplo 2.8 (Binomio con dos raíces):**
+**Ejemplo 3.8 (Binomio con dos raíces):**
 $$\frac{6}{\sqrt{5} - \sqrt{2}} = \frac{6(\sqrt{5} + \sqrt{2})}{(\sqrt{5} - \sqrt{2})(\sqrt{5} + \sqrt{2})} = \frac{6(\sqrt{5} + \sqrt{2})}{5 - 2} = \frac{6(\sqrt{5} + \sqrt{2})}{3} = 2(\sqrt{5} + \sqrt{2})$$
 
 #### 3.3.1 Racionalización de raíces cúbicas
@@ -242,24 +242,24 @@ Por lo tanto, multiplicamos por $\frac{\sqrt[3]{b^2}}{\sqrt[3]{b^2}}$:
 
 $$\frac{a}{\sqrt[3]{b}} = \frac{a}{\sqrt[3]{b}} \cdot \frac{\sqrt[3]{b^2}}{\sqrt[3]{b^2}} = \frac{a\sqrt[3]{b^2}}{b}$$
 
-**Ejemplo 2.9:**
+**Ejemplo 3.9:**
 Racionalice $\frac{5}{\sqrt[3]{4}}$:
 
 $$\begin{align}
-\frac{5}{\sqrt[3]{4}} &= \frac{5}{\sqrt[3]{4}} \cdot \frac{\sqrt[3]{4^2}}{\sqrt[3]{4^2}} \\
-&= \frac{5\sqrt[3]{16}}{\sqrt[3]{4^3}} \\
+\frac{5}{\sqrt[3]{4}} &= \frac{5}{\sqrt[3]{4}} \cdot \frac{\sqrt[3]{4^2}}{\sqrt[3]{4^2}} \
+&= \frac{5\sqrt[3]{16}}{\sqrt[3]{4^3}} \
 &= \frac{5\sqrt[3]{16}}{4}
 \end{align}$$
 
-**Ejemplo 2.10:**
+**Ejemplo 3.10:**
 Racionalice $\frac{3}{\sqrt[3]{9}}$:
 
 Nota: $\sqrt[3]{9} = \sqrt[3]{3^2}$, entonces necesitamos $\sqrt[3]{3}$ para completar el cubo:
 
 $$\begin{align}
-\frac{3}{\sqrt[3]{9}} &= \frac{3}{\sqrt[3]{3^2}} \cdot \frac{\sqrt[3]{3}}{\sqrt[3]{3}} \\
-&= \frac{3\sqrt[3]{3}}{\sqrt[3]{3^3}} \\
-&= \frac{3\sqrt[3]{3}}{3} \\
+\frac{3}{\sqrt[3]{9}} &= \frac{3}{\sqrt[3]{3^2}} \cdot \frac{\sqrt[3]{3}}{\sqrt[3]{3}} \
+&= \frac{3\sqrt[3]{3}}{\sqrt[3]{3^3}} \
+&= \frac{3\sqrt[3]{3}}{3} \
 &= \sqrt[3]{3}
 \end{align}$$
 
@@ -269,14 +269,14 @@ Para $\frac{a}{c\sqrt[3]{b}}$, multiplicamos por $\frac{\sqrt[3]{b^2}}{\sqrt[3]{
 
 $$\frac{a}{c\sqrt[3]{b}} = \frac{a\sqrt[3]{b^2}}{cb}$$
 
-**Ejemplo 2.13:**
-**Ejemplo 2.11:**
+**Ejemplo 3.11:**
+**Ejemplo 3.12:**
 Racionalice $\frac{12}{2\sqrt[3]{5}}$:
 
 $$\begin{align}
-\frac{12}{2\sqrt[3]{5}} &= \frac{12}{2\sqrt[3]{5}} \cdot \frac{\sqrt[3]{5^2}}{\sqrt[3]{5^2}} \\
-&= \frac{12\sqrt[3]{25}}{2 \cdot 5} \\
-&= \frac{12\sqrt[3]{25}}{10} \\
+\frac{12}{2\sqrt[3]{5}} &= \frac{12}{2\sqrt[3]{5}} \cdot \frac{\sqrt[3]{5^2}}{\sqrt[3]{5^2}} \
+&= \frac{12\sqrt[3]{25}}{2 \cdot 5} \
+&= \frac{12\sqrt[3]{25}}{10} \
 &= \frac{6\sqrt[3]{25}}{5}
 \end{align}$$
 
@@ -291,16 +291,16 @@ $$(\sqrt[3]{a} + \sqrt[3]{b})\left((\sqrt[3]{a})^2 - \sqrt[3]{a}\sqrt[3]{b} + (\
 Por lo tanto, multiplicamos por:
 $$\frac{\sqrt[3]{a^2} - \sqrt[3]{ab} + \sqrt[3]{b^2}}{\sqrt[3]{a^2} - \sqrt[3]{ab} + \sqrt[3]{b^2}}$$
 
-**Ejemplo 2.12:**
+**Ejemplo 3.13:**
 Racionalice $\frac{1}{\sqrt[3]{2} + \sqrt[3]{3}}$:
 
 El factor racionalizante es:
 $$\sqrt[3]{2^2} - \sqrt[3]{2 \cdot 3} + \sqrt[3]{3^2} = \sqrt[3]{4} - \sqrt[3]{6} + \sqrt[3]{9}$$
 
 $$\begin{align}
-\frac{1}{\sqrt[3]{2} + \sqrt[3]{3}} &= \frac{1}{\sqrt[3]{2} + \sqrt[3]{3}} \cdot \frac{\sqrt[3]{4} - \sqrt[3]{6} + \sqrt[3]{9}}{\sqrt[3]{4} - \sqrt[3]{6} + \sqrt[3]{9}} \\
-&= \frac{\sqrt[3]{4} - \sqrt[3]{6} + \sqrt[3]{9}}{(\sqrt[3]{2})^3 + (\sqrt[3]{3})^3} \\
-&= \frac{\sqrt[3]{4} - \sqrt[3]{6} + \sqrt[3]{9}}{2 + 3} \\
+\frac{1}{\sqrt[3]{2} + \sqrt[3]{3}} &= \frac{1}{\sqrt[3]{2} + \sqrt[3]{3}} \cdot \frac{\sqrt[3]{4} - \sqrt[3]{6} + \sqrt[3]{9}}{\sqrt[3]{4} - \sqrt[3]{6} + \sqrt[3]{9}} \
+&= \frac{\sqrt[3]{4} - \sqrt[3]{6} + \sqrt[3]{9}}{(\sqrt[3]{2})^3 + (\sqrt[3]{3})^3} \
+&= \frac{\sqrt[3]{4} - \sqrt[3]{6} + \sqrt[3]{9}}{2 + 3} \
 &= \frac{\sqrt[3]{4} - \sqrt[3]{6} + \sqrt[3]{9}}{5}
 \end{align}$$
 
@@ -318,7 +318,7 @@ Para racionalizar $\frac{1}{\sqrt[n]{a}}$, multiplicamos por $\frac{\sqrt[n]{a^{
 
 $$\frac{1}{\sqrt[n]{a}} = \frac{\sqrt[n]{a^{n-1}}}{a}$$
 
-**Ejemplo 2.13:**
+**Ejemplo 3.14:**
 Para racionalizar $\frac{1}{\sqrt[4]{3}}$, necesitamos $\sqrt[4]{3^3}$:
 
 $$\frac{1}{\sqrt[4]{3}} = \frac{1}{\sqrt[4]{3}} \cdot \frac{\sqrt[4]{3^3}}{\sqrt[4]{3^3}} = \frac{\sqrt[4]{27}}{3}$$
@@ -334,7 +334,7 @@ $$|a| = \sqrt{a^2}$$
 **Demostración:**
 El valor absoluto $|a|$ se define como:
 $$|a| = \begin{cases}
-a & \text{si } a \geq 0 \\
+a & \text{si } a \geq 0 \
 -a & \text{si } a < 0
 \end{cases}$$
 
@@ -345,7 +345,7 @@ Por otro lado, $\sqrt{a^2}$ es el número no negativo cuyo cuadrado es $a^2$:
 
 En ambos casos, $\sqrt{a^2} = |a|$. $\square$
 
-**Ejemplo 2.14 (Valor absoluto como raíz):**
+**Ejemplo 3.15 (Valor absoluto como raíz):**
 
 a) $|3| = \sqrt{3^2} = \sqrt{9} = 3$
 
@@ -360,7 +360,7 @@ $$\sqrt[n]{a^n} = |a|$$
 Para $n$ impar:
 $$\sqrt[n]{a^n} = a$$
 
-**Ejemplo 2.15:**
+**Ejemplo 3.16:**
 
 - $\sqrt[4]{(-2)^4} = \sqrt[4]{16} = 2 = |-2|$ (exponente par)
 - $\sqrt[3]{(-2)^3} = \sqrt[3]{-8} = -2$ (exponente impar)
@@ -377,7 +377,7 @@ Si $a = b$, entonces $a^2 = b^2$.
 **Principio fundamental:**
 $$x^2 = c \quad \Rightarrow \quad x = \pm\sqrt{c}$$
 
-**Ejemplo 2.16 (Soluciones extrañas al elevar al cuadrado):**
+**Ejemplo 3.17 (Soluciones extrañas al elevar al cuadrado):**
 
 Resuelva: $\sqrt{x} = -2$
 
@@ -393,7 +393,7 @@ $$\sqrt{4} = 2 \neq -2 \quad \text{¡FALSO!}$$
 
 La "solución" $x = 4$ es **extraña** (introducida al elevar al cuadrado).
 
-**Ejemplo 2.17 (Caso con solución válida y otra extraña):**
+**Ejemplo 3.18 (Caso con solución válida y otra extraña):**
 
 Resuelva: $\sqrt{x + 3} = x - 3$
 
@@ -420,7 +420,7 @@ $$3 = 3 \quad \checkmark \text{ VÁLIDA}$$
 
 **Solución:** $x = 6$ únicamente.
 
-**Ejemplo 2.18 (Ecuación con dos raíces):**
+**Ejemplo 3.19 (Ecuación con dos raíces):**
 
 Resuelva: $\sqrt{x} + \sqrt{x - 5} = 5$
 
@@ -449,7 +449,7 @@ $$\sqrt{9} + \sqrt{9 - 5} = 3 + \sqrt{4} = 3 + 2 = 5 \quad \checkmark$$
 3. **Verificación obligatoria:** SIEMPRE sustituir las soluciones candidatas en la ecuación original
 4. **Descarte:** Eliminar las soluciones que no satisfacen la ecuación original
 
-**Ejemplo 2.19 (Restricciones de dominio):**
+**Ejemplo 3.20 (Restricciones de dominio):**
 
 Para resolver $\sqrt{x - 2} + \sqrt{4 - x} = 3$, primero establecemos:
 
@@ -506,9 +506,9 @@ Para $a, b, c > 0$ con $a \neq 1$:
 Simplifique: $\log_2(8) + \log_2(16) - \log_2(4)$
 
 $$\begin{align}
-\log_2(8) + \log_2(16) - \log_2(4) &= \log_2\left(\frac{8 \cdot 16}{4}\right) \quad \text{(propiedad 1 y 2)} \\
-&= \log_2(32) \\
-&= \log_2(2^5) \\
+\log_2(8) + \log_2(16) - \log_2(4) &= \log_2\left(\frac{8 \cdot 16}{4}\right) \quad \text{(propiedad 1 y 2)} \
+&= \log_2(32) \
+&= \log_2(2^5) \
 &= 5 \quad \text{(propiedad 3)}
 \end{align}$$
 
@@ -622,7 +622,7 @@ Alternativamente, el método paso a paso es:
 2. **Factorizar:** Factorizar $x$ si es necesario
 3. **Despejar:** Dividir por el coeficiente de $x$
 
-**Ejemplo 5.1:**
+**Ejemplo 5.4:**
 $$3x + 5 = 2x - 7$$
 $$3x - 2x = -7 - 5$$
 $$x = -12$$
@@ -631,7 +631,7 @@ $$x = -12$$
 $$3(-12) + 5 = -36 + 5 = -31$$
 $$2(-12) - 7 = -24 - 7 = -31 \quad \checkmark$$
 
-**Ejemplo 5.2 (Con fracciones):**
+**Ejemplo 5.5 (Con fracciones):**
 $$\frac{x}{3} + \frac{2x}{5} = 4$$
 
 Multiplicamos por el mínimo común múltiplo de 3 y 5 (que es 15):
@@ -753,7 +753,7 @@ Por lo tanto, el término que completa el cuadrado es **la mitad del coeficiente
 3. Sumar y restar este valor (para mantener la igualdad)
 4. Factorizar el trinomio cuadrado perfecto: $\left(x + \frac{b}{2}\right)^2$
 
-**Ejemplo 6.4.1 (Completar el cuadrado: caso básico):**
+**Ejemplo 6.5 (Completar el cuadrado: caso básico):**
 
 Completar el cuadrado para $x^2 + 8x$:
 
@@ -769,7 +769,7 @@ $$= (x + 4)^2 - 16$$
 
 **Verificación:** $(x + 4)^2 - 16 = x^2 + 8x + 16 - 16 = x^2 + 8x$ ✓
 
-**Ejemplo 6.4.2 (Completar el cuadrado: coeficiente negativo):**
+**Ejemplo 6.6 (Completar el cuadrado: coeficiente negativo):**
 
 Completar el cuadrado para $x^2 - 10x$:
 
@@ -779,7 +779,7 @@ $$x^2 - 10x = (x - 5)^2 - 25$$
 
 **Verificación:** $(x - 5)^2 - 25 = x^2 - 10x + 25 - 25 = x^2 - 10x$ ✓
 
-**Ejemplo 6.4.3 (Completar el cuadrado: coeficiente fraccionario):**
+**Ejemplo 6.7 (Completar el cuadrado: coeficiente fraccionario):**
 
 Completar el cuadrado para $x^2 + 3x$:
 
@@ -787,7 +787,7 @@ $$\left(\frac{3}{2}\right)^2 = \frac{9}{4}$$
 
 $$x^2 + 3x = \left(x + \frac{3}{2}\right)^2 - \frac{9}{4}$$
 
-**Ejemplo 6.4.4 (Resolver ecuación completando el cuadrado):**
+**Ejemplo 6.8 (Resolver ecuación completando el cuadrado):**
 
 Resuelva $x^2 + 6x - 7 = 0$ completando el cuadrado:
 
@@ -811,7 +811,7 @@ $$x = -3 + 4 = 1 \quad \text{o} \quad x = -3 - 4 = -7$$
 
 **Soluciones:** $x = 1$ o $x = -7$
 
-**Ejemplo 6.4.5 (Expresión cuadrática general con $a \neq 1$):**
+**Ejemplo 6.9 (Expresión cuadrática general con $a \neq 1$):**
 
 Completar el cuadrado para $3x^2 + 12x + 5$:
 
@@ -890,7 +890,7 @@ $$\Delta = b^2 - 4ac$$
 - Si $\Delta = 0$: Una solución real (raíz doble)
 - Si $\Delta < 0$: No hay soluciones reales (dos soluciones complejas conjugadas)
 
-**Ejemplo 6.5:**
+**Ejemplo 6.10:**
 Resuelva $2x^2 - 5x - 3 = 0$
 
 Identificamos: $a = 2$, $b = -5$, $c = -3$
@@ -903,7 +903,7 @@ $$x = \frac{-(-5) \pm \sqrt{49}}{2(2)} = \frac{5 \pm 7}{4}$$
 
 $$x_1 = \frac{5 + 7}{4} = 3, \quad x_2 = \frac{5 - 7}{4} = -\frac{1}{2}$$
 
-**Ejemplo 6.6 (Raíces no exactas):**
+**Ejemplo 6.11 (Raíces no exactas):**
 Resuelva $x^2 - 4x + 1 = 0$
 
 Identificamos: $a = 1$, $b = -4$, $c = 1$
@@ -951,7 +951,7 @@ $$x = \frac{-b \pm i\sqrt{|\Delta|}}{2a} = \frac{-b \pm i\sqrt{4ac - b^2}}{2a}$$
 
 Estas soluciones son **complejas conjugadas**.
 
-**Ejemplo 6.7 (Discriminante negativo):**
+**Ejemplo 6.12 (Discriminante negativo):**
 Resuelva $x^2 + 2x + 5 = 0$
 
 Identificamos: $a = 1$, $b = 2$, $c = 5$
@@ -966,14 +966,14 @@ $$x_1 = -1 + 2i, \quad x_2 = -1 - 2i$$
 
 **Verificación:** Sustituimos $x = -1 + 2i$:
 $$\begin{align}
-x^2 + 2x + 5 &= (-1 + 2i)^2 + 2(-1 + 2i) + 5 \\
-&= (1 - 4i + 4i^2) + (-2 + 4i) + 5 \\
-&= (1 - 4i - 4) + (-2 + 4i) + 5 \\
-&= -3 - 4i - 2 + 4i + 5 \\
+x^2 + 2x + 5 &= (-1 + 2i)^2 + 2(-1 + 2i) + 5 \
+&= (1 - 4i + 4i^2) + (-2 + 4i) + 5 \
+&= (1 - 4i - 4) + (-2 + 4i) + 5 \
+&= -3 - 4i - 2 + 4i + 5 \
 &= 0 \quad ✓
 \end{align}$$
 
-**Ejemplo 6.8:**
+**Ejemplo 6.13:**
 Resuelva $2x^2 - 3x + 4 = 0$
 
 Identificamos: $a = 2$, $b = -3$, $c = 4$
@@ -997,6 +997,60 @@ Aunque pueden parecer abstractas, las soluciones complejas son fundamentales en:
 - Mecánica cuántica (función de onda)
 - Teoría de control (análisis de estabilidad)
 
+### 6.6 Ecuaciones bicuadráticas
+
+**Definición 6.6 (Ecuación bicuadrática):**
+Una ecuación **bicuadrática** es una ecuación de cuarto grado que solo contiene potencias pares de $x$:
+$$ax^4 + bx^2 + c = 0$$
+
+**Método de resolución:** Sustituir $u = x^2$, resolver la ecuación cuadrática resultante, y luego despejar $x$.
+
+**Ejemplo 6.14:**
+$$x^4 - 5x^2 + 4 = 0$$
+
+Sustituimos $u = x^2$:
+$$u^2 - 5u + 4 = 0$$
+
+Factorizamos:
+$$(u - 1)(u - 4) = 0$$
+$$u = 1 \quad \text{o} \quad u = 4$$
+
+Deshacemos la sustitución:
+- Si $u = 1$: $x^2 = 1 \Rightarrow x = \pm 1$
+- Si $u = 4$: $x^2 = 4 \Rightarrow x = \pm 2$
+
+**Soluciones:** $x \in \{-2, -1, 1, 2\}$
+
+### 6.7 Ecuaciones reducibles a cuadráticas
+
+Algunas ecuaciones pueden transformarse en cuadráticas mediante sustituciones ingeniosas.
+
+**Ejemplo 6.15 (Ecuación exponencial):**
+$$25^x + 5^x - 6 = 0$$
+
+Notamos que $25^x = (5^2)^x = (5^x)^2$. Sustituimos $u = 5^x$ (con $u > 0$):
+$$u^2 + u - 6 = 0$$
+
+Factorizamos:
+$$(u + 3)(u - 2) = 0$$
+$$u = -3 \quad \text{o} \quad u = 2$$
+
+Como $u = 5^x > 0$, descartamos $u = -3$. Para $u = 2$:
+$$5^x = 2$$
+$$x = \log_5(2) = \frac{\ln(2)}{\ln(5)}$$
+
+**Ejemplo 6.16:**
+$$x^{2/3} - 5x^{1/3} + 6 = 0$$
+
+Sustituimos $u = x^{1/3}$:
+$$u^2 - 5u + 6 = 0$$
+$$(u - 2)(u - 3) = 0$$
+$$u = 2 \quad \text{o} \quad u = 3$$
+
+Deshacemos:
+- Si $u = 2$: $x^{1/3} = 2 \Rightarrow x = 8$
+- Si $u = 3$: $x^{1/3} = 3 \Rightarrow x = 27$
+
 ---
 
 ## 7. Ecuaciones de grado superior
@@ -1008,19 +1062,96 @@ Una ecuación cúbica es de la forma:
 $$ax^3 + bx^2 + cx + d = 0$$
 donde $a \neq 0$.
 
-**Fórmula de Cardano-Tartaglia:**
-Existe una fórmula general para resolver ecuaciones cúbicas, descubierta en el siglo XVI por matemáticos italianos. La fórmula es extremadamente compleja y raramente se usa de forma académica. 
+> **Nota histórica (Cardano–Tartaglia):**
+> Existe una fórmula general para resolver ecuaciones cúbicas, descubierta en el siglo XVI por matemáticos italianos. La fórmula es extremadamente compleja y raramente se usa de forma académica.
 
-**Forma reducida:** Toda ecuación cúbica puede reducirse a:
-$$t^3 + pt + q = 0$$
-mediante el cambio de variable $x = t - \frac{b}{3a}$.
+> **Las batallas matemáticas del siglo XVI:**
+> La resolución de la cúbica fue fruto de una de las rivalidades más célebres de la historia de las matemáticas. En 1535, Niccolò Tartaglia descubrió un método para resolver ecuaciones de la forma $x^3 + mx = n$ (cúbicas “deprimidas”), que mantuvo en secreto. Gerolamo Cardano, tras obtenerlo de Tartaglia bajo un juramento de confidencialidad, lo publicó en 1545 en su obra *Ars Magna*, atribuyendo el mérito a Tartaglia. Poco después, Ludovico Ferrari (discípulo de Cardano) extendió el resultado a las ecuaciones cuárticas. Durante décadas, los métodos fueron guardados celosamente y se transmitieron en forma de versos cifrados entre los algebristas italianos. Más tarde, en el siglo XVIII, la familia **Bernoulli** mantuvo bajo reserva varios resultados algebraicos avanzados, entre ellos variantes de la fórmula cúbica, hasta que finalmente fueron publicados por otros matemáticos europeos, desatando nuevas controversias.
+
+#### 7.1.1 Reducción a la forma deprimida
+
+Toda ecuación cúbica puede reducirse a una forma más sencilla, llamada **forma deprimida** (o reducida), mediante un cambio de variable que elimina el término cuadrático.
+
+**Proposición 7.1 (Reducción a la forma deprimida):**
+La sustitución $x = t - \dfrac{b}{3a}$ transforma la ecuación $ax^3 + bx^2 + cx + d = 0$ en:
+$$t^3 + Bt - D = 0,$$
+donde
+$$B = \frac{3ac - b^2}{3a^2}, \qquad D = \frac{2b^3 - 9abc + 27a^2 d}{27a^3}.$$
+
+**Demostración:**
+Sustituyendo $x = t - \dfrac{b}{3a}$ en $ax^3 + bx^2 + cx + d$ y desarrollando, los términos en $t^2$ se cancelan exactamente. Se obtiene:
+$$a\left(t^3 - \frac{b^3}{27a^3}\right) + c\left(t - \frac{b}{3a}\right) + d = 0,$$
+que al reagruparse da $t^3 + Bt - D = 0$ con los coeficientes indicados. $\blacksquare$
+
+**Ejemplo 7.1 (Reducción de una cúbica):**
+Reduzca la cúbica $x^3 - 6x^2 + 11x - 6 = 0$ a su forma deprimida.
+
+Con $a = 1$, $b = -6$, $c = 11$, $d = -6$:
+$$B = \frac{3(1)(11) - (-6)^2}{3(1)^2} = \frac{33 - 36}{3} = -1,$$
+$$D = \frac{2(-6)^3 - 9(1)(-6)(11) + 27(1)^2(-6)}{27(1)^3} = \frac{-432 + 594 - 162}{27} = \frac{0}{27} = 0.$$
+Con el cambio $x = t - \dfrac{-6}{3(1)} = t + 2$, la ecuación se reduce a:
+$$t^3 - t = 0 \quad \Longrightarrow \quad t(t-1)(t+1) = 0,$$
+cuyas raíces son $t = 0, 1, -1$, y por tanto $x = 2, 3, 1$.
+
+**Ejemplo 7.2 (Reducción con coeficientes racionales):**
+Reduzca la cúbica $x^3 - 3x + 1 = 0$.
+
+Con $a = 1$, $b = 0$, $c = -3$, $d = 1$:
+$$B = \frac{3(1)(-3) - 0^2}{3(1)^2} = \frac{-9}{3} = -3,$$
+$$D = \frac{2(0)^3 - 9(1)(0)(-3) + 27(1)^2(1)}{27(1)^3} = \frac{0 + 0 + 27}{27} = 1.$$
+Con $x = t$ (ya que $b = 0$), la forma deprimida es:
+$$t^3 - 3t + 1 = 0,$$
+cuyas tres raíces reales son $\displaystyle t_k = 2\cos\!\left(\frac{1}{3}\arccos\!\left(-\frac{1}{2}\right) - \frac{2\pi k}{3}\right)$, $k = 0,1,2$. Aunque la forma es “limpia”, las raíces son expresiones con radicales anidados y no se simplifican a números racionales.
 
 > **Nota:** En la práctica, las ecuaciones cúbicas se resuelven mediante:
-- Factorización (si es posible encontrar una raíz racional)
-- Métodos numéricos (Newton-Raphson, bisección)
-- Software matemático (Wolfram Alpha, MATLAB, Python)
+> - Factorización (si es posible encontrar una raíz racional).
+> - Métodos numéricos (Newton–Raphson, bisección).
+> - Software matemático (Wolfram Alpha, MATLAB, Python).
 
-**Ejemplo 7.1 (Factorización por raíz racional):**
+#### 7.1.2 Factorización de una cúbica
+
+Una ecuación cúbica $ax^3 + bx^2 + cx + d = 0$ con $a \neq 0$ puede factorizarse de dos maneras fundamentales:
+
+1. **Tres raíces reales:** si todas las raíces son reales, el polinomio se descompone completamente como
+$$ax^3 + bx^2 + cx + d = a(x - r_1)(x - r_2)(x - r_3).$$
+
+2. **Una raíz real y dos complejas conjugadas:** si solo una raíz es real, la factorización tiene la forma
+$$ax^3 + bx^2 + cx + d = a(x - r_1)(x^2 + px + q),$$
+donde $x^2 + px + q$ es un trinomio irreducible en $\mathbb{R}$ (con discriminante negativo).
+
+Cuando se conoce al menos una raíz $x = r$, se puede dividir el polinomio entre $(x - r)$ (por **división sintética** o **regla de Ruffini**) para obtener un polinomio de grado 2, que se resuelve con la fórmula cuadrática. Esta es la estrategia de la **factorización por raíz racional** (ver Ejemplo 7.5).
+
+**Factorización por agrupación:**
+En algunos casos, el polinomio se puede reordenar y agrupar términos para factorizar sin necesidad de conocer una raíz de antemano. El método consiste en:
+1. Reordenar los términos del polinomio.
+2. Agruparlos en parejas que tengan un factor común.
+3. Factorizar cada grupo.
+4. Si los grupos resultantes comparten un factor binomial, se extrae.
+
+**Ejemplo 7.3 (Factorización por agrupación):**
+Factorice $x^3 - 6x^2 + 11x - 6$.
+
+Reordenamos y agrupamos:
+$$\begin{aligned}
+x^3 - 6x^2 + 11x - 6 &= (x^3 - 6x^2) + (11x - 6) \\
+&= x^2(x - 6) + 11(x - 6) \\
+&= (x - 6)(x^2 + 11).
+\end{aligned}$$
+Las raíces de esta factorización son $x = 6$ (real) y $x = \pm i\sqrt{11}$ (complejas conjugadas). Este es el caso típico de una cúbica con una raíz real y dos complejas. En general, la agrupación es útil cuando el polinomio tiene una estructura “amigable”; en otros casos se recurre a la raíz racional o a otros métodos.
+
+**Ejemplo 7.4 (Factorización por agrupación con tres raíces reales):**
+Factorice $x^3 - x^2 - 4x + 4$.
+
+Agrupamos los términos de forma conveniente:
+$$\begin{aligned}
+x^3 - x^2 - 4x + 4 &= (x^3 - x^2) + (-4x + 4) \\
+&= x^2(x - 1) - 4(x - 1) \\
+&= (x - 1)(x^2 - 4) \\
+&= (x - 1)(x - 2)(x + 2).
+\end{aligned}$$
+Las tres raíces son reales: $x = 1$, $x = 2$ y $x = -2$. Este ejemplo ilustra el caso en que la agrupación produce una factorización completa en $\mathbb{R}[x]$ con tres raíces reales, sin necesidad de recurrir a la raíz racional.
+
+**Ejemplo 7.5 (Factorización por raíz racional):**
 $$x^3 - 6x^2 + 11x - 6 = 0$$
 
 Probamos divisores de 6: $x = 1$
@@ -1034,12 +1165,28 @@ $$= (x - 1)(x - 2)(x - 3)$$
 
 Soluciones: $x = 1, 2, 3$
 
-#### Solución general de 3°grado
+> **Nota:** El método de **división sintética** (o regla de Ruffini) para dividir entre $(x - r)$ se estudiará con detalle en el curso de **Álgebra**. Aquí se muestra únicamente la idea: encontrar una raíz racional y reducir el problema a uno de menor grado.
 
-$$x = \sqrt[3]{\left(\frac{-b^3}{27a^3}+\frac{bc}{6a^2}-\frac{d}{2a}\right)+\sqrt{\left(\frac{-b^3}{27a^3}+\frac{bc}{6a^2}-\frac{d}{2a}\right)^2+\left(\frac{c}{3a}-\frac{b^2}{9a^2}\right)^3}} \\
-+ \sqrt[3]{\left(\frac{-b^3}{27a^3}+\frac{bc}{6a^2}-\frac{d}{2a}\right)-\sqrt{\left(\frac{-b^3}{27a^3}+\frac{bc}{6a^2}-\frac{d}{2a}\right)^2+\left(\frac{c}{3a}-\frac{b^2}{9a^2}\right)^3}} - \frac{b}{3a}.$$
+#### Fórmula de Cardano–Tartaglia
 
-La formula de la ecuaciones de 3°grado es bastante larga y engorrosa, tiene varias formas de escribirse pero todos son equivalente.
+Aplicada a la forma deprimida $t^3 + Bt - D = 0$, la fórmula es:
+
+$$t = \sqrt[3]{\frac{D}{2} + \sqrt{\left(\frac{D}{2}\right)^2 + \left(\frac{B}{3}\right)^3}} \;+\; \sqrt[3]{\frac{D}{2} - \sqrt{\left(\frac{D}{2}\right)^2 + \left(\frac{B}{3}\right)^3}}.$$
+
+> **Nota:** La fórmula anterior es bastante larga y engorrosa, tiene varias formas de escribirse pero todas son equivalentes. Se incluye únicamente como referencia de que existen tales desarrollos, útiles para calculadora o programación.
+
+#### Fórmula general de la cúbica
+
+Combinando el cambio de variable $x = t - \dfrac{b}{3a}$ con la fórmula deprimida y sustituyendo los valores de $B$ y $D$, se obtiene la **fórmula general** para la ecuación $ax^3 + bx^2 + cx + d = 0$:
+
+$$
+\begin{aligned}
+x &= \sqrt[3]{-\frac{b^3}{27a^3} + \frac{bc}{6a^2} - \frac{d}{2a} + \sqrt{\left(-\frac{b^3}{27a^3} + \frac{bc}{6a^2} - \frac{d}{2a}\right)^{\!2} + \left(\frac{c}{3a} - \frac{b^2}{9a^2}\right)^{\!3}}} \\
+  &\quad + \sqrt[3]{-\frac{b^3}{27a^3} + \frac{bc}{6a^2} - \frac{d}{2a} - \sqrt{\left(-\frac{b^3}{27a^3} + \frac{bc}{6a^2} - \frac{d}{2a}\right)^{\!2} + \left(\frac{c}{3a} - \frac{b^2}{9a^2}\right)^{\!3}}} - \frac{b}{3a}.
+\end{aligned}
+$$
+
+> **Nota:** Las ecuaciones cúbicas tienen **muchas formas equivalentes** de presentar su solución general (Cardano, Tartaglia, Vieta, etc.), todas algebraicamente equivalentes. Se incluye esta versión como referencia de que la solución existe en forma cerrada, aunque su uso a mano es impracticable.
 
 ### 7.2 Ecuaciones cuárticas (cuarto grado)
 
@@ -1047,10 +1194,63 @@ La formula de la ecuaciones de 3°grado es bastante larga y engorrosa, tiene var
 $$ax^4 + bx^3 + cx^2 + dx + e = 0$$
 donde $a \neq 0$.
 
-**Fórmula de Ferrari:**
-Existe una fórmula general para resolver ecuaciones cuárticas (descubierta por Lodovico Ferrari en 1540), pero es aún más compleja que la fórmula cúbica.
+> **Nota histórica (Ferrari):**
+> Existe una fórmula general para resolver ecuaciones cuárticas (descubierta por Lodovico Ferrari en 1540), pero es aún más compleja que la fórmula cúbica.
 
-**Observación histórica:** Évariste Galois demostró en 1830 que **no existe** una fórmula general usando radicales para ecuaciones de grado 5 o superior. Este es uno de los resultados más profundos del álgebra abstracta.
+> **Observación histórica (Galois):**
+> Évariste Galois demostró en 1830 que **no existe** una fórmula general usando radicales para ecuaciones de grado 5 o superior. Este es uno de los resultados más profundos del álgebra abstracta.
+
+#### 7.2.1 Factorización y transformaciones
+
+Al igual que en las ecuaciones cúbicas, las ecuaciones cuárticas se pueden factorizar si se conoce al menos una raíz o un factor cuadrático. Los métodos de **factorización por raíz racional**, **división sintética** y **agrupación** se aplican de la misma forma que en el grado 3.
+
+Además, existen transformaciones que simplifican una cuártica completa a formas más manejables:
+
+**Proposición 7.2 (Reducción a forma bicuadrática):**
+Mediante una sucesión de sustituciones, toda ecuación cuártica $ax^4 + bx^3 + cx^2 + dx + e = 0$ con $a \neq 0$ puede reducirse a una ecuación **bicuadrática** de la forma $t^4 + p\,t^2 + q = 0$.
+
+**Procedimiento:**
+1. **Eliminar el término cúbico:** hacer el cambio $x = u - \dfrac{b}{4a}$, que anula el término de grado 3 y deja una ecuación “deprimida” en $u$:
+$$u^4 + p\,u^2 + q\,u + r = 0.$$
+2. **Eliminar el término lineal:** aplicar el método de Ferrari, que mediante una segunda sustitución (con ayuda de la resolvente cúbica) elimina el término en $u$ y reduce la ecuación a la forma bicuadrática $t^4 + p\,t^2 + q = 0$.
+3. **Resolver la bicuadrática:** sustituir $v = t^2$ para obtener una ecuación de segundo grado en $v$, resolverla y deshacer las sustituciones.
+
+> **Nota:** El método de Ferrari es algebraicamente correcto pero muy laborioso; rara vez se aplica a mano. Se incluye aquí para mostrar que toda cuártica completa puede reducirse a una bicuadrática, aunque en la práctica se prefiere el método de Ferrari directo o software algebraico.
+
+**Ejemplo 7.6 (Reducción a bicuadrática):**
+Reduzca la cuártica $x^4 + 4x^3 + 2x^2 - 4x + 1 = 0$ a una ecuación bicuadrática.
+
+Con $a = 1$, $b = 4$, hacemos $x = u - \dfrac{4}{4(1)} = u - 1$:
+$$
+\begin{aligned}
+(u-1)^4 + 4(u-1)^3 + 2(u-1)^2 - 4(u-1) + 1 &= 0 \\
+u^4 - 4u^2 + 6u^2 - 4u + 1 + 4(u^3 - 3u^2 + 3u - 1) + 2(u^2 - 2u + 1) - 4u + 4 + 1 &= 0 \\
+u^4 - 2u^2 - 1 &= 0.
+\end{aligned}
+$$
+La ecuación deprimida es $u^4 - 2u^2 - 1 = 0$, que ya es bicuadrática. Aplicando Ferrari o resolviendo directamente con $v = u^2$:
+$$v^2 - 2v - 1 = 0 \quad \Longrightarrow \quad v = 1 \pm \sqrt{2},$$
+las raíces son $u = \pm\sqrt{1+\sqrt{2}}$ y $u = \pm\sqrt{1-\sqrt{2}}$ (esta última imaginaria). Deshaciendo $x = u - 1$ se obtienen las cuatro raíces de la cuártica original.
+
+#### Fórmula de Ferrari
+
+Tomando la ecuación $x^4 + ax^3 + bx^2 + cx + d = 0$, sus raíces están dadas por expresiones algebraicas extremadamente largas que involucran la resolvente cúbica $\Delta$ (un discriminante auxiliar). A continuación se muestra la forma simplificada de las cuatro raíces:
+
+$$
+\begin{aligned}
+x_k &= -\frac{a}{4} - \frac{1}{2}\sqrt{\frac{a^{2}}{4} - \frac{2b}{3} + \frac{2^{1/3}(b^{2}-3ac+12d)}{3\Delta^{1/3}}} \\
+&\quad + \frac{(-1)^k}{2}\sqrt{\frac{a^{2}}{2} - \frac{4b}{3} - \frac{2^{1/3}(b^{2}-3ac+12d)}{3\Delta^{1/3}} + \frac{(-1)^k(-a^3+4ab-8c)}{4\sqrt{\frac{a^{2}}{4} - \frac{2b}{3} + \frac{2^{1/3}(b^{2}-3ac+12d)}{3\Delta^{1/3}}}}} \\
+&\quad + \frac{(-1)^k}{2}\sqrt{\frac{a^{2}}{2} - \frac{4b}{3} + \frac{2^{1/3}(b^{2}-3ac+12d)}{3\Delta^{1/3}} - \frac{(-1)^k(-a^3+4ab-8c)}{4\sqrt{\frac{a^{2}}{4} - \frac{2b}{3} + \frac{2^{1/3}(b^{2}-3ac+12d)}{3\Delta^{1/3}}}}}
+\end{aligned}
+$$
+
+donde
+$$\Delta = 2b^{3} - 9abc + 27c^{2} + 27a^{2}d - 72bd + \sqrt{-4(b^{2} - 3ac + 12d)^{3} + (2b^{3} - 9abc + 27c^{2} + 27a^{2}d - 72bd)^{2}},$$
+
+y $k$ toma los valores adecuados. La fórmula completa de Ferrari se incluye solo como referencia de que existe; rara vez se usa a mano.
+
+> **Nota:** Las fórmulas son aún más engorrosas que las cúbicas y para fines académicos son inviables, pero son perfectas para programarlas en una calculadora simbólica.
+
 
 #### Solución general de 4°grado
 tomando la ecuaciones $x^4 + ax^3 + bx^2 + cx + d = 0$, sus raíces estarán dadas por las expresiones.
@@ -1074,6 +1274,7 @@ $$
 
 las formulas son aun mas engorrosas y para fines académicos son inviables, pero son perfectas para programarlas en alguna calculadora.
 
+
 ### 7.3 Teorema Fundamental del Álgebra (Opcional)
 
 **Teorema 7.1 (Teorema Fundamental del Álgebra):**
@@ -1095,7 +1296,7 @@ donde $Q(x)$ es un polinomio tal que $Q(r) \neq 0$.
 - Si $m = 3$: $r$ es una **raíz triple**
 - Si $m \geq 2$: $r$ es una **raíz múltiple**
 
-**Ejemplo 7.3.1:**
+**Ejemplo 7.7:**
 $$P(x) = (x - 2)^3(x + 1)^2(x - 5)$$
 
 - $x = 2$ es raíz de multiplicidad $3$
@@ -1104,7 +1305,7 @@ $$P(x) = (x - 2)^3(x + 1)^2(x - 5)$$
 
 El polinomio tiene grado $3 + 2 + 1 = 6$, consistente con tener 6 raíces contando multiplicidades.
 
-**Ejemplo 7.3.2:**
+**Ejemplo 7.8:**
 $$P(x) = x^2 - 4x + 4 = (x - 2)^2$$
 
 $x = 2$ es una raíz doble (multiplicidad 2).
@@ -1116,65 +1317,11 @@ donde $r_1, r_2, \ldots, r_k \in \mathbb{C}$ son las raíces **distintas** con m
 
 - Si los coeficientes son reales y $z = a + bi$ es raíz de multiplicidad $m$, entonces su conjugado $\overline{z} = a - bi$ también es raíz de multiplicidad $m$.
 
-**Ejemplo 7.3.3:** El polinomio $x^4 + 1$ tiene 4 raíces complejas:
+**Ejemplo 7.9:** El polinomio $x^4 + 1$ tiene 4 raíces complejas:
 $$x = \frac{1 \pm i}{\sqrt{2}}, \quad x = \frac{-1 \pm i}{\sqrt{2}}$$
 
 Cada raíz tiene multiplicidad 1 (todas son raíces simples).
-### 7.4 Ecuaciones bicuadráticas
-
-**Definición 7.3 (Ecuación bicuadrática):**
-Una ecuación **bicuadrática** es una ecuación de cuarto grado que solo contiene potencias pares de $x$:
-$$ax^4 + bx^2 + c = 0$$
-
-**Método de resolución:** Sustituir $u = x^2$, resolver la ecuación cuadrática resultante, y luego despejar $x$.
-
-**Ejemplo 7.2:**
-$$x^4 - 5x^2 + 4 = 0$$
-
-Sustituimos $u = x^2$:
-$$u^2 - 5u + 4 = 0$$
-
-Factorizamos:
-$$(u - 1)(u - 4) = 0$$
-$$u = 1 \quad \text{o} \quad u = 4$$
-
-Deshacemos la sustitución:
-- Si $u = 1$: $x^2 = 1 \Rightarrow x = \pm 1$
-- Si $u = 4$: $x^2 = 4 \Rightarrow x = \pm 2$
-
-**Soluciones:** $x \in \{-2, -1, 1, 2\}$
-
-### 7.5 Ecuaciones reducibles a cuadráticas
-
-Algunas ecuaciones pueden transformarse en cuadráticas mediante sustituciones ingeniosas.
-
-**Ejemplo 7.3 (Ecuación exponencial):**
-$$25^x + 5^x - 6 = 0$$
-
-Notamos que $25^x = (5^2)^x = (5^x)^2$. Sustituimos $u = 5^x$ (con $u > 0$):
-$$u^2 + u - 6 = 0$$
-
-Factorizamos:
-$$(u + 3)(u - 2) = 0$$
-$$u = -3 \quad \text{o} \quad u = 2$$
-
-Como $u = 5^x > 0$, descartamos $u = -3$. Para $u = 2$:
-$$5^x = 2$$
-$$x = \log_5(2) = \frac{\ln(2)}{\ln(5)}$$
-
-**Ejemplo 7.4:**
-$$x^{2/3} - 5x^{1/3} + 6 = 0$$
-
-Sustituimos $u = x^{1/3}$:
-$$u^2 - 5u + 6 = 0$$
-$$(u - 2)(u - 3) = 0$$
-$$u = 2 \quad \text{o} \quad u = 3$$
-
-Deshacemos:
-- Si $u = 2$: $x^{1/3} = 2 \Rightarrow x = 8$
-- Si $u = 3$: $x^{1/3} = 3 \Rightarrow x = 27$
-
-### 7.6 Números trascendentes
+### 7.4 Números trascendentes
 
 Habiendo explorado diversos tipos de ecuaciones polinomiales (cuadráticas, cúbicas, cuárticas), podemos hacer una distinción fundamental sobre la naturaleza de los números que surgen como solución.
 
@@ -1185,7 +1332,7 @@ donde los coeficientes $a_i$ sean números racionales ($a_i \in \mathbb{Q}$), qu
 
 > **Observación:** Si un número sí es solución de algún polinomio con coeficientes racionales (como $\sqrt{2}$ lo es de $x^2 - 2 = 0$, o $\frac{1}{2}$ de $2x - 1 = 0$), se le denomina **número algebraico**.
 
-**Ejemplo 7.5 (Constantes trascendentes famosas):**
+**Ejemplo 7.10 (Constantes trascendentes famosas):**
 Las constantes matemáticas como $\pi$ o el número de Euler $e$ son números trascendentes. Ningún ajuste polinomial logrará que se cumpla la igualdad:
 $$a_n \pi^n + \dots + a_1 \pi + a_0 = 0$$
 
@@ -1244,7 +1391,7 @@ Un sistema de ecuaciones son un conjunto de ecuaciones con múltiples incógnita
 
 **Definición 9.1 (Sistema de ecuaciones lineales $2 \times 2$):**
 $$\begin{cases}
-ax + by = e \\
+ax + by = e \
 cx + dy = f
 \end{cases}$$
 
@@ -1262,12 +1409,12 @@ cx + dy = f
 3. Resolver y sustituir
 
 **Método 3: Regla de Cramer (determinantes)**
-$$x = \frac{\begin{vmatrix} e & b \\ f & d \end{vmatrix}}{\begin{vmatrix} a & b \\ c & d \end{vmatrix}}, \quad y = \frac{\begin{vmatrix} a & e \\ c & f \end{vmatrix}}{\begin{vmatrix} a & b \\ c & d \end{vmatrix}}$$
+$$x = \frac{\begin{vmatrix} e & b \ f & d \end{vmatrix}}{\begin{vmatrix} a & b \ c & d \end{vmatrix}}, \quad y = \frac{\begin{vmatrix} a & e \ c & f \end{vmatrix}}{\begin{vmatrix} a & b \ c & d \end{vmatrix}}$$
 (siempre que el determinante del denominador sea no nulo) Este metodo se explicara en el curso de **Algebra Lineal**
 
 **Ejemplo 9.1 (Método de sustitución):**
 $$\begin{cases}
-x + 2y = 7 \\
+x + 2y = 7 \
 3x - y = 5
 \end{cases}$$
 
@@ -1375,7 +1522,7 @@ Un **sistema de ecuaciones no lineales** es un conjunto de dos o más ecuaciones
 
 **Ejemplo 10.4 (Sistema cuadrático-lineal):**
 $$\begin{cases}
-x^2 + y^2 = 25 \\
+x^2 + y^2 = 25 \
 x + y = 7
 \end{cases}$$
 
@@ -1401,7 +1548,7 @@ Por lo tanto: $x = 3$ o $x = 4$
 
 **Ejemplo 10.5 (Sistema exponencial):**
 $$\begin{cases}
-2^x \cdot 3^y = 12 \\
+2^x \cdot 3^y = 12 \
 2^x = 3^y
 \end{cases}$$
 
@@ -1460,7 +1607,7 @@ $$y = \log_3(2^x) = x \cdot \frac{\ln(2)}{\ln(3)}$$
 13. Resuelva: $\frac{2x}{x-1} - \frac{3}{x+2} = 1$
 14. Resuelva el sistema:
 $$\begin{cases}
-2x + y = 5 \\
+2x + y = 5 \
 x - 3y = -8
 \end{cases}$$
 
