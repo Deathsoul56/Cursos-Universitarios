@@ -1156,7 +1156,7 @@ Para $a, b > 0$ y exponentes reales donde estén definidas las expresiones se cu
 5. $\log_b(a^c) = c \log_b(a)$.
 6. $\log_b(a) = \frac{\log_c(a)}{\log_c(b)}$ para $c > 0$, $c \neq 1$.
 
-> **Nota:** Las demostraciones rigurosas de estas propiedades, especialmente para exponentes reales arbitrarios, requieren la construcción de la función exponencial y se desarrollan en [[Clase 6 - Funciones Parte 1]].
+> **Nota:** Las demostraciones rigurosas de estas propiedades, especialmente para exponentes reales arbitrarios, requieren la construcción de la función exponencial y se desarrollan en [[Clase 6 - Funciones Parte 1]]. En la [[Clase 3 - Ecuaciones]] se trabajan estas operaciones desde el punto de vista **aritmético/algebraico**, y en la **Clase 6** se abordarán desde el punto de vista de las **funciones reales**.
 
 **Ejemplo 6.3:**
 - $2^3 \cdot 2^4 = 2^7 = 128$.

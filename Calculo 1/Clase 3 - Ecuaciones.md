@@ -50,9 +50,48 @@ El siguiente diagrama muestra la jerarquía de operaciones en forma de pirámide
 
 ---
 
-## 2. Manipulación de raíces
+## 2. Manipulación de exponentes
 
-### 2.1 Definición y propiedades básicas
+Antes de trabajar con raíces y logaritmos conviene repasar las reglas básicas de los exponentes, que se usarán continuamente a lo largo de la clase.
+
+**Definición 2.1 (Exponente entero):**
+Para $a \in \mathbb{R}$, $a \neq 0$, y $n \in \mathbb{N}$:
+$$a^n = \underbrace{a \cdot a \cdots a}_{n \text{ veces}}, \qquad a^0 = 1, \qquad a^{-n} = \frac{1}{a^n}.$$
+
+**Propiedades de los exponentes:**
+Para $a, b \in \mathbb{R}$, $a, b \neq 0$, y $m, n \in \mathbb{Z}$:
+
+1. **Producto de misma base:** $a^m \cdot a^n = a^{m+n}$.
+2. **Cociente de misma base:** $\dfrac{a^m}{a^n} = a^{m-n}$.
+3. **Potencia de potencia:** $(a^m)^n = a^{mn}$.
+4. **Producto de distinta base:** $(ab)^n = a^n b^n$.
+5. **Cociente de distinta base:** $\left(\dfrac{a}{b}\right)^n = \dfrac{a^n}{b^n}$.
+6. **Exponente fraccionario:** $a^{1/n} = \sqrt[n]{a}$ y, en general, $a^{m/n} = \sqrt[n]{a^m} = \left(\sqrt[n]{a}\right)^m$.
+
+**Demostración:**
+Las propiedades 1–5 se siguen por inducción sobre el exponente y la definición de potencia entera; la propiedad 6 conecta con la raíz $n$-ésima y se justifica por la unicidad de la raíz principal (Definición 4.1). $\blacksquare$
+
+**Ejemplo 2.1 (Manipulación de exponentes):**
+
+a) Simplifique $2^3 \cdot 2^5$:
+$$2^3 \cdot 2^5 = 2^{3+5} = 2^8 = 256.$$
+
+b) Simplifique $\dfrac{x^{7}}{x^{3}}$ (con $x \neq 0$):
+$$\frac{x^{7}}{x^{3}} = x^{7-3} = x^{4}.$$
+
+c) Evalúe $\left(\dfrac{2}{3}\right)^{-2}$:
+$$\left(\frac{2}{3}\right)^{-2} = \left(\frac{3}{2}\right)^{2} = \frac{9}{4}.$$
+
+d) Reescribir $\sqrt[3]{x^5}$ con exponente fraccionario:
+$$\sqrt[3]{x^5} = x^{5/3}.$$
+
+> **Nota:** Estas propiedades se generalizan a exponentes reales arbitrarios, pero su demostración rigurosa requiere la construcción de la función exponencial, que se verá en [[Clase 6 - Funciones Parte 1]]. Aquí se trabajan desde el punto de vista aritmético/algebraico.
+
+---
+
+## 3. Manipulación de raíces
+
+### 3.1 Definición y propiedades básicas
 
 **Definición 2.1 (Raíz n-ésima):**
 Sean $a \in \mathbb{R}$ y $n \in \mathbb{N}$, $n \geq 2$. La **raíz n-ésima** de $a$ es el número $b$ tal que:
@@ -102,7 +141,7 @@ $$\sqrt[3]{54} = \sqrt[3]{27 \times 2} = \sqrt[3]{27} \cdot \sqrt[3]{2} = 3\sqrt
 c) Simplifique $\sqrt{50} + \sqrt{32} - \sqrt{18}$:
 $$\sqrt{50} + \sqrt{32} - \sqrt{18} = 5\sqrt{2} + 4\sqrt{2} - 3\sqrt{2} = 6\sqrt{2}$$
 
-### 2.2 Suma y resta de raíces
+### 3.2 Suma y resta de raíces
 
 **Definición 2.2 (Raíces semejantes):**
 Dos o más raíces son **semejantes** (o similares) si tienen el mismo índice y el mismo radicando (el número bajo la raíz).
@@ -160,7 +199,7 @@ $$\sqrt{a + b} \neq \sqrt{a} + \sqrt{b}$$
 
 Por ejemplo: $\sqrt{9 + 16} = \sqrt{25} = 5$, pero $\sqrt{9} + \sqrt{16} = 3 + 4 = 7 \neq 5$
 
-### 2.3 Racionalización de denominadores
+### 3.3 Racionalización de denominadores
 
 En el cálculo y la manipulación algebraica formal, es conveniente expresar las fracciones de manera que los radicales no aparezcan en el denominador, para lograr este objetivo se deberán "Subir" los radicales al numerador. Esta convención, denominada **racionalización**, simplifica operaciones posteriores como la suma de fracciones, la derivación, la evaluación numérica y la identificación de formas canónicas.
 
@@ -190,7 +229,7 @@ $$\frac{1}{2 + \sqrt{3}} = \frac{1}{2 + \sqrt{3}} \cdot \frac{2 - \sqrt{3}}{2 - 
 **Ejemplo 2.8 (Binomio con dos raíces):**
 $$\frac{6}{\sqrt{5} - \sqrt{2}} = \frac{6(\sqrt{5} + \sqrt{2})}{(\sqrt{5} - \sqrt{2})(\sqrt{5} + \sqrt{2})} = \frac{6(\sqrt{5} + \sqrt{2})}{5 - 2} = \frac{6(\sqrt{5} + \sqrt{2})}{3} = 2(\sqrt{5} + \sqrt{2})$$
 
-#### 2.3.1 Racionalización de raíces cúbicas
+#### 3.3.1 Racionalización de raíces cúbicas
 
 Cuando el denominador contiene una **raíz cúbica**, necesitamos una técnica diferente porque no podemos usar conjugados (que funcionan solo con raíces cuadradas).
 
@@ -284,9 +323,9 @@ Para racionalizar $\frac{1}{\sqrt[4]{3}}$, necesitamos $\sqrt[4]{3^3}$:
 
 $$\frac{1}{\sqrt[4]{3}} = \frac{1}{\sqrt[4]{3}} \cdot \frac{\sqrt[4]{3^3}}{\sqrt[4]{3^3}} = \frac{\sqrt[4]{27}}{3}$$
 Como $\sqrt[4]{3} = 3^{1/4}$ tenemos que completar la fracción: $$1/4 + 3/4 = 1 \to 3^{1/4} \cdot 3^{3/4} = 3^{1/4+3/4} = 3^{4/4} = 3$$ 
-### 2.4 Valor absoluto y raíces
+### 3.4 Valor absoluto y raíces
 
-#### 2.4.1 Relación entre valor absoluto y raíz cuadrada
+#### 3.4.1 Relación entre valor absoluto y raíz cuadrada
 
 **Proposición 2.4 (Identidad fundamental):**
 Para todo $a \in \mathbb{R}$:
@@ -326,7 +365,7 @@ $$\sqrt[n]{a^n} = a$$
 - $\sqrt[4]{(-2)^4} = \sqrt[4]{16} = 2 = |-2|$ (exponente par)
 - $\sqrt[3]{(-2)^3} = \sqrt[3]{-8} = -2$ (exponente impar)
 
-#### 2.4.2 Precauciones al aplicar raíces en ecuaciones (complemento sección 5)
+#### 3.4.2 Precauciones al aplicar raíces en ecuaciones (complemento sección 7)
 
 > **Advertencia crítica:** Al **elevar ambos lados** de una ecuación a una potencia par (especialmente al cuadrado), o al **extraer raíces pares**, pueden **introducirse soluciones extrañas** (falsas) que **no satisfacen** la ecuación original.
 
@@ -435,11 +474,11 @@ Cualquier solución fuera de este intervalo debe descartarse automáticamente.
 
 ---
 
-## 3. Manipulación de logaritmos
+## 4. Manipulación de logaritmos
 
-### 3.1 Definición y propiedades
+### 4.1 Definición y propiedades
 
-**Definición 3.1 (Logaritmo):**
+**Definición 4.1 (Logaritmo):**
 Sea $a > 0$, $a \neq 1$ y $b > 0$. El **logaritmo en base $a$ de $b$** es el exponente al cual hay que elevar $a$ para obtener $b$:
 $$\log_a(b) = x \quad \Leftrightarrow \quad a^x = b$$
 
@@ -462,7 +501,7 @@ Para $a, b, c > 0$ con $a \neq 1$:
    - $a^{\log_a(b)} = b$
    - $\log_a(a^b) = b$
 
-**Ejemplo 3.1 (Aplicación de propiedades):**
+**Ejemplo 4.1 (Aplicación de propiedades):**
 
 Simplifique: $\log_2(8) + \log_2(16) - \log_2(4)$
 
@@ -473,7 +512,7 @@ $$\begin{align}
 &= 5 \quad \text{(propiedad 3)}
 \end{align}$$
 
-**Ejemplo 3.2 (Cambio de base):**
+**Ejemplo 4.2 (Cambio de base):**
 
 Exprese $\log_3(10)$ en términos de logaritmos naturales:
 
@@ -481,13 +520,13 @@ $$\log_3(10) = \frac{\ln(10)}{\ln(3)}$$
 
 ---
 
-## 4. Ecuaciones lineales 
+## 5. Ecuaciones lineales 
 
-### 4.1 Variables y ecuaciones: Conceptos fundamentales
+### 5.1 Variables y ecuaciones: Conceptos fundamentales
 
 Antes de estudiar ecuaciones, debemos entender qué es una variable y cómo se relaciona con las ecuaciones.
 
-**Definición 4.1 (Variable):**
+**Definición 5.1 (Variable):**
 Una **variable** es un símbolo (comúnmente una letra como $x$, $y$, $t$, etc.) que representa un valor **desconocido** o que puede **variar** dentro de un conjunto determinado.
 
 **Características de una variable:**
@@ -495,21 +534,21 @@ Una **variable** es un símbolo (comúnmente una letra como $x$, $y$, $t$, etc.)
 - Actúa como un "contenedor" que puede tomar diferentes valores
 - Su dominio es el conjunto de valores que puede asumir (típicamente $\mathbb{R}$ en este curso)
 
-**Ejemplo 4.1 (Variables en diferentes contextos):**
+**Ejemplo 5.1 (Variables en diferentes contextos):**
 
 a) **En geometría:** "Sea $r$ el radio de un círculo" → $r$ es una variable que representa una longitud
 b) **En física:** "Sea $t$ el tiempo transcurrido" → $t$ es una variable que representa tiempo
 c) **En álgebra:** "Encuentre el valor de $x$ tal que $2x + 5 = 11$" → $x$ es la incógnita (variable a determinar)
 
-**Definición 4.2 (Constante):**
+**Definición 5.2 (Constante):**
 Una **constante** es un valor **fijo** que no cambia. Se representa con números o letras específicas (como $a$, $b$, $c$ cuando representan coeficientes conocidos).
 
-**Ejemplo 4.2:**
+**Ejemplo 5.2:**
 En la expresión $3x + 7$:
 - $x$ es la **variable** (puede tomar diferentes valores)
 - $3$ y $7$ son **constantes** (valores fijos)
 
-**Definición 4.3 (Ecuación):**
+**Definición 5.3 (Ecuación):**
 Una **ecuación** es una igualdad que contiene una o más variables, y que es **verdadera solo para ciertos valores** de dichas variables.
 
 **Componentes de una ecuación:**
@@ -518,14 +557,14 @@ Una **ecuación** es una igualdad que contiene una o más variables, y que es **
 - **Solución:** Valor(es) de la variable que hacen verdadera la ecuación
 - **Resolver:** Proceso de encontrar todas las soluciones
 
-**Ejemplo 4.3:**
+**Ejemplo 5.3:**
 En la ecuación $2x + 3 = 11$:
 - Miembro izquierdo: $2x + 3$
 - Miembro derecho: $11$
 - Variable: $x$
 - Solución: $x = 4$ (porque $2(4) + 3 = 11$)
 
-**Definición 4.4 (Identidad vs. Ecuación condicional):**
+**Definición 5.4 (Identidad vs. Ecuación condicional):**
 
 Una **identidad** es una igualdad verdadera para **todos** los valores de la variable:
 $$x + x = 2x \quad \text{(verdadero para todo } x \in \mathbb{R}\text{)}$$
@@ -537,9 +576,9 @@ $$x + 3 = 7 \quad \text{(solo verdadero para } x = 4\text{)}$$
 - Usamos $=$ para ecuaciones condicionales: $x^2 + 1 = 10$
 - Usamos $\equiv$ o $=$ para identidades: $\sin^2(x) + \cos^2(x) \equiv 1$
 
-### 4.2 Definición y forma general
+### 5.2 Definición y forma general
 
-**Definición 4.5 (Ecuación lineal):**
+**Definición 5.5 (Ecuación lineal):**
 Una **ecuación lineal** en una variable $x$ es una ecuación de la forma:
 $$ax + b = 0$$
 donde $a, b \in \mathbb{R}$ y $a \neq 0$.
@@ -549,9 +588,9 @@ $$ax + b = cx + d$$
 donde $a, b, c, d \in \mathbb{R}$ y $a \neq c$.
 Pero todas estas ecuaciones se puede reducirse a su forma general agrupando términos.
 
-### 4.2 Resolución de ecuaciones lineales
+### 5.3 Resolución de ecuaciones lineales
 
-**Teorema 4.1 (Solución de la ecuación lineal):**
+**Teorema 5.1 (Solución de la ecuación lineal):**
 Toda ecuación lineal de la forma $ax + b = 0$ (con $a \neq 0$) tiene una **única solución** dada por:
 $$x = -\frac{b}{a}$$
 
@@ -583,7 +622,7 @@ Alternativamente, el método paso a paso es:
 2. **Factorizar:** Factorizar $x$ si es necesario
 3. **Despejar:** Dividir por el coeficiente de $x$
 
-**Ejemplo 4.1:**
+**Ejemplo 5.1:**
 $$3x + 5 = 2x - 7$$
 $$3x - 2x = -7 - 5$$
 $$x = -12$$
@@ -592,7 +631,7 @@ $$x = -12$$
 $$3(-12) + 5 = -36 + 5 = -31$$
 $$2(-12) - 7 = -24 - 7 = -31 \quad \checkmark$$
 
-**Ejemplo 4.2 (Con fracciones):**
+**Ejemplo 5.2 (Con fracciones):**
 $$\frac{x}{3} + \frac{2x}{5} = 4$$
 
 Multiplicamos por el mínimo común múltiplo de 3 y 5 (que es 15):
@@ -601,7 +640,7 @@ $$5x + 6x = 60$$
 $$11x = 60$$
 $$x = \frac{60}{11}$$
 
-### 4.3 Casos especiales
+### 5.4 Casos especiales
 
 **Caso 1: Infinitas soluciones (identidad)**
 $$2x + 3 = 2x + 3$$
@@ -615,11 +654,11 @@ $$2 = 5 \quad \text{(falso)}$$
 
 ---
 
-## 5. Ecuaciones cuadráticas
+## 6. Ecuaciones cuadráticas
 
-### 5.1 Definición y forma general
+### 6.1 Definición y forma general
 
-**Definición 5.1 (Ecuación cuadrática):**
+**Definición 6.1 (Ecuación cuadrática):**
 Una **ecuación cuadrática** (o de segundo grado) en la variable $x$ es una ecuación de la forma:
 $$ax^2 + bx + c = 0$$
 donde $a, b, c \in \mathbb{R}$ y $a \neq 0$.
@@ -630,25 +669,25 @@ Igualmente que con las ecuaciones de primer grado, se pueden tener una ecuación
 - $b$: coeficiente lineal
 - $c$: término independiente (o constante)
 
-### 5.2 Factorización
+### 6.2 Factorización
 
 Cuando es posible factorizar la ecuación cuadrática, podemos resolver usando el **principio del producto cero**.
 
 **Proposición 5.1 (Principio del producto cero):**
 $$ab = 0 \quad \Leftrightarrow \quad a = 0 \text{ o } b = 0$$
 
-**Ejemplo 5.1 (Factorización directa):**
+**Ejemplo 6.1 (Factorización directa):**
 $$x^2 - 5x + 6 = 0$$
 $$(x - 2)(x - 3) = 0$$
 $$x - 2 = 0 \quad \text{o} \quad x - 3 = 0$$
 $$x = 2 \quad \text{o} \quad x = 3$$
 
-**Ejemplo 5.2 (Factor común):**
+**Ejemplo 6.2 (Factor común):**
 $$3x^2 - 12x = 0$$
 $$3x(x - 4) = 0$$
 $$x = 0 \quad \text{o} \quad x = 4$$
 
-### 5.3 Productos notables
+### 6.3 Productos notables
 
 Los **productos notables** son identidades algebraicas que facilitan la factorización:
 
@@ -673,17 +712,17 @@ Los **productos notables** son identidades algebraicas que facilitan la factoriz
    - $a^2 + 2ab + b^2 = (a + b)^2$
    - $a^2 - 2ab + b^2 = (a - b)^2$
 
-**Ejemplo 5.3 (Uso de diferencia de cuadrados):**
+**Ejemplo 6.3 (Uso de diferencia de cuadrados):**
 $$x^2 - 25 = 0$$
 $$(x + 5)(x - 5) = 0$$
 $$x = -5 \quad \text{o} \quad x = 5$$
 
-**Ejemplo 5.4 (Trinomio cuadrado perfecto):**
+**Ejemplo 6.4 (Trinomio cuadrado perfecto):**
 $$x^2 + 6x + 9 = 0$$
 $$(x + 3)^2 = 0$$
 $$x = -3 \quad \text{(raíz doble)}$$
 
-### 5.3.1 Técnica de completar el cuadrado
+### 6.3.1 Técnica de completar el cuadrado
 
 La técnica de **completar el cuadrado** (o completación cuadrática) es un método algebraico fundamental que transforma una expresión cuadrática en un trinomio cuadrado perfecto. Esta técnica es esencial para:
 - Derivar la fórmula cuadrática general
@@ -714,7 +753,7 @@ Por lo tanto, el término que completa el cuadrado es **la mitad del coeficiente
 3. Sumar y restar este valor (para mantener la igualdad)
 4. Factorizar el trinomio cuadrado perfecto: $\left(x + \frac{b}{2}\right)^2$
 
-**Ejemplo 5.4.1 (Completar el cuadrado: caso básico):**
+**Ejemplo 6.4.1 (Completar el cuadrado: caso básico):**
 
 Completar el cuadrado para $x^2 + 8x$:
 
@@ -730,7 +769,7 @@ $$= (x + 4)^2 - 16$$
 
 **Verificación:** $(x + 4)^2 - 16 = x^2 + 8x + 16 - 16 = x^2 + 8x$ ✓
 
-**Ejemplo 5.4.2 (Completar el cuadrado: coeficiente negativo):**
+**Ejemplo 6.4.2 (Completar el cuadrado: coeficiente negativo):**
 
 Completar el cuadrado para $x^2 - 10x$:
 
@@ -740,7 +779,7 @@ $$x^2 - 10x = (x - 5)^2 - 25$$
 
 **Verificación:** $(x - 5)^2 - 25 = x^2 - 10x + 25 - 25 = x^2 - 10x$ ✓
 
-**Ejemplo 5.4.3 (Completar el cuadrado: coeficiente fraccionario):**
+**Ejemplo 6.4.3 (Completar el cuadrado: coeficiente fraccionario):**
 
 Completar el cuadrado para $x^2 + 3x$:
 
@@ -748,7 +787,7 @@ $$\left(\frac{3}{2}\right)^2 = \frac{9}{4}$$
 
 $$x^2 + 3x = \left(x + \frac{3}{2}\right)^2 - \frac{9}{4}$$
 
-**Ejemplo 5.4.4 (Resolver ecuación completando el cuadrado):**
+**Ejemplo 6.4.4 (Resolver ecuación completando el cuadrado):**
 
 Resuelva $x^2 + 6x - 7 = 0$ completando el cuadrado:
 
@@ -772,7 +811,7 @@ $$x = -3 + 4 = 1 \quad \text{o} \quad x = -3 - 4 = -7$$
 
 **Soluciones:** $x = 1$ o $x = -7$
 
-**Ejemplo 5.4.5 (Expresión cuadrática general con $a \neq 1$):**
+**Ejemplo 6.4.5 (Expresión cuadrática general con $a \neq 1$):**
 
 Completar el cuadrado para $3x^2 + 12x + 5$:
 
@@ -808,9 +847,9 @@ La forma $a(x - h)^2 + k$ es la **forma canónica** o **forma vértice** de una 
 
 > **Observación:** Esta técnica se generaliza en el método de la demostración de la fórmula cuadrática (ver sección 5.4).
 
-### 5.4 Fórmula general (cuadrática)
+### 6.4 Fórmula general (cuadrática)
 
-**Teorema 5.1 (Fórmula cuadrática):**
+**Teorema 6.1 (Fórmula cuadrática):**
 Las soluciones de la ecuación $ax^2 + bx + c = 0$ (con $a \neq 0$) están dadas por:
 $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
 
@@ -842,7 +881,7 @@ $$x = -\frac{b}{2a} \pm \frac{\sqrt{b^2 - 4ac}}{2a} = \frac{-b \pm \sqrt{b^2 - 4
 
 $\square$
 
-**Definición 5.2 (Discriminante):**
+**Definición 6.2 (Discriminante):**
 El **discriminante** de la ecuación cuadrática es:
 $$\Delta = b^2 - 4ac$$
 
@@ -851,7 +890,7 @@ $$\Delta = b^2 - 4ac$$
 - Si $\Delta = 0$: Una solución real (raíz doble)
 - Si $\Delta < 0$: No hay soluciones reales (dos soluciones complejas conjugadas)
 
-**Ejemplo 5.5:**
+**Ejemplo 6.5:**
 Resuelva $2x^2 - 5x - 3 = 0$
 
 Identificamos: $a = 2$, $b = -5$, $c = -3$
@@ -864,7 +903,7 @@ $$x = \frac{-(-5) \pm \sqrt{49}}{2(2)} = \frac{5 \pm 7}{4}$$
 
 $$x_1 = \frac{5 + 7}{4} = 3, \quad x_2 = \frac{5 - 7}{4} = -\frac{1}{2}$$
 
-**Ejemplo 5.6 (Raíces no exactas):**
+**Ejemplo 6.6 (Raíces no exactas):**
 Resuelva $x^2 - 4x + 1 = 0$
 
 Identificamos: $a = 1$, $b = -4$, $c = 1$
@@ -884,11 +923,11 @@ $$x_1 = 2 + \sqrt{3} \approx 3.732, \quad x_2 = 2 - \sqrt{3} \approx 0.268$$
 - Suma: $(2 + \sqrt{3}) + (2 - \sqrt{3}) = 4 = -\frac{b}{a}$ ✓
 - Producto: $(2 + \sqrt{3})(2 - \sqrt{3}) = 4 - 3 = 1 = \frac{c}{a}$ ✓
 
-### 5.5 Soluciones complejas (Opcional)
+### 6.5 Soluciones complejas (Opcional)
 
 Cuando el discriminante es negativo ($\Delta < 0$), la ecuación cuadrática no tiene soluciones reales, pero sí tiene **dos soluciones complejas conjugadas**.
 
-**Definición 5.3 (Número complejo):**
+**Definición 6.3 (Número complejo):**
 Un **número complejo** es de la forma $z = a + bi$, donde:
 - $a \in \mathbb{R}$ es la **parte real**
 - $b \in \mathbb{R}$ es la **parte imaginaria**
@@ -906,13 +945,13 @@ $$\sqrt{-a} = i\sqrt{a}$$
 **Conjugado complejo:**
 Si $z = a + bi$, su conjugado es $\overline{z} = a - bi$
 
-**Teorema 5.2 (Soluciones complejas de ecuaciones cuadráticas):**
+**Teorema 6.2 (Soluciones complejas de ecuaciones cuadráticas):**
 Si $\Delta = b^2 - 4ac < 0$, entonces las soluciones de $ax^2 + bx + c = 0$ son:
 $$x = \frac{-b \pm i\sqrt{|\Delta|}}{2a} = \frac{-b \pm i\sqrt{4ac - b^2}}{2a}$$
 
 Estas soluciones son **complejas conjugadas**.
 
-**Ejemplo 5.7 (Discriminante negativo):**
+**Ejemplo 6.7 (Discriminante negativo):**
 Resuelva $x^2 + 2x + 5 = 0$
 
 Identificamos: $a = 1$, $b = 2$, $c = 5$
@@ -934,7 +973,7 @@ x^2 + 2x + 5 &= (-1 + 2i)^2 + 2(-1 + 2i) + 5 \\
 &= 0 \quad ✓
 \end{align}$$
 
-**Ejemplo 5.8:**
+**Ejemplo 6.8:**
 Resuelva $2x^2 - 3x + 4 = 0$
 
 Identificamos: $a = 2$, $b = -3$, $c = 4$
@@ -960,11 +999,11 @@ Aunque pueden parecer abstractas, las soluciones complejas son fundamentales en:
 
 ---
 
-## 6. Ecuaciones de grado superior
+## 7. Ecuaciones de grado superior
 
-### 6.1 Ecuaciones cúbicas (tercer grado)
+### 7.1 Ecuaciones cúbicas (tercer grado)
 
-**Definición 6.1 (Ecuación cúbica):**
+**Definición 7.1 (Ecuación cúbica):**
 Una ecuación cúbica es de la forma:
 $$ax^3 + bx^2 + cx + d = 0$$
 donde $a \neq 0$.
@@ -981,7 +1020,7 @@ mediante el cambio de variable $x = t - \frac{b}{3a}$.
 - Métodos numéricos (Newton-Raphson, bisección)
 - Software matemático (Wolfram Alpha, MATLAB, Python)
 
-**Ejemplo 6.1 (Factorización por raíz racional):**
+**Ejemplo 7.1 (Factorización por raíz racional):**
 $$x^3 - 6x^2 + 11x - 6 = 0$$
 
 Probamos divisores de 6: $x = 1$
@@ -1002,9 +1041,9 @@ $$x = \sqrt[3]{\left(\frac{-b^3}{27a^3}+\frac{bc}{6a^2}-\frac{d}{2a}\right)+\sqr
 
 La formula de la ecuaciones de 3°grado es bastante larga y engorrosa, tiene varias formas de escribirse pero todos son equivalente.
 
-### 6.2 Ecuaciones cuárticas (cuarto grado)
+### 7.2 Ecuaciones cuárticas (cuarto grado)
 
-**Definición 6.2 (Ecuación cuártica):**
+**Definición 7.2 (Ecuación cuártica):**
 $$ax^4 + bx^3 + cx^2 + dx + e = 0$$
 donde $a \neq 0$.
 
@@ -1035,15 +1074,15 @@ $$
 
 las formulas son aun mas engorrosas y para fines académicos son inviables, pero son perfectas para programarlas en alguna calculadora.
 
-### 6.3 Teorema Fundamental del Álgebra (Opcional)
+### 7.3 Teorema Fundamental del Álgebra (Opcional)
 
-**Teorema 6.1 (Teorema Fundamental del Álgebra):**
+**Teorema 7.1 (Teorema Fundamental del Álgebra):**
 Todo polinomio de grado $n \geq 1$ con coeficientes complejos tiene **exactamente $n$ raíces complejas** (contando multiplicidades).
 $$P(x)=a_n x^n + \cdots + a_1 x + a_0 \quad \text{con} \quad a_n \neq 0$$
 
 $P(x)$ tiene exactamente $n$ raíces 
 
-**Definición 6.2 (Multiplicidad algebraica):**
+**Definición 7.2 (Multiplicidad algebraica):**
 Sea $P(x)$ un polinomio y $r$ una raíz de $P(x)$. La **multiplicidad algebraica** de $r$ es el número entero positivo $m$ tal que $(x - r)^m$ divide a $P(x)$, pero $(x - r)^{m+1}$ no divide a $P(x)$.
 
 Equivalentemente, $P(x)$ puede escribirse como:
@@ -1056,7 +1095,7 @@ donde $Q(x)$ es un polinomio tal que $Q(r) \neq 0$.
 - Si $m = 3$: $r$ es una **raíz triple**
 - Si $m \geq 2$: $r$ es una **raíz múltiple**
 
-**Ejemplo 6.3.1:**
+**Ejemplo 7.3.1:**
 $$P(x) = (x - 2)^3(x + 1)^2(x - 5)$$
 
 - $x = 2$ es raíz de multiplicidad $3$
@@ -1065,7 +1104,7 @@ $$P(x) = (x - 2)^3(x + 1)^2(x - 5)$$
 
 El polinomio tiene grado $3 + 2 + 1 = 6$, consistente con tener 6 raíces contando multiplicidades.
 
-**Ejemplo 6.3.2:**
+**Ejemplo 7.3.2:**
 $$P(x) = x^2 - 4x + 4 = (x - 2)^2$$
 
 $x = 2$ es una raíz doble (multiplicidad 2).
@@ -1077,19 +1116,19 @@ donde $r_1, r_2, \ldots, r_k \in \mathbb{C}$ son las raíces **distintas** con m
 
 - Si los coeficientes son reales y $z = a + bi$ es raíz de multiplicidad $m$, entonces su conjugado $\overline{z} = a - bi$ también es raíz de multiplicidad $m$.
 
-**Ejemplo 6.3.3:** El polinomio $x^4 + 1$ tiene 4 raíces complejas:
+**Ejemplo 7.3.3:** El polinomio $x^4 + 1$ tiene 4 raíces complejas:
 $$x = \frac{1 \pm i}{\sqrt{2}}, \quad x = \frac{-1 \pm i}{\sqrt{2}}$$
 
 Cada raíz tiene multiplicidad 1 (todas son raíces simples).
-### 6.4 Ecuaciones bicuadráticas
+### 7.4 Ecuaciones bicuadráticas
 
-**Definición 6.3 (Ecuación bicuadrática):**
+**Definición 7.3 (Ecuación bicuadrática):**
 Una ecuación **bicuadrática** es una ecuación de cuarto grado que solo contiene potencias pares de $x$:
 $$ax^4 + bx^2 + c = 0$$
 
 **Método de resolución:** Sustituir $u = x^2$, resolver la ecuación cuadrática resultante, y luego despejar $x$.
 
-**Ejemplo 6.2:**
+**Ejemplo 7.2:**
 $$x^4 - 5x^2 + 4 = 0$$
 
 Sustituimos $u = x^2$:
@@ -1105,11 +1144,11 @@ Deshacemos la sustitución:
 
 **Soluciones:** $x \in \{-2, -1, 1, 2\}$
 
-### 6.5 Ecuaciones reducibles a cuadráticas
+### 7.5 Ecuaciones reducibles a cuadráticas
 
 Algunas ecuaciones pueden transformarse en cuadráticas mediante sustituciones ingeniosas.
 
-**Ejemplo 6.3 (Ecuación exponencial):**
+**Ejemplo 7.3 (Ecuación exponencial):**
 $$25^x + 5^x - 6 = 0$$
 
 Notamos que $25^x = (5^2)^x = (5^x)^2$. Sustituimos $u = 5^x$ (con $u > 0$):
@@ -1123,7 +1162,7 @@ Como $u = 5^x > 0$, descartamos $u = -3$. Para $u = 2$:
 $$5^x = 2$$
 $$x = \log_5(2) = \frac{\ln(2)}{\ln(5)}$$
 
-**Ejemplo 6.4:**
+**Ejemplo 7.4:**
 $$x^{2/3} - 5x^{1/3} + 6 = 0$$
 
 Sustituimos $u = x^{1/3}$:
@@ -1135,26 +1174,26 @@ Deshacemos:
 - Si $u = 2$: $x^{1/3} = 2 \Rightarrow x = 8$
 - Si $u = 3$: $x^{1/3} = 3 \Rightarrow x = 27$
 
-### 6.6 Números trascendentes
+### 7.6 Números trascendentes
 
 Habiendo explorado diversos tipos de ecuaciones polinomiales (cuadráticas, cúbicas, cuárticas), podemos hacer una distinción fundamental sobre la naturaleza de los números que surgen como solución.
 
-**Definición 6.4 (Número trascendente):**
+**Definición 7.4 (Número trascendente):**
 Un número real o complejo es **trascendente** (o trascendental) si no es raíz de ninguna ecuación polinómica no nula con coeficientes racionales. Es decir, no existe ninguna combinación de la forma:
 $$a_n x^n + a_{n-1} x^{n-1} + \dots + a_1 x + a_0 = 0$$
 donde los coeficientes $a_i$ sean números racionales ($a_i \in \mathbb{Q}$), que tenga a dicho número como solución $x$.
 
 > **Observación:** Si un número sí es solución de algún polinomio con coeficientes racionales (como $\sqrt{2}$ lo es de $x^2 - 2 = 0$, o $\frac{1}{2}$ de $2x - 1 = 0$), se le denomina **número algebraico**.
 
-**Ejemplo 6.5 (Constantes trascendentes famosas):**
+**Ejemplo 7.5 (Constantes trascendentes famosas):**
 Las constantes matemáticas como $\pi$ o el número de Euler $e$ son números trascendentes. Ningún ajuste polinomial logrará que se cumpla la igualdad:
 $$a_n \pi^n + \dots + a_1 \pi + a_0 = 0$$
 
 ---
 
-## 7. Ecuaciones racionales
+## 8. Ecuaciones racionales
 
-**Definición 7.1 (Ecuación racional):**
+**Definición 8.1 (Ecuación racional):**
 Una ecuación **racional** es aquella que involucra cocientes de polinomios:
 $$\frac{P(x)}{Q(x)} = R(x)$$
 donde $P(x)$, $Q(x)$ y $R(x)$ son polinomios con $Q(x) \neq 0$. El dominio de la ecuación es el conjunto de $x \in \mathbb{R}$ tales que $Q(x) \neq 0$.
@@ -1166,7 +1205,7 @@ donde $P(x)$, $Q(x)$ y $R(x)$ son polinomios con $Q(x) \neq 0$. El dominio de la
 3. **Resolver la ecuación resultante**
 4. **Verificar:** Excluir soluciones que violen las restricciones
 
-**Ejemplo 7.1:**
+**Ejemplo 8.1:**
 $$\frac{x + 2}{x - 3} = \frac{5}{2}$$
 
 **Restricción:** $x \neq 3$
@@ -1179,7 +1218,7 @@ $$x = \frac{19}{3}$$
 
 Verificamos que $\frac{19}{3} \neq 3$ ✓
 
-**Ejemplo 7.2 (Con múltiples fracciones):**
+**Ejemplo 8.2 (Con múltiples fracciones):**
 $$\frac{1}{x} + \frac{1}{x - 1} = \frac{5}{6}$$
 
 **Restricciones:** $x \neq 0$ y $x \neq 1$
@@ -1198,12 +1237,12 @@ Ambas soluciones satisfacen las restricciones ✓
 
 ---
 
-## 8. Sistemas de ecuaciones
+## 9. Sistemas de ecuaciones
 
 Un sistema de ecuaciones son un conjunto de ecuaciones con múltiples incógnitas, las respuestas a un sistema de ecuaciones debe satisfacerse simultáneamente a todas las ecuaciones
-### 8.1 Sistemas de ecuaciones lineales
+### 9.1 Sistemas de ecuaciones lineales
 
-**Definición 8.1 (Sistema de ecuaciones lineales $2 \times 2$):**
+**Definición 9.1 (Sistema de ecuaciones lineales $2 \times 2$):**
 $$\begin{cases}
 ax + by = e \\
 cx + dy = f
@@ -1226,7 +1265,7 @@ cx + dy = f
 $$x = \frac{\begin{vmatrix} e & b \\ f & d \end{vmatrix}}{\begin{vmatrix} a & b \\ c & d \end{vmatrix}}, \quad y = \frac{\begin{vmatrix} a & e \\ c & f \end{vmatrix}}{\begin{vmatrix} a & b \\ c & d \end{vmatrix}}$$
 (siempre que el determinante del denominador sea no nulo) Este metodo se explicara en el curso de **Algebra Lineal**
 
-**Ejemplo 8.1 (Método de sustitución):**
+**Ejemplo 9.1 (Método de sustitución):**
 $$\begin{cases}
 x + 2y = 7 \\
 3x - y = 5
@@ -1246,15 +1285,15 @@ Entonces: $x = 7 - 2\left(\frac{16}{7}\right) = \frac{17}{7}$
 
 ---
 
-## 9. Ecuaciones no lineales y sistemas no lineales [Demostrativo]
+## 10. Ecuaciones no lineales y sistemas no lineales [Demostrativo]
 
 > **Nota:** Esta sección es **demostrativa** y no forma parte de los temas evaluables del curso. Su propósito es que el alumno se **familiarice con la terminología** y conozca la existencia de ecuaciones y sistemas no lineales, sin entrar en métodos de resolución detallados. Los temas aquí mencionados se estudiarán con profundidad en cursos posteriores (Variable Compleja, Análisis Numérico, etc.).
 
-Una ecuación no lineal es cualquier tipo de ecuación que no tenga la forma de una ecuación lineal $ax + b = 0$. En las secciones anteriores hemos estudiado ecuaciones lineales (Sección 4), cuadráticas (Sección 5), de grado superior (Sección 6), racionales (Sección 7) y sistemas lineales (Sección 8). En esta sección presentamos brevemente las ecuaciones y sistemas que **no son lineales**, es decir, aquellos que involucran potencias, raíces, exponenciales, logaritmos u otras funciones no lineales.
+Una ecuación no lineal es cualquier tipo de ecuación que no tenga la forma de una ecuación lineal $ax + b = 0$. En las secciones anteriores hemos estudiado ecuaciones lineales (Sección 5), cuadráticas (Sección 6), de grado superior (Sección 7), racionales (Sección 8) y sistemas lineales (Sección 9). En esta sección presentamos brevemente las ecuaciones y sistemas que **no son lineales**, es decir, aquellos que involucran potencias, raíces, exponenciales, logaritmos u otras funciones no lineales.
 
-### 9.1 Ecuaciones no lineales
+### 10.1 Ecuaciones no lineales
 
-**Definición 9.1 (Ecuación no lineal):**
+**Definición 10.1 (Ecuación no lineal):**
 Una **ecuación no lineal** es cualquier ecuación que no puede expresarse en la forma $ax + b = 0$. Incluye ecuaciones con:
 - Potencias: $x^2$, $x^3$, $x^n$
 - Raíces: $\sqrt{x}$, $\sqrt[3]{x}$
@@ -1264,12 +1303,12 @@ Una **ecuación no lineal** es cualquier ecuación que no puede expresarse en la
 - Combinaciones de las anteriores
 
 **Ejemplos ya estudiados:**
-- **Cuadráticas:** $x^2 - 5x + 6 = 0$ (Sección 5)
-- **Cúbicas:** $x^3 - 6x^2 + 11x - 6 = 0$ (Sección 6.1)
-- **Bicuadráticas:** $x^4 - 5x^2 + 4 = 0$ (Sección 6.4)
-- **Exponenciales:** $25^x + 5^x - 6 = 0$ (Sección 6.5)
-- **Racionales:** $\frac{x + 2}{x - 3} = \frac{5}{2}$ (Sección 7)
-- **Con raíces:** $\sqrt{x + 3} = x - 3$ (Sección 2.4.2)
+- **Cuadráticas:** $x^2 - 5x + 6 = 0$ (Sección 6)
+- **Cúbicas:** $x^3 - 6x^2 + 11x - 6 = 0$ (Sección 7.1)
+- **Bicuadráticas:** $x^4 - 5x^2 + 4 = 0$ (Sección 7.4)
+- **Exponenciales:** $25^x + 5^x - 6 = 0$ (Sección 7.5)
+- **Racionales:** $\frac{x + 2}{x - 3} = \frac{5}{2}$ (Sección 8)
+- **Con raíces:** $\sqrt{x + 3} = x - 3$ (Sección 3.4.2)
 
 > **Nota:** Los siguientes son ejemplos de ecuaciones **más exóticas** que ilustran la diversidad del mundo no lineal. No se pretende resolverlas en este curso; se mencionan únicamente para reconocer su forma y los nombres asociados.
 
@@ -1293,7 +1332,7 @@ Una **ecuación no lineal** es cualquier ecuación que no puede expresarse en la
 - A menudo requieren **métodos numéricos** (Newton–Raphson, bisección) cuando no se dispone de una fórmula cerrada.
 - La verificación de soluciones es **esencial** (especialmente con raíces y logaritmos).
 
-**Ejemplo 9.1 (Ecuación logarítmica):**
+**Ejemplo 10.1 (Ecuación logarítmica):**
 $$\log_2(x) + \log_2(x - 2) = 3$$
 
 **Solución:**
@@ -1311,7 +1350,7 @@ Por lo tanto, $x = -2$ no es válida (fuera del dominio).
 
 **Solución:** $x = 4$
 
-**Ejemplo 9.2 (Ecuación exponencial):**
+**Ejemplo 10.2 (Ecuación exponencial):**
 $$3^{x+1} = 5^{x}$$
 
 Aplicamos logaritmo natural a ambos lados:
@@ -1322,19 +1361,19 @@ $$\ln(3) = x\ln(5) - x\ln(3)$$
 $$\ln(3) = x[\ln(5) - \ln(3)]$$
 $$x = \frac{\ln(3)}{\ln(5) - \ln(3)} = \frac{\ln(3)}{\ln(5/3)}$$
 
-**Ejemplo 9.3 (Ecuación trigonométrica - mención):**
+**Ejemplo 10.3 (Ecuación trigonométrica - mención):**
 $$2\sin(x) = 1$$
 $$\sin(x) = \frac{1}{2}$$
 $$x = \frac{\pi}{6} + 2\pi k \quad \text{o} \quad x = \frac{5\pi}{6} + 2\pi k, \quad k \in \mathbb{Z}$$
 
 > **Nota:** Las ecuaciones trigonométricas se estudiarán en profundidad en clases posteriores.
 
-### 9.2 Sistemas de ecuaciones no lineales
+### 10.2 Sistemas de ecuaciones no lineales
 
-**Definición 9.2 (Sistema no lineal):**
+**Definición 10.2 (Sistema no lineal):**
 Un **sistema de ecuaciones no lineales** es un conjunto de dos o más ecuaciones donde al menos una de ellas es no lineal.
 
-**Ejemplo 9.4 (Sistema cuadrático-lineal):**
+**Ejemplo 10.4 (Sistema cuadrático-lineal):**
 $$\begin{cases}
 x^2 + y^2 = 25 \\
 x + y = 7
@@ -1360,7 +1399,7 @@ Por lo tanto: $x = 3$ o $x = 4$
 
 **Interpretación geométrica:** Intersección de una circunferencia de radio 5 centrada en el origen con una recta.
 
-**Ejemplo 9.5 (Sistema exponencial):**
+**Ejemplo 10.5 (Sistema exponencial):**
 $$\begin{cases}
 2^x \cdot 3^y = 12 \\
 2^x = 3^y
@@ -1396,9 +1435,9 @@ $$y = \log_3(2^x) = x \cdot \frac{\ln(2)}{\ln(3)}$$
 - **Biología:** Modelos de poblaciones, cinética química.
 
 ---
-## 10. Ejercicios propuestos
+## 11. Ejercicios propuestos
 
-### 10.1 Ecuaciones lineales y cuadráticas
+### 11.1 Ecuaciones lineales y cuadráticas
 
 1. Resuelva: $3(x - 2) + 5 = 2(x + 1) - 7$
 2. Resuelva: $\frac{x}{2} - \frac{x-1}{3} = \frac{5}{6}$
@@ -1406,7 +1445,7 @@ $$y = \log_3(2^x) = x \cdot \frac{\ln(2)}{\ln(3)}$$
 4. Resuelva: $2x^2 + 3x - 5 = 0$
 5. Determine el discriminante y la naturaleza de las raíces de $x^2 + 4x + 5 = 0$
 
-### 10.2 Factorización y productos notables
+### 11.2 Factorización y productos notables
 
 6. Factorice: $x^2 - 16$
 7. Factorice: $4x^2 + 12x + 9$
@@ -1414,7 +1453,7 @@ $$y = \log_3(2^x) = x \cdot \frac{\ln(2)}{\ln(3)}$$
 9. Factorice: $x^3 - 27$
 10. Factorice completamente: $x^4 - 1$
 
-### 10.3 Ecuaciones especiales
+### 11.3 Ecuaciones especiales
 
 11. Resuelva la ecuación bicuadrática: $x^4 - 13x^2 + 36 = 0$
 12. Resuelva: $9^x - 4 \cdot 3^x + 3 = 0$
@@ -1425,7 +1464,7 @@ $$\begin{cases}
 x - 3y = -8
 \end{cases}$$
 
-### 10.4 Problemas aplicados
+### 11.4 Problemas aplicados
 
 19. La suma de dos números es 15 y su diferencia es 3. ¿Cuáles son los números?
 
