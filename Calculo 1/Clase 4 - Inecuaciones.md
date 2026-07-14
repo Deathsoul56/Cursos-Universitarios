@@ -1,5 +1,7 @@
 # Inecuaciones: Fundamentos Algebraicos
 
+En esta clase se estudian las inecuaciones como generalización de las ecuaciones: desigualdades lineales, cuadráticas, racionales, de orden superior, irracionales, trascendentes y con valor absoluto, junto con sistemas de inecuaciones, resueltas mediante el método de la tabla de signos, con énfasis en el rigor de las demostraciones y en su aplicación a la determinación de dominios de funciones.
+
 ## 1. Desigualdades e Inecuaciones: Conceptos Básicos
 
 ### 1.1 Desigualdades: Definición y Tipos
@@ -640,9 +642,9 @@ Una inecuación irracional de índice par es una desigualdad de la forma general
 $$\sqrt{f(x)} \lessgtr g(x)$$
 donde $f(x)$ y $g(x)$ son expresiones algebraicas con valores reales, y el símbolo de relación representa cualquiera de los operadores $\{<, >, \leq, \geq\}$.
 
-Para resolver estas inecuaciones en el campo de los reales, el análisis se divide en dos casos fundamentales según el sentido de la desigualdad:
+Para resolver estas inecuaciones en el campo de los reales, el análisis se divide en dos casos fundamentales según el sentido de la desigualdad. Por simplicidad, la exposición se centra en la raíz cuadrada ($n=2$); el razonamiento se extiende de forma análoga a cualquier índice par.
 
-#### Caso I: Inecuaciones de la forma $\sqrt{f(x)} < g(x)$ (y $\sqrt{f(x)} \leq g(x)$)
+#### 5.2.1 Caso I: Inecuaciones de la forma $\sqrt{f(x)} < g(x)$ (y $\sqrt{f(x)} \leq g(x)$)
 
 Para que exista una solución real en esta clase de desigualdades, se deben cumplir tres condiciones simultáneas:
 1. **Existencia del radicando:** La expresión dentro del radical debe ser no negativa ($f(x) \geq 0$).
@@ -672,7 +674,7 @@ $$S = S_1 \cap S_2 = [-5, \infty) \cap (-\infty, 4) = [-5, 4)$$
 
 **Respuesta:** En notación de intervalo: $S = [-5, 4)$.
 
-#### Caso II: Inecuaciones de la forma $\sqrt{f(x)} > g(x)$ (y $\sqrt{f(x)} \geq g(x)$)
+#### 5.2.2 Caso II: Inecuaciones de la forma $\sqrt{f(x)} > g(x)$ (y $\sqrt{f(x)} \geq g(x)$)
 
 En este escenario, el miembro derecho $g(x)$ no está obligado a ser positivo, lo que exige dividir el análisis en la unión de dos ramas lógicas mutuamente excluyentes según el signo de $g(x)$:
 
@@ -857,7 +859,7 @@ $$|x| > a \iff x > a \lor x < -a$$
 $\blacksquare$
 
 **Demostración (Propiedad 3):**
-Recordemos de la *Clase 2* que para cualquier número real $u \in \mathbb{R}$ se cumple la identidad cuadrática $|u|^2 = u^2$. Además, la función cuadrática $f(t) = t^2$ es estrictamente creciente para valores no negativos ($t \geq 0$). 
+Recordemos de [[Clase 2 - Los Números]] que para cualquier número real $u \in \mathbb{R}$ se cumple la identidad cuadrática $|u|^2 = u^2$. Además, la función cuadrática $f(t) = t^2$ es estrictamente creciente para valores no negativos ($t \geq 0$). 
 
 Dado que $|x| \geq 0$ y $|y| \geq 0$ para todo $x, y \in \mathbb{R}$, se cumple que:
 $$|x| < |y| \iff |x|^2 < |y|^2$$
@@ -1156,7 +1158,10 @@ En el análisis matemático y el cálculo diferencial, las inecuaciones no solo 
 
 ### 8.1 Determinación de Dominios de Existencia
 
-El dominio de una función real $f$, denotado por $\text{Dom}(f)$, es el conjunto de todos los números reales para los cuales la expresión $f(x)$ está bien definida y arroja un valor real. Las restricciones fundamentales que se traducen en inecuaciones son:
+El dominio de una función real $f$, denotado por $\text{Dom}(f)$, es el conjunto de todos los números reales para los cuales la expresión $f(x)$ está bien definida y arroja un valor real.
+
+**Proposición 8.1 (Condiciones de dominio):**
+Las restricciones fundamentales que se traducen en inecuaciones son:
 
 1. **Raíces de índice par:** Para una función de la forma $f(x) = \sqrt[2k]{g(x)}$ con $k \in \mathbb{N}$, la radicación solo está definida en los reales si el radicando es no negativo:
    $$g(x) \geq 0$$
@@ -1359,11 +1364,4 @@ $$\text{Dom}(h) = [-3, 4) \cup (4, 5)$$
 
 ---
 
-## Referencias y lectura adicional
-
-- **Stewart, J.** *Precálculo: Matemáticas para el Cálculo*, 7ª edición (2017)
-- **Larson, R. & Edwards, B.** *Cálculo con Geometría Analítica*, 9ª edición (2010)
-
----
-
-*Fin de Clase 4 - Inecuaciones*
+**Fin de la Clase 4: Inecuaciones**

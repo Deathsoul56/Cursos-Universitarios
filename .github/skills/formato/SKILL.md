@@ -1,4 +1,5 @@
 ---
+name: formato
 description: >
   Formato y estilo para cursos universitarios STEM de alto rigor académico.
   Aplica SIEMPRE cuando el usuario trabaja en este proyecto de Cursos-Universitarios:
@@ -6,9 +7,8 @@ description: >
   agregar ejemplos, demostraciones o contexto histórico en cursos de matemáticas,
   física, ingeniería o ciencias formales. WHEN: crear apuntes universitarios,
   redactar definición matemática, agregar contexto histórico, estructurar clase
-  STEM, curso universitario, Calculo, Algebra, escribir nueva sección, nuevo concepto,
-  nueva definición, nuevo teorema, nuevo ejemplo, Calculo 1, Calculo II, Álgebra,
-  Probabilidad, Estadística, Ciencia de los Materiales, Cálculo Numérico.
+  STEM, curso universitario, Calculo, Algebra, Probabilidad, Estadística,
+  Ciencia de los Materiales, Cálculo Numérico.
 ---
 # SKILL: Cursos Universitarios STEM — Formato Estándar
 
@@ -382,9 +382,10 @@ El truco consiste en fijar la coordenada `y` del símbolo en la línea base del 
 
 ### Tablas
 
-- Usar para comparaciones, clasificaciones y tablas de valores
-- Centrar columnas numéricas con `:---:`
-- Alinear texto a la izquierda con `:---`
+- Usar para comparaciones, clasificaciones y tablas de valores.
+- Centrar columnas numéricas con `:---:`.
+- Alinear texto a la izquierda con `:---`.
+- En entradas binarias (sí/no, verdadero/falso), usar las palabras **“Sí” / “No”** completas. Evitar los caracteres `✓` y `✗` para mantener un registro académico formal.
 
 ### Lenguaje académico
 
