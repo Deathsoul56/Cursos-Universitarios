@@ -376,13 +376,82 @@ plt.savefig("grafico.png", dpi=150, facecolor="#000000")
 
 ---
 
+## Organización de scripts por Clase
+
+Para evitar acumular decenas de scripts sueltos sin saber a qué clase
+corresponden, **todo el código Python que genera imágenes se agrupa en un
+único archivo por Clase**, con una función independiente por cada figura o
+animación.
+
+### Ubicación y nombre del archivo
+
+- Ruta: `scripts/<Clase>.py`, en una única carpeta `scripts/` ubicada en la
+  **raíz del proyecto** (no una por curso).
+- El nombre del `.py` debe coincidir exactamente con el nombre del archivo de
+  la clase (mismo texto, extensión `.py`). Ejemplo:
+  - Nota: `Calculo 1/Clase 4 - Inecuaciones.md`
+  - Script: `scripts/Clase 4 - Inecuaciones.py`
+- Si dos cursos tuvieran una clase con el mismo nombre, anteponer el curso al
+  nombre del script para evitar colisiones (ej. `scripts/Calculo 1 - Clase 4 - Inecuaciones.py`).
+- Si la clase aún no tiene ninguna imagen generada por script, crear el
+  archivo la primera vez que se necesite; no crear archivos vacíos por
+  adelantado.
+
+### Estructura interna
+
+- Una función por imagen o animación, con nombre descriptivo en snake_case y
+  prefijo según el tipo: `fig_<slug>()` para PNG estáticos, `gif_<slug>()`
+  para animaciones. El `slug` describe el contenido, no un número de ejemplo
+  (por ejemplo `fig_parabola_dominio_restringido`, no `fig_ejemplo_8_1`).
+- Cada función es autocontenida: crea su propia figura/imagen, aplica el
+  estilo de esta skill y la guarda con `.save(...)` / `.savefig(...)` en la
+  **raíz del proyecto** (ver Reglas de exportación), usando como nombre de
+  archivo el mismo slug (ej. `parabola_dominio_restringido.png`).
+- Al final del archivo, un diccionario mapea el slug al nombre de la función,
+  y un bloque `if __name__ == "__main__":` con `argparse` permite invocar
+  **solo** la figura pedida:
+
+```python
+# --- Dispatcher: invocar solo la figura que se necesita ---
+FIGURAS = {
+    "parabola_dominio_restringido": fig_parabola_dominio_restringido,
+    "tabla_signos_ejemplo_3_1": fig_tabla_signos_ejemplo_3_1,
+    "convergencia_sucesion": gif_convergencia_sucesion,
+}
+
+if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description="Genera una figura específica de esta clase."
+    )
+    parser.add_argument(
+        "figura",
+        choices=sorted(FIGURAS.keys()),
+        help="Nombre de la figura a generar.",
+    )
+    args = parser.parse_args()
+    FIGURAS[args.figura]()
+```
+
+- Uso: `python "scripts/Clase 4 - Inecuaciones.py" parabola_dominio_restringido`
+- Ejecutar sin argumentos (o con uno inválido) muestra automáticamente, vía
+  `argparse`, la lista de figuras disponibles en ese script — no hace falta
+  mantener un índice aparte.
+- Si dos figuras comparten configuración (paleta, fuentes, helpers de glow),
+  extraer esos elementos comunes a funciones/constantes de módulo al inicio
+  del archivo, reutilizadas por todas las funciones `fig_*` / `gif_*`.
+
+---
+
 ## Reglas de exportación
 
 - **Formato:** PNG para imágenes estáticas, GIF para animaciones.
 - **Resolución:** 150 DPI para notas; 300 DPI si se usará en presentaciones.
 - **Dimensiones:** preferir proporciones 16:9, 4:3 o 1:1 según el contenido.
-- **Ubicación de salida de los scripts:** guardar SIEMPRE en la **raíz del
-  proyecto**. El usuario revisará la imagen y, una vez aprobada, la moverá a
+- **Ubicación de salida de las imágenes generadas:** guardar SIEMPRE en la
+  **raíz del proyecto**, independientemente de dónde viva el script que las
+  genera. El usuario revisará la imagen y, una vez aprobada, la moverá a
   `Recursos/`. Esto facilita la iteración y evita perder imágenes entre muchos
   archivos.
 - **Referencia en Obsidian:** usar `![[Recursos/nombre_archivo.png]]` o
