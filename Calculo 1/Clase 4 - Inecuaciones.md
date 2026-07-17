@@ -116,7 +116,7 @@ Si la solución a una inecuación nos dicta que $x$ debe ser "mayor o igual a -2
 ---
 ## 2. Inecuaciones Lineales
 
-Al igual que con las ecuaciones, nuestro primer caso de estudio seran las inecuaciones lineales o de primer grado. Pensemos en la inecuación más simple posible: "¿Para qué valores de $x$ se cumple que $2x < 6$?". La respuesta es inmediata $x < 3$ y el proceso para obtenerla es casi idéntico al de resolver una ecuación lineal. Las inecuaciones lineales son el punto de partida natural del estudio de las inecuaciones, precisamente porque su resolución es directa y permite concentrarse en las reglas del orden sin distracciones algebraicas adicionales.
+Al igual que con las ecuaciones, nuestro primer caso de estudio serán las inecuaciones lineales o de primer grado. Pensemos en la inecuación más simple posible: "¿Para qué valores de $x$ se cumple que $2x < 6$?". La respuesta es inmediata $x < 3$ y el proceso para obtenerla es casi idéntico al de resolver una ecuación lineal. Las inecuaciones lineales son el punto de partida natural del estudio de las inecuaciones, precisamente porque su resolución es directa y permite concentrarse en las reglas del orden sin distracciones algebraicas adicionales.
 
 **Definición 2.1 (Inecuación Lineal):**
 Una inecuación lineal en una variable $x$ es toda inecuación equivalente a alguna de las formas:
@@ -160,8 +160,9 @@ x &< \dfrac{12}{3} \\
 x &< 4
 \end{align}$$
 
-**Respuesta:** El conjunto solución está formado por todos los números estrictamente menores a 4. En notación de intervalo: $(-\infty, 4)$. De forma grafica seria
-![[inercuaciones_ejemplo1.png]]
+**Respuesta:** El conjunto solución está formado por todos los números estrictamente menores a 4. En notación de intervalo: $(-\infty, 4)$. De forma gráfica, sería:
+
+![Conjunto solución $(-\infty, 4)$ sobre la recta real](../Recursos/inecuaciones_ejemplo1.png)
 
 **Ejemplo 2.2 (Multiplicación por negativo):**
 Resolver $-2x + 3 \geq 11$.
@@ -791,9 +792,23 @@ Para el dominio restringido $[0, 2\pi]$, el conjunto solución es $S = \left(\df
 > **Observación:** Si se requiriese resolver en todo el dominio de los números reales $\mathbb{R}$, se añade el período de oscilación de la función seno ($2\pi$) multiplicado por cualquier número entero $k \in \mathbb{Z}$. La solución general se expresaría como la unión infinita numerable:
 > $$S_{\text{general}} = \bigcup_{k \in \mathbb{Z}} \left(\dfrac{\pi}{6} + 2k\pi, \dfrac{5\pi}{6} + 2k\pi\right)$$
 
----
-## 6. Inecuaciones con Valor Absoluto
+**Aplicaciones:**
 
+Las inecuaciones no lineales —polinómicas de orden superior, irracionales y trascendentes— son el lenguaje algebraico natural para traducir restricciones cuantitativas que aparecen en ciencias e ingeniería. Sus aplicaciones principales se organizan según el tipo de función involucrada:
+
+- **Dominios de funciones reales (transversal):** El dominio natural de funciones que involucran logaritmos, exponenciales, radicales o composiciones trigonométricas se determina resolviendo inecuaciones del tipo estudiado en esta sección. Esta conexión se desarrollará explícitamente en la Sección 8.
+
+- **Modelos de crecimiento y decaimiento (exponenciales y logarítmicas):** Las restricciones sobre el tamaño de una población en modelos logísticos, la condición de "vida media mayor a $t_0$" en decaimiento radiactivo, o el cálculo del tiempo en que una inversión supera cierto umbral financiero, se reducen a inecuaciones exponenciales o logarítmicas. Su resolución depende crucialmente de la monotonía estricta de la función base.
+
+- **Física y oscilaciones (trigonométricas):** Determinar cuándo un sistema oscilatorio se encuentra en una fase particular de su movimiento —por ejemplo, $\sin(\omega t) > \alpha$ con $0 < \alpha < 1$— conduce a inecuaciones trigonométricas. Su solución exige explotar la periodicidad de la función, añadiendo múltiplos enteros del período al conjunto solución.
+
+- **Leyes de potencia y propagación (irracionales):** Modelos físicos que involucran raíces cuadradas —la intensidad de una onda en función de la distancia, la velocidad de escape gravitatoria, la atenuación de señales— generan inecuaciones que comparten la estructura estudiada en la Sección 5.2.
+
+- **Análisis numérico y ecuaciones no lineales (orden superior):** Métodos iterativos como Newton-Raphson o bisección requieren identificar intervalos donde la función cambia de signo; la construcción de estos intervalos se basa precisamente en tablas de signos sobre polinomios de grado alto.
+
+---
+
+## 6. Inecuaciones con Valor Absoluto
 En el estudio del Cálculo y el Análisis Matemático, muchas veces no nos interesa la dirección de una cantidad en el espacio, sino la magnitud de su desviación o su margen de error. Por ejemplo, en los procesos de manufactura de alta precisión, la diferencia entre la medida de una pieza fabricada y su diseño teórico debe mantenerse dentro de un rango preestablecido, sin importar si la pieza es ligeramente más grande o más pequeña. Esta idea de medir desviaciones o distancias sin importar su sentido es modelada rigurosamente por las inecuaciones con valor absoluto.
 
 Resolver una inecuación con valor absoluto consiste en encontrar el conjunto de puntos sobre la recta real que se encuentran a una cierta distancia (o dentro de un rango de distancias) de un punto de referencia. Para lograrlo, traducimos estas condiciones geométricas en inecuaciones algebraicas estándar mediante un conjunto de propiedades fundamentales.
@@ -1200,7 +1215,7 @@ Buscamos las regiones con signo positivo o nulo ($\geq 0$). Al tratarse de una d
 
 Otra forma de analizar esto es considerar que la parábola $y = x^2 - 4x - 5$ abre hacia arriba ($a = 1 > 0$), por lo que su valor es mayor o igual a cero fuera del intervalo delimitado por sus raíces.
 
-![[parabola_-1-5.png]]
+![Parábola $y = x^2 - 4x - 5$ con raíces reales en $x = -1$ y $x = 5$](../Recursos/parabola_-1-5.png)
 
 **Respuesta:** El dominio de la función es:
 $$\text{Dom}(f) = (-\infty, -1] \cup [5, \infty)$$
