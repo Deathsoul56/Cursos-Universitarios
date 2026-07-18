@@ -1293,6 +1293,8 @@ $$
 
 $\square$
 
+> **Nota histórica:** Los antecedentes de la fórmula cuadrática $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$ se remontan a las tablillas babilónicas (c. 2000 a.C.), donde los escribas resolvían problemas equivalentes a ecuaciones de segundo grado mediante procedimientos geométricos de completación del cuadrado. La formulación algebraica sistemática fue desarrollada por Al-Khwarizmi en su *Kitab al-mukhtasar fi hisab al-jabr wa-l-muqabala* (c. 820 d.C.), obra cuyo título dio origen a la palabra "álgebra". El papel del discriminante $\Delta = b^2 - 4ac$ como clasificador del número y tipo de raíces fue articulado progresivamente durante los siglos XVI y XVII en el contexto del análisis algebraico de polinomios, a través del trabajo de matemáticos como Cardano, Vieta y Descartes.
+
 **Definición 6.2 (Discriminante):**
 El **discriminante** de la ecuación cuadrática es:
 

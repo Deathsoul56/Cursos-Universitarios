@@ -85,6 +85,8 @@ Para comprender la naturaleza de estos conjuntos, veamos algunas inecuaciones el
 
 Para representar estos infinitos valores, empleamos la notación de intervalos. Un intervalo es un subconjunto conexo de la recta real $\mathbb{R}$.
 
+> **Nota histórica:** La palabra "intervalo" proviene del latín *intervallum*, originalmente el espacio entre dos estacas de una empalizada (*inter* "entre" + *vallum* "estaca"). Su uso matemático en el sentido actual se consolidó durante el siglo XIX, cuando Augustin-Louis Cauchy lo empleó sistemáticamente en su *Cours d'analyse* (1821) como herramienta para definir las nociones de límite y continuidad, y más tarde Richard Dedekind lo utilizó en su construcción de los números reales a partir de cortaduras (*Stetigkeit und irrationale Zahlen*, 1872).
+
 **Definición 1.4 (Intervalos):**
 Sean $a, b \in \mathbb{R}$ con $a < b$. Definimos los siguientes tipos de intervalos y sus representaciones:
 
@@ -228,8 +230,6 @@ Las inecuaciones lineales son el modelo algebraico directo de cualquier problema
 ## 3. Inecuaciones Cuadráticas
 
 A diferencia de las inecuaciones lineales, en las cuadráticas el comportamiento de la expresión $ax^2 + bx + c$ cambia de signo en distintas regiones de la recta real. La estrategia de "despejar $x$" ya no es suficiente: en su lugar, se debe analizar dónde la expresión es positiva y dónde es negativa. La herramienta central para esto es la **tabla de signos**, cuya construcción depende de conocer las raíces del polinomio cuadrático.
-
-> **Nota histórica:** Los antecedentes de la fórmula cuadrática $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$ se remontan a las tablillas babilónicas (c. 2000 a.C.), donde los escribas resolvían problemas equivalentes a ecuaciones de segundo grado mediante procedimientos geométricos de completación del cuadrado. La formulación algebraica sistemática fue desarrollada por Al-Khwarizmi en su *Kitab al-mukhtasar fi hisab al-jabr wa-l-muqabala* (c. 820 d.C.), obra cuyo título dio origen a la palabra "álgebra". El papel del discriminante $\Delta = b^2 - 4ac$ como clasificador del número y tipo de raíces fue articulado progresivamente durante los siglos XVI y XVII en el contexto del análisis algebraico de polinomios, a través del trabajo de matemáticos como Cardano, Vieta y Descartes.
 
 **Definición 3.1 (Inecuación Cuadrática):**
 Una inecuación cuadrática en una variable $x$ es toda inecuación equivalente a alguna de las formas:
@@ -789,8 +789,27 @@ $$\dfrac{\pi}{6} < x < \dfrac{5\pi}{6}$$
 **Respuesta:**
 Para el dominio restringido $[0, 2\pi]$, el conjunto solución es $S = \left(\dfrac{\pi}{6}, \dfrac{5\pi}{6}\right)$.
 
-> **Observación:** Si se requiriese resolver en todo el dominio de los números reales $\mathbb{R}$, se añade el período de oscilación de la función seno ($2\pi$) multiplicado por cualquier número entero $k \in \mathbb{Z}$. La solución general se expresaría como la unión infinita numerable:
-> $$S_{\text{general}} = \bigcup_{k \in \mathbb{Z}} \left(\dfrac{\pi}{6} + 2k\pi, \dfrac{5\pi}{6} + 2k\pi\right)$$
+> **Observación:** El problema se restringió al período base $[0, 2\pi]$ para visualizar las soluciones en el círculo unitario; sin embargo, las inecuaciones trigonométricas suelen plantearse sobre todo $\mathbb{R}$. La extensión natural mediante periodicidad se desarrolla en el Ejemplo 5.7.
+
+**Ejemplo 5.7 (Extensión periódica a $\mathbb{R}$):**
+Resolver sobre todo $\mathbb{R}$ la misma inecuación trigonométrica del Ejemplo 5.6:
+$$\sin(x) > \dfrac{1}{2}, \quad x \in \mathbb{R}$$
+
+**Solución:**
+La solución sobre el período base $[0, 2\pi]$ ya se determinó en el Ejemplo 5.6:
+$$S_{[0, 2\pi]} = \left(\dfrac{\pi}{6}, \dfrac{5\pi}{6}\right)$$
+
+Para extender esta solución a todo $\mathbb{R}$, se aprovecha la **periodicidad** de la función seno: $\sin(x + 2\pi) = \sin(x)$ para todo $x \in \mathbb{R}$. Esto significa que si $x_0$ satisface la inecuación, entonces $x_0 + 2k\pi$ también la satisface para cualquier entero $k \in \mathbb{Z}$, pues desplazar por un múltiplo entero del período no altera el valor del seno.
+
+El conjunto solución general se obtiene trasladando el intervalo base por todos los múltiplos enteros del período:
+$$S_{\mathbb{R}} = \bigcup_{k \in \mathbb{Z}} \left(\dfrac{\pi}{6} + 2k\pi, \dfrac{5\pi}{6} + 2k\pi\right)$$
+
+Esta es una **unión infinita numerable** de intervalos abiertos disjuntos, cada uno de longitud $\dfrac{2\pi}{3}$, separados entre sí por una distancia de $\dfrac{4\pi}{3}$ (la suma de la longitud del intervalo y la del espacio entre ellos iguala el período completo $2\pi$).
+
+**Respuesta:**
+$$S = \bigcup_{k \in \mathbb{Z}} \left(\dfrac{\pi}{6} + 2k\pi, \dfrac{5\pi}{6} + 2k\pi\right)$$
+
+> **Nota:** A diferencia de las inecuaciones algebraicas estudiadas en las secciones anteriores, el conjunto solución de una inecuación trigonométrica sobre $\mathbb{R}$ no es un único intervalo ni una unión finita de ellos, sino una **unión infinita numerable de intervalos abiertos**. Esta estructura periódica es la firma de las inecuaciones que involucran funciones trigonométricas y se generaliza directamente a cualquier función periódica de período $T$: basta con resolver en un período base y luego trasladar por todos los múltiplos enteros de $T$.
 
 **Aplicaciones:**
 
