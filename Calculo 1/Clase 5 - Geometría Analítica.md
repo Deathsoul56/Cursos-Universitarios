@@ -1,10 +1,12 @@
 # Geometría Analítica y Funciones
 
+En esta clase se estudia la geometría analítica plana: el sistema de coordenadas cartesianas, los postulados de la geometría euclidiana y las propiedades métricas de triángulos, cuadriláteros y polígonos regulares (incluyendo las fórmulas de Herón y Pitágoras). Se cubren además la representación algebraica de la recta en sus diversas formas, las condiciones de paralelismo y perpendicularidad, y la fórmula de la distancia de un punto a una recta, con énfasis en el rigor de las demostraciones y su conexión con el Cálculo Diferencial.
+
 ## 1. El plano cartesiano $\mathbb{R}^2$
 
 ### 1.1 Coordenadas y pares ordenados
 
-**Definición 1.1 (Plano cartesiano):**
+**Definición 1.1 (El plano cartesiano):**
 El **plano cartesiano** $\mathbb{R}^2$ es el conjunto de todos los pares ordenados de números reales. Formalmente, corresponde al **producto cartesiano** de $\mathbb{R}$ consigo mismo:
 $$\mathbb{R}^2 = \mathbb{R} \times \mathbb{R} = \{(x, y) : x \in \mathbb{R} \land y \in \mathbb{R}\}$$
 Cada par ordenado $(x, y)$ representa un **punto** en el plano, donde:
@@ -15,7 +17,7 @@ Cada par ordenado $(x, y)$ representa un **punto** en el plano, donde:
 
 **Ejemplo 1.1:**
 Los puntos $A = (2, 3)$, $B = (-1, 4)$, $C = (-3, -2)$, $D = (4, -1)$ se representan así:
-![[puntos_plano_cartesiano.png]]
+![Puntos en el plano cartesiano](../Recursos/puntos_plano_cartesiano.png)
 
 **Definición 1.2 (Cuadrantes):**
 El plano se divide en cuatro **cuadrantes**:
@@ -23,7 +25,7 @@ El plano se divide en cuatro **cuadrantes**:
 - **Cuadrante II**: $x < 0$, $y > 0$ (arriba izquierda)
 - **Cuadrante III**: $x < 0$, $y < 0$ (abajo izquierda)
 - **Cuadrante IV**: $x > 0$, $y < 0$ (abajo derecha)
-![[cuadrantes_plano_cartesiano.png]]
+![Cuatro cuadrantes del plano cartesiano](../Recursos/cuadrantes_plano_cartesiano.png)
 ### 1.2 Distancia entre dos puntos
 
 **Teorema 1.1 (Fórmula de la distancia):**
@@ -41,7 +43,7 @@ d(A, B) &= \sqrt{(4-1)^2 + (6-2)^2} \\
 &= \sqrt{9 + 16} \\
 &= \sqrt{25} = 5
 \end{align}$$
-![[distancia_entre_puntos.png]]
+![Distancia entre dos puntos](../Recursos/distancia_entre_puntos.png)
 ### 1.3 Punto medio
 
 **Proposición 1.1 (Fórmula del punto medio):**
@@ -51,7 +53,7 @@ $$M = \left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right)$$
 **Ejemplo 1.3:**
 El punto medio entre $A = (2, 5)$ y $B = (8, 1)$ es:
 $$M = \left(\frac{2+8}{2}, \frac{5+1}{2}\right) = (5, 3)$$
-![[punto_medio.png]]
+![Punto medio de un segmento](../Recursos/punto_medio.png)
 
 ---
 
@@ -133,12 +135,12 @@ Un **segmento** $\overline{AB}$ es la porción de recta limitada entre dos punto
 
 **Definición 2.5 (Semirrecta o rayo):**
 Una **semirrecta** es una porción de recta que comienza en un punto (origen) y se extiende indefinidamente en una dirección.
-![[conceptos_geometricos.png]]
+![Conceptos geométricos básicos: punto, recta y segmento](../Recursos/conceptos_geometricos.png)
 **Definición 2.6 (Ángulo):**
 Un **ángulo** es la región del plano formada por dos semirrectas (lados) que parten de un punto común (vértice). Es una medida de la apertura que existe entre estas dos rectas, se puede pensar como la magnitud que se necesita girar para que una recta se convierta en otra.
 Estos se pueden medir en grados sexagesimales, radianes o gradianes.
 Por lo general los ángulos se denominan con letras griegas $\alpha, \beta, \gamma$ y para representar un ángulo como incógnita usualmente se usa la letra griega theta $\theta$
-![[angulo_rotacion.png]]
+![Ángulo como rotación entre dos semirrectas](../Recursos/angulo_rotacion.png)
 
 **Clasificación de ángulos (sexagesimal):**
 
@@ -176,7 +178,7 @@ $$L_1 \perp L_2 \quad \Leftrightarrow \quad L_1 \cap L_2 = \{P\} \text{ y el án
 **Definición 2.10 (Recta tangente a una curva):**
 Una recta es **tangente** a una curva en un punto $P$ si toca la curva en $P$ pero no la cruza localmente.
 - **Interpretación:** La tangente "roza" la curva en un solo punto sin cortarla en las cercanías.
-![[tipos_rectas.png]]
+![Tipos de rectas: secantes, paralelas, perpendiculares y tangente](../Recursos/tipos_rectas.png)
 
 ---
 
@@ -275,7 +277,7 @@ Un **triángulo** es un polígono de **tres lados**, tres vértices y tres ángu
 | **Rectángulo**  | Un ángulo recto ($90°$)   |
 | **Obtusángulo** | Un ángulo obtuso ($>90°$) |
 
-![[tipos_triangulos.png]]
+![Tipos de triángulos por lados y por ángulos](../Recursos/tipos_triangulos.png)
 **Proposición 3.5 (Perímetro del triángulo):**
 El perímetro de un triángulo con lados $a$, $b$ y $c$ es:
 $$P = a + b + c$$
@@ -346,7 +348,7 @@ Tomando raíz cuadrada:
 $$A = \sqrt{s(s-a)(s-b)(s-c)}$$
 $\square$
 
-**Ejemplo de aplicación de Herón:**
+**Ejemplo 3.1 (Aplicación de Herón):**
 Sea un triángulo con lados $a = 5$, $b = 6$, $c = 7$.
 
 
@@ -366,7 +368,7 @@ $$c^2 = a^2 + b^2$$
 Consideremos un cuadrado grande de lado $(a + b)$, donde colocamos cuatro triángulos rectángulos idénticos con catetos $a$ y $b$, e hipotenusa $c$, de manera que sus hipotenusas formen un cuadrado interior.
 
 **Construcción:**
-![[pitagoras_demostracion.png]]
+![Demostración geométrica de Pitágoras mediante cuadrados inscritos](../Recursos/pitagoras_demostracion.png)
 
 **Cálculo del área del cuadrado grande (dos formas):**
 
@@ -410,7 +412,7 @@ Los cuadriláteros se clasifican según la cantidad de pares de lados paralelos 
 | **Trapecio**    | Varía según tipo | Varía según tipo | 1 par de lados paralelos |
 | **Trapezoide**  | Sin condición especial | Sin condición especial | 0 pares de lados paralelos |
 
-![[cuadrilateros_tipos.png]]
+![Tipos de cuadriláteros: paralelogramos, trapecios y trapezoides](../Recursos/cuadrilateros_tipos.png)
 
 **Familias de cuadriláteros:**
 
@@ -441,7 +443,7 @@ Un **trapecio** es un cuadrilátero con **exactamente un par de lados paralelos*
 
 **3. Trapezoide (sin lados paralelos):**
 
-**Definición 3.10.1 (Trapezoide):**
+**Definición 3.11 (Trapezoide):**
 Un **trapezoide** es un cuadrilátero que **no tiene ningún par de lados paralelos**.
 
 **Observación:** El trapezoide es la forma más general de cuadrilátero irregular, sin restricciones especiales sobre sus lados o ángulos.
@@ -466,13 +468,13 @@ El **deltoide** (también llamado **cometa** o **papalote**) es un cuadrilátero
   - Tiene un eje de simetría
 - **Nota:** El deltoide NO es un paralelogramo (no tiene lados paralelos en general) ni un trapecio
 
-**Proposición 3.11 (Suma de ángulos internos):**
+**Proposición 3.12 (Suma de ángulos internos):**
 La suma de los ángulos internos de un cuadrilátero es:
 $$\alpha + \beta + \gamma + \delta = 360°$$
-**Proposición 3.12 (Perímetro del cuadrilátero):**
+**Proposición 3.13 (Perímetro del cuadrilátero):**
 El perímetro de un cuadrilátero con lados $a$, $b$, $c$ y $d$ es:
 $$P = a + b + c + d$$
-**Proposición 3.13 (Áreas de cuadriláteros específicos):**
+**Proposición 3.14 (Áreas de cuadriláteros específicos):**
 
 Las fórmulas de área varían según el tipo de cuadrilátero. A continuación se presenta una tabla con las fórmulas más importantes:
 
@@ -489,19 +491,19 @@ Las fórmulas de área varían según el tipo de cuadrilátero. A continuación 
 **Demostraciones y comentarios:**
 
 1. **Cuadrado:** Pensemos que tenemos un lienzo en blanco donde dibujamos líneas horizontales separadas por 1 $unidad$ y líneas verticales también separadas por 1 $unidad$. Si dibujamos un cuadrado de lado 1 el área que encierra lo vamos a definir como 1 $unidad^2$
-   ![[cuadrado_unitario.png]]Ahora si dibujamos un cuadrado de lado igual a $\ell$ nos haremos la pregunta ¿Cuántos cuadrados de 1 $unidad^2$ encierra nuestro nuevo cuadrado?. Si contamos veremos que tendremos $l$ filas con exactamente $l$ columnas de cuadrados unitarios, por lo tanto el área de un cuadrado de lado $l$ estará dada por la expresion:
+   ![Cuadrado unitario base para la definición de área](../Recursos/cuadrado_unitario.png)Ahora si dibujamos un cuadrado de lado igual a $\ell$ nos haremos la pregunta ¿Cuántos cuadrados de 1 $unidad^2$ encierra nuestro nuevo cuadrado?. Si contamos veremos que tendremos $l$ filas con exactamente $l$ columnas de cuadrados unitarios, por lo tanto el área de un cuadrado de lado $l$ estará dada por la expresion:
    $$A = \ell \times \ell = \ell^2$$
-   ![[area_cuadrado.png]]
+   ![Cuadrado de lado arbitrario subdividido en cuadrados unitarios](../Recursos/area_cuadrado.png)
 
 2. **Rectángulo:** Lo podemos pensar de la misma manera que con el cuadrado, solo que en este caso los lados no miden lo mismo, así que tendremos el producto de base por altura (lados adyacentes perpendiculares).
    $$A = base \times altura$$
 
 3. **Paralelogramos (en general):** Similar al rectángulo, pero los ángulos no son necesariamente rectos. La altura $h$ es la distancia perpendicular entre las bases paralelas.
    $$A = b \cdot h$$
-   ![[paralelogramo_area1.png]]   ![[paralelogramo_area2.png]]
+   ![Paralelogramo con altura destacada](../Recursos/paralelogramo_area1.png)   ![Paralelogramo con base y altura rotuladas](../Recursos/paralelogramo_area2.png)
 4. **Rombo (Caso particular):** Un rombo lo podemos dividir en 2 triángulos congruentes, las diagonales de un rombo son perpendiculares y se bisecan mutuamente. Si las diagonales miden $D$ y $d$:
    $$A = \frac{D \cdot d}{2}$$
-   ![[rombo_area1.png]]![[rombo_area2.png]]   
+   ![Rombo con diagonales perpendiculares](../Recursos/rombo_area1.png)![Rombo con diagonales rotuladas](../Recursos/rombo_area2.png)   
 5. **Trapecio:** Se puede demostrar sumando dos triángulos o transformándolo en un paralelogramo. Si $B$ es la base mayor, $b$ la base menor y $h$ la altura:
    $$A = \frac{(B + b) \cdot h}{2}$$
    
@@ -511,22 +513,22 @@ Las fórmulas de área varían según el tipo de cuadrilátero. A continuación 
 
 **Ejemplos numéricos:**
 
-**Ejemplo 3.2.1 (Cuadrado):**
+**Ejemplo 3.2 (Cuadrado):**
 Un cuadrado de lado $\ell = 5$ cm tiene:
 - Perímetro: $P = 4 \times 5 = 20$ cm
 - Área: $A = 5^2 = 25$ cm²
 
-**Ejemplo 3.2.2 (Rombo):**
+**Ejemplo 3.3 (Rombo):**
 Un rombo con diagonales $D = 8$ m y $d = 6$ m tiene:
 - Área: $A = \frac{8 \times 6}{2} = 24$ m²
 
-**Ejemplo 3.2.3 (Trapecio):**
+**Ejemplo 3.4 (Trapecio):**
 Un trapecio con bases $B = 10$ cm, $b = 6$ cm y altura $h = 4$ cm tiene:
 - Área: $A = \frac{(10 + 6) \times 4}{2} = \frac{16 \times 4}{2} = 32$ cm²
 
 ### 3.3 Polígonos regulares
 
-**Definición 3.14 (Polígono regular):**
+**Definición 3.15 (Polígono regular):**
 Un **polígono regular** es un polígono con todos sus lados y ángulos iguales.
 
 **Ejemplos:**
@@ -536,18 +538,18 @@ Un **polígono regular** es un polígono con todos sus lados y ángulos iguales.
 - **Octógono regular:** 8 lados
 - **Decágono regular:** 10 lados
 
-**Teorema 3.15 (Suma de ángulos internos):**
+**Teorema 3.16 (Suma de ángulos internos):**
 La suma de los ángulos internos de un polígono de $n$ lados es:
 $$S = (n - 2) \times 180°$$
 
-**Corolario 3.16:** Cada ángulo interno de un polígono regular de $n$ lados mide:
+**Corolario 3.17:** Cada ángulo interno de un polígono regular de $n$ lados mide:
 $$\alpha = \frac{(n-2) \times 180°}{n}$$
 
-**Ejemplo 3.1:**
+**Ejemplo 3.5:**
 Para un hexágono regular ($n = 6$):
 $$\alpha = \frac{(6-2) \times 180°}{6} = \frac{720°}{6} = 120°$$
 
-**Definición 3.17 (Apotema):**
+**Definición 3.18 (Apotema):**
 El **apotema** de un polígono regular es el segmento perpendicular desde el centro del polígono hasta el punto medio de cualquiera de sus lados. Se denota comúnmente como $a$.
 
 **Interpretación geométrica:** El apotema representa la distancia más corta desde el centro del polígono hasta cualquiera de sus lados. Es análogo al radio de un círculo inscrito en el polígono.
@@ -556,7 +558,7 @@ El **apotema** de un polígono regular es el segmento perpendicular desde el cen
 Para un polígono regular de $n$ lados con lado $\ell$ y radio circunscrito $R$ (distancia del centro a un vértice), el apotema $a$ se relaciona mediante:
 $$a = R \cos\left(\frac{180°}{n}\right) = R \cos\left(\frac{\pi}{n}\right)$$
 
-**Teorema 3.18 (Área de un polígono regular usando apotema):**
+**Teorema 3.19 (Área de un polígono regular usando apotema):**
 El área de un polígono regular de $n$ lados, con longitud de lado $\ell$ y apotema $a$, es:
 $$A = \frac{P \cdot a}{2} = \frac{n \cdot \ell \cdot a}{2}$$
 donde $P = n \cdot \ell$ es el perímetro del polígono.
@@ -576,23 +578,21 @@ donde $P = n \cdot \ell$ es el perímetro. $\square$
 
 **Observación importante:** Esta fórmula es **universal** para todos los polígonos regulares, sin importar el número de lados. Solo necesitamos conocer el perímetro y el apotema.
 
-**Ejemplo 3.1.1 (Hexágono regular):**
+**Ejemplo 3.6 (Hexágono regular):**
 Un hexágono regular con lado $\ell = 6$ cm y apotema $a = 5.2$ cm tiene:
 - Perímetro: $P = 6 \times 6 = 36$ cm
 - Área: $A = \frac{36 \times 5.2}{2} = \frac{187.2}{2} = 93.6$ cm²
 
-**Ejemplo 3.1.2 (Octógono regular):**
+**Ejemplo 3.7 (Octógono regular):**
 Un octógono regular con lado $\ell = 4$ m y apotema $a = 4.83$ m tiene:
 - Perímetro: $P = 8 \times 4 = 32$ m
 - Área: $A = \frac{32 \times 4.83}{2} = 77.28$ m²
 
----
-
-**Sección 3.3.1 (Opcional): Convergencia del polígono regular al círculo**
+### 3.3.1 Convergencia del polígono regular al círculo (opcional)
 
 Esta sección explora un resultado fascinante que conecta la geometría discreta (polígonos) con la geometría continua (círculos), anticipando conceptos del Cálculo Diferencial e Integral.
 
-**Proposición 3.19 (Límite del polígono regular):**
+**Proposición 3.20 (Límite del polígono regular):**
 Sea una sucesión de polígonos regulares inscrito en un círculo de radio $R$ fijo, donde el número de lados $n$ aumenta indefinidamente. Entonces:
 $$\lim_{n \to \infty} P_n = \text{(polígono de } n \text{ lados)} \to \text{círculo de radio } R$$
 
@@ -662,7 +662,7 @@ Para un círculo de radio $R = 1$:
 |    1000     |    0.9999     |     6.2832      |   3.1416   |        6.2832         |       3.1416       |
 
 Observamos que tanto el apotema como el perímetro y el área convergen rápidamente a sus valores límite.
-![[convergencia_circulo.gif]]
+![Convergencia de polígonos regulares al círculo a medida que crece el número de lados](../Recursos/convergencia_circulo.gif)
 **Conexión con el Cálculo:**
 Este resultado ilustra un principio fundamental del Cálculo: **aproximar curvas mediante polígonos**. Se profundizará en estos conceptos al estudiar:
 - **Límites** (Cálculo Diferencial)
@@ -674,10 +674,10 @@ Este resultado ilustra un principio fundamental del Cálculo: **aproximar curvas
 
 En geometría plana clásica, es fundamental distinguir rigurosamente la figura bidimensional de su contorno perimetral.
 
-**Definición 3.20 (Circunferencia):**
+**Definición 3.21 (Circunferencia):**
 La **circunferencia** es el lugar geométrico de todos los puntos de un plano que mantienen una distancia fija (equidistantes) respecto a un punto central. Matemáticamente, representa exclusivamente la línea del borde o contorno de la figura.
 
-**Definición 3.21 (Círculo):**
+**Definición 3.22 (Círculo):**
 El **círculo** es la superficie bidimensional o región del plano delimitada y encerrada por una circunferencia. Contiene a la circunferencia y a todo el espacio interior continuo.
 
 **Elementos y segmentos notables:**
@@ -687,26 +687,26 @@ El **círculo** es la superficie bidimensional o región del plano delimitada y 
 - **Cuerda:** Cualquier segmento que vincule dos puntos de la circunferencia (el diámetro es la cuerda mayor posible).
 - **Arco:** Una porción curva continua de la propia circunferencia.
 
-**Proposición 3.22 (Perímetro y constante $\pi$):**
+**Proposición 3.23 (Perímetro y constante $\pi$):**
 La longitud total de la circunferencia o perímetro de un círculo se define a partir de la constante $\pi$ (proporción invariable entre la circunferencia y el diámetro):
 $$P = 2\pi R = \pi D$$
 
-**Teorema 3.23 (Área del círculo):**
+**Teorema 3.24 (Área del círculo):**
 El área contenida por un círculo de radio $R$ es proporcional al cuadrado de su radio:
 $$A = \pi R^2$$
-*(Como descubrimos mediante el límite de polígonos en el Teorema 3.19, el área del círculo emerge de la convergencia límite $\lim_{n \to \infty} A_n = \pi R^2$).*
+*(Como descubrimos mediante el límite de polígonos en la Proposición 3.20, el área del círculo emerge de la convergencia límite $\lim_{n \to \infty} A_n = \pi R^2$).*
 
-**Definición 3.24 (Sector circular):**
+**Definición 3.25 (Sector circular):**
 Un **sector circular** es la fracción del círculo encerrada entre dos radios y el arco que estos subtienden, semejante a una porción de tarta.
 
-**Proposición 3.25 (Cálculos de arco y sector):**
+**Proposición 3.26 (Cálculos de arco y sector):**
 Para un sector cuyo ángulo central es $\theta$ (medido estrictamente en **radianes**):
 - **Longitud de arco:** $s = R\theta$
 - **Área del sector:** $A_{\text{sector}} = \frac{1}{2}R^2\theta$
 
 *(Si se operara con ángulos en grados $\alpha$, es necesario aplicar el factor de conversión: $A_{\text{sector}} = \frac{\pi R^2 \alpha}{360°}$).*
 
-**Ejemplo 3.2:**
+**Ejemplo 3.8:**
 Calcule el área y el perímetro (longitud de circunferencia) de un círculo de radio $5$ cm.
 - **Perímetro:** $P = 2\pi(5) = 10\pi \approx 31.42 \text{ cm}$
 - **Área:** $A = \pi(5)^2 = 25\pi \approx 78.54 \text{ cm}^2$
@@ -714,7 +714,7 @@ Calcule el área y el perímetro (longitud de circunferencia) de un círculo de 
 ---
 ### 3.5 Vértices, aristas y la fórmula de Euler
 
-**Definición 3.26 (Poliedro):**
+**Definición 3.27 (Poliedro):**
 Un **poliedro** es un sólido tridimensional limitado por caras planas poligonales.
 
 **Elementos de un poliedro:**
@@ -722,11 +722,11 @@ Un **poliedro** es un sólido tridimensional limitado por caras planas poligonal
 - **Aristas (A):** Segmentos rectos donde se intersectan dos caras.
 - **Caras (C):** Polígonos que conforman y cierran las superficies del poliedro.
 
-**Teorema 3.27 (Fórmula de Euler para poliedros convexos):**
+**Teorema 3.28 (Fórmula de Euler para poliedros convexos):**
 Para cualquier poliedro topológicamente convexo, sus elementos cumplen la invariante de Euler:
 $$V - A + C = 2$$
 
-**Ejemplo 3.3 (Cubo):**
+**Ejemplo 3.9 (Cubo):**
 Un cubo tradicional contiene:
 - $V = 8$ vértices
 - $A = 12$ aristas
@@ -734,7 +734,7 @@ Un cubo tradicional contiene:
 
 Verificación en la fórmula: $8 - 12 + 6 = 2$ ✓
 
-**Ejemplo 3.4 (Tetraedro):**
+**Ejemplo 3.10 (Tetraedro):**
 Un tetraedro regular está constituido por:
 - $V = 4$ vértices
 - $A = 6$ aristas
@@ -1001,7 +1001,7 @@ $$x = -\frac{b}{m} \quad \text{(si } m \neq 0\text{)}$$
 
 **Observación:** La abscisa al origen también se llama **raíz** o **cero** de la función lineal.
 
-**Ejemplo 4.11:**
+**Ejemplo 4.14:**
 Para la recta $y = 2x - 6$:
 
 *Intersección con eje $y$:* 
@@ -1012,7 +1012,7 @@ Punto: $(0, -6)$
 $$y = 0 \Rightarrow 0 = 2x - 6 \Rightarrow x = 3$$
 Punto: $(3, 0)$
 
-**Ejemplo 4.12 (Usando forma general):**
+**Ejemplo 4.15 (Usando forma general):**
 Para $3x - 2y + 12 = 0$:
 
 *Intersección con eje $y$:* (hacer $x = 0$)
@@ -1040,12 +1040,12 @@ $$L_1 \parallel L_2 \quad \Leftrightarrow \quad m_1 = m_2$$
 
 **Observación importante:** Las rectas paralelas con la misma pendiente pero diferente ordenada al origen son **rectas paralelas distintas**. Si además tienen la misma ordenada, son la **misma recta**.
 
-**Ejemplo 4.13:**
+**Ejemplo 4.16:**
 Las rectas $y = 3x + 2$ y $y = 3x - 5$ son **paralelas** porque ambas tienen pendiente $m = 3$.
 - Nunca se intersectan
 - Tienen diferente ordenada al origen ($b_1 = 2$ y $b_2 = -5$)
 
-**Ejemplo 4.14:**
+**Ejemplo 4.17:**
 Encuentre la ecuación de la recta que pasa por $(2, 5)$ y es paralela a $y = -\frac{1}{2}x + 3$:
 
 La recta buscada debe tener la misma pendiente: $m = -\frac{1}{2}$
@@ -1084,11 +1084,11 @@ Multiplicando ambos lados por $m_1$:
 $$m_1 \cdot m_2 = -1$$
 $\square$
 
-**Ejemplo 4.15:**
+**Ejemplo 4.18:**
 Las rectas $y = 2x + 1$ y $y = -\frac{1}{2}x + 3$ son **perpendiculares** porque:
 $$m_1 \cdot m_2 = 2 \cdot \left(-\frac{1}{2}\right) = -1$$
 
-**Ejemplo 4.16:**
+**Ejemplo 4.19:**
 Encuentre la ecuación de la recta que pasa por $(-1, 4)$ y es perpendicular a $y = 3x - 2$:
 
 La pendiente de la recta dada es $m_1 = 3$. 
@@ -1137,7 +1137,7 @@ $$x = \frac{b_2 - b_1}{m_1 - m_2} \quad \text{(si } m_1 \neq m_2\text{)}$$
 
 *Paso 3:* Sustituir en cualquiera de las ecuaciones originales para hallar $y$
 
-**Ejemplo 4.17 (Rectas secantes):**
+**Ejemplo 4.20 (Rectas secantes):**
 Encuentre la intersección de $y = 2x + 1$ y $y = -x + 7$:
 
 *Igualando:*
@@ -1154,7 +1154,7 @@ $$y = 2(2) + 1 = 5$$
 - En $y = 2x + 1$: $y = 2(2) + 1 = 5$ ✓
 - En $y = -x + 7$: $y = -(2) + 7 = 5$ ✓
 
-**Ejemplo 4.18 (Rectas paralelas):**
+**Ejemplo 4.21 (Rectas paralelas):**
 Analice el sistema:
 $$\begin{cases}
 y = 3x + 2 \\
@@ -1164,7 +1164,7 @@ y = 3x - 5
 Ambas tienen pendiente $m = 3$ pero diferente ordenada ($b_1 = 2 \neq b_2 = -5$).
 Son **paralelas** → **No se intersectan** → Sistema **sin solución**.
 
-**Ejemplo 4.19 (Sistema $2 \times 2$ en forma general):**
+**Ejemplo 4.22 (Sistema $2 \times 2$ en forma general):**
 Resuelva:
 $$\begin{cases}
 2x + 3y = 13 \\
@@ -1272,7 +1272,7 @@ que coincide con la fórmula general (tomando $B = 0$).
 
 ---
 
-**Ejemplo 4.20:**
+**Ejemplo 4.23:**
 Calcule la distancia desde el punto $P = (3, 1)$ hasta la recta $L: 4x - 3y - 10 = 0$:
 
 $$d = \frac{|4(3) - 3(1) - 10|}{\sqrt{4^2 + (-3)^2}}$$
@@ -1280,7 +1280,7 @@ $$d = \frac{|12 - 3 - 10|}{\sqrt{16 + 9}}$$
 $$d = \frac{|-1|}{\sqrt{25}}$$
 $$d = \frac{1}{5}$$
 
-**Ejemplo 4.21:**
+**Ejemplo 4.24:**
 Encuentre la distancia desde el origen $(0, 0)$ hasta la recta $3x + 4y - 20 = 0$:
 
 $$d = \frac{|3(0) + 4(0) - 20|}{\sqrt{3^2 + 4^2}}$$
@@ -1336,5 +1336,5 @@ $$d = \frac{20}{5} = 4$$
 
 ---
 
-**Fin de la Clase 4: Geometría Analítica**
+**Fin de la Clase 5: Geometría Analítica**
 
