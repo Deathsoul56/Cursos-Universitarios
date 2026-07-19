@@ -164,7 +164,7 @@ x &< 4
 
 **Respuesta:** El conjunto solución está formado por todos los números estrictamente menores a 4. En notación de intervalo: $(-\infty, 4)$. De forma gráfica, sería:
 
-![Conjunto solución $(-\infty, 4)$ sobre la recta real](../Recursos/inecuaciones_ejemplo1.png)
+![Conjunto solución $(-\infty, 4)$ sobre la recta real](../Recursos/conjunto_solucion_x_menor_4.png)
 
 **Ejemplo 2.2 (Multiplicación por negativo):**
 Resolver $-2x + 3 \geq 11$.
@@ -197,7 +197,7 @@ x &< 1 \quad \text{(se multiplica por -1 y se invierte el orden)}
 
 **Respuesta:** En notación de intervalo: $(-\infty, 1)$.
 
-En muchas situaciones prácticas, no es suficiente con saber si una variable supera un límite inferior o si es menor que un tope máximo, sino que se requiere que se mantenga estrictamente confinada entre ambos extremos. Pensemos, por ejemplo, en la temperatura óptima para conservar un medicamento, la cual debe estar por encima de los $2\ ^\circ\text{C}$ pero sin sobrepasar los $8\ ^\circ\text{C}$. Del mismo modo, en problemas algebraicos, a menudo se busca que una expresión esté acotada simultáneamente entre dos valores límite. A este tipo de relaciones de confinamiento se las conoce como inecuaciones de doble desigualdad.
+En muchas situaciones prácticas, no es suficiente con saber si una variable supera un límite inferior o si es menor que un tope máximo, sino que se requiere que se mantenga estrictamente confinada entre ambos extremos. Pensemos, por ejemplo, en la temperatura óptima para conservar un medicamento, la cual debe estar por encima de los $2\,^\circ\text{C}$ pero sin sobrepasar los $8\,^\circ\text{C}$. Del mismo modo, en problemas algebraicos, a menudo se busca que una expresión esté acotada simultáneamente entre dos valores límite. A este tipo de relaciones de confinamiento se las conoce como inecuaciones de doble desigualdad.
 
 **Definición 2.2 (Inecuación Simultánea o de Doble Desigualdad):**
 Una inecuación de doble desigualdad (o inecuación simultánea) en una variable $x$ es una expresión equivalente a:
@@ -915,12 +915,15 @@ Al sumar miembro a miembro ambas desigualdades, se deduce que:
 $$-(|x| + |y|) \leq x + y \leq |x| + |y|$$
 
 Definamos la constante no negativa $a = |x| + |y|$. La desigualdad anterior se reescribe de la forma:
-$$-a \leq x + y \leq a$$
+$$-a \leq x + y \leq a, \qquad a \geq 0.$$
 
-Aplicando el Teorema 6.1 (Propiedad 1 en el sentido recíproco $\impliedby$), esta desigualdad de acotamiento interno es equivalente a:
-$$|x + y| \leq a$$
+Reconocemos aquí la estructura del **acotamiento interno** de la Propiedad 1 del Teorema 6.1, en su forma cerrada:
+$$|x+y| \leq a \iff -a \leq x+y \leq a \qquad (a \geq 0).$$
 
-Sustituyendo el valor de $a$, se concluye la desigualdad buscada:
+Como ya hemos establecido el lado derecho de esta equivalencia, aplicamos la implicación recíproca ($\impliedby$):
+$$-a \leq x + y \leq a \quad \implies \quad |x + y| \leq a.$$
+
+Sustituyendo el valor original de $a$, se concluye la desigualdad buscada:
 $$|x + y| \leq |x| + |y|$$
 $\blacksquare$
 
