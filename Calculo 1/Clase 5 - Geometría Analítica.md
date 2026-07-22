@@ -25,7 +25,9 @@ El plano se divide en cuatro **cuadrantes**:
 - **Cuadrante II**: $x < 0$, $y > 0$ (arriba izquierda)
 - **Cuadrante III**: $x < 0$, $y < 0$ (abajo izquierda)
 - **Cuadrante IV**: $x > 0$, $y < 0$ (abajo derecha)
+
 ![Cuatro cuadrantes del plano cartesiano](../Recursos/cuadrantes_plano_cartesiano.png)
+
 ### 1.2 Distancia entre dos puntos
 
 **Teorema 1.1 (Fórmula de la distancia):**
@@ -43,7 +45,9 @@ d(A, B) &= \sqrt{(4-1)^2 + (6-2)^2} \\
 &= \sqrt{9 + 16} \\
 &= \sqrt{25} = 5
 \end{align}$$
+
 ![Distancia entre dos puntos](../Recursos/distancia_entre_puntos.png)
+
 ### 1.3 Punto medio
 
 **Proposición 1.1 (Fórmula del punto medio):**
@@ -53,6 +57,7 @@ $$M = \left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right)$$
 **Ejemplo 1.3:**
 El punto medio entre $A = (2, 5)$ y $B = (8, 1)$ es:
 $$M = \left(\frac{2+8}{2}, \frac{5+1}{2}\right) = (5, 3)$$
+
 ![Punto medio de un segmento](../Recursos/punto_medio.png)
 
 ---
@@ -135,11 +140,14 @@ Un **segmento** $\overline{AB}$ es la porción de recta limitada entre dos punto
 
 **Definición 2.5 (Semirrecta o rayo):**
 Una **semirrecta** es una porción de recta que comienza en un punto (origen) y se extiende indefinidamente en una dirección.
+
 ![Conceptos geométricos básicos: punto, recta y segmento](../Recursos/conceptos_geometricos.png)
+
 **Definición 2.6 (Ángulo):**
 Un **ángulo** es la región del plano formada por dos semirrectas (lados) que parten de un punto común (vértice). Es una medida de la apertura que existe entre estas dos rectas, se puede pensar como la magnitud que se necesita girar para que una recta se convierta en otra.
 Estos se pueden medir en grados sexagesimales, radianes o gradianes.
 Por lo general los ángulos se denominan con letras griegas $\alpha, \beta, \gamma$ y para representar un ángulo como incógnita usualmente se usa la letra griega theta $\theta$
+
 ![Ángulo como rotación entre dos semirrectas](../Recursos/angulo_rotacion.png)
 
 **Clasificación de ángulos (sexagesimal):**
@@ -178,6 +186,7 @@ $$L_1 \perp L_2 \quad \Leftrightarrow \quad L_1 \cap L_2 = \{P\} \text{ y el án
 **Definición 2.10 (Recta tangente a una curva):**
 Una recta es **tangente** a una curva en un punto $P$ si toca la curva en $P$ pero no la cruza localmente.
 - **Interpretación:** La tangente "roza" la curva en un solo punto sin cortarla en las cercanías.
+
 ![Tipos de rectas: secantes, paralelas, perpendiculares y tangente](../Recursos/tipos_rectas.png)
 
 ---
@@ -199,9 +208,9 @@ $$\overline{P_1P_2}, \overline{P_2P_3}, \dots, \overline{P_{n-1}P_n}, \overline{
 1. **Mínimo de lados:** Es **imposible** formar un polígono con menos de 3 lados (en geometría euclideana):
    - Con **1 lado:** Solo se obtiene un segmento (no encierra región)
    - Con **2 lados:** Dos segmentos no pueden cerrarse para formar una figura plana (necesitarían coincidir o divergir)   
-1. **Triángulo como polígono elemental:** El **triángulo** (3 lados) es el polígono más simple posible y la figura geométrica fundamental. Es la única figura poligonal rígida (no se deforma sin cambiar las longitudes de sus lados).
+2. **Triángulo como polígono elemental:** El **triángulo** (3 lados) es el polígono más simple posible y la figura geométrica fundamental. Es la única figura poligonal rígida (no se deforma sin cambiar las longitudes de sus lados).
 
-2. **Generalización:** Es posible construir polígonos con cualquier número $n \geq 3$ de lados. La notación general es:
+3. **Generalización:** Es posible construir polígonos con cualquier número $n \geq 3$ de lados. La notación general es:
    - **$n$-gono:** Polígono de $n$ lados
    - Ejemplos: 3-gono (triángulo), 4-gono (cuadrilátero), 5-gono (pentágono), etc.
 
@@ -278,6 +287,7 @@ Un **triángulo** es un polígono de **tres lados**, tres vértices y tres ángu
 | **Obtusángulo** | Un ángulo obtuso ($>90°$) |
 
 ![Tipos de triángulos por lados y por ángulos](../Recursos/tipos_triangulos.png)
+
 **Proposición 3.5 (Perímetro del triángulo):**
 El perímetro de un triángulo con lados $a$, $b$ y $c$ es:
 $$P = a + b + c$$
@@ -365,10 +375,23 @@ $$c^2 = a^2 + b^2$$
 
 **Demostración geométrica (mediante cuadrados inscritos):**
 
-Consideremos un cuadrado grande de lado $(a + b)$, donde colocamos cuatro triángulos rectángulos idénticos con catetos $a$ y $b$, e hipotenusa $c$, de manera que sus hipotenusas formen un cuadrado interior.
+Consideremos un cuadrado grande de lado $(a + b)$. En cada uno de sus cuatro vértices colocamos un triángulo rectángulo con catetos $a$ y $b$ e hipotenusa $c$, de manera que el ángulo recto del triángulo coincida con el vértice del cuadrado grande y los dos catetos se apoyen sobre los lados del cuadrado grande. Esta configuración hace que las cuatro hipotenusas miren hacia el interior, formando una figura cerrada.
 
 **Construcción:**
+
 ![Demostración geométrica de Pitágoras mediante cuadrados inscritos](../Recursos/pitagoras_demostracion.png)
+
+**Verificación de que la figura interior es un cuadrado:**
+
+Las cuatro hipotenusas delimitan una figura interior. Para que la demostración funcione, necesitamos verificar que esta figura es un cuadrado:
+
+1. **Lados iguales:** Cada lado de la figura interior es la hipotenusa de uno de los triángulos rectángulos, por lo que todos miden $c = \sqrt{a^2 + b^2}$. La figura es, por tanto, un rombo.
+
+2. **Ángulos rectos:** Consideremos un vértice de la figura interior sobre el lado inferior del cuadrado grande. Los dos triángulos que comparten ese vértice tienen ahí ángulos $\alpha$ y $\beta$ tales que $\alpha + \beta = 90°$ (ángulos agudos complementarios de un triángulo rectángulo). El ángulo interior de la figura en ese vértice es:
+$$180° - (\alpha + \beta) = 180° - 90° = 90°$$
+Por simetría, los cuatro ángulos de la figura son rectos.
+
+Un rombo con ángulos rectos es un cuadrado. Por tanto, la figura interior tiene área $c^2$.
 
 **Cálculo del área del cuadrado grande (dos formas):**
 
@@ -379,10 +402,11 @@ $$A_{\text{grande}} = (a + b)^2 = a^2 + 2ab + b^2$$
 **Método 2 - Suma de partes:**
 El cuadrado grande contiene:
 - **4 triángulos rectángulos**, cada uno con área $\frac{ab}{2}$
-- **1 cuadrado interior** (formado por las hipotenusas) con área $c^2$
+- **1 cuadrado interior** (cuya área acabamos de demostrar que es $c^2$)
 
 Por lo tanto:
 $$A_{\text{grande}} = 4 \cdot \frac{ab}{2} + c^2 = 2ab + c^2$$
+
 **Igualando ambas expresiones:**
 $$a^2 + 2ab + b^2 = 2ab + c^2$$
 Cancelando $2ab$ en ambos lados:
@@ -662,7 +686,9 @@ Para un círculo de radio $R = 1$:
 |    1000     |    0.9999     |     6.2832      |   3.1416   |        6.2832         |       3.1416       |
 
 Observamos que tanto el apotema como el perímetro y el área convergen rápidamente a sus valores límite.
+
 ![Convergencia de polígonos regulares al círculo a medida que crece el número de lados](../Recursos/convergencia_circulo.gif)
+
 **Conexión con el Cálculo:**
 Este resultado ilustra un principio fundamental del Cálculo: **aproximar curvas mediante polígonos**. Se profundizará en estos conceptos al estudiar:
 - **Límites** (Cálculo Diferencial)
@@ -810,8 +836,9 @@ La pendiente **no está definida** (recta vertical, paralela al eje $y$).
 
 #### 4.2.1 Forma punto-pendiente
 
+Esta forma recibe el nombre de **punto-pendiente** porque basta conocer un punto de la recta y su pendiente para trazarla algebraicamente.
+
 **Teorema 4.1 (Ecuación punto-pendiente):**
-Este ecuaciones revise su nombre porque podemos definir algebraicamente una recta si conocemos un punto al que le pertenece y la pendiente de dicha recta.
 La ecuación de la recta con pendiente $m$ que pasa por el punto $(x_0, y_0)$ es:
 $$y - y_0 = m(x - x_0)$$
 
