@@ -144,11 +144,11 @@ Una **semirrecta** es una porción de recta que comienza en un punto (origen) y 
 ![Conceptos geométricos básicos: punto, recta y segmento](../Recursos/conceptos_geometricos.png)
 
 **Definición 2.6 (Ángulo):**
-Un **ángulo** es la región del plano formada por dos semirrectas (lados) que parten de un punto común (vértice). Es una medida de la apertura que existe entre estas dos rectas, se puede pensar como la magnitud que se necesita girar para que una recta se convierta en otra.
-Estos se pueden medir en grados sexagesimales, radianes o gradianes.
-Por lo general los ángulos se denominan con letras griegas $\alpha, \beta, \gamma$ y para representar un ángulo como incógnita usualmente se usa la letra griega theta $\theta$
+Un **ángulo** es la región del plano formada por dos semirrectas (lados) que parten de un punto común (vértice). Se puede interpretar como la magnitud de rotación necesaria para llevar una de las semirrectas sobre la otra.
 
 ![Ángulo como rotación entre dos semirrectas](../Recursos/angulo_rotacion.png)
+
+> **Observación:** Los ángulos se pueden medir en grados sexagesimales, radianes o gradianes. Por convención, se denominan con letras griegas ($\alpha$, $\beta$, $\gamma$, $\ldots$) y para representar un ángulo como incógnita se suele usar la letra $\theta$.
 
 **Clasificación de ángulos (sexagesimal):**
 
@@ -159,6 +159,12 @@ Por lo general los ángulos se denominan con letras griegas $\alpha, \beta, \gam
 | Obtuso | $90° < \alpha < 180°$ |
 | Llano | $\alpha = 180°$ |
 | Completo | $\alpha = 360°$ |
+
+**Definición 2.6.1 (Ángulos complementarios):**
+Dos ángulos son **complementarios** si la suma de sus medidas es exactamente $90°$, es decir, $\alpha + \beta = 90°$.
+
+**Definición 2.6.2 (Ángulos suplementarios):**
+Dos ángulos son **suplementarios** si la suma de sus medidas es exactamente $180°$, es decir, $\alpha + \beta = 180°$.
 
 **Definición 2.7 (Rectas secantes):**
 Dos rectas son **secantes** si se intersectan en exactamente un punto.
@@ -175,7 +181,7 @@ $$L_1 \perp L_2 \quad \Leftrightarrow \quad L_1 \cap L_2 = \{P\} \text{ y el án
 
 **Propiedades:**
 1. Si $L_1 \perp L_2$, entonces $L_2 \perp L_1$ (la perpendicularidad es simétrica)
-2. En el plano cartesiano, dos rectas no verticales son perpendiculares si y solo si el producto de sus pendientes es $-1$ (esto se demostrará más adelante en el estudio rotaciones de funciones lineales):
+2. En el plano cartesiano, dos rectas no verticales son perpendiculares si y solo si el producto de sus pendientes es $-1$ (demostrado en el Teorema 4.3, §4.4.2):
    $$m_1 \cdot m_2 = -1 \quad \Leftrightarrow \quad m_2 = -\frac{1}{m_1}$$
 3. Por un punto dado, existe exactamente una recta perpendicular a una recta dada
 
@@ -299,20 +305,12 @@ donde $b$ es la longitud de la base y $h$ es la altura perpendicular desde el v�
 **Indicio de demostración:**
 Consideremos un triángulo con base $b$ y altura $h$. Si duplicamos el triángulo y lo rotamos, podemos formar un paralelogramo:
 
-```
-Triángulo original:        Duplicado y rotado:
-      *                          *-------*
-     /|                         /       /
-    / |h                       /   P   /
-   /  |                       /       /
-  *---*                      *-------*
-    b                           b
-```
+![Dos triángulos forman un paralelogramo](../Recursos/triangulo_a_paralelogramo.png)
 
 El paralelogramo formado tiene:
 - Base: $b$
 - Altura: $h$
-- Área del paralelogramo: $A_{\text{paral}} = b \cdot h$ (será demostrado en la próxima sección)
+- Área del paralelogramo: $A_{\text{paral}} = b \cdot h$ (demostrado en §3.2 Cuadriláteros).
 
 Como el triángulo es exactamente **la mitad** del paralelogramo:
 $$A_{\triangle} = \frac{1}{2} A_{\text{paral}} = \frac{1}{2} \cdot b \cdot h = \frac{bh}{2}$$
@@ -1095,21 +1093,7 @@ $$L_1 \perp L_2 \quad \Leftrightarrow \quad m_1 \cdot m_2 = -1$$
 
 Equivalentemente: $m_2 = -\frac{1}{m_1}$ (las pendientes son **recíprocas opuestas**)
 
-**Demostración (Idea geométrica):**
-Consideremos dos rectas con pendientes $m_1 = \tan(\theta_1)$ y $m_2 = \tan(\theta_2)$, donde $\theta_1$ y $\theta_2$ son los ángulos que forman con el eje $x$ positivo.
-
-Para que sean perpendiculares, el ángulo entre ellas debe ser $90°$, lo que implica:
-$$\theta_2 = \theta_1 + 90°$$
-
-Usando la identidad trigonométrica:
-$$\tan(\theta_1 + 90°) = -\cot(\theta_1) = -\frac{1}{\tan(\theta_1)}$$
-
-Por lo tanto:
-$$m_2 = \tan(\theta_2) = -\frac{1}{\tan(\theta_1)} = -\frac{1}{m_1}$$
-
-Multiplicando ambos lados por $m_1$:
-$$m_1 \cdot m_2 = -1$$
-$\square$
+**Demostración:** Se demostrará en [[Clase 9 - Funciones Parte 2]] cuando se introduzca el concepto de rotación de rectas, que permite probar la equivalencia completa ($\Rightarrow$ y $\Leftarrow$) de manera rigurosa.
 
 **Ejemplo 4.18:**
 Las rectas $y = 2x + 1$ y $y = -\frac{1}{2}x + 3$ son **perpendiculares** porque:
@@ -1289,7 +1273,7 @@ $$d = \sqrt{\frac{(A^2 + B^2)(Ax_0 + By_0 + C)^2}{(A^2 + B^2)^2}}$$
 
 $$d = \sqrt{\frac{(Ax_0 + By_0 + C)^2}{A^2 + B^2}}$$
 
-$$d = \frac{|Ax_0 + By_0 + C|}{\sqrt{A^2 + B^2}}$$ $\square$
+$$d = \frac{|Ax_0 + By_0 + C|}{\sqrt{A^2 + B^2}} \square$$
 
 **Caso especial ($B = 0$):** Si la recta es vertical ($Ax + C = 0$ o $x = -C/A$), la distancia es simplemente:
 $$d = |x_0 - (-C/A)| = |x_0 + C/A| = \frac{|Ax_0 + C|}{|A|} = \frac{|Ax_0 + C|}{\sqrt{A^2}}$$
