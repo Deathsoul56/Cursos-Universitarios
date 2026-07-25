@@ -981,10 +981,10 @@ o equivalentemente:
 $$y - y_0 = \frac{y_1 - y_0}{x_1 - x_0}(x - x_0)$$
 
 **Demostración:**
-Un punto genérico $P = (x, y)$ pertenece a la recta que pasa por $P_0$ y $P_1$ si y solo si los tres puntos son colineales. Esto ocurre cuando la pendiente calculada entre $P$ y $P_0$ es igual a la pendiente calculada entre $P_1$ y $P_0$:
-$$m = \frac{y_1 - y_0}{x_1 - x_0}$$
-Aplicando la forma punto-pendiente con punto $P_0 = (x_0, y_0)$:
-$$y - y_0 = m(x - x_0) = \frac{y_1 - y_0}{x_1 - x_0}(x - x_0) \quad \square$$
+Un punto genérico $P = (x, y)$ pertenece a la recta que pasa por $P_0$ y $P_1$ si y solo si la pendiente entre $P$ y $P_0$ es igual a la pendiente entre $P_1$ y $P_0$:
+$$\frac{y - y_0}{x - x_0} = \frac{y_1 - y_0}{x_1 - x_0}$$
+Multiplicando ambos miembros por $(x - x_0)$:
+$$y - y_0 = \frac{y_1 - y_0}{x_1 - x_0}(x - x_0) \quad \square$$
 
 **Caso especial ($x_0 = x_1$):** Si los dos puntos tienen la misma abscisa, la recta es **vertical** y su ecuación es simplemente $x = x_0$.
 
@@ -1025,6 +1025,12 @@ $$x = -\frac{b}{m} \quad \text{(si } m \neq 0\text{)}$$
 **Punto de intersección con eje $x$:** $\left(-\frac{b}{m}, 0\right)$
 
 **Observación:** La abscisa al origen también se llama **raíz** o **cero** de la función lineal.
+
+> **Caso especial $m = 0$ (recta horizontal):** Si $m = 0$, la recta tiene ecuación $y = b$:
+> - Si $b \neq 0$: la recta es paralela al eje $x$ y **no tiene intersección** con él.
+> - Si $b = 0$: la recta coincide con el eje $x$ ($y = 0$), por lo que **todo punto** de la recta es una intersección con el eje.
+>
+> En estos casos la abscisa al origen no está definida por la fórmula $x = -b/m$.
 
 **Ejemplo 4.14:**
 Para la recta $y = 2x - 6$:
