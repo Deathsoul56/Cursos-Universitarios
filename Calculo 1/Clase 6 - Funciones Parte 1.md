@@ -1,5 +1,7 @@
 # Funciones Parte 1
 
+En esta clase se estudian los conceptos fundamentales de las funciones reales de una variable: el producto cartesiano y las relaciones, la definición formal de función con dominio e imagen, la monotonía, y las funciones lineal, afín y cuadrática. Se introducen también las raíces de funciones y las funciones polinomiales de grado superior, con énfasis en el rigor de las definiciones y en la conexión con el Cálculo Diferencial.
+
 ## 1. Relaciones y funciones
 
 ### 1.1 Producto cartesiano y relaciones
@@ -26,7 +28,7 @@ $$R = \{(1,2), (1,4), (1,6), (1,8), (2,2), (2,4), (2,6), (2,8), (3,6)\}$$
 
 **Definición 1.3 (Función):**
 Una **función** $f$ de un conjunto $A$ en un conjunto $B$ es una relación que asigna a cada elemento de $A$ exactamente un elemento de $B$.
-![[diagrama_funcion.png]]
+![Diagrama de flecha que ilustra la definición de función de A en B](../Recursos/diagrama_funcion.png)
 **Notación:** $f: A \to B$
 - $A$ es el **dominio** de $f$ (conjunto de partida)
 - $B$ es el **codominio** de $f$ (conjunto de llegada)
@@ -38,13 +40,13 @@ Una **función** $f$ de un conjunto $A$ en un conjunto $B$ es una relación que 
 $$f: \{1, 2, 3\} \to \{a, b, c\}$$
 $$f(1) = a, \quad f(2) = b, \quad f(3) = a$$
 Esto **es** una función porque cada elemento del dominio tiene exactamente una imagen.
-![[ejemplo_funcion_1.png]]
+![Ejemplo concreto de función con tres elementos del dominio y sus imágenes](../Recursos/ejemplo_funcion_1.png)
 
 **Ejemplo 1.4 (NO es función):**
 $$R: \{1, 2\} \to \{a, b, c\}$$
 $$R = \{(1, a), (1, b), (2, c)\}$$
 Esto **no es** una función porque $1$ tiene dos imágenes: $a$ y $b$.
-![[relacion_no_funcion_neon.png]]
+![Ejemplo de relación que NO es función: un elemento del dominio tiene dos imágenes](../Recursos/relacion_no_funcion_neon.png)
 ### 1.3 Funciones de $\mathbb{R}$ en $\mathbb{R}$
 
 **Notación estándar:** Una función $f: \mathbb{R} \to \mathbb{R}$ se expresa típicamente como:
@@ -113,9 +115,9 @@ Con estos datos se identifican los cuatro conceptos:
   - $f^{-1}(\{1\}) = \{-1, 1\}$: dos entradas distintas producen el mismo resultado $1$.
   - $f^{-1}(\{4\}) = \{-2, 2\}$: análogamente para el valor $4$.
   - $f^{-1}(\{-2\}) = \emptyset$: el valor $-2$ pertenece al codominio pero no a la imagen; ningún real al cuadrado es negativo.
-![[Recursos/dominio_codominio_imagen_preimagen.png]]
+![Diagrama de dominios y codominios con flechas de mapeo e imagen/preimagen resaltadas](../Recursos/dominio_codominio_imagen_preimagen.png)
 Para $f: \mathbb{R} \to \mathbb{R}$ definida por $f(x) = x^2$, el dominio y el codominio son ambos $\mathbb{R}$, pero la imagen se reduce a $[0, +\infty)$. La diferencia entre codominio e imagen queda visible en la gráfica: el codominio abarca todo el eje $Y$, mientras que la curva nunca desciende por debajo del eje $X$.
-![[dominio_codominio_imagen_R2.png]]
+![Diagrama de dominios en el plano ℝ² con subconjunto destacado como imagen](../Recursos/dominio_codominio_imagen_R2.png)
 ### 1.4 Determinación del dominio y rango
 
 Cuando trabajamos con funciones expresadas mediante fórmulas algebraicas, no siempre podemos evaluar la función en cualquier número real. Existen ciertas operaciones matemáticas que **no están definidas** para algunos valores. El dominio es precisamente el conjunto de valores donde la función "tiene sentido" o está bien definida.
@@ -344,11 +346,11 @@ $$f(2) = -4 + 8 = 4$$
 | $x$    | $-2$ |  $-1$  | $0$  |   $0.5$   |  $1$  | $2$ |  $3$  | $4$ |
 | ------ | :--: | :----: | :--: | :-------: | :---: | :-: | :---: | :-: |
 | $f(x)$ | $8$  | $-0.5$ | $-2$ | $-1.0625$ | $0.5$ | $4$ | $5.5$ | $2$ |
-![[grafica_funcion_puntos.png]]
-![[grafica_funcion_continua.png]]
+![Gráfica de función con puntos discretos marcados sobre la curva](../Recursos/grafica_funcion_puntos.png)
+![Gráfica de función con curva continua (sin puntos discretos)](../Recursos/grafica_funcion_continua.png)
 
 Una forma de saber si una curva es o no una función es trazando una **recta vertical**: si la recta vertical interseca la curva en más de 1 punto, entonces la curva **no es una función**. Este criterio se conoce como la **prueba de la recta vertical**.
-![[no_funcion.png]]
+![Ejemplo de curva que no es función (prueba de la recta vertical: la recta corta la curva dos veces)](../Recursos/no_funcion.png)
 
 ---
 
@@ -358,7 +360,7 @@ Cuando observamos la gráfica de una función, podemos notar que algunas "suben"
 
 Una función es **creciente** si al movernos hacia la derecha en el eje $x$ (valores mayores de $x$), los valores de la función también aumentan: entre más a la derecha, más arriba. Por ejemplo, $f(x) = 2x$ es creciente, pues si $1 < 3$, entonces $f(1) = 2 < f(3) = 6$.
 
-![[funcion_creciente_monotona.png]]
+![Gráfica de una función monótona creciente](../Recursos/funcion_creciente_monotona.png)
 
 Una función es **decreciente** si al movernos hacia la derecha en el eje $x$, los valores de la función disminuyen: entre más a la derecha, más abajo. Por ejemplo, $g(x) = -x$ es decreciente, pues si $1 < 3$, entonces $g(1) = -1 > g(3) = -3$.
 
@@ -723,7 +725,7 @@ $$f(x) = ax^3 + bx^2 + cx + d, \quad a \neq 0$$
 
 **Ejemplo 6.1:**
 $$f(x) = x^3 - 3x$$
-![[Recursos/funcion_cubica_x3_3x.png]]
+![Gráfica de la función cúbica $f(x) = x^3 - 3x$ con sus raíces reales marcadas](../Recursos/funcion_cubica_x3_3x.png)
 Raíces: $x^3 - 3x = 0 \Rightarrow x(x^2 - 3) = 0 \Rightarrow x = 0, \pm\sqrt{3}$
 
 ### 6.2 Función cuártica (grado 4)
@@ -873,7 +875,7 @@ Las funciones $f(x) = a^x$ y $g(x) = \log_a(x)$ son **inversas**:
 $$\log_a(a^x) = x \quad \text{y} \quad a^{\log_a(x)} = x$$
 
 **Interpretación geométrica:** Las gráficas de $y = a^x$ y $y = \log_a(x)$ son **simétricas respecto a la recta $y = x$**.
-![[Recursos/exp_log_inversas.png]]
+![Gráficas de $y = a^x$ y $y = \log_a(x)$ simétricas respecto a la recta $y = x$](../Recursos/exp_log.png)
 **Ejemplo 9.3:**
 Si $f(x) = 2^x$ pasa por $(3, 8)$, entonces $g(x) = \log_2(x)$ pasa por $(8, 3)$.
 
