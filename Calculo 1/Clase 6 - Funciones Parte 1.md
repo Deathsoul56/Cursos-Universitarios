@@ -151,13 +151,13 @@ Si $f(x)$ contiene una fracción, el denominador **no puede ser cero**.
 2. Resolver la ecuación: denominador $= 0$
 3. Excluir esas soluciones del dominio
 
-**Ejemplo 1.5:**
+**Ejemplo 1.6:**
 Para $f(x) = \frac{1}{x-3}$:
 - Denominador: $x - 3$
 - $x - 3 = 0 \Rightarrow x = 3$
 - **Dominio:** $\text{Dom}(f) = \mathbb{R} \setminus \{3\} = (-\infty, 3) \cup (3, +\infty)$
 
-**Ejemplo 1.6:**
+**Ejemplo 1.7:**
 Para $g(x) = \frac{x+1}{x^2-4}$:
 - Denominador: $x^2 - 4$
 - $x^2 - 4 = 0 \Rightarrow x^2 = 4 \Rightarrow x = \pm 2$
@@ -172,13 +172,13 @@ Si $f(x)$ contiene $\sqrt[n]{\text{expresión}}$ con $n$ par, la expresión **de
 2. Resolver la inecuación: expresión $\geq 0$
 3. El dominio es el conjunto solución
 
-**Ejemplo 1.7:**
+**Ejemplo 1.8:**
 Para $f(x) = \sqrt{x-2}$:
 - Condición: $x - 2 \geq 0$
 - $x \geq 2$
 - **Dominio:** $\text{Dom}(f) = [2, +\infty)$
 
-**Ejemplo 1.8:**
+**Ejemplo 1.9:**
 Para $h(x) = \sqrt{4-x^2}$:
 - Condición: $4 - x^2 \geq 0$
 - $x^2 \leq 4$
@@ -194,12 +194,12 @@ Si $f(x)$ contiene $\log_a(\text{expresión})$, la expresión **debe ser estrict
 2. Resolver la inecuación: expresión $> 0$
 3. El dominio es el conjunto solución
 
-**Ejemplo 1.9:**
+**Ejemplo 1.10:**
 Para $f(x) = \ln(x)$:
 - Condición: $x > 0$
 - **Dominio:** $\text{Dom}(f) = (0, +\infty)$
 
-**Ejemplo 1.10:**
+**Ejemplo 1.11:**
 Para $f(x) = \log_2(x-5)$:
 - Condición: $x - 5 > 0$
 - $x > 5$
@@ -209,13 +209,13 @@ Para $f(x) = \log_2(x-5)$:
 
 Si la función tiene **múltiples** restricciones, el dominio es la **intersección** de todas las condiciones.
 
-**Ejemplo 1.11:**
+**Ejemplo 1.12:**
 Para $f(x) = \frac{\sqrt{x-1}}{x-3}$:
 - **Restricción 1 (raíz):** $x - 1 \geq 0 \Rightarrow x \geq 1$
 - **Restricción 2 (denominador):** $x - 3 \neq 0 \Rightarrow x \neq 3$
 - **Dominio:** $\text{Dom}(f) = [1, 3) \cup (3, +\infty)$
 
-**Ejemplo 1.12:**
+**Ejemplo 1.13:**
 Para $g(x) = \ln\left(\frac{x+2}{x-1}\right)$:
 - **Restricción (logaritmo):** $\frac{x+2}{x-1} > 0$
 - Analizamos el signo:
@@ -240,7 +240,7 @@ Dado el dominio de una función, al evaluar $f$ en todos los valores de $x$ del 
 3. Analizar para qué valores de $y$ la expresión de $x$ tiene sentido
 4. Esos valores de $y$ forman el rango
 
-**Ejemplo 1.13:**
+**Ejemplo 1.14:**
 Para $f(x) = x^2$ con $\text{Dom}(f) = \mathbb{R}$:
 
 $$y = x^2$$
@@ -250,7 +250,7 @@ Para que $x$ sea real, necesitamos $y \geq 0$.
 
 **Rango:** $\text{Im}(f) = [0, +\infty)$
 
-**Ejemplo 1.14:**
+**Ejemplo 1.15:**
 Para $f(x) = \frac{1}{x}$ con $\text{Dom}(f) = \mathbb{R} \setminus \{0\}$:
 
 $$y = \frac{1}{x}$$
@@ -282,7 +282,7 @@ Para funciones con formas estándar, podemos usar propiedades conocidas:
 5. **Función logarítmica:** $f(x) = \log_a(x)$
    - $\text{Im}(f) = \mathbb{R}$
 
-**Ejemplo 1.15:**
+**Ejemplo 1.16:**
 Para $f(x) = -2x^2 + 8x - 3$:
 
 Primero, encontramos la forma canónica completando cuadrados:
@@ -303,7 +303,7 @@ Al graficar la función, el rango es la **proyección** de la gráfica sobre el 
 **Observación importante:**
 Calcular el rango suele ser **más difícil** que calcular el dominio, especialmente para funciones complejas. En muchos casos, el análisis gráfico combinado con el análisis algebraico es la mejor estrategia.
 
-**Ejemplo 1.16:**
+**Ejemplo 1.17:**
 Para $f(x) = x^2$:
 - Puntos: $(-2, 4)$, $(-1, 1)$, $(0, 0)$, $(1, 1)$, $(2, 4)$, $...$
 - La gráfica forma una **parábola**
