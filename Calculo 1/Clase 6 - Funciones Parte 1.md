@@ -1060,53 +1060,118 @@ Las operaciones algebraicas con funciones son fundamentales para:
 
 ## 11. Ejercicios propuestos
 
-### 11.1 Funciones lineales y afines
+#### Funciones lineales y afines
 
-1. Encuentre la ecuación de la recta que pasa por $(2, 5)$ y $(6, 13)$
+### Ejercicio 11.1
+Determinar la ecuación de la recta que pasa por $(2, 5)$ y $(6, 13)$.
 
-2. Determine la ecuación de la recta con pendiente $m = -3$ que pasa por $(-1, 4)$
+**Respuesta:** $y = 2x + 1$
 
-3. Encuentre las intersecciones con los ejes de $f(x) = 3x - 9$
+### Ejercicio 11.2
+Determinar la ecuación de la recta con pendiente $m = -3$ que pasa por $(-1, 4)$.
 
-4. Determine si las rectas $y = 2x + 3$ y $y = 2x - 5$ son paralelas, perpendiculares o ninguna
+**Respuesta:** $y = -3x + 1$
 
-5. Encuentre la ecuación de la recta perpendicular a $y = 4x - 2$ que pasa por el origen
+### Ejercicio 11.3
+Determinar las intersecciones con los ejes de la función $f(x) = 3x - 9$.
 
-### 11.2 Funciones cuadráticas
+**Respuesta:** Intersección con el eje Y en $(0, -9)$; intersección con el eje X en $(3, 0)$.
 
-6. Encuentre el vértice y el eje de simetría de $f(x) = x^2 - 6x + 5$
+### Ejercicio 11.4
+Determinar si las rectas $y = 2x + 3$ y $y = 2x - 5$ son paralelas, perpendiculares o ninguna de las dos.
 
-7. Determine las raíces de $g(x) = 2x^2 + 5x - 3$
+**Respuesta:** Las rectas son paralelas (poseen la misma pendiente $m = 2$).
 
-8. Calcule el discriminante de $h(x) = x^2 + 4x + 10$ e interprete el resultado
+### Ejercicio 11.5
+Determinar la ecuación de la recta perpendicular a $y = 4x - 2$ que pasa por el origen.
 
-9. Escriba $f(x) = 3x^2 - 12x + 7$ en forma canónica
+**Respuesta:** $y = -\dfrac{1}{4}x$
 
-10. Una pelota se lanza verticalmente y su altura viene dada por $h(t) = -5t^2 + 20t + 2$ (metros). ¿Cuál es la altura máxima alcanzada?
+#### Funciones cuadráticas
 
-### 11.3 Otras funciones
+### Ejercicio 11.6
+Hallar el vértice y el eje de simetría de la función $f(x) = x^2 - 6x + 5$.
 
-11. Resuelva: $2^x = 32$
+**Respuesta:** Vértice $V(3, -4)$; eje de simetría $x = 3$.
 
-12. Calcule: $\log_3(81)$
+### Ejercicio 11.7
+Determinar las raíces de la función $g(x) = 2x^2 + 5x - 3$.
 
-13. Simplifique: $\log_5(125) - \log_5(25)$
+**Respuesta:** $x_1 = \dfrac{1}{2}$ y $x_2 = -3$
 
-14. Resuelva: $\log_2(x) = 5$
+### Ejercicio 11.8
+Calcular el discriminante de la función $h(x) = x^2 + 4x + 10$ e interpretar el resultado.
 
-15. Encuentre el dominio de $f(x) = \sqrt{4 - x}$
+**Respuesta:** $\Delta = -24$. Al ser el discriminante menor que cero, la función no tiene raíces reales (la parábola no corta el eje X).
 
-### 11.4 Análisis de gráficas
+### Ejercicio 11.9
+Expresar la función $f(x) = 3x^2 - 12x + 7$ en su forma canónica.
 
-16. Determine cuáles de las siguientes gráficas representan funciones (use el criterio de la recta vertical)
+**Respuesta:** $f(x) = 3(x - 2)^2 - 5$
 
-17. Dada la gráfica de una parábola con vértice en $(2, -3)$ que pasa por $(0, 1)$, encuentre su ecuación
+### Ejercicio 11.10
+Una pelota se lanza verticalmente y su altura viene dada por la expresión $h(t) = -5t^2 + 20t + 2$, donde $t$ está medido en segundos y $h$ en metros. Determinar la altura máxima alcanzada.
 
-18. Dibuje la gráfica de $f(x) = |x - 2|$ (valor absoluto)
+**Respuesta:** La altura máxima alcanzada es de $22\text{ metros}$ (se alcanza en el vértice de la trayectoria, a los $t = 2\text{ segundos}$).
 
-19. Grafique $g(x) = \begin{cases} x + 1 & \text{si } x < 0 \\ x^2 & \text{si } x \geq 0 \end{cases}$ (función definida por partes)
+#### Otras funciones
 
-20. Determine la imagen de $f(x) = -x^2 + 4$
+### Ejercicio 11.11
+Resolver la siguiente ecuación exponencial:
+$$2^x = 32$$
+
+**Respuesta:** $x = 5$
+
+### Ejercicio 11.12
+Calcular el valor de la siguiente expresión logarítmica:
+$$\log_3(81)$$
+
+**Respuesta:** $4$
+
+### Ejercicio 11.13
+Simplificar la siguiente expresión utilizando las propiedades de los logaritmos:
+$$\log_5(125) - \log_5(25)$$
+
+**Respuesta:** $1$
+
+### Ejercicio 11.14
+Resolver la siguiente ecuación logarítmica:
+$$\log_2(x) = 5$$
+
+**Respuesta:** $x = 32$
+
+### Ejercicio 11.15
+Determinar el dominio de la función $f(x) = \sqrt{4 - x}$.
+
+**Respuesta:** $\text{Dom}(f) = (-\infty, 4]$
+
+#### Análisis de gráficas
+
+### Ejercicio 11.16
+Explicar en qué consiste la prueba de la recta vertical y cómo permite decidir si una gráfica representa una función.
+
+**Respuesta:** Una curva en el plano representa una función si y solo si cualquier recta vertical interseca a la gráfica a lo sumo en un punto.
+
+### Ejercicio 11.17
+Dada la gráfica de una parábola con vértice en $(2, -3)$ que pasa por el punto $(0, 1)$, determinar su ecuación.
+
+**Respuesta:** $y = (x - 2)^2 - 3$ (o en forma general: $y = x^2 - 4x + 1$)
+
+### Ejercicio 11.18
+Describir la forma de la gráfica de la función valor absoluto $f(x) = |x - 2|$.
+
+**Respuesta:** Es una curva con forma de "V" con su vértice en el punto $(2, 0)$, que resulta de trasladar horizontalmente la función $y = |x|$ dos unidades a la derecha.
+
+### Ejercicio 11.19
+Describir geométricamente la gráfica de la función definida por partes:
+$$g(x) = \begin{cases} x + 1 & \text{si } x < 0 \\ x^2 & \text{si } x \geq 0 \end{cases}$$
+
+**Respuesta:** Consta de dos tramos: una semirrecta de pendiente $1$ abierta en $(0, 1)$ para el intervalo $(-\infty, 0)$, y una rama parabólica cerrada en $(0, 0)$ que asciende hacia la derecha para el intervalo $[0, +\infty)$.
+
+### Ejercicio 11.20
+Determinar la imagen o recorrido de la función cuadrática $f(x) = -x^2 + 4$.
+
+**Respuesta:** $\text{Im}(f) = (-\infty, 4]$
 
 ---
 
