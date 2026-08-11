@@ -24,7 +24,8 @@ Si $(a, b) \in R$, decimos que "$a$ está relacionado con $b$" y escribimos $aRb
 Sea $A = \{1, 2, 3\}$ y $B = \{2, 4, 6, 8\}$. La relación "$x$ divide a $y$" es:
 $$R = \{(1,2), (1,4), (1,6), (1,8), (2,2), (2,4), (2,6), (2,8), (3,6)\}$$
 ### 1.2 Definición formal de función
-**Contexto histórico:** Aunque la idea de "dependencia" es antigua, su definición rigurosa moderna se consolidó gracias al trabajo de Karl Weierstrass y Richard Dedekind en el siglo XIX. El paso de una mera relación a lo que hoy llamamos función requiere dos condiciones clave: primero, debe haber *al menos* un valor de salida para cada entrada (la condición de la imagen), y segundo, no puede haber más de un valor de salida por una misma entrada. Este rigor fue esencial para el desarrollo del análisis matemático moderno.
+
+> **Nota histórica:** La noción de función ha evolucionado a lo largo de los siglos. Gottfried Leibniz introdujo el término en 1694 para describir cantidades geométricas que dependían de un punto en una curva. En 1748, Leonhard Euler amplió esta visión al definir una función como cualquier "expresión analítica" (fórmula) constituida por variables y constantes. Sin embargo, en 1837, Peter Dirichlet propuso una definición mucho más general basada en una correspondencia arbitraria entre dos conjuntos, sin requerir una fórmula matemática. En el siglo XX, la formalización de la teoría de conjuntos permitió definir la función estrictamente como un tipo especial de relación (un subconjunto del producto cartesiano $A \times B$).
 
 **Definición 1.3 (Función):**
 Una **función** $f$ de un conjunto $A$ en un conjunto $B$ es una relación que asigna a cada elemento de $A$ exactamente un elemento de $B$.
@@ -358,6 +359,8 @@ Una forma de saber si una curva es o no una función es trazando una **recta ver
 
 Cuando observamos la gráfica de una función, podemos notar que algunas "suben" a medida que avanzamos de izquierda a derecha, otras "bajan", y algunas tienen comportamientos mixtos. Esta idea intuitiva de subir o bajar es lo que formalizamos con el concepto de **monotonía**.
 
+> **Nota histórica:** El estudio sistemático de las funciones que preservan o invierten el orden cobró relevancia a finales del siglo XIX con el desarrollo de la teoría de conjuntos y el análisis real moderno. Matemáticos como René Baire investigaron la regularidad de estas curvas. El término "monótono" proviene de las palabras griegas *monos* ("único") y *tonos* ("tono" o "tensión"), utilizándose originalmente en música para referirse a un sonido que no cambia de tono. En matemáticas, refleja la ausencia de oscilaciones en la dirección de la curva.
+
 Una función es **creciente** si al movernos hacia la derecha en el eje $x$ (valores mayores de $x$), los valores de la función también aumentan: entre más a la derecha, más arriba. Por ejemplo, $f(x) = 2x$ es creciente, pues si $1 < 3$, entonces $f(1) = 2 < f(3) = 6$.
 
 ![Gráfica de una función monótona creciente](../Recursos/funcion_creciente_monotona.png)
@@ -534,17 +537,21 @@ La monotonía es fundamental en problemas de optimización: saber si una funció
 
 Las relaciones más simples entre dos variables son aquellas en las que una cambia a ritmo constante respecto de la otra. Si por cada hora trabajada se gana una cantidad fija, el salario total depende linealmente del tiempo; si además se recibe un pago inicial, la relación se vuelve afín. Estas funciones son el punto de partida natural para modelar procesos con crecimiento o decrecimiento uniforme.
 
+> **Nota histórica:** Las relaciones de proporcionalidad lineal se encuentran entre las más antiguas de la matemática. En el Antiguo Egipto (Papiro de Ahmes, c. 1650 a.C.) y en Babilonia, ya se resolvían problemas prácticos que involucraban proporcionalidades directas. Sin embargo, la representación de estas relaciones como funciones mediante una línea recta en un plano de coordenadas se consolidó gracias al desarrollo de la geometría analítica por René Descartes y Pierre de Fermat en 1637.
+
 **Definición 3.1 (Función lineal):**
-Una **función lineal** tiene la forma:
+Una **función lineal** es la función $f: \mathbb{R} \to \mathbb{R}$ dada por:
 $$f(x) = mx$$
-donde $m \in \mathbb{R}$ es una constante llamada **pendiente**.
+donde $m \in \mathbb{R}$ es una constante llamada **pendiente**. El dominio y el codominio son $\text{Dom}(f) = \mathbb{R}$ y $\mathbb{R}$, respectivamente; el recorrido es $\text{Im}(f) = \mathbb{R}$ si $m \neq 0$, y $\text{Im}(f) = \{0\}$ en el caso degenerado $m = 0$.
 
 **Definición 3.2 (Función afín):**
-Una **función afín** tiene la forma:
+Una **función afín** es la función $f: \mathbb{R} \to \mathbb{R}$ dada por:
 $$f(x) = mx + b$$
 donde:
 - $m$ es la **pendiente**
 - $b$ es la **ordenada al origen** (intersección con el eje Y)
+
+El dominio y el codominio son $\text{Dom}(f) = \mathbb{R}$ y $\mathbb{R}$, respectivamente; el recorrido es $\text{Im}(f) = \mathbb{R}$ si $m \neq 0$, y $\text{Im}(f) = \{b\}$ (función constante) en el caso degenerado $m = 0$.
 
 **Observación:** La gráfica de una función afín es siempre una **recta**.
 
@@ -644,10 +651,12 @@ Esto describe un círculo de radio 1 centrado en el origen.
 
 Muchos fenómenos naturales no crecen ni decrecen de manera constante, sino que alcanzan un punto máximo o mínimo y luego invierten su comportamiento. La trayectoria de una pelota lanzada al aire, la forma de un reflector parabólico o el área de una figura en función de uno de sus lados siguen este tipo de patrón. Las funciones cuadráticas capturan precisamente situaciones donde la tasa de cambio misma cambia de forma lineal.
 
+> **Nota histórica:** La resolución de ecuaciones asociadas a funciones cuadráticas se remonta a los babilonios (c. 2000 a.C.), quienes utilizaban métodos geométricos para resolver problemas de áreas. El desarrollo algebraico de la fórmula general fue perfeccionado por el matemático indio Brahmagupta en el año 628 d.C., al establecer reglas explícitas para operar con números negativos y el cero. Posteriormente, el matemático persa Al-Juarismi (c. 825 d.C.) sistematizó estas soluciones en su célebre tratado sobre álgebra.
+
 **Definición 5.1 (Función cuadrática):**
-Una **función cuadrática** tiene la forma:
+Una **función cuadrática** es la función $f: \mathbb{R} \to \mathbb{R}$ dada por:
 $$f(x) = ax^2 + bx + c$$
-donde $a, b, c \in \mathbb{R}$ y $a \neq 0$.
+donde $a, b, c \in \mathbb{R}$ y $a \neq 0$. El dominio y el codominio son $\text{Dom}(f) = \mathbb{R}$ y $\mathbb{R}$, respectivamente; el recorrido depende del signo de $a$ y se determina a partir de la ordenada del vértice (Teorema 5.1) en la Proposición 5.1 (§5.2).
 
 **Gráfica:** La gráfica de una función cuadrática es una **parábola**.
 
@@ -662,9 +671,10 @@ $$V = \left(-\frac{b}{2a}, f\left(-\frac{b}{2a}\right)\right)$$
 **Definición 5.2 (Eje de simetría):**
 La recta vertical $x = -\frac{b}{2a}$ es el **eje de simetría** de la parábola.
 
-**Proposición 5.1 (Concavidad):**
-- Si $a > 0$, la parábola abre **hacia arriba** (∪) y el vértice es un **mínimo**
-- Si $a < 0$, la parábola abre **hacia abajo** (∩) y el vértice es un **máximo**
+**Proposición 5.1 (Concavidad y recorrido):**
+Sea $f(x) = ax^2 + bx + c$ con vértice $V = (h, k)$, donde $h = -\dfrac{b}{2a}$ y $k = f(h)$ (Teorema 5.1). Entonces:
+- Si $a > 0$, la parábola abre **hacia arriba** (∪), el vértice es un **mínimo**, y $\text{Im}(f) = [k, +\infty)$.
+- Si $a < 0$, la parábola abre **hacia abajo** (∩), el vértice es un **máximo**, y $\text{Im}(f) = (-\infty, k]$.
 
 **Ejemplo 5.1:**
 Para $f(x) = 2x^2 - 8x + 3$:
@@ -716,7 +726,9 @@ tiene vértice en $(3, 1)$ y abre hacia arriba ($a = 2 > 0$).
 Cuando una relación entre variables es más compleja que una simple curva con un solo punto de inflexión, aparecen funciones cúbicas. Modelan situaciones donde el crecimiento acelera, frena y vuelve a acelerar, como ciertos procesos económicos, el volumen de un cubo en función de su arista, o el comportamiento de algunos sistemas físicos que presentan cambios de dirección.
 
 **Definición 6.1 (Función cúbica):**
+Una **función cúbica** es la función $f: \mathbb{R} \to \mathbb{R}$ dada por:
 $$f(x) = ax^3 + bx^2 + cx + d, \quad a \neq 0$$
+El dominio y el codominio son $\text{Dom}(f) = \mathbb{R}$ y $\mathbb{R}$, respectivamente. El recorrido es siempre $\text{Im}(f) = \mathbb{R}$, independientemente del signo de $a$: al ser un polinomio de grado impar, $f(x) \to +\infty$ en un extremo y $f(x) \to -\infty$ en el otro, y al ser continua, el Teorema del Valor Intermedio (ver [[Guia 5 - Limites y Continuidad]], §9.1) garantiza que toma todos los valores reales intermedios.
 
 **Características:**
 - Tiene a lo sumo **3 raíces reales**
@@ -731,7 +743,9 @@ Raíces: $x^3 - 3x = 0 \Rightarrow x(x^2 - 3) = 0 \Rightarrow x = 0, \pm\sqrt{3}
 ### 6.2 Función cuártica (grado 4)
 
 **Definición 6.2 (Función cuártica):**
+Una **función cuártica** es la función $f: \mathbb{R} \to \mathbb{R}$ dada por:
 $$f(x) = ax^4 + bx^3 + cx^2 + dx + e, \quad a \neq 0$$
+El dominio y el codominio son $\text{Dom}(f) = \mathbb{R}$ y $\mathbb{R}$, respectivamente. Al ser continua y tender a $\pm\infty$ en ambos extremos (según el signo de $a$), $f$ está acotada inferior o superiormente y, por el Teorema del Valor Extremo (ver [[Guia 5 - Limites y Continuidad]], §9.3), alcanza un valor extremo global: si $a > 0$, $\text{Im}(f) = [m, +\infty)$, donde $m$ es el valor mínimo global de $f$; si $a < 0$, $\text{Im}(f) = (-\infty, M]$, donde $M$ es el valor máximo global. El cálculo exacto de $m$ o $M$ requiere herramientas de Cálculo Diferencial (Módulo IV, derivadas).
 
 **Características:**
 - Tiene a lo sumo **4 raíces reales**
@@ -749,10 +763,13 @@ $$f(x) = x^4 - 5x^2 + 4 = (x^2 - 1)(x^2 - 4)$$
 
 La raíz cuadrada aparece naturalmente cuando se despeja una variable que aparece al cuadrado. Si se conoce el área de un cuadrado y se quiere hallar la longitud de su lado, o si se aplica el teorema de Pitágoras para encontrar la longitud de un cateto, se obtiene una expresión de la forma $\sqrt{x}$. Esta función permite invertir, de manera controlada, la operación de elevar al cuadrado.
 
+> **Nota histórica:** El símbolo moderno de la raíz cuadrada ($\sqrt{}$) fue introducido por el matemático alemán Christoph Rudolff en 1525 en su obra *Coß*. Se cree que este símbolo es una deformación caligráfica de la letra minúscula "r" (inicial de la palabra latina *radix*, que significa "raíz"). En la antigüedad, civilizaciones como la babilónica y la griega concebían la raíz cuadrada geométricamente como la longitud del lado de un cuadrado de área dada.
+
 **Definición 7.1 (Función raíz cuadrada):**
-$$f(x) = \sqrt{x}$$
+$$f: [0, +\infty) \to \mathbb{R}, \qquad f(x) = \sqrt{x}$$
 
 **Dominio:** $\text{Dom}(f) = [0, +\infty)$ (solo números no negativos)
+**Codominio:** $\mathbb{R}$ (convención usual para funciones reales de variable real)
 **Imagen:** $\text{Im}(f) = [0, +\infty)$
 
 **Propiedades:**
@@ -768,12 +785,18 @@ $$f(x) = \sqrt{x}$$
 
 ### 7.2 Función raíz n-ésima
 
-**Definición 7.2:**
+**Definición 7.2 (Función raíz n-ésima):**
 $$f(x) = \sqrt[n]{x} = x^{1/n}$$
 
+**Codominio:** $\mathbb{R}$ (convención usual para funciones reales de variable real)
+
 **Dominio:**
-- Si $n$ es **par**: $[0, +\infty)$
-- Si $n$ es **impar**: $(-\infty, +\infty)$
+- Si $n$ es **par**: $\text{Dom}(f) = [0, +\infty)$
+- Si $n$ es **impar**: $\text{Dom}(f) = (-\infty, +\infty)$
+
+**Imagen (recorrido):**
+- Si $n$ es **par**: $\text{Im}(f) = [0, +\infty)$, por el mismo argumento que la raíz cuadrada (Definición 7.1).
+- Si $n$ es **impar**: $\text{Im}(f) = \mathbb{R}$, con un comportamiento análogo al de la función cúbica (Definición 6.1): $f$ es continua y no acotada en ambos extremos, de modo que por el Teorema del Valor Intermedio toma todos los valores reales.
 
 **Ejemplo 7.2:**
 - $\sqrt[3]{-8} = -2$ (raíz cúbica de negativo existe)
@@ -787,12 +810,15 @@ $$f(x) = \sqrt[n]{x} = x^{1/n}$$
 
 Algunos procesos no crecen por cantidades fijas, sino que se multiplican por un factor constante en cada intervalo de tiempo. El crecimiento de una población de bacterias, la desintegración radiactiva de un material o el capital generado por interés compuesto siguen este patrón multiplicativo. Las funciones exponenciales modelan precisamente situaciones donde el cambio relativo es constante.
 
+> **Nota histórica:** Aunque el estudio de progresiones geométricas es antiguo, la conceptualización moderna de la función exponencial se consolidó en el siglo XVII. John Napier y otros matemáticos estudiaron la relación entre el crecimiento aritmético y el geométrico. La formalización rigurosa de $a^x$ para exponentes reales y el descubrimiento del número constante $e$ (inicialmente surgido del cálculo del interés compuesto continuo por Jacob Bernoulli en 1683) fueron consolidados por Leonhard Euler en su célebre tratado *Introductio in analysin infinitorum* en 1748.
+
 **Definición 8.1 (Función exponencial):**
-$$f(x) = a^x$$
+$$f: \mathbb{R} \to \mathbb{R}, \qquad f(x) = a^x$$
 donde $a > 0$ y $a \neq 1$ (la **base** $a$ es constante positiva).
 
-**Dominio:** $(-\infty, +\infty)$
-**Imagen:** $(0, +\infty)$ (siempre positiva)
+**Dominio:** $\text{Dom}(f) = (-\infty, +\infty)$
+**Codominio:** $\mathbb{R}$ (convención usual para funciones reales de variable real)
+**Imagen:** $\text{Im}(f) = (0, +\infty)$ (siempre positiva)
 
 **Propiedades fundamentales:**
 1. $a^0 = 1$ para todo $a > 0$
@@ -832,12 +858,17 @@ Las funciones exponenciales modelan procesos donde el cambio relativo es constan
 
 Cuando una magnitud crece de manera multiplicativa, sus cambios absolutos pueden volverse enormes y difíciles de interpretar. El logaritmo convierte productos en sumas y potencias en productos, permitiendo manejar escalas muy amplias de forma más comprensible. Por eso aparece en contextos como la escala de Richter, la medición de intensidad sonora en decibelios o el cálculo de tiempos de duplicación en procesos exponenciales.
 
+> **Nota histórica:** Los logaritmos fueron concebidos de forma independiente por el matemático escocés John Napier en 1614 y por el suizo Joost Bürgi en 1620. Su motivación original era sumamente práctica: simplificar los laboriosos cálculos aritméticos de multiplicación y división requeridos por la astronomía y la navegación de la época, transformándolos en operaciones de suma y resta. El astrónomo Pierre-Simon Laplace afirmó que la invención de los logaritmos, al reducir a la mitad el trabajo de los astrónomos, efectivamente duplicó sus vidas.
+
 **Definición 9.1 (Logaritmo):**
 El **logaritmo en base $a$** de $x$, denotado $\log_a(x)$, es el exponente al que hay que elevar $a$ para obtener $x$:
 $$y = \log_a(x) \quad \Leftrightarrow \quad a^y = x$$
 
-**Dominio:** $(0, +\infty)$ (solo números positivos)
-**Imagen:** $(-\infty, +\infty)$
+La función logarítmica es $f: (0, +\infty) \to \mathbb{R}$, $f(x) = \log_a(x)$.
+
+**Dominio:** $\text{Dom}(f) = (0, +\infty)$ (solo números positivos)
+**Codominio:** $\mathbb{R}$ (convención usual para funciones reales de variable real)
+**Imagen:** $\text{Im}(f) = (-\infty, +\infty)$
 
 **Ejemplo 9.1:**
 - $\log_2(8) = 3$ porque $2^3 = 8$
@@ -888,6 +919,8 @@ El logaritmo permite trabajar cómodamente con escalas multiplicativas. En sismo
 ## 10. Álgebra de funciones
 
 Cuando trabajamos con funciones, podemos combinarlas de diversas formas para crear nuevas funciones. Así como podemos sumar números, también podemos **sumar funciones**. Estas operaciones se definen punto a punto: para cada valor de $x$, aplicamos la operación a los valores $f(x)$ y $g(x)$.
+
+> **Nota histórica:** La idea de definir operaciones aritméticas (suma, producto, división) sobre funciones de manera análoga a los números reales se formalizó a finales del siglo XIX y principios del siglo XX con el auge del análisis funcional. Matemáticos como Stefan Banach introdujeron la noción de tratar a los conjuntos de funciones como "espacios vectoriales" o estructuras algebraicas complejas, permitiendo aplicar herramientas algebraicas al estudio de ecuaciones diferenciales e integrales.
 
 Si tenemos dos funciones $f$ y $g$, la función **suma** $(f + g)$ se evalúa tomando el valor de $f$ y el valor de $g$ en cada punto, y luego sumándolos. Por ejemplo, si $f(x) = x$ y $g(x) = 2$, entonces $(f + g)(3) = f(3) + g(3) = 3 + 2 = 5$, y en general $(f + g)(x) = x + 2$.
 
