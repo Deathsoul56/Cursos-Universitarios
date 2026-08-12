@@ -450,6 +450,10 @@ Sea $f(x) = mx + b$ con $m \neq 0$:
 - Si $m > 0$, entonces $f$ es estrictamente creciente
 - Si $m < 0$, entonces $f$ es estrictamente decreciente
 
+**Demostración:** Sean $x_1, x_2 \in \mathbb{R}$ con $x_1 < x_2$, de modo que $x_2 - x_1 > 0$. Se tiene:
+$$f(x_2) - f(x_1) = (mx_2 + b) - (mx_1 + b) = m(x_2 - x_1)$$
+Si $m > 0$, el producto de dos factores positivos es positivo, luego $f(x_2) - f(x_1) > 0$: $f$ es estrictamente creciente. Si $m < 0$, el producto de un factor negativo por uno positivo es negativo, luego $f(x_2) - f(x_1) < 0$: $f$ es estrictamente decreciente. $\blacksquare$
+
 **Proposición 2.2 (Monotonía de funciones cuadráticas):**
 Sea $f(x) = a(x-h)^2 + k$ con $a \neq 0$:
 - Si $a > 0$:
@@ -459,18 +463,29 @@ Sea $f(x) = a(x-h)^2 + k$ con $a \neq 0$:
   - $f$ es creciente en $(-\infty, h]$
   - $f$ es decreciente en $[h, +\infty)$
 
+**Demostración:** Sean $x_1, x_2 \in (-\infty, h]$ con $x_1 < x_2 \leq h$. Entonces $h - x_1 > h - x_2 \geq 0$, y como ambos son no negativos, elevar al cuadrado preserva la desigualdad: $(x_1-h)^2 > (x_2-h)^2$. Si $a>0$, multiplicar por $a$ conserva la desigualdad y sumar $k$ da $f(x_1) > f(x_2)$: $f$ es decreciente en $(-\infty,h]$. Si $a<0$, multiplicar por $a$ invierte la desigualdad, dando $f(x_1) < f(x_2)$: $f$ es creciente en $(-\infty,h]$.
+
+Análogamente, para $x_1, x_2 \in [h, +\infty)$ con $h \leq x_1 < x_2$ se tiene $0 \leq x_1-h < x_2-h$, y elevando al cuadrado: $(x_1-h)^2 < (x_2-h)^2$. Si $a>0$, se sigue $f(x_1) < f(x_2)$ ($f$ creciente en $[h,+\infty)$); si $a<0$, se sigue $f(x_1) > f(x_2)$ ($f$ decreciente en $[h,+\infty)$). $\blacksquare$
+
 **Proposición 2.3 (Monotonía de funciones elementales):**
 
-1. **Función exponencial** $f(x) = a^x$ con $a > 0$, $a \neq 1$:
+1. **Función raíz cuadrada** $f(x) = \sqrt{x}$: estrictamente creciente en $[0, +\infty)$.
+
+   **Demostración:** Sean $0 \leq x_1 < x_2$. Racionalizando:
+   $$\sqrt{x_2} - \sqrt{x_1} = \frac{(\sqrt{x_2}-\sqrt{x_1})(\sqrt{x_2}+\sqrt{x_1})}{\sqrt{x_2}+\sqrt{x_1}} = \frac{x_2 - x_1}{\sqrt{x_2}+\sqrt{x_1}}$$
+   El numerador es positivo por hipótesis, y el denominador $\sqrt{x_2}+\sqrt{x_1} > 0$ (pues $x_1 < x_2$ excluye que ambos sean $0$). Luego el cociente es positivo: $\sqrt{x_2} > \sqrt{x_1}$. $\blacksquare$
+
+2. **Función exponencial** $f(x) = a^x$ con $a > 0$, $a \neq 1$:
    - Si $a > 1$: estrictamente creciente en $\mathbb{R}$
    - Si $0 < a < 1$: estrictamente decreciente en $\mathbb{R}$
 
-2. **Función logarítmica** $f(x) = \log_a(x)$ con $a > 0$, $a \neq 1$:
+   **Demostración:** Se prueba primero para exponentes racionales. Sean $p/q < r/s$ racionales con $q,s>0$. Si $a>1$, la potencia entera $a^n$ es estrictamente creciente en $n\in\mathbb{Z}^+$ (producto repetido de factores mayores que $1$), y la raíz $n$-ésima es estrictamente creciente en $[0,+\infty)$ por el mismo argumento de racionalización del ítem 1. Componiendo ambas operaciones monótonas crecientes se obtiene que $x \mapsto a^x$ es estrictamente creciente sobre $\mathbb{Q}$. Como $\mathbb{Q}$ es denso en $\mathbb{R}$ (Teorema 5.2, [[Clase 2 - Los Números]], §5.8), todo real se aproxima por racionales de ambos lados, y la monotonía se extiende de $\mathbb{Q}$ a $\mathbb{R}$ una vez establecida la continuidad de $a^x$, tema que se formaliza en Límites y Continuidad. El caso $0<a<1$ se obtiene escribiendo $a^x=(1/a)^{-x}$ con $1/a>1$: por lo anterior $(1/a)^{y}$ es creciente en $y$, y componer con la reflexión $y=-x$ (Proposición 2.1, pendiente negativa) invierte el sentido, dando $f$ decreciente. $\blacksquare$
+
+3. **Función logarítmica** $f(x) = \log_a(x)$ con $a > 0$, $a \neq 1$:
    - Si $a > 1$: estrictamente creciente en $(0, +\infty)$
    - Si $0 < a < 1$: estrictamente decreciente en $(0, +\infty)$
 
-3. **Función raíz cuadrada** $f(x) = \sqrt{x}$:
-   - Estrictamente creciente en $[0, +\infty)$
+   **Demostración:** Por el Teorema 9.1 (§9.4), $\log_a$ es la función inversa de $a^x$. Por el ítem 2, $a^x$ es estrictamente creciente si $a>1$ y estrictamente decreciente si $0<a<1$. Por la Proposición 8.4 de [[Clase 9 - Funciones Parte 2]] (monotonía de la función inversa), la inversa de una función estrictamente monótona es estrictamente monótona en el mismo sentido. Luego $\log_a$ es creciente si $a>1$ y decreciente si $0<a<1$. $\blacksquare$
 
 **Ejemplo 2.6:**
 Analizar la monotonía de $f(x) = 2^x$:
@@ -615,6 +630,8 @@ Factorizando: $(x - 2)(x - 3) = 0$
 **Proposición 4.1:**
 Resolver la ecuación lineal $mx + b = 0$ es equivalente a encontrar la raíz de la función $f(x) = mx + b$.
 
+**Demostración:** Por la Definición 4.1, $r$ es raíz de $f$ si y solo si $f(r) = 0$. Como $f(x) = mx+b$ (Definición 3.2), esta condición equivale exactamente a $mr + b = 0$, que es la ecuación lineal en la incógnita $r$. Así, el conjunto de raíces de $f$ coincide con el conjunto solución de la ecuación $mx+b=0$. $\blacksquare$
+
 **Conexión:** 
 - **Ecuación:** $2x - 6 = 0 \quad \Rightarrow \quad x = 3$
 - **Función:** $f(x) = 2x - 6$ tiene raíz en $x = 3$ porque $f(3) = 0$
@@ -666,7 +683,7 @@ donde $a, b, c \in \mathbb{R}$ y $a \neq 0$. El dominio y el codominio son $\tex
 El vértice de la parábola $f(x) = ax^2 + bx + c$ está en el punto:
 $$V = \left(-\frac{b}{2a}, f\left(-\frac{b}{2a}\right)\right)$$
 
-**Nota:** Esta fórmula se demostrará más adelante utilizando técnicas de Cálculo Diferencial en el tema de máximos y mínimos de una función (derivadas).
+**Demostración:** Se demuestra algebraicamente por completación de cuadrados en la Proposición 5.2 (§5.4), donde se establece que $f(x) = a(x-h)^2+k$ con $h=-\frac{b}{2a}$ y $k=f(h)$. Como $(x-h)^2 \geq 0$ con igualdad únicamente en $x=h$, el punto $V=(h,k)$ es el mínimo global de $f$ si $a>0$ y el máximo global si $a<0$; en ambos casos es el vértice de la parábola. $\blacksquare$
 
 **Definición 5.2 (Eje de simetría):**
 La recta vertical $x = -\frac{b}{2a}$ es el **eje de simetría** de la parábola.
@@ -675,6 +692,8 @@ La recta vertical $x = -\frac{b}{2a}$ es el **eje de simetría** de la parábola
 Sea $f(x) = ax^2 + bx + c$ con vértice $V = (h, k)$, donde $h = -\dfrac{b}{2a}$ y $k = f(h)$ (Teorema 5.1). Entonces:
 - Si $a > 0$, la parábola abre **hacia arriba** (∪), el vértice es un **mínimo**, y $\text{Im}(f) = [k, +\infty)$.
 - Si $a < 0$, la parábola abre **hacia abajo** (∩), el vértice es un **máximo**, y $\text{Im}(f) = (-\infty, k]$.
+
+**Demostración:** Por la Proposición 5.2 (§5.4), $f(x) = a(x-h)^2+k$. Si $a>0$, entonces $a(x-h)^2 \geq 0$ para todo $x$, con igualdad únicamente en $x=h$, de modo que $f(x) \geq k$ para todo $x$ (mínimo en $h$); además, como $(x-h)^2$ recorre todo $[0,+\infty)$ al variar $x$, también $f$ recorre todo $[k,+\infty)$, es decir, $\text{Im}(f)=[k,+\infty)$. Si $a<0$, el mismo argumento con la desigualdad invertida da $f(x) \leq k$ para todo $x$ (máximo en $h$) e $\text{Im}(f)=(-\infty,k]$. $\blacksquare$
 
 **Ejemplo 5.1:**
 Para $f(x) = 2x^2 - 8x + 3$:
@@ -686,8 +705,21 @@ Para $f(x) = 2x^2 - 8x + 3$:
 ### 5.3 Raíces de la función cuadrática
 
 **Teorema 5.2 (Fórmula general):**
-Las raíces de $ax^2 + bx + c = 0$ son:
+Las raíces de $ax^2 + bx + c = 0$ (con $a \neq 0$) son:
 $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+**Demostración:** Partiendo de $ax^2+bx+c=0$ y dividiendo por $a \neq 0$:
+\begin{align}
+x^2 + \frac{b}{a}x + \frac{c}{a} &= 0 \\
+x^2 + \frac{b}{a}x &= -\frac{c}{a} \\
+x^2 + \frac{b}{a}x + \left(\frac{b}{2a}\right)^2 &= \left(\frac{b}{2a}\right)^2 - \frac{c}{a} \\
+\left(x + \frac{b}{2a}\right)^2 &= \frac{b^2 - 4ac}{4a^2}
+\end{align}
+Como $4a^2 > 0$, esta ecuación tiene solución real si y solo si $b^2-4ac \geq 0$; en tal caso, tomando raíz cuadrada en ambos lados:
+$$x + \frac{b}{2a} = \pm\frac{\sqrt{b^2-4ac}}{2a}$$
+Despejando $x$:
+$$x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$$
+$\blacksquare$
 
 **Definición 5.3 (Discriminante):**
 $$\Delta = b^2 - 4ac$$
@@ -709,9 +741,19 @@ $$x = \frac{4 \pm 0}{2} = 2$$
 ### 5.4 Forma canónica
 
 **Proposición 5.2 (Forma canónica o de vértice):**
-Toda función cuadrática se puede escribir como:
-$$f(x) = a(x - h)^2 + k$$
+Toda función cuadrática $f(x) = ax^2+bx+c$ (con $a \neq 0$) se puede escribir como:
+$$f(x) = a(x - h)^2 + k, \qquad h = -\frac{b}{2a}, \quad k = f(h)$$
 donde $(h, k)$ es el vértice.
+
+**Demostración:** Completando el cuadrado (mismo procedimiento del Teorema 5.2):
+\begin{align}
+f(x) &= ax^2 + bx + c \\
+&= a\left(x^2 + \frac{b}{a}x\right) + c \\
+&= a\left(x^2 + \frac{b}{a}x + \frac{b^2}{4a^2} - \frac{b^2}{4a^2}\right) + c \\
+&= a\left(x + \frac{b}{2a}\right)^2 - \frac{b^2}{4a} + c \\
+&= a\left(x - \left(-\frac{b}{2a}\right)\right)^2 + \frac{4ac-b^2}{4a}
+\end{align}
+Denotando $h = -\dfrac{b}{2a}$ y $k = \dfrac{4ac-b^2}{4a}$, se obtiene $f(x) = a(x-h)^2+k$. Evaluando directamente, $f(h) = a(h-h)^2+k = k$, por lo que $k=f(h)$ y $(h,k)$ coincide con el vértice del Teorema 5.1. $\blacksquare$
 
 **Ejemplo 5.3:**
 $$f(x) = 2(x - 3)^2 + 1$$
@@ -828,15 +870,12 @@ donde $a > 0$ y $a \neq 1$ (la **base** $a$ es constante positiva).
 
 ### 8.2 Comportamiento según la base
 
-**Caso 1: Base $a > 1$ (ejemplo: $f(x) = 2^x$)**
-- La función es **creciente**
-- $\lim_{x \to -\infty} a^x = 0$ (asíntota horizontal en $y = 0$)
-- $\lim_{x \to +\infty} a^x = +\infty$ (crece rápidamente)
+**Proposición 8.1 (Monotonía y comportamiento asintótico según la base):**
+Sea $f(x) = a^x$ con $a>0$, $a\neq 1$. Entonces:
+- Si $a > 1$: $f$ es estrictamente creciente, con $\lim_{x \to -\infty} a^x = 0$ (asíntota horizontal en $y=0$) y $\lim_{x \to +\infty} a^x = +\infty$ (ejemplo: $f(x)=2^x$).
+- Si $0 < a < 1$: $f$ es estrictamente decreciente, con $\lim_{x \to -\infty} a^x = +\infty$ y $\lim_{x \to +\infty} a^x = 0$ (asíntota horizontal en $y=0$) (ejemplo: $f(x)=(1/2)^x$).
 
-**Caso 2: Base $0 < a < 1$ (ejemplo: $f(x) = \left(\frac{1}{2}\right)^x$)**
-- La función es **decreciente**
-- $\lim_{x \to -\infty} a^x = +\infty$
-- $\lim_{x \to +\infty} a^x = 0$ (asíntota horizontal en $y = 0$)
+**Demostración:** La monotonía fue establecida en la Proposición 2.3 (ítem 2). Para el comportamiento asintótico con $a>1$: dado $M>0$ arbitrario, como $a>1$ las potencias enteras $a^n$ crecen sin cota superior, de modo que existe $n_0 \in \mathbb{N}$ con $a^{n_0}>M$; por la monotonía creciente, $a^x > M$ para todo $x>n_0$, es decir, $a^x \to +\infty$ cuando $x\to+\infty$. Además, $a^{-x} = 1/a^x$, y como $a^x \to +\infty$, se sigue $a^{-x}\to 0$, es decir, $a^x \to 0$ cuando $x\to-\infty$. El caso $0<a<1$ se obtiene de $a^x=(1/a)^{-x}$ con $1/a>1$, intercambiando los roles de $+\infty$ y $-\infty$. La justificación rigurosa mediante la definición $\varepsilon$-$N$ de estos límites se formaliza en Límites y Continuidad. $\blacksquare$
 
 **Ejemplo 8.1:**
 Para $f(x) = 2^x$:
