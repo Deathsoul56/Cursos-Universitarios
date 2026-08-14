@@ -50,12 +50,12 @@ $$
 **Ejemplo 1.2:**
 Calcule la distancia entre $A = (1, 2)$ y $B = (4, 6)$:
 
-\begin{align}
+$$\begin{align}
 d(A, B) &= \sqrt{(4-1)^2 + (6-2)^2} \\
 &= \sqrt{3^2 + 4^2} \\
 &= \sqrt{9 + 16} \\
 &= \sqrt{25} = 5
-\end{align}
+\end{align}$$
 
 ![Distancia entre dos puntos](../Recursos/distancia_entre_puntos.png)
 
@@ -1240,11 +1240,11 @@ $\square$
 **Ejemplo 4.5:**
 Encuentre la ecuación de la recta con pendiente $m = 3$ que pasa por el punto $(1, 2)$:
 
-\begin{align}
+$$\begin{align}
 y - 2 &= 3(x - 1) \\
 y - 2 &= 3x - 3 \\
 y &= 3x - 1
-\end{align}
+\end{align}$$
 
 **Ejemplo 4.6:**
 Encuentre la ecuación de la recta que pasa por los puntos $A = (2, 5)$ y $B = (4, 9)$:
@@ -1420,23 +1420,23 @@ Identificando: $A = m$, $B = -1$, $C = b$. $\square$
 **Ejemplo 4.9 (Conversión de forma general a pendiente-ordenada):**
 Convierta $2x + 3y - 6 = 0$ a la forma $y = mx + b$:
 
-\begin{align}
+$$\begin{align}
 2x + 3y - 6 &= 0 \\
 3y &= -2x + 6 \\
 y &= -\frac{2}{3}x + 2
-\end{align}
+\end{align}$$
 
 Pendiente: $m = -\frac{2}{3}$, Ordenada: $b = 2$
 
 **Ejemplo 4.10 (Conversión de pendiente-ordenada a forma general):**
 Exprese $y = \frac{3}{4}x - 5$ en forma general:
 
-\begin{align}
+$$\begin{align}
 y &= \frac{3}{4}x - 5 \\
 4y &= 3x - 20 \quad \text{(multiplicar por 4)} \\
 -3x + 4y + 20 &= 0 \\
 3x - 4y - 20 &= 0 \quad \text{(multiplicar por -1)}
-\end{align}
+\end{align}$$
 
 Forma general: $3x - 4y - 20 = 0$
 
@@ -1690,7 +1690,61 @@ $$
 
 Equivalentemente: $m_2 = -\frac{1}{m_1}$ (las pendientes son **recíprocas opuestas**)
 
-**Demostración:** Se demostrará en [[Clase 9 - Funciones Parte 2]] cuando se introduzca el concepto de rotación de rectas, que permite probar la equivalencia completa ($\Rightarrow$ y $\Leftarrow$) de manera rigurosa.
+**Demostración:**
+Sean $L_1: y = m_1 x + b_1$ y $L_2: y = m_2 x + b_2$ dos rectas perpendiculares que se intersectan en el punto $P_0 = (x_0, y_0)$.
+
+![Construcción geométrica de la demostración: dos rectas L₁ y L₂ que se intersectan en P₀, con P₁ sobre L₁ y P₂ sobre L₂ a una unidad de avance horizontal, formando el triángulo P₀P₁P₂](../Recursos/condicion_perpendicularidad.png)
+
+*Paso 1: Construcción de $P_1$ sobre $L_1$ y $P_2$ sobre $L_2$*
+Tómese un punto $P_1 = (x_1, y_1) \in L_1$ distinto de $P_0$, y un punto $P_2 = (x_2, y_2) \in L_2$ distinto de $P_0$. Sin pérdida de generalidad, tómense $x_1 = x_2 = x_0 + 1$ (ambos puntos avanzan una unidad en la dirección positiva del eje $x$ respecto de $P_0$).
+
+*Paso 2: Pendientes de $L_1$ y $L_2$ en términos de $P_0$, $P_1$ y $P_2$*
+Como $P_1 \in L_1$:
+$$
+y_1 = m_1 x_1 + b_1 = m_1(x_0 + 1) + b_1 = (m_1 x_0 + b_1) + m_1
+$$
+
+y, dado que $P_0 \in L_1$ satisface $y_0 = m_1 x_0 + b_1$, se obtiene:
+$$
+y_1 = y_0 + m_1 \Rightarrow m_1 = y_1 - y_0
+$$
+De manera análoga, el mismo razonamiento aplicado a $P_2 \in L_2$ da $m_2 = y_2 - y_0$. Por lo tanto:
+$$
+m_1 = y_1-y_0, \qquad m_2 = y_2-y_0
+$$
+$$
+P_1 = (x_0 + 1,\ y_0 + m_1), \qquad P_2 = (x_0 + 1,\ y_0 + m_2)
+$$
+
+*Paso 3: Distancias entre los tres puntos*
+Usando la fórmula de distancia entre dos puntos (Teorema 1.1, §1.2), se sustituyen primero las coordenadas de cada punto y luego las pendientes obtenidas en el Paso 2:
+$$\begin{align}
+d(P_0, P_1) &= \sqrt{(x_0+1-x_0)^2 + (y_1-y_0)^2} = \sqrt{1^2 + m_1^2} = \sqrt{1 + m_1^2} \\
+d(P_0, P_2) &= \sqrt{(x_0+1-x_0)^2 + (y_2-y_0)^2} = \sqrt{1^2 + m_2^2} = \sqrt{1 + m_2^2} \\
+d(P_1, P_2) &= \sqrt{(x_0+1-(x_0+1))^2 + (y_1-y_2)^2} = \sqrt{(m_1 - m_2)^2} = |m_1 - m_2|
+\end{align}$$
+donde la última igualdad se cumple porque $P_1$ y $P_2$ comparten la misma abscisa $x_0 + 1$, y porque $y_1 - y_2 = (y_0+m_1)-(y_0+m_2) = m_1 - m_2$. Nótese que $P_0$, $P_1$, $P_2$ forman un triángulo con vértice en $P_0$.
+
+*Paso 4: Ángulo del triángulo en $P_0$*
+Por Definición 4.7, $L_1$ y $L_2$ forman un ángulo de $90°$ en su punto de intersección. Como $P_1 \in L_1$ y $P_2 \in L_2$, este ángulo es exactamente $\angle P_1 P_0 P_2$. Por lo tanto, el triángulo $P_0P_1P_2$ es rectángulo con hipotenusa $P_1P_2$.
+
+*Paso 5: Aplicación del teorema de Pitágoras*
+Como el triángulo $P_0P_1P_2$ es rectángulo con hipotenusa $P_1P_2$ (Paso 4), por el teorema de Pitágoras (Teorema 3.9):
+$$
+d(P_1, P_2)^2 = d(P_0, P_1)^2 + d(P_0, P_2)^2 \quad (\ast)
+$$
+*Paso 6: Sustitución algebraica y resolución*
+Sustituyendo las distancias del Paso 3 en $(\ast)$:
+$$\begin{align}
+(\sqrt{(m_1 - m_2)^2})^2 &= (\sqrt{(1 + m_1^2)})^2 + (\sqrt{(1 + m_2^2)})^2 \\
+(m_1 - m_2)^2 &= (1 + m_1^2) + (1 + m_2^2) \\
+m_1^2 - 2m_1 m_2 + m_2^2 &= 2 + m_1^2 + m_2^2 \\
+-2 m_1 m_2 &= 2 \\
+m_1 \cdot m_2 &= -1
+\end{align}$$
+Encadenando los Pasos 4, 5 y 6 —todos ellos equivalencias ($\Leftrightarrow$)— se obtiene la equivalencia completa buscada: $L_1 \perp L_2 \Leftrightarrow m_1 \cdot m_2 = -1$. $\blacksquare$
+
+> **Nota:** En [[Clase 9 - Funciones Parte 2]] se presenta una demostración alternativa de este mismo teorema mediante la rotación de rectas, la cual conecta este resultado con las transformaciones geométricas de funciones.
 
 **Ejemplo 4.18:**
 Las rectas $y = 2x + 1$ y $y = -\frac{1}{2}x + 3$ son **perpendiculares** porque:
