@@ -688,6 +688,8 @@ $$V = \left(-\frac{b}{2a}, f\left(-\frac{b}{2a}\right)\right)$$
 **Definición 5.2 (Eje de simetría):**
 La recta vertical $x = -\frac{b}{2a}$ es el **eje de simetría** de la parábola.
 
+![Parábola en su forma canónica con el vértice y el eje de simetría marcados, para los casos a > 0 y a < 0](../Recursos/parabola_vertice_eje_simetria.png)
+
 **Proposición 5.1 (Concavidad y recorrido):**
 Sea $f(x) = ax^2 + bx + c$ con vértice $V = (h, k)$, donde $h = -\dfrac{b}{2a}$ y $k = f(h)$ (Teorema 5.1). Entonces:
 - Si $a > 0$, la parábola abre **hacia arriba** (∪), el vértice es un **mínimo**, y $\text{Im}(f) = [k, +\infty)$.
@@ -709,12 +711,12 @@ Las raíces de $ax^2 + bx + c = 0$ (con $a \neq 0$) son:
 $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
 
 **Demostración:** Partiendo de $ax^2+bx+c=0$ y dividiendo por $a \neq 0$:
-\begin{align}
+$$\begin{align}
 x^2 + \frac{b}{a}x + \frac{c}{a} &= 0 \\
 x^2 + \frac{b}{a}x &= -\frac{c}{a} \\
 x^2 + \frac{b}{a}x + \left(\frac{b}{2a}\right)^2 &= \left(\frac{b}{2a}\right)^2 - \frac{c}{a} \\
 \left(x + \frac{b}{2a}\right)^2 &= \frac{b^2 - 4ac}{4a^2}
-\end{align}
+\end{align}$$
 Como $4a^2 > 0$, esta ecuación tiene solución real si y solo si $b^2-4ac \geq 0$; en tal caso, tomando raíz cuadrada en ambos lados:
 $$x + \frac{b}{2a} = \pm\frac{\sqrt{b^2-4ac}}{2a}$$
 Despejando $x$:
@@ -746,13 +748,13 @@ $$f(x) = a(x - h)^2 + k, \qquad h = -\frac{b}{2a}, \quad k = f(h)$$
 donde $(h, k)$ es el vértice.
 
 **Demostración:** Completando el cuadrado (mismo procedimiento del Teorema 5.2):
-\begin{align}
+$$\begin{align}
 f(x) &= ax^2 + bx + c \\
 &= a\left(x^2 + \frac{b}{a}x\right) + c \\
 &= a\left(x^2 + \frac{b}{a}x + \frac{b^2}{4a^2} - \frac{b^2}{4a^2}\right) + c \\
 &= a\left(x + \frac{b}{2a}\right)^2 - \frac{b^2}{4a} + c \\
 &= a\left(x - \left(-\frac{b}{2a}\right)\right)^2 + \frac{4ac-b^2}{4a}
-\end{align}
+\end{align}$$
 Denotando $h = -\dfrac{b}{2a}$ y $k = \dfrac{4ac-b^2}{4a}$, se obtiene $f(x) = a(x-h)^2+k$. Evaluando directamente, $f(h) = a(h-h)^2+k = k$, por lo que $k=f(h)$ y $(h,k)$ coincide con el vértice del Teorema 5.1. $\blacksquare$
 
 **Ejemplo 5.3:**

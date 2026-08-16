@@ -432,38 +432,35 @@ Calcule $\cos\!\left(\dfrac{5\pi}{4}\right)$:
 ---
 ## 5. El círculo trigonométrico
 
-Pese a que la trigonometría clásica se origina en el estudio de los triángulos rectángulos, su marco analítico moderno presenta una interconexión estructural y geométrica irrefutable con la topología de los círculos.
+Las razones trigonométricas de la Sección 3 solo están definidas para ángulos agudos, ya que dependen de un triángulo rectángulo real. Para trabajar con cualquier ángulo (negativo, mayor que $90°$, o incluso mayor que una vuelta completa) se necesita un modelo geométrico distinto: el **círculo trigonométrico**.
 
 **Definición 5.1 (Círculo unitario):**
-El **círculo unitario** se define matemáticamente como la circunferencia de radio $1$ centrada en el origen del plano cartesiano euclidiano, descrita mediante el lugar geométrico:
+El **círculo unitario** es la circunferencia de radio $1$ centrada en el origen del plano cartesiano:
 $$x^2 + y^2 = 1$$
 ![[circulo_trigonometria.png]]
-Si seleccionamos un punto arbitrario $(x,y)$ perteneciente a esta circunferencia y deseamos parametrizar sus coordenadas, podemos trazar un triángulo rectángulo cuyos catetos correspondan a las proyecciones ortogonales escalares $x$ e $y$. La hipotenusa será invariablemente equivalente al radio $R$ de la circunferencia, subtendiendo un ángulo tangencial $\theta$. Mediante este constructo geométrico analítico, deducimos que:
-* $\cos(\theta) = \frac{x}{R} \implies x = R \cdot \cos(\theta)$
-* $\sin(\theta) = \frac{y}{R} \implies y = R \cdot \sin(\theta)$
+Dado un punto $(x,y)$ sobre una circunferencia de radio $R$, se puede trazar un triángulo rectángulo con catetos $x$ e $y$ e hipotenusa $R$, donde $\theta$ es el ángulo medido desde el eje $X$ positivo. Por las definiciones de la Sección 3:
+* $\cos(\theta) = \frac{x}{R} \implies x = R\cos(\theta)$
+* $\sin(\theta) = \frac{y}{R} \implies y = R\sin(\theta)$
 
-Para el caso axiomático particular donde $R=1$ (la amplitud de la circunferencia unitaria), el sistema de coordenadas de componentes rectangulares se simplifica isométricamente a:
+En el caso particular del círculo unitario ($R=1$), esto se reduce a:
 $$(x,y) = (\cos(\theta), \sin(\theta))$$
-De esta rigurosa formulación se desprende que la coordenada de abscisas $x$ equivale intrínsecamente al valor del coseno, mientras que la ordenada $y$ corresponde al seno. Esta equivalencia nos dota de un modelo estricto para visualizar el comportamiento dinámico de ambas funciones trigonométricas a medida que el ángulo $\theta$ sufre una variación modular continua, observando empíricamente sus valores armónicos proyectados coordenadamente.
 ![[circulo_parametrico.gif]]
-**Definición extendida de las funciones trigonométricas:**
-Dado un ángulo estandarizado $\theta$, medido con origen en el primer semi-eje de abscisas positivo (en estricto sentido de rotación analítico antihorario), se definen funcionalmente las proyecciones paramétricas como:
-- El vector-punto intersectante $P = (\cos(\theta), \sin(\theta))$ en dicho perímetro del círculo unitario.
-- $\sin(\theta)$ se extrae y define conceptualmente como la **coordenada geométrica de ordenadas $y$** de dicho punto autovalor $P$.
-- $\cos(\theta)$ se extrae unívocamente como la **coordenada geométrica de abscisas $x$** del mismo punto $P$.
+
+**Definición 5.2 (Seno y coseno sobre el círculo unitario):**
+Sea $\theta$ un ángulo medido desde el eje $X$ positivo en sentido antihorario, y sea $P = (\cos(\theta), \sin(\theta))$ el punto correspondiente sobre el círculo unitario. Entonces:
+- $\sin(\theta)$ es la coordenada $y$ de $P$.
+- $\cos(\theta)$ es la coordenada $x$ de $P$.
 ![[circulo_trigonometria_2.png]]
-**Ventaja topológica y analítica:** Esta conceptualización transciende y rompe definitivamente la atadura euclidiana de poseer triángulos interiores finitos limitados, permitiendo extrapolar y dar existencia continua al campo paramétrico de las series trigonométricas sobre la totalidad y convexidad de los números reales y **todos sus ángulos** $\theta \in \mathbb{R}$ (trascendiendo espectros agudos).
 
-> Los signos matriciales de las funciones en cada sub-espacio cuadrante y la convergencia de valores cardinales axiales (0°, 90°, 180°, 270°, 360°) se han estructurado ya con amplio rigor matemático deductivo dentro de la **§4.5**.
+**Observación:** A diferencia de la definición con triángulos, esta ya no depende de un triángulo finito, por lo que se extiende sin problema a cualquier ángulo real $\theta \in \mathbb{R}$, incluyendo ángulos negativos o mayores a una vuelta completa. Los signos de las funciones en cada cuadrante y los valores en los ángulos cardinales ($0°$, $90°$, $180°$, $270°$, $360°$) ya se discutieron en la §4.5.
 
-### 5.1 Perspectiva Geométrica de Radio-Vectores (Sistema SORCARTOA)
-Una formulación vectorial complementaria radica en modelar el subespacio operando única y exclusivamente mediante las magnitudes acotadas de ángulos agudos de referencia topológicos. Dependiendo rigurosamente de en qué frontera cuadrática o sub-espacio matricial nazca o descuelle el radio vector empírico observable, el tratamiento se homologa al primer abordaje fundacional de triángulos euclidianos elementales de la sección $1$. Esta formalización extendida es parametrizada bajo la mnemotecnia analítica SORCARTOA:
-* $\sin(\theta) = \frac{\text{Cateto Opuesto}}{\text{Radio Vector }(R)}$
-* $\cos(\theta) = \frac{\text{Cateto Adyacente}}{\text{Radio Vector }(R)}$
-* $\tan(\theta) = \frac{\text{Cateto Opuesto}}{\text{Cateto Adyacente}}$
+### 5.1 Radio vector genérico (SORCARTOA)
+
+Cuando se trabaja directamente con un punto $(x,y)$ y su distancia $R$ al origen (sin normalizar a radio $1$), conviene generalizar las razones trigonométricas usando el **radio vector** $R = \sqrt{x^2+y^2} > 0$ en vez de la hipotenusa de un triángulo fijo. El tratamiento es idéntico al de la Sección 3, cambiando "hipotenusa" por "radio vector"; esto se resume en la mnemotecnia SORCARTOA:
+$$\sin(\theta) = \frac{\text{cateto opuesto}}{R}, \qquad \cos(\theta) = \frac{\text{cateto adyacente}}{R}, \qquad \tan(\theta) = \frac{\text{cateto opuesto}}{\text{cateto adyacente}}$$
 
 ![[SORCARTOA.png]]
-Bajo esta axiomática transversal, el Radio Vector se consagra matemáticamente en todo tiempo y momento lineal escalar como una norma dimensional euclidiana de crecimiento o fuerza positiva, luego es retenida inflexible y llanamente como unidad medible estrictamente superior a cero ($R>0$). Por necesidad algebraicamente forzosa de la función armónica, las entidades funcionales que asumen íntegramente y absorben el desplazamiento oscilatorio polar y su respectiva mutación del signo estructural ($(+, -)$) son invariablemente las componentes cartesianas perimetrales relativas formadas con el origen, oscilando según fije dogmáticamente el cuadrante del espacio vectorial. Este elegante artificio es precisamente el lecho matricial de validación axiomática para la procedencia fundamental de la lógica en la distribución de la alternancia de signos deducida en apartados teóricos de axiomas anteriores, otorgando ahora una perspectiva cinemática superior para su compresión total y plena.
+Como $R$ es siempre positivo (es una distancia), el signo de $\sin(\theta)$ y $\cos(\theta)$ queda determinado enteramente por los signos de $x$ e $y$ según el cuadrante, tal como se vio en la §4.5.
 
 ---
 ## 6. Identidades trigonométricas fundamentales
@@ -848,118 +845,94 @@ Al igual que las funciones principales, sus razones recíprocas también se exti
 ![[funcion_cotangente_1.png]]
 ### 8.5 Transformaciones de funciones trigonométricas
 
-Una vez establecidas analíticamente las gráficas primigenias de las funciones trigonométricas, procederemos a estudiar formalmente su comportamiento algebraico bajo el efecto sistemático de la adición de constantes paramétricas operativas (transformaciones lineales afines vectoriales).
+Al igual que con cualquier otra función, a las funciones trigonométricas se les pueden aplicar traslaciones, reflexiones y dilataciones. Por ser periódicas, estas transformaciones tienen una lectura física directa (amplitud, período, desfase) que es central para modelar fenómenos oscilatorios: sonido, corriente alterna, mareas, etc.
 
-Sean los escalares reales $A,B,C,D \in \mathbb{R}$, asumiendo rigurosamente $A, B \neq 0$.
-**Forma general de la función periódica escalada:**
-$$f(x) = A \cdot \sin(B \cdot x + C) + D$$
-*Nota de invariabilidad métrica: Todo teorema o propiedad topológica inferida a continuación recae isomorfamente y es análoga para la variante en coseno.*
+Consideremos la forma general, con $A,B,C,D \in \mathbb{R}$ y $A, B \neq 0$:
+$$f(x) = A\sin(Bx + C) + D$$
 
-**Análisis de Parámetros:**
+> **Observación:** Todo lo que sigue para el seno es análogo para el coseno.
 
-1. **El escalar $D$: Desplazamiento vertical (Traslación en ordenadas)**
-   - Evaluado como un campo $f(x) = \sin(x) + D$.
-   - Proyecta una **traslación vertical pura** carente absoluta de deformación tensorial. El eje medular o "centroide escalar radiante" de toda la función sufre un vectorización hacia la parte superior ($D > 0$) o decanta hacia la sección inferior ($D < 0$).
-   - La nueva métrica estabilizadora central será el límite $y = D$.
-*Ejemplo empírico analítico: $f(x) = \sin(x) + 5$*
+**Proposición 8.1 (Parámetros de la función seno transformada):**
+Sea $f(x) = A\sin(Bx+C) + D$. Entonces:
+1. $D$ produce una **traslación vertical**: el eje de oscilación pasa de $y=0$ a $y=D$.
+2. $A$ escala la **amplitud**: la función oscila en $[-|A|, |A|]$ (o en $[D-|A|, D+|A|]$ si además hay traslación vertical).
+3. $B$ cambia el **período**: $T = \dfrac{2\pi}{|B|}$.
+4. $C$ produce un **desfase horizontal**: $\phi = -\dfrac{C}{B}$.
+
+**Demostración (período):** Por definición, $T$ es un período de $f$ si $f(x+T)=f(x)$ para todo $x \in \mathbb{R}$. Sea $f(x) = \sin(Bx)$:
+$$f(x+T) = \sin(B(x+T)) = \sin(Bx + BT)$$
+Como el seno tiene período $2\pi$ (es decir, $\sin(\theta+2\pi)=\sin(\theta)$), se requiere $BT = 2\pi$, de donde
+$$T = \frac{2\pi}{|B|} \quad \blacksquare$$
+
+**Demostración (desfase):** Factorizando $B$ en el argumento:
+$$\sin(Bx+C) = \sin\left[B\left(x + \frac{C}{B}\right)\right]$$
+Toda expresión de la forma $f(x-h)$ representa una traslación horizontal de $h$ unidades; aquí $h = -\dfrac{C}{B}$. Por lo tanto, el punto $x=0$ de la función original se traslada a $x = -\dfrac{C}{B} = \phi$. $\blacksquare$
+
+**Ilustración de cada parámetro:**
+
+1. **Desplazamiento vertical ($D$):** $f(x) = \sin(x) + D$ traslada la gráfica verticalmente sin deformarla.
 ![[funcion_seno+5.png]]
-
-2. **El escalar $A$: Amplitud paramétrica (Homotecia escalar modular)**
-   - Operado como el factor multi-tensor $f(x) = A \cdot \sin(x)$.
-   - Determina estructuralmente un estiramiento vertical (homotecia unidimensional) regulando las crestas cúspides y el sumidero inferior oscilatorio de la onda de transmisión acotando al co-dominio natural de la matriz.
-   - Analíticamente la función original oscila encerrada y amarrada entre $[- |A|, |A|]$.
-   - Generando un sistema mixto de desplazamiento transversal, en formato $A \cdot \sin(x) + D$ la gráfica modula de rango final cerrado en la sección estocástica entre $[- |A| + D, |A| + D]$.
+2. **Amplitud ($A$):** $f(x) = A\sin(x)$ estira o comprime verticalmente la gráfica.
 ![[funcion_senox3.png]]
-
-3. **El escalar $B$: Compresión Frecuencial (Pulsación constante del marco espacial)**
-   - Subjetado estructuralmente en la parte íntima variable de la función $f(x) = \sin(B \cdot x)$.
-   - Parametriza y diseña matemáticamente el factor constante por el cual la red sufre una contracción pura (o aburguesamiento isomorfo) sobre el mismo plano ecuatorial del eje $x$. Es la razón determinística neta de conteo iterativo de oscilaciones de banda por bloque normal de radianes acotado a $2\pi$.
-   - Modificación sustantiva generalizada del **Período empírico:** $T = \frac{2\pi}{|B|}$
-   - **Demostración Analítica del Período:** Por definición de periodicidad matemática, una función $f(x)$ ostenta un período $T$ supremo si rige universalmente que $f(x + T) = f(x)$ para todo $x \in \mathbb{R}$. Sea $f(x) = \sin(B \cdot x)$, evaluamos el incremento topológico: 
-     $$f(x + T) = \sin(B(x + T)) = \sin(B \cdot x + B \cdot T)$$
-     Consagrando como axioma fundamental que la función seno originaria completa y sella su núcleo orbital isomorfo al sumar $2\pi$ a su argumento (i.e. $\sin(\theta + 2\pi) = \sin(\theta)$), forzamos la igualdad resolviendo el encaje de fase asintótica:
-     $$|B| \cdot T = 2\pi \implies T = \frac{2\pi}{|B|} \quad \blacksquare$$
+3. **Período ($B$):** $f(x) = \sin(Bx)$ comprime u expande la gráfica horizontalmente.
 ![[funcion_seno5x.png]]
-
-4. **El escalar $C$: Desfase primigenio de campo (Traslación en abscisas)**
-   - Parametrizado matricialmente como base mutante topológica $f(x) = \sin(x + C)$.
-   - Operador matemático universal fundamental en señales; rige un corrimiento o ***shift* unidimensional rígido transversal de onda** (sin deformar las métricas internas de su fase o elongación perimetral radial).
-   - Arrastra el punto neutral génesis originario para mutarlo de origen. El punto de corte asintótico se formaliza como el radián de **Desfase empírico:** $\phi = -\frac{C}{B}$. El tren cinemático avanza forzosamente en abscisas en la dirección contraria del hiper-plano negativo izquierdo estandarizado si sucede que $\phi > 0$.
-   - **Demostración Analítica del Desfase:** Partiendo de la forma matricial completa del argumento vibratorio base subyacente del seno, $\sin(Bx + C)$, se despliega una disección algebraica y factorización forzada del tensor escalar frecuencial $B$:
-     $$\sin(B \cdot x + C) = \sin\left[B \cdot \left(x + \frac{C}{B}\right)\right]$$
-     Por axioma básico del cálculo y funciones reales, todo corrimiento morfológico interno sobre la variable independiente regido como $f(x - h)$ impone sistemáticamente una traslación horizontal rígida pura de toda la métrica equivalente al vector posicional $h$. En el interior de nuestro sistema, identificamos indudablemente que $h = -\frac{C}{B}$. Este vector de alteración escalar neta es concebido analíticamente como el desfase matricial $\phi$, evidenciando contundentemente que la génesis y nodo origen del modelo ($x=0$) ha migrado materialmente en el espacio y reposa ahora en la abscisa transversal perimetral $x = -\frac{C}{B}$. $\blacksquare$
+4. **Desfase ($C$):** $f(x) = \sin(x+C)$ traslada la gráfica horizontalmente: hacia la derecha si $\phi > 0$, hacia la izquierda si $\phi < 0$.
 ![[funcion_senox+1.png]]
 
-
-**Ejemplo 8.1 (Análisis paramétrico analítico de una función senoidal):**
-Consideremos el modelado de la ecuación analítica del operador en el espacio:
-$$f(x) = 3\sin(2x - \pi) + 1$$
-Procedemos a realizar el despiece escalar de sus tensores fundamentales basándonos en la estructura modular de la matriz $A \cdot \sin(Bx + C) + D$:
-- **Amplitud Modular Euclidiana ($A$):** La homotecia nos dicta que $A = 3$. Por lo tanto, el rango vibratorio original $[-1, 1]$ se expande isométricamente un factor de tres. Integrando el desplazamiento vertical empírico asintótico ($D = 1$), demostramos formalmente que la cota de frontera del co-dominio natural asume límites absolutos demarcados entre $y \in [-3+1, 3+1] = [-2, 4]$.
-- **Período Frecuencial Condicionado ($T$):** Al inspeccionar rigurosamente el argumento iterativo, advertimos $B = 2$. Luego, el período longitudinal por ciclo experimenta una compresión escalar neta fijada por: $T = \frac{2\pi}{|2|} = \pi$.
-- **Desfase Posicional Abscisal ($\phi$):** Aplicando un axioma directo de traslación afín de frontera local, determinamos el *shift* inicial de abscisas perimetrales resolviendo el nodo analítico: $\phi = -\frac{C}{B} = -\frac{(-\pi)}{2} = \frac{\pi}{2}$. Puesto irrefutablemente que $\phi > 0$, comprobamos con precisión matricial que toda la onda e infraestructura morfológica sufrió forzosamente un traslape lateral de $\frac{\pi}{2}$ radianes apuntando hacia el subespacio o cuadrante positivo referencial (derecha estandarizada).
-- **Desplazamiento Vertical Constante ($D$):** En conformidad con $D = 1$, la recta estructurante base en torno de la cual oscila sinérgicamente todo nuestro campo gravitatorio dinámico asciende linealmente reposando su nuevo origen o fulcro central en el intercepto cartesiano $y = 1$.
+**Ejemplo 8.1:**
+Analicemos $f(x) = 3\sin(2x-\pi)+1$ identificando sus parámetros con la forma general $A\sin(Bx+C)+D$:
+- **Amplitud ($A=3$):** el rango base $[-1,1]$ se expande a $[-3,3]$; sumando el desplazamiento vertical $D=1$, la función oscila en $y \in [-3+1, 3+1] = [-2, 4]$.
+- **Período ($T$):** con $B=2$, se tiene $T = \dfrac{2\pi}{2} = \pi$.
+- **Desfase ($\phi$):** con $C=-\pi$, se tiene $\phi = -\dfrac{-\pi}{2} = \dfrac{\pi}{2}$; como $\phi>0$, la gráfica se traslada $\dfrac{\pi}{2}$ unidades hacia la derecha.
+- **Desplazamiento vertical ($D=1$):** el eje de oscilación es $y=1$.
 ![[funcion_seno_ejemplo1.png]]
 
-**Ejemplo 8.2 (Variante paramétrica con dilatación y reflexión topológica):**
-Apliquemos análogamente los principios analíticos ya fundamentados en el Ejemplo 8.1 al caso de un operador coseno:
-$$g(x) = -2\cos\left(\frac{x}{3} + \frac{\pi}{4}\right) - 1$$
-Abstrayendo los tensores desde la forma general $g(x) = A \cdot \cos(Bx + C) + D$, sintetizamos:
-- **Amplitud y Reflexión ($A = -2$):** La magnitud escalar fija una amplitud de $|A| = 2$. Crucialmente, el signo negativo condiciona al sistema a un **vuelco especular o reflexión topológica** sobre su eje base, invirtiendo íntegramente crestas y valles.
-- **Período Dilatado ($T$):** Siendo $B = 1/3$ (elongación fraccionaria), el ciclo natural experimenta una dilatación temporal sustantiva: $T = \frac{2\pi}{1/3} = 6\pi$.
-- **Desfase Negativo ($\phi$):** Operando la traslación afín observamos que $\phi = -\frac{C}{B} = -\frac{\pi/4}{1/3} = -\frac{3\pi}{4}$. Puesto que $\phi < 0$, atestiguamos que la cúspide generatriz característica del coseno ha sido transpuesta $-\frac{3\pi}{4}$ radianes hacia el espectro negativo izquierdo.
-- **Desplazamiento Vertical ($D = -1$):** El fulcro geométrico de oscilación de la matriz decae linealmente y se estabiliza en la métrica $y = -1$.
+**Ejemplo 8.2:**
+Analicemos $g(x) = -2\cos\!\left(\dfrac{x}{3}+\dfrac{\pi}{4}\right)-1$ con la forma general $A\cos(Bx+C)+D$:
+- **Amplitud y reflexión ($A=-2$):** la amplitud es $|A|=2$; el signo negativo produce además una reflexión respecto al eje de oscilación, invirtiendo máximos y mínimos.
+- **Período ($T$):** con $B=1/3$, se tiene $T = \dfrac{2\pi}{1/3} = 6\pi$.
+- **Desfase ($\phi$):** con $C=\pi/4$, se tiene $\phi = -\dfrac{\pi/4}{1/3} = -\dfrac{3\pi}{4}$; como $\phi<0$, la gráfica se traslada $\dfrac{3\pi}{4}$ unidades hacia la izquierda.
+- **Desplazamiento vertical ($D=-1$):** el eje de oscilación es $y=-1$.
 ![[funcion_coseno_ejemplo1.png]]
 
-*Nota*: Algunos términos como homeostasia, relfexion se introduciran formalmente en la siguiente clase, [[Clase 7 - Cónicas]]
+> **Nota:** Las transformaciones de traslación y reflexión se retoman con mayor generalidad en [[Clase 8 - Cónicas]].
 
 ---
 ## 9. Relación con círculos y ecuaciones paramétricas
 
-El vínculo intrínseco entre la geometría analítica y la trigonometría trasciende sobradamente la resolución estática de triángulos. Mediante la incursión de variables independientes de transición denominadas **parámetros**, adquirimos el poder analítico de modelar y vectorizar temporalmente la trayectoria de curvas planas cerradas con estricto rigor algebraico cinemático.
-### 9.1 Parametrización estocástica del círculo unitario
+Hasta ahora se ha descrito el círculo unitario con la ecuación cartesiana $x^2+y^2=1$, donde $y$ queda determinado por $x$ (salvo el signo). Existe otra forma de describir la misma curva: en vez de relacionar $x$ con $y$ directamente, se expresan ambas coordenadas en función de una variable auxiliar llamada **parámetro**, que en este caso representa el ángulo recorrido. Esto permite describir el movimiento de un punto sobre el círculo a medida que el parámetro avanza.
 
-**Proposición 9.1 (Mapeo paramétrico base):**
-El lugar geométrico estático que dicta al círculo unitario acotado por la curva $x^2 + y^2 = 1$, admite una formulación paramétrica dinámica homóloga dependiente de un escalar continuo temporal o angular $t$:
-$$\begin{cases}
-x(t) = \cos(t) \\
-y(t) = \sin(t)
-\end{cases}, \quad t \in [0, 2\pi)$$
+### 9.1 Parametrización del círculo unitario
 
-**Verificación Axiomática de Coherencia:** 
-Sustituyendo de lleno el sistema paramétrico sobre nuestro cascarón cartesiano rector, recuperamos invariablemente la inquebrantable identidad pitagórica fundamental:
+**Proposición 9.1:**
+El círculo unitario $x^2+y^2=1$ admite la parametrización
+$$\begin{cases} x(t) = \cos(t) \\ y(t) = \sin(t) \end{cases}, \quad t \in [0, 2\pi)$$
+
+**Demostración:** Sustituyendo directamente en la ecuación del círculo:
 $$x(t)^2 + y(t)^2 = \cos^2(t) + \sin^2(t) = 1 \quad \blacksquare$$
 
-*Conclusión analítica:* Mientras el parámetro transitorio $t$ barre escalarmente el dominio diferencial continuo $[0, 2\pi)$, el vector posicional o cursor $\mathbf{r}(t) = (\cos(t), \sin(t))$ describe mecánicamente una vuelta parabólica completa o ciclo orbital en sentido rotacional antihorario puro.
-### 9.2 Parametrización escalar para radios genéricos $R$
+A medida que $t$ recorre $[0, 2\pi)$, el punto $(x(t), y(t))$ recorre exactamente una vuelta completa del círculo en sentido antihorario, partiendo de $(1,0)$ cuando $t=0$.
 
-**Proposición 9.2 (Expansión matricial por homotecia radial):**
-Si re-escalamos o modulamos isométricamente el espacio completo por un tensor radiante $R > 0$, el círculo anclado en el polo con ecuación cartesiana acoplada $x^2 + y^2 = R^2$ se define paramétricamente mediante el producto abeliano:
-$$\begin{cases}
-x(t) = R\cos(t) \\
-y(t) = R\sin(t)
-\end{cases}, \quad t \in [0, 2\pi)$$
+### 9.2 Parametrización para un radio genérico $R$
 
-**Verificación Empírico-Matemática:**
-Introduciendo las variantes transitorias en la norma euclidiana general:
-$$x(t)^2 + y(t)^2 = (R\cos(t))^2 + (R\sin(t))^2 = R^2\cos^2(t) + R^2\sin^2(t)$$
-Extrayendo o factorizando el escalar común expansivo $R^2$:
-$$R^2 \left[ \cos^2(t) + \sin^2(t) \right] = R^2(1) = R^2 \quad \blacksquare$$
+**Proposición 9.2:**
+El círculo de radio $R>0$ centrado en el origen, $x^2+y^2=R^2$, admite la parametrización
+$$\begin{cases} x(t) = R\cos(t) \\ y(t) = R\sin(t) \end{cases}, \quad t \in [0, 2\pi)$$
 
-**Ejemplo 9.1 (Radio-Vector escalado modularmente):**
-Considérese una órbita o toroide plano de radio $R = 3$. Su vectorización paramétrica queda expuesta como:
-$$x(t) = 3\cos(t), \quad y(t) = 3\sin(t)$$
+**Demostración:**
+$$x(t)^2+y(t)^2 = R^2\cos^2(t) + R^2\sin^2(t) = R^2\left[\cos^2(t)+\sin^2(t)\right] = R^2 \quad \blacksquare$$
 
-Evaluación paramétrica estricta en los nodos cuadráticos críticos del plano:
-- **Estado de Origen ($t = 0$):** Inicia en la cúspide horizontal $\to (3, 0)$
-- **Primera Cuadratura ($t = \pi/2$):** Apogeo polar norte $\to (0, 3)$
-- **Afelio Diametral ($t = \pi$):** Traslado negativo total $\to (-3, 0)$
-- **Segunda Cuadratura ($t = 3\pi/2$):** Nadir polar sur $\to (0, -3)$
+**Ejemplo 9.1:**
+Para un círculo de radio $R=3$: $x(t) = 3\cos(t)$, $y(t) = 3\sin(t)$. Algunos valores de referencia:
+- $t=0$: $(3,0)$
+- $t=\pi/2$: $(0,3)$
+- $t=\pi$: $(-3,0)$
+- $t=3\pi/2$: $(0,-3)$
 
-### 9.3 Traslación paramétrica de círculos en cuadrantes
+### 9.3 Traslación del centro
 
-**Proposición 9.3 (Circunferencias no concéntricas o trasladadas):**
-Si el círculo de radio $R$ tiene su centro desplazado al punto coordenado $(h, k)$, su parametrización adquiere el ajuste del desfase sumando estas coordenadas a su vector base:
+**Proposición 9.3:**
+Si el círculo de radio $R$ tiene centro en $(h,k)$, su parametrización es
 $$x(t) = h + R\cos(t), \quad y(t) = k + R\sin(t), \quad t \in [0, 2\pi)$$
 
 ---
@@ -1008,76 +981,59 @@ Resuelva formalmente $\cos(x) = -\frac{\sqrt{2}}{2}$.
 **Conjunto Solución:**
 $$\mathbb{S} = \left\{\frac{3\pi}{4} +2k\pi, \frac{5\pi}{4}+2k\pi\right\} \quad \forall k \in \mathbb{Z}$$
 
-### 10.2 Ecuaciones trigonométricas por subrogación cuadrática
+### 10.2 Ecuaciones cuadráticas en una función trigonométrica
 
-Cuando la ecuación presenta funciones elevadas a una potencia (ej. cuadráticas), se recurre al uso analítico del **Sustitución Algebraica** transitoria para reducir el orden de la resolución a un polinomio clásico.
+Cuando la ecuación tiene una función trigonométrica elevada al cuadrado, conviene aplicar una sustitución algebraica simple para reducirla a una ecuación cuadrática ordinaria.
 
-**Ejemplo 10.3 (Polinomio Trigonométrico Simple de Orden Dos):**
-Encontrar las raíces lícitas o intersecciones para $2\sin^2(x) - \sin(x) - 1 = 0$, para el intervalo $x \in [0, 2\pi)$.
+**Ejemplo 10.3:**
+Resuelva $2\sin^2(x) - \sin(x) - 1 = 0$ para $x \in [0, 2\pi)$.
 
 **Solución paso a paso:**
-- **Sustitución Transitoria Algebraica:** Definamos la equivalencia transitoria $u = \sin(x)$. Al realizarlo, simplificamos la expresión compleja hacia una ecuación cuadrática clásica:  
-$$2\sin^2(x) - \sin(x) - 1 = 0$$
+- **Sustitución:** Sea $u = \sin(x)$:
 $$2u^2 - u - 1 = 0$$
-- **Factorización de la Cuadrática:** Factorizando polinomialmente obtenemos su expresión simplificada observable $\to (2u + 1)(u - 1) = 0$.
-  Esto bifurca nuestra búsqueda a dos posibles resultados analíticos:
-  $$u_1 = 1 \quad \text{o} \quad u_2 = -\frac{1}{2}$$
-- **Retorno de factor y resolución trigonométrica por casos:**
-  * **Caso Alfa ($u_1 = 1$):** Evaluamos y retornamos a la base trigonométrica original: $\sin(x) = 1$. Dicha cota ocurre de manera única en el diagrama superior, correspondiendo puntualmente al pináculo o cenit en $x = \frac{\pi}{2}$.
-  * **Caso Beta ($u_2 = -\frac{1}{2}$):** Evaluamos el segundo caso $\sin(x) = -\frac{1}{2}$. Vimos que su ángulo referencial para el positivo es $\frac{\pi}{6}$, pero para acatar el signo negativo debemos empujar vectorialmente nuestra ubicación hacía dominios Sur u opuestos (Cuadrantes III y IV), resultando consecuentemente en $x = \pi + \frac{\pi}{6} = \frac{7\pi}{6}$ y para el cuarto anclamos en $x = 2\pi - \frac{\pi}{6} = \frac{11\pi}{6}$.
+- **Factorización:** $(2u + 1)(u - 1) = 0$, de donde $u_1 = 1$ o $u_2 = -\dfrac{1}{2}$.
+- **Caso $u_1 = 1$:** $\sin(x) = 1$ tiene una única solución en $[0,2\pi)$: $x = \dfrac{\pi}{2}$.
+- **Caso $u_2 = -\dfrac{1}{2}$:** el ángulo de referencia de $\sin(x)=\frac{1}{2}$ es $\dfrac{\pi}{6}$; como el seno es negativo en los cuadrantes III y IV:
+  $$x = \pi + \frac{\pi}{6} = \frac{7\pi}{6}, \qquad x = 2\pi - \frac{\pi}{6} = \frac{11\pi}{6}$$
 
-**Conjunto Solución Resultante Final:**
+**Conjunto solución:**
 $$\mathbb{S} = \left\{\frac{\pi}{2}, \frac{7\pi}{6}, \frac{11\pi}{6}\right\}$$
 
-### 10.3 Ecuaciones con compresión de múltiplos angulares
+### 10.3 Ecuaciones con múltiplos angulares
 
-**Ejemplo 10.4 (Ajuste algorítmico y periodo iterativo):**
-Resolver sistemáticamente $\sin(2x) = \frac{\sqrt{3}}{2}$ evaluado sobre la franja $x \in [0, 2\pi)$.
+**Ejemplo 10.4:**
+Resuelva $\sin(2x) = \dfrac{\sqrt{3}}{2}$ para $x \in [0, 2\pi)$.
 
 **Solución paso a paso:**
-- Definimos transitoriamente el argumento conjunto como variable abstracta $u = 2x$. Por lo tanto, buscaremos los puntos donde $\sin(u) = \frac{\sqrt{3}}{2}$.
-- Un detalle capital: al pedirnos hallar originalmente el segmento dictaminado por $x \in [0, 2\pi)$, por naturaleza el argumento escalar "el doble de rápido" ($u=2x$) presentará una oscilación mayor a su doble: $u \in [0, 4\pi)$. Esto significa que daremos **dos vueltas completas** sobre el círculo unitario buscando soluciones válidas continuas.
-- **Primera Rotación** (sobre el intervalo $[0, 2\pi)$): Las intersecciones o raíces asimilando la proporción conocida se gestan en:
-  $$u_1 = \frac{\pi}{3} \quad \text{(C. I)} \quad \text{y} \quad u_2 = \frac{2\pi}{3} \quad \text{(C. II)}$$
-- **Segunda Rotación Continuante** (sobre el intervalo acoplado extra $[2\pi, 4\pi)$): Se le debe acumular al vector el valor del periodo general referencial $2\pi$ a las respuestas basales originarias:
-  $$u_3 = \frac{\pi}{3} + 2\pi = \frac{7\pi}{3} \quad \text{y} \quad u_4 = \frac{2\pi}{3} + 2\pi = \frac{8\pi}{3}$$
-- **Despeje y Restablecimiento ($x$ Inicial):** 
-  En rigor normativo, al final del ejercicio nos abocamos directamente a deshacer la equivalencia original de $2x = u$, dividiendo por consiguiente la mitad a todos los resultados recabados y lograr posibilitar la respuesta base resolutoria para la función original de la ecuación:
-  $$x = \frac{\frac{\pi}{3}}{2}, \frac{\frac{2\pi}{3}}{2}, \frac{\frac{7\pi}{3}}{2}, \frac{\frac{8\pi}{3}}{2}$$
+- Sea $u = 2x$. Se buscan primero las soluciones de $\sin(u) = \dfrac{\sqrt{3}}{2}$.
+- Como $x$ recorre $[0, 2\pi)$, el argumento $u = 2x$ recorre $[0, 4\pi)$: es decir, deben considerarse **dos vueltas completas** del círculo, no solo una.
+- **Primera vuelta** ($u \in [0, 2\pi)$): el ángulo de referencia es $\dfrac{\pi}{3}$, y como el seno es positivo en los cuadrantes I y II:
+  $$u_1 = \frac{\pi}{3}, \qquad u_2 = \pi - \frac{\pi}{3} = \frac{2\pi}{3}$$
+- **Segunda vuelta** ($u \in [2\pi, 4\pi)$): se suma un período completo a las soluciones anteriores:
+  $$u_3 = \frac{\pi}{3} + 2\pi = \frac{7\pi}{3}, \qquad u_4 = \frac{2\pi}{3} + 2\pi = \frac{8\pi}{3}$$
+- **Regreso a $x$:** se divide cada solución entre $2$ para deshacer la sustitución $u = 2x$:
+  $$x = \frac{\pi}{6}, \quad \frac{\pi}{3}, \quad \frac{7\pi}{6}, \quad \frac{4\pi}{3}$$
 
-**Conjunto Solución Comprobada:**
+**Conjunto solución:**
 $$\mathbb{S} = \left\{\frac{\pi}{6}, \frac{\pi}{3}, \frac{7\pi}{6}, \frac{4\pi}{3}\right\}$$
 
-### 10.4 Uso resolutorio de Identidades Fundamentales cruzadas
+### 10.4 Ecuaciones que combinan distintos múltiplos angulares
 
-Es común que las ondas o ecuaciones mezclen componentes u oscilaciones distintas o funciones desbalanceadas (como tener la variable $x$ operando a la par contra un doblez $2x$). Tal factor es forzosamente incompatible de manera directa algebráica, obligándonos de forma metodológica vital a apelar a las **Identidades Trigonométricas Fundamentales** (Tema extenso visto previamente de rigor en la Sección 6) buscando poder homogeneizar paramétricamente sus factores hacia una variable unísona uniforme.
+Cuando una ecuación mezcla la variable $x$ con un múltiplo como $2x$ (por ejemplo, $\cos(2x)$ junto con $\cos(x)$), no es posible resolverla directamente porque los argumentos son distintos. La estrategia es usar las identidades de la Sección 6 para reescribir todo en función de un único ángulo.
 
-**Ejemplo 10.5 (Homogeneización analítica por medio de Ángulos Dobles):**
-Resuelva formalmente la ecuación $\cos(2x) = \cos(x)$ para los casos posibles lícitos de cierre en $x \in [0, 2\pi)$.
+**Ejemplo 10.5:**
+Resuelva $\cos(2x) = \cos(x)$ para $x \in [0, 2\pi)$.
 
 **Solución paso a paso:**
-- Es impracticable e imposible simplificar la igualdad mientras las frecuencias del coseno sean disímiles ($2x$ contra $x$). Convertiremos y reemplazaremos analíticamente acudiendo al axioma establecido para el propio **Coseno del Ángulo Doble**, el cual decreta su equivalencia universal como: $\cos(2x) = 2\cos^2(x) - 1$.
-  Sustituyendo el vector de onda en nuestra operación logramos achatarlas y nivelar la ecuación completa a una sola escala natural cruzada de $x$:
+- Usando la identidad del ángulo doble $\cos(2x) = 2\cos^2(x) - 1$ para expresar toda la ecuación en función de $\cos(x)$:
   $$2\cos^2(x) - 1 = \cos(x)$$
-- Reescribimos agrupándolo sistemáticamente en molde de ecuación cuadrática general para análisis igualada a cero:
   $$2\cos^2(x) - \cos(x) - 1 = 0$$
-- Factorizamos de idéntico modo estructurado resolutorio al previamente operado del Ejemplo 10.3 (recurriendo brevemente a un factor algebraico de tipo $u = \cos(x)$):
-  $$(2u + 1)(u - 1) = 0 \implies (2\cos(x) + 1)(\cos(x) - 1) = 0$$
-- Esto nos faculta depurar en dos escenarios factibles e independientes referenciales originarios de raíces:
-  $$ \cos(x) - 1 = 0 \to \cos(x) = 1$$
-$$ 2\cos(x) + 1 = 0 \to \cos(x) = -\frac{1}{2}$$
-$$ \cos(x) = 1 \quad \lor \quad \cos(x) = -\frac{1}{2}$$
+- Con la sustitución $u = \cos(x)$: $(2u+1)(u-1) = 0$, de donde $\cos(x) = 1$ o $\cos(x) = -\dfrac{1}{2}$.
+- **Caso $\cos(x) = 1$:** única solución en $[0,2\pi)$: $x = 0$.
+- **Caso $\cos(x) = -\dfrac{1}{2}$:** el ángulo de referencia es $\dfrac{\pi}{3}$; como el coseno es negativo en los cuadrantes II y III:
+  $$x = \pi - \frac{\pi}{3} = \frac{2\pi}{3}, \qquad x = \pi + \frac{\pi}{3} = \frac{4\pi}{3}$$
 
-**Escenario Alfa:** Evaluando $\cos(x) = 1$
-Ocurre y verifica que sus raíces intersectan únicamente el dictamen asintótico y natural del origen temporal paramétrico:
-$$x = 0$$
-
-**Escenario Beta:** Evaluando la expresión $\cos(x) = -\frac{1}{2}$
-Basándonos inicialmente determinando su ángulo paralelo base simple referencial (donde valdría un medio netamente puro $\frac{1}{2}$) como $\frac{\pi}{3}$, al evaluar que el requerimiento es cruzado y negativo ($-$) procedemos a resituarlo transversal estocástico proyectándolo de manera natural hacia dominios oeste:
-- Espectro Cuadrante II: $x = \pi - \frac{\pi}{3} = \frac{2\pi}{3}$
-- Espectro Cuadrante III: $x = \pi + \frac{\pi}{3} = \frac{4\pi}{3}$
-
-**Conjunto Final y Global Restringido:**
+**Conjunto solución:**
 $$\mathbb{S} = \left\{0, \frac{2\pi}{3}, \frac{4\pi}{3}\right\}$$
 
 ---
@@ -1158,65 +1114,51 @@ $$c^2 = a^2 + b^2 - 2ab\cos(\gamma)$$
 
 **Demostración geométrica paso a paso:**
 ![[teorema_del_coseno.png]]
-1. Consideremos un triángulo genérico $ABC$ con lados $a, b, c$ y un ángulo $\alpha$ alojado en el vértice $A$.
-2. Trazamos una línea perpendicular (la altura $h$) desde el vértice superior $B$ hasta que cruza ortogonalmente la base inferior $b$ (es decir, el lado $AC$) en un nuevo punto que llamaremos $H$. Esto parte magistralmente la figura original en dos triángulos rectángulos: $\triangle ABH$ (a la izquierda) y $\triangle BCH$ (a la derecha).
-3. Evaluando la trigonometría fundamental del triángulo izquierdo $\triangle ABH$, expresamos su base $\overline{AH}$:
-   $$\cos(\alpha) = \frac{\overline{AH}}{c} \implies \overline{AH} = c\cdot\cos(\alpha)$$
-4. Aplicamos el Teorema de Pitágoras directamente sobre el triángulo $\triangle ABH$:
-   $$c^2 = (\overline{AH})^2 + h^2$$
-   Sustituimos el valor recién hallado de $\overline{AH}$ y desarrollamos:
-   $$c^2 = (c\cos\alpha)^2 + h^2$$
-   $$c^2 = c^2\cos^2\alpha + h^2 \quad \text{--- (Ecuación 1)}$$
-5. Pasamos a observar el triángulo de la derecha $\triangle BCH$. Sabemos que toda la base total del polígono grande mide $b$. Por ende, la base de esta segunda mitad derecha $\overline{HC}$ será simplemente el total restándole el pedacito de la izquierda:
+1. Consideremos un triángulo $ABC$ con lados $a, b, c$ y el ángulo $\alpha$ en el vértice $A$.
+2. Trazamos la altura $h$ desde el vértice $B$ hasta el lado $AC$ (el lado $b$), y llamamos $H$ al punto donde la altura corta a $AC$. Esto divide el triángulo original en dos triángulos rectángulos: $\triangle ABH$ y $\triangle BCH$.
+3. En el triángulo $\triangle ABH$, la definición de coseno da:
+   $$\cos(\alpha) = \frac{\overline{AH}}{c} \implies \overline{AH} = c\cos(\alpha)$$
+4. Aplicando el Teorema de Pitágoras en $\triangle ABH$:
+   $$c^2 = \overline{AH}^2 + h^2 = c^2\cos^2(\alpha) + h^2 \quad \text{(1)}$$
+5. La base $\overline{HC}$ es lo que resta del lado $b$ tras quitar $\overline{AH}$:
    $$\overline{HC} = b - c\cos(\alpha)$$
-6. Aplicamos una segunda iteración del Teorema de Pitágoras, pero ahora para este triángulo $\triangle BCH$ cuya hipotenusa es nuestro objetivo $a$:
-   $$a^2 = (\overline{HC})^2 + h^2$$
-   Reemplazamos su base:
-   $$a^2 = (b - c\cos\alpha)^2 + h^2$$
-7. Desarrollamos algebraicamente este binomio al cuadrado:
-   $$a^2 = b^2 - 2bc\cos\alpha + c^2\cos^2\alpha + h^2 \quad \text{--- (Ecuación 2)}$$
-8. Ahora que tenemos ambos teoremas planteados, procedemos a **restar** la Ecuación 2 de la Ecuación 1 ($Ec_1 - Ec_2$) para eliminar los términos molestos comunes (tachando mentalmente $+c^2\cos^2\alpha$ y $+h^2$ que se repiten en ambas ecuaciones):
-   $$c^2 - a^2 = -b^2 + 2bc\cos\alpha$$
-9. Reorganizamos enviando $-a^2$ hacia la derecha y trayendo el resto a la izquierda, consolidando el despeje canónico:
-   $$c^2 + b^2 - 2bc\cos\alpha = a^2$$
-   $$\boxed{a^2 = b^2 + c^2 - 2bc\cos(\alpha)}$$
-   Logrando demostrar con éxito y rigor la Ley de Cosenos de forma estrictamente geométrica. $\blacksquare$
-**Ejemplo 11.3 (Aplicación directa para encontrar lados):**
-En un triángulo oblicuángulo, conocemos los lados $a = 5$ y $b = 7$, sabiendo además que su ángulo comprendido opuesto a el vértice sobrante está dictaminado como $\gamma = 60°$. Calcule la magnitud del tercer lado $c$.
+6. Aplicando el Teorema de Pitágoras en $\triangle BCH$, cuya hipotenusa es $a$:
+   $$a^2 = \overline{HC}^2 + h^2 = (b - c\cos(\alpha))^2 + h^2$$
+7. Desarrollando el binomio:
+   $$a^2 = b^2 - 2bc\cos(\alpha) + c^2\cos^2(\alpha) + h^2 \quad \text{(2)}$$
+8. Restando la ecuación (1) de la ecuación (2), los términos $c^2\cos^2(\alpha)$ y $h^2$, comunes a ambas, se cancelan:
+   $$a^2 - c^2 = b^2 - 2bc\cos(\alpha)$$
+9. Despejando:
+   $$\boxed{a^2 = b^2 + c^2 - 2bc\cos(\alpha)} \quad \blacksquare$$
 
-**Solución paso a paso:**
-- Exponemos nuestra matriz resolutoria estructurada con respecto al factor $c$:
-  $$c^2 = a^2 + b^2 - 2ab\cos(\gamma)$$
-- Sustituimos utilizando nuestras magnitudes numéricas aportadas en el contexto:
-  $$c^2 = (5)^2 + (7)^2 - 2(5)(7)\cos(60°)$$
-- Intervenimos usando de nuestra tabla de saberes $\cos(60°) = \frac{1}{2}$ y operamos formalmente la aritmética:
-  $$c^2 = 25 + 49 - 70 \cdot \left(\frac{1}{2}\right) = 74 - 35 = 39$$
-- Rematamos nuestro ejercicio aplicando el exponente radical limitando a magnitud escalar neta:
-  $$c = \sqrt{39}$$
+**Ejemplo 11.3:**
+En un triángulo, los lados $a = 5$ y $b = 7$ forman un ángulo $\gamma = 60°$. Calcule el lado $c$.
 
-**Ejemplo 11.4 (Aplicación deductiva inmersa para hallar ángulos por despejes):**
-En un polígono rústico modelado disponemos sus longitudes de perimetría base total $a = 6$, $b = 8$ y $c = 10$. Buscaremos desvelar el ángulo subyacente paramétrico real contenido dentro de $\gamma$.
+**Solución:**
+Aplicando la ley de cosenos:
+$$c^2 = a^2 + b^2 - 2ab\cos(\gamma) = 5^2 + 7^2 - 2(5)(7)\cos(60°)$$
+Usando $\cos(60°) = \dfrac{1}{2}$:
+$$c^2 = 25 + 49 - 70 \cdot \frac{1}{2} = 74 - 35 = 39$$
+$$c = \sqrt{39}$$
 
-**Solución paso a paso:**
-- Imponemos estructuradamente nuestra fórmula madre universal atada referencialmente al coseno de $\gamma$:
-  $$c^2 = a^2 + b^2 - 2ab\cos(\gamma)$$
-- Aislamos explícita y forzosamente este término mediante simple reubicación algebraica de variables:
-  $$\cos(\gamma) = \frac{a^2 + b^2 - c^2}{2ab}$$
-- Imbuimos en la fracción nuestro contexto numérico provisto a priori:
-  $$\cos(\gamma) = \frac{6^2 + 8^2 - 10^2}{2(6)(8)}$$
-- Resolvemos sistemáticamente el cálculo expuesto:
-  $$\cos(\gamma) = \frac{36 + 64 - 100}{96} = \frac{100 - 100}{96} = \frac{0}{96} = 0$$
-- Dictaminamos bajo evaluación: el encuadre trigonométrico ha convergido formalmente en que si $\cos(\gamma) = 0$; nuestra solución empírica innegable en un perímetro cerrado se traduce puntualmente recayendo de manera directa o natural sobre $\gamma = \frac{\pi}{2}$ radianes (lo expuesto comúnmente como $90°$).
-  *(Tal conclusión es comprobable lógicamente y de forma inmediata sin aritmética, ya que advertimos a priori que nuestro triángulo en proporciones $6, 8, 10$ fungía puramente como un simple escalamiento del famosísimo rectángulo $3, 4, 5$).*
+**Ejemplo 11.4:**
+En un triángulo de lados $a = 6$, $b = 8$, $c = 10$, calcule el ángulo $\gamma$.
+
+**Solución:**
+Despejando $\cos(\gamma)$ de la ley de cosenos:
+$$\cos(\gamma) = \frac{a^2 + b^2 - c^2}{2ab} = \frac{6^2 + 8^2 - 10^2}{2(6)(8)} = \frac{36 + 64 - 100}{96} = \frac{0}{96} = 0$$
+Como $\cos(\gamma) = 0$, se tiene $\gamma = \dfrac{\pi}{2}$ ($90°$).
+
+> **Observación:** Esto era esperable sin necesidad de calcular: el triángulo $6,8,10$ es el triángulo $3,4,5$ escalado por un factor $2$, y ya se sabe que este último es rectángulo.
 
 ### 11.4 ¿Cuándo usar cada teorema?
 
-| Datos conocidos del bloque triangular | Teorema o Ley obligada a emplear |
+| Datos conocidos del triángulo | Teorema a utilizar |
 |:---|:---|
 | 2 ángulos y 1 lado (AAS o ASA) | Ley de senos |
-| 2 lados y ángulo opuesto no-comprendido (SSA) | Ley de senos (verificando minuciosamente el caso ambiguo) |
-| 2 lados y el propio ángulo abrazado e inter-comprendido entre ellos (SAS) | Ley de cosenos |
-| Lados totales cerrados puros (SSS) | Ley de cosenos |
+| 2 lados y el ángulo opuesto a uno de ellos (SSA) | Ley de senos (verificando el caso ambiguo) |
+| 2 lados y el ángulo comprendido entre ellos (SAS) | Ley de cosenos |
+| Los tres lados (SSS) | Ley de cosenos |
 
 ---
 ## 12. Ejercicios propuestos
