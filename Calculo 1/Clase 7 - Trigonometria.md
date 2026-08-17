@@ -10,7 +10,7 @@ Un **triángulo rectángulo** es un triángulo que tiene un ángulo de $\pi/2$ o
 **Elementos principales:**
 - **Hipotenusa:** El lado opuesto al ángulo recto (el lado más largo)
 - **Catetos:** Los dos lados que forman el ángulo recto
-![[triangulo_rectangulo.png|638]]
+![Triángulo rectángulo con catetos e hipotenusa](../Recursos/triangulo_rectangulo.png)
 **Teorema 1.1 (Teorema de Pitágoras):**
 En todo triángulo rectángulo se cumple:
 $$c^2 = a^2 + b^2$$
@@ -32,14 +32,14 @@ Existen tres sistemas principales para medir ángulos:
 
 **Definición 2.2 (Grado sexagesimal):**
 Pensemos en una circunferencia de radio R; vamos a definir de forma arbitraria que dar una vuelta completa equivale a 360°, por lo tanto, un **grado** ($°$) es $\frac{1}{360}$ de una rotación completa.
-![[circulo_sexagesimales.jpg]]
+![Circunferencia dividida en 360 grados sexagesimales](../Recursos/circulo_sexagesimales.jpg)
 **Subdivisiones:**
 - 1 grado = 60 minutos ($60'$)
 - 1 minuto = 60 segundos ($60''$)
 
 **Ejemplos:**
 - Ángulo recto: $90°00'00''$
-![[angulo_recto.png]]
+![Ángulo recto de 90°](../Recursos/angulo_recto.png)
 - Ángulo agudo: $37°15'48''$
 - Ángulo con minutos y segundos: $18°56'36''$
 - Ángulo obtuso: $123°42'00''$
@@ -62,7 +62,7 @@ $$18°56'36'' = 18 + \frac{56}{60} + \frac{36}{3600} = 18 + 0.9\overline{3} + 0.
 
 **Definición 2.3 (Radián):**
 Un **radián** (rad) es el ángulo que subtiende un arco de longitud igual al radio en una circunferencia.
-![[radian.png]]
+![Definición geométrica del radián como arco igual al radio](../Recursos/radian.png)
 Como se observa en la figura, si construimos un círculo de radio $R$ y trazamos sobre su perímetro un arco cuya longitud sea exactamente $R$, el ángulo central que subtiende dicho arco corresponde, por definición, a $1 \text{ rad}$.
 Ahora nos preguntamos cuántos radianes caben en una circunferencia completa. Por la propia definicion del numero $\pi$ sabemos que la longitud de una circunferencia es $2\pi R$, por lo tanto, caben $2\pi$ radianes en una circunferencia completa.
 
@@ -124,13 +124,13 @@ $$90° = 90 \times \frac{10}{9} = 100^g$$
 ### 2.5 Ángulos notables y Tabla de conversión:
 
 Existe un grupo de ángulos llamados ángulos notables en los cuales se basan algunos de los cálculos de trigonometría, estos ángulos en sexagesimal son 30°, 45°, 60° y 90°. Estos fueron escogidos por argumentos geométricos, un cuadrado es una estructura considerada "perfecta", lados iguales y ángulos iguales, podemos considerar esta estructura un invariante pues puedo convertir cualquier cuadrado en otro simplemente aumentando o disminuyendo sus lados (una transformación suave, este término cobrará una gran relevancia más adelante) y sus ángulos siempre serán de 90°
-![[cuadrado_angulos.png]]
+![Cuadrado con sus cuatro ángulos rectos](../Recursos/cuadrado_angulos.png)
 Si dibujamos una diagonal tendremos un triángulo isósceles, por lo tanto la diagonal bisecta los ángulos lo que nos dará un triángulo de 90°,45°,45°, como este proceso de dibujar un cuadrado y su diagonal es fácilmente replicable, tomaremos estos 2 ángulos como base para cálculos posteriores.
-![[cuadrado_angulo45.png]]
+![Cuadrado dividido por su diagonal en dos triángulos de 45°-45°-90°](../Recursos/cuadrado_angulo45.png)
 Ahora si pensamos en un triángulo equilátero, todos sus ángulos serán 60° y si dibujamos una altura tendremos un triángulo de 90°,60°,30°; de manera análoga, tenemos un proceso muy fácil de replicar que toma como base un polígono regular, esto nos da los otros 2 ángulos: 30° y 60°.
 A estos 4 ángulos le sumaremos el caso base, o sea el ángulo 0°; con este conjunto nos basaremos para generar el resto de nuestros cálculos al ser ángulos de fácil construcción.
 Estos ángulos en radianes tendrán los siguientes valores
-![[triangulo_isoseles_angulos.png]]
+![Triángulo equilátero dividido por su altura en dos triángulos de 30°-60°-90°](../Recursos/triangulo_isoseles_angulos.png)
 
 | Grados |    Radianes     | Fracción de $\pi$ | Fracción de $\tau$ |
 | :----: | :-------------: | :---------------: | :----------------: |
@@ -142,7 +142,7 @@ Estos ángulos en radianes tendrán los siguientes valores
 
 Ahora, si llevamos estas ideas al plano $\mathbb{R}^2$, vemos cómo estos ángulos están contenidos en el primer cuadrante. Si quisiéramos extender esto a los demás cuadrantes, podemos hacer reflexiones de estos ángulos: para el segundo cuadrante se hace una reflexión respecto al eje $Y$; para el tercer cuadrante, respecto al origen; y para el cuarto cuadrante, respecto al eje $X$.
 Con esto podemos crear una tabla ampliada con los ángulos notables en todos los cuadrantes:
-![[angulos_notable.png]]
+![Ángulos notables representados en los cuatro cuadrantes](../Recursos/angulos_notable.png)
 
 | Grados |     Radianes      | Fracción de $\pi$ | Fracción de $\tau$  |
 | :----: | :---------------: | :---------------: | :-----------------: |
@@ -171,7 +171,7 @@ Las razones trigonométricas son nuestro principal objeto de estudio en esta cla
 ### 3.1 Definiciones fundamentales
 
 Dado un triángulo rectángulo con un ángulo agudo $\theta$:
-![[triangulo_rectangulo_angulo.png]]
+![Triángulo rectángulo con ángulo θ, cateto opuesto, adyacente e hipotenusa](../Recursos/triangulo_rectangulo_angulo.png)
 Vamos a definir las razones trigonométricas como:
 
 **Definición 3.1 (Seno):**
@@ -184,10 +184,10 @@ $$\tan(\theta) = \frac{\text{cateto opuesto}}{\text{cateto adyacente}} = \frac{\
 - **S**eno = **O**puesto/**H**ipotenusa
 - **C**oseno = **A**dyacente/**H**ipotenusa
 - **T**angente = **O**puesto/**A**dyacente
-![[SOHCAHTOA.png|552]]
+![Mnemotecnia SOH-CAH-TOA para las razones trigonométricas](../Recursos/SOHCAHTOA.png)
 **Ejemplo 3.1:**
 En un triángulo rectángulo con hipotenusa $5$, cateto opuesto $3$ y cateto adyacente $4$:
-![[triangulo_3_4_5.png]]
+![Triángulo rectángulo 3-4-5](../Recursos/triangulo_3_4_5.png)
 $$\sin(\theta) = \frac{3}{5} = 0.6$$
 $$\cos(\theta) = \frac{4}{5} = 0.8$$
 $$\tan(\theta) = \frac{3}{4} = 0.75$$
@@ -217,7 +217,7 @@ $$\cot(\theta) = \frac{1}{\tan(\theta)} = \frac{\text{cateto adyacente}}{\text{c
 
 **Triángulo de 45°-45°-90°:**
 Pensemos en un cuadrado de lados iguales a 1 unidad: si trazamos una diagonal obtendremos un triángulo rectángulo con ambos catetos iguales a 1; su hipotenusa, por el teorema de Pitágoras, medirá $\sqrt{1^2+1^2}=\sqrt{2}$, y sus ángulos serán 90°–45°–45°. Con esto podemos obtener los valores de las funciones trigonométricas:
-![[triangulo_especial_1.png]]
+![Triángulo rectángulo isósceles de 45°](../Recursos/triangulo_especial_1.png)
 $$\sin(45°) = \frac{\text{opuesto}}{\text{hipotenusa}} = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2}$$
 $$\cos(45°) = \frac{\text{adyacente}}{\text{hipotenusa}} = \frac{\sqrt{2}}{2}$$
 $$\tan(45°) = \frac{\sin(45°)}{\cos(45°)} = 1$$
@@ -226,7 +226,7 @@ Con esto vemos que $\sin(45°) = \cos(45°)$
 
 **Triángulo de 30°-60°-90°:**
 Pensemos en un triángulo equilátero de lados iguales a 2: si trazamos una altura obtendremos un triángulo rectángulo con cateto igual a 1 e hipotenusa igual a 2. Por Pitágoras, el otro cateto medirá $1^2+x^2=2^2 \Rightarrow x^2=4-1 \Rightarrow x=\sqrt{3}$:
-![[triangulo_equilatero_angulos.png]]
+![Triángulo equilátero con ángulos internos de 60°](../Recursos/triangulo_equilatero_angulos.png)
 $$\sin(30°) = \frac{1}{2}, \quad \cos(30°) = \frac{\sqrt{3}}{2}, \quad \tan(30°) = \frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3}$$
 $$\sin(60°) = \frac{\sqrt{3}}{2}, \quad \cos(60°) = \frac{1}{2}, \quad \tan(60°) = \sqrt{3}$$
 > **Observación (invarianza de las razones trigonométricas):** Los valores de las razones trigonométricas dependen únicamente del ángulo, no del tamaño del triángulo. Es decir, $\sin\!\left(\dfrac{\pi}{6}\right)$ siempre vale $\dfrac{1}{2}$, independientemente de cuán grande o pequeño sea el triángulo rectángulo en el que se mida.
@@ -237,7 +237,7 @@ El factor $k$ cancela en el cociente, demostrando que el valor no depende del ta
 
 **Ejemplo 3.2 (invarianza):**
 Consideremos dos triángulos rectángulos con ángulo $30°$:
-![[triangulo_semejante.png]]
+![Triángulos semejantes de distinto tamaño con los mismos ángulos](../Recursos/triangulo_semejante.png)
 - Triángulo 1: hipotenusa $2$, opuesto $1$ → $\sin(30°) = \dfrac{1}{2}$
 - Triángulo 2: hipotenusa $10$, opuesto $5$ → $\sin(30°) = \dfrac{5}{10} = \dfrac{1}{2}$
 El resultado es idéntico en ambos casos.
@@ -295,11 +295,11 @@ Hasta ahora hemos trabajado con ángulos agudos (entre $0$ y $\pi/2$). Para exte
 
 **Definición 4.5 (Ángulos en el plano cartesiano):**
 Un ángulo se mide desde el eje X positivo en sentido **antihorario** (positivo) o **horario** (negativo).
-![[cuadrantes.png]]
+![Cuadrantes del plano cartesiano y sentido de medición de ángulos](../Recursos/cuadrantes.png)
 #### Signos de las funciones en cada cuadrante
 
 Para ilustrar los signos en cada cuadrante usaremos el triángulo 3-4-5: tomamos un punto a distancia $r=5$ del origen con catetos $|x|=4$ e $|y|=3$, reflejado en los cuatro cuadrantes. Las definiciones sobre el círculo son $\sin\theta = y/r$, $\cos\theta = x/r$, $\tan\theta = y/x$.
-![[angulos_R2.png]]
+![Triángulo 3-4-5 reflejado en los cuatro cuadrantes del plano](../Recursos/angulos_R2.png)
 
 **Cuadrante I** ($0 < \theta < \frac{\pi}{2}$) ($0° < \theta < 90°$):
 - $\sin(\theta) > 0$ (coordenada $y$ positiva)
@@ -330,12 +330,12 @@ Para ilustrar los signos en cada cuadrante usaremos el triángulo 3-4-5: tomamos
   
 **Ejemplo:** Punto $H=(4,\;-3)$, $r=5$:> $$\sin\theta = \frac{-3}{5} < 0 \quad(\text{negativo}), \qquad \cos\theta = \frac{4}{5} > 0 \quad(\text{positivo}), \qquad \tan\theta = \frac{-3}{4} < 0 \quad(\text{negativo})$$
 **Mnemotecnia - "TOSENTACOS":**
-![[TOSENTACOS.png]]
+![Mnemotecnia TOSENTACOS para los signos de las funciones trigonométricas por cuadrante](../Recursos/TOSENTACOS.png)
 #### Ángulo de referencia
 
 **Definición 4.6 (Ángulo de referencia):**
 El **ángulo de referencia** $\theta'$ es el ángulo agudo formado entre el lado terminal del ángulo y el eje X.
-![[angulo_referemcia.png]]
+![Ángulo de referencia entre el lado terminal y el eje X](../Recursos/angulo_referemcia.png)
 
 **Cálculo del ángulo de referencia:**
 - **Cuadrante I:** $\theta' = \theta$
@@ -437,20 +437,20 @@ Las razones trigonométricas de la Sección 3 solo están definidas para ángulo
 **Definición 5.1 (Círculo unitario):**
 El **círculo unitario** es la circunferencia de radio $1$ centrada en el origen del plano cartesiano:
 $$x^2 + y^2 = 1$$
-![[circulo_trigonometria.png]]
+![Círculo unitario con un punto (x,y) y el ángulo θ](../Recursos/circulo_trigonometria.png)
 Dado un punto $(x,y)$ sobre una circunferencia de radio $R$, se puede trazar un triángulo rectángulo con catetos $x$ e $y$ e hipotenusa $R$, donde $\theta$ es el ángulo medido desde el eje $X$ positivo. Por las definiciones de la Sección 3:
 * $\cos(\theta) = \frac{x}{R} \implies x = R\cos(\theta)$
 * $\sin(\theta) = \frac{y}{R} \implies y = R\sin(\theta)$
 
 En el caso particular del círculo unitario ($R=1$), esto se reduce a:
 $$(x,y) = (\cos(\theta), \sin(\theta))$$
-![[circulo_parametrico.gif]]
+![Animación del punto (cos θ, sin θ) recorriendo el círculo unitario](../Recursos/circulo_parametrico.gif)
 
 **Definición 5.2 (Seno y coseno sobre el círculo unitario):**
 Sea $\theta$ un ángulo medido desde el eje $X$ positivo en sentido antihorario, y sea $P = (\cos(\theta), \sin(\theta))$ el punto correspondiente sobre el círculo unitario. Entonces:
 - $\sin(\theta)$ es la coordenada $y$ de $P$.
 - $\cos(\theta)$ es la coordenada $x$ de $P$.
-![[circulo_trigonometria_2.png]]
+![Seno y coseno como coordenadas y y x de un punto sobre el círculo unitario](../Recursos/circulo_trigonometria_2.png)
 
 **Observación:** A diferencia de la definición con triángulos, esta ya no depende de un triángulo finito, por lo que se extiende sin problema a cualquier ángulo real $\theta \in \mathbb{R}$, incluyendo ángulos negativos o mayores a una vuelta completa. Los signos de las funciones en cada cuadrante y los valores en los ángulos cardinales ($0°$, $90°$, $180°$, $270°$, $360°$) ya se discutieron en la §4.5.
 
@@ -459,7 +459,7 @@ Sea $\theta$ un ángulo medido desde el eje $X$ positivo en sentido antihorario,
 Cuando se trabaja directamente con un punto $(x,y)$ y su distancia $R$ al origen (sin normalizar a radio $1$), conviene generalizar las razones trigonométricas usando el **radio vector** $R = \sqrt{x^2+y^2} > 0$ en vez de la hipotenusa de un triángulo fijo. El tratamiento es idéntico al de la Sección 3, cambiando "hipotenusa" por "radio vector"; esto se resume en la mnemotecnia SORCARTOA:
 $$\sin(\theta) = \frac{\text{cateto opuesto}}{R}, \qquad \cos(\theta) = \frac{\text{cateto adyacente}}{R}, \qquad \tan(\theta) = \frac{\text{cateto opuesto}}{\text{cateto adyacente}}$$
 
-![[SORCARTOA.png]]
+![Mnemotecnia SORCARTOA con el radio vector R](../Recursos/SORCARTOA.png)
 Como $R$ es siempre positivo (es una distancia), el signo de $\sin(\theta)$ y $\cos(\theta)$ queda determinado enteramente por los signos de $x$ e $y$ según el cuadrante, tal como se vio en la §4.5.
 
 ---
@@ -517,20 +517,20 @@ $$\cos(\theta + 2\pi) = \cos(\theta)$$
 $$\tan(\theta + \pi) = \tan(\theta)$$
 
 **Identidad 6.4 (Ángulos negativos):**
-![[angulo_negativo.png]]
+![Ángulo negativo medido en sentido horario sobre el círculo unitario](../Recursos/angulo_negativo.png)
 **Paridad del Seno**:
 $$\sin(-\theta) = -\sin(\theta)$$
 (función impar)
 *Demostración:*
-$$sin(\theta)=y/R$$
-$$sin(-\theta)=-y/R=-(y/R)=-sin(\theta)$$
+$$\sin(\theta)=y/R$$
+$$\sin(-\theta)=-y/R=-(y/R)=-\sin(\theta)$$
 **Paridad del Coseno**:
 $$\cos(-\theta) = \cos(\theta)$$ (función par)
 
-**Paridad del Coseno**:
+**Paridad de la Tangente**:
 $$\tan(-\theta) = -\tan(\theta)$$ (función impar)
 *Demostración*:
-$$tan(-\theta)=\frac{sin(-\theta)}{cos(-\theta)}=\frac{-sin(\theta)}{cos(\theta)}=-\frac{sin(\theta)}{cos(\theta)}=-tan(\theta)$$
+$$\tan(-\theta)=\frac{\sin(-\theta)}{\cos(-\theta)}=\frac{-\sin(\theta)}{\cos(\theta)}=-\frac{\sin(\theta)}{\cos(\theta)}=-\tan(\theta)$$
 
 ### 6.3 Identidades de ángulos complementarios
 
@@ -753,13 +753,13 @@ Primero, para estudiar las propiedades de estas funciones, haremos una tabla de 
 $$f(x) = \sin(x)$$
 
 Comenzaremos haciendo un bosquejo con los valores obtenidos en la tabla para el seno
-![[funcion_seno_1.png]]
+![Gráfica de la función seno](../Recursos/funcion_seno_1.png)
 con esto ya nos podemos hacer una idea de la gráfica, pero si usamos propiedades como la periodicidad e identidades como el ángulo medio o la suma de ángulos para obtener más valores podemos hacer un mejor bosquejo del gráfico
-![[funcion_seno_2.png]]
+![Gráfica de la función seno mostrando su período](../Recursos/funcion_seno_2.png)
 Con esto ya nos podemos dar una idea de como será la grafica de la función
 
 **Gráfica:**
-![[funcion_seno_3.png]]
+![Gráfica de la función seno en un dominio extendido](../Recursos/funcion_seno_3.png)
 La función seno es una función periódica, es decir, que se repite cada cierto intervalo específico; además vemos que está acotada y que tiene infinitas raíces 
 
 **Propiedades:**
@@ -779,7 +779,7 @@ $$f(x) = \cos(x)$$
 Si repetimos el mismo ejercicio para la función coseno, obtendremos un resultado bastante similar 
 
 **Gráfica:**
-![[funcion_coseno_1.png]]
+![Gráfica de la función coseno](../Recursos/funcion_coseno_1.png)
 Viendo su forma podemos intuir que sus propiedades serán similares a las de la función seno
 
 **Observación:** $\cos(x) = \sin(x + \frac{\pi}{2})$ (coseno es seno desplazado o viceversa dependiendo como se este mirando)
@@ -799,11 +799,11 @@ Viendo su forma podemos intuir que sus propiedades serán similares a las de la 
 $$f(x) = \tan(x) = \frac{\sin(x)}{\cos(x)}$$
 
 Nuevamente repetiremos nuestro ejercicio del bosquejo con la tangente para ver qué obtendremos, primero con los ángulos notables de $0$ a $2\pi$
-![[funcion_tangente_1.png]]
+![Gráfica de la función tangente](../Recursos/funcion_tangente_1.png)
 Esto no nos dice mucho; deberemos calcular más puntos para tener una mejor aproximación 
-![[funcion_tangente_2.png]]
+![Gráfica de la función tangente con sus asíntotas verticales](../Recursos/funcion_tangente_2.png)
 Con esto ya tenemos una mejor visión; ahora debemos analizar un poco la función. Primero veamos $\sin(x)$ y $\cos(x)$ en la misma gráfica:
-![[funcion_seno_coseno.png]]
+![Gráficas de seno y coseno superpuestas](../Recursos/funcion_seno_coseno.png)
 Podemos ir analizando por tramos:
 * **Primer tramo** $[0,\,\pi/2)$: el seno aumenta y el coseno disminuye, lo que nos da una función creciente, hasta llegar a $\pi/2$ donde el denominador es $0$ y tenemos una asíntota vertical (la función crece hacia $+\infty$).
 * **Segundo tramo** $(\pi/2,\,\pi]$: el seno es decreciente y el coseno es creciente pero negativo. Comenzamos con valores cercanos a $1$ divididos por valores cercanos a $0^-$, lo que produce resultados muy grandes en magnitud y negativos; a medida que avanzamos, el coseno crece en magnitud y los resultados se vuelven progresivamente más pequeños en valor absoluto, hasta llegar a $\pi$ donde el numerador es $0$ y, por lo tanto, $\tan(\pi)=0$.
@@ -814,7 +814,7 @@ Con este análisis y los puntos que trazamos, ya podemos tener una buena idea de
 Después de todo este trabajo, ya es momento de ver su gráfica:
 
 **Gráfica:**
-![[funcion_tangente_3.png]]
+![Gráfica de la función tangente en un período completo](../Recursos/funcion_tangente_3.png)
 
 **Propiedades:**
 - **Dominio:** $\mathbb{R} \setminus \{\frac{\pi}{2} + n\pi : n \in \mathbb{Z}\}$ (excluye donde $\cos(x) = 0$)
@@ -832,17 +832,17 @@ Al igual que las funciones principales, sus razones recíprocas también se exti
 - **Comportamiento:** Al depender del inverso del seno, experimenta explosiones hacia $\pm\infty$ cada vez que $\sin(x)$ se acerca a cero. Esto se traduce en **asíntotas verticales** estrictamente donde se anula el seno: $x = n\pi$, con $n \in \mathbb{Z}$.
 - **Imagen:** $(-\infty, -1] \cup [1, +\infty)$. Curiosamente, la función cosecante jamás tomará valores dentro del intervalo $(-1, 1)$, que es justo el "territorio exclusivo" de su contraparte, el seno.
 - **Período:** $2\pi$.
-![[funcion_cosecante_1.png]]
+![Gráfica de la función cosecante](../Recursos/funcion_cosecante_1.png)
 **2. La función Secante:** $f(x) = \sec(x) = \frac{1}{\cos(x)}$
 - **Comportamiento:** De manera análoga, la secante tiene asíntotas verticales allí donde el coseno vale cero: $x = \frac{\pi}{2} + n\pi$. Visualmente asimilan la forma de "campanas invertidas" o "U" que "descansan" por encima y por debajo apoyadas milimétricamente exactamente sobre los picos y valles de la gráfica original del coseno.
 - **Imagen:** $(-\infty, -1] \cup [1, +\infty)$.
 - **Período:** $2\pi$.
-![[funcion_secante_1.png]]
+![Gráfica de la función secante](../Recursos/funcion_secante_1.png)
 **3. La función Cotangente:** $f(x) = \cot(x) = \frac{\cos(x)}{\sin(x)}$
 - **Comportamiento:** Posee asíntotas en los cruces por cero del seno ($x = n\pi$). Una diferencia estética remarcable respecto a la tangente, además de la traslación de las asíntotas, es que mientras la tangente es siempre creciente en sus intervalos de dominio contiguo, la cotangente es una función estrictamente **decreciente**.
 - **Imagen:** $(-\infty, +\infty)$.
 - **Período:** $\pi$.
-![[funcion_cotangente_1.png]]
+![Gráfica de la función cotangente](../Recursos/funcion_cotangente_1.png)
 ### 8.5 Transformaciones de funciones trigonométricas
 
 Al igual que con cualquier otra función, a las funciones trigonométricas se les pueden aplicar traslaciones, reflexiones y dilataciones. Por ser periódicas, estas transformaciones tienen una lectura física directa (amplitud, período, desfase) que es central para modelar fenómenos oscilatorios: sonido, corriente alterna, mareas, etc.
@@ -871,13 +871,13 @@ Toda expresión de la forma $f(x-h)$ representa una traslación horizontal de $h
 **Ilustración de cada parámetro:**
 
 1. **Desplazamiento vertical ($D$):** $f(x) = \sin(x) + D$ traslada la gráfica verticalmente sin deformarla.
-![[funcion_seno+5.png]]
+![Gráfica de y = sin(x) + 5](../Recursos/funcion_seno+5.png)
 2. **Amplitud ($A$):** $f(x) = A\sin(x)$ estira o comprime verticalmente la gráfica.
-![[funcion_senox3.png]]
+![Gráfica de y = sin(3x)](../Recursos/funcion_senox3.png)
 3. **Período ($B$):** $f(x) = \sin(Bx)$ comprime u expande la gráfica horizontalmente.
-![[funcion_seno5x.png]]
+![Gráfica de y = 5sin(x)](../Recursos/funcion_seno5x.png)
 4. **Desfase ($C$):** $f(x) = \sin(x+C)$ traslada la gráfica horizontalmente: hacia la derecha si $\phi > 0$, hacia la izquierda si $\phi < 0$.
-![[funcion_senox+1.png]]
+![Gráfica de y = sin(x + 1)](../Recursos/funcion_senox+1.png)
 
 **Ejemplo 8.1:**
 Analicemos $f(x) = 3\sin(2x-\pi)+1$ identificando sus parámetros con la forma general $A\sin(Bx+C)+D$:
@@ -885,7 +885,7 @@ Analicemos $f(x) = 3\sin(2x-\pi)+1$ identificando sus parámetros con la forma g
 - **Período ($T$):** con $B=2$, se tiene $T = \dfrac{2\pi}{2} = \pi$.
 - **Desfase ($\phi$):** con $C=-\pi$, se tiene $\phi = -\dfrac{-\pi}{2} = \dfrac{\pi}{2}$; como $\phi>0$, la gráfica se traslada $\dfrac{\pi}{2}$ unidades hacia la derecha.
 - **Desplazamiento vertical ($D=1$):** el eje de oscilación es $y=1$.
-![[funcion_seno_ejemplo1.png]]
+![Gráfica de ejemplo de transformación de la función seno](../Recursos/funcion_seno_ejemplo1.png)
 
 **Ejemplo 8.2:**
 Analicemos $g(x) = -2\cos\!\left(\dfrac{x}{3}+\dfrac{\pi}{4}\right)-1$ con la forma general $A\cos(Bx+C)+D$:
@@ -893,7 +893,7 @@ Analicemos $g(x) = -2\cos\!\left(\dfrac{x}{3}+\dfrac{\pi}{4}\right)-1$ con la fo
 - **Período ($T$):** con $B=1/3$, se tiene $T = \dfrac{2\pi}{1/3} = 6\pi$.
 - **Desfase ($\phi$):** con $C=\pi/4$, se tiene $\phi = -\dfrac{\pi/4}{1/3} = -\dfrac{3\pi}{4}$; como $\phi<0$, la gráfica se traslada $\dfrac{3\pi}{4}$ unidades hacia la izquierda.
 - **Desplazamiento vertical ($D=-1$):** el eje de oscilación es $y=-1$.
-![[funcion_coseno_ejemplo1.png]]
+![Gráfica de ejemplo de transformación de la función coseno](../Recursos/funcion_coseno_ejemplo1.png)
 
 > **Nota:** Las transformaciones de traslación y reflexión se retoman con mayor generalidad en [[Clase 8 - Cónicas]].
 
@@ -1049,7 +1049,7 @@ Para enunciar los teoremas, estableceremos primero la convención geométrica ha
 - Los **vértices** se identifican con letras mayúsculas latinas: $A, B, C$.
 - Los **ángulos internos** relativos a cada vértice se denotan con letras griegas: $\alpha$ (en $A$), $\beta$ (en $B$), y $\gamma$ (en $C$).
 - La longitud del **lado opuesto** a cada vértice se identifica con la letra minúscula homóloga: $a$ (frente a $A$), $b$ (frente a $B$), y $c$ (frente a $C$).
-![[notacion_triangulo.png]]
+![Notación estándar del triángulo ABC con sus vértices, ángulos y lados](../Recursos/notacion_triangulo.png)
 Por el axioma de geometría euclidiana, la suma interna de ángulos siempre cumple:
 $$\alpha + \beta + \gamma = 180° = \pi$$
 
@@ -1061,7 +1061,7 @@ De manera intuitiva, en cualquier triángulo, el lado de mayor longitud siempre 
 **Teorema 11.1 (Ley de senos):**
 En todo triángulo $ABC$ con lados $a$, $b$, $c$ opuestos a los ángulos $\alpha$, $\beta$, $\gamma$ respectivamente:
 $$\frac{a}{\sin(\alpha)} = \frac{b}{\sin(\beta)} = \frac{c}{\sin(\gamma)}=k$$
-Donde $K$ es una constante real.
+Donde $k$ es una constante real.
 
 **Demostración Geométrica:**
 1. Trazamos la altura $h$ vertical desde el vértice $C$ hacia el lado base $c$. Esto divide la figura en dos triángulos rectángulos independientes.
@@ -1071,7 +1071,7 @@ Donde $K$ es una constante real.
    $$\sin(\beta) = \frac{h}{a} \implies h = a\sin(\beta)$$
 4. Como la altura $h$ es común, igualamos ambas expresiones:
    $$b\sin(\alpha) = a\sin(\beta) \implies \frac{a}{\sin(\alpha)} = \frac{b}{\sin(\beta)}$$
-5. Repintiendo el mismo trazado con la altura de otro vértice, se demuestra la otra igualdad. $\blacksquare$
+5. Repitiendo el mismo trazado con la altura de otro vértice, se demuestra la otra igualdad. $\blacksquare$
 
 **Ejemplo 11.1 (Despeje lineal directo):**
 En un triángulo $ABC$, sabemos que $\alpha = 30°$, $\beta = 45°$ y el lado $a = 8$. Calcule $b$.
@@ -1113,7 +1113,7 @@ $$b^2 = a^2 + c^2 - 2ac\cos(\beta)$$
 $$c^2 = a^2 + b^2 - 2ab\cos(\gamma)$$
 
 **Demostración geométrica paso a paso:**
-![[teorema_del_coseno.png]]
+![Demostración geométrica del teorema del coseno mediante la altura h](../Recursos/teorema_del_coseno.png)
 1. Consideremos un triángulo $ABC$ con lados $a, b, c$ y el ángulo $\alpha$ en el vértice $A$.
 2. Trazamos la altura $h$ desde el vértice $B$ hasta el lado $AC$ (el lado $b$), y llamamos $H$ al punto donde la altura corta a $AC$. Esto divide el triángulo original en dos triángulos rectángulos: $\triangle ABH$ y $\triangle BCH$.
 3. En el triángulo $\triangle ABH$, la definición de coseno da:
