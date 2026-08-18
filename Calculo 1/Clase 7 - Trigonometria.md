@@ -1,5 +1,14 @@
 # Trigonometría: Fundamentos y Aplicaciones
 
+En esta clase se estudian los fundamentos de la trigonometría: los sistemas de medición
+angular (sexagesimal, radianes y gradianes), las razones trigonométricas en el triángulo
+rectángulo y su extensión a los cuatro cuadrantes mediante el círculo trigonométrico. Se
+establecen las identidades fundamentales, de ángulos coterminales, complementarios, dobles
+y medios, junto con estrategias para verificarlas. Se definen las funciones trigonométricas
+como funciones reales, con sus transformaciones y su relación con la parametrización del
+círculo, se resuelven ecuaciones trigonométricas, y se demuestran los teoremas del seno y
+del coseno para triángulos oblicuángulos.
+
 ## 1. Triángulos y elementos básicos
 
 ### 1.1 Repaso: Triángulos rectángulos
@@ -1203,4 +1212,4 @@ Encuentre la **solución general** para todos los reales (usando multiplicadores
 
 ---
 
-**Fin de la Clase 7**
+**Fin de la Clase 7: Trigonometría**
