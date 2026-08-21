@@ -15,7 +15,7 @@ $$\mathbb{R}^2 = \{(x, y) : x, y \in \mathbb{R}\}$$
 - **Origen:** Punto $O = (0, 0)$ donde se intersectan los ejes
 - **Cuadrantes:** Cuatro regiones delimitadas por los ejes
 
-![[cuadrantes.png]]
+![Cuadrantes del plano cartesiano](../Recursos/cuadrantes.png)
 
 **Definición 1.2 (Distancia entre dos puntos):**
 La distancia entre los puntos $P_1 = (x_1, y_1)$ y $P_2 = (x_2, y_2)$ es:
@@ -72,11 +72,12 @@ y' = x\sin(\theta) + y\cos(\theta)
 
 **Demostración:**
 1. Consideremos un punto $P(x, y)$ representado mediante coordenadas polares. Sea $r$ su distancia al origen y $\alpha$ el ángulo inicial que forma con el semieje positivo de las abscisas (eje $X$). Sus coordenadas se expresan como:
-$$x = r\cos(\alpha), \quad y = r\sin(\alpha)$$   ![[punto_polar.png]]
+$$x = r\cos(\alpha), \quad y = r\sin(\alpha)$$
+![Punto en coordenadas polares con radio r y ángulo α](../Recursos/punto_polar.png)
 2. Al rotar el punto $P$ en torno al origen un ángulo $\theta$ en sentido antihorario, obtenemos el nuevo punto $P'(x', y')$. La distancia al centro $r$ se mantiene inalterada, pero su nuevo ángulo respecto al eje $X$ pasa a ser la suma $(\alpha + \theta)$. Por lo tanto, sus nuevas coordenadas son:
 $$x' = r\cos(\alpha + \theta)$$
 $$y' = r\sin(\alpha + \theta)$$
-![[angulo_punto_rotado.png]]
+![Punto rotado un ángulo θ manteniendo su distancia r al origen](../Recursos/angulo_punto_rotado.png)
 3. Expandimos utilizando las identidades trigonométricas para el seno y coseno de la suma de dos ángulos:
 $$\cos(\alpha + \theta) = \cos(\alpha)\cos(\theta) - \sin(\alpha)\sin(\theta)$$
 $$\sin(\alpha + \theta) = \sin(\alpha)\cos(\theta) + \cos(\alpha)\sin(\theta)$$
@@ -126,12 +127,12 @@ y' = ky
 > - En casos donde $k < 0$, la distorsión escala arrastrando una inversión simultánea (reflexión equivalente pasando de forma recta a través del origen central $(0,0)$).
 
 **Ejemplo 1.5:**
-Ejecute sobre el punto de coordenadas $P = (2, -1)$ una función matricial dictada de homotecia de expansión con razón paramétrica pura escalada $k = 3$. Evaluando:
+Aplique una homotecia de razón $k = 3$ al punto $P = (2, -1)$:
 $$\begin{cases}
 x' = 3(2) = 6 \\
 y' = 3(-1) = -3
 \end{cases}$$
-El nodo resolutor se materializa en vector final $P' = (6, -3)$.
+Resultado: $P' = (6, -3)$.
 ### 1.5 Reflexiones
 
 Una **reflexión** es una transformación que "espeja" todos los puntos del plano respecto a una recta fija llamada **eje de reflexión**.
@@ -177,10 +178,10 @@ Comparar con el orden inverso (primero traslación, luego reflexión):
 
 Los resultados $(4, 6) \neq (4, -2)$ confirman de inmediato que **el orden de las transformaciones importa**.
 
-**Ejemplo 1.9 (Asociando escala):**
-Establezca las evaluaciones al dictaminar matriz para el punto inicial $P = (2, 4)$, evaluando que este deba sufrir primero un escalamiento de homotecia reductor paramétrico $k = 0.5$ para que el sistema resultante posteriormente acoplarse y dictaminar una traslación del operando por su correspondiente vector rector $(-3, 2)$.
-1. Expansión reductiva por Homotecia a $k = 0.5$: $(2, 4) \to (\frac{1}{2} \cdot 2, \frac{1}{2} \cdot 4) = (1, 2)$
-2. Sumatoria aditiva escalar rígida de Traslación sumando $(-3, 2)$: $(1, 2) \to (1 - 3, 2 + 2) = (-2, 4)$
+**Ejemplo 1.9 (Combinando escala y traslación):**
+Aplique al punto $P = (2, 4)$ primero una homotecia de razón $k = 0.5$ y luego una traslación por el vector $(-3, 2)$:
+1. Homotecia con $k = 0.5$: $(2, 4) \to (\frac{1}{2} \cdot 2, \frac{1}{2} \cdot 4) = (1, 2)$
+2. Traslación por $(-3, 2)$: $(1, 2) \to (1 - 3, 2 + 2) = (-2, 4)$
 
 ---
 ## 2. Ecuación general de segundo grado
@@ -194,7 +195,7 @@ $$Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$$
 donde $A$, $B$, $C$, $D$, $E$, $F$ son constantes reales y al menos uno de $A$, $B$, $C$ es distinto de cero.
 
 Esta relación nos dará como resultado un círculo, una elipse, una parábola o una hipérbola. Estos cuatro lugares geométricos son llamados las secciones cónicas pues son el resultado de intersecar un cono con un plano.
-![[conicas.jpg|524]]
+![Circunferencia, elipse, parábola e hipérbola como cortes de un cono](../Recursos/conicas.jpg)
 El término cruzado $Bxy$ tiene relación con el ángulo de rotación de la sección cónica. En un principio trabajaremos sin él, pero más adelante lo incorporaremos para ver su comportamiento.
 
 **Observación:** Si los tres coeficientes cuadráticos son nulos ($A = B = C = 0$), la ecuación se reduce a $Dx + Ey + F = 0$, que es la ecuación general de una **recta**. En ese sentido, la ecuación de segundo grado es una generalización: al "activar" los términos cuadráticos pasamos de rectas a cónicas (o a algún caso degenerado).
@@ -214,7 +215,7 @@ donde $h = -\dfrac{D}{2A}$, $\quad k = -\dfrac{E}{2A}$, $\quad R = \dfrac{\sqrt{
 
 **Circunferencia** con centro $\left(-\dfrac{D}{2A},\, -\dfrac{E}{2A}\right)$ y radio $r = \dfrac{\sqrt{D^2 + E^2 - 4AF}}{2|A|}$ (cuando $D^2 + E^2 - 4AF > 0$).
 
-![[circunferencia_hk.png]]
+![Circunferencia centrada en (h,k) de radio r](../Recursos/circunferencia_hk.png)
 **2) Cuando $A \neq C$ y tienen el mismo signo → Elipse**
 
 $$A\left(x + \frac{D}{2A}\right)^2 + C\left(y + \frac{E}{2C}\right)^2 = -F + \frac{D^2}{4A} + \frac{E^2}{4C}$$
@@ -263,7 +264,7 @@ donde $h = -\dfrac{D}{2A}$, $\quad k = -\dfrac{E}{2C}$, $\quad a^2 = \dfrac{R}{A
 
 **Hipérbola** con eje transverso horizontal (si $R > 0$) o vertical (si $R < 0$).
 
-### 2.4 Eliminación del término mixto
+### 2.3 Eliminación del término mixto
 
 Ahora que sabemos clasificar una cónica cuando $B = 0$, nos surge la pregunta: ¿Cómo clasificamos cuando aparece el término cruzado $Bxy$? La estrategia será encontrar una transformación de coordenadas que lo elimine.
 
@@ -387,7 +388,7 @@ Caso especial: si $A=C$, entonces tendremos:
 $$B\cos(2\theta) = 0$$
 por lo tanto $2\theta = 90° \to \theta = 45°$
 
-**Teorema 2.2 (Rotación para eliminar el término mixto):**
+**Teorema 2.1 (Rotación para eliminar el término mixto):**
 El término $Bxy$ en $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$ se elimina mediante una rotación de ángulo $\theta$ donde:
 $$\tan(2\theta) = \frac{B}{A - C}$$
 
@@ -401,7 +402,7 @@ y los coeficientes lineales serán
 $$D' = D\cos\theta + E\sin\theta$$
 $$E' = -D\sin\theta + E\cos\theta$$
 $$F' = F$$
-### 2.3 El discriminante y su invarianza
+### 2.4 El discriminante y su invarianza
 
 **Definición 2.2 (Discriminante):**
 Dada la ecuación general de segundo grado $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$, se define el **discriminante** como:
@@ -413,7 +414,7 @@ Esta expresión involucra únicamente los coeficientes de los términos cuadrát
 Una traslación no modifica los coeficientes $A$, $B$, $C$, por lo que:
 $$\Delta' = B'^2 - 4A'C' = B^2 - 4AC$$
 
-Esto es inmediato: como vimos en el Paso 1 del §2.4, la traslación solo agrega términos lineales.
+Esto es inmediato: como vimos en el Paso 1 del §2.3, la traslación solo agrega términos lineales.
 
 **Proposición 2.2 (Invarianza bajo rotación):**
 Tras una rotación de ángulo $\theta$, los nuevos coeficientes cuadráticos son:
@@ -421,7 +422,7 @@ $$A' = \frac{A+C}{2} + \frac{(A-C)\cos(2\theta)}{2} + \frac{B\sin(2\theta)}{2}$$
 $$C' = \frac{A+C}{2} - \frac{(A-C)\cos(2\theta)}{2} - \frac{B\sin(2\theta)}{2}$$
 $$B' = B\cos(2\theta) - (A-C)\sin(2\theta)$$
 
-Calculamos $B'^2 - 4A'C'$ directamente. Partimos de las expresiones obtenidas en §2.2:
+Calculamos $B'^2 - 4A'C'$ directamente. Partimos de las expresiones obtenidas en §2.3:
 
 **Paso 1: Calculamos $B'^2$.**
 
@@ -459,38 +460,36 @@ $$\boxed{B'^2 - 4A'C' = B^2 - 4AC}$$
 > **Consecuencia:** Como el discriminante no cambia bajo traslaciones ni rotaciones, podemos calcular $\Delta = B^2 - 4AC$ directamente en la ecuación original y aprovecharlo para clasificar la cónica, sin necesidad de realizar ninguna transformación previa.
 
 **Proposición 2.3 (El discriminante como término de la fórmula general cuadrática):**
-Alternativamente, podemos justificar de manera natural el protagonismo de esta expresión analizando nuestro problema inicial simplemente como un polinomio cuadrático que intentamos resolver algebraicamente (despejando, por ejemplo, la variable $y$).
+El discriminante también se puede justificar analizando la ecuación general como un polinomio cuadrático en $y$, que se resuelve despejando esa variable en términos de $x$.
 
-**Demostración analítica:**
-Si retomamos nuestra la ecuación general original:
+**Demostración:**
+Partimos de la ecuación general:
 $$Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$$
 
-Podemos reagruparla explícitamente tratando a $y$ como nuestra incógnita operativa, y al resto de elementos (incluyendo a $x$) como agrupaciones paramétricas constantes. Ordenando descendentemente por potencias de $y$:
+Reagrupamos tratando a $y$ como incógnita y a $x$ como parámetro, ordenando por potencias de $y$:
 $$Cy^2 + (Bx + E)y + (Ax^2 + Dx + F) = 0$$
 
-Notamos que nos enfrentamos a una clásica ecuación de la forma $\alpha y^2 + \beta y + \gamma = 0$, identificando a:
+Esta es una ecuación cuadrática en $y$ de la forma $\alpha y^2 + \beta y + \gamma = 0$, con:
 - $\alpha = C$
-- $\beta = (Bx + E)$
-- $\gamma = (Ax^2 + Dx + F)$
+- $\beta = Bx + E$
+- $\gamma = Ax^2 + Dx + F$
 
-Para despejar $y(x)$, utilizamos infaliblemente la fórmula resolvente de segundo grado:
-$$y = \frac{- \beta \pm \sqrt{\beta^2 - 4\alpha\gamma}}{2\alpha}$$
+Aplicando la fórmula resolvente:
+$$y = \frac{-\beta \pm \sqrt{\beta^2 - 4\alpha\gamma}}{2\alpha}$$
 
-Concentremos nuestra atención de manera exclusiva en el corazón o condición de realidad (el interior de la raíz cuadrada o "radicando"):
-$$\text{Radicando} = (Bx + E)^2 - 4C(Ax^2 + Dx + F)$$
+Nos concentramos en el radicando, pues determina la existencia de soluciones reales:
+\begin{align}
+\text{Radicando} &= (Bx + E)^2 - 4C(Ax^2 + Dx + F) \\
+&= B^2x^2 + 2BEx + E^2 - 4ACx^2 - 4CDx - 4CF \\
+&= (B^2 - 4AC)x^2 + (2BE - 4CD)x + (E^2 - 4CF)
+\end{align}
 
-Desarrollamos los productos y el binomio al cuadrado:
-$$\text{Radicando} = B^2x^2 + 2BEx + E^2 - 4ACx^2 - 4CDx - 4CF$$
+El radicando es, a su vez, un polinomio cuadrático en $x$, cuyo coeficiente principal es exactamente $(B^2 - 4AC)$. Este coeficiente determina el comportamiento del radicando para valores grandes de $x$:
 
-Agrupamos finalmente los componentes basándonos ahora en el grado de $x$:
-$$\text{Radicando} = (B^2 - 4AC)x^2 + (2BE - 4CD)x + (E^2 - 4CF)$$
+- Si $(B^2 - 4AC) < 0$, el radicando se vuelve negativo para $|x|$ suficientemente grande, de modo que $y$ deja de tener soluciones reales fuera de un intervalo acotado: la curva queda confinada (**elipses y circunferencias**).
+- Si $(B^2 - 4AC) > 0$, el radicando permanece positivo para $|x|$ suficientemente grande, de modo que existen soluciones reales de $y$ para valores arbitrariamente grandes de $x$: la curva se extiende indefinidamente (**ramas de la hipérbola**). $\blacksquare$
 
-Es justo en esta estructura polinómica donde la identidad se revela: para valores grandes de $x$, el **comportamiento asintótico o dominios posibles** es dictado fuertemente por su coeficiente principal cuadrático $x^2$. Ese bloque multiplicador inquebrantable de control es, exactamente, el factor $(B^2 - 4AC)$.
-
-- Si este factor es **negativo**, provocará rápidamente que toda el área de números colapse a raíces negativas (imaginarios) impidiendo que la curva siga existiendo, lo que físicamente implica una figura confinada, cerrada y acotada (**las elipses y círculos**).
-- Si es **positivo**, entonces para número grandes el radicando tenderá holgadamente hacia una raíz real lícita posibilitando infinitas soluciones, manifestándose en curvas que viajan sin fin al infinito (**las ramas de la hipérbola**). $\blacksquare$
-
-### 2.4 Clasificación por discriminante
+### 2.5 Clasificación por discriminante
 
 **Teorema 2.2 (Clasificación por discriminante):**
 La naturaleza de la cónica representada por $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$ se determina por el **discriminante**:
@@ -567,7 +566,7 @@ Aquí estudiaremos las secciones cónicas a más profundidad y con un enfoque m�
 
 **Definición 3.1 (Cono circular recto):**
 Un **cono circular recto** es la superficie generada por una recta (generatriz) que pasa por un punto fijo (vértice) y forma un ángulo constante con un eje fijo.
-![[cono_circular.png]]
+![Cono circular recto con su vértice y eje](../Recursos/cono_circular.png)
 **Definición 3.2 (Sección cónica):**
 Una **sección cónica** (o **cónica**) es la curva resultante de la intersección de un plano con un cono circular recto doble (dos conos opuestos por el vértice).
 ### 3.2 Tipos de secciones cónicas
@@ -576,20 +575,20 @@ Dependiendo del ángulo del plano de corte:
 
 **1. Circunferencia:**
 - Plano perpendicular al eje del cono
-![[circulo_como_conica.jpg|327]]
+![Circunferencia obtenida al cortar el cono con un plano perpendicular al eje](../Recursos/circulo_como_conica.jpg)
 
 **2. Elipse:**
 - Plano oblicuo que corta una hoja del cono
 - No paralelo a ninguna generatriz
-![[elipse_como_conica.png|277]]
+![Elipse obtenida al cortar el cono con un plano oblicuo](../Recursos/elipse_como_conica.png)
 
 **3. Parábola:**
 - Plano paralelo a una generatriz del cono
-![[parabola_como_conica.png]]
+![Parábola obtenida al cortar el cono con un plano paralelo a una generatriz](../Recursos/parabola_como_conica.png)
 
 **4. Hipérbola:**
 - Plano que corta ambas hojas del cono
-![[hiperbola_como_conica.png]]
+![Hipérbola obtenida al cortar ambas hojas del cono](../Recursos/hiperbola_como_conica.png)
 **Casos degenerados:**
 - **Punto:** Plano pasa por el vértice (perpendicular al eje)
 - **Recta:** Plano pasa por el vértice (tangente a una generatriz)
@@ -705,7 +704,7 @@ Por tres puntos que sean **no colineales** (es decir, que no pertenezcan a una m
 5. Trazamos entonces la mediatriz del lado $\overline{AB}$ y la mediatriz del lado $\overline{BC}$. Como los tres puntos originales no están en la misma línea, estas dos rectas perpendiculares chocarán inevitablemente en un solo y único punto de intersección $O$.
 6. Este punto $O$ se denomina matemáticamente el **circuncentro** del triángulo. Al ser el cruce de las mediatrices, garantiza de forma absoluta que la distancia $O \to A$, $O \to B$ y $O \to C$ es idéntica.
 7. Al clavar la punta del compás en este circuncentro $O$ y expandir el lápiz hasta cualquier vértice (para capturar el radio $r$), trazamos un círculo perfecto que tocará mágicamente los tres puntos $A$, $B$ y $C$. Demostrando así su existencia irrepetible. $\blacksquare$
-![[circunferencia_3_puntos.png]]
+![Circunferencia que pasa por tres puntos, determinada por el circuncentro](../Recursos/circunferencia_3_puntos.png)
 > *(Nota aclaratoria: Es usual en el argot confundir este punto con el "incentro", pero recordemos que el incentro se forma cortando bisectrices y crea una circunferencia que choca **por dentro** contra las "paredes" del triángulo, mientras que el circuncentro es el responsable de crear la circunferencia que abraza por fuera pasando por sus vértices).*
 
 **Demostración algebraica:**
@@ -834,12 +833,12 @@ El radio es $r = \sqrt{50} = 5\sqrt{2} \approx 7.07$.
 **Ecuación canónica final:**
 $$(x - h)^2 + (y - k)^2 = r^2$$
 $$\boxed{(x - 7)^2 + (y - 6)^2 = 50}$$
-### 4.3 El número π
+### 4.4 El número π
 
 El número $\pi$ (pi) es la constante definida como la razón entre la **circunferencia** (perímetro) de un círculo y su **diámetro**:
 $$\pi = \frac{P}{d} = \frac{P}{2r}$$
 
-donde $C$ es la longitud de la circunferencia y $d = 2r$ es el diámetro.
+donde $P$ es la longitud de la circunferencia y $d = 2r$ es el diámetro.
 
 **Valor aproximado:** $\pi \approx 3.14159265358979...$
 
@@ -855,25 +854,25 @@ $$P = 2\pi r$$
 El **área del círculo** de radio $r$ es:
 $$A = \pi r^2$$
 
-**Ejemplo 4.4:**
+**Ejemplo 4.6:**
 Para un círculo de radio $5$ cm:
-- Perímetro: $C = 2\pi(5) = 10\pi \approx 31.42$ cm
+- Perímetro: $P = 2\pi(5) = 10\pi \approx 31.42$ cm
 - Área: $A = \pi(5)^2 = 25\pi \approx 78.54$ cm²
 
 ### 4.6 Arco de circunferencia
 
-**Definición 4.3 (Arco):**
+**Definición 4.2 (Arco):**
 Un **arco** es una porción de la circunferencia delimitada por dos puntos.
 
 **Teorema 4.4 (Longitud de arco):**
 La longitud de un arco que subtiende un ángulo central $\theta$ (en radianes) en una circunferencia de radio $r$ es:
 $$s = r\theta$$
 
-**Ejemplo 4.5:**
+**Ejemplo 4.7:**
 Un arco con ángulo central de $60° = \frac{\pi}{3}$ rad en una circunferencia de radio $6$ cm:
 $$s = 6 \cdot \frac{\pi}{3} = 2\pi \approx 6.28 \text{ cm}$$
 
-**Definición 4.4 (Sector circular):**
+**Definición 4.3 (Sector circular):**
 Un **sector circular** es la región encerrada por dos radios y el arco entre ellos.
 
 **Área del sector:**
@@ -883,7 +882,7 @@ donde $\theta$ está en radianes.
 
 ### 4.7 Propiedades del círculo
 
-**Proposición 4.2 (Propiedades):**
+**Proposición 4.3 (Propiedades):**
 
 1. **Simetría:** El círculo es simétrico respecto a cualquier diámetro
 2. **Radio perpendicular a tangente:** Un radio es perpendicular a la recta tangente en su punto de tangencia
@@ -895,7 +894,7 @@ donde $\theta$ está en radianes.
    y = k + r\sin(t)
    \end{cases}, \quad t \in [0, 2\pi)$$
 
-**Ejemplo 4.5:**
+**Ejemplo 4.8:**
 Para la circunferencia $(x - 1)^2 + (y + 2)^2 = 9$:
 - Centro: $(1, -2)$
 - Radio: $3$
@@ -1163,16 +1162,16 @@ Aplicando traslaciones para desplazar el vértice originario al punto coordenado
 
 **Ejemplo 6.1:**
 Identifique los componentes geométricos de la parábola $(x - 3)^2 = -8(y + 2)$:
-- **Vértice originario:** $(3, -2)$.
-- **Orientación:** Ya que su variable cuadrática recae en las abscisas "X", su eje de apertura debe ser simétricamente vertical. Debido a que el factor es negativo $(-8)$, esta parábola se abre lógicamente **hacia abajo**.
-- El parámetro métrico será absoluto: $4p = 8 \Rightarrow p = 2$.
-- **Focos y directrices:** Al estar la curva apuntando hacia la directriz inferior vertical, el foco obligatoriamente se debe ubicar restándole en el eje y las $p$ unidades base: $F = (3, -2 - 2) = (3, -4)$. Reubicando en contraste la barrera directriz opuesta en $y = -2 + 2 = 0$.
+- **Vértice:** $(3, -2)$.
+- **Orientación:** La variable elevada al cuadrado es $x$, por lo que el eje de la parábola es vertical. Como el factor es negativo ($-8$), la parábola abre **hacia abajo**.
+- **Parámetro:** $4p = 8 \Rightarrow p = 2$.
+- **Foco y directriz:** Como la parábola abre hacia abajo, el foco se ubica restando $p$ a la ordenada del vértice: $F = (3, -2 - 2) = (3, -4)$. La directriz es la recta horizontal opuesta: $y = -2 + 2 = 0$.
 
 ### 6.4 Ecuación general a canónica
 
-**Proposición 6.1 (Recuperación de canónica):**
-A marcada diferencia estructural con circunferencias y elipses puras, en el polinomio completo general de una parábola, observaremos un fuerte diferencial estandarizado: **solamente presentará una variable de la fórmula general elevada al factor cuadrático** exclusivo o puro.
-Es decir, será obligatoriamente de la forma $Ax^2 + Dx + Ey + F = 0$ o bien limitando a $Cy^2 + Dx + Ey + F = 0$. Para recuperar a su original forma canónica, se deberá aislar metódicamente y aplicar el proceso de completación solo a la variable que se presente en grado dos.
+**Proposición 6.1 (Recuperación de la forma canónica):**
+A diferencia de la circunferencia y la elipse, en la ecuación general de una parábola solo una de las dos variables aparece elevada al cuadrado.
+Es decir, la ecuación tiene la forma $Ax^2 + Dx + Ey + F = 0$ o bien $Cy^2 + Dx + Ey + F = 0$. Para recuperar la forma canónica basta completar cuadrados en la única variable que aparece con grado dos.
 
 **Ejemplo 6.2 (Completación de cuadrados en la parábola):**
 Normalice la ecuación polinomial $x^2 - 4x - 8y + 12 = 0$ encontrando su forma canónica desplazada, sus focos y su vértice referencial.
@@ -1191,14 +1190,14 @@ x^2 - 4x + 4 &= 8y - 12 + 4 \\
 - **Foco:** Si el vértice descansa sobre $y=1$ y abre hacia el cielo, sumamos su foco analógico y concluimos en el punto exacto $(2, 3)$.
 
 > **Casos Degenerados de la Parábola:**
-> ¿Qué pasa en completaciones fallidas si falta la variable de grado lineal opuesta final en su completación resolutoria igualizadora terminal? $(x - h)^2 = M$:
-> 1. Si el escalar transicional equivale a $M > 0$: Al carecer de la variable $y$, se trata de puras constantes directas dependientes de la $x$, por ende converge desdoblándose de la forma $x = h \pm \sqrt{M}$, trazando en el plano **dos rectas verticales exactamente paralelas** y separadas.
-> 2. Si el escalar colapsa a $M = 0$: Las dos líneas rectas se repliegan sobre sí mismas por no haber distancia de separación, resultando en **una solitaria recta doble idéntica** ($x=h$).
-> 3. Si por el contrario la igualdad asume un resultado matemáticamente irracional de $M < 0$: Proyecta matriz irresoluble, derivando el escenario geométrico en **rectas imaginarias o un conjunto vacío**.
+> Si al completar cuadrados el término lineal en la otra variable se anula, la ecuación queda de la forma $(x - h)^2 = M$, y el resultado depende del signo de $M$:
+> 1. Si $M > 0$: la ecuación se despeja como $x = h \pm \sqrt{M}$, es decir, **dos rectas verticales paralelas**.
+> 2. Si $M = 0$: las dos rectas coinciden, dando **una única recta doble** ($x = h$).
+> 3. Si $M < 0$: no existen soluciones reales, y el lugar geométrico es **vacío** (o, en el plano complejo, un par de rectas imaginarias).
 
 ### 6.5 Propiedades de la parábola
 
-**Proposición 6.1 (Propiedades):**
+**Proposición 6.2 (Propiedades):**
 
 1. **Simetría:** Respecto al eje que pasa por el foco y es perpendicular a la directriz
 2. **Propiedad reflectiva:** Los rayos paralelos al eje se reflejan hacia el foco (principio de antenas parabólicas y telescopios)
@@ -1214,25 +1213,24 @@ x^2 - 4x + 4 &= 8y - 12 + 4 \\
    y = k + pt^2
    \end{cases}$$
 
-**Ejemplo 6.5:**
+**Ejemplo 6.3:**
 Para $x^2 = 8y$ ($p = 2$):
 - **Lado recto:** longitud $= 4(2) = 8$
 - Puntos del lado recto: $(-4, 2)$ y $(4, 2)$
 
 ### 6.6 Parábola definida por puntos
 
-La cantidad de puntos necesarios para esculpir unívocamente una parábola depende críticamente de si conocemos a priori su orientación en el espacio cartesiano:
+La cantidad de puntos necesarios para determinar unívocamente una parábola depende de si se conoce de antemano su orientación.
 
-**1. Parábola alineada (Eje de simetría paralelo a $Y$ o a $X$):**
-Si nos garantizan que la parábola es estrictamente vertical (que abre hacia arriba o hacia abajo) o estrictamente horizontal (hacia los lados), la ecuación general colapsa en un sencillo modelo polinómico de grado dos para una sola variable:
+**1. Parábola alineada (eje de simetría paralelo a $Y$ o a $X$):**
+Si la parábola es estrictamente vertical (abre hacia arriba o hacia abajo) u horizontal (hacia los lados), la ecuación se reduce a un polinomio de grado dos en una sola variable:
 - **Modelo vertical:** $y = ax^2 + bx + c$
 - **Modelo horizontal:** $x = ay^2 + by + c$
-Como salta a la vista, ambas formas dependen exclusivamente de **3 constantes incógnitas** ($a, b, c$). Por lo tanto, bastan **exactamente 3 puntos** no colineales para "atrapar" la parábola. Al introducirlos en la ecuación, obtenemos un amigable sistema lineal $3 \times 3$ cuya solución arroja los coeficientes finales.
+Ambas formas dependen de **3 constantes** ($a, b, c$), por lo que bastan **3 puntos** no colineales para determinar la parábola. Al sustituirlos en la ecuación se obtiene un sistema lineal $3 \times 3$ cuya solución entrega los coeficientes.
 
-**2. Parábola general (Eje de simetría oblicuo/rotado):**
-Cuando la parábola sufre una rotación libre, se modela con la ecuación cónica completa $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$ (5 parámetros). Sin embargo, sabemos que la condición inquebrantable para que la figura no degenere en una elipse o hipérbola es que su discriminante sea estrictamente nulo: $B^2 - 4AC = 0$.
-Esta brutal restricción actúa como una "ecuación extra", reduciendo el sistema a **4 grados de libertad efectivos**. 
-A diferencia de sus hermanas, esto produce un fascinante capricho analítico: si arrojamos **4 puntos** al azar sobre un plano en posición general, generalmente existirán **dos parábolas distintas y cruzadas** capaces de atraparlos a ambos al mismo tiempo. Se requeriría información extra (como la inclinación de su eje de simetría o ubicar un quinto punto de desempate) para casarnos con una sola parábola rotada universal.
+**2. Parábola general (eje de simetría rotado):**
+Cuando la parábola puede estar rotada, se modela con la ecuación cónica completa $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$ (5 parámetros). La condición para que sea una parábola (y no degenere en elipse o hipérbola) es que el discriminante sea nulo: $B^2 - 4AC = 0$.
+Esta condición reduce el sistema a **4 grados de libertad efectivos**. A diferencia del caso alineado, si se eligen **4 puntos** en posición general, en general existen **dos parábolas distintas** que pasan por ellos. Se necesita información adicional (la inclinación del eje de simetría, o un quinto punto) para determinar una única parábola.
 
 ---
 ## 7. La hipérbola
@@ -1353,10 +1351,10 @@ $$\begin{align}
 - $a = 2$, $b = 3$, distancia focal $c = \sqrt{4+9} = \sqrt{13}$.
 
 > **Casos Degenerados de la Hipérbola:**
-> En sintonía con las demás cónicas, los despejes analíticos a los que se llega tras normalizar la figura a $\frac{(x-h)^2}{a^2} - \frac{(y-k)^2}{b^2} = M$, determinarán cuán integra sobrevivió su figura:
-> 1. Si $M > 0$: Al acoplar el despeje a divisor único proyecta su equivalencia en una **hipérbola horizontal** real de ramas abiertas laterales.
-> 2. Si $M < 0$: Proyectando equivalencia al multiplicar la igualdad por $-1$, se alteran los bloques asumiendo posición positiva sobre la variable de las yes. Determinando de esta manera una **hipérbola vertical** original de apertura superior e inferior.
-> 3. Si $M = 0$: Las diferencias dictaminadas de fracciones de cuadrados colapsan a nulo por completo; en efecto visual su estructura cónica se "adhiere y aplasta" totalmente contra sus propias líneas de asintota. De resultas colateral, la degeneración deviene rígidamente en **dos rectas que se intersectan** en el centro.
+> Igual que con las demás cónicas, al normalizar la ecuación a la forma $\frac{(x-h)^2}{a^2} - \frac{(y-k)^2}{b^2} = M$, el valor de $M$ determina el resultado:
+> 1. Si $M > 0$: la ecuación describe una **hipérbola horizontal**, con ramas abriendo hacia los lados.
+> 2. Si $M < 0$: al multiplicar por $-1$, el término positivo pasa a ser el de $y$, describiendo una **hipérbola vertical**, con ramas abriendo hacia arriba y abajo.
+> 3. Si $M = 0$: la diferencia de cuadrados se anula, y la ecuación se factoriza en **dos rectas que se intersectan** en el centro $(h, k)$, que son las asíntotas de la hipérbola original.
 
 **Ejemplo 7.3 (Identificando la recta secante degenerativa):**
 Analice algebraicamente la figura de $x^2 - 4y^2 - 2x - 16y - 15 = 0$:
@@ -1386,7 +1384,7 @@ $$e = \frac{5}{3} \approx 1.67$$
 
 ### 7.5 Propiedades de la hipérbola
 
-**Proposición 7.1 (Propiedades):**
+**Proposición 7.2 (Propiedades):**
 
 1. **Simetría:** Respecto a ambos ejes (si está centrada en el origen)
 2. **Dos ramas separadas:** La hipérbola tiene dos componentes conexas
@@ -1411,15 +1409,15 @@ Para $\frac{x^2}{4} - \frac{y^2}{9} = 1$:
 
 ### 7.6 Hipérbola definida por puntos
 
-Al igual que sus parientes las elipses, las hipérbolas también tienen dos maneras distintas de ser definidas por puntos, dependiendo de si aceptamos o no la rotación en el plano:
+Al igual que las elipses, las hipérbolas se pueden definir de dos maneras distintas según se permita o no su rotación en el plano:
 
-**1. Hipérbola alineada (Ejes paralelos a $X$ y a $Y$):**
-Si asumimos que la hipérbola no está inclinada (su término cruzado $Bxy$ es cero), su ecuación adopta la forma general polinómica $Ax^2 + Cy^2 + Dx + Ey + F = 0$. Como vimos en la completación de cuadrados, esta ecuación depende de **4 proporciones algebraicas** (grados de libertad).
-Por lo tanto, se necesitan **exactamente 4 puntos** no colineales para definir una y solo una hipérbola alineada. Al sustituir sus coordenadas, se genera un sistema lineal $4 \times 4$ que nos entrega los coeficientes exactos.
+**1. Hipérbola alineada (ejes paralelos a $X$ y a $Y$):**
+Si la hipérbola no está rotada (su término cruzado $Bxy$ es cero), su ecuación tiene la forma general $Ax^2 + Cy^2 + Dx + Ey + F = 0$, que depende de **4 constantes** (grados de libertad).
+Por lo tanto, se necesitan **exactamente 4 puntos** no colineales para determinar una única hipérbola alineada. Al sustituir sus coordenadas se obtiene un sistema lineal $4 \times 4$ que entrega los coeficientes.
 
-**2. Hipérbola general (Rotación libre en el plano):**
-La ecuación cónica general $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$ cuenta con 5 coeficientes. Sin embargo, al requerir que sea una hipérbola (no una parábola ni elipse), su discriminante debe satisfacer $B^2 - 4AC > 0$. Esta restricción reduce el sistema a **4 parámetros independientes efectivos**.
-Como curiosidad geométrica, si se eligen **4 puntos** en posición general en el plano, suele haber **dos hipérbolas distintas** que pasan por esos cuatro puntos. Se necesita la información de un **quinto punto** (o alguna restricción adicional, como la dirección de su eje transverso) para seleccionar unívocamente la hipérbola buscada.
+**2. Hipérbola general (rotación libre en el plano):**
+La ecuación cónica general $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$ tiene 5 coeficientes. Al exigir que sea una hipérbola (y no una parábola ni una elipse), el discriminante debe satisfacer $B^2 - 4AC > 0$, lo que reduce el sistema a **4 parámetros independientes efectivos**.
+Si se eligen **4 puntos** en posición general, en general existen **dos hipérbolas distintas** que pasan por ellos. Se necesita un **quinto punto** (o una restricción adicional, como la dirección del eje transverso) para determinar una única hipérbola.
 
 ---
 ## 8. Cónicas rotadas
@@ -1832,14 +1830,15 @@ Como $\Delta > 0$, la cónica corresponde a una **hipérbola**.
 
 Para llevar a forma canónica, completamos cuadrados:
 $$4(x^2 + 2x) - 9(y^2 + 2y) = 29$$
-$$4(x + 1)^2 - 9(y + 1)^2 = 36$$
-$$\frac{(x + 1)^2}{9} - \frac{(y + 1)^2}{4} = 1$$
+$$4\bigl[(x + 1)^2 - 1\bigr] - 9\bigl[(y + 1)^2 - 1\bigr] = 29$$
+$$4(x + 1)^2 - 9(y + 1)^2 = 29 + 4 - 9 = 24$$
+$$\frac{(x + 1)^2}{6} - \frac{(y + 1)^2}{8/3} = 1$$
 
 - **Centro:** $(-1, -1)$
-- **Semieje real:** $a = 3$
-- **Semieje imaginario:** $b = 2$
+- **Semieje real:** $a = \sqrt{6}$
+- **Semieje imaginario:** $b = \sqrt{8/3} = \dfrac{2\sqrt{6}}{3}$
 
-**Respuesta final:** La cónica es una hipérbola con centro en $(-1, -1)$, semieje real $a = 3$ y semieje imaginario $b = 2$. $\blacksquare$
+**Respuesta final:** La cónica es una hipérbola con centro en $(-1, -1)$, semieje real $a = \sqrt{6}$ y semieje imaginario $b = \dfrac{2\sqrt{6}}{3}$. $\blacksquare$
 
 ### Ejercicio 9:
 Determine la ecuación de la parábola con vértice en $(0, 0)$ y foco en $(0, 4)$.
