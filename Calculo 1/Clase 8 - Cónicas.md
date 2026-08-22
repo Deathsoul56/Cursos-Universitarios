@@ -1,5 +1,7 @@
 # Secciones Cónicas: Geometría Analítica Avanzada
 
+En esta clase se estudian las secciones cónicas desde la geometría analítica: partiendo del plano cartesiano y sus transformaciones, se analiza la ecuación general de segundo grado y su clasificación mediante el discriminante, para luego definir formalmente la circunferencia, la elipse, la parábola y la hipérbola, sus ecuaciones canónicas y sus propiedades. La clase cierra con las cónicas rotadas, sus aplicaciones, la intersección con rectas y una serie de ejercicios resueltos y propuestos.
+
 ## 1. El plano cartesiano y transformaciones de coordenadas
 
 Primero vamos a recordar algunos conceptos básicos.
@@ -674,7 +676,7 @@ x^2 - 2x + y^2 + 6y &= -10 \\
 Como $M=0$, se trata de una circunferencia degenerada que describe únicamente al punto singular $(1, -3)$.
 
 *Para convertir de forma canónica a general:*
-Tenemos una circunferencia centrada en $(h,k)$ con radio R $(x-h)^2 + (y-k)^2 = R^2$, la estrategia ahora será simplemente desarrollar los paréntesis.
+Tenemos una circunferencia centrada en $(h,k)$ con radio R $(x-h)^2 + (y-k)^2 = R^2$, la estrategia ahora será desarrollar los paréntesis.
 
 **Ejemplo 4.4:**
 Convierta la ecuación canónica $(x - 2)^2 + (y + 5)^2 = 9$ a forma general.
@@ -756,7 +758,7 @@ $$h(2x_3 - 2x_2) + k(2y_3 - 2y_2) = x_3^2 + y_3^2 - x_2^2 - y_2^2 \quad \text{(E
 Ahora disponemos de un sistema de dos ecuaciones con dos incógnitas ($h$ y $k$). Este sistema se puede resolver utilizando cualquier método estándar (sustitución, igualación o Cramer). La solución para $h$ y $k$ nos dará las coordenadas del centro de la circunferencia.
 
 **Paso 4: Calcular el radio**
-Una vez obtenido el centro $(h, k)$, el radio $r$ se calcula simplemente midiendo la distancia desde el centro a cualquiera de los tres puntos originales (por ejemplo, el punto $A$):
+Una vez obtenido el centro $(h, k)$, el radio $r$ se calcula midiendo la distancia desde el centro a cualquiera de los tres puntos originales (por ejemplo, el punto $A$):
 
 $$r = \sqrt{(x_1 - h)^2 + (y_1 - k)^2}$$
 
@@ -1084,7 +1086,7 @@ La ecuación completa universal de una cónica es $Ax^2 + Bxy + Cy^2 + Dx + Ey +
 Esto desemboca en un principio analítico hermoso y fundamental: por **cualesquiera 5 puntos** (en posición general, sin alineaciones de 3 ni colinealidades) pasa **una y solo una** curva cónica general. 
 Si el álgebra de esta solución arroja un discriminante $B^2 - 4AC < 0$, queda certificado que esa cónica única que logró abrazar a los 5 puntos es forzosamente una elipse.
 
-> *(Nota proyectiva: A diferencia de la circunferencia donde cruzar mediatrices resulta muy orgánico y fácil usando simplemente compás y regla, trazar geométricamente a mano la elipse perfecta que atraviesa 5 puntos aleatorios es un proceso sumamente avanzado. Involucra teoremas de geometría proyectiva —como el famoso **Teorema del hexágono de Pascal**—, razón por la cual en Cálculo Analítico solemos abordar este reto delegando el trabajo "pesado" a la resolución algebraica del sistema lineal $5 \times 5$).*
+> *(Nota proyectiva: A diferencia de la circunferencia donde cruzar mediatrices resulta muy orgánico y fácil usando únicamente compás y regla, trazar geométricamente a mano la elipse perfecta que atraviesa 5 puntos aleatorios es un proceso sumamente avanzado. Involucra teoremas de geometría proyectiva —como el famoso **Teorema del hexágono de Pascal**—, razón por la cual en Cálculo Analítico solemos abordar este reto delegando el trabajo "pesado" a la resolución algebraica del sistema lineal $5 \times 5$).*
 
 ---
 ## 6. La parábola
@@ -1147,7 +1149,7 @@ donde su foco se ubica en $F = (0, p)$ y su recta directriz es $y = -p$.
 7. Ajustamos pasando el factor $y$ lineal y finalizando nuestro despeje obtenemos:
    $$\boxed{x^2 = 4py} \quad \blacksquare$$
 
-*(Nota: En análisis de funciones se suele utilizar el formato general simplificado $y = a x^2$. Notemos que ambas representaciones son totalmente compatibles y análogas sabiendo que la constante de amplitud simplemente es $a = \frac{1}{4p}$).*
+*(Nota: En análisis de funciones se suele utilizar el formato general simplificado $y = a x^2$. Notemos que ambas representaciones son totalmente compatibles y análogas sabiendo que la constante de amplitud es $a = \frac{1}{4p}$).*
 
 **Casos particulares (Orientación espacial):**
 Intercambiando los signos y las variables cuadráticas en las fórmulas, la geometría de la parábola adopta distintas orientaciones de apertura:
@@ -1366,7 +1368,7 @@ $$\begin{align}
 \end{align}$$
 
 Procedemos a constatar la igualdad geométrica: $(x - 1)^2 = 4(y + 2)^2 \Rightarrow (x - 1) = \pm 2(y + 2)$.
-Como se ha deducido, este sistema polinómico cuadrático equivale únicamente bajo su despeje a **dos líneas rectas separadas secantes** ($x - 2y - 5 = 0$ y $x + 2y + 3 = 0$), una hipérbola estrucutral que colapsó en su centro degenerado.
+Como se ha deducido, este sistema polinómico cuadrático equivale únicamente bajo su despeje a **dos líneas rectas separadas secantes** ($x - 2y - 5 = 0$ y $x + 2y + 3 = 0$), una hipérbola estructural que colapsó en su centro degenerado.
 
 ### 7.4 Excentricidad
 
@@ -1671,7 +1673,7 @@ Hallar la ecuación de la circunferencia que tiene un diámetro con extremos los
    $$k = \frac{y_1 + y_2}{2} = \frac{-2 + 6}{2} = \frac{4}{2} = 2$$
    Por lo tanto, el centro es $C(5, 2)$.
 
-2. **Calcular el radio:** El radio es la distancia desde el centro hasta cualquiera de los extremos del diámetro, o simplemente la mitad del diámetro total. Evaluando la longitud total del diámetro $D$:
+2. **Calcular el radio:** El radio es la distancia desde el centro hasta cualquiera de los extremos del diámetro, o de forma equivalente la mitad del diámetro total. Evaluando la longitud total del diámetro $D$:
    $$D = \sqrt{(2 - 8)^2 + (6 - (-2))^2} = \sqrt{(-6)^2 + (8)^2} = \sqrt{36 + 64} = \sqrt{100} = 10$$
    Sabiendo que $D = 2r$, el radio resulta ser $r = 5$.
 
@@ -1937,4 +1939,4 @@ Como $A = 9$ y $C = 4$ tienen el mismo signo pero son diferentes, es una **elips
 
 ---
 
-**Fin de la Clase 8**
+**Fin de la Clase 8: Cónicas**
