@@ -50,6 +50,8 @@ y = y' - k
 Traslade el punto $P = (3, 2)$ por el vector $(4, -1)$:
 $$P' = (3 + 4, 2 + (-1)) = (7, 1)$$
 
+![Punto P(3,2) trasladado por el vector (4,-1), obteniendo P'(7,1)](../Recursos/traslacion_punto.png)
+
 **Aplicación a ecuaciones:**
 Si una curva tiene ecuación $f(x, y) = 0$ y la trasladamos por $(h, k)$, la nueva ecuación es:
 $$f(x - h, y - k) = 0$$
@@ -57,6 +59,8 @@ $$f(x - h, y - k) = 0$$
 **Ejemplo 1.2:**
 La circunferencia $x^2 + y^2 = 9$ trasladada por $(2, -3)$ se convierte en:
 $$(x - 2)^2 + (y + 3)^2 = 9$$
+
+![Circunferencia x²+y²=9 trasladada por el vector (2,-3), obteniendo (x-2)²+(y+3)²=9](../Recursos/traslacion_circunferencia.png)
 
 ### 1.3 Rotaciones
 
