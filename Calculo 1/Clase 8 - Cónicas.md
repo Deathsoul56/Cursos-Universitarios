@@ -116,6 +116,9 @@ x' = 2\cos(45°) - 2\sin(45°) = 2 \cdot \frac{\sqrt{2}}{2} - 2 \cdot \frac{\sqr
 y' = 2\sin(45°) + 2\cos(45°) = 2 \cdot \frac{\sqrt{2}}{2} + 2 \cdot \frac{\sqrt{2}}{2} = 2\sqrt{2}
 \end{cases}$$
 Resultado: $P' = (0, 2\sqrt{2})$
+
+![Punto Q(2,2) rotado 45° alrededor del origen, obteniendo Q'(0,2√2) sobre la misma circunferencia](../Recursos/rotacion_punto.png)
+
 ### 1.4 Homotecias (Escalamiento)
 
 Pensemos en situaciones donde la forma de una figura no cambia, pero sí su tamaño. Las proporciones se conservan bajo un factor de distorsión puro de aumento o decremento constante.
@@ -139,6 +142,9 @@ x' = 3(2) = 6 \\
 y' = 3(-1) = -3
 \end{cases}$$
 Resultado: $P' = (6, -3)$.
+
+![Punto P(2,-1) escalado por homotecia de razón k=3, obteniendo P'(6,-3) alineado con el origen](../Recursos/homotecia_punto.png)
+
 ### 1.5 Reflexiones
 
 Una **reflexión** es una transformación que "espeja" todos los puntos del plano respecto a una recta fija llamada **eje de reflexión**.
