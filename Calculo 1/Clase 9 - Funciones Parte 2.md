@@ -193,7 +193,7 @@ x' = -\sin(x) \\
 y' = x
 \end{cases}
 $$
-![[sin(x)_rotado.png]]
+![Gráfica de x' = -sin(y') obtenida al rotar la función seno un ángulo π/2](../Recursos/sin(x)_rotado.png)
 Dado que $x = y'$, la nueva curva satisface $x' = -\sin(y')$. Esta curva oscila verticalmente y falla la prueba de la línea vertical: existen infinitos valores de $y'$ para un mismo $x'$, por ejemplo cuando $x' = 0$ se tiene $y' = n\pi$ para todo $n \in \mathbb{Z}$. Por tanto, la rotación no conserva la estructura de función.
 
 ### 1.6 Aplicaciones
@@ -451,7 +451,7 @@ En los **puntos de transición** donde cambia la fórmula, la gráfica de una fu
 
 Aunque el estudio formal de la continuidad corresponde al tema de Límites y Continuidad, es posible verificar de manera intuitiva si una función a tramos está bien "empalmada" en un punto $x = a$ comprobando que los valores de los tramos laterales coinciden con el valor de la función en $a$.
 
-**Ejemplo 3.6 (Función bien empalmeda):**
+**Ejemplo 3.6 (Función bien empalmada):**
 Sea:
 $$f(x) = \begin{cases}
 x + 2 & \text{si } x < 1 \\
@@ -2096,4 +2096,4 @@ Las ecuaciones implícitas aparecen en contextos donde las variables están rela
 
 ---
 
-*Fin de Clase 9 - Funciones Parte 2*
+**Fin de la Clase 9: Funciones Parte 2**
