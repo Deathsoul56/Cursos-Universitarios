@@ -119,6 +119,46 @@ Resultado: $P' = (0, 2\sqrt{2})$
 
 ![Punto Q(2,2) rotado 45° alrededor del origen, obteniendo Q'(0,2√2) sobre la misma circunferencia](../Recursos/rotacion_punto.png)
 
+Hasta aquí toda rotación se ha anclado en el origen. Sin embargo, en la práctica el centro de rotación rara vez coincide con $(0,0)$: las agujas de un reloj giran alrededor de su propio eje, y una figura puede rotarse alrededor de cualquiera de sus vértices. Conviene entonces adaptar el Teorema 1.1 a un centro de rotación arbitrario.
+
+**Teorema 1.2 (Rotación respecto a un centro arbitrario):**
+Para rotar un punto $(x, y)$ un ángulo $\theta$ (en sentido antihorario) respecto a un centro $C = (h, k)$, se utilizan las ecuaciones:
+$$\begin{cases}
+x' = h + (x-h)\cos(\theta) - (y-k)\sin(\theta) \\
+y' = k + (x-h)\sin(\theta) + (y-k)\cos(\theta)
+\end{cases}$$
+
+**Demostración:**
+La estrategia consiste en reducir el problema al caso ya resuelto en el Teorema 1.1, donde el centro de rotación es el origen.
+
+1. Trasladamos el punto $(x, y)$ por el vector $(-h, -k)$ (Definición 1.4), de modo que el centro $C$ pasa a coincidir con el origen:
+$$(\tilde{x}, \tilde{y}) = (x - h,\ y - k)$$
+2. Aplicamos al punto trasladado la rotación respecto al origen dada por el Teorema 1.1:
+$$\begin{cases}
+\tilde{x}' = \tilde{x}\cos(\theta) - \tilde{y}\sin(\theta) \\
+\tilde{y}' = \tilde{x}\sin(\theta) + \tilde{y}\cos(\theta)
+\end{cases}$$
+3. Trasladamos el resultado de regreso por el vector $(h, k)$ para restituir el centro original:
+$$x' = h + \tilde{x}', \qquad y' = k + \tilde{y}'$$
+4. Sustituyendo $\tilde{x} = x - h$ y $\tilde{y} = y - k$ del paso 1 en el paso 2, y el resultado en el paso 3, se obtiene directamente:
+\begin{align}
+x' &= h + (x-h)\cos(\theta) - (y-k)\sin(\theta) \\
+y' &= k + (x-h)\sin(\theta) + (y-k)\cos(\theta)
+\end{align}
+$\blacksquare$
+
+> **Observación:** El Teorema 1.1 es el caso particular del Teorema 1.2 cuando $C = (0, 0)$, es decir, $h = k = 0$.
+
+**Ejemplo 1.5:**
+Rote el punto $P = (5, 3)$ por $90°$ respecto al centro $C = (2, 3)$:
+$$\begin{cases}
+x' = 2 + (5-2)\cos(90°) - (3-3)\sin(90°) = 2 + 3(0) - 0(1) = 2 \\
+y' = 3 + (5-2)\sin(90°) + (3-3)\cos(90°) = 3 + 3(1) + 0(0) = 6
+\end{cases}$$
+Resultado: $P' = (2, 6)$.
+
+![Punto P(5,3) rotado 90° respecto al centro C(2,3), obteniendo P'(2,6)](../Recursos/rotacion_punto_arbitrario.png)
+
 ### 1.4 Homotecias (Escalamiento)
 
 Pensemos en situaciones donde la forma de una figura no cambia, pero sí su tamaño. Las proporciones se conservan bajo un factor de distorsión puro de aumento o decremento constante.
@@ -135,7 +175,7 @@ y' = ky
 > - Si $0 < |k| < 1$, efectúa una compresión o **contracción**.
 > - En casos donde $k < 0$, la distorsión escala arrastrando una inversión simultánea (reflexión equivalente pasando de forma recta a través del origen central $(0,0)$).
 
-**Ejemplo 1.5:**
+**Ejemplo 1.6:**
 Aplique una homotecia de razón $k = 3$ al punto $P = (2, -1)$:
 $$\begin{cases}
 x' = 3(2) = 6 \\
@@ -161,7 +201,7 @@ Una **reflexión** es una transformación que "espeja" todos los puntos del plan
 | Recta $y = -x$ | $(x, y) \to (-y, -x)$ |
 | Origen $(0,0)$ | $(x, y) \to (-x, -y)$ |
 
-**Ejemplo 1.6:**
+**Ejemplo 1.7:**
 Refleje el punto $P = (3, 1)$ respecto a: a) el eje $X$, b) el eje $Y$, c) la recta $y = x$:
 
 a) Eje $X$: $P' = (3, -1)$
@@ -174,12 +214,12 @@ c) $y = x$: $P' = (1, 3)$
 Las transformaciones se pueden combinar. El orden importa categóricamente:
 - Traslación seguida de rotación ≠ Rotación seguida de traslación (en general).
 
-**Ejemplo 1.7:**
+**Ejemplo 1.8:**
 Traslade $(1, 0)$ por $(1, 1)$ y luego rote $90°$:
 1. Traslación: $(1, 0) \to (2, 1)$
 2. Rotación: $(2, 1) \to (2\cos(90°) - 1\sin(90°), 2\sin(90°) + 1\cos(90°)) = (-1, 2)$
 
-**Ejemplo 1.8:**
+**Ejemplo 1.9:**
 Aplique a $P = (3, -2)$: primero una reflexión respecto al eje $X$, luego una traslación por el vector $(1, 4)$:
 1. Reflexión respecto al eje $X$: $(3, -2) \to (3, 2)$
 2. Traslación por $(1, 4)$: $(3, 2) \to (3 + 1,\ 2 + 4) = (4, 6)$
@@ -190,7 +230,7 @@ Comparar con el orden inverso (primero traslación, luego reflexión):
 
 Los resultados $(4, 6) \neq (4, -2)$ confirman de inmediato que **el orden de las transformaciones importa**.
 
-**Ejemplo 1.9 (Combinando escala y traslación):**
+**Ejemplo 1.10 (Combinando escala y traslación):**
 Aplique al punto $P = (2, 4)$ primero una homotecia de razón $k = 0.5$ y luego una traslación por el vector $(-3, 2)$:
 1. Homotecia con $k = 0.5$: $(2, 4) \to (\frac{1}{2} \cdot 2, \frac{1}{2} \cdot 4) = (1, 2)$
 2. Traslación por $(-3, 2)$: $(1, 2) \to (1 - 3, 2 + 2) = (-2, 4)$
