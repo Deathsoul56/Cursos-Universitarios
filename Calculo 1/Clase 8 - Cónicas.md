@@ -101,6 +101,18 @@ x = x'\cos(\theta) + y'\sin(\theta) \\
 y = -x'\sin(\theta) + y'\cos(\theta)
 \end{cases}$$
 
+**Corolario 1.1 (Rotaciones clásicas):**
+Al evaluar el Teorema 1.1 en los ángulos $90°$, $180°$, $270°$ y $360°$ (múltiplos de un cuarto de vuelta), $\cos\theta$ y $\sin\theta$ toman únicamente los valores $-1$, $0$ o $1$, de modo que las fórmulas de rotación se reducen a un simple intercambio y cambio de signo de coordenadas:
+
+| Ángulo $\theta$ | $\cos\theta$ | $\sin\theta$ | $(x', y')$ |
+|:---:|:---:|:---:|:---:|
+| $90°$ | $0$ | $1$ | $(-y,\ x)$ |
+| $180°$ | $-1$ | $0$ | $(-x,\ -y)$ |
+| $270°$ | $0$ | $-1$ | $(y,\ -x)$ |
+| $360°$ | $1$ | $0$ | $(x,\ y)$ |
+
+> **Observación:** La rotación de $360°$ es la transformación identidad: al completar una vuelta entera, cada punto regresa exactamente a su posición original.
+
 **Ejemplo 1.3:**
 Rote el punto $P = (1, 0)$ por $90°$ (o $\frac{\pi}{2}$ rad):
 $$\begin{cases}
@@ -247,7 +259,9 @@ $$Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$$
 donde $A$, $B$, $C$, $D$, $E$, $F$ son constantes reales y al menos uno de $A$, $B$, $C$ es distinto de cero.
 
 Esta relación nos dará como resultado un círculo, una elipse, una parábola o una hipérbola. Estos cuatro lugares geométricos son llamados las secciones cónicas pues son el resultado de intersecar un cono con un plano.
-![Circunferencia, elipse, parábola e hipérbola como cortes de un cono](../Recursos/conicas.jpg)
+
+![Circunferencia, elipse, parábola e hipérbola como cortes de un cono doble](../Recursos/conicas_cono.png)
+
 El término cruzado $Bxy$ tiene relación con el ángulo de rotación de la sección cónica. En un principio trabajaremos sin él, pero más adelante lo incorporaremos para ver su comportamiento.
 
 **Observación:** Si los tres coeficientes cuadráticos son nulos ($A = B = C = 0$), la ecuación se reduce a $Dx + Ey + F = 0$, que es la ecuación general de una **recta**. En ese sentido, la ecuación de segundo grado es una generalización: al "activar" los términos cuadráticos pasamos de rectas a cónicas (o a algún caso degenerado).
