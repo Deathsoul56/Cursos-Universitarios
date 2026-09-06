@@ -220,6 +220,8 @@ a) Eje $X$: $P' = (3, -1)$
 b) Eje $Y$: $P' = (-3, 1)$
 c) $y = x$: $P' = (1, 3)$
 
+![Punto P(3,1) reflejado respecto al eje X, al eje Y y a la recta y=x](../Recursos/reflexion_punto.png)
+
 ### 1.6 Transformaciones combinadas
 
 **Proposición 1.1:**
