@@ -233,6 +233,8 @@ Traslade $(1, 0)$ por $(1, 1)$ y luego rote $90°$:
 1. Traslación: $(1, 0) \to (2, 1)$
 2. Rotación: $(2, 1) \to (2\cos(90°) - 1\sin(90°), 2\sin(90°) + 1\cos(90°)) = (-1, 2)$
 
+![Punto A(1,0) trasladado por (1,1) a B(2,1) y luego rotado 90° respecto al origen hasta C(-1,2)](../Recursos/traslacion_rotacion_combinada.png)
+
 **Ejemplo 1.9:**
 Aplique a $P = (3, -2)$: primero una reflexión respecto al eje $X$, luego una traslación por el vector $(1, 4)$:
 1. Reflexión respecto al eje $X$: $(3, -2) \to (3, 2)$
@@ -244,10 +246,14 @@ Comparar con el orden inverso (primero traslación, luego reflexión):
 
 Los resultados $(4, 6) \neq (4, -2)$ confirman de inmediato que **el orden de las transformaciones importa**.
 
+![Punto P(3,-2) transformado en los dos órdenes posibles: reflexión-luego-traslación da (4,6), traslación-luego-reflexión da (4,-2)](../Recursos/orden_importa_reflexion_traslacion.png)
+
 **Ejemplo 1.10 (Combinando escala y traslación):**
 Aplique al punto $P = (2, 4)$ primero una homotecia de razón $k = 0.5$ y luego una traslación por el vector $(-3, 2)$:
 1. Homotecia con $k = 0.5$: $(2, 4) \to (\frac{1}{2} \cdot 2, \frac{1}{2} \cdot 4) = (1, 2)$
 2. Traslación por $(-3, 2)$: $(1, 2) \to (1 - 3, 2 + 2) = (-2, 4)$
+
+![Punto P(2,4) escalado por homotecia k=0.5 hasta Q(1,2) y luego trasladado por (-3,2) hasta R(-2,4)](../Recursos/homotecia_traslacion_combinada.png)
 
 ---
 ## 2. Ecuación general de segundo grado
