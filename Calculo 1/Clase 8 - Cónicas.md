@@ -684,6 +684,8 @@ donde $C$ es el centro y $r > 0$ es el **radio**.
 La circunferencia con centro $C = (h, k)$ y radio $r$ tiene ecuación:
 $$(x - h)^2 + (y - k)^2 = r^2$$
 
+![Circunferencia centrada en (h,k) de radio r](../Recursos/circunferencia_hk.png)
+
 **Demostración:**
 
 Sea $C = (h, k)$ el centro fijo y $r > 0$ el radio. Por definición, un punto $P = (x, y)$ pertenece a la circunferencia si y solo si su distancia al centro es exactamente $r$:
@@ -907,6 +909,9 @@ El radio es $r = \sqrt{50} = 5\sqrt{2} \approx 7.07$.
 **Ecuación canónica final:**
 $$(x - h)^2 + (y - k)^2 = r^2$$
 $$\boxed{(x - 7)^2 + (y - 6)^2 = 50}$$
+
+![Circunferencia que pasa por A(2,1), B(6,13) y C(14,5), con centro O(7,6) y radio r=5√2](../Recursos/circunferencia_tres_puntos.png)
+
 ### 4.4 El número π
 
 El número $\pi$ (pi) es la constante definida como la razón entre la **circunferencia** (perímetro) de un círculo y su **diámetro**:
