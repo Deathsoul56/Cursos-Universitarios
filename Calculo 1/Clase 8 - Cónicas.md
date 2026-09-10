@@ -268,8 +268,6 @@ donde $A$, $B$, $C$, $D$, $E$, $F$ son constantes reales y al menos uno de $A$, 
 
 Esta relación nos dará como resultado un círculo, una elipse, una parábola o una hipérbola. Estos cuatro lugares geométricos son llamados las secciones cónicas pues son el resultado de intersecar un cono con un plano.
 
-![Circunferencia, elipse, parábola e hipérbola como cortes de un cono doble](../Recursos/conicas_cono.png)
-
 El término cruzado $Bxy$ tiene relación con el ángulo de rotación de la sección cónica. En un principio trabajaremos sin él, pero más adelante lo incorporaremos para ver su comportamiento.
 
 **Observación:** Si los tres coeficientes cuadráticos son nulos ($A = B = C = 0$), la ecuación se reduce a $Dx + Ey + F = 0$, que es la ecuación general de una **recta**. En ese sentido, la ecuación de segundo grado es una generalización: al "activar" los términos cuadráticos pasamos de rectas a cónicas (o a algún caso degenerado).
@@ -634,39 +632,57 @@ d) $x^2 - y^2 - 2x + 4y - 4 = 0$
 ---
 ## 3. Secciones cónicas: definición geométrica
 
-Aquí estudiaremos las secciones cónicas a más profundidad y con un enfoque más geométrico.
+Hasta ahora hemos tratado las cónicas como objetos puramente algebraicos: ecuaciones de segundo grado que clasificamos según el signo de sus coeficientes o de su discriminante. Pero el nombre "sección cónica" no es arbitrario, y proviene de un origen genuinamente geométrico. La circunferencia, la elipse, la parábola y la hipérbola son, en realidad, una misma familia de curvas: los distintos cortes que se obtienen al rebanar un cono con un plano en diferentes ángulos. Esta perspectiva unifica visualmente lo que el álgebra ya había mostrado mediante el discriminante $\Delta = B^2 - 4AC$ en la §2.5 — el ángulo del plano de corte determina exactamente qué tipo de cónica resulta.
+
+Este enfoque geométrico es, de hecho, el original y el más antiguo. Menecmo (c. 350 a.C.) descubrió las secciones cónicas al intentar resolver el problema de la duplicación del cubo mediante la intersección de curvas. Fue Apolonio de Perga quien, en su tratado *Cónicas* (c. 200 a.C.), sistematizó su estudio de manera rigurosa y acuñó los nombres "elipse", "parábola" e "hipérbola" —derivados de términos griegos asociados al área de rectángulos: "defecto", "igualdad" y "exceso", respectivamente— según cómo el área bajo la curva se comparaba con una región de referencia. Estos nombres, dieciocho siglos más tarde, resultarían ser exactamente los mismos objetos que aparecen al clasificar la ecuación general de segundo grado.
 
 ### 3.1 El cono circular recto
 
 **Definición 3.1 (Cono circular recto):**
 Un **cono circular recto** es la superficie generada por una recta (generatriz) que pasa por un punto fijo (vértice) y forma un ángulo constante con un eje fijo.
+
 ![Cono circular recto con su vértice y eje](../Recursos/cono_circular.png)
+
 **Definición 3.2 (Sección cónica):**
-Una **sección cónica** (o **cónica**) es la curva resultante de la intersección de un plano con un cono circular recto doble (dos conos opuestos por el vértice).
+Una **sección cónica** (o **cónica**) es la curva resultante de la intersección de un plano con un cono circular recto doble (dos conos opuestos por el vértice, compartiendo el mismo eje).
+
+![Circunferencia, elipse, parábola e hipérbola como cortes de un cono doble](../Recursos/conicas_cono.png)
+
 ### 3.2 Tipos de secciones cónicas
 
-Dependiendo del ángulo del plano de corte:
+Dependiendo del ángulo del plano de corte respecto al eje del cono, se obtienen cuatro curvas distintas, además de tres casos degenerados cuando el plano pasa exactamente por el vértice.
 
 **1. Circunferencia:**
 - Plano perpendicular al eje del cono
+
 ![Circunferencia obtenida al cortar el cono con un plano perpendicular al eje](../Recursos/circulo_como_conica.jpg)
 
 **2. Elipse:**
-- Plano oblicuo que corta una hoja del cono
+- Plano oblicuo que corta una sola hoja del cono
 - No paralelo a ninguna generatriz
+
 ![Elipse obtenida al cortar el cono con un plano oblicuo](../Recursos/elipse_como_conica.png)
 
 **3. Parábola:**
-- Plano paralelo a una generatriz del cono
+- Plano paralelo a exactamente una generatriz del cono
+
 ![Parábola obtenida al cortar el cono con un plano paralelo a una generatriz](../Recursos/parabola_como_conica.png)
 
 **4. Hipérbola:**
 - Plano que corta ambas hojas del cono
+
 ![Hipérbola obtenida al cortar ambas hojas del cono](../Recursos/hiperbola_como_conica.png)
+
 **Casos degenerados:**
-- **Punto:** Plano pasa por el vértice (perpendicular al eje)
-- **Recta:** Plano pasa por el vértice (tangente a una generatriz)
-- **Dos rectas:** Plano pasa por el vértice (no tangente)
+Cuando el plano de corte pasa exactamente por el vértice, la curva resultante colapsa en uno de tres objetos límite:
+- **Punto:** el plano es perpendicular al eje (caso límite de la circunferencia/elipse).
+- **Recta:** el plano es tangente a una generatriz (caso límite de la parábola).
+- **Dos rectas que se intersectan:** el plano corta ambas hojas sin ser tangente a ninguna generatriz (caso límite de la hipérbola).
+
+**Ejemplo 3.1:**
+Consideremos un plano horizontal que corta el cono exactamente a media altura, perpendicular al eje: el resultado es una circunferencia. Si inclinamos gradualmente ese plano sin llegar a ser paralelo a ninguna generatriz, la curva se deforma en una elipse cada vez más alargada. En el instante preciso en que el plano se vuelve paralelo a una generatriz, la curva "se abre" por un extremo y deja de estar acotada: se convierte en una parábola. Si seguimos inclinando el plano más allá de ese ángulo crítico, hasta que también corte la segunda hoja del cono, obtenemos las dos ramas de una hipérbola.
+
+> **Observación:** Esta clasificación geométrica coincide exactamente con la clasificación algebraica del discriminante $\Delta = B^2 - 4AC$ estudiada en la §2.5: los cortes que producen curvas acotadas (circunferencia, elipse) corresponden a $\Delta < 0$; el corte "límite" paralelo a una generatriz (parábola) corresponde a $\Delta = 0$; y el corte que separa ambas hojas del cono (hipérbola) corresponde a $\Delta > 0$. El ángulo del plano respecto al eje del cono y el signo del discriminante son, en el fondo, dos maneras de medir la misma cosa.
 
 ---
 ## 4. El círculo (circunferencia)
