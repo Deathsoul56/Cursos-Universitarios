@@ -300,6 +300,8 @@ donde $h = -\dfrac{D}{2A}$, $\quad k = -\dfrac{E}{2C}$, $\quad a^2 = \dfrac{R}{A
 
 **Elipse** con semiejes $a = \sqrt{R/A}$ y $b = \sqrt{R/C}$ (cuando $R > 0$, $A > 0$, $C > 0$).
 
+![Elipse centrada en (h,k) con semiejes a y b](../Recursos/elipse_hk.png)
+
 **3) Cuando $A = 0$ o $C = 0$ (pero no ambos) → Parábola**
 
 Si $C = 0$ y $A \neq 0$:
@@ -312,6 +314,8 @@ donde $h = -\dfrac{D}{2A}$, $\quad k = \dfrac{D^2 - 4AF}{4AE}$, $\quad 4p = -\df
 
 **Parábola** de eje vertical (abre hacia arriba o abajo).
 
+![Parábola de eje vertical con vértice en (h,k)](../Recursos/parabola_vertical_hk.png)
+
 Si $A = 0$ y $C \neq 0$:
 
 $$Cy^2 + Dx + Ey + F = 0$$
@@ -321,6 +325,8 @@ $$(y - k)^2 = 4p\,(x - h)$$
 donde $k = -\dfrac{E}{2C}$, $\quad h = \dfrac{E^2 - 4CF}{4CD}$, $\quad 4p = -\dfrac{D}{C}$
 
 **Parábola** de eje horizontal (abre hacia la izquierda o derecha).
+
+![Parábola de eje horizontal con vértice en (h,k)](../Recursos/parabola_horizontal_hk.png)
 
 **4) Cuando $A$ y $C$ tienen signos opuestos → Hipérbola**
 
