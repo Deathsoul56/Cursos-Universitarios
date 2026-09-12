@@ -342,6 +342,10 @@ donde $h = -\dfrac{D}{2A}$, $\quad k = -\dfrac{E}{2C}$, $\quad a^2 = \dfrac{R}{A
 
 **Hipérbola** con eje transverso horizontal (si $R > 0$) o vertical (si $R < 0$).
 
+![Hipérbola centrada en (h,k) con eje transverso horizontal](../Recursos/hiperbola_horizontal_hk.png)
+
+![Hipérbola centrada en (h,k) con eje transverso vertical](../Recursos/hiperbola_vertical_hk.png)
+
 ### 2.3 Eliminación del término mixto
 
 Ahora que sabemos clasificar una cónica cuando $B = 0$, nos surge la pregunta: ¿Cómo clasificamos cuando aparece el término cruzado $Bxy$? La estrategia será encontrar una transformación de coordenadas que lo elimine.
@@ -649,6 +653,8 @@ Un **cono circular recto** es la superficie generada por una recta (generatriz) 
 
 ![Cono circular recto con su vértice y eje](../Recursos/cono_circular.png)
 
+> **Nota:** El cono circular recto también admite una descripción puramente analítica, mediante una ecuación en $\mathbb{R}^3$ que depende del semiángulo del cono. Esta formalización requiere herramientas de geometría vectorial y superficies en el espacio que se estudiarán en el curso de Cálculo 3; por ahora basta con la descripción geométrica anterior.
+
 **Definición 3.2 (Sección cónica):**
 Una **sección cónica** (o **cónica**) es la curva resultante de la intersección de un plano con un cono circular recto doble (dos conos opuestos por el vértice, compartiendo el mismo eje).
 
@@ -689,6 +695,29 @@ Cuando el plano de corte pasa exactamente por el vértice, la curva resultante c
 Consideremos un plano horizontal que corta el cono exactamente a media altura, perpendicular al eje: el resultado es una circunferencia. Si inclinamos gradualmente ese plano sin llegar a ser paralelo a ninguna generatriz, la curva se deforma en una elipse cada vez más alargada. En el instante preciso en que el plano se vuelve paralelo a una generatriz, la curva "se abre" por un extremo y deja de estar acotada: se convierte en una parábola. Si seguimos inclinando el plano más allá de ese ángulo crítico, hasta que también corte la segunda hoja del cono, obtenemos las dos ramas de una hipérbola.
 
 > **Observación:** Esta clasificación geométrica coincide exactamente con la clasificación algebraica del discriminante $\Delta = B^2 - 4AC$ estudiada en la §2.5: los cortes que producen curvas acotadas (circunferencia, elipse) corresponden a $\Delta < 0$; el corte "límite" paralelo a una generatriz (parábola) corresponde a $\Delta = 0$; y el corte que separa ambas hojas del cono (hipérbola) corresponde a $\Delta > 0$. El ángulo del plano respecto al eje del cono y el signo del discriminante son, en el fondo, dos maneras de medir la misma cosa.
+
+### 3.3 El teorema de Dandelin: la conexión con los focos
+
+Hasta este punto, la sección cónica se ha descrito exclusivamente como el corte de un cono con un plano, sin mencionar focos ni directrices. Sin embargo, en las secciones 4 a 7 cada cónica se definirá algebraicamente mediante distancias a puntos fijos (focos) o a rectas fijas (directrices) —una definición aparentemente distinta. El resultado que conecta ambos mundos fue publicado por el matemático e ingeniero belga Germinal Pierre Dandelin en 1822, casi dos mil años después de Apolonio.
+
+**Teorema 3.1 (Esferas de Dandelin):**
+Sea $\pi$ un plano que corta a un cono circular recto (o a una de sus dos hojas) sin pasar por el vértice. Existen una o dos esferas inscritas en el cono, tangentes simultáneamente a la superficie cónica y al plano $\pi$ (las **esferas de Dandelin**). Los puntos donde estas esferas tocan al plano $\pi$ son precisamente los focos de la sección cónica resultante:
+
+- Si $\pi$ corta una sola hoja sin ser paralela a ninguna generatriz (elipse), existen **dos** esferas de Dandelin, una a cada lado del plano, y la suma de las distancias de cualquier punto de la curva a ambos puntos de tangencia es constante.
+- Si $\pi$ es paralela a exactamente una generatriz (parábola), existe una **única** esfera de Dandelin, y su punto de tangencia es el foco; la recta donde el plano de la esfera (el plano del círculo de tangencia esfera-cono) interseca a $\pi$ es la directriz.
+- Si $\pi$ corta ambas hojas del cono (hipérbola), existe una esfera de Dandelin **en cada hoja**, y la diferencia de las distancias de cualquier punto de la curva a los dos puntos de tangencia es constante.
+
+**Idea de la demostración:** El argumento central es una propiedad elemental de las esferas: todos los segmentos tangentes trazados desde un punto exterior a una esfera tienen la misma longitud. Para un punto $P$ cualquiera de la sección cónica, el segmento desde $P$ hasta el foco (punto de tangencia de la esfera con el plano $\pi$) es él mismo un segmento tangente a esa esfera, y su longitud coincide con la del segmento tangente trazado desde $P$ a lo largo de la generatriz del cono que pasa por $P$, hasta el círculo donde la esfera toca al cono. Cuando hay dos esferas (caso elipse), sumar las dos longitudes tangentes-por-generatriz a lo largo de la misma generatriz da siempre la distancia entre los dos círculos de tangencia medida sobre cualquier generatriz —una cantidad que no depende de $P$, sino solo del cono y de las dos esferas. Esa suma constante es, por definición, la suma de distancias a los focos que caracteriza a la elipse. El caso de la hipérbola es análogo, tomando la diferencia en lugar de la suma.
+
+> **Nota:** La construcción rigurosa y completa de las esferas de Dandelin —incluyendo las ecuaciones vectoriales del cono, el plano y las esferas en $\mathbb{R}^3$— requiere herramientas de geometría vectorial en el espacio que se estudiarán con detalle en el curso de Cálculo 3. Aquí basta con la idea geométrica: las esferas de Dandelin son el puente que explica *por qué* cortar un cono produce exactamente las mismas curvas que las definiciones focales de las secciones 4 a 7.
+
+### 3.4 Aplicaciones de la perspectiva geométrica
+
+A diferencia de las aplicaciones basadas en focos y directrices (véase la §9), la descripción de las cónicas como cortes de un cono tiene manifestaciones propias, ligadas directamente a la geometría del cono de luz o de material:
+
+1. **Sombras cónicas:** El haz de luz que emite una linterna o una lámpara con pantalla cónica es, geométricamente, un cono. Al proyectarse sobre una pared, el contorno de la región iluminada es una sección cónica: un círculo si la pared es perpendicular al eje del haz, y una elipse o una rama de hipérbola cada vez más abierta a medida que la pared se inclina.
+2. **Gnomónica (relojes de sol):** Los rayos solares que inciden sobre la punta de un gnomon (la varilla vertical de un reloj de sol) forman, a lo largo de un día, un cono cuyo eje apunta hacia el polo celeste. La sombra de la punta, proyectada sobre el plano horizontal del reloj, traza una sección cónica —típicamente una rama de hipérbola en la mayoría de las latitudes, y en casos especiales una elipse o una recta.
+3. **Manufactura de piezas cónicas:** Embudos, boquillas, uniones de tuberías y piezas torneadas en un torno suelen tener forma de cono o de tronco de cono. Al diseñar un corte transversal con un ángulo específico, un ingeniero está, en esencia, eligiendo qué sección cónica exhibirá la pieza en esa cara.
 
 ---
 ## 4. El círculo (circunferencia)
