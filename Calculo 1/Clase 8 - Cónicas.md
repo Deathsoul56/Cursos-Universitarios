@@ -761,6 +761,8 @@ $$x^2 + y^2 = r^2$$
 La circunferencia con centro $(2, -3)$ y radio $5$ tiene ecuación:
 $$(x - 2)^2 + (y + 3)^2 = 25$$
 
+![Circunferencia con centro (2,-3) y radio 5](../Recursos/circunferencia_ejemplo_4_1.png)
+
 ### 4.2 Ecuación general a canónica
 
 **Proposición 4.1:**
@@ -997,6 +999,8 @@ Un **arco** es una porción de la circunferencia delimitada por dos puntos.
 **Teorema 4.4 (Longitud de arco):**
 La longitud de un arco que subtiende un ángulo central $\theta$ (en radianes) en una circunferencia de radio $r$ es:
 $$s = r\theta$$
+
+![Arco y sector circular: radio r, ángulo central θ, arco s y área del sector](../Recursos/arco_sector_circular.png)
 
 **Ejemplo 4.7:**
 Un arco con ángulo central de $60° = \frac{\pi}{3}$ rad en una circunferencia de radio $6$ cm:
