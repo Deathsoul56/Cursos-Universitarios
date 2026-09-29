@@ -1046,6 +1046,8 @@ $$\text{Elipse} = \{P \in \mathbb{R}^2 : d(P, F_1) + d(P, F_2) = 2a\}$$
 
 donde $F_1$ y $F_2$ son los focos y $2a$ es la constante (longitud del eje mayor).
 
+![Elipse general con sus dos focos F1 y F2, y un punto P con la suma de distancias d(P,F1)+d(P,F2)=2a](../Recursos/elipse_focos.png)
+
 **Propiedad fundamental:**
 $$d(P, F_1) + d(P, F_2) = 2a$$
 
@@ -1116,21 +1118,7 @@ donde:
 - $b$ = semieje menor
 - $c$ = distancia del centro a cada foco
 
-```text
-        Vértice menor
-             •
-             |
-   F₁ •------|------• F₂
-      c  •   |  •   c
-         |   |   |
-    -----•---•---•----- Eje mayor
-         |   |   |
-             |
-             •
-        Vértice menor
-    |----a----|
-        |--b--|
-```
+![Triángulo rectángulo formado por el centro, un vértice menor y un foco: catetos b y c, hipotenusa a](../Recursos/elipse_relacion_abc.png)
 
 ### 5.3 Ecuación general a canónica
 
@@ -1152,6 +1140,8 @@ $$\begin{align}
 - **Centro:** $(2, -1)$
 - **Orientación:** Eje mayor vertical.
 - $a = 3$, $b = 2$, distancia focal $c = \sqrt{9-4} = \sqrt{5}$.
+
+![Elipse con centro (2,-1), eje mayor vertical, semiejes a=3 y b=2, y focos F1 y F2](../Recursos/elipse_ejemplo_5_2.png)
 
 > **Casos Degenerados de la Elipse:**
 > Al completar los cuadrados, la constante final a la que igualamos la ecuación estandarizada estipula la existencia del lugar geométrico $\frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2} = M$:
@@ -1450,18 +1440,7 @@ donde:
 
 **Observación:** Matemáticamente en la hipérbola se cumple forzosamente que $c > a$, a primera diferencia de la elipse donde siempre $c < a$.
 
-```text
-        Asíntota
-           /|
-          / |
-    F₁•  /  |  •F₂
-        /   |
-  -----V----C----V----- Eje transverso
-           \|
-            |\
-            | \
-               Asíntota
-```
+![Triángulo rectángulo formado por el centro, el vértice y la esquina del rectángulo asintótico: catetos a y b, hipotenusa c](../Recursos/hiperbola_relacion_abc.png)
 
 ### 7.3 Ecuación general a canónica
 
