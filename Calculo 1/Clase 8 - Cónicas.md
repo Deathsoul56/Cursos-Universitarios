@@ -1234,18 +1234,7 @@ $$d(P, \text{foco}) = d(P, \text{directriz})$$
 4. **Eje de simetría:** Recta que parte la parábola en dos mitades idénticas, atraviesa el vértice y al foco, conectándolos de manera perpendicular con la directriz.
 5. **Parámetro ($p$):** La distancia constante que separa al vértice y al foco (y equivalentemente, al vértice de la directriz).
 
-```text
-        Directriz
-    -----|-----
-         | p
-         •  P(x,y) (punto general en parábola)
-        /|
-       / |
-      /  |
-     •---|--- Eje de simetría
-     F   V
-   Foco  Vértice
-```
+![Parábola con foco, directriz, vértice, eje de simetría y las distancias iguales desde un punto P](../Recursos/parabola_elementos.png)
 
 ### 6.3 Ecuación canónica
 
@@ -1312,6 +1301,8 @@ x^2 - 4x + 4 &= 8y - 12 + 4 \\
 - **Orientación:** Cuyo factor resultante en base $y$ en lateral es positivo, la apertura rige de manera vertical base hacia arriba.
 - Extrayendo parámetro: $4p = 8 \Rightarrow p = 2$.
 - **Foco:** Si el vértice descansa sobre $y=1$ y abre hacia el cielo, sumamos su foco analógico y concluimos en el punto exacto $(2, 3)$.
+
+![Parábola del Ejemplo 6.2 con vértice (2,1), foco (2,3), directriz y eje de simetría](../Recursos/parabola_ejemplo_6_2.png)
 
 > **Casos Degenerados de la Parábola:**
 > Si al completar cuadrados el término lineal en la otra variable se anula, la ecuación queda de la forma $(x - h)^2 = M$, y el resultado depende del signo de $M$:
