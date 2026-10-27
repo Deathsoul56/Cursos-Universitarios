@@ -584,7 +584,7 @@ $$
 
 ### 3.3 Regla de Sturges
 
-> **Nota histórica:** Herbert A. Sturges publicó en 1926 el artículo "The choice of a class interval" en el *Journal of the American Statistical Association*. Allí propuso una regla basada en consideraciones de la distribución binomial para datos simétricos, que se convirtió en una de las heurísticas más usadas para determinar el número de intervalos.
+> **Nota histórica:** Herbert A. Sturges publicó en 1926 el artículo "The choice of a class interval" en el *Journal of the American Statistical Association*. Allí propuso una regla basada en consideraciones de la distribución binomial, que se convirtió en una de las heurísticas más usadas para determinar el número de intervalos.
 
 **Definición 3.4 (Regla de Sturges):**
 El número de intervalos se aproxima mediante:
@@ -594,7 +594,7 @@ k \approx \lceil 1 + \log_2(N) \rceil = \lceil 1 + 3.322 \log_{10}(N) \rceil
 
 $$
 
-**Fundamentación teórica:** Sturges derivó esta regla asumiendo que los datos provienen de una distribución aproximadamente simétrica y aplicando consideraciones de la distribución binomial. Específicamente, si los datos se distribuyen de forma simétrica alrededor de un centro, el número de clases óptimo crece logarítmicamente con $N$.
+**Fundamentación teórica:** Sturges derivó esta regla a partir de un histograma ideal cuyas frecuencias son coeficientes binomiales. Ese perfil es simétrico y unimodal, y se aproxima a una curva normal a medida que crece el número de intervalos. Por ello, la regla supone implícitamente que los datos siguen una distribución aproximadamente normal, y el número de clases crece de forma logarítmica con $N$. La derivación completa se presenta al final de esta sección.
 
 **Demostración del cambio de base del logaritmo:**
 El cambio de base se justifica porque:
@@ -639,7 +639,45 @@ k \approx \lceil 1 + 3.322 \log_{10}(50) \rceil = \lceil 1 + 3.322 \times 1.699 
 
 $$
 
-> **Observación:** A diferencia de la regla de la raíz cuadrada, que es puramente empírica, la regla de Sturges se deduce de un modelo probabilístico explícito. Como toda deducción, su validez es condicional: se sostiene en la medida en que los datos satisfacen la hipótesis de partida, a saber, que se distribuyen de forma aproximadamente simétrica y unimodal. En ese caso la regla describe bien los datos; fuera de él, el modelo deja de ser una buena aproximación. Además, para muestras grandes ($N > 200$) la regla tiende a subestimar $k$.
+> **Observación:** En la práctica, la regla de Sturges es confiable para $30 \leq N \leq 200$. Con $N < 30$ produce menos de siete intervalos, insuficientes para revelar la forma de la distribución. Con $N > 200$ el crecimiento logarítmico de $k$ resulta demasiado lento y el histograma queda sobresuavizado, a diferencia de reglas como las de Scott y Freedman-Diaconis, en las que $k$ escala como $N^{1/3}$ (Hyndman, 1995). Dentro de ese rango, el resultado mejora cuanto más cercanos a la normalidad estén los datos, y en particular cuando su distribución es unimodal y simétrica.
+
+#### Derivación de la regla de Sturges (opcional)
+
+Para entender de dónde sale $1 + \log_2(N)$, conviene reconstruir el argumento de Sturges. Se considera un histograma ideal de $k$ intervalos y se pregunta qué tamaño $N$ debe tener una muestra para que las frecuencias sean exactamente los coeficientes binomiales de orden $k-1$. Esos coeficientes forman un perfil simétrico y unimodal que, al crecer $k$, se aproxima a la curva normal (teorema de de Moivre-Laplace, que se estudiará en el curso de probabilidad). De ahí provienen las hipótesis de normalidad, simetría y unimodalidad.
+
+**Proposición 3.1 (Regla de Sturges):**
+Sea un histograma ideal de $k$ intervalos, indexados por $i \in \{0, 1, \ldots, k-1\}$, cuya frecuencia absoluta es:
+
+$$
+n_i = \binom{k-1}{i}
+$$
+
+Entonces el tamaño total de la muestra es $N = 2^{k-1}$ y el número de intervalos es $k = 1 + \log_2(N)$.
+
+**Demostración:**
+La suma de todas las frecuencias es el tamaño de la muestra. Por el teorema del binomio, con $a = b = 1$ y exponente $m = k-1$:
+
+$$
+\begin{align}
+N &= \sum_{i=0}^{k-1} n_i \\
+  &= \sum_{i=0}^{k-1} \binom{k-1}{i} \cdot 1^{\,k-1-i} \cdot 1^{\,i} \\
+  &= (1+1)^{k-1} \\
+  &= 2^{k-1}
+\end{align}
+$$
+
+Aplicando $\log_2$ a ambos lados de $N = 2^{k-1}$ se obtiene $\log_2(N) = k - 1$, es decir:
+
+$$
+k = 1 + \log_2(N)
+$$
+
+$\blacksquare$
+
+**Ejemplo 3.3:**
+Para $k = 5$ las frecuencias ideales son $\binom{4}{0}, \ldots, \binom{4}{4} = 1, 4, 6, 4, 1$, que suman $N = 16 = 2^{4}$. Recíprocamente, para $N = 16$ la regla da $k = 1 + \log_2(16) = 5$.
+
+> **Observación importante:** Hyndman (1995) señala que esta deducción no es una demostración de optimalidad. Para cualquier tamaño muestral $N$, las frecuencias esperadas $N \binom{k-1}{i} (0.5)^{k-1}$ también se aproximan a una curva normal. La condición $N = 2^{k-1}$ equivale a fijar arbitrariamente una escala particular del histograma, y con otra escala se obtendría un $k$ distinto. Por esta razón, la regla de Sturges debe entenderse como una heurística útil para tamaños moderados, no como el resultado de un criterio de optimalidad.
 
 ### 3.4 Otras reglas y procedimiento general
 
@@ -710,7 +748,7 @@ El proceso completo puede resumirse en el siguiente diagrama de flujo:
 
 A continuación se presenta un caso práctico detallado para consolidar los criterios de agrupación expuestos.
 
-**Ejemplo 3.3 (Agrupación de un conjunto de datos continuo):**
+**Ejemplo 3.4 (Agrupación de un conjunto de datos continuo):**
 Construir la tabla de distribución de frecuencias agrupadas para las siguientes 50 mediciones continuas:
 
 ```
