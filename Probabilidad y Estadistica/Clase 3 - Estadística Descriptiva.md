@@ -380,7 +380,7 @@ donde cada $I_i = [c_i, c_{i+1})$ para $i = 1, \ldots, k-1$ y $I_k = [c_k, c_{k+
 3. $I_i \cap I_j = \emptyset$ para $i \neq j$ (disjunción).
 4. $\displaystyle \bigcup_{i=1}^{k} I_i \supseteq \{x_1, \ldots, x_N\}$ (exhaustividad).
 
-A los valores $c_1, c_2, \ldots, c_{k+1}$ se les denomina **límites de clase** y a cada $[c_i, c_{i+1})$ se le llama **intervalo de clase**.
+A los valores $c_1, c_2, \ldots, c_{k+1}$ se les denomina **límites de clase** o **fronteras de clase**, y a cada $[c_i, c_{i+1})$ se le llama **intervalo de clase**.
 
 > **Observación:** La elección de intervalos semiabiertos por la derecha evita la ambigüedad en la asignación de valores que caen exactamente en un límite. El último intervalo se cierra para garantizar que el valor máximo quede incluido.
 
@@ -391,8 +391,10 @@ Cada intervalo de clase tiene tres elementos fundamentales: los límites inferio
 **Definición 2.2 (Límites de clase):**
 Para el intervalo $I_i = [c_i, c_{i+1})$ (o $I_k = [c_k, c_{k+1}]$ si es el último):
 
-- $c_i$ es el **límite inferior**.
-- $c_{i+1}$ es el **límite superior**.
+- $c_i$ es el **límite inferior** (o **frontera inferior**).
+- $c_{i+1}$ es el **límite superior** (o **frontera superior**).
+
+Se les llama *fronteras* porque son los valores que separan un intervalo del siguiente: el límite superior de $I_i$ coincide con el límite inferior de $I_{i+1}$.
 
 **Convención:** Usualmente se adopta el criterio de **intervalos semiabiertos por la derecha** $[c_i, c_{i+1})$, excepto en el último intervalo que se cierra: $[c_k, c_{k+1}]$.
 
@@ -578,7 +580,7 @@ k \approx \lceil \sqrt{50} \rceil = \lceil 7.071 \rceil = 8
 
 $$
 
-> **Observación:** La regla es simple, pero puede ser inadecuada para muestras muy grandes o muy pequeñas.
+> **Observación:** Su principal ventaja es la simplicidad: se calcula directamente a partir de $N$, sin necesidad de conocer la forma de la distribución. Su limitación es justamente esa falta de fundamento: al ser una regla puramente empírica, puede resultar inadecuada para muestras muy grandes o muy pequeñas.
 
 ### 3.3 Regla de Sturges
 
@@ -637,14 +639,14 @@ k \approx \lceil 1 + 3.322 \log_{10}(50) \rceil = \lceil 1 + 3.322 \times 1.699 
 
 $$
 
-> **Observación:** Sturges funciona bien para distribuciones simétricas y unimodales, pero puede subestimar $k$ para muestras grandes ($N > 200$) y no es adecuada para distribuciones asimétricas o multimodales.
+> **Observación:** A diferencia de la regla de la raíz cuadrada, que es puramente empírica, la regla de Sturges se deduce de un modelo probabilístico explícito. Como toda deducción, su validez es condicional: se sostiene en la medida en que los datos satisfacen la hipótesis de partida, a saber, que se distribuyen de forma aproximadamente simétrica y unimodal. En ese caso la regla describe bien los datos; fuera de él, el modelo deja de ser una buena aproximación. Además, para muestras grandes ($N > 200$) la regla tiende a subestimar $k$.
 
 ### 3.4 Otras reglas y procedimiento general
 
 Existen reglas más sofisticadas para determinar $k$, especialmente cuando los datos no provienen de una distribución normal:
 
-- **Regla de Freedman-Diaconis:** la amplitud se calcula como $\dfrac{2 \cdot \text{IQR}}{N^{1/3}}$, donde $\text{IQR} = Q_3 - Q_1$ es el **rango intercuartílico** (diferencia entre el tercer cuartil $Q_3$ y el primer cuartil $Q_1$).
-- **Regla de Scott:** la amplitud se calcula como $\dfrac{3.49 \cdot S}{N^{1/3}}$, donde $S$ es la desviación estándar muestral.
+- **Regla de Freedman-Diaconis:** la amplitud se calcula como $a = \dfrac{2 \cdot \text{IQR}}{N^{1/3}}$, donde $\text{IQR} = Q_3 - Q_1$ es el **rango intercuartílico** (diferencia entre el tercer cuartil $Q_3$ y el primer cuartil $Q_1$). Como $a = R/k$, el número de intervalos resulta $k \approx \dfrac{R \cdot N^{1/3}}{2 \cdot \text{IQR}}$.
+- **Regla de Scott:** la amplitud se calcula como $a = \dfrac{3.49 \cdot S}{N^{1/3}}$, donde $S$ es la desviación estándar muestral. De forma análoga, $k \approx \dfrac{R \cdot N^{1/3}}{3.49 \cdot S}$.
 
 Estas reglas son más robustas para distribuciones no normales, pero requieren calcular estadísticos previos.
 
