@@ -106,6 +106,21 @@ En un banco de sangre se registran las donaciones por tipo sanguíneo:
 
 Aquí el gráfico de barras permite identificar rápidamente que $A^+$ y $O^+$ son los tipos más frecuentes, mientras que $AB^-$ es el menos frecuente. La variable es cualitativa nominal, por lo que el orden de las barras puede ser alfabético o según frecuencia decreciente.
 
+**Ejemplo 2.3 (Número de hijos por familia):**
+En una encuesta a 100 familias se registra el número de hijos, agrupando en la última clase a las familias con cinco o más:
+
+| Número de hijos | $n_i$ | $f_i$ |
+|:----------------|:-----:|:-----:|
+| 0 | 8 | 0.08 |
+| 1 | 22 | 0.22 |
+| 2 | 35 | 0.35 |
+| 3 | 20 | 0.20 |
+| 4 | 10 | 0.10 |
+| 5 o más | 5 | 0.05 |
+| **Total** | **100** | **1.00** |
+
+La variable es cuantitativa discreta con pocos valores, por lo que corresponde un gráfico de barras y no un histograma. A diferencia del ejemplo anterior, las clases tienen un orden natural, que las barras deben respetar de izquierda a derecha. La clase "5 o más" es abierta: agrupa varios valores y no representa un único número de hijos.
+
 ### 2.5 Variantes
 
 - **Gráfico de barras agrupadas:** compara múltiples subgrupos dentro de cada categoría.
@@ -134,7 +149,7 @@ Aquí el gráfico de barras permite identificar rápidamente que $A^+$ y $O^+$ s
 
 Cuando la variable es continua o discreta con muchos valores distintos, los datos se agrupan en intervalos de clase. El histograma representa cada intervalo mediante un rectángulo cuya área (no solo su altura) es proporcional a la frecuencia. Esta diferencia es esencial y distingue al histograma del gráfico de barras.
 
-> **Nota histórica:** El término **histograma** fue introducido por el estadístico británico **Karl Pearson** en 1895, en el contexto de sus trabajos sobre distribuciones de frecuencias y curvas de frecuencia. Pearson buscaba una representación gráfica que mostrara la forma de una distribución continua a partir de datos agrupados.
+> **Nota histórica:** El término **histograma** fue acuñado por el estadístico británico **Karl Pearson** en conferencias dictadas en 1892, y él mismo lo mencionó por escrito en 1895 como un término nuevo para un tipo de gráfico ya conocido. Pearson buscaba una representación que mostrara la forma de una distribución a partir de datos agrupados.
 
 ### 3.1 Definición formal
 
@@ -194,7 +209,6 @@ $$h(x) \xrightarrow{N \to \infty} f(x)$$
 
 **Demostración:**
 La demostración rigurosa requiere teoría de la probabilidad y procesos de convergencia de estimadores de densidad. Se difiere a cursos avanzados de inferencia estadística.
-$\blacksquare$
 
 ### 3.4 Ejemplos
 
@@ -223,7 +237,7 @@ Supongamos los siguientes intervalos y frecuencias:
 | $[20, 40)$ | 20 | 20 | 1 |
 | $[40, 60]$ | 10 | 20 | 0.5 |
 
-El segundo y tercer intervalo tienen la misma frecuencia ($n_i = 20$), pero el tercero es el doble de ancho. Por eso su densidad $h_i$ es la mitad, lo que refleja correctamente que los datos están más dispersos en ese rango. Ignorar la amplitud y graficar solo $n_i$ distorsionaría la percepción de la distribución.
+El primer y el tercer intervalo tienen la misma frecuencia ($n_i = 20$), pero el tercero es el doble de ancho. Por eso su densidad $h_i$ es la mitad, lo que refleja correctamente que los datos están más dispersos en ese rango. Ignorar la amplitud y graficar solo $n_i$ distorsionaría la percepción de la distribución.
 
 ### 3.5 Diferencias clave con el gráfico de barras
 
@@ -277,17 +291,24 @@ Dado un histograma con intervalos de amplitud constante $a$:
 ### 4.3 Propiedades
 
 **Proposición 4.1 (Equivalencia de área):**
-Si el histograma tiene intervalos de amplitud constante $a$, el área bajo el polígono de frecuencias es igual al área del histograma:
+Sea un histograma con intervalos de amplitud constante $a$ y alturas dadas por las densidades $h_i = n_i/a$ (o $h_i = f_i/a$). Entonces el área bajo el polígono de frecuencias es igual al área del histograma:
 $$\int_{c_1 - a/2}^{c_{k+1} + a/2} g(x) \, dx = \sum_{i=1}^{k} a \cdot h_i = \sum_{i=1}^{k} n_i = N$$
 (o $1$ si se usan frecuencias relativas).
 
 **Demostración:**
-En cada intervalo $[m_i, m_{i+1}]$, el polígono forma un trapecio con el eje horizontal. El área de dicho trapecio es:
-$$\text{Área}_i = a \cdot \dfrac{h_i + h_{i+1}}{2}$$
-Sumando sobre todos los intervalos y usando que los puntos extremos $(m_0, 0)$ y $(m_{k+1}, 0)$ no aportan área, se obtiene:
-$$\int_{c_1 - a/2}^{c_{k+1} + a/2} g(x) \, dx = \sum_{i=1}^{k} a \cdot \dfrac{h_i + h_{i+1}}{2}$$
-Bajo la condición de que el histograma tiene amplitud constante y el polígono pasa exactamente por las marcas de clase, esta suma coincide con la suma de las áreas de los rectángulos del histograma. La igualdad exacta con $\sum n_i$ (o $\sum f_i$) se obtiene aplicando la Proposición 3.1.
+Se definen $h_0 = h_{k+1} = 0$, de modo que el polígono pasa por los puntos $(m_i, h_i)$ con $i = 0, 1, \ldots, k+1$. Las marcas consecutivas están separadas por la amplitud $a$, es decir, $m_{i+1} - m_i = a$. En cada intervalo $[m_i, m_{i+1}]$ el polígono forma un trapecio con el eje horizontal, cuya área es:
+$$\text{Área}_i = a \cdot \dfrac{h_i + h_{i+1}}{2}, \quad i = 0, 1, \ldots, k$$
+Sumando sobre todos los trapecios:
+$$\begin{align}
+\int_{c_1 - a/2}^{c_{k+1} + a/2} g(x) \, dx &= \dfrac{a}{2} \left( \sum_{i=0}^{k} h_i + \sum_{i=0}^{k} h_{i+1} \right) \\
+&= \dfrac{a}{2} \left( \sum_{i=1}^{k} h_i + \sum_{i=1}^{k} h_i \right) \\
+&= a \sum_{i=1}^{k} h_i \\
+&= \sum_{i=1}^{k} n_i = N
+\end{align}$$
+donde en la segunda igualdad se usó que $h_0 = h_{k+1} = 0$, y en la última que $a \cdot h_i = n_i$. El caso de frecuencias relativas es análogo y da $\sum f_i = 1$.
 $\blacksquare$
+
+> **Observación:** si las alturas se toman directamente como frecuencias ($h_i = n_i$), el cálculo anterior es el mismo, pero el área resulta $a \cdot N$ y no $N$.
 
 ### 4.4 Ejemplos
 
@@ -304,7 +325,7 @@ Para el histograma del Ejemplo 3.1 se tienen las marcas y alturas:
 | 2.78 | 3 |
 | 3.28 | 2 |
 
-Los puntos auxiliares son $m_0 = 0.03 - 0.25 = -0.22$ y $m_8 = 3.53 + 0.25 = 3.78$. El polígono une los puntos $(-0.22, 0)$, $(0.28, 19)$, $(0.78, 9)$, $(1.28, 9)$, $(1.78, 6)$, $(2.28, 2)$, $(2.78, 3)$, $(3.28, 2)$ y $(3.78, 0)$.
+Los puntos auxiliares son $m_0 = 0.03 - 0.25 = -0.22$ y $m_8 = 3.53 + 0.25 = 3.78$. El polígono une los puntos $(-0.22, 0)$, $(0.28, 19)$, $(0.78, 9)$, $(1.28, 9)$, $(1.78, 6)$, $(2.28, 2)$, $(2.78, 3)$, $(3.28, 2)$ y $(3.78, 0)$. Como aquí $h_i = n_i$, el área bajo el polígono es $a \cdot N = 0.5 \cdot 50 = 25$. Para que el área sea $N = 50$, como establece la Proposición 4.1, deben usarse las densidades $h_i = n_i/a = 2 n_i$.
 
 ### 4.5 Observaciones y buenas prácticas
 
@@ -328,6 +349,8 @@ Una **curva de densidad empírica** es una función suave $\hat{f}: \mathbb{R} \
 
 ![Curva de densidad aproximada](../Recursos/dist-aprox.png)
 
+La curva de densidad permite apreciar la forma general de la distribución y las tendencias que el ruido de los intervalos del histograma podría ocultar, a la vez que sugiere cómo se comportaría la distribución poblacional subyacente.
+
 **Métodos de construcción:**
 
 1. **Estimación por kernel (KDE):**
@@ -343,7 +366,6 @@ $$\hat{f}(x) \xrightarrow{P} f(x)$$
 
 **Demostración:**
 La demostración rigurosa requiere teoría de procesos estocásticos y convergencia de estimadores no paramétricos. Se difiere a cursos avanzados de inferencia estadística.
-$\blacksquare$
 
 **Ejemplo 5.1:**
 Para los datos del Ejemplo 3.1, una curva de densidad empírica suavizaría los picos del histograma y mostraría una distribución sesgada positivamente, con mayor concentración cerca de cero y una cola que se extiende hacia valores mayores.
@@ -371,28 +393,33 @@ $$\text{Media} = \text{Mediana} = \text{Moda} = c$$
 Una distribución es **asimétrica** si no cumple la propiedad de simetría. El **sesgo** cuantifica la dirección y magnitud de la asimetría.
 
 **Sesgo positivo (sesgado a la derecha):**
+
+En una distribución con sesgo positivo, la mayoría de los datos se acumulan en valores bajos, mientras que un pequeño número de valores muy grandes estira la cola derecha y arrastra la media hacia ese lado. Suele aparecer en fenómenos acotados inferiormente que no tienen un tope natural por arriba.
+
 - La cola derecha es más larga que la izquierda.
-- La mayoría de los datos se concentran en valores bajos.
 - Típicamente: Media $>$ Mediana $>$ Moda.
-- Ejemplos: ingresos salariales, tiempos de espera, precios de viviendas.
 - Medida formal: coeficiente de asimetría de Fisher $g_1 > 0$.
+- Ejemplos: ingresos salariales, tiempos de espera, precios de viviendas y concentraciones químicas con límite inferior en cero.
 
 ![Sesgo positivo](../Recursos/sesgada-der.png)
 
 **Sesgo negativo (sesgado a la izquierda):**
+
+Es la situación simétrica a la anterior: la mayoría de los datos se acumulan en valores altos, y un pequeño número de valores muy bajos estira la cola izquierda y arrastra la media hacia ese lado. Suele aparecer en fenómenos acotados superiormente por un máximo natural.
+
 - La cola izquierda es más larga que la derecha.
-- La mayoría de los datos se concentran en valores altos.
 - Típicamente: Media $<$ Mediana $<$ Moda.
-- Ejemplos: edad de fallecimiento en países desarrollados, calificaciones en exámenes fáciles.
 - Medida formal: coeficiente de asimetría de Fisher $g_1 < 0$.
+- Ejemplos: edad de fallecimiento en países desarrollados, calificaciones en exámenes fáciles y vida útil de productos con un límite superior natural.
 
 ![Sesgo negativo](../Recursos/sesgada-izq.png)
 
 #### 5.2.2 Modalidad
 
 **Definición 5.4 (Moda de una distribución):**
-Una **moda** es un valor (o intervalo) donde la distribución alcanza un máximo local de frecuencia. Formalmente, $x_0$ es una moda si existe $\epsilon > 0$ tal que:
-$$f(x_0) \geq f(x) \quad \forall x \in (x_0 - \epsilon, x_0 + \epsilon)$$
+Una **moda** es un valor donde la distribución alcanza un máximo local estricto de frecuencia. Formalmente, $x_0$ es una moda si existe $\epsilon > 0$ tal que:
+$$f(x_0) > f(x) \quad \forall x \in (x_0 - \epsilon, x_0 + \epsilon), \; x \neq x_0$$
+La desigualdad es estricta para que una densidad uniforme, constante en todo su soporte, no tenga ningún punto que califique como moda.
 
 **Clasificación por modalidad:**
 
@@ -481,12 +508,17 @@ Dadas $k$ clases con frecuencias absolutas $n_1, n_2, \ldots, n_k$ y total $N = 
 ### 7.3 Propiedades
 
 **Proposición 7.1 (Condición de proporcionalidad circular):**
-Como el círculo completo abarca un ángulo de $360^\circ$ (o $2\pi$ radianes), el ángulo central del sector $S_i$ es:
+Si el ángulo central $\alpha_i$ de cada sector es proporcional a la frecuencia relativa $f_i$ y el círculo completo abarca $360^\circ$ (o $2\pi$ radianes), entonces:
 $$\alpha_i = f_i \cdot 360^\circ = \left( \dfrac{n_i}{N} \right) \cdot 360^\circ$$
 
 **Demostración:**
-La proporcionalidad entre ángulo y frecuencia relativa surge de exigir que el ángulo total $360^\circ$ se reparta en partes iguales a las proporciones $f_i$. Como $\sum f_i = 1$, se tiene:
-$$\sum_{i=1}^{k} \alpha_i = \sum_{i=1}^{k} f_i \cdot 360^\circ = 360^\circ \sum_{i=1}^{k} f_i = 360^\circ$$
+Por hipótesis existe una constante $c > 0$ tal que $\alpha_i = c \, f_i$ para todo $i$. Como los sectores particionan el círculo, sus ángulos suman el ángulo total, y como $\sum f_i = 1$:
+$$\begin{align}
+360^\circ &= \sum_{i=1}^{k} \alpha_i \\
+&= c \sum_{i=1}^{k} f_i \\
+&= c
+\end{align}$$
+Por tanto $c = 360^\circ$ y $\alpha_i = f_i \cdot 360^\circ$.
 $\blacksquare$
 
 ### 7.4 Ejemplos
@@ -511,7 +543,7 @@ Verificación: $43.2^\circ + 126^\circ + 144^\circ + 46.8^\circ = 360^\circ$.
 La investigación en percepción visual ha demostrado que el cerebro humano es ineficiente decodificando ángulos y áreas en comparación con longitudes unidimensionales.
 
 - **Dimensionalidad excesiva:** para muchas clases ($k > 5$), el gráfico se satura en rebanadas pequeñas.
-- **Dificultad de contraste:** distinguir proporciones cercanas (por ejemplo, $18\%$ vs. $19\%$) sin etiquetas numéricas es difícil.
+- **Dificultad de contraste:** distinguir proporciones cercanas sin etiquetas numéricas es difícil. Por ejemplo, $18\%$ y $19\%$ corresponden a ángulos de $64.8^\circ$ y $68.4^\circ$, una diferencia que el ojo difícilmente aprecia.
 - **Falacia del 3D:** renderizar un gráfico de sectores en tres dimensiones distorsiona las proporciones aparentes, violando el principio de proporcionalidad visual.
 
 ---
@@ -549,12 +581,12 @@ Dada una tabla de frecuencias agrupadas con intervalos $I_i = [c_i, c_{i+1})$:
 ### 8.3 Propiedades
 
 **Proposición 8.1 (Monotonicidad y acotamiento):**
-La ojiva es una función no decreciente definida sobre $[c_1, c_{k+1}]$, con valores en $[0, 1]$ si se usan frecuencias relativas (o en $[0, N]$ si se usan frecuencias absolutas). Además:
+Sea $\hat{F}: [c_1, c_{k+1}] \to \mathbb{R}$ la función lineal a trozos cuya gráfica es la ojiva. Entonces $\hat{F}$ es no decreciente, con valores en $[0, 1]$ si se usan frecuencias relativas (o en $[0, N]$ si se usan frecuencias absolutas). Además:
 - $\hat{F}(c_1) = 0$
 - $\hat{F}(c_{k+1}) = 1$ (o $N$)
 
 **Demostración:**
-Las frecuencias acumuladas $F_i = \sum_{j=1}^{i} f_j$ son no decrecientes porque $f_j \geq 0$. Como los puntos de la ojiva se unen con segmentos de recta en orden creciente, la función resultante es no decreciente. La condición inicial $F_0 = 0$ y la exhaustividad $\sum_{j=1}^{k} f_j = 1$ garantizan los valores extremos.
+Las frecuencias acumuladas $F_i = \sum_{j=1}^{i} f_j$ son no decrecientes porque $f_j \geq 0$. Con la convención $F_0 = 0$, el punto inicial $(c_1, 0)$ es $(c_1, F_0)$ y la sucesión $F_0 \leq F_1 \leq \cdots \leq F_k$ es no decreciente. Como los puntos de la ojiva se unen con segmentos de recta en orden creciente de abscisa, la función resultante es no decreciente. Además, $\hat{F}(c_1) = F_0 = 0$, y la exhaustividad $\sum_{j=1}^{k} f_j = 1$ da $\hat{F}(c_{k+1}) = F_k = 1$.
 $\blacksquare$
 
 > **Observación:** la ojiva de frecuencias relativas es un estimador empírico de la función de distribución acumulada $F_X(x) = \mathbb{P}(X \leq x)$. Según el teorema de Glivenko-Cantelli, conforme $N \to \infty$ y la amplitud de clase tiende a cero, la ojiva converge uniformemente a la FDA poblacional. La demostración de este resultado se difiere a cursos avanzados de probabilidad.
@@ -580,6 +612,14 @@ La ojiva conecta los puntos $(150, 0)$, $(155, 0.05)$, $(160, 0.17)$, $(165, 0.4
 A partir de la ojiva del ejemplo anterior, para estimar la mediana ($F = 0.50$) se interpola entre los puntos $(165, 0.40)$ y $(170, 0.68)$:
 $$x_{0.50} \approx 165 + \dfrac{0.50 - 0.40}{0.68 - 0.40} \cdot 5 \approx 165 + 1.79 = 166.79\text{ cm}$$
 
+**Ejemplo 8.3 (Percentil 85 y decil 8):**
+Con la misma ojiva, el percentil 85 ($F = 0.85$) se ubica entre los puntos $(170, 0.68)$ y $(175, 0.86)$, y el decil 8 ($F = 0.80$) en ese mismo tramo:
+$$\begin{align}
+x_{0.85} &\approx 170 + \dfrac{0.85 - 0.68}{0.86 - 0.68} \cdot 5 \approx 170 + 4.72 = 174.72\text{ cm} \\
+x_{0.80} &\approx 170 + \dfrac{0.80 - 0.68}{0.86 - 0.68} \cdot 5 \approx 170 + 3.33 = 173.33\text{ cm}
+\end{align}$$
+Es decir, el 85% de los estudiantes mide aproximadamente $174.72\text{ cm}$ o menos, y el 80% mide aproximadamente $173.33\text{ cm}$ o menos.
+
 ### 8.5 Observaciones y aplicaciones
 
 - La ojiva permite estimar percentiles mediante interpolación inversa: trazando una horizontal desde el valor deseado de frecuencia acumulada hasta la ojiva, y luego bajando verticalmente al eje horizontal, se obtiene el percentil correspondiente.
@@ -602,8 +642,19 @@ Sea $X$ una variable cualitativa o nominal con $k$ clases $v_1, v_2, \ldots, v_k
 $$n_1 \geq n_2 \geq \cdots \geq n_k$$
 Un **diagrama de Pareto** es un constructo visual compuesto por:
 
-1. Un gráfico de barras vertical donde la altura de cada barra es proporcional a $n_i$.
+1. Un gráfico de barras vertical donde la altura de cada barra es proporcional a $n_i$. A diferencia del gráfico de barras ordinario, por convención las barras se dibujan adyacentes, pues el diagrama se lee como una sola figura de izquierda a derecha, en la que cada barra aporta un escalón al acumulado.
 2. Una ojiva porcentual superpuesta, escalada sobre un eje secundario en el intervalo $[0\%, 100\%]$, que muestra las frecuencias relativas acumuladas $F_i = \sum_{m=1}^{i} f_m$.
+
+El eje vertical izquierdo (frecuencias absolutas) se escala en $[0, N]$, de modo que el valor $N$ coincida con el $100\%$ del eje derecho.
+
+**Proposición 9.1 (Alineación de los ejes):**
+Si el eje izquierdo se escala en $[0, N]$ y el eje derecho en $[0\%, 100\%]$, entonces cada punto de la ojiva se lee con el mismo valor en ambos ejes: su altura en el eje izquierdo es $N_i$ y en el eje derecho es $100 F_i\%$.
+
+**Demostración:**
+Las dos escalas son lineales y hacen corresponder el origen con $0$ y el extremo superior con $N$ y $100\%$, respectivamente. Por tanto, una altura que representa $N_i$ unidades en el eje izquierdo representa, en el derecho, la fracción:
+$$\dfrac{N_i}{N} = F_i$$
+es decir, $100 F_i\%$. En particular, la ojiva termina en $N_k = N$, que coincide con el $100\%$.
+$\blacksquare$
 
 ![Diagrama de Pareto](../Recursos/diagrama-pareto.png)
 
@@ -615,8 +666,8 @@ Un **diagrama de Pareto** es un constructo visual compuesto por:
 2. Calcular las frecuencias absolutas $n_i$ de cada categoría.
 3. Ordenar las categorías de forma decreciente por frecuencia. La categoría "Otros", si existe, suele colocarse al final aunque rompa el orden decreciente.
 4. Calcular las frecuencias relativas $f_i = n_i/N$ y las acumuladas $F_i = \sum_{m=1}^{i} f_m$.
-5. Dibujar el gráfico de barras con eje $Y$ izquierdo (frecuencias absolutas).
-6. Superponer la ojiva acumulada porcentual con eje $Y$ derecho ($0\%$ a $100\%$).
+5. Dibujar el gráfico de barras adyacentes con eje $Y$ izquierdo (frecuencias absolutas) escalado de $0$ a $N$.
+6. Superponer la ojiva acumulada porcentual con eje $Y$ derecho ($0\%$ a $100\%$), verificando que el último punto coincida con el techo del gráfico (Proposición 9.1).
 7. Etiquetar ejes, título y porcentajes acumulados.
 
 ### 9.3 Regla empírica 80/20
@@ -643,6 +694,20 @@ En un proceso de manufactura se registran los siguientes tipos de defectos:
 
 El diagrama de Pareto ordena los defectos de mayor a menor frecuencia y superpone la ojiva. Se observa que las dos primeras causas (rayadura y abolladura) concentran el 70% de los defectos, y las tres primeras alcanzan el 85%.
 
+**Ejemplo 9.2 (Pareto ponderado por costo):**
+Como el diagrama de Pareto mide frecuencia y no gravedad (véanse las limitaciones más abajo), se puede ponderar cada categoría por un impacto unitario. Sea $w_i > 0$ el costo por evento de la clase $v_i$ y sea $c_i = w_i \, n_i$ su costo total. El **Pareto ponderado** se construye igual que el ordinario, pero ordenando las clases por $c_i$ decreciente y acumulando $C_i / C$, con $C = \sum_i c_i$. Para los defectos del ejemplo anterior, con costos unitarios $w_i$ (en unidades monetarias arbitrarias):
+
+| Defecto | $n_i$ | $w_i$ | $c_i = w_i n_i$ | $c_i / C$ | Acumulado |
+|:--------|:-----:|:-----:|:---------------:|:---------:|:---------:|
+| Fuga | 10 | 10 | 100 | 46.51% | 46.51% |
+| Abolladura | 25 | 2 | 50 | 23.26% | 69.77% |
+| Rayadura | 45 | 1 | 45 | 20.93% | 90.70% |
+| Descoloramiento | 15 | 1 | 15 | 6.98% | 97.67% |
+| Otros | 5 | 1 | 5 | 2.33% | 100.00% |
+| **Total** | **100** | — | **$C = 215$** | **100%** | — |
+
+La fuga, que por frecuencia ocupaba el cuarto lugar (10% de los defectos), pasa a ser la causa dominante por costo (46.51% del total). La rayadura, que era la más frecuente, pasa al tercer lugar. El orden cambia porque la prioridad de intervención depende del costo y no solo del conteo.
+
 ### 9.5 Observaciones y limitaciones
 
 **Aplicaciones:**
@@ -651,7 +716,7 @@ El diagrama de Pareto ordena los defectos de mayor a menor frecuencia y superpon
 - Logística y servicio al cliente: enfocar recursos en los problemas que más quejas generan.
 
 **Limitaciones:**
-- Mide frecuencia, pero no el costo o impacto severo de cada causa. Un defecto raro puede ser crítico.
+- Mide frecuencia, pero no el costo o impacto severo de cada causa. Un defecto raro puede ser crítico. La corrección habitual es el Pareto ponderado del Ejemplo 9.2, que ordena por costo total $w_i \, n_i$.
 - No revela relaciones causales entre categorías.
 - La regla 80/20 es una heurística, no una ley matemática: no todas las distribuciones la cumplen.
 
@@ -669,7 +734,7 @@ El **diagrama de tallo y hoja** es una representación semi-gráfica que conserv
 Sea un conjunto de datos $x_1, x_2, \ldots, x_N$ representados en base 10. Se define un operador de partición $\pi(x_i) = (T_i, H_i)$ donde:
 
 - $T_i$ es el **tallo**, formado por los dígitos de mayor orden (decenas, centenas, etc.).
-- $H_i$ es la **hoja**, formada por el dígito de menor orden (unidades).
+- $H_i$ es la **hoja**, formada por el dígito de menor orden que se conserva, según la granularidad elegida (por ejemplo, las unidades o el primer decimal).
 
 El diagrama de tallo y hoja agrupa, para cada tallo $T$, todas las hojas $H_i$ asociadas. La cantidad de hojas asociadas a un tallo representa la frecuencia absoluta de ese intervalo, de manera análoga a un histograma.
 
@@ -717,7 +782,45 @@ Tomando el tallo como la parte entera y la hoja como el primer decimal:
 
 La distribución es aproximadamente simétrica, con mayor concentración en el tallo 8.
 
-### 10.5 Observaciones y limitaciones
+### 10.5 Tallo y hoja para dos muestras
+
+Con frecuencia no interesa describir un solo grupo, sino compararlo con otro: dos secciones de un mismo curso, dos procesos de producción, un grupo de control y uno experimental. El diagrama de tallo y hoja admite una extensión natural para ese caso: se comparte la columna de tallos y se escriben las hojas de una muestra a la izquierda y las de la otra a la derecha, de modo que ambas distribuciones se leen una frente a la otra, como un histograma doble construido con los propios datos. Esta versión se conoce como diagrama de tallo y hoja **espalda con espalda** (*back-to-back*).
+
+**Definición 10.2 (Diagrama de tallo y hoja para dos muestras):**
+Sean dos conjuntos de datos $\mathbf{x}^{(A)} = (x_1^{(A)}, \ldots, x_{N_A}^{(A)})$ y $\mathbf{x}^{(B)} = (x_1^{(B)}, \ldots, x_{N_B}^{(B)})$ medidos en la misma escala y particionados con el mismo operador $\pi$ de la Definición 10.1. El **diagrama de tallo y hoja para dos muestras** es una representación con una única columna central de tallos $T$ (común a ambas muestras), en la que:
+
+- Las hojas de la muestra $A$ se escriben a la derecha de cada tallo.
+- Las hojas de la muestra $B$ se escriben a la izquierda de cada tallo.
+- En ambos lados las hojas se ordenan de menor a mayor a medida que se alejan del tallo.
+
+Como la columna de tallos es compartida, la granularidad elegida debe ser la misma para ambas muestras, y la lista de tallos debe cubrir desde el menor hasta el mayor tallo de la unión de los dos conjuntos, incluyendo los tallos vacíos.
+
+**Ejemplo 10.2 (Dos grupos de calificaciones):**
+Se comparan las calificaciones del grupo $A$ del Ejemplo 10.1 ($N_A = 18$) con las de un grupo $B$ de $N_B = 14$ estudiantes:
+
+$$5.0, 5.5, 5.5, 6.0, 6.0, 6.5, 6.5, 6.5, 7.0, 7.0, 7.5, 7.5, 8.0, 8.5$$
+
+Tomando nuevamente el tallo como la parte entera y la hoja como el primer decimal, el diagrama es:
+
+```
+CAMBIAR
+
+    Grupo B     Tallo     Grupo A
+      5 5 0  |   5   |  5
+  5 5 5 0 0  |   6   |  0 5
+    5 5 0 0  |   7   |  0 0 5 5 5
+        5 0  |   8   |  0 0 5 5 5 5
+             |   9   |  0 0 5
+             |  10   |  0
+
+Clave: 6 | 5 = 6.5
+```
+
+Se observa que el grupo $B$ se concentra en los tallos 6 y 7, mientras que el grupo $A$ lo hace en los tallos 7, 8 y 9. El grupo $A$ tiene calificaciones sistemáticamente más altas y es el único que alcanza los tallos 9 y 10. Obsérvese que los tallos $9$ y $10$ del grupo $B$ quedan vacíos y aun así se conservan en la columna central, pues la columna es común.
+
+> **Observación:** la comparación es legítima solo cuando ambas muestras usan la misma escala y el mismo tallo. Si los tamaños $N_A$ y $N_B$ son muy distintos, la longitud de las filas deja de ser comparable a simple vista, y conviene recurrir a frecuencias relativas (por ejemplo, mediante histogramas de frecuencias relativas o *boxplots* paralelos).
+
+### 10.6 Observaciones y limitaciones
 
 **Ventajas:**
 - Conserva los valores originales de los datos.
@@ -749,11 +852,11 @@ Sea una muestra ordenada $x_{(1)} \leq x_{(2)} \leq \cdots \leq x_{(N)}$. El **d
 5. Máximo muestral: $x_{(N)}$.
 
 El gráfico consta de:
-- **La caja:** un rectángulo delimitado por $Q_1$ y $Q_3$. Por construcción, el 50% central de los datos se encuentra dentro de la caja.
+- **La caja:** un rectángulo delimitado por $Q_1$ y $Q_3$. Por construcción, aproximadamente el 50% central de los datos se encuentra dentro de la caja.
 - **La mediana:** una línea transversal dentro de la caja en $Q_2$.
 - **El rango intercuartílico:** $\text{RIC} = Q_3 - Q_1$, que mide la dispersión central y es resistente a valores extremos.
-- **Los bigotes:** se extienden desde la caja hasta el dato más extremo que no sea atípico, es decir, el menor y mayor dato dentro del intervalo $[Q_1 - 1.5 \cdot \text{RIC}, \; Q_3 + 1.5 \cdot \text{RIC}]$.
-- **Valores atípicos:** todo dato fuera del intervalo anterior se grafica individualmente.
+- **Los bigotes:** se extienden desde la caja hasta el dato más alejado que no sea atípico, es decir, el menor y mayor dato dentro del intervalo $[Q_1 - 1.5 \cdot \text{RIC}, \; Q_3 + 1.5 \cdot \text{RIC}]$.
+- **Valores atípicos y extremos:** los datos que quedan fuera de los bigotes se grafican individualmente. Según qué tan lejos se encuentren, se clasifican en **atípicos** o **extremos** (véase la Proposición 11.2).
 
 ![Diagrama de caja](../Recursos/diagrama-caja.png)
 
@@ -765,11 +868,11 @@ Dada una muestra $x_1, x_2, \ldots, x_N$:
 1. Ordenar la muestra: $x_{(1)} \leq x_{(2)} \leq \cdots \leq x_{(N)}$.
 2. Calcular $Q_1$, $Q_2$ (mediana) y $Q_3$.
 3. Calcular $\text{RIC} = Q_3 - Q_1$.
-4. Calcular las barreras inferior $L_I = Q_1 - 1.5 \cdot \text{RIC}$ y superior $L_S = Q_3 + 1.5 \cdot \text{RIC}$.
+4. Calcular las barreras interiores $L_I = Q_1 - 1.5 \cdot \text{RIC}$ y $L_S = Q_3 + 1.5 \cdot \text{RIC}$, y las barreras exteriores $E_I = Q_1 - 3 \cdot \text{RIC}$ y $E_S = Q_3 + 3 \cdot \text{RIC}$.
 5. Identificar el menor dato $x_{\min}^*$ mayor o igual que $L_I$ y el mayor dato $x_{\max}^*$ menor o igual que $L_S$.
 6. Trazar la caja entre $Q_1$ y $Q_3$, y la línea de la mediana en $Q_2$.
 7. Extender los bigotes desde $Q_1$ hasta $x_{\min}^*$ y desde $Q_3$ hasta $x_{\max}^*$.
-8. Graficar individualmente los datos fuera de $[L_I, L_S]$ como valores atípicos.
+8. Graficar individualmente los datos fuera de $[L_I, L_S]$, distinguiendo los atípicos (entre las barreras interior y exterior) de los extremos (fuera de $[E_I, E_S]$).
 9. Etiquetar título, ejes y unidades.
 
 ### 11.3 Propiedades
@@ -778,15 +881,20 @@ Dada una muestra $x_1, x_2, \ldots, x_N$:
 En cualquier distribución, la caja delimitada por $Q_1$ y $Q_3$ contiene aproximadamente el 50% central de los datos.
 
 **Demostración:**
-Por definición de cuartiles, $Q_1$ es el percentil 25 y $Q_3$ es el percentil 75. Por tanto, el 50% de los datos se encuentra entre ambos valores. La caja se dibuja exactamente en ese intervalo.
+Por definición de cuartiles, $Q_1$ es el percentil 25 y $Q_3$ es el percentil 75. Por tanto, aproximadamente el 50% de los datos se encuentra entre ambos valores. La caja se dibuja en ese intervalo. La proporción es solo aproximada porque, en una muestra finita, el porcentaje exacto depende del método de cálculo de los cuartiles y de la presencia de datos repetidos.
 $\blacksquare$
 
-**Proposición 11.2 (Identificación de atípicos de Tukey):**
-Bajo el criterio de Tukey, cualquier observación $x$ tal que:
-$$x < Q_1 - 1.5 \cdot \text{RIC} \quad \text{o} \quad x > Q_3 + 1.5 \cdot \text{RIC}$$
-se clasifica como valor atípico.
+**Proposición 11.2 (Clasificación de atípicos y extremos de Tukey):**
+Sea $\text{RIC} = Q_3 - Q_1$. Bajo el criterio de Tukey, una observación $x$ se clasifica como:
 
-> **Observación:** el factor 1.5 es una convención empírica. Para datos normales, aproximadamente el 0.7% de las observaciones caen fuera de las barreras, lo que hace del criterio una regla de detección conservadora.
+- **Atípico**, si cae fuera de las barreras interiores pero dentro de las exteriores:
+$$Q_1 - 3 \cdot \text{RIC} \leq x < Q_1 - 1.5 \cdot \text{RIC} \quad \text{o} \quad Q_3 + 1.5 \cdot \text{RIC} < x \leq Q_3 + 3 \cdot \text{RIC}$$
+- **Extremo**, si cae fuera de las barreras exteriores:
+$$x < Q_1 - 3 \cdot \text{RIC} \quad \text{o} \quad x > Q_3 + 3 \cdot \text{RIC}$$
+
+> **Nota:** esta clasificación se debe a Tukey (1977), *Exploratory Data Analysis*, quien distingue entre valores "fuera" (*outside*) y "muy fuera" (*far out*). Otras fuentes, como el manual NIST/SEMATECH, los denominan atípicos leves (*mild outliers*) y atípicos extremos (*extreme outliers*). En estos apuntes se utilizarán únicamente los términos **atípico** y **extremo**.
+
+> **Observación:** los factores $1.5$ y $3$ son convenciones empíricas, no consecuencias de un teorema: no existe una definición matemática rígida de valor atípico. Para datos normales, aproximadamente el 0.7% de las observaciones caen fuera de las barreras interiores, lo que hace del criterio una regla de detección conservadora. Que un dato sea atípico o extremo no implica que sea erróneo: debe investigarse su origen antes de decidir si se conserva o se descarta.
 
 ### 11.4 Ejemplos
 
@@ -799,16 +907,16 @@ Se tiene:
 - $Q_2 = 8.0$ (mediana).
 - $Q_3 = 8.5$ (percentil 75).
 - $\text{RIC} = 8.5 - 7.0 = 1.5$.
-- Barreras: $L_I = 7.0 - 1.5 \cdot 1.5 = 4.75$ y $L_S = 8.5 + 1.5 \cdot 1.5 = 10.75$.
+- Barreras interiores: $L_I = 7.0 - 1.5 \cdot 1.5 = 4.75$ y $L_S = 8.5 + 1.5 \cdot 1.5 = 10.75$.
+- Barreras exteriores: $E_I = 7.0 - 3 \cdot 1.5 = 2.5$ y $E_S = 8.5 + 3 \cdot 1.5 = 13$.
 - Bigotes: desde el mínimo $5.5$ hasta el máximo $10.0$.
-- No hay valores atípicos, pues todos los datos están dentro de $[4.75, 10.75]$.
+- No hay valores atípicos ni extremos, pues todos los datos están dentro de $[4.75, 10.75]$.
 
-**Ejemplo 11.2 (Con valores atípicos):**
-Si a la muestra anterior se añade la calificación $x = 2.0$, entonces:
-- $Q_1$, $Q_2$ y $Q_3$ cambian levemente.
-- La barrera inferior sigue siendo $4.75$ aproximadamente.
-- El valor $2.0$ cae por debajo de $L_I$, por lo que se grafica como un punto atípico individual.
-- El bigote inferior se extiende solo hasta el dato más pequeño dentro de las barreras.
+**Ejemplo 11.2 (Con valores atípicos y extremos):**
+Si a la muestra anterior se añade la calificación $x = 2.0$, los cuartiles cambian muy poco, por lo que las barreras siguen siendo aproximadamente $L_I = 4.75$ y $E_I = 2.5$. Entonces:
+- El valor $2.0$ es menor que $E_I$, por lo que se clasifica como **extremo** y se grafica como un punto individual.
+- Un valor como $4.0$, en cambio, cae entre $E_I$ y $L_I$, por lo que sería un **atípico**.
+- El bigote inferior se extiende solo hasta el dato más pequeño dentro de las barreras interiores.
 
 ### 11.5 Observaciones y limitaciones
 
@@ -850,7 +958,7 @@ Edward Tufte estableció principios fundamentales para gráficos estadísticos e
 | Escalas inconsistentes | Impide comparación | Estandarizar escalas al comparar |
 | Falta de etiquetas | Información incompleta | Incluir título, ejes, leyenda y unidades |
 
-> **Observación:** un eje $Y$ truncado puede transformar una diferencia del 1% en una apariencia de diferencia del 50%. Por eso, en gráficos de barras el eje vertical debe iniciar en cero. En gráficos de líneas, donde interesa la tendencia más que la magnitud absoluta, se acepta un truncado explícito, siempre que se indique claramente.
+> **Observación:** un eje $Y$ truncado puede transformar una diferencia del 1% en una apariencia de diferencia del 50%. Por eso, en gráficos de barras el eje vertical debe iniciar en cero. En gráficos de líneas, donde interesa la tendencia más que la magnitud absoluta, se acepta un truncado explícito, siempre que se indique de forma visible.
 
 ---
 
@@ -897,22 +1005,11 @@ graph TD
 
 ---
 
-## 14. Conexión con temas futuros
+## 14. Ejercicios resueltos
 
-Los gráficos estudiados en esta clase son fundamentales para el resto de la estadística:
+### Ejercicio 14.1
 
-- **Estadística inferencial:** los histogramas, curvas de densidad y *boxplots* permiten visualizar supuestos de normalidad antes de aplicar pruebas paramétricas.
-- **Análisis de regresión:** los gráficos de dispersión (extensión natural de los gráficos cartesianos) se usan para identificar relaciones entre variables.
-- **Control de calidad:** los histogramas y diagramas de Pareto monitorean procesos productivos y priorizan causas de defectos.
-- **Aprendizaje automático:** el análisis exploratorio de datos (EDA) con visualizaciones es el paso previo casi obligatorio antes de construir modelos predictivos.
-
----
-
-## 15. Ejemplo integrador
-
-**Problema:** analizar la distribución de alturas (en cm) de 100 estudiantes universitarios.
-
-**Datos resumidos:**
+Analizar la distribución de alturas (en cm) de 100 estudiantes universitarios a partir de la siguiente tabla de frecuencias:
 
 | Intervalo | $n_i$ | $f_i$ | $N_i$ | $F_i$ |
 |:---------:|:-----:|:-----:|:-----:|:-----:|
@@ -924,20 +1021,37 @@ Los gráficos estudiados en esta clase son fundamentales para el resto de la est
 | $[175, 180)$ | 10 | 0.10 | 96 | 0.96 |
 | $[180, 185]$ | 4 | 0.04 | 100 | 1.00 |
 
-**Análisis gráfico:**
+**Solución:**
+El análisis gráfico se resume en los siguientes puntos:
+
 1. **Histograma:** muestra una distribución aproximadamente simétrica y unimodal, con moda en $[165, 170)$.
-2. **Ojiva:** $F_i = 0.40$ en el límite $165$, lo que indica que el percentil 40 se ubica justo debajo de $165\text{ cm}$.
+2. **Ojiva:** $F_i = 0.40$ en el límite $165$, lo que indica que el percentil 40 corresponde exactamente a $165\text{ cm}$: el 40% de los estudiantes mide menos de $165\text{ cm}$.
 3. **Forma:** aproximadamente simétrica, con ligero sesgo positivo (cola derecha ligeramente más larga).
 4. **Comparación estratificada:** si se desea comparar con otra universidad, se recomienda usar *boxplots* paralelos con el mismo eje métrico.
 
+### Ejercicio 14.2
+
+Construir el histograma con su respectivo polígono de frecuencias y un bosquejo de la curva de densidad, usando la tabla de frecuencias obtenida en la Clase 3 (Ejemplo 3.4) para las 50 mediciones continuas:
+
+| Intervalo $I_i$ | Marca $m_i$ | $n_i$ | $N_i$ | $f_i$ | $F_i$ (%) |
+| :-------------: | :---------: | :---: | :---: | :---: | :-------: |
+| $[0.03, 0.53)$ | 0.28 | 19 | 19 | 38% | 38% |
+| $[0.53, 1.03)$ | 0.78 | 9 | 28 | 18% | 56% |
+| $[1.03, 1.53)$ | 1.28 | 9 | 37 | 18% | 74% |
+| $[1.53, 2.03)$ | 1.78 | 6 | 43 | 12% | 86% |
+| $[2.03, 2.53)$ | 2.28 | 2 | 45 | 4% | 90% |
+| $[2.53, 3.03)$ | 2.78 | 3 | 48 | 6% | 96% |
+| $[3.03, 3.53]$ | 3.28 | 2 | 50 | 4% | 100% |
+| **Total** | — | **50** | — | **100%** | — |
+
 ---
 
-## 16. Ejercicios propuestos
+## 15. Ejercicios propuestos
 
-### Ejercicio 16.1
-Explica, desde el paradigma del análisis exploratorio de datos de John Tukey, qué ventajas tiene el diagrama de tallo y hoja sobre el histograma clásico cuando el tamaño muestral es $N = 42$.
+### Ejercicio 15.1
+Explicar, desde el paradigma del análisis exploratorio de datos de John Tukey, qué ventajas tiene el diagrama de tallo y hoja sobre el histograma clásico cuando el tamaño muestral es $N = 42$.
 
-### Ejercicio 16.2
+### Ejercicio 15.2
 Dada la siguiente distribución de calificaciones en escala $0$-$10$:
 
 ```
@@ -945,15 +1059,26 @@ Dada la siguiente distribución de calificaciones en escala $0$-$10$:
 8.5, 8.5, 8.5, 8.5, 9.0, 9.0, 9.5, 10.0
 ```
 
-a) Construye un diagrama de caja calculando a mano sus cinco estadísticos.  
-b) Proyecta una ojiva y estima dónde cruza la línea del decil 8 ($80\%$).  
-c) Clasifica la asimetría de la distribución.
+a) Construir un diagrama de caja calculando a mano sus cinco estadísticos.  
+b) Proyectar una ojiva y estimar dónde cruza la línea del decil 8 ($80\%$).  
+c) Clasificar la asimetría de la distribución.
 
-### Ejercicio 16.3
-¿Bajo qué escenario el diagrama de Pareto perdería su utilidad analítica en gestión de calidad? (Pista: analiza una distribución estrictamente uniforme de errores.)
+### Ejercicio 15.3
+Determinar bajo qué escenario el diagrama de Pareto perdería su utilidad analítica en gestión de calidad. (Pista: analizar una distribución estrictamente uniforme de errores.)
 
-### Ejercicio 16.4
-Demuestra formalmente que si en una muestra el dato mínimo coincide con $Q_1$, entonces el boxplot correspondiente no tendrá bigote inferior visible.
+### Ejercicio 15.4
+Demostrar formalmente que si en una muestra el dato mínimo coincide con $Q_1$, entonces el boxplot correspondiente no tendrá bigote inferior visible.
+
+---
+
+## 16. Conexión con temas futuros
+
+Los gráficos estudiados en esta clase son fundamentales para el resto de la estadística:
+
+- **Estadística inferencial:** los histogramas, curvas de densidad y *boxplots* permiten visualizar supuestos de normalidad antes de aplicar pruebas paramétricas.
+- **Análisis de regresión:** los gráficos de dispersión (extensión natural de los gráficos cartesianos) se usan para identificar relaciones entre variables.
+- **Control de calidad:** los histogramas y diagramas de Pareto monitorean procesos productivos y priorizan causas de defectos.
+- **Aprendizaje automático:** el análisis exploratorio de datos (EDA) con visualizaciones es el paso previo casi obligatorio antes de construir modelos predictivos.
 
 ---
 
