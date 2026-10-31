@@ -414,6 +414,7 @@ Es la situación simétrica a la anterior: la mayoría de los datos se acumulan 
 
 ![Sesgo negativo](../Recursos/sesgada-izq.png)
 
+> **Observación:** el orden entre la media, la mediana y la moda que se indicó para cada tipo de sesgo es una tendencia y no una ley. Puede fallar, sobre todo, en distribuciones discretas, multimodales o con una cola larga y la otra pesada (von Hippel, 2005). En la Clase 5 (Ejemplo 6.5) se presenta un conjunto de datos con asimetría positiva cuya media es menor que su mediana.
 #### 5.2.2 Modalidad
 
 **Definición 5.4 (Moda de una distribución):**
@@ -622,7 +623,7 @@ Es decir, el 85% de los estudiantes mide aproximadamente $174.72\text{ cm}$ o me
 
 ### 8.5 Observaciones y aplicaciones
 
-- La ojiva permite estimar percentiles mediante interpolación inversa: trazando una horizontal desde el valor deseado de frecuencia acumulada hasta la ojiva, y luego bajando verticalmente al eje horizontal, se obtiene el percentil correspondiente.
+- La ojiva permite estimar percentiles mediante interpolación inversa: trazando una horizontal desde el valor deseado de frecuencia acumulada hasta la ojiva, y luego bajando verticalmente al eje horizontal, se obtiene el percentil correspondiente. Este método es propio de los datos agrupados y supone que los datos se reparten de manera uniforme dentro de cada intervalo; no coincide con el cálculo de cuantiles a partir de los datos sin agrupar (Clase 5, Sección 3.4).
 - La pendiente de la ojiva refleja la densidad de datos en cada región: pendientes pronunciadas indican alta concentración; pendientes suaves indican regiones con pocos datos.
 - La curvatura global de la ojiva revela el sesgo de la distribución.
 - Es fundamental en control de calidad, ciencias de la salud y ciencias sociales para ubicar umbrales poblacionales.
@@ -875,6 +876,7 @@ Dada una muestra $x_1, x_2, \ldots, x_N$:
 8. Graficar individualmente los datos fuera de $[L_I, L_S]$, distinguiendo los atípicos (entre las barreras interior y exterior) de los extremos (fuera de $[E_I, E_S]$).
 9. Etiquetar título, ejes y unidades.
 
+> **Nota:** los cuartiles tienen una definición precisa, pero esta puede admitir más de un valor; por eso los programas, como Excel y Python, aplican convenciones de cálculo que dan resultados levemente distintos. En estos apuntes se utiliza la convención del Tipo 7, $Q_p = x_{(h)}$ con $h = 1 + (N-1)p$ e interpolación lineal entre datos consecutivos, que es la que calculan, por ejemplo, Excel (`QUARTILE.INC`) y Python (NumPy). Sus detalles y las otras convenciones se estudian en la Clase 5 (Sección 3).
 ### 11.3 Propiedades
 
 **Proposición 11.1 (Cobertura central de la caja):**
@@ -902,21 +904,21 @@ $$x < Q_1 - 3 \cdot \text{RIC} \quad \text{o} \quad x > Q_3 + 3 \cdot \text{RIC}
 Para los datos de calificaciones ($N = 18$):
 $$5.5, 6.0, 6.5, 7.0, 7.0, 7.5, 7.5, 7.5, 8.0, 8.0, 8.5, 8.5, 8.5, 8.5, 9.0, 9.0, 9.5, 10.0$$
 
-Se tiene:
-- $Q_1 = 7.0$ (percentil 25).
-- $Q_2 = 8.0$ (mediana).
-- $Q_3 = 8.5$ (percentil 75).
-- $\text{RIC} = 8.5 - 7.0 = 1.5$.
-- Barreras interiores: $L_I = 7.0 - 1.5 \cdot 1.5 = 4.75$ y $L_S = 8.5 + 1.5 \cdot 1.5 = 10.75$.
-- Barreras exteriores: $E_I = 7.0 - 3 \cdot 1.5 = 2.5$ y $E_S = 8.5 + 3 \cdot 1.5 = 13$.
+Con la convención del Tipo 7 ($h = 1 + 17p$), se tiene:
+- $Q_1$: $h = 5.25$, de modo que $Q_1 = x_{(5)} + 0.25\,(x_{(6)} - x_{(5)}) = 7.0 + 0.25(0.5) = 7.125$.
+- $Q_2$: $h = 9.5$, de modo que $Q_2 = 8.0$ (mediana).
+- $Q_3$: $h = 13.75$, de modo que $Q_3 = 8.5$.
+- $\text{RIC} = 8.5 - 7.125 = 1.375$.
+- Barreras interiores: $L_I = 7.125 - 1.5 \cdot 1.375 = 5.0625$ y $L_S = 8.5 + 1.5 \cdot 1.375 = 10.5625$.
+- Barreras exteriores: $E_I = 7.125 - 3 \cdot 1.375 = 3.0$ y $E_S = 8.5 + 3 \cdot 1.375 = 12.625$.
 - Bigotes: desde el mínimo $5.5$ hasta el máximo $10.0$.
-- No hay valores atípicos ni extremos, pues todos los datos están dentro de $[4.75, 10.75]$.
+- No hay valores atípicos ni extremos, pues todos los datos están dentro de $[5.0625, 10.5625]$.
 
 **Ejemplo 11.2 (Con valores atípicos y extremos):**
-Si a la muestra anterior se añade la calificación $x = 2.0$, los cuartiles cambian muy poco, por lo que las barreras siguen siendo aproximadamente $L_I = 4.75$ y $E_I = 2.5$. Entonces:
+Si a la muestra anterior se añade la calificación $x = 2.0$, se tiene $N = 19$ y, con el Tipo 7 ($h = 1 + 18p$), $Q_1 = 7.0$ y $Q_3 = 8.5$. Entonces $\text{RIC} = 1.5$ y las barreras son $L_I = 4.75$ y $E_I = 2.5$:
 - El valor $2.0$ es menor que $E_I$, por lo que se clasifica como **extremo** y se grafica como un punto individual.
 - Un valor como $4.0$, en cambio, cae entre $E_I$ y $L_I$, por lo que sería un **atípico**.
-- El bigote inferior se extiende solo hasta el dato más pequeño dentro de las barreras interiores.
+- El bigote inferior se extiende solo hasta el dato más pequeño dentro de las barreras interiores, que es $5.5$.
 
 ### 11.5 Observaciones y limitaciones
 
@@ -929,7 +931,7 @@ Si a la muestra anterior se añade la calificación $x = 2.0$, los cuartiles cam
 **Limitaciones:**
 - Diferentes distribuciones (por ejemplo, una uniforme y una bimodal) pueden producir el mismo diagrama de caja. Por ello, es conveniente complementarlo con un histograma o un gráfico de violín.
 - Asume implícitamente que la distribución es aproximadamente unimodal.
-- La definición de cuartiles puede variar ligeramente entre software, lo que produce pequeñas diferencias en la posición de los bigotes.
+- Los cuartiles dependen de la convención de cálculo (véase la nota del Algoritmo 11.1), lo que produce pequeñas diferencias en la posición de la caja y los bigotes.
 
 ---
 
@@ -1059,7 +1061,7 @@ Dada la siguiente distribución de calificaciones en escala $0$-$10$:
 8.5, 8.5, 8.5, 8.5, 9.0, 9.0, 9.5, 10.0
 ```
 
-a) Construir un diagrama de caja calculando a mano sus cinco estadísticos.  
+a) Construir un diagrama de caja calculando a mano sus cinco estadísticos, con la convención de cuartiles del Algoritmo 11.1 (Tipo 7).  
 b) Proyectar una ojiva y estimar dónde cruza la línea del decil 8 ($80\%$).  
 c) Clasificar la asimetría de la distribución.
 
