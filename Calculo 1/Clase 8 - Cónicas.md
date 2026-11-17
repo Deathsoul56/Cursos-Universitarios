@@ -1585,6 +1585,8 @@ $$\frac{x'^2}{1} + \frac{y'^2}{9} = 1$$
 
 **Conclusión:** Esta figura es una **elipse real** con su centro en el origen $(0,0)$. Originalmente, su eje mayor estaba inclinado $45°$ en el plano $xy$, pero bajo nuestra nueva perspectiva rotada ($x', y'$), se observa como una elipse tradicional vertical (ya que $a^2 = 9$ está bajo las ordenadas $y'$).
 
+![Elipse rotada 45° respecto de los ejes originales, junto con los nuevos ejes x' e y' punteados](../Recursos/elipse_rotada_ejes_nuevos.png)
+
 ### 8.3 Identificación de cónicas rotadas
 
 **Teorema 8.2 (Invariante discriminante):**
@@ -1671,61 +1673,76 @@ $$\frac{x'^2}{4} + \frac{y'^2}{1} = 1$$
 5. **Arquitectura:** Torres de refrigeración de centrales nucleares
 
 ---
-## 10. Intersección de rectas con cónicas
+## 10. Intersecciones
 
-### 10.1 Método general
+### 10.1 Intersección con una recta
 
-Para encontrar la intersección de una recta $y = mx + b$ con una cónica:
+Para hallar los puntos comunes entre una recta y una cónica, se sustituye la ecuación
+de la recta en la ecuación de la cónica. Si la recta está dada por $y=mx+b$, la
+sustitución produce una ecuación de segundo grado en $x$. El número de soluciones
+reales indica cuántos puntos de intersección hay:
 
-1. Sustituir la ecuación de la recta en la ecuación de la cónica
-2. Obtener una ecuación cuadrática en $x$ (o $y$)
-3. Resolver usando la fórmula cuadrática
-4. Analizar el discriminante:
-   - $\Delta > 0$: dos puntos de intersección (recta secante)
-   - $\Delta = 0$: un punto de intersección (recta tangente)
-   - $\Delta < 0$: ningún punto de intersección (recta exterior)
+- Si $\Delta>0$, hay dos puntos de intersección.
+- Si $\Delta=0$, hay un único punto de intersección.
+- Si $\Delta<0$, no hay intersecciones reales.
 
 **Ejemplo 10.1:**
-Encuentre la intersección de $y = x + 1$ con $x^2 + y^2 = 5$:
+Encuentre los puntos de intersección de la parábola $y=x^2$ con la recta $y=2x$.
+Al igualar las expresiones de $y$, se obtiene
 
 $$\begin{align}
-x^2 + (x + 1)^2 &= 5 \\
-x^2 + x^2 + 2x + 1 &= 5 \\
-2x^2 + 2x - 4 &= 0 \\
-x^2 + x - 2 &= 0 \\
-(x + 2)(x - 1) &= 0
+x^2 &= 2x \\
+x^2-2x &= 0 \\
+x(x-2) &= 0.
 \end{align}$$
 
-- $x = -2 \Rightarrow y = -1$: punto $(-2, -1)$
-- $x = 1 \Rightarrow y = 2$: punto $(1, 2)$
+- Si $x=0$, entonces $y=0$.
+- Si $x=2$, entonces $y=4$.
 
-**Dos puntos de intersección** (recta secante)
+Por tanto, los puntos de intersección son $(0,0)$ y $(2,4)$; la recta es secante a la
+parábola.
 
-### 10.2 Recta tangente a una cónica
-
-**Definición 10.1:**
-Una **recta tangente** a una cónica en un punto $P$ es la recta que toca la cónica exactamente en ese punto.
-
-**Condición:** El discriminante de la ecuación de intersección debe ser cero.
+![La recta y = 2x corta a la parábola y = x² en los puntos (0,0) y (2,4)](../Recursos/interseccion_recta_parabola.png)
 
 **Ejemplo 10.2:**
-Encuentre la ecuación de la tangente a $x^2 + y^2 = 25$ en el punto $(3, 4)$:
+Encuentre los puntos de intersección de la recta $y=x+1$ con la circunferencia
+$x^2+y^2=5$. Al sustituir la ecuación de la recta en la de la circunferencia:
 
-**Método 1 (Derivación implícita):**
-$$2x + 2y\frac{dy}{dx} = 0 \Rightarrow \frac{dy}{dx} = -\frac{x}{y}$$
+$$\begin{align}
+x^2+(x+1)^2 &= 5 \\
+2x^2+2x-4 &= 0 \\
+x^2+x-2 &= 0 \\
+(x+2)(x-1) &= 0.
+\end{align}$$
 
-En $(3, 4)$: $m = -\frac{3}{4}$
+Por tanto, $x=-2$ o $x=1$. Al sustituir en $y=x+1$, se obtienen los puntos
+$(-2,-1)$ y $(1,2)$; la recta es secante a la circunferencia.
 
-Ecuación: $y - 4 = -\frac{3}{4}(x - 3)$
-$$4y - 16 = -3x + 9$$
-$$3x + 4y = 25$$
+![La recta y = x + 1 corta a la circunferencia x² + y² = 5 en los puntos (-2,-1) y (1,2)](../Recursos/interseccion_recta_circunferencia.png)
 
-**Método 2 (Fórmula directa para círculos):**
-Para $(x - h)^2 + (y - k)^2 = r^2$, la tangente en $(x_0, y_0)$ es:
-$$(x_0 - h)(x - h) + (y_0 - k)(y - k) = r^2$$
+### 10.2 Intersección entre cónicas
 
-Para nuestro caso:
-$$3x + 4y = 25$$
+Cuando se busca la intersección entre dos cónicas, cada punto común debe satisfacer
+simultáneamente sus dos ecuaciones. Se resuelve, por tanto, un sistema de ecuaciones;
+la sustitución de una ecuación en la otra reduce el problema a una ecuación en una
+variable.
+
+**Ejemplo 10.3:**
+Encuentre los puntos de intersección de las parábolas $y=x^2$ y $y=2x-x^2$.
+Igualando sus expresiones para $y$, se obtiene
+
+$$\begin{align}
+x^2 &= 2x-x^2 \\
+2x^2-2x &= 0 \\
+2x(x-1) &= 0.
+\end{align}$$
+
+Así, $x=0$ o $x=1$. Al sustituir en cualquiera de las ecuaciones:
+
+- Para $x=0$, se obtiene $y=0$.
+- Para $x=1$, se obtiene $y=1$.
+
+Las dos cónicas se intersectan en los puntos $(0,0)$ y $(1,1)$.
 
 ---
 ## 11. Resumen comparativo de cónicas
