@@ -1677,14 +1677,34 @@ $$\frac{x'^2}{4} + \frac{y'^2}{1} = 1$$
 
 ### 10.1 Intersección con una recta
 
-Para hallar los puntos comunes entre una recta y una cónica, se sustituye la ecuación
-de la recta en la ecuación de la cónica. Si la recta está dada por $y=mx+b$, la
-sustitución produce una ecuación de segundo grado en $x$. El número de soluciones
-reales indica cuántos puntos de intersección hay:
+Un punto de intersección debe satisfacer simultáneamente la ecuación de la recta y la
+de la cónica. La estrategia consiste en sustituir la expresión de la recta en la
+ecuación de la cónica y resolver la ecuación resultante en una sola variable.
 
-- Si $\Delta>0$, hay dos puntos de intersección.
-- Si $\Delta=0$, hay un único punto de intersección.
-- Si $\Delta<0$, no hay intersecciones reales.
+Sea la cónica general
+$$
+Ax^2+Bxy+Cy^2+Dx+Ey+F=0
+$$
+y la recta $y=mx+b$. Al sustituir $y$ se obtiene
+$$
+\alpha x^2+\beta x+\gamma=0,
+$$
+donde
+$$
+\alpha=A+Bm+Cm^2,\qquad
+\beta=Bb+2Cmb+D+Em,\qquad
+\gamma=Cb^2+Eb+F.
+$$
+Si $\alpha\neq0$, el discriminante $\delta=\beta^2-4\alpha\gamma$ determina el
+número de intersecciones reales:
+
+- Si $\delta>0$, hay dos valores de $x$ y, por tanto, dos puntos de intersección.
+- Si $\delta=0$, hay un único punto de intersección; la recta es tangente a la cónica.
+- Si $\delta<0$, no hay intersecciones reales.
+
+En los dos primeros casos, cada valor de $x$ se sustituye en $y=mx+b$ para recuperar
+la coordenada $y$. Si $\alpha=0$, la ecuación resultante es lineal o constante y se
+analiza por separado.
 
 **Ejemplo 10.1:**
 Encuentre los puntos de intersección de la parábola $y=x^2$ con la recta $y=2x$.
@@ -1722,27 +1742,83 @@ $(-2,-1)$ y $(1,2)$; la recta es secante a la circunferencia.
 
 ### 10.2 Intersección entre cónicas
 
-Cuando se busca la intersección entre dos cónicas, cada punto común debe satisfacer
-simultáneamente sus dos ecuaciones. Se resuelve, por tanto, un sistema de ecuaciones;
-la sustitución de una ecuación en la otra reduce el problema a una ecuación en una
-variable.
+Dos cónicas escritas en forma general,
+$$
+\begin{cases}
+A_1x^2+B_1xy+C_1y^2+D_1x+E_1y+F_1=0,\\
+A_2x^2+B_2xy+C_2y^2+D_2x+E_2y+F_2=0,
+\end{cases}
+$$
+se intersectan en los puntos que satisfacen ambas ecuaciones a la vez. Se obtiene un
+sistema no lineal; según los términos que compartan las ecuaciones, se puede despejar
+una variable, sustituir o eliminar términos mediante combinaciones algebraicas.
+Después de hallar una coordenada, se recupera la otra sustituyendo en cualquiera de
+las ecuaciones originales y se verifica cada pareja obtenida en ambas.
+
+Este problema es menos frecuente que el análisis individual de cada cónica y no es un
+tema central de este curso. Se incluye como aplicación del álgebra de sistemas: algunos
+casos se simplifican de manera notable, mientras que otros conducen a ecuaciones de
+grado cuatro y requieren cálculos más laboriosos. Dos cónicas que no comparten una
+componente pueden tener hasta cuatro puntos reales de intersección; también pueden no
+intersectarse en el plano real. Si comparten una componente, los puntos comunes pueden
+ser infinitos.
 
 **Ejemplo 10.3:**
-Encuentre los puntos de intersección de las parábolas $y=x^2$ y $y=2x-x^2$.
-Igualando sus expresiones para $y$, se obtiene
+Encuentre los puntos comunes de las parábolas dadas en forma general por
+$$
+\begin{cases}
+x^2-y=0,\\
+y^2-x=0.
+\end{cases}
+$$
+De la primera ecuación, $y=x^2$. Al sustituir en la segunda:
 
 $$\begin{align}
-x^2 &= 2x-x^2 \\
-2x^2-2x &= 0 \\
-2x(x-1) &= 0.
+x^4-x &= 0 \\
+x(x-1)(x^2+x+1) &= 0.
 \end{align}$$
 
-Así, $x=0$ o $x=1$. Al sustituir en cualquiera de las ecuaciones:
+Para todo $x\in\mathbb{R}$ se cumple $x^2+x+1>0$, pues su discriminante es $-3$.
+Por tanto, las únicas raíces reales son $x=0$ y $x=1$. Al usar $y=x^2$:
 
-- Para $x=0$, se obtiene $y=0$.
-- Para $x=1$, se obtiene $y=1$.
+- Si $x=0$, entonces $y=0$.
+- Si $x=1$, entonces $y=1$.
 
-Las dos cónicas se intersectan en los puntos $(0,0)$ y $(1,1)$.
+Las parábolas se intersectan en $(0,0)$ y $(1,1)$. Este ejemplo muestra que la
+sustitución entre dos ecuaciones cuadráticas puede producir una ecuación de cuarto
+grado, aunque aquí se factoriza de forma directa.
+
+![Parábolas x² - y = 0 e y² - x = 0, con intersecciones en (0,0) y (1,1)](../Recursos/interseccion_dos_parabolas.png)
+
+**Ejemplo 10.4 (Circunferencia y elipse rotada):**
+Considere las cónicas
+$$
+\begin{cases}
+x^2+y^2-5=0,\\
+3x^2+2xy+3y^2-15=0.
+\end{cases}
+$$
+La primera es una circunferencia. La segunda es una elipse rotada: contiene el término
+mixto $xy$ y su parte cuadrática puede escribirse como
+$$
+3x^2+2xy+3y^2=2(x^2+y^2)+(x+y)^2.
+$$
+Para simplificar el sistema, se resta tres veces la primera ecuación de la segunda:
+$$
+2xy=0,
+$$
+de modo que $x=0$ o $y=0$.
+
+- Si $x=0$, la ecuación de la circunferencia da $y^2=5$, así que se obtienen
+   $(0,\sqrt5)$ y $(0,-\sqrt5)$.
+- Si $y=0$, se obtiene $x^2=5$, así que se obtienen $(\sqrt5,0)$ y $(-\sqrt5,0)$.
+
+Por tanto, las dos cónicas tienen cuatro puntos reales de intersección:
+$$
+(0,\sqrt5),\quad(0,-\sqrt5),\quad(\sqrt5,0),\quad(-\sqrt5,0).
+$$
+
+![Circunferencia y elipse rotada del Ejemplo 10.4, con sus cuatro intersecciones reales](../Recursos/interseccion_circunferencia_elipse.png)
 
 ---
 ## 11. Resumen comparativo de cónicas
